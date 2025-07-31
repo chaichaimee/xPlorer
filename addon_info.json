@@ -1,0 +1,10 @@
+﻿{
+  "addon_name": "xPlorer",
+  "addon_description": "The tools that will help improve the ability to access the file explorer to be more powerful.",
+  "addon_version": "2025.8",
+  "addon_author": "chaichaimee",
+  "addon_url": "https://github.com/chaichaimee/xPlorer",
+  "addon_download_url": "https://github.com/chaichaimee/xPlorer/releases/download/v2025.8/xPlorer-v2025.8.nvda-addon",
+  "addon_min_nvda_version": "2022.4"
+}
+
