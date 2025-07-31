@@ -1,0 +1,192 @@
+# Copyright (C) 2025 ['chai chaimee]
+# Licensed under GNU General Public License. See COPYING.txt for details.
+
+import globalPluginHandler
+import ui
+import api
+from NVDAObjects import NVDAObject
+from NVDAObjects.UIA import UIA
+from controlTypes import Role, State
+import addonHandler
+from comtypes.client import CreateObject
+import datetime
+from threading import Timer
+
+addonHandler.initTranslation()
+
+class LaconicFocusAncestor(NVDAObject):
+    # Disable presentable focus ancestor for specific Explorer elements
+    isPresentableFocusAncestor = False
+
+    def _get_windowClassName(self):
+        # Modify window class name for DirectUIHWND in Explorer
+        windowClass = super().windowClassName
+        if windowClass == "DirectUIHWND":
+            return "FakeDirectUIHWND"
+        return windowClass
+
+class GlobalPlugin(globalPluginHandler.GlobalPlugin):
+    scriptCategory = "xPlorer"
+    
+    def __init__(self):
+        super(GlobalPlugin, self).__init__()
+        self.objShellApp = CreateObject("Shell.Application")
+        self.objFSO = CreateObject("scripting.FileSystemObject")
+
+    def _isExplorerList(self, obj):
+        # Check if object is a File Explorer list
+        return (obj and obj.role == Role.LIST and 
+                isinstance(obj, UIA) and 
+                "explorerframe.dll" in obj.UIAElement.CachedProviderDescription.lower())
+
+    def _isFileItem(self, obj):
+        # Check if object is a file or folder item in Explorer list
+        return (obj and obj.role == Role.LISTITEM and 
+                self._isExplorerList(obj.parent))
+
+    def _WinObjects(self):
+        # Retrieve the current focused File Explorer window and object
+        objShellWin = self.objShellApp.Windows()
+        oAppWnd = api.getForegroundObject()
+        hAppWnd = oAppWnd.windowHandle        
+        LookingForTheWindow = True
+        i = 0
+        while LookingForTheWindow and i < objShellWin.Count:
+            oWItem = objShellWin.Item(i)
+            hElement = oWItem.hwnd
+            if hElement == hAppWnd:
+                LookingForTheWindow = False
+                i = i - 1
+            i = i + 1
+        oWItem = objShellWin.Item(i)
+        if oWItem.document.FocusedItem:
+            if self.objFSO.FileExists(oWItem.document.FocusedItem.Path):
+                oElement = self.objFSO.GetFile(oWItem.document.FocusedItem.Path)
+                IsFolder = 0
+            elif not self.objFSO.DriveExists(oWItem.document.FocusedItem.Path) \
+            and self.objFSO.FolderExists(oWItem.document.FocusedItem.Path):
+                oElement = self.objFSO.GetFolder(oWItem.document.FocusedItem.Path)
+                IsFolder = 1
+            elif self.objFSO.DriveExists(oWItem.document.FocusedItem.Path):
+                oElement = self.objFSO.GetDrive(oWItem.document.FocusedItem.Path)
+                IsFolder = 2
+            else:
+                ui.message(_("Properties not available"))
+                return None, None
+        return (oElement, IsFolder)
+
+    def _RecalcSize(self, iResult, iTotalSize=0):
+        # Convert size to appropriate unit (bytes, KB, MB, GB, TB)
+        fResult = float(iResult)
+        if iTotalSize > 0:
+            iTotalSize = float(iTotalSize)
+            fResult = iTotalSize - fResult 
+        i = 0
+        while fResult >= 1024:
+            fResult = fResult / 1024
+            i = i + 1
+        sRecalcSize = ' {:.2f}'.format(fResult)
+        sResult = (sRecalcSize, i)
+        return sResult
+
+    def chooseNVDAObjectOverlayClasses(self, obj, clsList):
+        # Suppress 'View list items' announcement in Explorer
+        if obj.appModule.appName == "explorer":
+            if obj.role in (Role.LIST, Role.TOOLBAR):
+                clsList.insert(0, LaconicFocusAncestor)
+
+    def event_gainFocus(self, obj, nextHandler):
+        # Fix focus hang in Windows Explorer
+        if obj.role == Role.PANE and obj.firstChild and hasattr(obj.firstChild, "UIAAutomationId") and obj.firstChild.UIAAutomationId == "HomeListView":
+            def func():
+                try:
+                    obj.firstChild.children[1].setFocus()
+                except:
+                    pass
+            try:
+                Timer(0.2, func).start()
+            except:
+                pass
+        nextHandler()
+
+    def event_focusEntered(self, obj, nextHandler):
+        if self._isExplorerList(obj):
+            # Handle empty folder
+            if obj.childCount == 0:
+                ui.message(_("Empty Folder"))
+                nextHandler()
+                return
+            
+            # Auto-select first item
+            focus = obj.objectWithFocus()
+            if focus is not None and focus.role == Role.LISTITEM and focus.UIASelectionItemPattern:
+                try:
+                    focus.UIASelectionItemPattern.Select()
+                    api.setNavigatorObject(focus)
+                    position = f"{focus.positionInfo.position} of {focus.positionInfo.itemCount}" if hasattr(focus, 'positionInfo') and focus.positionInfo else ""
+                    ui.message(f"{focus.name} {position} {_('select')}".strip())
+                except:
+                    pass
+            else:
+                # Fallback to first child if no focused item
+                firstChild = obj.firstChild
+                if firstChild and firstChild.UIASelectionItemPattern:
+                    try:
+                        firstChild.UIASelectionItemPattern.Select()
+                        api.setNavigatorObject(focus)
+                        position = f"{firstChild.positionInfo.position} of {firstChild.positionInfo.itemCount}" if hasattr(firstChild, 'positionInfo') and firstChild.positionInfo else ""
+                        ui.message(f"{firstChild.name} {position} {_('select')}".strip())
+                    except:
+                        pass
+        
+        nextHandler()
+
+    def event_foreground(self, obj, nextHandler):
+        # Check for empty folder message after deletion
+        if obj and obj.role == Role.STATICTEXT and obj.name == "This folder is empty.":
+            ui.message(_("Empty Folder"))
+        
+        nextHandler()
+
+    def event_UIA_elementSelected(self, obj, nextHandler):
+        if self._isFileItem(obj):
+            # Announce file name when navigating with arrows in single-item folder
+            if obj.parent.childCount == 1:
+                try:
+                    obj.reportFocus()
+                except:
+                    pass
+        nextHandler()
+
+    def script_saySize(self, gesture):
+        # Announce size of file, folder, or used space of drive
+        ObjResult = self._WinObjects()
+        oElement = ObjResult[0]
+        if oElement:
+            IsFolder = ObjResult[1]
+            if IsFolder == 2:
+                try:
+                    usedSize = oElement.TotalSize - oElement.FreeSpace
+                    colRecalc = self._RecalcSize(usedSize)
+                    sDimension = [" bytes", " KB", " MB", " GB", " TB"][colRecalc[1]]
+                    sRecalcSize = colRecalc[0]
+                    s_Info = sRecalcSize + sDimension
+                    ui.message(s_Info)
+                except:
+                    ui.message(_("No access to data"))
+                    return
+            elif IsFolder < 2:
+                try:
+                    iTmpSize = oElement.Size
+                    colRecalc = self._RecalcSize(iTmpSize)
+                    sDimension = [" bytes", " KB", " MB", " GB", " TB"][colRecalc[1]]
+                    sRecalcSize = colRecalc[0]
+                    s_Info = sRecalcSize + sDimension
+                    ui.message(s_Info)
+                except:
+                    ui.message(_("No access to data"))
+                    return
+
+    script_saySize.__doc__ = _("Announce size of file, folder, or used space of drive")
+    script_saySize.category = "xPlorer"
+    script_saySize.gestures = ["kb:NVDA+End"]
