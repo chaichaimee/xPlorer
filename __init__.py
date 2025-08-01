@@ -11,6 +11,7 @@ import addonHandler
 from comtypes.client import CreateObject
 import datetime
 from threading import Timer
+import tones
 
 addonHandler.initTranslation()
 
@@ -43,6 +44,12 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
         # Check if object is a file or folder item in Explorer list
         return (obj and obj.role == Role.LISTITEM and 
                 self._isExplorerList(obj.parent))
+
+    def _isValidExplorerContext(self, obj):
+        # Check if the current focus is within File Explorer's folder view
+        if not obj or obj.appModule.appName != "explorer":
+            return False
+        return self._isExplorerList(obj) or self._isFileItem(obj)
 
     def _WinObjects(self):
         # Retrieve the current focused File Explorer window and object
@@ -133,7 +140,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
                 if firstChild and firstChild.UIASelectionItemPattern:
                     try:
                         firstChild.UIASelectionItemPattern.Select()
-                        api.setNavigatorObject(focus)
+                        api.setNavigatorObject(firstChild)
                         position = f"{firstChild.positionInfo.position} of {firstChild.positionInfo.itemCount}" if hasattr(firstChild, 'positionInfo') and firstChild.positionInfo else ""
                         ui.message(f"{firstChild.name} {position} {_('select')}".strip())
                     except:
@@ -159,7 +166,16 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
         nextHandler()
 
     def script_saySize(self, gesture):
-        # Announce size of file, folder, or used space of drive
+        # Announce size of file, folder, or used space of drive only in File Explorer
+        focus = api.getFocusObject()
+        if not self._isValidExplorerContext(focus):
+            # Play error tone and announce that the command is only for File Explorer
+            tones.beep(100, 100)
+            ui.message(_("This command is only available in File Explorer's folder view"))
+            # Allow default NVDA behavior for NVDA+End outside File Explorer
+            gesture.send()
+            return
+
         ObjResult = self._WinObjects()
         oElement = ObjResult[0]
         if oElement:
@@ -187,6 +203,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
                     ui.message(_("No access to data"))
                     return
 
-    script_saySize.__doc__ = _("Announce size of file, folder, or used space of drive")
+    script_saySize.__doc__ = _("Announce size of file, folder, or used space of drive in File Explorer")
     script_saySize.category = "xPlorer"
     script_saySize.gestures = ["kb:NVDA+End"]
+
