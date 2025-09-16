@@ -1,0 +1,219 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: xPlorer v 2025.11\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-08 10:58+0700\n"
+"PO-Revision-Date: 2025-09-08 11:44+0700\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.7\n"
+
+#: __init__.py:87
+msgid "File name cannot be empty"
+msgstr "File name cannot be empty"
+
+#: __init__.py:96
+msgid "xPlorer"
+msgstr "xPlorer"
+
+#: __init__.py:127
+msgid "No matching Explorer window found"
+msgstr "No matching Explorer window found"
+
+#: __init__.py:141
+msgid "Properties not available"
+msgstr "Properties not available"
+
+#: __init__.py:144
+msgid "No focused item found"
+msgstr "No focused item found"
+
+#. Translators: This is the name for the 'say size' script.
+#: __init__.py:175
+msgid "say size"
+msgstr "say size"
+
+#: __init__.py:182
+msgid "No access to drive data"
+msgstr "No access to drive data"
+
+#: __init__.py:192
+msgid "No access to data"
+msgstr "No access to data"
+
+#: __init__.py:228
+msgid "No Explorer window found"
+msgstr "No Explorer window found"
+
+#: __init__.py:236
+msgid "No items selected"
+msgstr "No items selected"
+
+#. Translators: Message announced when 1 item is copied to the clipboard.
+#: __init__.py:245
+msgid "Copied 1 item name to clipboard"
+msgid_plural "Copied %d item names to clipboard"
+msgstr[0] "Copied 1 item name to clipboard"
+msgstr[1] "Copied %d item names to clipboard"
+
+#: __init__.py:249
+msgid "Could not open clipboard"
+msgstr "Could not open clipboard"
+
+#: __init__.py:253
+msgid "Error copying names to clipboard"
+msgstr "Error copying names to clipboard"
+
+#. Translators: The docstring for the script that copies file and folder names.
+#: __init__.py:257
+msgid "Copy selected file and folder names to clipboard"
+msgstr "Copy selected file and folder names to clipboard"
+
+#. Translators: Progress message during file compression.
+#: __init__.py:271
+msgid "Compressing..."
+msgstr "Compressing..."
+
+#: __init__.py:293
+msgid "Compression cancelled"
+msgstr "Compression cancelled"
+
+#. Translators: Message announced when compression is successfully completed.
+#: __init__.py:295
+#, python-format
+msgid "Compression completed %s"
+msgstr "Compression completed %s"
+
+#. Translators: Message announced when compression fails with an error.
+#: __init__.py:298
+#, python-format
+msgid "compression failed: %s"
+msgstr "compression failed: %s"
+
+#. Translators: Error message if the compression process has an issue.
+#: __init__.py:301
+#, python-format
+msgid "Error in compression process: %s"
+msgstr "Error in compression process: %s"
+
+#: __init__.py:330
+msgid "Compressing files"
+msgstr "Compressing files"
+
+#: __init__.py:330
+msgid "Starting..."
+msgstr "Starting..."
+
+#: __init__.py:348
+msgid "7-Zip compression failed, trying built-in method..."
+msgstr "7-Zip compression failed, trying built-in method..."
+
+#: __init__.py:362
+msgid "Error compressing files"
+msgstr "Error compressing files"
+
+#. Translators: Progress message showing the percentage of compression.
+#: __init__.py:423
+#, python-format
+msgid "Compressing: %d%%"
+msgstr "Compressing: %d%%"
+
+#: __init__.py:427
+msgid "Compression cancelled"
+msgstr "Compression cancelled"
+
+#: __init__.py:430
+msgid "Completed"
+msgstr "Completed"
+
+#: __init__.py:431
+#, python-format
+msgid "Compression completed %s"
+msgstr "Compression completed %s"
+
+#: __init__.py:434
+#, python-format
+msgid "Built-in compression failed: %s"
+msgstr "Built-in compression failed: %s"
+
+#. Translators: The docstring for the script that compresses items to a ZIP file.
+#: __init__.py:437
+msgid "Compress selected items to ZIP"
+msgstr "Compress selected items to ZIP"
+
+#. Translators: The docstring for the script that renames a file.
+#: __init__.py:441
+msgid "Rename selected file"
+msgstr "Rename selected file"
+
+#: __init__.py:458
+msgid "Please select only one file"
+msgstr "Please select only one file"
+
+#: __init__.py:462
+msgid "Please select a file, not a folder"
+msgstr "Please select a file, not a folder"
+
+#: __init__.py:467
+msgid "Error renaming file"
+msgstr "Error renaming file"
+
+#: __init__.py:479
+msgid "File name not changed"
+msgstr "File name not changed"
+
+#: __init__.py:483
+msgid "A file with this name already exists"
+msgstr "A file with this name already exists"
+
+#: __init__.py:488
+msgid "Error renaming file"
+msgstr "Error renaming file"
+
+#. Translators: Message announced after a file has been successfully renamed.
+#: __init__.py:491
+#, python-format
+msgid "File renamed to %s"
+msgstr "File renamed to %s"
+
+#: __init__.py:496
+msgid "Error opening rename dialog"
+msgstr "Error opening rename dialog"
+
+#. Translators: Label for a static text field in an empty folder.
+#: xPlorerManager.py:27
+msgid "Empty Folder"
+msgstr "Empty Folder"
+
+#. Translators: The title of the add-on settings panel.
+#: xPlorerManager.py:40
+msgid "xPlorer"
+msgstr "xPlorer"
+
+#. Translators: Label for the 'autoSelectFirstItem' checkbox in settings.
+#: xPlorerManager.py:46
+msgid "Automatically select the first item"
+msgstr "Automatically select the first item"
+
+#. Translators: Label for the 'announceEmptyFolder' checkbox in settings.
+#: xPlorerManager.py:50
+msgid "Announce 'Empty Folder' when entering an empty folder"
+msgstr "Announce 'Empty Folder' when entering an empty folder"
+
+#. Translators: Label for the 'suppressDirectUIAnnounce' checkbox in settings.
+#: xPlorerManager.py:54
+msgid "Suppress announcement of DirectUIHWND class"
+msgstr "Suppress announcement of DirectUIHWND class"
+
+#. Translators: Label for the 'suppressFileExplorerTi
+
