@@ -1,49 +1,203 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Copyright (C) 2025 chai chaimee
+# This file is distributed under the same license as the xPlorer package.
+# chai chaimee <chai@example.com>, 2025.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: xPlorer v 2025.11\n"
-"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2025-09-08 10:58+0700\n"
-"PO-Revision-Date: 2025-09-08 16:25+0700\n"
-"Last-Translator: Your Name <your.email@example.com>\n"
-"Language-Team: Your Name <your.email@example.com>\n"
+"Project-Id-Version: xPlorer v 2025.12\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-01 18:58+0700\n"
+"PO-Revision-Date: 2025-10-01 18:58+0700\n"
+"Last-Translator: \n"
+"Language-Team: Spanish <translation-team-es@example.com>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.7\n"
-"X-Poedit-SourceCharset: UTF-8\n"
 
-#: __init__.py:87
-msgid "File name cannot be empty"
-msgstr "El nombre de archivo no puede estar vacío"
-
-#: __init__.py:96
+#: __init__.py:37
 msgid "xPlorer"
 msgstr "xPlorer"
 
-#: __init__.py:127
-msgid "No matching Explorer window found"
-msgstr "No se encontró ninguna ventana del Explorador coincidente"
+#: __init__.py:119 selectionManager.py:23
+msgid "Not in File Explorer"
+msgstr "No en el Explorador de Archivos"
 
-#: __init__.py:141
-msgid "Properties not available"
-msgstr "Propiedades no disponibles"
-
-#: __init__.py:144
-msgid "No focused item found"
-msgstr "No se encontró ningún elemento enfocado"
-
-#. Translators: This is the name for the 'say size' script.
-#: __init__.py:175
+#: __init__.py:155 __init__.py:205
 msgid "say size"
-msgstr "decir tamaño"
+msgstr "Decir tamaño"
 
-#: __init__.py:182
-msgid "No access to drive data"
-msgstr "Sin ac"
+#: __init__.py:162
+msgid "Copy selected file and folder names to clipboard"
+msgstr "Copiar nombres de archivos y carpetas seleccionados al portapapeles"
+
+#: __init__.py:169
+msgid "Copy content of selected text file(s) to clipboard"
+msgstr "Copiar contenido de archivo(s) de texto seleccionado(s) al portapapeles"
+
+#: __init__.py:176
+msgid "Compress selected items to ZIP"
+msgstr "Comprimir elementos seleccionados en ZIP"
+
+#: __init__.py:183 __init__.py:204
+msgid "Rename selected file"
+msgstr "Renombrar archivo seleccionado"
+
+#: __init__.py:190
+msgid "Invert selection in File Explorer"
+msgstr "Invertir selección en el Explorador de Archivos"
+
+#: __init__.py:200
+msgid "Compress zip"
+msgstr "Comprimir en ZIP"
+
+#: __init__.py:201
+msgid "Copy content"
+msgstr "Copiar contenido"
+
+#: __init__.py:202
+msgid "Copy selected file and folder names"
+msgstr "Copiar nombres de archivos y carpetas seleccionados"
+
+#: __init__.py:203
+msgid "Invert selection"
+msgstr "Invertir selección"
+
+#: __init__.py:216
+msgid "Error displaying popup menu: {0}"
+msgstr "Error al mostrar el menú emergente: {0}"
+
+#: __init__.py:220
+msgid "Error displaying context menu"
+msgstr "Error al mostrar el menú contextual"
+
+#: __init__.py:227
+msgid "Error opening context menu"
+msgstr "Error al abrir el menú contextual"
+
+#: __init__.py:238
+msgid "This command is only available in File Explorer."
+msgstr "Este comando solo está disponible en el Explorador de Archivos."
+
+#: __init__.py:242
+msgid "Open xPlorer context menu"
+msgstr "Abrir el menú contextual de xPlorer"
+
+#: clipboardManager.py:15
+msgid "No files selected"
+msgstr "No hay archivos seleccionados"
+
+#: clipboardManager.py:20
+msgid "Error copying file names to clipboard"
+msgstr "Error al copiar nombres de archivos al portapapeles"
+
+#: clipboardManager.py:25
+msgid "Selected file names copied to clipboard"
+msgstr "Nombres de archivos seleccionados copiados al portapapeles"
+
+#: clipboardManager.py:30
+msgid "No text files selected"
+msgstr "No hay archivos de texto seleccionados"
+
+#: clipboardManager.py:35
+msgid "Error copying file content"
+msgstr "Error al copiar el contenido del archivo"
+
+#: clipboardManager.py:40
+msgid "File content copied to clipboard"
+msgstr "Contenido del archivo copiado al portapapeles"
+
+#: compressionManager.py:15
+msgid "No items selected for compression"
+msgstr "No hay elementos seleccionados para compresión"
+
+#: compressionManager.py:20
+msgid "Error compressing files to ZIP"
+msgstr "Error al comprimir archivos en ZIP"
+
+#: compressionManager.py:25
+msgid "Files compressed to {0}"
+msgstr "Archivos comprimidos en {0}"
+
+#: config.py:10
+msgid "xPlorer Settings"
+msgstr "Configuración de xPlorer"
+
+#: config.py:15
+msgid "Enable compression"
+msgstr "Habilitar compresión"
+
+#: config.py:20
+msgid "Default ZIP name"
+msgstr "Nombre ZIP predeterminado"
+
+#: config.py:25
+msgid "Error loading settings"
+msgstr "Error al cargar la configuración"
+
+#: config.py:30
+msgid "Settings saved"
+msgstr "Configuración guardada"
+
+#: fileOperations.py:15
+msgid "No file selected for renaming"
+msgstr "No hay archivo seleccionado para renombrar"
+
+#: fileOperations.py:20
+msgid "Enter new file name"
+msgstr "Ingresar nuevo nombre de archivo"
+
+#: fileOperations.py:25
+msgid "File name cannot be empty"
+msgstr "El nombre del archivo no puede estar vacío"
+
+#: fileOperations.py:30
+msgid "Error renaming file"
+msgstr "Error al renombrar el archivo"
+
+#: fileOperations.py:35
+msgid "File renamed to {0}"
+msgstr "Archivo renombrado a {0}"
+
+#: fileOperations.py:40
+msgid "Error calculating size"
+msgstr "Error al calcular el tamaño"
+
+#: fileOperations.py:45
+msgid "Total size: {0}"
+msgstr "Tamaño total: {0}"
+
+#: selectionManager.py:28
+msgid "No active File Explorer window found"
+msgstr "No se encontró una ventana activa del Explorador de Archivos"
+
+#: selectionManager.py:33
+msgid "Unable to get folder view"
+msgstr "No se pudo obtener la vista de carpeta"
+
+#: selectionManager.py:39
+msgid "No items in folder"
+msgstr "No hay elementos en la carpeta"
+
+#: selectionManager.py:52
+msgid "Inverted selection: {0} of {1} items selected"
+msgstr "Selección invertida: {0} de {1} elementos seleccionados"
+
+#: selectionManager.py:56
+msgid "Error inverting selection"
+msgstr "Error al invertir la selección"
+
+#: xPlorerManager.py:10
+msgid "xPlorer Settings Panel"
+msgstr "Panel de configuración de xPlorer"
+
+#: xPlorerManager.py:15
+msgid "Enable xPlorer features"
+msgstr "Habilitar funciones de xPlorer"
+
+#: xPlorerManager.py:20
+msgid "Error initializing xPlorer"
+msgstr "Error al inicializar xPlorer"

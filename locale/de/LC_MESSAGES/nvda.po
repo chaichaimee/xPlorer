@@ -1,20 +1,203 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Copyright (C) 2025 chai chaimee
+# This file is distributed under the same license as the xPlorer package.
+# chai chaimee <chai@example.com>, 2025.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: xPlorer v 2025.11\n"
-"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2025-09-08 10:58+0700\n"
-"PO-Revision-Date: 2025-09-08 16:21+0700\n"
-"Last-Translator: Your Name <your.email@example.com>\n"
-"Language-Team: Your Name <your.email@example.com>\n"
+"Project-Id-Version: xPlorer v 2025.12\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-01 18:58+0700\n"
+"PO-Revision-Date: 2025-10-01 18:58+0700\n"
+"Last-Translator: \n"
+"Language-Team: German <translation-team-de@example.com>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.7\n"
-"X-Poedit-SourceCharset: UTF-8\n"
+
+#: __init__.py:37
+msgid "xPlorer"
+msgstr "xPlorer"
+
+#: __init__.py:119 selectionManager.py:23
+msgid "Not in File Explorer"
+msgstr "Nicht im Datei-Explorer"
+
+#: __init__.py:155 __init__.py:205
+msgid "say size"
+msgstr "Größe ausgeben"
+
+#: __init__.py:162
+msgid "Copy selected file and folder names to clipboard"
+msgstr "Ausgewählte Datei- und Ordnernamen in die Zwischenablage kopieren"
+
+#: __init__.py:169
+msgid "Copy content of selected text file(s) to clipboard"
+msgstr "Inhalt der ausgewählten Textdatei(en) in die Zwischenablage kopieren"
+
+#: __init__.py:176
+msgid "Compress selected items to ZIP"
+msgstr "Ausgewählte Elemente in ZIP komprimieren"
+
+#: __init__.py:183 __init__.py:204
+msgid "Rename selected file"
+msgstr "Ausgewählte Datei umbenennen"
+
+#: __init__.py:190
+msgid "Invert selection in File Explorer"
+msgstr "Auswahl im Datei-Explorer umkehren"
+
+#: __init__.py:200
+msgid "Compress zip"
+msgstr "ZIP komprimieren"
+
+#: __init__.py:201
+msgid "Copy content"
+msgstr "Inhalt kopieren"
+
+#: __init__.py:202
+msgid "Copy selected file and folder names"
+msgstr "Ausgewählte Datei- und Ordnernamen kopieren"
+
+#: __init__.py:203
+msgid "Invert selection"
+msgstr "Auswahl umkehren"
+
+#: __init__.py:216
+msgid "Error displaying popup menu: {0}"
+msgstr "Fehler beim Anzeigen des Popup-Menüs: {0}"
+
+#: __init__.py:220
+msgid "Error displaying context menu"
+msgstr "Fehler beim Anzeigen des Kontextmenüs"
+
+#: __init__.py:227
+msgid "Error opening context menu"
+msgstr "Fehler beim Öffnen des Kontextmenüs"
+
+#: __init__.py:238
+msgid "This command is only available in File Explorer."
+msgstr "Dieser Befehl ist nur im Datei-Explorer verfügbar."
+
+#: __init__.py:242
+msgid "Open xPlorer context menu"
+msgstr "xPlorer-Kontextmenü öffnen"
+
+#: clipboardManager.py:15
+msgid "No files selected"
+msgstr "Keine Dateien ausgewählt"
+
+#: clipboardManager.py:20
+msgid "Error copying file names to clipboard"
+msgstr "Fehler beim Kopieren der Dateinamen in die Zwischenablage"
+
+#: clipboardManager.py:25
+msgid "Selected file names copied to clipboard"
+msgstr "Ausgewählte Dateinamen in die Zwischenablage kopiert"
+
+#: clipboardManager.py:30
+msgid "No text files selected"
+msgstr "Keine Textdateien ausgewählt"
+
+#: clipboardManager.py:35
+msgid "Error copying file content"
+msgstr "Fehler beim Kopieren des Dateiinhalts"
+
+#: clipboardManager.py:40
+msgid "File content copied to clipboard"
+msgstr "Dateiinhalt in die Zwischenablage kopiert"
+
+#: compressionManager.py:15
+msgid "No items selected for compression"
+msgstr "Keine Elemente für die Komprimierung ausgewählt"
+
+#: compressionManager.py:20
+msgid "Error compressing files to ZIP"
+msgstr "Fehler beim Komprimieren der Dateien in ZIP"
+
+#: compressionManager.py:25
+msgid "Files compressed to {0}"
+msgstr "Dateien in {0} komprimiert"
+
+#: config.py:10
+msgid "xPlorer Settings"
+msgstr "xPlorer-Einstellungen"
+
+#: config.py:15
+msgid "Enable compression"
+msgstr "Komprimierung aktivieren"
+
+#: config.py:20
+msgid "Default ZIP name"
+msgstr "Standard-ZIP-Name"
+
+#: config.py:25
+msgid "Error loading settings"
+msgstr "Fehler beim Laden der Einstellungen"
+
+#: config.py:30
+msgid "Settings saved"
+msgstr "Einstellungen gespeichert"
+
+#: fileOperations.py:15
+msgid "No file selected for renaming"
+msgstr "Keine Datei zum Umbenennen ausgewählt"
+
+#: fileOperations.py:20
+msgid "Enter new file name"
+msgstr "Neuen Dateinamen eingeben"
+
+#: fileOperations.py:25
+msgid "File name cannot be empty"
+msgstr "Dateiname darf nicht leer sein"
+
+#: fileOperations.py:30
+msgid "Error renaming file"
+msgstr "Fehler beim Umbenennen der Datei"
+
+#: fileOperations.py:35
+msgid "File renamed to {0}"
+msgstr "Datei umbenannt in {0}"
+
+#: fileOperations.py:40
+msgid "Error calculating size"
+msgstr "Fehler beim Berechnen der Größe"
+
+#: fileOperations.py:45
+msgid "Total size: {0}"
+msgstr "Gesamtgröße: {0}"
+
+#: selectionManager.py:28
+msgid "No active File Explorer window found"
+msgstr "Kein aktives Datei-Explorer-Fenster gefunden"
+
+#: selectionManager.py:33
+msgid "Unable to get folder view"
+msgstr "Ordneransicht konnte nicht abgerufen werden"
+
+#: selectionManager.py:39
+msgid "No items in folder"
+msgstr "Keine Elemente im Ordner"
+
+#: selectionManager.py:52
+msgid "Inverted selection: {0} of {1} items selected"
+msgstr "Umgekehrte Auswahl: {0} von {1} Elementen ausgewählt"
+
+#: selectionManager.py:56
+msgid "Error inverting selection"
+msgstr "Fehler beim Umkehren der Auswahl"
+
+#: xPlorerManager.py:10
+msgid "xPlorer Settings Panel"
+msgstr "xPlorer-Einstellungspanel"
+
+#: xPlorerManager.py:15
+msgid "Enable xPlorer features"
+msgstr "xPlorer-Funktionen aktivieren"
+
+#: xPlorerManager.py:20
+msgid "Error initializing xPlorer"
+msgstr "Fehler beim Initialisieren von xPlorer"
