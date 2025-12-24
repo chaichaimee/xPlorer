@@ -1,16 +1,16 @@
-# SOME DESCRIPTIVE TITLE.
+# Spanish translation for xPlorer.
 # Copyright (C) 2025 chai chaimee
 # This file is distributed under the same license as the xPlorer package.
 # chai chaimee <chai@example.com>, 2025.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: xPlorer v 2025.12\n"
+"Project-Id-Version: xPlorer v 2026.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-01 18:58+0700\n"
-"PO-Revision-Date: 2025-10-01 18:58+0700\n"
-"Last-Translator: \n"
-"Language-Team: Spanish <translation-team-es@example.com>\n"
+"POT-Creation-Date: 2025-12-22 12:00+0700\n"
+"PO-Revision-Date: 2025-12-22 10:53+0700\n"
+"Last-Translator: chai chaimee <chai@example.com>\n"
+"Language-Team: Spanish\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,186 +18,586 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.7\n"
 
-#: __init__.py:37
+#: __init__.py:28 xPlorerManager.py:18
 msgid "xPlorer"
 msgstr "xPlorer"
 
-#: __init__.py:119 selectionManager.py:23
+#: __init__.py:90 clipboardManager.py:25
+msgid "No items selected"
+msgstr "No hay elementos seleccionados"
+
+#: __init__.py:96 selectionManager.py:23 txt2folder.py:25
 msgid "Not in File Explorer"
-msgstr "No en el Explorador de Archivos"
+msgstr "No está en el Explorador de archivos"
 
-#: __init__.py:155 __init__.py:205
+#: __init__.py:104 fileOperations.py:93
+msgid "No access to size data"
+msgstr "Sin acceso a los datos de tamaño"
+
+#: __init__.py:112 fileOperations.py:114
+msgid "{count} items {size}"
+msgstr "{count} elementos {size}"
+
+#: __init__.py:119 fileOperations.py:68
 msgid "say size"
-msgstr "Decir tamaño"
+msgstr "decir tamaño"
 
-#: __init__.py:162
-msgid "Copy selected file and folder names to clipboard"
-msgstr "Copiar nombres de archivos y carpetas seleccionados al portapapeles"
+#: __init__.py:127
+msgid "Copy selected names (single tap) or copy address bar (double tap)"
+msgstr "Copiar nombres seleccionados (un toque) o copiar barra de direcciones (doble toque)"
 
-#: __init__.py:169
+#: __init__.py:129
 msgid "Copy content of selected text file(s) to clipboard"
-msgstr "Copiar contenido de archivo(s) de texto seleccionado(s) al portapapeles"
+msgstr "Copiar el contenido de los archivos de texto seleccionados al portapapeles"
 
-#: __init__.py:176
+#: __init__.py:131
 msgid "Compress selected items to ZIP"
 msgstr "Comprimir elementos seleccionados en ZIP"
 
-#: __init__.py:183 __init__.py:204
+#: __init__.py:133 __init__.py:578
 msgid "Rename selected file"
 msgstr "Renombrar archivo seleccionado"
 
-#: __init__.py:190
+#: __init__.py:135
 msgid "Invert selection in File Explorer"
-msgstr "Invertir selección en el Explorador de Archivos"
+msgstr "Invertir selección en el Explorador de archivos"
 
-#: __init__.py:200
-msgid "Compress zip"
-msgstr "Comprimir en ZIP"
-
-#: __init__.py:201
-msgid "Copy content"
-msgstr "Copiar contenido"
-
-#: __init__.py:202
-msgid "Copy selected file and folder names"
-msgstr "Copiar nombres de archivos y carpetas seleccionados"
-
-#: __init__.py:203
-msgid "Invert selection"
-msgstr "Invertir selección"
-
-#: __init__.py:216
-msgid "Error displaying popup menu: {0}"
-msgstr "Error al mostrar el menú emergente: {0}"
-
-#: __init__.py:220
-msgid "Error displaying context menu"
-msgstr "Error al mostrar el menú contextual"
-
-#: __init__.py:227
-msgid "Error opening context menu"
-msgstr "Error al abrir el menú contextual"
-
-#: __init__.py:238
-msgid "This command is only available in File Explorer."
-msgstr "Este comando solo está disponible en el Explorador de Archivos."
-
-#: __init__.py:242
+#: __init__.py:137
 msgid "Open xPlorer context menu"
-msgstr "Abrir el menú contextual de xPlorer"
+msgstr "Abrir menú contextual de xPlorer"
 
-#: clipboardManager.py:15
-msgid "No files selected"
-msgstr "No hay archivos seleccionados"
+#: __init__.py:162
+msgid "Copied: {path}"
+msgstr "Copiado: {path}"
 
-#: clipboardManager.py:20
-msgid "Error copying file names to clipboard"
-msgstr "Error al copiar nombres de archivos al portapapeles"
+#: __init__.py:164
+msgid "Could not open clipboard"
+msgstr "No se pudo abrir el portapapeles"
 
-#: clipboardManager.py:25
-msgid "Selected file names copied to clipboard"
-msgstr "Nombres de archivos seleccionados copiados al portapapeles"
+#: __init__.py:166
+msgid "Unable to get current path"
+msgstr "No se pudo obtener la ruta actual"
 
-#: clipboardManager.py:30
+#: __init__.py:212 clipboardManager.py:38
+msgid "Copied 1 item name to clipboard"
+msgstr "Se copió el nombre de 1 elemento al portapapeles"
+
+#: __init__.py:214 clipboardManager.py:40
+msgid "Copied {count} item names to clipboard"
+msgstr "Se copiaron los nombres de {count} elementos al portapapeles"
+
+#: __init__.py:221 clipboardManager.py:45
+msgid "Error copying names to clipboard"
+msgstr "Error al copiar los nombres al portapapeles"
+
+#: __init__.py:235
+msgid "Cannot copy content of folders, please select files only"
+msgstr "No se puede copiar el contenido de las carpetas, seleccione solo archivos"
+
+#: __init__.py:239 clipboardManager.py:66
 msgid "No text files selected"
 msgstr "No hay archivos de texto seleccionados"
 
-#: clipboardManager.py:35
+#: __init__.py:242
+msgid "Total file size is too large to copy content"
+msgstr "El tamaño total del archivo es demasiado grande para copiar el contenido"
+
+#: __init__.py:246 clipboardManager.py:82
+msgid "[Error processing RTF file]"
+msgstr "[Error al procesar el archivo RTF]"
+
+#: __init__.py:249 clipboardManager.py:85
+msgid "[RTF content - striprtf module not available]"
+msgstr "[Contenido RTF - módulo striprtf no disponible]"
+
+#: __init__.py:258 clipboardManager.py:103
+msgid "No content could be read from selected files"
+msgstr "No se pudo leer ningún contenido de los archivos seleccionados"
+
+#: __init__.py:264 clipboardManager.py:108
+msgid "Content from 1 file copied to clipboard"
+msgstr "Contenido de 1 archivo copiado al portapapeles"
+
+#: __init__.py:266 clipboardManager.py:110
+msgid "Content from {count} files copied to clipboard"
+msgstr "Contenido de {count} archivos copiado al portapapeles"
+
+#: __init__.py:269 clipboardManager.py:113
 msgid "Error copying file content"
 msgstr "Error al copiar el contenido del archivo"
 
-#: clipboardManager.py:40
-msgid "File content copied to clipboard"
-msgstr "Contenido del archivo copiado al portapapeles"
+#: __init__.py:290 compressionManager.py:127
+msgid "Compression cancelled"
+msgstr "Compresión cancelada"
 
-#: compressionManager.py:15
-msgid "No items selected for compression"
-msgstr "No hay elementos seleccionados para compresión"
+#: __init__.py:293 compressionManager.py:130
+msgid "Compression completed {name}"
+msgstr "Compresión completada {name}"
 
-#: compressionManager.py:20
-msgid "Error compressing files to ZIP"
-msgstr "Error al comprimir archivos en ZIP"
+#: __init__.py:296 compressionManager.py:133
+msgid "compression failed: {error}"
+msgstr "falló la compresión: {error}"
 
-#: compressionManager.py:25
-msgid "Files compressed to {0}"
-msgstr "Archivos comprimidos en {0}"
+#: __init__.py:299 compressionManager.py:136
+msgid "Error in compression process: {error}"
+msgstr "Error en el proceso de compresión: {error}"
 
-#: config.py:10
-msgid "xPlorer Settings"
-msgstr "Configuración de xPlorer"
+#: __init__.py:336
+msgid "7-Zip compression failed, trying built-in method..."
+msgstr "Falló la compresión de 7-Zip, probando el método integrado..."
 
-#: config.py:15
-msgid "Enable compression"
-msgstr "Habilitar compresión"
+#: __init__.py:342 compressionManager.py:159
+msgid "Error compressing files"
+msgstr "Error al comprimir los archivos"
 
-#: config.py:20
-msgid "Default ZIP name"
-msgstr "Nombre ZIP predeterminado"
+#: __init__.py:416
+msgid "Compressing: {percent}%"
+msgstr "Comprimiendo: {percent}%"
 
-#: config.py:25
-msgid "Error loading settings"
-msgstr "Error al cargar la configuración"
+#: __init__.py:419 compressionManager.py:199
+msgid "Completed"
+msgstr "Completado"
 
-#: config.py:30
-msgid "Settings saved"
-msgstr "Configuración guardada"
+#: __init__.py:421 compressionManager.py:201
+msgid "Built-in compression failed: {error}"
+msgstr "Falló la compresión integrada: {error}"
 
-#: fileOperations.py:15
-msgid "No file selected for renaming"
-msgstr "No hay archivo seleccionado para renombrar"
+#: __init__.py:438 fileOperations.py:178
+msgid "Please select only one file"
+msgstr "Por favor, seleccione solo un archivo"
 
-#: fileOperations.py:20
-msgid "Enter new file name"
-msgstr "Ingresar nuevo nombre de archivo"
+#: __init__.py:441 fileOperations.py:181
+msgid "Please select a file, not a folder"
+msgstr "Por favor, seleccione un archivo, no una carpeta"
 
-#: fileOperations.py:25
-msgid "File name cannot be empty"
-msgstr "El nombre del archivo no puede estar vacío"
-
-#: fileOperations.py:30
+#: __init__.py:447 fileOperations.py:188
 msgid "Error renaming file"
 msgstr "Error al renombrar el archivo"
 
-#: fileOperations.py:35
-msgid "File renamed to {0}"
-msgstr "Archivo renombrado a {0}"
+#: __init__.py:470 fileOperations.py:210
+msgid "File name cannot be empty"
+msgstr "El nombre del archivo no puede estar vacío"
 
-#: fileOperations.py:40
-msgid "Error calculating size"
-msgstr "Error al calcular el tamaño"
+#: __init__.py:477 fileOperations.py:217
+msgid "File renamed to {name}"
+msgstr "Archivo renombrado a {name}"
 
-#: fileOperations.py:45
-msgid "Total size: {0}"
-msgstr "Tamaño total: {0}"
+#: __init__.py:481 fileOperations.py:221
+msgid "A file with this name already exists"
+msgstr "Ya existe un archivo con este nombre"
 
-#: selectionManager.py:28
+#: __init__.py:488 fileOperations.py:228
+msgid "Error opening rename dialog"
+msgstr "Error al abrir el cuadro de diálogo de renombrado"
+
+#: __init__.py:514 selectionManager.py:28
 msgid "No active File Explorer window found"
-msgstr "No se encontró una ventana activa del Explorador de Archivos"
+msgstr "No se encontró ninguna ventana activa del Explorador de archivos"
 
-#: selectionManager.py:33
+#: __init__.py:523 selectionManager.py:33
 msgid "Unable to get folder view"
 msgstr "No se pudo obtener la vista de carpeta"
 
-#: selectionManager.py:39
+#: __init__.py:530 selectionManager.py:39
 msgid "No items in folder"
 msgstr "No hay elementos en la carpeta"
 
-#: selectionManager.py:52
-msgid "Inverted selection: {0} of {1} items selected"
-msgstr "Selección invertida: {0} de {1} elementos seleccionados"
+#: __init__.py:547 selectionManager.py:52
+msgid "Inverted selection: {inverted} of {total} items selected"
+msgstr "Selección invertida: {inverted} de {total} elementos seleccionados"
 
-#: selectionManager.py:56
+#: __init__.py:550 selectionManager.py:56
 msgid "Error inverting selection"
 msgstr "Error al invertir la selección"
 
-#: xPlorerManager.py:10
-msgid "xPlorer Settings Panel"
-msgstr "Panel de configuración de xPlorer"
+#: __init__.py:574
+msgid "Compress zip"
+msgstr "Comprimir zip"
 
-#: xPlorerManager.py:15
-msgid "Enable xPlorer features"
-msgstr "Habilitar funciones de xPlorer"
+#: __init__.py:575
+msgid "Copy content"
+msgstr "Copiar contenido"
+
+#: __init__.py:576
+msgid "Copy selected file and folder names"
+msgstr "Copiar nombres de archivos y carpetas seleccionados"
+
+#: __init__.py:577
+msgid "Invert selection"
+msgstr "Invertir selección"
+
+#: __init__.py:582
+msgid "Robocopy"
+msgstr "Robocopy"
+
+#: __init__.py:583
+msgid "copy"
+msgstr "copiar"
+
+#: __init__.py:584
+msgid "move"
+msgstr "mover"
+
+#: __init__.py:585
+msgid "paste"
+msgstr "pegar"
+
+#: __init__.py:588
+msgid "mirror Backup"
+msgstr "Copia de seguridad en espejo"
+
+#: __init__.py:592
+msgid "TXT to Folder"
+msgstr "TXT a carpeta"
+
+#: __init__.py:596
+msgid "Copy address bar"
+msgstr "Copiar barra de direcciones"
+
+#: __init__.py:605
+msgid "Error displaying popup menu: {e}"
+msgstr "Error al mostrar el menú emergente: {e}"
+
+#: __init__.py:609
+msgid "Error displaying context menu"
+msgstr "Error al mostrar el menú contextual"
+
+#: __init__.py:616
+msgid "Error opening context menu"
+msgstr "Error al abrir el menú contextual"
+
+#: __init__.py:639
+msgid "This command is only available in File Explorer."
+msgstr "Este comando solo está disponible en el Explorador de archivos."
+
+#: compressionManager.py:118
+msgid "Compressing files"
+msgstr "Comprimiendo archivos"
+
+#: compressionManager.py:119
+msgid "Starting..."
+msgstr "Iniciando..."
+
+#: compressionManager.py:156
+msgid "Compressing files in background..."
+msgstr "Comprimiendo archivos en segundo plano..."
+
+#: robocopyManager.py:62
+msgid "Compressing files..."
+msgstr "Comprimiendo archivos..."
+
+#: robocopyManager.py:71
+msgid "Progress: {}%"
+msgstr "Progreso: {}%"
+
+#: robocopyManager.py:73
+msgid "Elapsed time: {} seconds"
+msgstr "Tiempo transcurrido: {} segundos"
+
+#: robocopyManager.py:75
+msgid "Speed: {}"
+msgstr "Velocidad: {}"
+
+#: robocopyManager.py:89
+msgid "Mirror Backup Settings"
+msgstr "Configuración de copia de seguridad en espejo"
+
+#: robocopyManager.py:93
+msgid "Source folders (select to edit):"
+msgstr "Carpetas de origen (seleccionar para editar):"
+
+#: robocopyManager.py:94
+msgid "Source folders list"
+msgstr "Lista de carpetas de origen"
+
+#: robocopyManager.py:98
+msgid "Remove selected source"
+msgstr "Eliminar origen seleccionado"
+
+#: robocopyManager.py:101
+msgid "Destination folders:"
+msgstr "Carpetas de destino:"
+
+#: robocopyManager.py:102
+msgid "Destination folders list"
+msgstr "Lista de carpetas de destino"
+
+#: robocopyManager.py:108
+msgid "Add destination folder"
+msgstr "Añadir carpeta de destino"
+
+#: robocopyManager.py:109
+msgid "Remove selected destination"
+msgstr "Eliminar destino seleccionado"
+
+#: robocopyManager.py:114
+msgid "Enable automatic synchronization"
+msgstr "Activar sincronización automática"
+
+#: robocopyManager.py:116
+msgid "Synchronization interval:"
+msgstr "Intervalo de sincronización:"
+
+#: robocopyManager.py:122
+msgid "15 minutes"
+msgstr "15 minutos"
+
+#: robocopyManager.py:123
+msgid "30 minutes"
+msgstr "30 minutos"
+
+#: robocopyManager.py:124
+msgid "1 hour"
+msgstr "1 hora"
+
+#: robocopyManager.py:125
+msgid "1 day"
+msgstr "1 día"
+
+#: robocopyManager.py:126
+msgid "7 days"
+msgstr "7 días"
+
+#: robocopyManager.py:127
+msgid "15 days"
+msgstr "15 días"
+
+#: robocopyManager.py:128
+msgid "1 month"
+msgstr "1 mes"
+
+#: robocopyManager.py:130
+msgid "Scheduled time:"
+msgstr "Hora programada:"
+
+#: robocopyManager.py:134
+msgid "Clear all settings"
+msgstr "Borrar todos los ajustes"
+
+#: robocopyManager.py:135
+msgid "Start synchronization"
+msgstr "Iniciar sincronización"
+
+#: robocopyManager.py:136
+msgid "OK"
+msgstr "Aceptar"
+
+#: robocopyManager.py:137
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: robocopyManager.py:174
+msgid "Choose destination folder"
+msgstr "Elegir carpeta de destino"
+
+#: robocopyManager.py:195
+msgid "Source and destination required"
+msgstr "Origen y destino requeridos"
+
+#: robocopyManager.py:198
+msgid "Invalid time format"
+msgstr "Formato de hora no válido"
+
+#: robocopyManager.py:200
+msgid "Starting immediate mirror sync..."
+msgstr "Iniciando sincronización inmediata en espejo..."
+
+#: robocopyManager.py:224
+msgid "Immediate sync completed: {}/{} destinations"
+msgstr "Sincronización inmediata completada: {}/{} destinos"
+
+#: robocopyManager.py:228
+msgid "Sync error occurred"
+msgstr "Ocurrió un error de sincronización"
+
+#: robocopyManager.py:289
+msgid "Next scheduled backup for {}: {}"
+msgstr "Próxima copia programada para {}: {}"
+
+#: robocopyManager.py:295
+msgid "Scheduled mirror backup started for {}"
+msgstr "Copia en espejo programada iniciada para {}"
+
+#: robocopyManager.py:316
+msgid "Scheduled backup completed: {}/{} destinations"
+msgstr "Copia programada completada: {}/{} destinos"
+
+#: robocopyManager.py:348
+msgid "Please select only one folder"
+msgstr "Por favor, seleccione solo una carpeta"
+
+#: robocopyManager.py:351
+msgid "Please select a folder"
+msgstr "Por favor, seleccione una carpeta"
+
+#: robocopyManager.py:381
+msgid "Mirror backup configured successfully"
+msgstr "Copia en espejo configurada correctamente"
+
+#: robocopyManager.py:384
+msgid "Mirror backup disabled"
+msgstr "Copia en espejo desactivada"
+
+#: robocopyManager.py:396
+msgid "Select one item only"
+msgstr "Seleccione solo un elemento"
+
+#: robocopyManager.py:399
+msgid "Source for copy: {}"
+msgstr "Origen para copiar: {}"
+
+#: robocopyManager.py:409
+msgid "Source for move: {}"
+msgstr "Origen para mover: {}"
+
+#: robocopyManager.py:417
+msgid "No pending operation"
+msgstr "No hay operaciones pendientes"
+
+#: robocopyManager.py:424
+msgid "Cannot get destination"
+msgstr "No se pudo obtener el destino"
+
+#: robocopyManager.py:427
+msgid "Invalid destination"
+msgstr "Destino no válido"
+
+#: robocopyManager.py:435
+msgid "Move"
+msgstr "Mover"
+
+#: robocopyManager.py:436
+msgid "Copy"
+msgstr "Copiar"
+
+#: robocopyManager.py:438
+msgid "Starting {} operation in background..."
+msgstr "Iniciando operación de {} en segundo plano..."
+
+#: robocopyManager.py:448
+msgid "Source does not exist"
+msgstr "El origen no existe"
+
+#: robocopyManager.py:478
+msgid "Destination already exists, overwriting..."
+msgstr "El destino ya existe, sobrescribiendo..."
+
+#: robocopyManager.py:501
+msgid "Large file detected, using compression for speed"
+msgstr "Archivo grande detectado, usando compresión para mayor velocidad"
+
+#: robocopyManager.py:506
+msgid "{} started. You can continue working while it runs in background."
+msgstr "{} iniciado. Puede continuar trabajando mientras se ejecuta en segundo plano."
+
+#: robocopyManager.py:545
+msgid "{} in progress... {} seconds elapsed"
+msgstr "{} en curso... {} segundos transcurridos"
+
+#: robocopyManager.py:558
+msgid "{}: {}% complete, speed: {:.1f} MB/s"
+msgstr "{}: {}% completado, velocidad: {:.1f} MB/s"
+
+#: robocopyManager.py:584
+msgid "{} completed successfully in {:.1f} seconds, average speed: {:.1f} MB/s"
+msgstr "{} completado correctamente en {:.1f} segundos, velocidad media: {:.1f} MB/s"
+
+#: robocopyManager.py:587
+msgid "{} completed successfully in {:.1f} seconds"
+msgstr "{} completado correctamente en {:.1f} segundos"
+
+#: robocopyManager.py:594
+msgid "Trying alternative copy method..."
+msgstr "Probando método de copia alternativo..."
+
+#: robocopyManager.py:608
+msgid "{} completed successfully using alternative method"
+msgstr "{} completado correctamente usando el método alternativo"
+
+#: robocopyManager.py:616
+msgid "{} failed with error: {}"
+msgstr "{} falló con el error: {}"
+
+#: robocopyManager.py:623
+msgid "{} completed with warnings (code: {})"
+msgstr "{} completado con advertencias (código: {})"
+
+#: robocopyManager.py:630
+msgid "Error during {}: {}"
+msgstr "Error durante {}: {}"
+
+#: txt2folder.py:30
+msgid "Please select only one text file"
+msgstr "Por favor, seleccione solo un archivo de texto"
+
+#: txt2folder.py:35
+msgid "Please select a .txt or .rtf file"
+msgstr "Por favor, seleccione un archivo .txt o .rtf"
+
+#: txt2folder.py:40
+msgid "Selected file does not exist"
+msgstr "El archivo seleccionado no existe"
+
+#: txt2folder.py:50
+msgid "Cannot process RTF file: striprtf module not available"
+msgstr "No se puede procesar el archivo RTF: el módulo striprtf no está disponible"
+
+#: txt2folder.py:56
+msgid "Error reading RTF file"
+msgstr "Error al leer el archivo RTF"
+
+#: txt2folder.py:62
+msgid "No valid folder names found in the file"
+msgstr "No se encontraron nombres de carpeta válidos en el archivo"
+
+#: txt2folder.py:77
+msgid "Folder '{}' already exists, creating '{}' instead"
+msgstr "La carpeta '{}' ya existe, creando '{}' en su lugar"
+
+#: txt2folder.py:85
+msgid "Error creating base folder"
+msgstr "Error al crear la carpeta base"
+
+#: txt2folder.py:114
+msgid "Successfully created {} folders in '{}'"
+msgstr "Se crearon correctamente {} carpetas en '{}'"
+
+#: txt2folder.py:117
+msgid "No folders were created"
+msgstr "No se crearon carpetas"
+
+#: txt2folder.py:157
+msgid "Error processing text file: {}"
+msgstr "Error al procesar el archivo de texto: {}"
+
+#: txt2folder.py:161
+msgid "Error reading file encoding"
+msgstr "Error al leer la codificación del archivo"
+
+#: txt2folder.py:166
+msgid "Error: {}"
+msgstr "Error: {}"
+
+#: xPlorerManager.py:10
+msgid "xPlorer Settings"
+msgstr "Configuración de xPlorer"
 
 #: xPlorerManager.py:20
-msgid "Error initializing xPlorer"
-msgstr "Error al inicializar xPlorer"
+msgid "Automatically select the first item"
+msgstr "Seleccionar automáticamente el primer elemento"
+
+#: xPlorerManager.py:24
+msgid "Announce 'Empty Folder' when entering an empty folder"
+msgstr "Anunciar 'Carpeta vacía' al entrar en una carpeta vacía"
+
+#: xPlorerManager.py:28
+msgid "Suppress announcement of DirectUIHWND class"
+msgstr "Suprimir el anuncio de la clase DirectUIHWND"
+
+#: xPlorerManager.py:49
+msgid "Empty Folder"
+msgstr "Carpeta vacía"
+
+#: xPlorerManager.py:125
+msgid "select"
+msgstr "seleccionar"
