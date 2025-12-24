@@ -1,72 +1,110 @@
-<div align="center">
+<p align="center">
+  <img src="https://www.nvaccess.org/files/nvda/documentation/userGuide/images/nvda.ico" alt="NVDA Logo" width="120">
+  <br><br>
+  <h1>xPlorer</h1>
+  <p>NVDA Add-on that enhances File Explorer accessibility and productivity</p>
+</p>
 
-# xPlorer
-
-**Author:** chai chaimee  
-**URL:** https://github.com/chaichaimee/xPlorer
-
-</div>
-
-## What's New in the Latest Version
-
-- **Robocopy function** (smart copy/move with resume capability)
-- Copy & Move operations
-- Paste support
-- **Mirror Backup with scheduling**
+<p align="center">
+  <a href="https://github.com/chaichaimee/xPlorer">
+    <img src="https://img.shields.io/badge/GitHub-Repository-blue?logo=github" alt="GitHub Repository">
+  </a>
+  <img src="https://img.shields.io/badge/NVDA-Add--on-success" alt="NVDA Add-on">
+  <img src="https://img.shields.io/badge/Python-3.8%2B-blue" alt="Python Version">
+</p>
 
 ## Overview
 
-xPlorer is a powerful NVDA add-on that makes File Explorer operations faster and more accessible. It provides quick access to common and advanced file management tasks such as compressing to ZIP, safe renaming (with separate name/extension fields), reading file/folder/drive sizes, copying filenames to clipboard, copying file contents without opening them, and much more.
+**xPlorer** is an NVDA add-on designed to make working in Windows File Explorer faster, more convenient, and more accessible — especially for screen reader users.
 
-## Hot Keys
+The latest version introduces powerful new features including:
 
-- **NVDA+Alt+X** → Open the **xPlorer Context Menu**  
-  Instantly access all xPlorer functions from one convenient submenu.
+- **Copy address bar** (double-tap shortcut)
+- **TXT to Folder** function — create multiple folders from a text list
+- Compress to ZIP
+- Safe rename with separate name/extension fields
+- Copy file/folder names to clipboard
+- Copy content from multiple text files without opening them
+- Say size of files/folders/drives (including total size for multiple selections)
+- Invert selection
+- And more!
 
-- **NVDA+Shift+Z** → **Compress selected items to ZIP**  
-  Compress one or multiple selected files/folders into a ZIP archive automatically.
+All main functions are conveniently gathered in one context menu (NVDA+Alt+X).
 
-- **NVDA+Shift+C** → **Copy selected file/folder names to clipboard**  
-  Copy the names of all selected items for easy pasting elsewhere.
+Here are some examples of File Explorer in action:
 
-- **NVDA+Shift+F2** → **Rename selected file safely**  
-  Opens a dialog with separate fields for filename and extension — preventing accidental deletion or corruption.
+<grok-card data-id="4d128a" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
 
-- **NVDA+Shift+V** → **Copy file content without opening**  
-  Copy the full text content of supported files (≤10 MB each) directly to clipboard.  
-  Supported extensions: `.txt`, `.rtf`, `.py`, `.js`, `.html`, `.css`, `.xml`, `.json`, `.csv`, `.md`, `.ini`, `.conf`, `.cfg`, `.java`, `.cpp`, `.c`, `.h`, `.php`, `.rb`, `.pl`, `.sh`, `.bat`, `.ps1`
 
-- **NVDA+Shift+I** → **Invert selection**  
-  Quickly toggle between currently selected and unselected items.
 
-- **NVDA+Shift+X** → **Say size**  
-  Announces the total size of selected files, folders, or drives (supports multiple selections).
+<grok-card data-id="bb47a0" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
 
-## Features (Toggle in NVDA → Preferences → Settings → xPlorer)
 
-- Automatically select the first item in a folder
-- Announce **“Empty Folder”** when entering an empty directory
-- Suppress announcement of **DirectUIHWND** class (checked by default)
+## 🔑 Main Hotkeys
 
-## Robocopy – Smart & Reliable File Operations
+| Shortcut                              | Function                                                                                   |
+|---------------------------------------|--------------------------------------------------------------------------------------------|
+| `NVDA+Alt+X`                          | Open xPlorer Context Menu (all features in one place)                                      |
+| `NVDA+Shift+Z`                        | Compress selected items to ZIP file                                                        |
+| `NVDA+Shift+C`                        | Copy selected file/folder names to clipboard                                               |
+| `NVDA+Shift+C` (double-tap)           | Copy current folder address bar path                                                       |
+| `NVDA+Shift+F2`                       | Safe rename — opens window with separate filename and extension fields                    |
+| `NVDA+Shift+V`                        | Copy content of selected text files (without opening them) — up to 10 MB per file         |
+| `NVDA+Shift+I`                        | Invert selection (toggle selected/unselected items)                                       |
+| `NVDA+Shift+X`                        | Announce size of selected file(s), folder(s), or drive(s) — shows total for multiples     |
 
-Robocopy is far superior to standard Windows copy/move:
+> **Note**: All shortcuts can be customized in **NVDA → Input Gestures**.
 
-- Skips files that are already identical
-- Resumes automatically after interruption (perfect for large transfers)
-- Ideal for moving or copying huge amounts of data without ever starting over
+### Safe Rename Feature Example
+Edit filename and extension separately to prevent accidental changes:
 
-## Mirror Backup with Schedule
+<grok-card data-id="11891f" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
 
-Set up fully automatic **mirror backups** that run on your schedule:
 
-- Every few minutes, hours, days, or weeks
-- Uses Robocopy to keep the destination folder **100% identical** to the source
-- Runs silently in the background — no manual work required
+### Compress to ZIP Example
+Quickly compress files/folders using the built-in Windows function:
 
-A simple, reliable, hands-free backup solution.
+<grok-card data-id="9dcd40" data-type="image_card"  data-arg-size="LARGE" ></grok-card>
+
+
+## Additional Features
+
+Manage these via **NVDA menu → Preferences → Settings → xPlorer**:
+
+- Automatically select the first item in folders
+- Announce "Empty Folder" when entering empty directories
+- Suppress announcement of DirectUIHWND class
+
+### Advanced Tools
+
+- **Robocopy integration** — smarter, resumable copy/move of large amounts of data (skips identical files)
+- **Mirror Backup with Schedule** — automatic periodic mirror backups of folders using Robocopy
+- **TXT to Folder** — select a .txt file containing a list → create a folder for each line item
+
+## Installation
+
+1. Download the latest `.nvda-addon` from [Releases](https://github.com/chaichaimee/xPlorer/releases)
+2. Double-click the downloaded file
+3. Confirm installation when prompted by NVDA
+4. Restart NVDA
+
+## Compatibility
+
+- NVDA 2022.1 and later (recommended: latest version)
+- Windows 10 / 11
+
+## Author
+
+**chai chaimee**  
+GitHub: [@chaichaimee](https://github.com/chaichaimee)
 
 ## Donation
 
-If you enjoy my add-ons and would like to support future development, you can donate here:  
-https://github.com/chaichaimee
+If you find **xPlorer** useful and would like to support development:  
+💝 [Donate via GitHub Sponsors](https://github.com/chaichaimee)  
+Thank you for your support!
+
+---
+
+Thank you for using **xPlorer** 🌟  
+Make File Explorer work the way you want — faster and easier!
