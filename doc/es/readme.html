@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>xPlorer NVDA Add-on</title>
+<style>
+/* (el mismo estilo que el original - sin cambios) */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1, h2, h3 {
+    text-align: center;
+}
+b {
+    font-weight: bold;
+}
+.section {
+    margin-bottom: 30px;
+}
+.nvda-logo {
+    display: block;
+    margin: 0 auto 20px;
+    width: 120px;
+    height: auto;
+}
+.hotkey {
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 0 4px 4px 0;
+}
+.tap-explanation {
+    background: #e8f4fc;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+.feature-item {
+    margin: 15px 0;
+    padding-left: 10px;
+}
+.note {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 12px;
+    margin: 15px 0;
+    border-radius: 0 4px 4px 0;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="section">
+    <img src="https://www.nvaccess.org/files/nvda/documentation/userGuide/images/nvda.ico" alt="NVDA Logo" class="nvda-logo">
+<h1>xPlorer</h1>
+<br>
+<p><strong>Autor:</strong> 'chai chaimee</p>
+<p><strong>URL:</strong> <a href="https://github.com/chaichaimee/xPlorer">https://github.com/chaichaimee/xPlorer</a></p>
+<br><br>
+<h2>¿Qué hay de nuevo en la última versión?</h2>
+<br>
+<p>Crear archivo<br>
+<p>Editar nuevos atajos de teclado – más cómodos de usar y mejora en la función Decir tamaño<br>
+<br><br>
+<h2>Resumen</h2>
+<p>xPlorer es una herramienta diseñada para facilitar el acceso a las operaciones del Explorador de archivos.  
+La versión más reciente incluye funciones para gestionar archivos y carpetas, como comprimir elementos en ZIP, renombrar archivos mediante una ventana dedicada que separa nombre y extensión para evitar borrados accidentales, leer el tamaño de archivos, carpetas o unidades, y copiar los nombres de archivos y carpetas seleccionados al portapapeles, entre otras.</p>
+<br>
+<h2>Atajos de teclado</h2>
+<br>
+<p><strong>• NVDA+Shift+X : Abrir menú contextual de xPlorer</strong></p>
+<p>Selecciona un archivo o carpeta y abre el menú contextual. Este submenú reúne todas las funciones de xPlorer en un solo lugar para acceder a ellas rápidamente.<br>
+<br>
+<p><strong>• NVDA+Shift+Z Toca una vez : Decir tamaño</strong></p>
+<p>Selecciona un archivo de texto en el editor (que ya tenga contenido) o varios archivos (ninguno mayor de 10 MB).  
+Pulsa el atajo para copiar todo su contenido sin abrir los archivos – ahorra pasos al trabajar con varios documentos.  
+En la última versión también puedes seleccionar varios archivos o carpetas para ver el tamaño total.</p>
+<br>
+<p><strong>• NVDA+Shift+Z Toca dos veces : Comprimir elementos seleccionados en ZIP</strong></p>
+<p>Selecciona los archivos o selecciona todo, luego pulsa el atajo.  
+Los elementos seleccionados se comprimirán automáticamente en un archivo ZIP.</p>
+<br>
+<p><strong>• NVDA+Shift+C : Copiar nombres de archivos y carpetas seleccionados al portapapeles</strong></p>
+<p>Selecciona los archivos deseados (uno o varios) o selecciona todo, luego pulsa el atajo.  
+Todos los nombres de archivos y carpetas seleccionados se copiarán al portapapeles para pegarlos en un editor de texto.</p>
+<br>
+<p><strong>• NVDA+Shift+C Doble toque : Copiar barra de direcciones del Explorador</strong></p>
+<p>Cuando estés en la carpeta cuyo camino deseas copiar, simplemente pulsa dos veces el atajo para copiar directamente la barra de direcciones – más rápido que usar Ctrl+L.<br>
+<br>
+<p><strong>• NVDA+Shift+V Toca una vez : Copiar contenido</strong></p>
+<p>Selecciona un archivo de texto (que ya tenga contenido) o varios archivos (ninguno mayor de 10 MB), luego pulsa el atajo.  
+Puedes copiar todo el contenido sin abrir los archivos.  
+Extensiones soportadas: .txt, .rtf, .py, .js, .html, .css, .xml, .json, .csv, .md, .ini, .conf, .cfg, .java, .cpp, .c, .h, .php, .rb, .pl, .sh, .bat, .ps1</p>
+<br>
+<p><strong>• NVDA+Shift+V Doble toque : Invertir selección</strong></p>
+<p>Selecciona un archivo o carpeta, pulsa NVDA+Shift+I para invertir la selección (resalta los elementos no seleccionados). Volver a pulsar invierte nuevamente.<br>
+<br>
+<p><strong>• NVDA+Shift+F2 : Renombrar archivo seleccionado</strong></p>
+<p>Selecciona un archivo y pulsa el atajo.  
+Se abrirá una ventana con campos separados para nombre y extensión.  
+Puedes editar fácilmente el nombre o la extensión.  
+Pulsa Enter para cerrar. Solo se actualizará automáticamente la parte modificada.</p>
+<br>
+<h2>Funciones</h2>
+<p>Funciones adicionales de versiones anteriores se pueden activar o desactivar en:  
+Menú NVDA → Preferencias → Configuración → xPlorer</p>
+<br>
+<ul>
+<li>Seleccionar automáticamente el primer elemento</li>
+<li>Anunciar «Carpeta vacía» al entrar en una carpeta vacía</li>
+<li>Suprimir anuncio de la clase DirectUIHWND (activado)</li>
+</ul>
+<br><br>
+<p>Crear archivo<br>
+<p>Mientras el foco está en el Explorador de archivos en la ubicación deseada, abre el menú contextual de xPlorer y selecciona Crear archivo. Aparecerá un diálogo para indicar el nombre y extensión deseados. Puedes crear cualquier cantidad de archivos. Soporta muchos formatos de texto y programación.<br>
+<br>
+<p><strong>Robocopy</strong> es un comando para «mover» o «copiar» carpetas y archivos de forma más inteligente que la copia normal de Windows.</p>
+<p>No vuelve a copiar archivos idénticos.</p>
+<p>Incluso con muchos archivos o archivos muy grandes, puede continuar desde donde se interrumpió.</p>
+<p>Ideal cuando deseas mover grandes cantidades de datos sin tener que empezar de cero cada vez.</p>
+<br>
+<h3>Copia de seguridad en espejo con programación</h3>
+<p>Esta función permite configurar copias de seguridad en <strong>espejo automáticas</strong> que se ejecutan en el horario que elijas — cada pocos minutos, horas, días o semanas.</p>
+<p>En el momento programado, Robocopy respaldará automáticamente la carpeta origen en la carpeta destino, creando una copia exacta de los datos más recientes.</p>
+<p>Una forma sencilla y confiable de mantener tus archivos actualizados sin hacerlo manualmente.</p>
+<br>
+<h3>TXT a Carpeta</h3>
+<p>Selecciona un archivo .txt que contenga una lista, pulsa NVDA+Alt+X y elige la función TXT a Carpeta.  
+xPlorer creará una subcarpeta con el nombre del archivo .txt y dentro creará una carpeta por cada elemento de la lista.<br>
+<br>
+<h2>Donación</h2>
+<p>Si te gusta mi trabajo, puedes apoyarme mediante:<br>
+<a href="https://github.com/chaichaimee" target="_blank">
+https://github.com/chaichaimee
+</a></p>
+<br><br>
+</body>
+</html>

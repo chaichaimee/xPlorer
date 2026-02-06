@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>xPlorer NVDA Add-on</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1, h2, h3 {
+    text-align: center;
+}
+b {
+    font-weight: bold;
+}
+.section {
+    margin-bottom: 30px;
+}
+.nvda-logo {
+    display: block;
+    margin: 0 auto 20px;
+    width: 120px;
+    height: auto;
+}
+.hotkey {
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 0 4px 4px 0;
+}
+.tap-explanation {
+    background: #e8f4fc;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+.feature-item {
+    margin: 15px 0;
+    padding-left: 10px;
+}
+.note {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 12px;
+    margin: 15px 0;
+    border-radius: 0 4px 4px 0;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="section">
+    <img src="https://www.nvaccess.org/files/nvda/documentation/userGuide/images/nvda.ico" alt="NVDA Logo" class="nvda-logo">
+<h1>xPlorer</h1>
+<br>
+<p><strong>Autor:</strong> 'chai chaimee</p>
+<p><strong>URL:</strong> <a href="https://github.com/chaichaimee/xPlorer">https://github.com/chaichaimee/xPlorer</a></p>
+<br><br>
+<h2>Was ist neu in der neuesten Version?</h2>
+<br>
+<p>Datei erstellen<br>
+<p>Neue Tastenkombinationen bearbeiten – für bequemere Bedienung und Verbesserung der Funktion „Größe vorlesen“<br>
+<br><br>
+<h2>Übersicht</h2>
+<p>xPlorer ist ein Werkzeug, das den Zugriff auf Operationen im Datei-Explorer deutlich erleichtert.  
+Die neueste Version enthält Funktionen zum Verwalten von Dateien und Ordnern, wie das Komprimieren von Elementen in eine ZIP-Datei, das Umbenennen von Dateien über ein eigenes Fenster, das Dateiname und Erweiterung trennt, um versehentliches Löschen zu verhindern, das Vorlesen der Größe von Dateien, Ordnern oder Laufwerken sowie das Kopieren der Namen ausgewählter Dateien und Ordner in die Zwischenablage usw.</p>
+<br>
+<h2>Hotkeys</h2>
+<br>
+<p><strong>• NVDA+Shift+X : xPlorer-Kontextmenü öffnen</strong></p>
+<p>Wählen Sie eine Datei oder einen Ordner aus und öffnen Sie das Kontextmenü. Dieses Untermenü fasst alle xPlorer-Funktionen an einem Ort zusammen, sodass Sie jede Funktion sofort und bequem nutzen können.<br>
+<br>
+<p><strong>• NVDA+Shift+Z Einfacher Druck : Größe vorlesen</strong></p>
+<p>Wählen Sie eine Textdatei im Editor (die bereits Inhalt hat) oder mehrere Dateien (jede nicht größer als 10 MB).  
+Drücken Sie die Tastenkombination, um den gesamten Inhalt zu kopieren, ohne die Dateien zu öffnen – spart viele Schritte bei mehreren Dokumenten.  
+In der neuesten Version können Sie auch mehrere Dateien oder Ordner auswählen, um die Gesamtgröße zu erfahren.</p>
+<br>
+<p><strong>• NVDA+Shift+Z Doppeldruck : Ausgewählte Elemente in ZIP komprimieren</strong></p>
+<p>Wählen Sie die Dateien oder „Alles auswählen“, dann drücken Sie die Tastenkombination.  
+Die ausgewählten Elemente werden automatisch in eine ZIP-Datei komprimiert.</p>
+<br>
+<p><strong>• NVDA+Shift+C : Namen ausgewählter Dateien und Ordner in die Zwischenablage kopieren</strong></p>
+<p>Wählen Sie die gewünschten Dateien (eine oder mehrere) oder „Alles auswählen“, dann drücken Sie die Tastenkombination.  
+Alle Namen der ausgewählten Dateien und Ordner werden in die Zwischenablage kopiert, um sie in einem Texteditor einzufügen.</p>
+<br>
+<p><strong>• NVDA+Shift+C Doppeltipp : Adressleiste im Datei-Explorer kopieren</strong></p>
+<p>Wenn Sie sich im gewünschten Ordner befinden, drücken Sie einfach doppelt die Tastenkombination, um die Adressleiste direkt zu kopieren – schneller als Strg+L zu verwenden.<br>
+<br>
+<p><strong>• NVDA+Shift+V Einfacher Druck : Inhalt kopieren</strong></p>
+<p>Wählen Sie eine Textdatei (die bereits Inhalt hat) oder mehrere Dateien (jede nicht größer als 10 MB), dann drücken Sie die Tastenkombination.  
+Sie können den gesamten Inhalt kopieren, ohne die Dateien zu öffnen.  
+Unterstützte Dateiendungen: .txt, .rtf, .py, .js, .html, .css, .xml, .json, .csv, .md, .ini, .conf, .cfg, .java, .cpp, .c, .h, .php, .rb, .pl, .sh, .bat, .ps1</p>
+<br>
+<p><strong>• NVDA+Shift+V Doppeltipp : Auswahl umkehren</strong></p>
+<p>Wählen Sie eine Datei oder einen Ordner aus, drücken Sie NVDA+Shift+I, um die Auswahl umzukehren (nicht ausgewählte Elemente werden markiert). Ein erneutes Drücken kehrt die Auswahl wieder um.<br>
+<br>
+<p><strong>• NVDA+Shift+F2 : Ausgewählte Datei umbenennen</strong></p>
+<p>Wählen Sie eine Datei aus und drücken Sie die Tastenkombination.  
+Es öffnet sich ein Fenster mit getrennten Feldern für Dateiname und Dateierweiterung.  
+Sie können Name oder Erweiterung einfach bearbeiten.  
+Drücken Sie Enter, um das Fenster zu schließen. Nur der geänderte Teil wird automatisch aktualisiert.</p>
+<br>
+<h2>Funktionen</h2>
+<p>Zusätzliche Funktionen aus früheren Versionen können ein- oder ausgeschaltet werden über:  
+NVDA-Menü → Einstellungen → Einstellungen → xPlorer</p>
+<br>
+<ul>
+<li>Automatisch das erste Element auswählen</li>
+<li>„Leerer Ordner“ ansagen, wenn ein leerer Ordner geöffnet wird</li>
+<li>Ankündigung der Klasse DirectUIHWND unterdrücken (aktiviert)</li>
+</ul>
+<br><br>
+<p>Datei erstellen<br>
+<p>Während der Fokus im Datei-Explorer am gewünschten Ort liegt, öffnen Sie das xPlorer-Kontextmenü und wählen „Datei erstellen“. Es erscheint ein Dialog, in dem Sie den gewünschten Dateinamen und die Erweiterung festlegen können. Sie können beliebig viele Dateien erstellen lassen. Das Feature unterstützt viele Text- und Code-Dateiformate.<br>
+<br>
+<p><strong>Robocopy</strong> ist ein Befehl zum „Verschieben“ oder „Kopieren“ von Ordnern und Dateien – intelligenter als die normale Windows-Kopierfunktion.</p>
+<p>Gleiche Dateien werden nicht erneut kopiert, wenn sie identisch sind.</p>
+<p>Selbst bei sehr vielen oder sehr großen Dateien kann Robocopy bei Unterbrechung genau dort fortsetzen, wo es aufgehört hat.</p>
+<p>Kurz gesagt: Ideal, wenn Sie große Datenmengen „verschieben“ möchten, ohne jedes Mal von vorne zu beginnen.</p>
+<br>
+<h3>Spiegel-Backup mit Zeitplan</h3>
+<p>Diese Funktion ermöglicht automatische <strong>Spiegel-Backups</strong>, die zu einer von Ihnen gewählten Zeit ablaufen – alle paar Minuten, Stunden, Tage oder Wochen.</p>
+<p>Zur festgelegten Zeit führt Robocopy automatisch ein Backup des Quellordners in den Zielordner durch und erstellt eine exakte Spiegelkopie der neuesten Daten.</p>
+<p>Eine einfache und zuverlässige Methode, Ihre Dateien stets aktuell zu halten – ohne manuelles Eingreifen.</p>
+<br>
+<h3>TXT zu Ordner</h3>
+<p>Wählen Sie eine .txt-Datei, die eine Liste enthält, drücken Sie NVDA+Alt+X und wählen Sie die Funktion „TXT zu Ordner“.  
+xPlorer erstellt dann einen Unterordner mit dem Namen der .txt-Datei und legt darin für jeden Listeneintrag einen eigenen Ordner an.<br>
+<br>
+<h2>Spende</h2>
+<p>Wenn Ihnen meine Arbeit gefällt, können Sie mich gerne unterstützen:<br>
+<a href="https://github.com/chaichaimee" target="_blank">
+https://github.com/chaichaimee
+</a></p>
+<br><br>
+</body>
+</html>

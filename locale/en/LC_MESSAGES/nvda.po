@@ -1,203 +1,93 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2025 chai chaimee
-# This file is distributed under the same license as the xPlorer package.
-# chai chaimee <chai@example.com>, 2025.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: xPlorer v 2026.1\n"
+"Project-Id-Version: xTrack 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-22 12:00+0700\n"
-"PO-Revision-Date: 2025-12-22 10:47+0700\n"
-"Last-Translator: chai chaimee <chai@example.com>\n"
+"POT-Creation-Date: 2025-12-08 13:09+0700\n"
+"PO-Revision-Date: 2026-02-02 19:10+0700\n"
+"Last-Translator: Anonymous <anonymous@example.com>\n"
 "Language-Team: English\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.7\n"
 
-#: __init__.py:28 xPlorerManager.py:18
+#: __init__.py:63 __init__.py:317 __init__.py:394
 msgid "xPlorer"
 msgstr "xPlorer"
 
-#: __init__.py:90 clipboardManager.py:25
-msgid "No items selected"
-msgstr "No items selected"
-
-#: __init__.py:96 selectionManager.py:23 txt2folder.py:25
-msgid "Not in File Explorer"
-msgstr "Not in File Explorer"
-
-#: __init__.py:104 fileOperations.py:93
-msgid "No access to size data"
-msgstr "No access to size data"
-
-#: __init__.py:112 fileOperations.py:114
-msgid "{count} items {size}"
-msgstr "{count} items {size}"
-
-#: __init__.py:119 fileOperations.py:68
-msgid "say size"
-msgstr "say size"
-
-#: __init__.py:127
-msgid "Copy selected names (single tap) or copy address bar (double tap)"
-msgstr "Copy selected names (single tap) or copy address bar (double tap)"
-
-#: __init__.py:129
-msgid "Copy content of selected text file(s) to clipboard"
-msgstr "Copy content of selected text file(s) to clipboard"
-
-#: __init__.py:131
-msgid "Compress selected items to ZIP"
-msgstr "Compress selected items to ZIP"
-
-#: __init__.py:133 __init__.py:578
-msgid "Rename selected file"
-msgstr "Rename selected file"
-
-#: __init__.py:135
-msgid "Invert selection in File Explorer"
-msgstr "Invert selection in File Explorer"
-
-#: __init__.py:137
-msgid "Open xPlorer context menu"
-msgstr "Open xPlorer context menu"
-
-#: __init__.py:162
+#: __init__.py:246
 msgid "Copied: {path}"
 msgstr "Copied: {path}"
 
-#: __init__.py:164
+#: __init__.py:248 __init__.py:471
 msgid "Could not open clipboard"
 msgstr "Could not open clipboard"
 
-#: __init__.py:166
+#: __init__.py:250
 msgid "Unable to get current path"
 msgstr "Unable to get current path"
 
-#: __init__.py:212 clipboardManager.py:38
+#: __init__.py:316
+msgid "Copy selected names (single tap) or copy address bar (double tap)"
+msgstr "Copy selected names (single tap) or copy address bar (double tap)"
+
+#: __init__.py:356
+msgid "Copy content (single tap) or invert selection (double tap)"
+msgstr "Copy content (single tap) or invert selection (double tap)"
+
+#: __init__.py:393
+msgid "Say size (single tap) or compress zip (double tap)"
+msgstr "Say size (single tap) or compress zip (double tap)"
+
+#: __init__.py:410
+msgid "Open xPlorer context menu"
+msgstr "Open xPlorer context menu"
+
+#: __init__.py:425
+msgid "Rename selected file"
+msgstr "Rename selected file"
+
+#: __init__.py:435
+msgid "Cannot open settings dialog"
+msgstr "Cannot open settings dialog"
+
+#: __init__.py:441
+msgid "Error opening settings"
+msgstr "Error opening settings"
+
+#: clipboardManager.py:30 clipboardManager.py:53
+msgid "No items selected"
+msgstr "No items selected"
+
+#: clipboardManager.py:46
 msgid "Copied 1 item name to clipboard"
 msgstr "Copied 1 item name to clipboard"
 
-#: __init__.py:214 clipboardManager.py:40
+#: clipboardManager.py:48
 msgid "Copied {count} item names to clipboard"
 msgstr "Copied {count} item names to clipboard"
 
-#: __init__.py:221 clipboardManager.py:45
+#: clipboardManager.py:51
 msgid "Error copying names to clipboard"
 msgstr "Error copying names to clipboard"
 
-#: __init__.py:235
+#: clipboardManager.py:57
 msgid "Cannot copy content of folders, please select files only"
 msgstr "Cannot copy content of folders, please select files only"
 
-#: __init__.py:239 clipboardManager.py:66
+#: clipboardManager.py:71
 msgid "No text files selected"
 msgstr "No text files selected"
 
-#: __init__.py:242
+#: clipboardManager.py:82
 msgid "Total file size is too large to copy content"
 msgstr "Total file size is too large to copy content"
 
-#: __init__.py:246 clipboardManager.py:82
+#: clipboardManager.py:98
 msgid "[Error processing RTF file]"
 msgstr "[Error processing RTF file]"
 
-#: __init__.py:249 clipboardManager.py:85
+#: clipboardManager.py:100
 msgid "[RTF content - striprtf module not available]"
 msgstr "[RTF content - striprtf module not available]"
-
-#: __init__.py:258 clipboardManager.py:103
-msgid "No content could be read from selected files"
-msgstr "No content could be read from selected files"
-
-#: __init__.py:264 clipboardManager.py:108
-msgid "Content from 1 file copied to clipboard"
-msgstr "Content from 1 file copied to clipboard"
-
-#: __init__.py:266 clipboardManager.py:110
-msgid "Content from {count} files copied to clipboard"
-msgstr "Content from {count} files copied to clipboard"
-
-#: __init__.py:269 clipboardManager.py:113
-msgid "Error copying file content"
-msgstr "Error copying file content"
-
-#: __init__.py:290 compressionManager.py:127
-msgid "Compression cancelled"
-msgstr "Compression cancelled"
-
-#: __init__.py:293 compressionManager.py:130
-msgid "Compression completed {name}"
-msgstr "Compression completed {name}"
-
-#: __init__.py:296 compressionManager.py:133
-msgid "compression failed: {error}"
-msgstr "compression failed: {error}"
-
-#: __init__.py:299 compressionManager.py:136
-msgid "Error in compression process: {error}"
-msgstr "Error in compression process: {error}"
-
-#: __init__.py:336
-msgid "7-Zip compression failed, trying built-in method..."
-msgstr "7-Zip compression failed, trying built-in method..."
-
-#: __init__.py:342 compressionManager.py:159
-msgid "Error compressing files"
-msgstr "Error compressing files"
-
-#: __init__.py:416
-msgid "Compressing: {percent}%"
-msgstr "Compressing: {percent}%"
-
-#: __init__.py:419 compressionManager.py:199
-msgid "Completed"
-msgstr "Completed"
-
-#: __init__.py:421 compressionManager.py:201
-msgid "Built-in compression failed: {error}"
-msgstr "Built-in compression failed: {error}"
-
-#: __init__.py:438 fileOperations.py:178
-msgid "Please select only one file"
-msgstr "Please select only one file"
-
-#: __init__.py:441 fileOperations.py:181
-msgid "Please select a file, not a folder"
-msgstr "Please select a file, not a folder"
-
-#: __init__.py:447 fileOperations.py:188
-msgid "Error renaming file"
-msgstr "Error renaming file"
-
-#: __init__.py:470 fileOperations.py:210
-msgid "File name cannot be empty"
-msgstr "File name cannot be empty"
-
-#: __init__.py:477 fileOperations.py:217
-msgid "File renamed to {name}"
-msgstr "File renamed to {name}"
-
-#: __init__.py:481 fileOperations.py:221
-msgid "A file with this name already exists"
-msgstr "A file with this name already exists"
-
-#: __init__.py:488 fileOperations.py:228
-msgid "Error opening rename dialog"
-msgstr "Error opening rename dialog"
-
-#: __init__.py:514 selectionManager.py:28
-msgid "No active File Explorer window found"
-msgstr "No active File Explorer window found"
-
-#: __init__.py:523 selectionManager.py:33
-msgid "Unable to get folder view"
-msgstr "Unable to get folder view"
-
-#: __init__.py:530 selectionManager.py:39
-msgid "No items in folder"
-msgstr "No items in folder"

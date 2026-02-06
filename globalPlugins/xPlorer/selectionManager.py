@@ -1,1 +1,67 @@
-# selectionManager.pyimport uiimport apifrom logHandler import logimport addonHandleraddonHandler.initTranslation()class SelectionManager:    def __init__(self, plugin):        self.plugin = plugin    def cleanup(self):        pass    def invertSelection(self):        """Invert selection in File Explorer"""        focus = api.getFocusObject()        if not focus or focus.appModule.appName != "explorer":            ui.message(_("Not in File Explorer"))            return                    try:            shellWindow = self.plugin._getActiveExplorerWindow()            if not shellWindow:                ui.message(_("No active File Explorer window found"))                return                            document = shellWindow.document            if not hasattr(document, 'Folder'):                ui.message(_("Unable to get folder view"))                return                            folder = document.Folder            items = folder.Items()                        totalCount = items.Count            if totalCount == 0:                ui.message(_("No items in folder"))                return                            selectedPaths = set()            selItems = document.SelectedItems()            for i in range(selItems.Count):                selectedPaths.add(selItems.Item(i).Path)                        # Invert selection            invertedCount = 0            for i in range(totalCount):                item = items.Item(i)                if item.Path in selectedPaths:                    # Deselect item                    document.SelectItem(item, 0)  # SVF_DESELECT = 0                else:                    # Select item                    document.SelectItem(item, 1)  # SVF_SELECT = 1                    invertedCount += 1                        ui.message(_("Inverted selection: {inverted} of {total} items selected").format(                inverted=invertedCount, total=totalCount))                        except Exception as e:            log.error(f"Error in invertSelection: {e}")            ui.message(_("Error inverting selection"))
+# selectionManager.py
+
+import ui
+import api
+from logHandler import log
+import addonHandler
+
+addonHandler.initTranslation()
+
+class SelectionManager:
+    def __init__(self, plugin):
+        self.plugin = plugin
+
+    def cleanup(self):
+        pass
+
+    def invertSelection(self):
+        """Invert selection in File Explorer"""
+        focus = api.getFocusObject()
+        if not focus or focus.appModule.appName != "explorer":
+            ui.message(_("Not in File Explorer"))
+            return
+            
+        try:
+            shellWindow = self.plugin._getActiveExplorerWindow()
+            if not shellWindow:
+                ui.message(_("No active File Explorer window found"))
+                return
+                
+            document = shellWindow.document
+            if not hasattr(document, 'Folder'):
+                ui.message(_("Unable to get folder view"))
+                return
+                
+            folder = document.Folder
+            items = folder.Items()
+            
+            totalCount = items.Count
+            if totalCount == 0:
+                ui.message(_("No items in folder"))
+                return
+                
+            selectedPaths = set()
+            selItems = document.SelectedItems()
+            for i in range(selItems.Count):
+                selectedPaths.add(selItems.Item(i).Path)
+            
+            # Invert selection
+            invertedCount = 0
+            for i in range(totalCount):
+                item = items.Item(i)
+                if item.Path in selectedPaths:
+                    # Deselect item
+                    document.SelectItem(item, 0)  # SVF_DESELECT = 0
+                else:
+                    # Select item
+                    document.SelectItem(item, 1)  # SVF_SELECT = 1
+                    invertedCount += 1
+            
+            ui.message(_("Inverted selection: {inverted} of {total} items selected").format(
+                inverted=invertedCount, total=totalCount))
+                
+        except Exception as e:
+            log.error(f"Error in invertSelection: {e}")
+            ui.message(_("Error inverting selection"))
+
+
