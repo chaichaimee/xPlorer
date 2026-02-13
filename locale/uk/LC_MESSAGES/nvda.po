@@ -1,0 +1,734 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2026-02-11 16:57+0200\n"
+"PO-Revision-Date: 2026-02-12 23:24+0200\n"
+"Last-Translator: Volodymyr Pyrih <vp88.mobile@gmail.com>\n"
+"Language-Team: \n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.8\n"
+"X-Poedit-Basepath: ../../globalPlugins\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: xPlorer/__init__.py:56 xPlorer/__init__.py:419 xPlorer/__init__.py:476
+#: xPlorer/__init__.py:533 xPlorer/__init__.py:566 xPlorer/__init__.py:585
+#: xPlorer/xPlorerManager.py:38
+msgid "xPlorer"
+msgstr "xPlorer"
+
+#: xPlorer/__init__.py:365
+#, python-brace-format
+msgid "Copied: {path}"
+msgstr "Скопійовано: {path}"
+
+#: xPlorer/__init__.py:367 xPlorer/clipboardManager.py:57
+#: xPlorer/clipboardManager.py:169 xPlorer/robocopyManager.py:187
+msgid "Could not open clipboard"
+msgstr "Не вдалося відкрити буфер обміну"
+
+#: xPlorer/__init__.py:369
+msgid "Unable to get current path"
+msgstr "Не вдалося отримати поточний шлях"
+
+#: xPlorer/__init__.py:418
+msgid "Copy selected names (single tap) or copy address bar (double tap)"
+msgstr "Копіювати вибрані назви (одне натискання) або адресний рядок (подвійне натискання)"
+
+#: xPlorer/__init__.py:475
+msgid "Copy content (single tap) or invert selection (double tap)"
+msgstr "Копіювати вміст (одне натискання) або обрати усе, окрім вибраного(подвійне натискання)"
+
+#: xPlorer/__init__.py:532
+msgid "Say size (single tap) or compress zip (double tap)"
+msgstr "Промовити розмір (одне натискання) або стиснути в zip (подвійне натискання)"
+
+#: xPlorer/__init__.py:565
+msgid "Open xPlorer context menu"
+msgstr "Відкрити контекстне меню xPlorer"
+
+#: xPlorer/__init__.py:584 xPlorer/contextMenu.py:30
+msgid "Rename selected file"
+msgstr "Перейменувати вибраний файл"
+
+#: xPlorer/__init__.py:595
+msgid "Cannot open settings dialog"
+msgstr "Неможливо відкрити діалог налаштувань"
+
+#: xPlorer/__init__.py:604
+msgid "Error opening settings"
+msgstr "Помилка відкриття налаштувань"
+
+#: xPlorer/clipboardManager.py:30 xPlorer/clipboardManager.py:72
+#: xPlorer/compressionManager.py:132 xPlorer/fileOperations.py:289
+#: xPlorer/fileOperations.py:433
+msgid "No items selected"
+msgstr "Немає вибраних елементів"
+
+#: xPlorer/clipboardManager.py:53
+msgid "Copied 1 item name to clipboard"
+msgstr "Ім’я одного елемента скопійовано в буфер обміну"
+
+#: xPlorer/clipboardManager.py:55
+#, python-brace-format
+msgid "Copied {count} item names to clipboard"
+msgstr "Скопійовано {count} імен елементів у буфер обміну"
+
+#: xPlorer/clipboardManager.py:61
+msgid "Error copying names to clipboard"
+msgstr "Помилка копіювання імен у буфер обміну"
+
+#: xPlorer/clipboardManager.py:77
+msgid "Cannot copy content of folders, please select files only"
+msgstr "Неможливо скопіювати вміст папок, виберіть лише файли"
+
+#: xPlorer/clipboardManager.py:93
+msgid "No text files selected"
+msgstr "Текстові файли не вибрано"
+
+#: xPlorer/clipboardManager.py:104
+msgid "Total file size is too large to copy content"
+msgstr "Загальний розмір файлу занадто великий для копіювання вмісту"
+
+#: xPlorer/clipboardManager.py:124
+msgid "[Error processing RTF file]"
+msgstr "[Помилка обробки файлу RTF]"
+
+#: xPlorer/clipboardManager.py:126
+msgid "[RTF content - striprtf module not available]"
+msgstr "[Вміст RTF — модуль striprtf недоступний]"
+
+#: xPlorer/clipboardManager.py:156
+msgid "No content could be read from selected files"
+msgstr "Не вдалося прочитати вміст вибраних файлів"
+
+#: xPlorer/clipboardManager.py:165
+msgid "Content from 1 file copied to clipboard"
+msgstr "Вміст одного файлу скопійовано в буфер обміну"
+
+#: xPlorer/clipboardManager.py:167
+#, python-brace-format
+msgid "Content from {count} files copied to clipboard"
+msgstr "Вміст із {count} файлів скопійовано в буфер обміну"
+
+#: xPlorer/clipboardManager.py:173
+msgid "Error copying file content"
+msgstr "Помилка копіювання вмісту файлу"
+
+#: xPlorer/compressionManager.py:70
+msgid "Compressing..."
+msgstr "Стиснення..."
+
+#: xPlorer/compressionManager.py:92 xPlorer/compressionManager.py:262
+msgid "Compression cancelled"
+msgstr "Стиснення скасовано"
+
+#: xPlorer/compressionManager.py:94 xPlorer/compressionManager.py:265
+#, python-brace-format
+msgid "Compression completed {name}"
+msgstr "Стиснення {name} завершено"
+
+#: xPlorer/compressionManager.py:97
+#, python-brace-format
+msgid "compression failed: {error}"
+msgstr "не вдалося стиснути: {error}"
+
+#: xPlorer/compressionManager.py:101
+#, python-brace-format
+msgid "Error in compression process: {error}"
+msgstr "Помилка в процесі стиснення: {error}"
+
+#: xPlorer/compressionManager.py:144 xPlorer/compressionManager.py:161
+msgid "Compressing files"
+msgstr "Стиснення файлів"
+
+#: xPlorer/compressionManager.py:144 xPlorer/compressionManager.py:161
+msgid "Starting..."
+msgstr "Почати..."
+
+#: xPlorer/compressionManager.py:159
+msgid "7-Zip compression failed, trying built-in method..."
+msgstr "Помилка стиснення 7-Zip, пробуємо вбудований метод..."
+
+#: xPlorer/compressionManager.py:173
+msgid "Error compressing files"
+msgstr "Помилка стиснення файлів"
+
+#: xPlorer/compressionManager.py:244 xPlorer/compressionManager.py:258
+#, python-brace-format
+msgid "Compressing: {percent}%"
+msgstr "Стиснення: {percent}%"
+
+#: xPlorer/compressionManager.py:264
+msgid "Completed"
+msgstr "Завершено"
+
+#: xPlorer/compressionManager.py:268
+#, python-brace-format
+msgid "Built-in compression failed: {error}"
+msgstr "Помилка вбудованого стиснення: {error}"
+
+#: xPlorer/contextMenu.py:24
+msgid "Compress zip"
+msgstr "Стиснути zip"
+
+#: xPlorer/contextMenu.py:25
+msgid "Copy address bar"
+msgstr "Копіювати адресний рядок"
+
+#: xPlorer/contextMenu.py:26
+msgid "Copy content"
+msgstr "Копіювати вміст"
+
+#: xPlorer/contextMenu.py:27
+msgid "Copy selected file and folder names"
+msgstr "Копіювати назви вибраних файлів і папок"
+
+#: xPlorer/contextMenu.py:28 xPlorer/createFile.py:16
+msgid "Create File"
+msgstr "Створити файл"
+
+#: xPlorer/contextMenu.py:29
+msgid "Invert selection"
+msgstr "Обрати усе, окрім вибраного"
+
+#: xPlorer/contextMenu.py:31
+msgid "Say size"
+msgstr "Промовити розмір"
+
+#: xPlorer/contextMenu.py:35
+msgid "Robocopy"
+msgstr "Robocopy"
+
+#: xPlorer/contextMenu.py:38
+msgid "copy"
+msgstr "копіювати"
+
+#: xPlorer/contextMenu.py:39
+msgid "move"
+msgstr "перемістити"
+
+#: xPlorer/contextMenu.py:40
+msgid "paste"
+msgstr "вставити"
+
+#: xPlorer/contextMenu.py:42
+msgid "mirror Backup"
+msgstr "дзеркальне резервне копіювання"
+
+#: xPlorer/contextMenu.py:45
+msgid "TXT to Folder"
+msgstr "TXT до папки"
+
+#: xPlorer/contextMenu.py:49
+msgid "xPlorer Settings"
+msgstr "налаштування xPlorer"
+
+#: xPlorer/createFile.py:27
+msgid "Number of files to create:"
+msgstr "Кількість файлів для створення:"
+
+#: xPlorer/createFile.py:75
+msgid "File name:"
+msgstr "Ім’я файлу:"
+
+#: xPlorer/createFile.py:77 xPlorer/createFile.py:132
+#, python-brace-format
+msgid "File name {index}:"
+msgstr "Ім’я файлу {index}:"
+
+#: xPlorer/createFile.py:84
+msgid "Extension:"
+msgstr "Розширення:"
+
+#: xPlorer/createFile.py:131
+msgid "File name"
+msgstr "Ім’я файлу"
+
+#: xPlorer/createFile.py:160
+msgid "File count must be at least 1"
+msgstr "Кількість файлів має бути не менше 1"
+
+#: xPlorer/createFile.py:163
+msgid "File count cannot exceed 10"
+msgstr "Кількість файлів не може перевищувати 10"
+
+#: xPlorer/createFile.py:183
+msgid "new_file"
+msgstr "новий_файл"
+
+#: xPlorer/createFile.py:185
+#, python-brace-format
+msgid "new_file_{index}"
+msgstr "новий_файл_{index}"
+
+#: xPlorer/createFile.py:199
+msgid "Some files will use default names"
+msgstr "Деякі файли використовуватимуть початкові назви"
+
+#: xPlorer/createFile.py:227 xPlorer/robocopyManager.py:649
+#: xPlorer/robocopyManager.py:710 xPlorer/robocopyManager.py:723
+#: xPlorer/robocopyManager.py:741 xPlorer/selectionManager.py:21
+#: xPlorer/txt2folder.py:43
+msgid "Not in File Explorer"
+msgstr "Не в Файловому провіднику"
+
+#: xPlorer/createFile.py:233
+msgid "Unable to get current directory"
+msgstr "Не вдалося отримати поточний каталог"
+
+#: xPlorer/createFile.py:237
+msgid "Current path is not a directory"
+msgstr "Поточний шлях не є каталогом"
+
+#: xPlorer/createFile.py:262
+msgid "Error opening create file dialog"
+msgstr "Помилка відкриття діалогу створення файлу"
+
+#: xPlorer/createFile.py:318
+#, python-brace-format
+msgid "Cannot find unique name for: {name}"
+msgstr "Не вдається знайти унікальне ім’я для: {name}"
+
+#: xPlorer/createFile.py:356
+msgid "No files were created"
+msgstr "Файли не створено"
+
+#: xPlorer/createFile.py:358
+msgid "1 file created"
+msgstr "Створено 1 файл"
+
+#: xPlorer/createFile.py:360
+#, python-brace-format
+msgid "{count} files created"
+msgstr "Створено {count} файлів"
+
+#: xPlorer/createFile.py:364
+msgid "Error creating files"
+msgstr "Помилка створення файлів"
+
+#: xPlorer/fileOperations.py:57
+msgid "File name cannot be empty"
+msgstr "Ім’я файлу не може бути порожнім"
+
+#: xPlorer/fileOperations.py:300 xPlorer/fileOperations.py:410
+msgid "No access to size data"
+msgstr "Немає доступу до даних про розмір"
+
+#: xPlorer/fileOperations.py:401
+msgid "Error calculating size"
+msgstr "Помилка при обчисленні розміру"
+
+#: xPlorer/fileOperations.py:420
+#, python-brace-format
+msgid "{count} items {size}"
+msgstr "{count} елементів {size}"
+
+#: xPlorer/fileOperations.py:437
+msgid "Please select only one file"
+msgstr "Виберіть лише один файл"
+
+#: xPlorer/fileOperations.py:443
+msgid "Please select a file, not a folder"
+msgstr "Будь ласка, виберіть файл, а не папку"
+
+#: xPlorer/fileOperations.py:453 xPlorer/fileOperations.py:482
+msgid "Error renaming file"
+msgstr "Помилка перейменування файлу"
+
+#: xPlorer/fileOperations.py:470
+msgid "File name not changed"
+msgstr "Ім’я файлу не змінено"
+
+#: xPlorer/fileOperations.py:474
+msgid "A file with this name already exists"
+msgstr "Файл із таким ім’ям вже існує"
+
+#: xPlorer/fileOperations.py:479
+#, python-brace-format
+msgid "File renamed to {name}"
+msgstr "Файл перейменовано на {name}"
+
+#: xPlorer/fileOperations.py:488
+msgid "Error opening rename dialog"
+msgstr "Помилка відкриття діалогу перейменування"
+
+#: xPlorer/robocopyManager.py:46
+msgid "Preparing operation..."
+msgstr "Підготовка до операції..."
+
+#: xPlorer/robocopyManager.py:61 xPlorer/robocopyManager.py:242
+msgid "Cancel"
+msgstr "Скасувати"
+
+#: xPlorer/robocopyManager.py:62
+msgid "Minimize"
+msgstr "Згорнути"
+
+#: xPlorer/robocopyManager.py:103
+#, python-brace-format
+msgid "Processing: {}"
+msgstr "Обробка: {}"
+
+#: xPlorer/robocopyManager.py:105
+#, python-brace-format
+msgid "Progress: {}%"
+msgstr "Перебіг: {}%"
+
+#: xPlorer/robocopyManager.py:111
+#, python-brace-format
+msgid "Estimated time remaining: {}"
+msgstr "Приблизний час, що залишився: {}"
+
+#: xPlorer/robocopyManager.py:115
+#, python-brace-format
+msgid "Elapsed time: {} seconds"
+msgstr "Час, що минув: {} секунд"
+
+#: xPlorer/robocopyManager.py:121
+#, python-brace-format
+msgid "Speed: {}"
+msgstr "Швидкість: {}"
+
+#: xPlorer/robocopyManager.py:145
+msgid "Mirror Backup Settings"
+msgstr "Налаштування дзеркала резервного копіювання"
+
+#: xPlorer/robocopyManager.py:185
+msgid "Copied source path to clipboard"
+msgstr "Шлях джерела скопійовано в буфер обміну"
+
+#: xPlorer/robocopyManager.py:193
+msgid "Source folders (select to edit):"
+msgstr "Вихідні папки (виберіть для редагування):"
+
+#: xPlorer/robocopyManager.py:195
+msgid "Source folders list"
+msgstr "Список вихідних папок"
+
+#: xPlorer/robocopyManager.py:198
+msgid "Remove selected source"
+msgstr "Видалити вибране джерело"
+
+#: xPlorer/robocopyManager.py:203
+msgid "Destination folders:"
+msgstr "Папки призначення:"
+
+#: xPlorer/robocopyManager.py:205
+msgid "Destination folders list"
+msgstr "Список папок призначення"
+
+#: xPlorer/robocopyManager.py:209
+msgid "Add destination folder"
+msgstr "Додати папку призначення"
+
+#: xPlorer/robocopyManager.py:210
+msgid "Remove selected destination"
+msgstr "Видалити вибране місце призначення"
+
+#: xPlorer/robocopyManager.py:217
+msgid "Enable automatic synchronization"
+msgstr "Увімкнути автоматичну синхронізацію"
+
+#: xPlorer/robocopyManager.py:220
+msgid "Synchronization interval:"
+msgstr "Інтервал синхронізації:"
+
+#: xPlorer/robocopyManager.py:222
+msgid "15 minutes"
+msgstr "15 хвилин"
+
+#: xPlorer/robocopyManager.py:222
+msgid "30 minutes"
+msgstr "30 хвилин"
+
+#: xPlorer/robocopyManager.py:222
+msgid "1 hour"
+msgstr "1 година"
+
+#: xPlorer/robocopyManager.py:223
+msgid "1 day"
+msgstr "1 день"
+
+#: xPlorer/robocopyManager.py:223
+msgid "7 days"
+msgstr "7 днів"
+
+#: xPlorer/robocopyManager.py:223
+msgid "15 days"
+msgstr "15 днів"
+
+#: xPlorer/robocopyManager.py:223
+msgid "1 month"
+msgstr "1 місяць"
+
+#: xPlorer/robocopyManager.py:231
+msgid "Scheduled time:"
+msgstr "Запланований час:"
+
+#: xPlorer/robocopyManager.py:239
+msgid "Clear all settings"
+msgstr "Очистити всі налаштування"
+
+#: xPlorer/robocopyManager.py:240
+msgid "Start synchronization"
+msgstr "Почати синхронізацію"
+
+#: xPlorer/robocopyManager.py:241
+msgid "OK"
+msgstr "OK"
+
+#: xPlorer/robocopyManager.py:348
+msgid "Choose destination folder"
+msgstr "Виберіть папку призначення"
+
+#: xPlorer/robocopyManager.py:404 xPlorer/robocopyManager.py:444
+msgid "Source and destination required"
+msgstr "Необхідно вказати джерело та місце призначення"
+
+#: xPlorer/robocopyManager.py:407 xPlorer/robocopyManager.py:447
+msgid "Invalid time format"
+msgstr "Недійсний формат часу"
+
+#: xPlorer/robocopyManager.py:410
+msgid "Starting immediate mirror sync..."
+msgstr "Початок негайної дзеркальної синхронізації..."
+
+#: xPlorer/robocopyManager.py:434
+#, python-brace-format
+msgid "Immediate sync completed: {}/{} destinations"
+msgstr "Негайна синхронізація завершена: {}/{} пунктів призначення"
+
+#: xPlorer/robocopyManager.py:438
+msgid "Sync error occurred"
+msgstr "Сталася помилка синхронізації"
+
+#: xPlorer/robocopyManager.py:595
+#, python-brace-format
+msgid "Next scheduled backup for {}: {}"
+msgstr "Наступне заплановане резервне копіювання для {}: {}"
+
+#: xPlorer/robocopyManager.py:609
+#, python-brace-format
+msgid "Scheduled mirror backup started for {}"
+msgstr "Розпочато заплановане дзеркальне копіювання для {}"
+
+#: xPlorer/robocopyManager.py:634
+#, python-brace-format
+msgid "Scheduled backup completed: {}/{} destinations"
+msgstr "Заплановане резервне копіювання завершено: {}/{} пунктів призначення"
+
+#: xPlorer/robocopyManager.py:653
+msgid "Please select only one folder"
+msgstr "Виберіть лише одну папку"
+
+#: xPlorer/robocopyManager.py:657
+msgid "Please select a folder"
+msgstr "Будь ласка, виберіть папку"
+
+#: xPlorer/robocopyManager.py:702
+msgid "Mirror backup configured successfully"
+msgstr "Режим дзеркального резервного копіювання налаштовано успішно"
+
+#: xPlorer/robocopyManager.py:704
+msgid "Mirror backup disabled"
+msgstr "Дзеркальне резервне копіювання вимкнено"
+
+#: xPlorer/robocopyManager.py:714 xPlorer/robocopyManager.py:727
+msgid "Select one item only"
+msgstr "Виберіть лише один елемент"
+
+#: xPlorer/robocopyManager.py:718
+#, python-brace-format
+msgid "Source for copy: {}"
+msgstr "Джерело для копіювання: {}"
+
+#: xPlorer/robocopyManager.py:731
+#, python-brace-format
+msgid "Source for move: {}"
+msgstr "Джерело для переміщення: {}"
+
+#: xPlorer/robocopyManager.py:735
+msgid "No pending operation"
+msgstr "Немає незавершених операцій"
+
+#: xPlorer/robocopyManager.py:747
+msgid "Cannot get destination"
+msgstr "Не вдається отримати пункт призначення"
+
+#: xPlorer/robocopyManager.py:753
+msgid "Invalid destination"
+msgstr "Недійсний пункт призначення"
+
+#: xPlorer/robocopyManager.py:757
+msgid "Move"
+msgstr "Перемістити"
+
+#: xPlorer/robocopyManager.py:757
+msgid "Copy"
+msgstr "Копіювати"
+
+#: xPlorer/robocopyManager.py:760
+#, python-brace-format
+msgid "Starting {} operation in background..."
+msgstr "Початок операції {} у фоновому режимі..."
+
+#: xPlorer/robocopyManager.py:770 xPlorer/txt2folder.py:219
+#, python-brace-format
+msgid "Error: {}"
+msgstr "Помилка: {}"
+
+#: xPlorer/robocopyManager.py:778
+msgid "Source does not exist"
+msgstr "Джерело не існує"
+
+#: xPlorer/robocopyManager.py:803
+msgid "Destination already exists, overwriting..."
+msgstr "Пункт призначення вже існує, перезапис..."
+
+#: xPlorer/robocopyManager.py:854
+msgid "Large file detected, using compression for speed"
+msgstr "Виявлено великий файл, використовується стиснення для збільшення швидкості"
+
+#: xPlorer/robocopyManager.py:864
+#, python-brace-format
+msgid "{} started. You can continue working while it runs in background."
+msgstr "{} розпочато. Ви можете продовжувати роботу, поки воно працює у фоновому режимі."
+
+#: xPlorer/robocopyManager.py:889
+#, python-brace-format
+msgid "{} in progress... {} seconds elapsed"
+msgstr "Виконується {}... Минуло {} секунд"
+
+#: xPlorer/robocopyManager.py:915
+#, python-brace-format
+msgid "{}: {}% complete, speed: {:.1f} MB/s"
+msgstr "{}: завершено {}%, швидкість: {:.1f} МБ/с"
+
+#: xPlorer/robocopyManager.py:933
+#, python-brace-format
+msgid "{} completed successfully in {:.1f} seconds, average speed: {:.1f} MB/s"
+msgstr "{} успішно завершено за {:.1f} секунд, середня швидкість: {:.1f} МБ/с"
+
+#: xPlorer/robocopyManager.py:936
+#, python-brace-format
+msgid "{} completed successfully in {:.1f} seconds"
+msgstr "{} успішно завершено за {:.1f} с"
+
+#: xPlorer/robocopyManager.py:949
+msgid "Trying alternative copy method..."
+msgstr "Спроба альтернативного методу копіювання..."
+
+#: xPlorer/robocopyManager.py:964
+#, python-brace-format
+msgid "{} completed successfully using alternative method"
+msgstr "{} успішно завершено за допомогою альтернативного методу"
+
+#: xPlorer/robocopyManager.py:968
+#, python-brace-format
+msgid "{} failed with error: {}"
+msgstr "{} не вдалося виконати через помилку: {}"
+
+#: xPlorer/robocopyManager.py:971
+#, python-brace-format
+msgid "{} completed with warnings (code: {})"
+msgstr "{} завершено з попередженнями (код: {})"
+
+#: xPlorer/robocopyManager.py:976
+#, python-brace-format
+msgid "Error during {}: {}"
+msgstr "Помилка під час {}: {}"
+
+#: xPlorer/selectionManager.py:27
+msgid "No active File Explorer window found"
+msgstr "Не знайдено активного вікна Файлового провідника"
+
+#: xPlorer/selectionManager.py:32
+msgid "Unable to get folder view"
+msgstr "Неможливо переглянути папку"
+
+#: xPlorer/selectionManager.py:40
+msgid "No items in folder"
+msgstr "У папці немає елементів"
+
+#: xPlorer/selectionManager.py:60
+#, python-brace-format
+msgid "Inverted selection: {inverted} of {total} items selected"
+msgstr "Зворотний вибір: вибрано {inverted} із {total} елементів"
+
+#: xPlorer/selectionManager.py:65
+msgid "Error inverting selection"
+msgstr "Помилка при зворотному виборі"
+
+#: xPlorer/txt2folder.py:48
+msgid "Please select only one text file"
+msgstr "Виберіть лише один текстовий файл"
+
+#: xPlorer/txt2folder.py:55
+msgid "Please select a .txt or .rtf file"
+msgstr "Будь ласка, виберіть файл .txt або .rtf"
+
+#: xPlorer/txt2folder.py:60
+msgid "Selected file does not exist"
+msgstr "Вибраний файл не існує"
+
+#: xPlorer/txt2folder.py:69
+msgid "Cannot process RTF file: striprtf module not available"
+msgstr "Не вдається обробити файл RTF: модуль striprtf недоступний"
+
+#: xPlorer/txt2folder.py:80
+msgid "Error reading RTF file"
+msgstr "Помилка читання файлу RTF"
+
+#: xPlorer/txt2folder.py:91 xPlorer/txt2folder.py:167
+msgid "No valid folder names found in the file"
+msgstr "У файлі не знайдено дійсних імен папок"
+
+#: xPlorer/txt2folder.py:106 xPlorer/txt2folder.py:182
+#, python-brace-format
+msgid "Folder '{}' already exists, creating '{}' instead"
+msgstr "Папка «{}» вже існує, буде створено «{}» замість неї"
+
+#: xPlorer/txt2folder.py:116
+msgid "Error creating base folder"
+msgstr "Помилка під час створення базової папки"
+
+#: xPlorer/txt2folder.py:150 xPlorer/txt2folder.py:203
+#, python-brace-format
+msgid "Successfully created {} folders in '{}'"
+msgstr "Успішно створено {} папок у \"{}\""
+
+#: xPlorer/txt2folder.py:155 xPlorer/txt2folder.py:208
+msgid "No folders were created"
+msgstr "Папки не створено"
+
+#: xPlorer/txt2folder.py:212
+#, python-brace-format
+msgid "Error processing text file: {}"
+msgstr "Помилка обробки текстового файлу: {}"
+
+#: xPlorer/txt2folder.py:215
+msgid "Error reading file encoding"
+msgstr "Помилка читання кодування файлу"
+
+#: xPlorer/xPlorerManager.py:34
+msgid "Empty Folder"
+msgstr "Порожня тека"
+
+#: xPlorer/xPlorerManager.py:45
+msgid "Automatically select the first item"
+msgstr "Автоматично вибрати перший елемент"
+
+#: xPlorer/xPlorerManager.py:50
+msgid "Announce 'Empty Folder' when entering an empty folder"
+msgstr "Промовляти «Порожня папка» при відкритті порожньої папки"
+
+#: xPlorer/xPlorerManager.py:55
+msgid "Suppress announcement of DirectUIHWND class"
+msgstr "Придушити промовлення класу DirectUIHWND"
+
+#: xPlorer/xPlorerManager.py:175 xPlorer/xPlorerManager.py:185
+msgid "select"
+msgstr "вибрати"
