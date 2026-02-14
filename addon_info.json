@@ -1,10 +1,11 @@
-﻿{
-  "addon_name": "xPlorer",
-  "addon_description": "Improve access to File Explorer.",
-  "addon_version": "2026.2",
-  "addon_author": "chaichaimee",
-  "addon_url": "https://github.com/chaichaimee/xPlorer",
-  "addon_download_url": "https://github.com/chaichaimee/xPlorer/releases/download/v2026.2/xPlorer-v2026.2.nvda-addon",
-  "addon_min_nvda_version": "2022.4"
+{
+  "externalId": "xPlorer",
+  "channels": [
+    {
+      "channel": "beta",
+      "version": "2026.3-beta",
+      "url": "https://github.com/chaichaimee/xPlorer/releases/download/2026.3-beta/xPlorer-v2026.3-beta.nvda-addon",
+      "sha256": "64537101d1cf5bfd826311cd2c289d603681ec7846a93579477d7d9dcc723875-00000015"
+    }
+  ]
 }
-
