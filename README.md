@@ -76,5 +76,5 @@ Creates a subfolder + individual folders from each line in the list.
 
 ## Donation
 
-If you like my work, you can support via:  
+If you like my work, you can support via :  
 [https://github.com/chaichaimee](https://github.com/chaichaimee)
