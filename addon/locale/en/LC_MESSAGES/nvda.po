@@ -1,0 +1,744 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: xPlorer 2026.4.4\n"
+"Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
+"POT-Creation-Date: 2026-04-21 08:59+0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: chaiBot and Malee Yamazaki\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: DevOn Addon\n"
+
+#: robocopyManager.py:223
+msgid "1 day"
+msgstr "1 day"
+
+#: createFile.py:305
+msgid "1 file created"
+msgstr "1 file created"
+
+#: robocopyManager.py:222
+msgid "1 hour"
+msgstr "1 hour"
+
+#: robocopyManager.py:223
+msgid "1 month"
+msgstr "1 month"
+
+#: robocopyManager.py:223
+msgid "15 days"
+msgstr "15 days"
+
+#: robocopyManager.py:222
+msgid "15 minutes"
+msgstr "15 minutes"
+
+#: robocopyManager.py:222
+msgid "30 minutes"
+msgstr "30 minutes"
+
+#: robocopyManager.py:223
+msgid "7 days"
+msgstr "7 days"
+
+#: compressionManager.py:159
+msgid "7-Zip compression failed, trying built-in method..."
+msgstr "7-Zip compression failed, trying built-in method..."
+
+#: fileOperations.py:474
+msgid "A file with this name already exists"
+msgstr "A file with this name already exists"
+
+#: robocopyManager.py:209
+msgid "Add destination folder"
+msgstr "Add destination folder"
+
+#: xPlorerManager.py:56
+msgid "Announce 'Empty Folder' when entering an empty folder"
+msgstr "Announce 'Empty Folder' when entering an empty folder"
+
+#: xPlorerManager.py:51
+msgid "Automatically select the first item"
+msgstr "Automatically select the first item"
+
+#: compressionManager.py:268
+msgid "Built-in compression failed: {error}"
+msgstr "Built-in compression failed: {error}"
+
+#: robocopyManager.py:61
+#: robocopyManager.py:242
+msgid "Cancel"
+msgstr "Cancel"
+
+#: clipboardManager.py:77
+msgid "Cannot copy content of folders, please select files only"
+msgstr "Cannot copy content of folders, please select files only"
+
+#: createFile.py:290
+msgid "Cannot find unique name for: {name}"
+msgstr "Cannot find unique name for: {name}"
+
+#: robocopyManager.py:761
+msgid "Cannot get destination"
+msgstr "Cannot get destination"
+
+#: __init__.py:528
+msgid "Cannot open settings dialog"
+msgstr "Cannot open settings dialog"
+
+#: txt2folder.py:69
+msgid "Cannot process RTF file: striprtf module not available"
+msgstr "Cannot process RTF file: striprtf module not available"
+
+#: robocopyManager.py:348
+msgid "Choose destination folder"
+msgstr "Choose destination folder"
+
+#: robocopyManager.py:239
+msgid "Clear all settings"
+msgstr "Clear all settings"
+
+#: compressionManager.py:264
+msgid "Completed"
+msgstr "Completed"
+
+#: contextMenu.py:24
+msgid "Compress zip"
+msgstr "Compress zip"
+
+#: compressionManager.py:144
+#: compressionManager.py:161
+msgid "Compressing files"
+msgstr "Compressing files"
+
+#: compressionManager.py:70
+msgid "Compressing..."
+msgstr "Compressing..."
+
+#: compressionManager.py:244
+#: compressionManager.py:258
+msgid "Compressing: {percent}%"
+msgstr "Compressing: {percent}%"
+
+#: compressionManager.py:92
+#: compressionManager.py:262
+msgid "Compression cancelled"
+msgstr "Compression cancelled"
+
+#: compressionManager.py:94
+#: compressionManager.py:265
+msgid "Compression completed {name}"
+msgstr "Compression completed {name}"
+
+#: clipboardManager.py:165
+msgid "Content from 1 file copied to clipboard"
+msgstr "Content from 1 file copied to clipboard"
+
+#: clipboardManager.py:167
+msgid "Content from {count} files copied to clipboard"
+msgstr "Content from {count} files copied to clipboard"
+
+#: clipboardManager.py:53
+msgid "Copied 1 item name to clipboard"
+msgstr "Copied 1 item name to clipboard"
+
+#: robocopyManager.py:185
+msgid "Copied source path to clipboard"
+msgstr "Copied source path to clipboard"
+
+#: clipboardManager.py:55
+msgid "Copied {count} item names to clipboard"
+msgstr "Copied {count} item names to clipboard"
+
+#: __init__.py:345
+msgid "Copied: {path}"
+msgstr "Copied: {path}"
+
+#: robocopyManager.py:771
+msgid "Copy"
+msgstr "Copy"
+
+#: contextMenu.py:25
+msgid "Copy address bar"
+msgstr "Copy address bar"
+
+#: contextMenu.py:26
+msgid "Copy content"
+msgstr "Copy content"
+
+#: __init__.py:432
+msgid "Copy content (single tap) or invert selection (double tap)"
+msgstr "Copy content (single tap) or invert selection (double tap)"
+
+#: contextMenu.py:27
+msgid "Copy selected file and folder names"
+msgstr "Copy selected file and folder names"
+
+#: __init__.py:387
+msgid "Copy selected names (single tap) or copy address bar (double tap)"
+msgstr "Copy selected names (single tap) or copy address bar (double tap)"
+
+#: __init__.py:347
+#: clipboardManager.py:57
+#: clipboardManager.py:169
+#: robocopyManager.py:187
+msgid "Could not open clipboard"
+msgstr "Could not open clipboard"
+
+#: contextMenu.py:28
+#: createFile.py:16
+msgid "Create File"
+msgstr "Create File"
+
+#: createFile.py:237
+msgid "Current path is not a directory"
+msgstr "Current path is not a directory"
+
+#: robocopyManager.py:817
+msgid "Destination already exists, overwriting..."
+msgstr "Destination already exists, overwriting..."
+
+#: robocopyManager.py:205
+msgid "Destination folders list"
+msgstr "Destination folders list"
+
+#: robocopyManager.py:203
+msgid "Destination folders:"
+msgstr "Destination folders:"
+
+#: robocopyManager.py:115
+msgid "Elapsed time: {} seconds"
+msgstr "Elapsed time: {} seconds"
+
+#: xPlorerManager.py:40
+msgid "Empty Folder"
+msgstr "Empty Folder"
+
+#: robocopyManager.py:217
+msgid "Enable automatic synchronization"
+msgstr "Enable automatic synchronization"
+
+#: folderInfo.py:77
+msgid "Error calculating folder info"
+msgstr "Error calculating folder info"
+
+#: fileOperations.py:401
+msgid "Error calculating size"
+msgstr "Error calculating size"
+
+#: compressionManager.py:173
+msgid "Error compressing files"
+msgstr "Error compressing files"
+
+#: clipboardManager.py:173
+msgid "Error copying file content"
+msgstr "Error copying file content"
+
+#: clipboardManager.py:61
+msgid "Error copying names to clipboard"
+msgstr "Error copying names to clipboard"
+
+#: txt2folder.py:116
+msgid "Error creating base folder"
+msgstr "Error creating base folder"
+
+#: createFile.py:311
+msgid "Error creating files"
+msgstr "Error creating files"
+
+#: robocopyManager.py:990
+msgid "Error during {}: {}"
+msgstr "Error during {}: {}"
+
+#: compressionManager.py:101
+msgid "Error in compression process: {error}"
+msgstr "Error in compression process: {error}"
+
+#: selectionManager.py:65
+msgid "Error inverting selection"
+msgstr "Error inverting selection"
+
+#: createFile.py:262
+msgid "Error opening create file dialog"
+msgstr "Error opening create file dialog"
+
+#: fileOperations.py:488
+msgid "Error opening rename dialog"
+msgstr "Error opening rename dialog"
+
+#: __init__.py:535
+msgid "Error opening settings"
+msgstr "Error opening settings"
+
+#: txt2folder.py:212
+msgid "Error processing text file: {}"
+msgstr "Error processing text file: {}"
+
+#: txt2folder.py:80
+msgid "Error reading RTF file"
+msgstr "Error reading RTF file"
+
+#: txt2folder.py:215
+msgid "Error reading file encoding"
+msgstr "Error reading file encoding"
+
+#: fileOperations.py:453
+#: fileOperations.py:482
+msgid "Error renaming file"
+msgstr "Error renaming file"
+
+#: robocopyManager.py:784
+#: txt2folder.py:219
+msgid "Error: {}"
+msgstr "Error: {}"
+
+#: robocopyManager.py:111
+msgid "Estimated time remaining: {}"
+msgstr "Estimated time remaining: {}"
+
+#: createFile.py:84
+msgid "Extension:"
+msgstr "Extension:"
+
+#: createFile.py:163
+msgid "File count cannot exceed 10"
+msgstr "File count cannot exceed 10"
+
+#: createFile.py:160
+msgid "File count must be at least 1"
+msgstr "File count must be at least 1"
+
+#: createFile.py:131
+msgid "File name"
+msgstr "File name"
+
+#: fileOperations.py:57
+msgid "File name cannot be empty"
+msgstr "File name cannot be empty"
+
+#: fileOperations.py:470
+msgid "File name not changed"
+msgstr "File name not changed"
+
+#: createFile.py:77
+#: createFile.py:132
+msgid "File name {index}:"
+msgstr "File name {index}:"
+
+#: createFile.py:75
+msgid "File name:"
+msgstr "File name:"
+
+#: fileOperations.py:479
+msgid "File renamed to {name}"
+msgstr "File renamed to {name}"
+
+#: txt2folder.py:106
+#: txt2folder.py:182
+msgid "Folder '{}' already exists, creating '{}' instead"
+msgstr "Folder '{}' already exists, creating '{}' instead"
+
+#: contextMenu.py:52
+msgid "Folder info"
+msgstr "Folder info"
+
+#: robocopyManager.py:434
+msgid "Immediate sync completed: {}/{} destinations"
+msgstr "Immediate sync completed: {}/{} destinations"
+
+#: robocopyManager.py:767
+msgid "Invalid destination"
+msgstr "Invalid destination"
+
+#: robocopyManager.py:407
+#: robocopyManager.py:447
+msgid "Invalid time format"
+msgstr "Invalid time format"
+
+#: contextMenu.py:29
+msgid "Invert selection"
+msgstr "Invert selection"
+
+#: selectionManager.py:60
+msgid "Inverted selection: {inverted} of {total} items selected"
+msgstr "Inverted selection: {inverted} of {total} items selected"
+
+#: robocopyManager.py:868
+msgid "Large file detected, using compression for speed"
+msgstr "Large file detected, using compression for speed"
+
+#: robocopyManager.py:62
+msgid "Minimize"
+msgstr "Minimize"
+
+#: robocopyManager.py:145
+msgid "Mirror Backup Settings"
+msgstr "Mirror Backup Settings"
+
+#: robocopyManager.py:716
+msgid "Mirror backup configured successfully"
+msgstr "Mirror backup configured successfully"
+
+#: robocopyManager.py:718
+msgid "Mirror backup disabled"
+msgstr "Mirror backup disabled"
+
+#: robocopyManager.py:771
+msgid "Move"
+msgstr "Move"
+
+#: robocopyManager.py:609
+msgid "Next scheduled backup for {}: {}"
+msgstr "Next scheduled backup for {}: {}"
+
+#: fileOperations.py:300
+#: fileOperations.py:410
+msgid "No access to size data"
+msgstr "No access to size data"
+
+#: selectionManager.py:27
+msgid "No active File Explorer window found"
+msgstr "No active File Explorer window found"
+
+#: clipboardManager.py:156
+msgid "No content could be read from selected files"
+msgstr "No content could be read from selected files"
+
+#: createFile.py:303
+msgid "No files were created"
+msgstr "No files were created"
+
+#: txt2folder.py:155
+#: txt2folder.py:208
+msgid "No folders were created"
+msgstr "No folders were created"
+
+#: folderInfo.py:29
+msgid "No item selected"
+msgstr "No item selected"
+
+#: selectionManager.py:40
+msgid "No items in folder"
+msgstr "No items in folder"
+
+#: clipboardManager.py:30
+#: clipboardManager.py:72
+#: compressionManager.py:132
+#: fileOperations.py:289
+#: fileOperations.py:433
+msgid "No items selected"
+msgstr "No items selected"
+
+#: robocopyManager.py:749
+msgid "No pending operation"
+msgstr "No pending operation"
+
+#: clipboardManager.py:93
+msgid "No text files selected"
+msgstr "No text files selected"
+
+#: txt2folder.py:91
+#: txt2folder.py:167
+msgid "No valid folder names found in the file"
+msgstr "No valid folder names found in the file"
+
+#: createFile.py:227
+#: robocopyManager.py:663
+#: robocopyManager.py:724
+#: robocopyManager.py:737
+#: robocopyManager.py:755
+#: selectionManager.py:21
+#: txt2folder.py:43
+msgid "Not in File Explorer"
+msgstr "Not in File Explorer"
+
+#: createFile.py:27
+msgid "Number of files to create:"
+msgstr "Number of files to create:"
+
+#: robocopyManager.py:241
+msgid "OK"
+msgstr "OK"
+
+#: __init__.py:502
+msgid "Open xPlorer context menu"
+msgstr "Open xPlorer context menu"
+
+#: txt2folder.py:55
+msgid "Please select a .txt or .rtf file"
+msgstr "Please select a .txt or .rtf file"
+
+#: fileOperations.py:443
+msgid "Please select a file, not a folder"
+msgstr "Please select a file, not a folder"
+
+#: robocopyManager.py:671
+msgid "Please select a folder"
+msgstr "Please select a folder"
+
+#: fileOperations.py:437
+msgid "Please select only one file"
+msgstr "Please select only one file"
+
+#: folderInfo.py:34
+#: robocopyManager.py:667
+msgid "Please select only one folder"
+msgstr "Please select only one folder"
+
+#: txt2folder.py:48
+msgid "Please select only one text file"
+msgstr "Please select only one text file"
+
+#: robocopyManager.py:46
+msgid "Preparing operation..."
+msgstr "Preparing operation..."
+
+#: robocopyManager.py:103
+msgid "Processing: {}"
+msgstr "Processing: {}"
+
+#: robocopyManager.py:105
+msgid "Progress: {}%"
+msgstr "Progress: {}%"
+
+#: robocopyManager.py:210
+msgid "Remove selected destination"
+msgstr "Remove selected destination"
+
+#: robocopyManager.py:198
+msgid "Remove selected source"
+msgstr "Remove selected source"
+
+#: __init__.py:519
+#: contextMenu.py:30
+msgid "Rename selected file"
+msgstr "Rename selected file"
+
+#: contextMenu.py:35
+msgid "Robocopy"
+msgstr "Robocopy"
+
+#: contextMenu.py:31
+msgid "Say size"
+msgstr "Say size"
+
+#: __init__.py:477
+msgid "Say size (single tap) or compress zip (double tap)"
+msgstr "Say size (single tap) or compress zip (double tap)"
+
+#: robocopyManager.py:648
+msgid "Scheduled backup completed: {}/{} destinations"
+msgstr "Scheduled backup completed: {}/{} destinations"
+
+#: robocopyManager.py:623
+msgid "Scheduled mirror backup started for {}"
+msgstr "Scheduled mirror backup started for {}"
+
+#: robocopyManager.py:231
+msgid "Scheduled time:"
+msgstr "Scheduled time:"
+
+#: robocopyManager.py:728
+#: robocopyManager.py:741
+msgid "Select one item only"
+msgstr "Select one item only"
+
+#: txt2folder.py:60
+msgid "Selected file does not exist"
+msgstr "Selected file does not exist"
+
+#: folderInfo.py:40
+msgid "Selected item is not a folder"
+msgstr "Selected item is not a folder"
+
+#: createFile.py:199
+msgid "Some files will use default names"
+msgstr "Some files will use default names"
+
+#: robocopyManager.py:404
+#: robocopyManager.py:444
+msgid "Source and destination required"
+msgstr "Source and destination required"
+
+#: robocopyManager.py:792
+msgid "Source does not exist"
+msgstr "Source does not exist"
+
+#: robocopyManager.py:193
+msgid "Source folders (select to edit):"
+msgstr "Source folders (select to edit):"
+
+#: robocopyManager.py:195
+msgid "Source folders list"
+msgstr "Source folders list"
+
+#: robocopyManager.py:732
+msgid "Source for copy: {}"
+msgstr "Source for copy: {}"
+
+#: robocopyManager.py:745
+msgid "Source for move: {}"
+msgstr "Source for move: {}"
+
+#: robocopyManager.py:121
+msgid "Speed: {}"
+msgstr "Speed: {}"
+
+#: robocopyManager.py:240
+msgid "Start synchronization"
+msgstr "Start synchronization"
+
+#: robocopyManager.py:410
+msgid "Starting immediate mirror sync..."
+msgstr "Starting immediate mirror sync..."
+
+#: robocopyManager.py:774
+msgid "Starting {} operation in background..."
+msgstr "Starting {} operation in background..."
+
+#: compressionManager.py:144
+#: compressionManager.py:161
+msgid "Starting..."
+msgstr "Starting..."
+
+#: txt2folder.py:150
+#: txt2folder.py:203
+msgid "Successfully created {} folders in '{}'"
+msgstr "Successfully created {} folders in '{}'"
+
+#: xPlorerManager.py:66
+msgid "Suppress announcement of '- File Explorer' in window titles"
+msgstr "Suppress announcement of '- File Explorer' in window titles"
+
+#: xPlorerManager.py:61
+msgid "Suppress announcement of DirectUIHWND class"
+msgstr "Suppress announcement of DirectUIHWND class"
+
+#: robocopyManager.py:438
+msgid "Sync error occurred"
+msgstr "Sync error occurred"
+
+#: robocopyManager.py:220
+msgid "Synchronization interval:"
+msgstr "Synchronization interval:"
+
+#: contextMenu.py:45
+msgid "TXT to Folder"
+msgstr "TXT to Folder"
+
+#: clipboardManager.py:104
+msgid "Total file size is too large to copy content"
+msgstr "Total file size is too large to copy content"
+
+#: robocopyManager.py:963
+msgid "Trying alternative copy method..."
+msgstr "Trying alternative copy method..."
+
+#: createFile.py:233
+msgid "Unable to get current directory"
+msgstr "Unable to get current directory"
+
+#: __init__.py:349
+msgid "Unable to get current path"
+msgstr "Unable to get current path"
+
+#: selectionManager.py:32
+msgid "Unable to get folder view"
+msgstr "Unable to get folder view"
+
+#: clipboardManager.py:124
+msgid "[Error processing RTF file]"
+msgstr "[Error processing RTF file]"
+
+#: clipboardManager.py:126
+msgid "[RTF content - striprtf module not available]"
+msgstr "[RTF content - striprtf module not available]"
+
+#: compressionManager.py:97
+msgid "compression failed: {error}"
+msgstr "compression failed: {error}"
+
+#: contextMenu.py:38
+msgid "copy"
+msgstr "copy"
+
+#: contextMenu.py:42
+msgid "mirror Backup"
+msgstr "mirror Backup"
+
+#: contextMenu.py:39
+msgid "move"
+msgstr "move"
+
+#: createFile.py:183
+msgid "new_file"
+msgstr "new_file"
+
+#: createFile.py:185
+msgid "new_file_{index}"
+msgstr "new_file_{index}"
+
+#: contextMenu.py:40
+msgid "paste"
+msgstr "paste"
+
+#: __init__.py:60
+#: __init__.py:388
+#: __init__.py:433
+#: __init__.py:478
+#: __init__.py:503
+#: __init__.py:520
+#: xPlorerManager.py:44
+msgid "xPlorer"
+msgstr "xPlorer"
+
+#: contextMenu.py:49
+msgid "xPlorer Settings"
+msgstr "xPlorer Settings"
+
+#: createFile.py:307
+msgid "{count} files created"
+msgstr "{count} files created"
+
+#: fileOperations.py:420
+msgid "{count} items {size}"
+msgstr "{count} items {size}"
+
+#: folderInfo.py:65
+msgid "{subfolders} subfolders and {files} files"
+msgstr "{subfolders} subfolders and {files} files"
+
+#: robocopyManager.py:950
+msgid "{} completed successfully in {:.1f} seconds"
+msgstr "{} completed successfully in {:.1f} seconds"
+
+#: robocopyManager.py:947
+msgid "{} completed successfully in {:.1f} seconds, average speed: {:.1f} MB/s"
+msgstr "{} completed successfully in {:.1f} seconds, average speed: {:.1f} MB/s"
+
+#: robocopyManager.py:978
+msgid "{} completed successfully using alternative method"
+msgstr "{} completed successfully using alternative method"
+
+#: robocopyManager.py:985
+msgid "{} completed with warnings (code: {})"
+msgstr "{} completed with warnings (code: {})"
+
+#: robocopyManager.py:982
+msgid "{} failed with error: {}"
+msgstr "{} failed with error: {}"
+
+#: robocopyManager.py:903
+msgid "{} in progress... {} seconds elapsed"
+msgstr "{} in progress... {} seconds elapsed"
+
+#: robocopyManager.py:878
+msgid "{} started. You can continue working while it runs in background."
+msgstr "{} started. You can continue working while it runs in background."
+
+#: robocopyManager.py:929
+msgid "{}: {}% complete, speed: {:.1f} MB/s"
+msgstr "{}: {}% complete, speed: {:.1f} MB/s"
