@@ -1,80 +1,130 @@
-![NVDA Logo](https://www.nvaccess.org/nvda_200x200_op)
+<p align="center">
+  <img src="https://www.nvaccess.org/files/nvda/documentation/userGuide/images/nvda.ico" alt="NVDA Logo" width="120">
+</p>
 
-# xPlorer
+# <p align="center">xPlorer</p>
 
-**Author:** chai chaimee  
-**URL:** [https://github.com/chaichaimee/xPlorer](https://github.com/chaichaimee/xPlorer)
+<br>
 
-## What's new in the latest version?
+<p align="center">Elevate your File Explorer experience with advanced automation and seamless navigation tools.</p>
 
-- Create File
-- Edit new keyboard shortcuts: Make it more convenient to use and improve the Say Size function
+<br>
 
-## Overview
+<p align="center"><b>author:</b> chai chaimee</p>
+<p align="center"><b>url:</b> https://github.com/chaichaimee/xPlorer</p>
 
-xPlorer is a tool designed to provide easier access to File Explorer operations.  
-The latest version includes features for managing files and folders, such as:
+---
 
-- Compressing items into a ZIP
-- Renaming files with a dedicated window that separates the filename and extension (to prevent accidental deletion)
-- Reading the size of files, folders, or drives
-- Copying selected file and folder names to the clipboard, etc.
+## <p align="center">Description</p>
 
-## Hot Keys
+**xPlorer** is a comprehensive productivity suite for NVDA users, specifically designed to make Windows File Explorer smarter and more efficient. It removes the friction from everyday file management by automating repetitive tasks and streamlining navigation. Whether you are batch-creating folder structures, standardizing names with professional case conversion, or extracting text from files without opening them, xPlorer provides a seamless, developer-grade experience for every user. It’s about doing more with fewer keystrokes.
 
-- **NVDA+Shift+X** : Open xPlorer Context Menu  
-  Select a file or folder and open the context menu. This submenu consolidates all xPlorer functions in one place, allowing you to access any feature immediately for convenience and speed.
+<br>
 
-- **NVDA+Shift+Z** (Single Tap) : Say size  
-  Select a text file in the editor (one that already contains content), or select multiple files (each no larger than 10 MB).  
-  Press the shortcut key to copy all of their contents without opening the files...  
-  In the latest version, users can also select multiple files or folders to view the total size.
+## <p align="center">What's New</p>
 
-- **NVDA+Shift+Z** (Double Tap) : Compress selected items to ZIP  
-  Select the files or select all, then press the shortcut key.  
-  The selected items will be automatically compressed into a ZIP file.
+• **Create Multiple Folders:** Instantly generate an entire directory structure from a single list.  
+<br>
+• **Case Converter for Folders:** Standardize folder names with professional casing options (UPPER, lower, Title, Sentence).  
+<br>
+• **Detailed Folder Info:** Get real-time size and item counts for folders directly from the menu.  
+<br>
+• **Title Optimization:** Suppress the redundant "- File Explorer" in window titles for cleaner speech output.  
+<br>
+• **Instant Folder Creation:** Automatically use clipboard content as a name when creating a new folder.
 
-- **NVDA+Shift+C** : Copy selected file and folder names to clipboard  
-  Select the desired files (one or multiple) or select all, then press the shortcut key.  
-  All selected file and folder names will be copied to the clipboard for pasting into a text editor.
+<br>
 
-- **NVDA+Shift+C** (Double Tap) : Copy address bar in File Explorer  
-  When you are in the folder whose path you want to copy, simply double-tap the shortcut key to copy the address bar directly (faster than Ctrl+L).
+## <p align="center">Hot Keys</p>
 
-- **NVDA+Shift+V** (Single Tap) : Copy Content  
-  Select a text editor file (that already contains content) or multiple files (each ≤ 10 MB)...  
-  Support file extensions: .txt, .rtf, .py, .js, .html, .css, .xml, .json, .csv, .md, .ini, .conf, .cfg, .java, .cpp, .c, .h, .php, .rb, .pl, .sh, .bat, .ps1
+> **NVDA+Shift+X** : Open xPlorer Context Menu  
+> (The master hub for all professional features including Case Converter and Multi-Folder Creator)
 
-- **NVDA+Shift+V** (Double Tap) : Invert Selection  
-  Select a file or folder, then press NVDA+Shift+V double-tap to invert the selection...
+> **NVDA+Shift+Z** > • **Single Tap** : Say Size (Announce the total size of selected items)  
+> • **Double Tap** : Compress Zip (Archive selected files into a .zip with intelligent naming)
 
-- **NVDA+Shift+F2** : Rename selected file  
-  A window will open with separate fields for filename and extension. Edit and press Enter — only the edited part updates.
+> **NVDA+Shift+C** > • **Single Tap** : Copy Selected Names (Copy names of selected files or folders to clipboard)  
+> • **Double Tap** : Copy Address Bar Current Folder (Grab the current folder's full path)
 
-## Features
+> **NVDA+Shift+V** > • **Single Tap** : Copy Content (Extract and copy text content directly from the selected file)  
+> • **Double Tap** : Invert Selection (Quickly toggle focus between selected and unselected items)
 
-Additional features (can be enabled/disabled via NVDA menu → Preferences → Settings → xPlorer):
+> **NVDA+Shift+F2** : Rename File Only  
+> (Focuses on the filename only, protecting the file extension from accidental changes)
 
-- Automatically select the first item
-- Announce 'Empty Folder' when entering an empty folder
-- Suppress announcement of DirectUIHWND class (checked)
+> **Control+Shift+N** : Create New Folder with Auto-Paste  
+> (Creates a new folder and instantly pastes your clipboard content as its name)
 
-**Create File**  
-While in File Explorer, open xPlorer context menu → Create File. Specify name, extension, and number of files. Supports many text/code formats.
+<br>
 
-**Robocopy**  
-A smarter way to "move" or "copy" folders/files (skips identical files, resumes interrupted copies). Ideal for large data transfers.
+## <p align="center">Features</p>
 
-### Mirror Backup with Schedule
+### <p align="center">1. Advanced Batch Folder Creation</p>
 
-Set automatic mirror backups (using Robocopy) at chosen intervals (minutes, hours, days, weeks).
+The **"Create Multiple Folders"** feature (found in the xPlorer Menu) is built for serious organization. Instead of creating folders one by one, you can paste or type a list of names into a single dialog. xPlorer will process the entire list and build every folder in your current directory in one heartbeat. It’s the ultimate time-saver for setting up new projects or categories.
 
-### TXT to Folder
+### <p align="center">2. Professional Case Converter</p>
 
-Select a .txt file containing a list → NVDA+Alt+X → TXT to Folder.  
-Creates a subfolder + individual folders from each line in the list.
+Ensure your file system looks clean and consistent. Select any folder(s) and use the xPlorer Menu to convert names instantly:  
+<br>
+• **UPPERCASE:** Converts everything to capital letters (e.g., "PROJECT DATA").  
+<br>
+• **lowercase:** Converts everything to small letters (e.g., "project data").  
+<br>
+• **Title Case:** Capitalizes the first letter of each word (e.g., "Project Data").  
+<br>
+• **Sentence case:** Only the very first letter is capitalized (e.g., "Project data").
 
-## Donation
+### <p align="center">3. Smart "Clipboard to Folder" Creation</p>
 
-If you like my work, you can support via :  
-[https://github.com/chaichaimee](https://github.com/chaichaimee)
+With xPlorer, creating folders becomes a one-step process. By pressing **Control+Shift+N**, the add-on checks your clipboard. If you have a name copied from an email or document, it creates the folder and automatically pastes that name into the edit field. No more manual renaming or pasting—just copy, press the hotkey, and you're done.
+
+### <p align="center">4. File Content Extraction</p>
+
+Save time by extracting text without opening applications. **Single Tap NVDA+Shift+V** to pull text from a selected file directly into your clipboard. This works effortlessly with various text-based formats, allowing you to grab data from scripts or logs while staying focused in the Explorer window.
+
+### <p align="center">5. Intelligent Zip Archiving</p>
+
+By **Double Tapping NVDA+Shift+Z**, xPlorer packs your selection into a zip file. It intelligently prevents data loss by checking for existing files and adding a numeric suffix to new archives. Background audio tones keep you informed of the compression progress without visual monitoring.
+
+### <p align="center">6. xPlorer Settings Panel</p>
+
+Customize your experience via **NVDA Settings > xPlorer**. The options are arranged to optimize your workflow:  
+<br>
+<br>
+• **Automatically select the first item:** When you enter a folder, xPlorer will automatically place your focus on the first file or folder, so you can start navigating immediately.  
+<br>
+• **Announce 'Empty Folder' when entering an empty folder:** Provides clear vocal confirmation that a directory contains no items, saving you from unnecessary arrowing.  
+<br>
+• **Suppress announcement of DirectUIHWND class:** Removes technical clutter from NVDA's speech, providing a cleaner and more professional audio interface.  
+<br>
+• **Suppress announcement of '- File Explorer' in window titles:** Shortens window title announcements by removing the redundant software name, helping you identify folders faster.  
+<br>
+• **Automatically paste clipboard content into rename field:** Specifically when creating new folders, this allows xPlorer to automatically fill in names from your clipboard for maximum efficiency.
+
+<br>
+
+---
+
+<br>
+<br>
+
+## <p align="center">Support Me</p>
+
+<p align="center">If this tool has made your life easier, consider fueling the next update with a small donation.</p>
+
+<br>
+
+<p align="center">
+  <a href="https://buy.stripe.com/dRm9AU1xQ3Ds22N6VK1VK01">
+    <img src="https://img.shields.io/badge/Donate-Support%20Me-blue?style=for-the-badge&logo=stripe" alt="Support me">
+  </a>
+</p>
+
+<br>
+
+<p align="center">Your support means the world. Let's build something great together</p>
+
+<br>
+
+<p align="center">© 2026 Chai Chaimee NVDA Add-on Released under GNU GPL</p>
