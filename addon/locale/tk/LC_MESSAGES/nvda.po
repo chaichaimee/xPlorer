@@ -1,0 +1,893 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: xPlorer 2026.5.1\n"
+"Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
+"POT-Creation-Date: 2026-04-27 15:57+0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: chaiBot and Malee Yamazaki\n"
+"Language-Team: Turkmen\n"
+"Language: tk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: DevOn Addon\n"
+
+#: folder_creation_dialog.py:60
+msgid "&Apply"
+msgstr "&Ulanyň"
+
+#: folder_creation_dialog.py:61
+msgid "&Cancel"
+msgstr "&Ýatyr"
+
+#: robocopyManager.py:223
+msgid "1 day"
+msgstr "1 gün"
+
+#: createFile.py:305
+msgid "1 file created"
+msgstr "1 faýl döredildi"
+
+#: robocopyManager.py:222
+msgid "1 hour"
+msgstr "1 sagat"
+
+#: robocopyManager.py:223
+msgid "1 month"
+msgstr "1 aý"
+
+#: robocopyManager.py:223
+msgid "15 days"
+msgstr "15 gün"
+
+#: robocopyManager.py:222
+msgid "15 minutes"
+msgstr "15 minut"
+
+#: robocopyManager.py:222
+msgid "30 minutes"
+msgstr "30 minut"
+
+#: robocopyManager.py:223
+msgid "7 days"
+msgstr "7 gün"
+
+#: compressionManager.py:159
+msgid "7-Zip compression failed, trying built-in method..."
+msgstr "7-Zip gysmaly şowsuz boldy, içerki usul synanylýar..."
+
+#: fileOperations.py:474
+msgid "A file with this name already exists"
+msgstr "Bu atly faýl eýýäm bar"
+
+#: robocopyManager.py:209
+msgid "Add destination folder"
+msgstr "Bellenen bukjany goş"
+
+#: xPlorerManager.py:56
+msgid "Announce 'Empty Folder' when entering an empty folder"
+msgstr "Boş bukjana gireniňizde 'Boş bukja' diýip habar ber"
+
+#: xPlorerManager.py:71
+msgid "Automatically paste clipboard content into rename field"
+msgstr "Buferiň mazmunyny awtomatiki usulda at üýtgetme meýdanyna ýapyşdyr"
+
+#: xPlorerManager.py:51
+msgid "Automatically select the first item"
+msgstr "Birinji elementi awtomatiki saýla"
+
+#: compressionManager.py:268
+msgid "Built-in compression failed: {error}"
+msgstr "Içerki gysmaly şowsuz boldy: {error}"
+
+#: robocopyManager.py:61
+#: robocopyManager.py:242
+msgid "Cancel"
+msgstr "Ýatyr"
+
+#: clipboardManager.py:77
+msgid "Cannot copy content of folders, please select files only"
+msgstr "Bukjalaryň mazmunyny göçürip bolmaýar, diňe faýllary saýlaň"
+
+#: createFile.py:290
+msgid "Cannot find unique name for: {name}"
+msgstr "{name} üçin ýeke-täk at tapylmady"
+
+#: robocopyManager.py:761
+msgid "Cannot get destination"
+msgstr "Bellene alnyp bilenmedi"
+
+#: __init__.py:635
+msgid "Cannot open settings dialog"
+msgstr "Sazlamalar penjiresini açyp bolmaýar"
+
+#: txt2folder.py:69
+msgid "Cannot process RTF file: striprtf module not available"
+msgstr "RTF faýlyny işläp bolmaýar: striprtf moduly elýeterli däl"
+
+#: contextMenu.py:46
+msgid "Case Converter for Folders"
+msgstr "Bukjalar üçin registr öwrüjisi"
+
+#: robocopyManager.py:348
+msgid "Choose destination folder"
+msgstr "Bellene bukjany saýlaň"
+
+#: robocopyManager.py:239
+msgid "Clear all settings"
+msgstr "Ähli sazlamalary arassala"
+
+#: compressionManager.py:264
+msgid "Completed"
+msgstr "Tamamlandy"
+
+#: contextMenu.py:25
+msgid "Compress zip"
+msgstr "Zip gys"
+
+#: compressionManager.py:144
+#: compressionManager.py:161
+msgid "Compressing files"
+msgstr "Faýllar gysylýar"
+
+#: compressionManager.py:70
+msgid "Compressing..."
+msgstr "Gysylýar..."
+
+#: compressionManager.py:244
+#: compressionManager.py:258
+msgid "Compressing: {percent}%"
+msgstr "Gysylýar: {percent}%"
+
+#: compressionManager.py:92
+#: compressionManager.py:262
+msgid "Compression cancelled"
+msgstr "Gysmaly ýatyryldy"
+
+#: compressionManager.py:94
+#: compressionManager.py:265
+msgid "Compression completed {name}"
+msgstr "Gysmaly tamamlandy {name}"
+
+#: clipboardManager.py:165
+msgid "Content from 1 file copied to clipboard"
+msgstr "1 faýlyň mazmuny buferä göçürildi"
+
+#: clipboardManager.py:167
+msgid "Content from {count} files copied to clipboard"
+msgstr "{count} faýlyň mazmuny buferä göçürildi"
+
+#: clipboardManager.py:53
+msgid "Copied 1 item name to clipboard"
+msgstr "1 elementiň ady buferä göçürildi"
+
+#: robocopyManager.py:185
+msgid "Copied source path to clipboard"
+msgstr "Çeşme ýoly buferä göçürildi"
+
+#: clipboardManager.py:55
+msgid "Copied {count} item names to clipboard"
+msgstr "{count} elementiň ady buferä göçürildi"
+
+#: __init__.py:429
+msgid "Copied: {path}"
+msgstr "Göçürildi: {path}"
+
+#: robocopyManager.py:771
+msgid "Copy"
+msgstr "Göçür"
+
+#: contextMenu.py:27
+msgid "Copy address bar"
+msgstr "Salgy setirini göçür"
+
+#: contextMenu.py:28
+msgid "Copy content"
+msgstr "Mazmuny göçür"
+
+#: __init__.py:516
+msgid "Copy content (single tap) or invert selection (double tap)"
+msgstr "Mazmuny göçür (bir gezek bas) ýa-da saýlamany tersine çek (iki gezek bas)"
+
+#: contextMenu.py:29
+msgid "Copy selected file and folder names"
+msgstr "Saýlanan faýl we bukja atlaryny göçür"
+
+#: __init__.py:471
+msgid "Copy selected names (single tap) or copy address bar (double tap)"
+msgstr "Saýlanan atlary göçür (bir gezek bas) ýa-da salgy setirini göçür (iki gezek bas)"
+
+#: __init__.py:431
+#: clipboardManager.py:57
+#: clipboardManager.py:169
+#: robocopyManager.py:187
+msgid "Could not open clipboard"
+msgstr "Buferi açyp bolmady"
+
+#: contextMenu.py:30
+#: createFile.py:16
+msgid "Create File"
+msgstr "Faýl döret"
+
+#: folder_creation_dialog.py:14
+msgid "Create Multiple Folders"
+msgstr "Birnäçe bukja döret"
+
+#: contextMenu.py:43
+msgid "Create Multiple Folders..."
+msgstr "Birnäçe bukja döret..."
+
+#: folder_creation_dialog.py:42
+msgid "Create main folder and then subfolders"
+msgstr "Esasy bukjany, soňra kiçi bukjalary döret"
+
+#: __init__.py:626
+msgid "Create new folder and paste clipboard content into rename field"
+msgstr "Täze bukja döret we buferiň mazmunyny at üýtgetme meýdanyna ýapyşdyr"
+
+#: createFile.py:237
+msgid "Current path is not a directory"
+msgstr "Häzirki ýol katalog däl"
+
+#: robocopyManager.py:817
+msgid "Destination already exists, overwriting..."
+msgstr "Bellene eýýäm bar, üstünden ýazylýar..."
+
+#: robocopyManager.py:205
+msgid "Destination folders list"
+msgstr "Bellene bukjalaryň sanawy"
+
+#: robocopyManager.py:203
+msgid "Destination folders:"
+msgstr "Bellene bukjalar:"
+
+#: folder_creation_dialog.py:46
+msgid "Edit individual folder names"
+msgstr "Aýry-aýry bukja atlaryny düzet"
+
+#: robocopyManager.py:115
+msgid "Elapsed time: {} seconds"
+msgstr "Geçen wagt: {} sekunt"
+
+#: xPlorerManager.py:40
+msgid "Empty Folder"
+msgstr "Boş bukja"
+
+#: robocopyManager.py:217
+msgid "Enable automatic synchronization"
+msgstr "Awtomatiki sinhronizasiýany işjeňleşdir"
+
+#: folderInfo.py:78
+msgid "Error calculating folder info"
+msgstr "Bukja maglumatlaryny hasaplamakda säwlik"
+
+#: fileOperations.py:401
+msgid "Error calculating size"
+msgstr "Ölçegi hasaplamakda säwlik"
+
+#: compressionManager.py:173
+msgid "Error compressing files"
+msgstr "Faýllary gysmakda säwlik"
+
+#: clipboardManager.py:173
+msgid "Error copying file content"
+msgstr "Faýl mazmunyny göçürmekde säwlik"
+
+#: clipboardManager.py:61
+msgid "Error copying names to clipboard"
+msgstr "Atlary buferä göçürmekde säwlik"
+
+#: txt2folder.py:116
+msgid "Error creating base folder"
+msgstr "Esasy bukjany döretmekde säwlik"
+
+#: createFile.py:311
+msgid "Error creating files"
+msgstr "Faýllary döretmekde säwlik"
+
+#: folder_creation_dialog.py:219
+msgid "Error creating folder: {number}"
+msgstr "Bukjany döretmekde säwlik: {number}"
+
+#: __init__.py:662
+msgid "Error creating folders"
+msgstr "Bukjalary döretmekde säwlik"
+
+#: folder_creation_dialog.py:179
+msgid "Error creating main folder"
+msgstr "Esasy bukjany döretmekde säwlik"
+
+#: folder_creation_dialog.py:201
+msgid "Error creating subfolder: {number}"
+msgstr "Kiçi bukjany döretmekde säwlik: {number}"
+
+#: __init__.py:690
+msgid "Error during conversion"
+msgstr "Öwürmek wagtynda säwlik"
+
+#: robocopyManager.py:990
+msgid "Error during {}: {}"
+msgstr "{} wagtynda säwlik: {}"
+
+#: compressionManager.py:101
+msgid "Error in compression process: {error}"
+msgstr "Gysma prosesinde säwlik: {error}"
+
+#: selectionManager.py:65
+msgid "Error inverting selection"
+msgstr "Saýlamany tersine çekmekde säwlik"
+
+#: createFile.py:262
+msgid "Error opening create file dialog"
+msgstr "Faýl döretme penjiresini açmakda säwlik"
+
+#: fileOperations.py:488
+msgid "Error opening rename dialog"
+msgstr "At üýtgetme penjiresini açmakda säwlik"
+
+#: __init__.py:642
+msgid "Error opening settings"
+msgstr "Sazlamalary açmakda säwlik"
+
+#: txt2folder.py:212
+msgid "Error processing text file: {}"
+msgstr "Tekst faýlyny işlemekde säwlik: {}"
+
+#: txt2folder.py:80
+msgid "Error reading RTF file"
+msgstr "RTF faýlyny okamakda säwlik"
+
+#: txt2folder.py:215
+msgid "Error reading file encoding"
+msgstr "Faýl kodirlemesini okamakda säwlik"
+
+#: fileOperations.py:453
+#: fileOperations.py:482
+msgid "Error renaming file"
+msgstr "Faýlyň adyny üýtgetmekde säwlik"
+
+#: robocopyManager.py:784
+#: txt2folder.py:219
+msgid "Error: {}"
+msgstr "Säwlik: {}"
+
+#: robocopyManager.py:111
+msgid "Estimated time remaining: {}"
+msgstr "Galak çaklanylýan wagt: {}"
+
+#: createFile.py:84
+msgid "Extension:"
+msgstr "Giňeltme:"
+
+#: case.py:115
+#: case.py:129
+#: case.py:150
+#: case.py:164
+msgid "Failed to rename any folders"
+msgstr "Hiç bir bukjanyň adyny üýtgedip bolmady"
+
+#: createFile.py:163
+msgid "File count cannot exceed 10"
+msgstr "Faýl sany 10-dan köp bolup bilmez"
+
+#: createFile.py:160
+msgid "File count must be at least 1"
+msgstr "Faýl sany iň azyndan 1 bolmaly"
+
+#: createFile.py:131
+msgid "File name"
+msgstr "Faýl ady"
+
+#: fileOperations.py:57
+msgid "File name cannot be empty"
+msgstr "Faýl ady boş bolup bilmez"
+
+#: fileOperations.py:470
+msgid "File name not changed"
+msgstr "Faýl ady üýtgedilmedi"
+
+#: createFile.py:77
+#: createFile.py:132
+msgid "File name {index}:"
+msgstr "Faýl ady {index}:"
+
+#: createFile.py:75
+msgid "File name:"
+msgstr "Faýl ady:"
+
+#: fileOperations.py:479
+msgid "File renamed to {name}"
+msgstr "Faýlyň ady {name} edilip üýtgedildi"
+
+#: folder_creation_dialog.py:113
+#: folder_creation_dialog.py:158
+msgid "Folder"
+msgstr "Bukja"
+
+#: txt2folder.py:106
+#: txt2folder.py:182
+msgid "Folder '{}' already exists, creating '{}' instead"
+msgstr "'{}' bukjasy eýýäm bar, onuň ýerine '{}' döredilýär"
+
+#: contextMenu.py:52
+msgid "Folder info"
+msgstr "Bukja maglumatlary"
+
+#: folder_creation_dialog.py:27
+msgid "Folder title:"
+msgstr "Bukja ady:"
+
+#: contextMenu.py:50
+msgid "Headline Case"
+msgstr "Sözbaşy registri"
+
+#: robocopyManager.py:434
+msgid "Immediate sync completed: {}/{} destinations"
+msgstr "Derrew sinhronizasiýa tamamlandy: {}/{} bellene"
+
+#: robocopyManager.py:767
+msgid "Invalid destination"
+msgstr "Nädogry bellene"
+
+#: folder_creation_dialog.py:169
+msgid "Invalid number for folders"
+msgstr "Bukjalar üçin nädogry san"
+
+#: robocopyManager.py:407
+#: robocopyManager.py:447
+msgid "Invalid time format"
+msgstr "Nädogry wagt formaty"
+
+#: contextMenu.py:26
+msgid "Invert selection"
+msgstr "Saýlamany tersine çek"
+
+#: selectionManager.py:60
+msgid "Inverted selection: {inverted} of {total} items selected"
+msgstr "Ters saýlama: jemi {total} elementden {inverted} saýlandy"
+
+#: robocopyManager.py:868
+msgid "Large file detected, using compression for speed"
+msgstr "Uly faýl tapyldy, tizlik üçin gysma ulanylýar"
+
+#: contextMenu.py:48
+msgid "Lowercase"
+msgstr "Kiçi harp"
+
+#: folder_creation_dialog.py:166
+msgid "Maximum 100 folders allowed"
+msgstr "Iň köp 100 bukja rugsat edilýär"
+
+#: robocopyManager.py:62
+msgid "Minimize"
+msgstr "Kiçelt"
+
+#: robocopyManager.py:145
+msgid "Mirror Backup Settings"
+msgstr "Aýna ätiýaçlyk göçürmesi sazlamalary"
+
+#: robocopyManager.py:716
+msgid "Mirror backup configured successfully"
+msgstr "Aýna ätiýaçlyk göçürmesi üstünlikleýin sazlandy"
+
+#: robocopyManager.py:718
+msgid "Mirror backup disabled"
+msgstr "Aýna ätiýaçlyk göçürmesi öçürildi"
+
+#: robocopyManager.py:771
+msgid "Move"
+msgstr "Süýşür"
+
+#: robocopyManager.py:609
+msgid "Next scheduled backup for {}: {}"
+msgstr "{} üçin indiki meýilleşdirilen ätiýaçlyk göçürmesi: {}"
+
+#: __init__.py:650
+msgid "No Explorer folder detected"
+msgstr "Explorer bukjasy tapylmady"
+
+#: fileOperations.py:300
+#: fileOperations.py:410
+msgid "No access to size data"
+msgstr "Ölçeg maglumatlaryna giriş ýok"
+
+#: selectionManager.py:27
+msgid "No active File Explorer window found"
+msgstr "Faal Faýl Explorernyň penjiresi tapylmady"
+
+#: clipboardManager.py:156
+msgid "No content could be read from selected files"
+msgstr "Saýlanan faýllardan hiç hili mazmun okalyp bilinmedi"
+
+#: createFile.py:303
+msgid "No files were created"
+msgstr "Hiç bir faýl döredilmedi"
+
+#: case.py:106
+#: case.py:120
+#: case.py:141
+#: case.py:155
+msgid "No folders found"
+msgstr "Bukja tapylmady"
+
+#: __init__.py:677
+msgid "No folders selected or current folder not available"
+msgstr "Hiç bir bukja saýlanmady ýa-da häzirki bukja elýeterli däl"
+
+#: folder_creation_dialog.py:230
+#: txt2folder.py:155
+#: txt2folder.py:208
+msgid "No folders were created"
+msgstr "Hiç bir bukja döredilmedi"
+
+#: folderInfo.py:30
+msgid "No item selected"
+msgstr "Hiç bir element saýlanmady"
+
+#: selectionManager.py:40
+msgid "No items in folder"
+msgstr "Bukjada element ýok"
+
+#: clipboardManager.py:30
+#: clipboardManager.py:72
+#: compressionManager.py:132
+#: fileOperations.py:289
+#: fileOperations.py:433
+msgid "No items selected"
+msgstr "Hiç bir element saýlanmady"
+
+#: robocopyManager.py:749
+msgid "No pending operation"
+msgstr "Garaşylýan iş ýok"
+
+#: clipboardManager.py:93
+msgid "No text files selected"
+msgstr "Tekst faýly saýlanmady"
+
+#: txt2folder.py:91
+#: txt2folder.py:167
+msgid "No valid folder names found in the file"
+msgstr "Faýlda dogry bukja atlary tapylmady"
+
+#: createFile.py:227
+#: robocopyManager.py:663
+#: robocopyManager.py:724
+#: robocopyManager.py:737
+#: robocopyManager.py:755
+#: selectionManager.py:21
+#: txt2folder.py:43
+msgid "Not in File Explorer"
+msgstr "Faýl Explorerde däl"
+
+#: createFile.py:27
+msgid "Number of files to create:"
+msgstr "Dörediljek faýllaryň sany:"
+
+#: folder_creation_dialog.py:163
+msgid "Number of folders must be at least 1"
+msgstr "Bukjalaryň sany iň azyndan 1 bolmaly"
+
+#: folder_creation_dialog.py:35
+msgid "Number of folders:"
+msgstr "Bukjalaryň sany:"
+
+#: robocopyManager.py:241
+msgid "OK"
+msgstr "Bolýar"
+
+#: __init__.py:586
+msgid "Open xPlorer context menu"
+msgstr "xPlorer kontekst menýusyny aç"
+
+#: txt2folder.py:55
+msgid "Please select a .txt or .rtf file"
+msgstr ".txt ýa-da .rtf faýl saýlaň"
+
+#: fileOperations.py:443
+msgid "Please select a file, not a folder"
+msgstr "Bukja däl-de, faýl saýlaň"
+
+#: robocopyManager.py:671
+msgid "Please select a folder"
+msgstr "Bukja saýlaň"
+
+#: fileOperations.py:437
+msgid "Please select only one file"
+msgstr "Diňe bir faýl saýlaň"
+
+#: folderInfo.py:35
+#: robocopyManager.py:667
+msgid "Please select only one folder"
+msgstr "Diňe bir bukja saýlaň"
+
+#: txt2folder.py:48
+msgid "Please select only one text file"
+msgstr "Diňe bir tekst faýly saýlaň"
+
+#: robocopyManager.py:46
+msgid "Preparing operation..."
+msgstr "Iş taýýarlanýar..."
+
+#: robocopyManager.py:103
+msgid "Processing: {}"
+msgstr "Işlenýär: {}"
+
+#: robocopyManager.py:105
+msgid "Progress: {}%"
+msgstr "Ösüş: {}%"
+
+#: robocopyManager.py:210
+msgid "Remove selected destination"
+msgstr "Saýlanan bellene aýyr"
+
+#: robocopyManager.py:198
+msgid "Remove selected source"
+msgstr "Saýlanan çeşmani aýyr"
+
+#: __init__.py:603
+#: contextMenu.py:31
+msgid "Rename selected file"
+msgstr "Saýlanan faýlyň adyny üýtget"
+
+#: contextMenu.py:35
+msgid "Robocopy"
+msgstr "Robokopiýa"
+
+#: contextMenu.py:32
+msgid "Say size"
+msgstr "Ölçegi aýt"
+
+#: __init__.py:561
+msgid "Say size (single tap) or compress zip (double tap)"
+msgstr "Ölçegi aýt (bir gezek bas) ýa-da zip gys (iki gezek bas)"
+
+#: robocopyManager.py:648
+msgid "Scheduled backup completed: {}/{} destinations"
+msgstr "Meýilleşdirilen ätiýaçlyk göçürmesi tamamlandy: {}/{} bellene"
+
+#: robocopyManager.py:623
+msgid "Scheduled mirror backup started for {}"
+msgstr "{} üçin meýilleşdirilen aýna ätiýaçlyk göçürmesi başlandy"
+
+#: robocopyManager.py:231
+msgid "Scheduled time:"
+msgstr "Meýilleşdirilen wagt:"
+
+#: robocopyManager.py:728
+#: robocopyManager.py:741
+msgid "Select one item only"
+msgstr "Diňe bir elementi saýlaň"
+
+#: txt2folder.py:60
+msgid "Selected file does not exist"
+msgstr "Saýlanan faýl ýok"
+
+#: folderInfo.py:41
+msgid "Selected item is not a folder"
+msgstr "Saýlanan element bukja däl"
+
+#: createFile.py:199
+msgid "Some files will use default names"
+msgstr "Käbir faýllar başlangyç atlary ulanar"
+
+#: robocopyManager.py:404
+#: robocopyManager.py:444
+msgid "Source and destination required"
+msgstr "Çeşme we bellene talap edilýär"
+
+#: robocopyManager.py:792
+msgid "Source does not exist"
+msgstr "Çeşme ýok"
+
+#: robocopyManager.py:193
+msgid "Source folders (select to edit):"
+msgstr "Çeşme bukjalar (düzetmek üçin saýlaň):"
+
+#: robocopyManager.py:195
+msgid "Source folders list"
+msgstr "Çeşme bukjalaryň sanawy"
+
+#: robocopyManager.py:732
+msgid "Source for copy: {}"
+msgstr "Göçürmek üçin çeşme: {}"
+
+#: robocopyManager.py:745
+msgid "Source for move: {}"
+msgstr "Süýşürmek üçin çeşme: {}"
+
+#: robocopyManager.py:121
+msgid "Speed: {}"
+msgstr "Tizlik: {}"
+
+#: robocopyManager.py:240
+msgid "Start synchronization"
+msgstr "Sinhronizasiýa başla"
+
+#: robocopyManager.py:410
+msgid "Starting immediate mirror sync..."
+msgstr "Derrew aýna sinhronizasiýa başlanýar..."
+
+#: robocopyManager.py:774
+msgid "Starting {} operation in background..."
+msgstr "Arka planda {} işi başlanýar..."
+
+#: compressionManager.py:144
+#: compressionManager.py:161
+msgid "Starting..."
+msgstr "Başlanýar..."
+
+#: case.py:162
+msgid "Successfully converted {count} folders to headline case"
+msgstr "{count} bukja sözbaşy registrine üstünlikleýin öwrüldi"
+
+#: case.py:127
+msgid "Successfully converted {count} folders to lowercase"
+msgstr "{count} bukja kiçi harplara üstünlikleýin öwrüldi"
+
+#: case.py:148
+msgid "Successfully converted {count} folders to title case"
+msgstr "{count} bukja at registrine üstünlikleýin öwrüldi"
+
+#: case.py:113
+msgid "Successfully converted {count} folders to uppercase"
+msgstr "{count} bukja baş harplara üstünlikleýin öwrüldi"
+
+#: folder_creation_dialog.py:226
+msgid "Successfully created 1 folder"
+msgstr "1 bukja üstünlikleýin döredildi"
+
+#: folder_creation_dialog.py:224
+msgid "Successfully created main folder only"
+msgstr "Diňe esasy bukja üstünlikleýin döredildi"
+
+#: folder_creation_dialog.py:228
+msgid "Successfully created {count} folders"
+msgstr "{count} bukja üstünlikleýin döredildi"
+
+#: txt2folder.py:150
+#: txt2folder.py:203
+msgid "Successfully created {} folders in '{}'"
+msgstr "'{}' içinde {} bukja üstünlikleýin döredildi"
+
+#: xPlorerManager.py:66
+msgid "Suppress announcement of '- File Explorer' in window titles"
+msgstr "Pencere atlarynda '- Faýl Explorer' habarnamasyny bas"
+
+#: xPlorerManager.py:61
+msgid "Suppress announcement of DirectUIHWND class"
+msgstr "DirectUIHWND synp habarnamasyny bas"
+
+#: robocopyManager.py:438
+msgid "Sync error occurred"
+msgstr "Sinhronizasiýa säwligi ýüze çykdy"
+
+#: robocopyManager.py:220
+msgid "Synchronization interval:"
+msgstr "Sinhronizasiýa aralygy:"
+
+#: contextMenu.py:42
+msgid "TXT to Folder"
+msgstr "TXT-ni bukja öwür"
+
+#: contextMenu.py:49
+msgid "Title Case"
+msgstr "At registri"
+
+#: clipboardManager.py:104
+msgid "Total file size is too large to copy content"
+msgstr "Jemi faýl ölçegi mazmuny göçürmek üçin gaty uly"
+
+#: robocopyManager.py:963
+msgid "Trying alternative copy method..."
+msgstr "Alternatiw göçürme usuly synanylýar..."
+
+#: createFile.py:233
+msgid "Unable to get current directory"
+msgstr "Häzirki katalogy alyp bolmaýar"
+
+#: __init__.py:433
+msgid "Unable to get current path"
+msgstr "Häzirki ýoly alyp bolmaýar"
+
+#: selectionManager.py:32
+msgid "Unable to get folder view"
+msgstr "Bukja görnüşini alyp bolmaýar"
+
+#: contextMenu.py:47
+msgid "Uppercase"
+msgstr "Baş harp"
+
+#: clipboardManager.py:124
+msgid "[Error processing RTF file]"
+msgstr "[RTF faýlyny işlemekde säwlik]"
+
+#: clipboardManager.py:126
+msgid "[RTF content - striprtf module not available]"
+msgstr "[RTF mazmuny - striprtf moduly elýeterli däl]"
+
+#: compressionManager.py:97
+msgid "compression failed: {error}"
+msgstr "gysmaly şowsuz boldy: {error}"
+
+#: contextMenu.py:36
+msgid "copy"
+msgstr "göçür"
+
+#: contextMenu.py:40
+msgid "mirror Backup"
+msgstr "aýna ätiýaçlyk göçürmesi"
+
+#: contextMenu.py:37
+msgid "move"
+msgstr "süýşür"
+
+#: createFile.py:183
+msgid "new_file"
+msgstr "täze_faýl"
+
+#: createFile.py:185
+msgid "new_file_{index}"
+msgstr "täze_faýl_{index}"
+
+#: contextMenu.py:38
+msgid "paste"
+msgstr "ýapyşdyr"
+
+#: __init__.py:143
+#: __init__.py:472
+#: __init__.py:517
+#: __init__.py:562
+#: __init__.py:587
+#: __init__.py:604
+#: __init__.py:627
+#: xPlorerManager.py:44
+msgid "xPlorer"
+msgstr "xPlorer"
+
+#: contextMenu.py:22
+msgid "xPlorer Settings"
+msgstr "xPlorer sazlamalary"
+
+#: createFile.py:307
+msgid "{count} files created"
+msgstr "{count} faýl döredildi"
+
+#: fileOperations.py:420
+msgid "{count} items {size}"
+msgstr "{count} element {size}"
+
+#: folderInfo.py:66
+msgid "{subfolders} subfolders and {files} files"
+msgstr "{subfolders} kiçi bukja we {files} faýl"
+
+#: robocopyManager.py:950
+msgid "{} completed successfully in {:.1f} seconds"
+msgstr "{} {:.1f} sekuntda üstünlikleýin tamamlandy"
+
+#: robocopyManager.py:947
+msgid "{} completed successfully in {:.1f} seconds, average speed: {:.1f} MB/s"
+msgstr "{} {:.1f} sekuntda üstünlikleýin tamamlandy, ortaça tizlik: {:.1f} MB/s"
+
+#: robocopyManager.py:978
+msgid "{} completed successfully using alternative method"
+msgstr "{} alternatiw usul bilen üstünlikleýin tamamlandy"
+
+#: robocopyManager.py:985
+msgid "{} completed with warnings (code: {})"
+msgstr "{} duýduryşlar bilen tamamlandy (kod: {})"
+
+#: robocopyManager.py:982
+msgid "{} failed with error: {}"
+msgstr "{} säwlik bilen şowsuz boldy: {}"
+
+#: robocopyManager.py:903
+msgid "{} in progress... {} seconds elapsed"
+msgstr "{} dowam edýär... {} sekunt geçdi"
+
+#: robocopyManager.py:878
+msgid "{} started. You can continue working while it runs in background."
+msgstr "{} başlandy. Ol arka planda işlän wagty işlemegi dowam edip bilersiňiz."
+
+#: robocopyManager.py:929
+msgid "{}: {}% complete, speed: {:.1f} MB/s"
+msgstr "{}: {}% tamamlandy, tizlik: {:.1f} MB/s"

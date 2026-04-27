@@ -1,0 +1,893 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: xPlorer 2026.5.1\n"
+"Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
+"POT-Creation-Date: 2026-04-27 15:57+0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: chaiBot and Malee Yamazaki\n"
+"Language-Team: Sinhala\n"
+"Language: si\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: DevOn Addon\n"
+
+#: folder_creation_dialog.py:60
+msgid "&Apply"
+msgstr "&යොදන්න"
+
+#: folder_creation_dialog.py:61
+msgid "&Cancel"
+msgstr "&අවලංගු කරන්න"
+
+#: robocopyManager.py:223
+msgid "1 day"
+msgstr "දින 1"
+
+#: createFile.py:305
+msgid "1 file created"
+msgstr "ගොනු 1 සාදන ලදී"
+
+#: robocopyManager.py:222
+msgid "1 hour"
+msgstr "පැය 1"
+
+#: robocopyManager.py:223
+msgid "1 month"
+msgstr "මාස 1"
+
+#: robocopyManager.py:223
+msgid "15 days"
+msgstr "දින 15"
+
+#: robocopyManager.py:222
+msgid "15 minutes"
+msgstr "මිනිත්තු 15"
+
+#: robocopyManager.py:222
+msgid "30 minutes"
+msgstr "මිනිත්තු 30"
+
+#: robocopyManager.py:223
+msgid "7 days"
+msgstr "දින 7"
+
+#: compressionManager.py:159
+msgid "7-Zip compression failed, trying built-in method..."
+msgstr "7-Zip සම්පීඩනය අසාර්ථකයි, ගොඩනඟන ලද ක්‍රමය උත්සාහ කරමින්..."
+
+#: fileOperations.py:474
+msgid "A file with this name already exists"
+msgstr "මෙම නම සහිත ගොනුවක් දැනටමත් පවතී"
+
+#: robocopyManager.py:209
+msgid "Add destination folder"
+msgstr "ගමනාන්ත ෆෝල්ඩරය එක් කරන්න"
+
+#: xPlorerManager.py:56
+msgid "Announce 'Empty Folder' when entering an empty folder"
+msgstr "හිස් ෆෝල්ඩරයකට ඇතුළු වන විට 'හිස් ෆෝල්ඩරය' ප්‍රකාශ කරන්න"
+
+#: xPlorerManager.py:71
+msgid "Automatically paste clipboard content into rename field"
+msgstr "පසුරු පුවරු අන්තර්ගතය ස්වයංක්‍රීයව නැවත නම් කිරීමේ ක්ෂේත්‍රයට අලවන්න"
+
+#: xPlorerManager.py:51
+msgid "Automatically select the first item"
+msgstr "පළමු අයිතමය ස්වයංක්‍රීයව තෝරන්න"
+
+#: compressionManager.py:268
+msgid "Built-in compression failed: {error}"
+msgstr "ගොඩනඟන ලද සම්පීඩනය අසාර්ථකයි: {error}"
+
+#: robocopyManager.py:61
+#: robocopyManager.py:242
+msgid "Cancel"
+msgstr "අවලංගු කරන්න"
+
+#: clipboardManager.py:77
+msgid "Cannot copy content of folders, please select files only"
+msgstr "ෆෝල්ඩරවල අන්තර්ගතය පිටපත් කළ නොහැක, කරුණාකර ගොනු පමණක් තෝරන්න"
+
+#: createFile.py:290
+msgid "Cannot find unique name for: {name}"
+msgstr "{name} සඳහා අනන්‍ය නමක් සොයාගත නොහැක"
+
+#: robocopyManager.py:761
+msgid "Cannot get destination"
+msgstr "ගමනාන්තය ලබා ගත නොහැක"
+
+#: __init__.py:635
+msgid "Cannot open settings dialog"
+msgstr "සැකසුම් සංවාදය විවෘත කළ නොහැක"
+
+#: txt2folder.py:69
+msgid "Cannot process RTF file: striprtf module not available"
+msgstr "RTF ගොනුව සැකසිය නොහැක: striprtf මොඩියුලය ලබා ගත නොහැක"
+
+#: contextMenu.py:46
+msgid "Case Converter for Folders"
+msgstr "ෆෝල්ඩර සඳහා අකුරු පරිවර්තකය"
+
+#: robocopyManager.py:348
+msgid "Choose destination folder"
+msgstr "ගමනාන්ත ෆෝල්ඩරය තෝරන්න"
+
+#: robocopyManager.py:239
+msgid "Clear all settings"
+msgstr "සියලු සැකසුම් මකන්න"
+
+#: compressionManager.py:264
+msgid "Completed"
+msgstr "සම්පූර්ණයි"
+
+#: contextMenu.py:25
+msgid "Compress zip"
+msgstr "Zip සම්පීඩනය කරන්න"
+
+#: compressionManager.py:144
+#: compressionManager.py:161
+msgid "Compressing files"
+msgstr "ගොනු සම්පීඩනය කරමින්"
+
+#: compressionManager.py:70
+msgid "Compressing..."
+msgstr "සම්පීඩනය කරමින්..."
+
+#: compressionManager.py:244
+#: compressionManager.py:258
+msgid "Compressing: {percent}%"
+msgstr "සම්පීඩනය: {percent}%"
+
+#: compressionManager.py:92
+#: compressionManager.py:262
+msgid "Compression cancelled"
+msgstr "සම්පීඩනය අවලංගු කරන ලදී"
+
+#: compressionManager.py:94
+#: compressionManager.py:265
+msgid "Compression completed {name}"
+msgstr "සම්පීඩනය සම්පූර්ණ විය {name}"
+
+#: clipboardManager.py:165
+msgid "Content from 1 file copied to clipboard"
+msgstr "ගොනු 1 ක අන්තර්ගතය පසුරු පුවරුවට පිටපත් කරන ලදී"
+
+#: clipboardManager.py:167
+msgid "Content from {count} files copied to clipboard"
+msgstr "{count} ගොනු වල අන්තර්ගතය පසුරු පුවරුවට පිටපත් කරන ලදී"
+
+#: clipboardManager.py:53
+msgid "Copied 1 item name to clipboard"
+msgstr "අයිතම නම 1 ක් පසුරු පුවරුවට පිටපත් කරන ලදී"
+
+#: robocopyManager.py:185
+msgid "Copied source path to clipboard"
+msgstr "මූලාශ්‍ර මාර්ගය පසුරු පුවරුවට පිටපත් කරන ලදී"
+
+#: clipboardManager.py:55
+msgid "Copied {count} item names to clipboard"
+msgstr "{count} අයිතම නම් පසුරු පුවරුවට පිටපත් කරන ලදී"
+
+#: __init__.py:429
+msgid "Copied: {path}"
+msgstr "පිටපත් කරන ලදී: {path}"
+
+#: robocopyManager.py:771
+msgid "Copy"
+msgstr "පිටපත් කරන්න"
+
+#: contextMenu.py:27
+msgid "Copy address bar"
+msgstr "ලිපින තීරුව පිටපත් කරන්න"
+
+#: contextMenu.py:28
+msgid "Copy content"
+msgstr "අන්තර්ගතය පිටපත් කරන්න"
+
+#: __init__.py:516
+msgid "Copy content (single tap) or invert selection (double tap)"
+msgstr "අන්තර්ගතය පිටපත් කරන්න (තනි එබීම) හෝ තේරීම ප්‍රතිලෝම කරන්න (ද්විත්ව එබීම)"
+
+#: contextMenu.py:29
+msgid "Copy selected file and folder names"
+msgstr "තෝරාගත් ගොනු සහ ෆෝල්ඩර නම් පිටපත් කරන්න"
+
+#: __init__.py:471
+msgid "Copy selected names (single tap) or copy address bar (double tap)"
+msgstr "තෝරාගත් නම් පිටපත් කරන්න (තනි එබීම) හෝ ලිපින තීරුව පිටපත් කරන්න (ද්විත්ව එබීම)"
+
+#: __init__.py:431
+#: clipboardManager.py:57
+#: clipboardManager.py:169
+#: robocopyManager.py:187
+msgid "Could not open clipboard"
+msgstr "පසුරු පුවරුව විවෘත කළ නොහැකි විය"
+
+#: contextMenu.py:30
+#: createFile.py:16
+msgid "Create File"
+msgstr "ගොනුව සාදන්න"
+
+#: folder_creation_dialog.py:14
+msgid "Create Multiple Folders"
+msgstr "ෆෝල්ඩර කිහිපයක් සාදන්න"
+
+#: contextMenu.py:43
+msgid "Create Multiple Folders..."
+msgstr "ෆෝල්ඩර කිහිපයක් සාදන්න..."
+
+#: folder_creation_dialog.py:42
+msgid "Create main folder and then subfolders"
+msgstr "ප්‍රධාන ෆෝල්ඩරය සහ ඉන්පසු උප ෆෝල්ඩර සාදන්න"
+
+#: __init__.py:626
+msgid "Create new folder and paste clipboard content into rename field"
+msgstr "නව ෆෝල්ඩරයක් සාදා පසුරු පුවරු අන්තර්ගතය නැවත නම් කිරීමේ ක්ෂේත්‍රයට අලවන්න"
+
+#: createFile.py:237
+msgid "Current path is not a directory"
+msgstr "වත්මන් මාර්ගය නාමාවලියක් නොවේ"
+
+#: robocopyManager.py:817
+msgid "Destination already exists, overwriting..."
+msgstr "ගමනාන්තය දැනටමත් පවතී, උඩින් ලියමින්..."
+
+#: robocopyManager.py:205
+msgid "Destination folders list"
+msgstr "ගමනාන්ත ෆෝල්ඩර ලැයිස්තුව"
+
+#: robocopyManager.py:203
+msgid "Destination folders:"
+msgstr "ගමනාන්ත ෆෝල්ඩර:"
+
+#: folder_creation_dialog.py:46
+msgid "Edit individual folder names"
+msgstr "තනි ෆෝල්ඩර නම් සංස්කරණය කරන්න"
+
+#: robocopyManager.py:115
+msgid "Elapsed time: {} seconds"
+msgstr "ගත වූ කාලය: {} තත්පර"
+
+#: xPlorerManager.py:40
+msgid "Empty Folder"
+msgstr "හිස් ෆෝල්ඩරය"
+
+#: robocopyManager.py:217
+msgid "Enable automatic synchronization"
+msgstr "ස්වයංක්‍රීය සමමුහුර්තකරණය සබල කරන්න"
+
+#: folderInfo.py:78
+msgid "Error calculating folder info"
+msgstr "ෆෝල්ඩර තොරතුරු ගණනය කිරීමේ දෝෂය"
+
+#: fileOperations.py:401
+msgid "Error calculating size"
+msgstr "ප්‍රමාණය ගණනය කිරීමේ දෝෂය"
+
+#: compressionManager.py:173
+msgid "Error compressing files"
+msgstr "ගොනු සම්පීඩනය කිරීමේ දෝෂය"
+
+#: clipboardManager.py:173
+msgid "Error copying file content"
+msgstr "ගොනු අන්තර්ගතය පිටපත් කිරීමේ දෝෂය"
+
+#: clipboardManager.py:61
+msgid "Error copying names to clipboard"
+msgstr "නම් පසුරු පුවරුවට පිටපත් කිරීමේ දෝෂය"
+
+#: txt2folder.py:116
+msgid "Error creating base folder"
+msgstr "මූලික ෆෝල්ඩරය සෑදීමේ දෝෂය"
+
+#: createFile.py:311
+msgid "Error creating files"
+msgstr "ගොනු සෑදීමේ දෝෂය"
+
+#: folder_creation_dialog.py:219
+msgid "Error creating folder: {number}"
+msgstr "ෆෝල්ඩරය සෑදීමේ දෝෂය: {number}"
+
+#: __init__.py:662
+msgid "Error creating folders"
+msgstr "ෆෝල්ඩර සෑදීමේ දෝෂය"
+
+#: folder_creation_dialog.py:179
+msgid "Error creating main folder"
+msgstr "ප්‍රධාන ෆෝල්ඩරය සෑදීමේ දෝෂය"
+
+#: folder_creation_dialog.py:201
+msgid "Error creating subfolder: {number}"
+msgstr "උප ෆෝල්ඩරය සෑදීමේ දෝෂය: {number}"
+
+#: __init__.py:690
+msgid "Error during conversion"
+msgstr "පරිවර්තනය අතරතුර දෝෂය"
+
+#: robocopyManager.py:990
+msgid "Error during {}: {}"
+msgstr "{} අතරතුර දෝෂය: {}"
+
+#: compressionManager.py:101
+msgid "Error in compression process: {error}"
+msgstr "සම්පීඩන ක්‍රියාවලියේ දෝෂය: {error}"
+
+#: selectionManager.py:65
+msgid "Error inverting selection"
+msgstr "තේරීම ප්‍රතිලෝම කිරීමේ දෝෂය"
+
+#: createFile.py:262
+msgid "Error opening create file dialog"
+msgstr "ගොනු සාදන්න සංවාදය විවෘත කිරීමේ දෝෂය"
+
+#: fileOperations.py:488
+msgid "Error opening rename dialog"
+msgstr "නැවත නම් කරන්න සංවාදය විවෘත කිරීමේ දෝෂය"
+
+#: __init__.py:642
+msgid "Error opening settings"
+msgstr "සැකසුම් විවෘත කිරීමේ දෝෂය"
+
+#: txt2folder.py:212
+msgid "Error processing text file: {}"
+msgstr "පෙළ ගොනුව සැකසීමේ දෝෂය: {}"
+
+#: txt2folder.py:80
+msgid "Error reading RTF file"
+msgstr "RTF ගොනුව කියවීමේ දෝෂය"
+
+#: txt2folder.py:215
+msgid "Error reading file encoding"
+msgstr "ගොනු කේතනය කියවීමේ දෝෂය"
+
+#: fileOperations.py:453
+#: fileOperations.py:482
+msgid "Error renaming file"
+msgstr "ගොනුව නැවත නම් කිරීමේ දෝෂය"
+
+#: robocopyManager.py:784
+#: txt2folder.py:219
+msgid "Error: {}"
+msgstr "දෝෂය: {}"
+
+#: robocopyManager.py:111
+msgid "Estimated time remaining: {}"
+msgstr "ඉතිරි ඇස්තමේන්තුගත කාලය: {}"
+
+#: createFile.py:84
+msgid "Extension:"
+msgstr "දිගුව:"
+
+#: case.py:115
+#: case.py:129
+#: case.py:150
+#: case.py:164
+msgid "Failed to rename any folders"
+msgstr "කිසිදු ෆෝල්ඩරයක් නැවත නම් කිරීමට අසමත් විය"
+
+#: createFile.py:163
+msgid "File count cannot exceed 10"
+msgstr "ගොනු ගණන 10 ඉක්මවිය නොහැක"
+
+#: createFile.py:160
+msgid "File count must be at least 1"
+msgstr "ගොනු ගණන අවම වශයෙන් 1 විය යුතුය"
+
+#: createFile.py:131
+msgid "File name"
+msgstr "ගොනු නම"
+
+#: fileOperations.py:57
+msgid "File name cannot be empty"
+msgstr "ගොනු නම හිස් විය නොහැක"
+
+#: fileOperations.py:470
+msgid "File name not changed"
+msgstr "ගොනු නම වෙනස් කර නැත"
+
+#: createFile.py:77
+#: createFile.py:132
+msgid "File name {index}:"
+msgstr "ගොනු නම {index}:"
+
+#: createFile.py:75
+msgid "File name:"
+msgstr "ගොනු නම:"
+
+#: fileOperations.py:479
+msgid "File renamed to {name}"
+msgstr "ගොනුව {name} ලෙස නැවත නම් කරන ලදී"
+
+#: folder_creation_dialog.py:113
+#: folder_creation_dialog.py:158
+msgid "Folder"
+msgstr "ෆෝල්ඩරය"
+
+#: txt2folder.py:106
+#: txt2folder.py:182
+msgid "Folder '{}' already exists, creating '{}' instead"
+msgstr "'{}' ෆෝල්ඩරය දැනටමත් පවතී, ඒ වෙනුවට '{}' සාදමින්"
+
+#: contextMenu.py:52
+msgid "Folder info"
+msgstr "ෆෝල්ඩර තොරතුරු"
+
+#: folder_creation_dialog.py:27
+msgid "Folder title:"
+msgstr "ෆෝල්ඩර මාතෘකාව:"
+
+#: contextMenu.py:50
+msgid "Headline Case"
+msgstr "ශීර්ෂ පාඨ අකුරු"
+
+#: robocopyManager.py:434
+msgid "Immediate sync completed: {}/{} destinations"
+msgstr "ක්ෂණික සමමුහුර්තකරණය සම්පූර්ණයි: {}/{} ගමනාන්ත"
+
+#: robocopyManager.py:767
+msgid "Invalid destination"
+msgstr "වලංගු නොවන ගමනාන්තය"
+
+#: folder_creation_dialog.py:169
+msgid "Invalid number for folders"
+msgstr "ෆෝල්ඩර සඳහා වලංගු නොවන අංකය"
+
+#: robocopyManager.py:407
+#: robocopyManager.py:447
+msgid "Invalid time format"
+msgstr "වලංගු නොවන වේලා ආකෘතිය"
+
+#: contextMenu.py:26
+msgid "Invert selection"
+msgstr "තේරීම ප්‍රතිලෝම කරන්න"
+
+#: selectionManager.py:60
+msgid "Inverted selection: {inverted} of {total} items selected"
+msgstr "ප්‍රතිලෝම තේරීම: සම්පූර්ණ {total} න් {inverted} අයිතම තෝරාගෙන ඇත"
+
+#: robocopyManager.py:868
+msgid "Large file detected, using compression for speed"
+msgstr "විශාල ගොනුවක් අනාවරණය විය, වේගය සඳහා සම්පීඩනය භාවිතා කරමින්"
+
+#: contextMenu.py:48
+msgid "Lowercase"
+msgstr "කුඩා අකුරු"
+
+#: folder_creation_dialog.py:166
+msgid "Maximum 100 folders allowed"
+msgstr "උපරිම ෆෝල්ඩර 100 කට අවසර ඇත"
+
+#: robocopyManager.py:62
+msgid "Minimize"
+msgstr "කුඩා කරන්න"
+
+#: robocopyManager.py:145
+msgid "Mirror Backup Settings"
+msgstr "දර්පණ උපස්ථ සැකසුම්"
+
+#: robocopyManager.py:716
+msgid "Mirror backup configured successfully"
+msgstr "දර්පණ උපස්ථය සාර්ථකව වින්‍යාස කරන ලදී"
+
+#: robocopyManager.py:718
+msgid "Mirror backup disabled"
+msgstr "දර්පණ උපස්ථය අක්‍රීය කරන ලදී"
+
+#: robocopyManager.py:771
+msgid "Move"
+msgstr "ගෙනයන්න"
+
+#: robocopyManager.py:609
+msgid "Next scheduled backup for {}: {}"
+msgstr "{} සඳහා ඊළඟ උපලේඛනගත උපස්ථය: {}"
+
+#: __init__.py:650
+msgid "No Explorer folder detected"
+msgstr "Explorer ෆෝල්ඩරයක් අනාවරණය නොවීය"
+
+#: fileOperations.py:300
+#: fileOperations.py:410
+msgid "No access to size data"
+msgstr "ප්‍රමාණ දත්ත වෙත ප්‍රවේශයක් නැත"
+
+#: selectionManager.py:27
+msgid "No active File Explorer window found"
+msgstr "සක්‍රිය File Explorer කවුළුවක් හමු නොවීය"
+
+#: clipboardManager.py:156
+msgid "No content could be read from selected files"
+msgstr "තෝරාගත් ගොනු වලින් කිසිදු අන්තර්ගතයක් කියවිය නොහැකි විය"
+
+#: createFile.py:303
+msgid "No files were created"
+msgstr "ගොනු කිසිවක් සාදනු නොලැබුණි"
+
+#: case.py:106
+#: case.py:120
+#: case.py:141
+#: case.py:155
+msgid "No folders found"
+msgstr "ෆෝල්ඩර හමු නොවීය"
+
+#: __init__.py:677
+msgid "No folders selected or current folder not available"
+msgstr "ෆෝල්ඩර කිසිවක් තෝරාගෙන නැත හෝ වත්මන් ෆෝල්ඩරය ලබා ගත නොහැක"
+
+#: folder_creation_dialog.py:230
+#: txt2folder.py:155
+#: txt2folder.py:208
+msgid "No folders were created"
+msgstr "ෆෝල්ඩර කිසිවක් සාදනු නොලැබුණි"
+
+#: folderInfo.py:30
+msgid "No item selected"
+msgstr "අයිතමයක් තෝරාගෙන නැත"
+
+#: selectionManager.py:40
+msgid "No items in folder"
+msgstr "ෆෝල්ඩරයේ අයිතම නොමැත"
+
+#: clipboardManager.py:30
+#: clipboardManager.py:72
+#: compressionManager.py:132
+#: fileOperations.py:289
+#: fileOperations.py:433
+msgid "No items selected"
+msgstr "අයිතම කිසිවක් තෝරාගෙන නැත"
+
+#: robocopyManager.py:749
+msgid "No pending operation"
+msgstr "විකල්ප මෙහෙයුමක් නොමැත"
+
+#: clipboardManager.py:93
+msgid "No text files selected"
+msgstr "පෙළ ගොනු කිසිවක් තෝරාගෙන නැත"
+
+#: txt2folder.py:91
+#: txt2folder.py:167
+msgid "No valid folder names found in the file"
+msgstr "ගොනුවේ වලංගු ෆෝල්ඩර නම් හමු නොවීය"
+
+#: createFile.py:227
+#: robocopyManager.py:663
+#: robocopyManager.py:724
+#: robocopyManager.py:737
+#: robocopyManager.py:755
+#: selectionManager.py:21
+#: txt2folder.py:43
+msgid "Not in File Explorer"
+msgstr "File Explorer හි නොමැත"
+
+#: createFile.py:27
+msgid "Number of files to create:"
+msgstr "සෑදිය යුතු ගොනු ගණන:"
+
+#: folder_creation_dialog.py:163
+msgid "Number of folders must be at least 1"
+msgstr "ෆෝල්ඩර ගණන අවම වශයෙන් 1 විය යුතුය"
+
+#: folder_creation_dialog.py:35
+msgid "Number of folders:"
+msgstr "ෆෝල්ඩර ගණන:"
+
+#: robocopyManager.py:241
+msgid "OK"
+msgstr "හරි"
+
+#: __init__.py:586
+msgid "Open xPlorer context menu"
+msgstr "xPlorer සන්දර්භ මෙනුව විවෘත කරන්න"
+
+#: txt2folder.py:55
+msgid "Please select a .txt or .rtf file"
+msgstr "කරුණාකර .txt හෝ .rtf ගොනුවක් තෝරන්න"
+
+#: fileOperations.py:443
+msgid "Please select a file, not a folder"
+msgstr "කරුණාකර ගොනුවක් තෝරන්න, ෆෝල්ඩරයක් නොවේ"
+
+#: robocopyManager.py:671
+msgid "Please select a folder"
+msgstr "කරුණාකර ෆෝල්ඩරයක් තෝරන්න"
+
+#: fileOperations.py:437
+msgid "Please select only one file"
+msgstr "කරුණාකර එක් ගොනුවක් පමණක් තෝරන්න"
+
+#: folderInfo.py:35
+#: robocopyManager.py:667
+msgid "Please select only one folder"
+msgstr "කරුණාකර එක් ෆෝල්ඩරයක් පමණක් තෝරන්න"
+
+#: txt2folder.py:48
+msgid "Please select only one text file"
+msgstr "කරුණාකර එක් පෙළ ගොනුවක් පමණක් තෝරන්න"
+
+#: robocopyManager.py:46
+msgid "Preparing operation..."
+msgstr "මෙහෙයුම සූදානම් කරමින්..."
+
+#: robocopyManager.py:103
+msgid "Processing: {}"
+msgstr "සැකසීම: {}"
+
+#: robocopyManager.py:105
+msgid "Progress: {}%"
+msgstr "ප්‍රගතිය: {}%"
+
+#: robocopyManager.py:210
+msgid "Remove selected destination"
+msgstr "තෝරාගත් ගමනාන්තය ඉවත් කරන්න"
+
+#: robocopyManager.py:198
+msgid "Remove selected source"
+msgstr "තෝරාගත් මූලාශ්‍රය ඉවත් කරන්න"
+
+#: __init__.py:603
+#: contextMenu.py:31
+msgid "Rename selected file"
+msgstr "තෝරාගත් ගොනුව නැවත නම් කරන්න"
+
+#: contextMenu.py:35
+msgid "Robocopy"
+msgstr "Robocopy"
+
+#: contextMenu.py:32
+msgid "Say size"
+msgstr "ප්‍රමාණය කියන්න"
+
+#: __init__.py:561
+msgid "Say size (single tap) or compress zip (double tap)"
+msgstr "ප්‍රමාණය කියන්න (තනි එබීම) හෝ zip සම්පීඩනය කරන්න (ද්විත්ව එබීම)"
+
+#: robocopyManager.py:648
+msgid "Scheduled backup completed: {}/{} destinations"
+msgstr "උපලේඛනගත උපස්ථය සම්පූර්ණයි: {}/{} ගමනාන්ත"
+
+#: robocopyManager.py:623
+msgid "Scheduled mirror backup started for {}"
+msgstr "{} සඳහා උපලේඛනගත දර්පණ උපස්ථය ආරම්භ කරන ලදී"
+
+#: robocopyManager.py:231
+msgid "Scheduled time:"
+msgstr "උපලේඛනගත කාලය:"
+
+#: robocopyManager.py:728
+#: robocopyManager.py:741
+msgid "Select one item only"
+msgstr "එක් අයිතමයක් පමණක් තෝරන්න"
+
+#: txt2folder.py:60
+msgid "Selected file does not exist"
+msgstr "තෝරාගත් ගොනුව නොපවතී"
+
+#: folderInfo.py:41
+msgid "Selected item is not a folder"
+msgstr "තෝරාගත් අයිතමය ෆෝල්ඩරයක් නොවේ"
+
+#: createFile.py:199
+msgid "Some files will use default names"
+msgstr "සමහර ගොනු පෙරනිමි නම් භාවිතා කරයි"
+
+#: robocopyManager.py:404
+#: robocopyManager.py:444
+msgid "Source and destination required"
+msgstr "මූලාශ්‍රය සහ ගමනාන්තය අවශ්‍ය වේ"
+
+#: robocopyManager.py:792
+msgid "Source does not exist"
+msgstr "මූලාශ්‍රය නොපවතී"
+
+#: robocopyManager.py:193
+msgid "Source folders (select to edit):"
+msgstr "මූලාශ්‍ර ෆෝල්ඩර (සංස්කරණය කිරීමට තෝරන්න):"
+
+#: robocopyManager.py:195
+msgid "Source folders list"
+msgstr "මූලාශ්‍ර ෆෝල්ඩර ලැයිස්තුව"
+
+#: robocopyManager.py:732
+msgid "Source for copy: {}"
+msgstr "පිටපත් කිරීම සඳහා මූලාශ්‍රය: {}"
+
+#: robocopyManager.py:745
+msgid "Source for move: {}"
+msgstr "ගෙනයාම සඳහා මූලාශ්‍රය: {}"
+
+#: robocopyManager.py:121
+msgid "Speed: {}"
+msgstr "වේගය: {}"
+
+#: robocopyManager.py:240
+msgid "Start synchronization"
+msgstr "සමමුහුර්තකරණය ආරම්භ කරන්න"
+
+#: robocopyManager.py:410
+msgid "Starting immediate mirror sync..."
+msgstr "ක්ෂණික දර්පණ සමමුහුර්තකරණය ආරම්භ කරමින්..."
+
+#: robocopyManager.py:774
+msgid "Starting {} operation in background..."
+msgstr "පසුබිමේ {} මෙහෙයුම ආරම්භ කරමින්..."
+
+#: compressionManager.py:144
+#: compressionManager.py:161
+msgid "Starting..."
+msgstr "ආරම්භ කරමින්..."
+
+#: case.py:162
+msgid "Successfully converted {count} folders to headline case"
+msgstr "{count} ෆෝල්ඩර ශීර්ෂ පාඨ අකුරු වලට සාර්ථකව පරිවර්තනය කරන ලදී"
+
+#: case.py:127
+msgid "Successfully converted {count} folders to lowercase"
+msgstr "{count} ෆෝල්ඩර කුඩා අකුරු වලට සාර්ථකව පරිවර්තනය කරන ලදී"
+
+#: case.py:148
+msgid "Successfully converted {count} folders to title case"
+msgstr "{count} ෆෝල්ඩර මාතෘකා අකුරු වලට සාර්ථකව පරිවර්තනය කරන ලදී"
+
+#: case.py:113
+msgid "Successfully converted {count} folders to uppercase"
+msgstr "{count} ෆෝල්ඩර ලොකු අකුරු වලට සාර්ථකව පරිවර්තනය කරන ලදී"
+
+#: folder_creation_dialog.py:226
+msgid "Successfully created 1 folder"
+msgstr "ෆෝල්ඩර 1 ක් සාර්ථකව සාදන ලදී"
+
+#: folder_creation_dialog.py:224
+msgid "Successfully created main folder only"
+msgstr "ප්‍රධාන ෆෝල්ඩරය පමණක් සාර්ථකව සාදන ලදී"
+
+#: folder_creation_dialog.py:228
+msgid "Successfully created {count} folders"
+msgstr "{count} ෆෝල්ඩර සාර්ථකව සාදන ලදී"
+
+#: txt2folder.py:150
+#: txt2folder.py:203
+msgid "Successfully created {} folders in '{}'"
+msgstr "'{}' තුළ {} ෆෝල්ඩර සාර්ථකව සාදන ලදී"
+
+#: xPlorerManager.py:66
+msgid "Suppress announcement of '- File Explorer' in window titles"
+msgstr "කවුළු මාතෘකා වල '- File Explorer' ප්‍රකාශනය මර්දනය කරන්න"
+
+#: xPlorerManager.py:61
+msgid "Suppress announcement of DirectUIHWND class"
+msgstr "DirectUIHWND පන්තියේ ප්‍රකාශනය මර්දනය කරන්න"
+
+#: robocopyManager.py:438
+msgid "Sync error occurred"
+msgstr "සමමුහුර්තකරණ දෝෂයක් ඇති විය"
+
+#: robocopyManager.py:220
+msgid "Synchronization interval:"
+msgstr "සමමුහුර්තකරණ පරතරය:"
+
+#: contextMenu.py:42
+msgid "TXT to Folder"
+msgstr "TXT සිට ෆෝල්ඩරයට"
+
+#: contextMenu.py:49
+msgid "Title Case"
+msgstr "මාතෘකා අකුරු"
+
+#: clipboardManager.py:104
+msgid "Total file size is too large to copy content"
+msgstr "සම්පූර්ණ ගොනු ප්‍රමාණය අන්තර්ගතය පිටපත් කිරීමට තරම් විශාලයි"
+
+#: robocopyManager.py:963
+msgid "Trying alternative copy method..."
+msgstr "විකල්ප පිටපත් කිරීමේ ක්‍රමය උත්සාහ කරමින්..."
+
+#: createFile.py:233
+msgid "Unable to get current directory"
+msgstr "වත්මන් නාමාවලිය ලබා ගැනීමට නොහැක"
+
+#: __init__.py:433
+msgid "Unable to get current path"
+msgstr "වත්මන් මාර්ගය ලබා ගැනීමට නොහැක"
+
+#: selectionManager.py:32
+msgid "Unable to get folder view"
+msgstr "ෆෝල්ඩර දර්ශනය ලබා ගැනීමට නොහැක"
+
+#: contextMenu.py:47
+msgid "Uppercase"
+msgstr "ලොකු අකුරු"
+
+#: clipboardManager.py:124
+msgid "[Error processing RTF file]"
+msgstr "[RTF ගොනුව සැකසීමේ දෝෂය]"
+
+#: clipboardManager.py:126
+msgid "[RTF content - striprtf module not available]"
+msgstr "[RTF අන්තර්ගතය - striprtf මොඩියුලය ලබා ගත නොහැක]"
+
+#: compressionManager.py:97
+msgid "compression failed: {error}"
+msgstr "සම්පීඩනය අසාර්ථකයි: {error}"
+
+#: contextMenu.py:36
+msgid "copy"
+msgstr "පිටපත් කරන්න"
+
+#: contextMenu.py:40
+msgid "mirror Backup"
+msgstr "දර්පණ උපස්ථය"
+
+#: contextMenu.py:37
+msgid "move"
+msgstr "ගෙනයන්න"
+
+#: createFile.py:183
+msgid "new_file"
+msgstr "නව_ගොනුව"
+
+#: createFile.py:185
+msgid "new_file_{index}"
+msgstr "නව_ගොනුව_{index}"
+
+#: contextMenu.py:38
+msgid "paste"
+msgstr "අලවන්න"
+
+#: __init__.py:143
+#: __init__.py:472
+#: __init__.py:517
+#: __init__.py:562
+#: __init__.py:587
+#: __init__.py:604
+#: __init__.py:627
+#: xPlorerManager.py:44
+msgid "xPlorer"
+msgstr "xPlorer"
+
+#: contextMenu.py:22
+msgid "xPlorer Settings"
+msgstr "xPlorer සැකසුම්"
+
+#: createFile.py:307
+msgid "{count} files created"
+msgstr "{count} ගොනු සාදන ලදී"
+
+#: fileOperations.py:420
+msgid "{count} items {size}"
+msgstr "{count} අයිතම {size}"
+
+#: folderInfo.py:66
+msgid "{subfolders} subfolders and {files} files"
+msgstr "{subfolders} උප ෆෝල්ඩර සහ {files} ගොනු"
+
+#: robocopyManager.py:950
+msgid "{} completed successfully in {:.1f} seconds"
+msgstr "{} තත්පර {:.1f} කින් සාර්ථකව සම්පූර්ණ විය"
+
+#: robocopyManager.py:947
+msgid "{} completed successfully in {:.1f} seconds, average speed: {:.1f} MB/s"
+msgstr "{} තත්පර {:.1f} කින් සාර්ථකව සම්පූර්ණ විය, සාමාන්‍ය වේගය: {:.1f} MB/s"
+
+#: robocopyManager.py:978
+msgid "{} completed successfully using alternative method"
+msgstr "{} විකල්ප ක්‍රමය භාවිතයෙන් සාර්ථකව සම්පූර්ණ විය"
+
+#: robocopyManager.py:985
+msgid "{} completed with warnings (code: {})"
+msgstr "{} අනතුරු ඇඟවීම් සමඟ සම්පූර්ණ විය (කේතය: {})"
+
+#: robocopyManager.py:982
+msgid "{} failed with error: {}"
+msgstr "{} දෝෂයක් සමඟ අසාර්ථක විය: {}"
+
+#: robocopyManager.py:903
+msgid "{} in progress... {} seconds elapsed"
+msgstr "{} සිදුවෙමින් පවතී... තත්පර {} ක් ගත විය"
+
+#: robocopyManager.py:878
+msgid "{} started. You can continue working while it runs in background."
+msgstr "{} ආරම්භ කරන ලදී. එය පසුබිමේ ක්‍රියාත්මක වන විට ඔබට දිගටම වැඩ කළ හැකිය."
+
+#: robocopyManager.py:929
+msgid "{}: {}% complete, speed: {:.1f} MB/s"
+msgstr "{}: {}% සම්පූර්ණයි, වේගය: {:.1f} MB/s"

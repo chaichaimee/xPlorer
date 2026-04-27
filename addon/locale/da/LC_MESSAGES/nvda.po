@@ -1,0 +1,893 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: xPlorer 2026.5.1\n"
+"Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
+"POT-Creation-Date: 2026-04-27 15:57+0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Gemini AI\n"
+"Language-Team: Danish\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: DevOn Addon\n"
+
+#: folder_creation_dialog.py:60
+msgid "&Apply"
+msgstr "&Anvend"
+
+#: folder_creation_dialog.py:61
+msgid "&Cancel"
+msgstr "&Annuller"
+
+#: robocopyManager.py:223
+msgid "1 day"
+msgstr "1 dag"
+
+#: createFile.py:305
+msgid "1 file created"
+msgstr "1 fil oprettet"
+
+#: robocopyManager.py:222
+msgid "1 hour"
+msgstr "1 time"
+
+#: robocopyManager.py:223
+msgid "1 month"
+msgstr "1 måned"
+
+#: robocopyManager.py:223
+msgid "15 days"
+msgstr "15 dage"
+
+#: robocopyManager.py:222
+msgid "15 minutes"
+msgstr "15 minutter"
+
+#: robocopyManager.py:222
+msgid "30 minutes"
+msgstr "30 minutter"
+
+#: robocopyManager.py:223
+msgid "7 days"
+msgstr "7 dage"
+
+#: compressionManager.py:159
+msgid "7-Zip compression failed, trying built-in method..."
+msgstr "7-Zip komprimering mislykkedes, prøver indbygget metode..."
+
+#: fileOperations.py:474
+msgid "A file with this name already exists"
+msgstr "En fil med dette navn findes allerede"
+
+#: robocopyManager.py:209
+msgid "Add destination folder"
+msgstr "Tilføj destinationsmappe"
+
+#: xPlorerManager.py:56
+msgid "Announce 'Empty Folder' when entering an empty folder"
+msgstr "Annoncer 'Tom mappe', når du går ind i en tom mappe"
+
+#: xPlorerManager.py:71
+msgid "Automatically paste clipboard content into rename field"
+msgstr "Indsæt automatisk udklipsholderens indhold i omdøbningsfeltet"
+
+#: xPlorerManager.py:51
+msgid "Automatically select the first item"
+msgstr "Vælg automatisk det første element"
+
+#: compressionManager.py:268
+msgid "Built-in compression failed: {error}"
+msgstr "Indbygget komprimering mislykkedes: {error}"
+
+#: robocopyManager.py:61
+#: robocopyManager.py:242
+msgid "Cancel"
+msgstr "Annuller"
+
+#: clipboardManager.py:77
+msgid "Cannot copy content of folders, please select files only"
+msgstr "Kan ikke kopiere indhold af mapper, vælg venligst kun filer"
+
+#: createFile.py:290
+msgid "Cannot find unique name for: {name}"
+msgstr "Kan ikke finde et unikt navn til: {name}"
+
+#: robocopyManager.py:761
+msgid "Cannot get destination"
+msgstr "Kan ikke hente destination"
+
+#: __init__.py:635
+msgid "Cannot open settings dialog"
+msgstr "Kan ikke åbne indstillingsdialogen"
+
+#: txt2folder.py:69
+msgid "Cannot process RTF file: striprtf module not available"
+msgstr "Kan ikke behandle RTF-fil: striprtf-modulet er ikke tilgængeligt"
+
+#: contextMenu.py:46
+msgid "Case Converter for Folders"
+msgstr "Versalkonvertering for mapper"
+
+#: robocopyManager.py:348
+msgid "Choose destination folder"
+msgstr "Vælg destinationsmappe"
+
+#: robocopyManager.py:239
+msgid "Clear all settings"
+msgstr "Ryd alle indstillinger"
+
+#: compressionManager.py:264
+msgid "Completed"
+msgstr "Færdig"
+
+#: contextMenu.py:25
+msgid "Compress zip"
+msgstr "Komprimer til zip"
+
+#: compressionManager.py:144
+#: compressionManager.py:161
+msgid "Compressing files"
+msgstr "Komprimerer filer"
+
+#: compressionManager.py:70
+msgid "Compressing..."
+msgstr "Komprimerer..."
+
+#: compressionManager.py:244
+#: compressionManager.py:258
+msgid "Compressing: {percent}%"
+msgstr "Komprimerer: {percent}%"
+
+#: compressionManager.py:92
+#: compressionManager.py:262
+msgid "Compression cancelled"
+msgstr "Komprimering annulleret"
+
+#: compressionManager.py:94
+#: compressionManager.py:265
+msgid "Compression completed {name}"
+msgstr "Komprimering fuldført {name}"
+
+#: clipboardManager.py:165
+msgid "Content from 1 file copied to clipboard"
+msgstr "Indhold fra 1 fil kopieret til udklipsholder"
+
+#: clipboardManager.py:167
+msgid "Content from {count} files copied to clipboard"
+msgstr "Indhold fra {count} filer kopieret til udklipsholder"
+
+#: clipboardManager.py:53
+msgid "Copied 1 item name to clipboard"
+msgstr "Kopierede 1 elementnavn til udklipsholder"
+
+#: robocopyManager.py:185
+msgid "Copied source path to clipboard"
+msgstr "Kopierede kildesti til udklipsholder"
+
+#: clipboardManager.py:55
+msgid "Copied {count} item names to clipboard"
+msgstr "Kopierede {count} elementnavne til udklipsholder"
+
+#: __init__.py:429
+msgid "Copied: {path}"
+msgstr "Kopieret: {path}"
+
+#: robocopyManager.py:771
+msgid "Copy"
+msgstr "Kopier"
+
+#: contextMenu.py:27
+msgid "Copy address bar"
+msgstr "Kopier adresselinje"
+
+#: contextMenu.py:28
+msgid "Copy content"
+msgstr "Kopier indhold"
+
+#: __init__.py:516
+msgid "Copy content (single tap) or invert selection (double tap)"
+msgstr "Kopier indhold (enkelt tryk) eller omvendt markering (dobbelt tryk)"
+
+#: contextMenu.py:29
+msgid "Copy selected file and folder names"
+msgstr "Kopier valgte fil- og mappenavne"
+
+#: __init__.py:471
+msgid "Copy selected names (single tap) or copy address bar (double tap)"
+msgstr "Kopier valgte navne (enkelt tryk) eller kopier adresselinje (dobbelt tryk)"
+
+#: __init__.py:431
+#: clipboardManager.py:57
+#: clipboardManager.py:169
+#: robocopyManager.py:187
+msgid "Could not open clipboard"
+msgstr "Kunne ikke åbne udklipsholderen"
+
+#: contextMenu.py:30
+#: createFile.py:16
+msgid "Create File"
+msgstr "Opret fil"
+
+#: folder_creation_dialog.py:14
+msgid "Create Multiple Folders"
+msgstr "Opret flere mapper"
+
+#: contextMenu.py:43
+msgid "Create Multiple Folders..."
+msgstr "Opret flere mapper..."
+
+#: folder_creation_dialog.py:42
+msgid "Create main folder and then subfolders"
+msgstr "Opret hovedmappe og derefter undermapper"
+
+#: __init__.py:626
+msgid "Create new folder and paste clipboard content into rename field"
+msgstr "Opret ny mappe og indsæt udklipsholderens indhold i omdøbningsfeltet"
+
+#: createFile.py:237
+msgid "Current path is not a directory"
+msgstr "Den aktuelle sti er ikke en mappe"
+
+#: robocopyManager.py:817
+msgid "Destination already exists, overwriting..."
+msgstr "Destinationen findes allerede, overskriver..."
+
+#: robocopyManager.py:205
+msgid "Destination folders list"
+msgstr "Liste over destinationsmapper"
+
+#: robocopyManager.py:203
+msgid "Destination folders:"
+msgstr "Destinationsmapper:"
+
+#: folder_creation_dialog.py:46
+msgid "Edit individual folder names"
+msgstr "Rediger individuelle mappenavne"
+
+#: robocopyManager.py:115
+msgid "Elapsed time: {} seconds"
+msgstr "Forløbet tid: {} sekunder"
+
+#: xPlorerManager.py:40
+msgid "Empty Folder"
+msgstr "Tom mappe"
+
+#: robocopyManager.py:217
+msgid "Enable automatic synchronization"
+msgstr "Aktiver automatisk synkronisering"
+
+#: folderInfo.py:78
+msgid "Error calculating folder info"
+msgstr "Fejl ved beregning af mappeinfo"
+
+#: fileOperations.py:401
+msgid "Error calculating size"
+msgstr "Fejl ved beregning af størrelse"
+
+#: compressionManager.py:173
+msgid "Error compressing files"
+msgstr "Fejl ved komprimering af filer"
+
+#: clipboardManager.py:173
+msgid "Error copying file content"
+msgstr "Fejl ved kopiering af filindhold"
+
+#: clipboardManager.py:61
+msgid "Error copying names to clipboard"
+msgstr "Fejl ved kopiering af navne til udklipsholder"
+
+#: txt2folder.py:116
+msgid "Error creating base folder"
+msgstr "Fejl ved oprettelse af basismappe"
+
+#: createFile.py:311
+msgid "Error creating files"
+msgstr "Fejl ved oprettelse af filer"
+
+#: folder_creation_dialog.py:219
+msgid "Error creating folder: {number}"
+msgstr "Fejl ved oprettelse af mappe: {number}"
+
+#: __init__.py:662
+msgid "Error creating folders"
+msgstr "Fejl ved oprettelse af mapper"
+
+#: folder_creation_dialog.py:179
+msgid "Error creating main folder"
+msgstr "Fejl ved oprettelse af hovedmappe"
+
+#: folder_creation_dialog.py:201
+msgid "Error creating subfolder: {number}"
+msgstr "Fejl ved oprettelse af undermappe: {number}"
+
+#: __init__.py:690
+msgid "Error during conversion"
+msgstr "Fejl under konvertering"
+
+#: robocopyManager.py:990
+msgid "Error during {}: {}"
+msgstr "Fejl under {}: {}"
+
+#: compressionManager.py:101
+msgid "Error in compression process: {error}"
+msgstr "Fejl i komprimeringsprocessen: {error}"
+
+#: selectionManager.py:65
+msgid "Error inverting selection"
+msgstr "Fejl ved omvendt markering"
+
+#: createFile.py:262
+msgid "Error opening create file dialog"
+msgstr "Fejl ved åbning af fildialog"
+
+#: fileOperations.py:488
+msgid "Error opening rename dialog"
+msgstr "Fejl ved åbning af omdøbningsdialog"
+
+#: __init__.py:642
+msgid "Error opening settings"
+msgstr "Fejl ved åbning af indstillinger"
+
+#: txt2folder.py:212
+msgid "Error processing text file: {}"
+msgstr "Fejl ved behandling af tekstfil: {}"
+
+#: txt2folder.py:80
+msgid "Error reading RTF file"
+msgstr "Fejl ved læsning af RTF-fil"
+
+#: txt2folder.py:215
+msgid "Error reading file encoding"
+msgstr "Fejl ved læsning af filkodning"
+
+#: fileOperations.py:453
+#: fileOperations.py:482
+msgid "Error renaming file"
+msgstr "Fejl ved omdøbning af fil"
+
+#: robocopyManager.py:784
+#: txt2folder.py:219
+msgid "Error: {}"
+msgstr "Fejl: {}"
+
+#: robocopyManager.py:111
+msgid "Estimated time remaining: {}"
+msgstr "Anslået resterende tid: {}"
+
+#: createFile.py:84
+msgid "Extension:"
+msgstr "Filendelse:"
+
+#: case.py:115
+#: case.py:129
+#: case.py:150
+#: case.py:164
+msgid "Failed to rename any folders"
+msgstr "Kunne ikke omdøbe nogen mapper"
+
+#: createFile.py:163
+msgid "File count cannot exceed 10"
+msgstr "Antal filer må ikke overstige 10"
+
+#: createFile.py:160
+msgid "File count must be at least 1"
+msgstr "Antal filer skal være mindst 1"
+
+#: createFile.py:131
+msgid "File name"
+msgstr "Filnavn"
+
+#: fileOperations.py:57
+msgid "File name cannot be empty"
+msgstr "Filnavn må ikke være tomt"
+
+#: fileOperations.py:470
+msgid "File name not changed"
+msgstr "Filnavn ikke ændret"
+
+#: createFile.py:77
+#: createFile.py:132
+msgid "File name {index}:"
+msgstr "Filnavn {index}:"
+
+#: createFile.py:75
+msgid "File name:"
+msgstr "Filnavn:"
+
+#: fileOperations.py:479
+msgid "File renamed to {name}"
+msgstr "Fil omdøbt til {name}"
+
+#: folder_creation_dialog.py:113
+#: folder_creation_dialog.py:158
+msgid "Folder"
+msgstr "Mappe"
+
+#: txt2folder.py:106
+#: txt2folder.py:182
+msgid "Folder '{}' already exists, creating '{}' instead"
+msgstr "Mappen '{}' findes allerede, opretter '{}' i stedet"
+
+#: contextMenu.py:52
+msgid "Folder info"
+msgstr "Mappeinfo"
+
+#: folder_creation_dialog.py:27
+msgid "Folder title:"
+msgstr "Mappetitel:"
+
+#: contextMenu.py:50
+msgid "Headline Case"
+msgstr "Overskriftsversaler"
+
+#: robocopyManager.py:434
+msgid "Immediate sync completed: {}/{} destinations"
+msgstr "Øjeblikkelig synkronisering fuldført: {}/{} destinationer"
+
+#: robocopyManager.py:767
+msgid "Invalid destination"
+msgstr "Ugyldig destination"
+
+#: folder_creation_dialog.py:169
+msgid "Invalid number for folders"
+msgstr "Ugyldigt antal for mapper"
+
+#: robocopyManager.py:407
+#: robocopyManager.py:447
+msgid "Invalid time format"
+msgstr "Ugyldigt tidsformat"
+
+#: contextMenu.py:26
+msgid "Invert selection"
+msgstr "Omvendt markering"
+
+#: selectionManager.py:60
+msgid "Inverted selection: {inverted} of {total} items selected"
+msgstr "Omvendt markering: {inverted} af {total} elementer valgt"
+
+#: robocopyManager.py:868
+msgid "Large file detected, using compression for speed"
+msgstr "Stor fil fundet, bruger komprimering for hastighed"
+
+#: contextMenu.py:48
+msgid "Lowercase"
+msgstr "Små bogstaver"
+
+#: folder_creation_dialog.py:166
+msgid "Maximum 100 folders allowed"
+msgstr "Maksimalt 100 mapper tilladt"
+
+#: robocopyManager.py:62
+msgid "Minimize"
+msgstr "Minimer"
+
+#: robocopyManager.py:145
+msgid "Mirror Backup Settings"
+msgstr "Indstillinger for spejlet sikkerhedskopi"
+
+#: robocopyManager.py:716
+msgid "Mirror backup configured successfully"
+msgstr "Spejlet sikkerhedskopi er konfigureret korrekt"
+
+#: robocopyManager.py:718
+msgid "Mirror backup disabled"
+msgstr "Spejlet sikkerhedskopi deaktiveret"
+
+#: robocopyManager.py:771
+msgid "Move"
+msgstr "Flyt"
+
+#: robocopyManager.py:609
+msgid "Next scheduled backup for {}: {}"
+msgstr "Næste planlagte sikkerhedskopi for {}: {}"
+
+#: __init__.py:650
+msgid "No Explorer folder detected"
+msgstr "Ingen Explorer-mappe fundet"
+
+#: fileOperations.py:300
+#: fileOperations.py:410
+msgid "No access to size data"
+msgstr "Ingen adgang til størrelsesdata"
+
+#: selectionManager.py:27
+msgid "No active File Explorer window found"
+msgstr "Intet aktivt Stifinder-vindue fundet"
+
+#: clipboardManager.py:156
+msgid "No content could be read from selected files"
+msgstr "Intet indhold kunne læses fra de valgte filer"
+
+#: createFile.py:303
+msgid "No files were created"
+msgstr "Ingen filer blev oprettet"
+
+#: case.py:106
+#: case.py:120
+#: case.py:141
+#: case.py:155
+msgid "No folders found"
+msgstr "Ingen mapper fundet"
+
+#: __init__.py:677
+msgid "No folders selected or current folder not available"
+msgstr "Ingen mapper valgt, eller den aktuelle mappe er ikke tilgængelig"
+
+#: folder_creation_dialog.py:230
+#: txt2folder.py:155
+#: txt2folder.py:208
+msgid "No folders were created"
+msgstr "Ingen mapper blev oprettet"
+
+#: folderInfo.py:30
+msgid "No item selected"
+msgstr "Intet element valgt"
+
+#: selectionManager.py:40
+msgid "No items in folder"
+msgstr "Ingen elementer i mappen"
+
+#: clipboardManager.py:30
+#: clipboardManager.py:72
+#: compressionManager.py:132
+#: fileOperations.py:289
+#: fileOperations.py:433
+msgid "No items selected"
+msgstr "Ingen elementer valgt"
+
+#: robocopyManager.py:749
+msgid "No pending operation"
+msgstr "Ingen ventende handlinger"
+
+#: clipboardManager.py:93
+msgid "No text files selected"
+msgstr "Ingen tekstfiler valgt"
+
+#: txt2folder.py:91
+#: txt2folder.py:167
+msgid "No valid folder names found in the file"
+msgstr "Ingen gyldige mappenavne fundet i filen"
+
+#: createFile.py:227
+#: robocopyManager.py:663
+#: robocopyManager.py:724
+#: robocopyManager.py:737
+#: robocopyManager.py:755
+#: selectionManager.py:21
+#: txt2folder.py:43
+msgid "Not in File Explorer"
+msgstr "Ikke i Stifinder"
+
+#: createFile.py:27
+msgid "Number of files to create:"
+msgstr "Antal filer der skal oprettes:"
+
+#: folder_creation_dialog.py:163
+msgid "Number of folders must be at least 1"
+msgstr "Antal mapper skal være mindst 1"
+
+#: folder_creation_dialog.py:35
+msgid "Number of folders:"
+msgstr "Antal mapper:"
+
+#: robocopyManager.py:241
+msgid "OK"
+msgstr "OK"
+
+#: __init__.py:586
+msgid "Open xPlorer context menu"
+msgstr "Åbn xPlorer-kontekstmenu"
+
+#: txt2folder.py:55
+msgid "Please select a .txt or .rtf file"
+msgstr "Vælg venligst en .txt- eller .rtf-fil"
+
+#: fileOperations.py:443
+msgid "Please select a file, not a folder"
+msgstr "Vælg venligst en fil, ikke en mappe"
+
+#: robocopyManager.py:671
+msgid "Please select a folder"
+msgstr "Vælg venligst en mappe"
+
+#: fileOperations.py:437
+msgid "Please select only one file"
+msgstr "Vælg venligst kun én fil"
+
+#: folderInfo.py:35
+#: robocopyManager.py:667
+msgid "Please select only one folder"
+msgstr "Vælg venligst kun én mappe"
+
+#: txt2folder.py:48
+msgid "Please select only one text file"
+msgstr "Vælg venligst kun én tekstfil"
+
+#: robocopyManager.py:46
+msgid "Preparing operation..."
+msgstr "Forbereder handling..."
+
+#: robocopyManager.py:103
+msgid "Processing: {}"
+msgstr "Behandler: {}"
+
+#: robocopyManager.py:105
+msgid "Progress: {}%"
+msgstr "Status: {}%"
+
+#: robocopyManager.py:210
+msgid "Remove selected destination"
+msgstr "Fjern valgt destination"
+
+#: robocopyManager.py:198
+msgid "Remove selected source"
+msgstr "Fjern valgt kilde"
+
+#: __init__.py:603
+#: contextMenu.py:31
+msgid "Rename selected file"
+msgstr "Omdøb valgt fil"
+
+#: contextMenu.py:35
+msgid "Robocopy"
+msgstr "Robocopy"
+
+#: contextMenu.py:32
+msgid "Say size"
+msgstr "Oplys størrelse"
+
+#: __init__.py:561
+msgid "Say size (single tap) or compress zip (double tap)"
+msgstr "Oplys størrelse (enkelt tryk) eller komprimer zip (dobbelt tryk)"
+
+#: robocopyManager.py:648
+msgid "Scheduled backup completed: {}/{} destinations"
+msgstr "Planlagt sikkerhedskopi fuldført: {}/{} destinationer"
+
+#: robocopyManager.py:623
+msgid "Scheduled mirror backup started for {}"
+msgstr "Planlagt spejlet sikkerhedskopi startet for {}"
+
+#: robocopyManager.py:231
+msgid "Scheduled time:"
+msgstr "Planlagt tid:"
+
+#: robocopyManager.py:728
+#: robocopyManager.py:741
+msgid "Select one item only"
+msgstr "Vælg kun ét element"
+
+#: txt2folder.py:60
+msgid "Selected file does not exist"
+msgstr "Den valgte fil findes ikke"
+
+#: folderInfo.py:41
+msgid "Selected item is not a folder"
+msgstr "Det valgte element er ikke en mappe"
+
+#: createFile.py:199
+msgid "Some files will use default names"
+msgstr "Nogle filer vil bruge standardnavne"
+
+#: robocopyManager.py:404
+#: robocopyManager.py:444
+msgid "Source and destination required"
+msgstr "Kilde og destination kræves"
+
+#: robocopyManager.py:792
+msgid "Source does not exist"
+msgstr "Kilden findes ikke"
+
+#: robocopyManager.py:193
+msgid "Source folders (select to edit):"
+msgstr "Kildemapper (vælg for at redigere):"
+
+#: robocopyManager.py:195
+msgid "Source folders list"
+msgstr "Liste over kildemapper"
+
+#: robocopyManager.py:732
+msgid "Source for copy: {}"
+msgstr "Kilde til kopiering: {}"
+
+#: robocopyManager.py:745
+msgid "Source for move: {}"
+msgstr "Kilde til flytning: {}"
+
+#: robocopyManager.py:121
+msgid "Speed: {}"
+msgstr "Hastighed: {}"
+
+#: robocopyManager.py:240
+msgid "Start synchronization"
+msgstr "Start synkronisering"
+
+#: robocopyManager.py:410
+msgid "Starting immediate mirror sync..."
+msgstr "Starter øjeblikkelig spejlsynkronisering..."
+
+#: robocopyManager.py:774
+msgid "Starting {} operation in background..."
+msgstr "Starter {} handling i baggrunden..."
+
+#: compressionManager.py:144
+#: compressionManager.py:161
+msgid "Starting..."
+msgstr "Starter..."
+
+#: case.py:162
+msgid "Successfully converted {count} folders to headline case"
+msgstr "Konverterede {count} mapper til overskriftsversaler korrekt"
+
+#: case.py:127
+msgid "Successfully converted {count} folders to lowercase"
+msgstr "Konverterede {count} mapper til små bogstaver korrekt"
+
+#: case.py:148
+msgid "Successfully converted {count} folders to title case"
+msgstr "Konverterede {count} mapper til store begyndelsesbogstaver korrekt"
+
+#: case.py:113
+msgid "Successfully converted {count} folders to uppercase"
+msgstr "Konverterede {count} mapper til store bogstaver korrekt"
+
+#: folder_creation_dialog.py:226
+msgid "Successfully created 1 folder"
+msgstr "Oprettede 1 mappe korrekt"
+
+#: folder_creation_dialog.py:224
+msgid "Successfully created main folder only"
+msgstr "Kun hovedmappe blev oprettet"
+
+#: folder_creation_dialog.py:228
+msgid "Successfully created {count} folders"
+msgstr "Oprettede {count} mapper korrekt"
+
+#: txt2folder.py:150
+#: txt2folder.py:203
+msgid "Successfully created {} folders in '{}'"
+msgstr "Oprettede {} mapper i '{}' korrekt"
+
+#: xPlorerManager.py:66
+msgid "Suppress announcement of '- File Explorer' in window titles"
+msgstr "Undertryk annoncering af '- Stifinder' i vinduestitler"
+
+#: xPlorerManager.py:61
+msgid "Suppress announcement of DirectUIHWND class"
+msgstr "Undertryk annoncering af DirectUIHWND-klasse"
+
+#: robocopyManager.py:438
+msgid "Sync error occurred"
+msgstr "Der opstod en synkroniseringsfejl"
+
+#: robocopyManager.py:220
+msgid "Synchronization interval:"
+msgstr "Synkroniseringsinterval:"
+
+#: contextMenu.py:42
+msgid "TXT to Folder"
+msgstr "TXT til mappe"
+
+#: contextMenu.py:49
+msgid "Title Case"
+msgstr "Store begyndelsesbogstaver"
+
+#: clipboardManager.py:104
+msgid "Total file size is too large to copy content"
+msgstr "Den samlede filstørrelse er for stor til at kopiere indholdet"
+
+#: robocopyManager.py:963
+msgid "Trying alternative copy method..."
+msgstr "Prøver alternativ kopimetode..."
+
+#: createFile.py:233
+msgid "Unable to get current directory"
+msgstr "Kunne ikke hente den aktuelle mappe"
+
+#: __init__.py:433
+msgid "Unable to get current path"
+msgstr "Kunne ikke hente den aktuelle sti"
+
+#: selectionManager.py:32
+msgid "Unable to get folder view"
+msgstr "Kunne ikke hente mappevisning"
+
+#: contextMenu.py:47
+msgid "Uppercase"
+msgstr "Store bogstaver"
+
+#: clipboardManager.py:124
+msgid "[Error processing RTF file]"
+msgstr "[Fejl ved behandling af RTF-fil]"
+
+#: clipboardManager.py:126
+msgid "[RTF content - striprtf module not available]"
+msgstr "[RTF-indhold - striprtf-modulet er ikke tilgængeligt]"
+
+#: compressionManager.py:97
+msgid "compression failed: {error}"
+msgstr "komprimering mislykkedes: {error}"
+
+#: contextMenu.py:36
+msgid "copy"
+msgstr "kopier"
+
+#: contextMenu.py:40
+msgid "mirror Backup"
+msgstr "spejlet sikkerhedskopi"
+
+#: contextMenu.py:37
+msgid "move"
+msgstr "flyt"
+
+#: createFile.py:183
+msgid "new_file"
+msgstr "ny_fil"
+
+#: createFile.py:185
+msgid "new_file_{index}"
+msgstr "ny_fil_{index}"
+
+#: contextMenu.py:38
+msgid "paste"
+msgstr "indsæt"
+
+#: __init__.py:143
+#: __init__.py:472
+#: __init__.py:517
+#: __init__.py:562
+#: __init__.py:587
+#: __init__.py:604
+#: __init__.py:627
+#: xPlorerManager.py:44
+msgid "xPlorer"
+msgstr "xPlorer"
+
+#: contextMenu.py:22
+msgid "xPlorer Settings"
+msgstr "Indstillinger for xPlorer"
+
+#: createFile.py:307
+msgid "{count} files created"
+msgstr "{count} filer oprettet"
+
+#: fileOperations.py:420
+msgid "{count} items {size}"
+msgstr "{count} elementer {size}"
+
+#: folderInfo.py:66
+msgid "{subfolders} subfolders and {files} files"
+msgstr "{subfolders} undermapper og {files} filer"
+
+#: robocopyManager.py:950
+msgid "{} completed successfully in {:.1f} seconds"
+msgstr "{} fuldført korrekt på {:.1f} sekunder"
+
+#: robocopyManager.py:947
+msgid "{} completed successfully in {:.1f} seconds, average speed: {:.1f} MB/s"
+msgstr "{} fuldført korrekt på {:.1f} sekunder, gennemsnitshastighed: {:.1f} MB/s"
+
+#: robocopyManager.py:978
+msgid "{} completed successfully using alternative method"
+msgstr "{} fuldført korrekt ved hjælp af alternativ metode"
+
+#: robocopyManager.py:985
+msgid "{} completed with warnings (code: {})"
+msgstr "{} fuldført med advarsler (kode: {})"
+
+#: robocopyManager.py:982
+msgid "{} failed with error: {}"
+msgstr "{} mislykkedes med fejl: {}"
+
+#: robocopyManager.py:903
+msgid "{} in progress... {} seconds elapsed"
+msgstr "{} i gang... {} sekunder forløbet"
+
+#: robocopyManager.py:878
+msgid "{} started. You can continue working while it runs in background."
+msgstr "{} startet. Du kan fortsætte med at arbejde, mens det kører i baggrunden."
+
+#: robocopyManager.py:929
+msgid "{}: {}% complete, speed: {:.1f} MB/s"
+msgstr "{}: {}% færdig, hastighed: {:.1f} MB/s"

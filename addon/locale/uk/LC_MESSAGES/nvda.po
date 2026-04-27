@@ -1,0 +1,893 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: xPlorer 2026.5.1\n"
+"Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
+"POT-Creation-Date: 2026-04-27 15:57+0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: chaiBot and Malee Yamazaki\n"
+"Language-Team: Ukrainian\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: DevOn Addon\n"
+
+#: folder_creation_dialog.py:60
+msgid "&Apply"
+msgstr "&Застосувати"
+
+#: folder_creation_dialog.py:61
+msgid "&Cancel"
+msgstr "&Скасувати"
+
+#: robocopyManager.py:223
+msgid "1 day"
+msgstr "1 день"
+
+#: createFile.py:305
+msgid "1 file created"
+msgstr "1 файл створено"
+
+#: robocopyManager.py:222
+msgid "1 hour"
+msgstr "1 година"
+
+#: robocopyManager.py:223
+msgid "1 month"
+msgstr "1 місяць"
+
+#: robocopyManager.py:223
+msgid "15 days"
+msgstr "15 днів"
+
+#: robocopyManager.py:222
+msgid "15 minutes"
+msgstr "15 хвилин"
+
+#: robocopyManager.py:222
+msgid "30 minutes"
+msgstr "30 хвилин"
+
+#: robocopyManager.py:223
+msgid "7 days"
+msgstr "7 днів"
+
+#: compressionManager.py:159
+msgid "7-Zip compression failed, trying built-in method..."
+msgstr "Стиснення 7-Zip не вдалося, спроба вбудованого методу..."
+
+#: fileOperations.py:474
+msgid "A file with this name already exists"
+msgstr "Файл з таким іменем вже існує"
+
+#: robocopyManager.py:209
+msgid "Add destination folder"
+msgstr "Додати теку призначення"
+
+#: xPlorerManager.py:56
+msgid "Announce 'Empty Folder' when entering an empty folder"
+msgstr "Оголошувати 'Порожня тека' під час входу в порожню теку"
+
+#: xPlorerManager.py:71
+msgid "Automatically paste clipboard content into rename field"
+msgstr "Автоматично вставляти вміст буфера обміну в поле перейменування"
+
+#: xPlorerManager.py:51
+msgid "Automatically select the first item"
+msgstr "Автоматично вибирати перший елемент"
+
+#: compressionManager.py:268
+msgid "Built-in compression failed: {error}"
+msgstr "Вбудоване стиснення не вдалося: {error}"
+
+#: robocopyManager.py:61
+#: robocopyManager.py:242
+msgid "Cancel"
+msgstr "Скасувати"
+
+#: clipboardManager.py:77
+msgid "Cannot copy content of folders, please select files only"
+msgstr "Неможливо скопіювати вміст тек, виберіть лише файли"
+
+#: createFile.py:290
+msgid "Cannot find unique name for: {name}"
+msgstr "Не вдається знайти унікальне ім'я для: {name}"
+
+#: robocopyManager.py:761
+msgid "Cannot get destination"
+msgstr "Не вдається отримати призначення"
+
+#: __init__.py:635
+msgid "Cannot open settings dialog"
+msgstr "Не вдається відкрити діалог налаштувань"
+
+#: txt2folder.py:69
+msgid "Cannot process RTF file: striprtf module not available"
+msgstr "Не вдається обробити RTF-файл: модуль striprtf недоступний"
+
+#: contextMenu.py:46
+msgid "Case Converter for Folders"
+msgstr "Конвертер регістру для тек"
+
+#: robocopyManager.py:348
+msgid "Choose destination folder"
+msgstr "Виберіть теку призначення"
+
+#: robocopyManager.py:239
+msgid "Clear all settings"
+msgstr "Очистити всі налаштування"
+
+#: compressionManager.py:264
+msgid "Completed"
+msgstr "Завершено"
+
+#: contextMenu.py:25
+msgid "Compress zip"
+msgstr "Стиснути zip"
+
+#: compressionManager.py:144
+#: compressionManager.py:161
+msgid "Compressing files"
+msgstr "Стиснення файлів"
+
+#: compressionManager.py:70
+msgid "Compressing..."
+msgstr "Стиснення..."
+
+#: compressionManager.py:244
+#: compressionManager.py:258
+msgid "Compressing: {percent}%"
+msgstr "Стиснення: {percent}%"
+
+#: compressionManager.py:92
+#: compressionManager.py:262
+msgid "Compression cancelled"
+msgstr "Стиснення скасовано"
+
+#: compressionManager.py:94
+#: compressionManager.py:265
+msgid "Compression completed {name}"
+msgstr "Стиснення завершено {name}"
+
+#: clipboardManager.py:165
+msgid "Content from 1 file copied to clipboard"
+msgstr "Вміст 1 файлу скопійовано в буфер обміну"
+
+#: clipboardManager.py:167
+msgid "Content from {count} files copied to clipboard"
+msgstr "Вміст {count} файлів скопійовано в буфер обміну"
+
+#: clipboardManager.py:53
+msgid "Copied 1 item name to clipboard"
+msgstr "Назву 1 елемента скопійовано в буфер обміну"
+
+#: robocopyManager.py:185
+msgid "Copied source path to clipboard"
+msgstr "Шлях джерела скопійовано в буфер обміну"
+
+#: clipboardManager.py:55
+msgid "Copied {count} item names to clipboard"
+msgstr "Назви {count} елементів скопійовано в буфер обміну"
+
+#: __init__.py:429
+msgid "Copied: {path}"
+msgstr "Скопійовано: {path}"
+
+#: robocopyManager.py:771
+msgid "Copy"
+msgstr "Копіювати"
+
+#: contextMenu.py:27
+msgid "Copy address bar"
+msgstr "Копіювати адресний рядок"
+
+#: contextMenu.py:28
+msgid "Copy content"
+msgstr "Копіювати вміст"
+
+#: __init__.py:516
+msgid "Copy content (single tap) or invert selection (double tap)"
+msgstr "Копіювати вміст (один дотик) або інвертувати вибір (подвійний дотик)"
+
+#: contextMenu.py:29
+msgid "Copy selected file and folder names"
+msgstr "Копіювати назви вибраних файлів і тек"
+
+#: __init__.py:471
+msgid "Copy selected names (single tap) or copy address bar (double tap)"
+msgstr "Копіювати вибрані назви (один дотик) або копіювати адресний рядок (подвійний дотик)"
+
+#: __init__.py:431
+#: clipboardManager.py:57
+#: clipboardManager.py:169
+#: robocopyManager.py:187
+msgid "Could not open clipboard"
+msgstr "Не вдалося відкрити буфер обміну"
+
+#: contextMenu.py:30
+#: createFile.py:16
+msgid "Create File"
+msgstr "Створити файл"
+
+#: folder_creation_dialog.py:14
+msgid "Create Multiple Folders"
+msgstr "Створити кілька тек"
+
+#: contextMenu.py:43
+msgid "Create Multiple Folders..."
+msgstr "Створити кілька тек..."
+
+#: folder_creation_dialog.py:42
+msgid "Create main folder and then subfolders"
+msgstr "Створити головну теку, а потім підтеки"
+
+#: __init__.py:626
+msgid "Create new folder and paste clipboard content into rename field"
+msgstr "Створити нову теку та вставити вміст буфера обміну в поле перейменування"
+
+#: createFile.py:237
+msgid "Current path is not a directory"
+msgstr "Поточний шлях не є каталогом"
+
+#: robocopyManager.py:817
+msgid "Destination already exists, overwriting..."
+msgstr "Призначення вже існує, перезапис..."
+
+#: robocopyManager.py:205
+msgid "Destination folders list"
+msgstr "Список тек призначення"
+
+#: robocopyManager.py:203
+msgid "Destination folders:"
+msgstr "Теки призначення:"
+
+#: folder_creation_dialog.py:46
+msgid "Edit individual folder names"
+msgstr "Редагувати окремі назви тек"
+
+#: robocopyManager.py:115
+msgid "Elapsed time: {} seconds"
+msgstr "Минуло часу: {} секунд"
+
+#: xPlorerManager.py:40
+msgid "Empty Folder"
+msgstr "Порожня тека"
+
+#: robocopyManager.py:217
+msgid "Enable automatic synchronization"
+msgstr "Увімкнути автоматичну синхронізацію"
+
+#: folderInfo.py:78
+msgid "Error calculating folder info"
+msgstr "Помилка обчислення інформації про теку"
+
+#: fileOperations.py:401
+msgid "Error calculating size"
+msgstr "Помилка обчислення розміру"
+
+#: compressionManager.py:173
+msgid "Error compressing files"
+msgstr "Помилка стиснення файлів"
+
+#: clipboardManager.py:173
+msgid "Error copying file content"
+msgstr "Помилка копіювання вмісту файлу"
+
+#: clipboardManager.py:61
+msgid "Error copying names to clipboard"
+msgstr "Помилка копіювання назв у буфер обміну"
+
+#: txt2folder.py:116
+msgid "Error creating base folder"
+msgstr "Помилка створення базової теки"
+
+#: createFile.py:311
+msgid "Error creating files"
+msgstr "Помилка створення файлів"
+
+#: folder_creation_dialog.py:219
+msgid "Error creating folder: {number}"
+msgstr "Помилка створення теки: {number}"
+
+#: __init__.py:662
+msgid "Error creating folders"
+msgstr "Помилка створення тек"
+
+#: folder_creation_dialog.py:179
+msgid "Error creating main folder"
+msgstr "Помилка створення головної теки"
+
+#: folder_creation_dialog.py:201
+msgid "Error creating subfolder: {number}"
+msgstr "Помилка створення підтеки: {number}"
+
+#: __init__.py:690
+msgid "Error during conversion"
+msgstr "Помилка під час перетворення"
+
+#: robocopyManager.py:990
+msgid "Error during {}: {}"
+msgstr "Помилка під час {}: {}"
+
+#: compressionManager.py:101
+msgid "Error in compression process: {error}"
+msgstr "Помилка в процесі стиснення: {error}"
+
+#: selectionManager.py:65
+msgid "Error inverting selection"
+msgstr "Помилка інвертування вибору"
+
+#: createFile.py:262
+msgid "Error opening create file dialog"
+msgstr "Помилка відкриття діалогу створення файлу"
+
+#: fileOperations.py:488
+msgid "Error opening rename dialog"
+msgstr "Помилка відкриття діалогу перейменування"
+
+#: __init__.py:642
+msgid "Error opening settings"
+msgstr "Помилка відкриття налаштувань"
+
+#: txt2folder.py:212
+msgid "Error processing text file: {}"
+msgstr "Помилка обробки текстового файлу: {}"
+
+#: txt2folder.py:80
+msgid "Error reading RTF file"
+msgstr "Помилка читання RTF-файлу"
+
+#: txt2folder.py:215
+msgid "Error reading file encoding"
+msgstr "Помилка читання кодування файлу"
+
+#: fileOperations.py:453
+#: fileOperations.py:482
+msgid "Error renaming file"
+msgstr "Помилка перейменування файлу"
+
+#: robocopyManager.py:784
+#: txt2folder.py:219
+msgid "Error: {}"
+msgstr "Помилка: {}"
+
+#: robocopyManager.py:111
+msgid "Estimated time remaining: {}"
+msgstr "Орієнтовний час, що залишився: {}"
+
+#: createFile.py:84
+msgid "Extension:"
+msgstr "Розширення:"
+
+#: case.py:115
+#: case.py:129
+#: case.py:150
+#: case.py:164
+msgid "Failed to rename any folders"
+msgstr "Не вдалося перейменувати жодної теки"
+
+#: createFile.py:163
+msgid "File count cannot exceed 10"
+msgstr "Кількість файлів не може перевищувати 10"
+
+#: createFile.py:160
+msgid "File count must be at least 1"
+msgstr "Кількість файлів має бути не менше 1"
+
+#: createFile.py:131
+msgid "File name"
+msgstr "Назва файлу"
+
+#: fileOperations.py:57
+msgid "File name cannot be empty"
+msgstr "Назва файлу не може бути порожньою"
+
+#: fileOperations.py:470
+msgid "File name not changed"
+msgstr "Назву файлу не змінено"
+
+#: createFile.py:77
+#: createFile.py:132
+msgid "File name {index}:"
+msgstr "Назва файлу {index}:"
+
+#: createFile.py:75
+msgid "File name:"
+msgstr "Назва файлу:"
+
+#: fileOperations.py:479
+msgid "File renamed to {name}"
+msgstr "Файл перейменовано на {name}"
+
+#: folder_creation_dialog.py:113
+#: folder_creation_dialog.py:158
+msgid "Folder"
+msgstr "Тека"
+
+#: txt2folder.py:106
+#: txt2folder.py:182
+msgid "Folder '{}' already exists, creating '{}' instead"
+msgstr "Тека '{}' вже існує, замість неї створюється '{}'"
+
+#: contextMenu.py:52
+msgid "Folder info"
+msgstr "Інформація про теку"
+
+#: folder_creation_dialog.py:27
+msgid "Folder title:"
+msgstr "Назва теки:"
+
+#: contextMenu.py:50
+msgid "Headline Case"
+msgstr "Регістр заголовка"
+
+#: robocopyManager.py:434
+msgid "Immediate sync completed: {}/{} destinations"
+msgstr "Негайну синхронізацію завершено: {}/{} призначень"
+
+#: robocopyManager.py:767
+msgid "Invalid destination"
+msgstr "Недійсне призначення"
+
+#: folder_creation_dialog.py:169
+msgid "Invalid number for folders"
+msgstr "Недійсна кількість тек"
+
+#: robocopyManager.py:407
+#: robocopyManager.py:447
+msgid "Invalid time format"
+msgstr "Недійсний формат часу"
+
+#: contextMenu.py:26
+msgid "Invert selection"
+msgstr "Інвертувати вибір"
+
+#: selectionManager.py:60
+msgid "Inverted selection: {inverted} of {total} items selected"
+msgstr "Інвертований вибір: вибрано {inverted} з {total} елементів"
+
+#: robocopyManager.py:868
+msgid "Large file detected, using compression for speed"
+msgstr "Виявлено великий файл, використання стиснення для швидкості"
+
+#: contextMenu.py:48
+msgid "Lowercase"
+msgstr "Нижній регістр"
+
+#: folder_creation_dialog.py:166
+msgid "Maximum 100 folders allowed"
+msgstr "Дозволено максимум 100 тек"
+
+#: robocopyManager.py:62
+msgid "Minimize"
+msgstr "Згорнути"
+
+#: robocopyManager.py:145
+msgid "Mirror Backup Settings"
+msgstr "Налаштування дзеркального резервного копіювання"
+
+#: robocopyManager.py:716
+msgid "Mirror backup configured successfully"
+msgstr "Дзеркальне резервне копіювання успішно налаштовано"
+
+#: robocopyManager.py:718
+msgid "Mirror backup disabled"
+msgstr "Дзеркальне резервне копіювання вимкнено"
+
+#: robocopyManager.py:771
+msgid "Move"
+msgstr "Перемістити"
+
+#: robocopyManager.py:609
+msgid "Next scheduled backup for {}: {}"
+msgstr "Наступне заплановане резервне копіювання для {}: {}"
+
+#: __init__.py:650
+msgid "No Explorer folder detected"
+msgstr "Не виявлено жодної теки Провідника"
+
+#: fileOperations.py:300
+#: fileOperations.py:410
+msgid "No access to size data"
+msgstr "Немає доступу до даних про розмір"
+
+#: selectionManager.py:27
+msgid "No active File Explorer window found"
+msgstr "Не знайдено активного вікна Провідника файлів"
+
+#: clipboardManager.py:156
+msgid "No content could be read from selected files"
+msgstr "Не вдалося прочитати жодного вмісту з вибраних файлів"
+
+#: createFile.py:303
+msgid "No files were created"
+msgstr "Жодного файлу не створено"
+
+#: case.py:106
+#: case.py:120
+#: case.py:141
+#: case.py:155
+msgid "No folders found"
+msgstr "Тек не знайдено"
+
+#: __init__.py:677
+msgid "No folders selected or current folder not available"
+msgstr "Не вибрано жодної теки або поточна тека недоступна"
+
+#: folder_creation_dialog.py:230
+#: txt2folder.py:155
+#: txt2folder.py:208
+msgid "No folders were created"
+msgstr "Жодної теки не створено"
+
+#: folderInfo.py:30
+msgid "No item selected"
+msgstr "Не вибрано жодного елемента"
+
+#: selectionManager.py:40
+msgid "No items in folder"
+msgstr "Немає елементів у теці"
+
+#: clipboardManager.py:30
+#: clipboardManager.py:72
+#: compressionManager.py:132
+#: fileOperations.py:289
+#: fileOperations.py:433
+msgid "No items selected"
+msgstr "Не вибрано жодного елемента"
+
+#: robocopyManager.py:749
+msgid "No pending operation"
+msgstr "Немає очікуваних операцій"
+
+#: clipboardManager.py:93
+msgid "No text files selected"
+msgstr "Не вибрано жодного текстового файлу"
+
+#: txt2folder.py:91
+#: txt2folder.py:167
+msgid "No valid folder names found in the file"
+msgstr "У файлі не знайдено жодної дійсної назви теки"
+
+#: createFile.py:227
+#: robocopyManager.py:663
+#: robocopyManager.py:724
+#: robocopyManager.py:737
+#: robocopyManager.py:755
+#: selectionManager.py:21
+#: txt2folder.py:43
+msgid "Not in File Explorer"
+msgstr "Не в Провіднику файлів"
+
+#: createFile.py:27
+msgid "Number of files to create:"
+msgstr "Кількість файлів для створення:"
+
+#: folder_creation_dialog.py:163
+msgid "Number of folders must be at least 1"
+msgstr "Кількість тек має бути не менше 1"
+
+#: folder_creation_dialog.py:35
+msgid "Number of folders:"
+msgstr "Кількість тек:"
+
+#: robocopyManager.py:241
+msgid "OK"
+msgstr "Гаразд"
+
+#: __init__.py:586
+msgid "Open xPlorer context menu"
+msgstr "Відкрити контекстне меню xPlorer"
+
+#: txt2folder.py:55
+msgid "Please select a .txt or .rtf file"
+msgstr "Будь ласка, виберіть файл .txt або .rtf"
+
+#: fileOperations.py:443
+msgid "Please select a file, not a folder"
+msgstr "Будь ласка, виберіть файл, а не теку"
+
+#: robocopyManager.py:671
+msgid "Please select a folder"
+msgstr "Будь ласка, виберіть теку"
+
+#: fileOperations.py:437
+msgid "Please select only one file"
+msgstr "Будь ласка, виберіть лише один файл"
+
+#: folderInfo.py:35
+#: robocopyManager.py:667
+msgid "Please select only one folder"
+msgstr "Будь ласка, виберіть лише одну теку"
+
+#: txt2folder.py:48
+msgid "Please select only one text file"
+msgstr "Будь ласка, виберіть лише один текстовий файл"
+
+#: robocopyManager.py:46
+msgid "Preparing operation..."
+msgstr "Підготовка операції..."
+
+#: robocopyManager.py:103
+msgid "Processing: {}"
+msgstr "Обробка: {}"
+
+#: robocopyManager.py:105
+msgid "Progress: {}%"
+msgstr "Прогрес: {}%"
+
+#: robocopyManager.py:210
+msgid "Remove selected destination"
+msgstr "Вилучити вибране призначення"
+
+#: robocopyManager.py:198
+msgid "Remove selected source"
+msgstr "Вилучити вибране джерело"
+
+#: __init__.py:603
+#: contextMenu.py:31
+msgid "Rename selected file"
+msgstr "Перейменувати вибраний файл"
+
+#: contextMenu.py:35
+msgid "Robocopy"
+msgstr "Robocopy"
+
+#: contextMenu.py:32
+msgid "Say size"
+msgstr "Озвучити розмір"
+
+#: __init__.py:561
+msgid "Say size (single tap) or compress zip (double tap)"
+msgstr "Озвучити розмір (один дотик) або стиснути zip (подвійний дотик)"
+
+#: robocopyManager.py:648
+msgid "Scheduled backup completed: {}/{} destinations"
+msgstr "Заплановане резервне копіювання завершено: {}/{} призначень"
+
+#: robocopyManager.py:623
+msgid "Scheduled mirror backup started for {}"
+msgstr "Заплановане дзеркальне резервне копіювання розпочато для {}"
+
+#: robocopyManager.py:231
+msgid "Scheduled time:"
+msgstr "Запланований час:"
+
+#: robocopyManager.py:728
+#: robocopyManager.py:741
+msgid "Select one item only"
+msgstr "Виберіть лише один елемент"
+
+#: txt2folder.py:60
+msgid "Selected file does not exist"
+msgstr "Вибраний файл не існує"
+
+#: folderInfo.py:41
+msgid "Selected item is not a folder"
+msgstr "Вибраний елемент не є текою"
+
+#: createFile.py:199
+msgid "Some files will use default names"
+msgstr "Деякі файли використовуватимуть типові назви"
+
+#: robocopyManager.py:404
+#: robocopyManager.py:444
+msgid "Source and destination required"
+msgstr "Потрібне джерело та призначення"
+
+#: robocopyManager.py:792
+msgid "Source does not exist"
+msgstr "Джерело не існує"
+
+#: robocopyManager.py:193
+msgid "Source folders (select to edit):"
+msgstr "Теки-джерела (виберіть для редагування):"
+
+#: robocopyManager.py:195
+msgid "Source folders list"
+msgstr "Список тек-джерел"
+
+#: robocopyManager.py:732
+msgid "Source for copy: {}"
+msgstr "Джерело для копіювання: {}"
+
+#: robocopyManager.py:745
+msgid "Source for move: {}"
+msgstr "Джерело для переміщення: {}"
+
+#: robocopyManager.py:121
+msgid "Speed: {}"
+msgstr "Швидкість: {}"
+
+#: robocopyManager.py:240
+msgid "Start synchronization"
+msgstr "Почати синхронізацію"
+
+#: robocopyManager.py:410
+msgid "Starting immediate mirror sync..."
+msgstr "Запуск негайної дзеркальної синхронізації..."
+
+#: robocopyManager.py:774
+msgid "Starting {} operation in background..."
+msgstr "Запуск операції {} у фоновому режимі..."
+
+#: compressionManager.py:144
+#: compressionManager.py:161
+msgid "Starting..."
+msgstr "Запуск..."
+
+#: case.py:162
+msgid "Successfully converted {count} folders to headline case"
+msgstr "Успішно перетворено {count} тек у регістр заголовка"
+
+#: case.py:127
+msgid "Successfully converted {count} folders to lowercase"
+msgstr "Успішно перетворено {count} тек у нижній регістр"
+
+#: case.py:148
+msgid "Successfully converted {count} folders to title case"
+msgstr "Успішно перетворено {count} тек у регістр назви"
+
+#: case.py:113
+msgid "Successfully converted {count} folders to uppercase"
+msgstr "Успішно перетворено {count} тек у верхній регістр"
+
+#: folder_creation_dialog.py:226
+msgid "Successfully created 1 folder"
+msgstr "Успішно створено 1 теку"
+
+#: folder_creation_dialog.py:224
+msgid "Successfully created main folder only"
+msgstr "Успішно створено лише головну теку"
+
+#: folder_creation_dialog.py:228
+msgid "Successfully created {count} folders"
+msgstr "Успішно створено {count} тек"
+
+#: txt2folder.py:150
+#: txt2folder.py:203
+msgid "Successfully created {} folders in '{}'"
+msgstr "Успішно створено {} тек у '{}'"
+
+#: xPlorerManager.py:66
+msgid "Suppress announcement of '- File Explorer' in window titles"
+msgstr "Пригнічувати оголошення '- Провідник файлів' у заголовках вікон"
+
+#: xPlorerManager.py:61
+msgid "Suppress announcement of DirectUIHWND class"
+msgstr "Пригнічувати оголошення класу DirectUIHWND"
+
+#: robocopyManager.py:438
+msgid "Sync error occurred"
+msgstr "Сталася помилка синхронізації"
+
+#: robocopyManager.py:220
+msgid "Synchronization interval:"
+msgstr "Інтервал синхронізації:"
+
+#: contextMenu.py:42
+msgid "TXT to Folder"
+msgstr "TXT у теку"
+
+#: contextMenu.py:49
+msgid "Title Case"
+msgstr "Регістр назви"
+
+#: clipboardManager.py:104
+msgid "Total file size is too large to copy content"
+msgstr "Загальний розмір файлу занадто великий, щоб скопіювати вміст"
+
+#: robocopyManager.py:963
+msgid "Trying alternative copy method..."
+msgstr "Спроба альтернативного методу копіювання..."
+
+#: createFile.py:233
+msgid "Unable to get current directory"
+msgstr "Не вдається отримати поточний каталог"
+
+#: __init__.py:433
+msgid "Unable to get current path"
+msgstr "Не вдається отримати поточний шлях"
+
+#: selectionManager.py:32
+msgid "Unable to get folder view"
+msgstr "Не вдається отримати вигляд теки"
+
+#: contextMenu.py:47
+msgid "Uppercase"
+msgstr "Верхній регістр"
+
+#: clipboardManager.py:124
+msgid "[Error processing RTF file]"
+msgstr "[Помилка обробки RTF-файлу]"
+
+#: clipboardManager.py:126
+msgid "[RTF content - striprtf module not available]"
+msgstr "[RTF-вміст - модуль striprtf недоступний]"
+
+#: compressionManager.py:97
+msgid "compression failed: {error}"
+msgstr "стиснення не вдалося: {error}"
+
+#: contextMenu.py:36
+msgid "copy"
+msgstr "копіювати"
+
+#: contextMenu.py:40
+msgid "mirror Backup"
+msgstr "дзеркальне резервне копіювання"
+
+#: contextMenu.py:37
+msgid "move"
+msgstr "перемістити"
+
+#: createFile.py:183
+msgid "new_file"
+msgstr "новий_файл"
+
+#: createFile.py:185
+msgid "new_file_{index}"
+msgstr "новий_файл_{index}"
+
+#: contextMenu.py:38
+msgid "paste"
+msgstr "вставити"
+
+#: __init__.py:143
+#: __init__.py:472
+#: __init__.py:517
+#: __init__.py:562
+#: __init__.py:587
+#: __init__.py:604
+#: __init__.py:627
+#: xPlorerManager.py:44
+msgid "xPlorer"
+msgstr "xPlorer"
+
+#: contextMenu.py:22
+msgid "xPlorer Settings"
+msgstr "Налаштування xPlorer"
+
+#: createFile.py:307
+msgid "{count} files created"
+msgstr "створено файлів: {count}"
+
+#: fileOperations.py:420
+msgid "{count} items {size}"
+msgstr "{count} елементів {size}"
+
+#: folderInfo.py:66
+msgid "{subfolders} subfolders and {files} files"
+msgstr "{subfolders} підтек і {files} файлів"
+
+#: robocopyManager.py:950
+msgid "{} completed successfully in {:.1f} seconds"
+msgstr "{} успішно завершено за {:.1f} секунд"
+
+#: robocopyManager.py:947
+msgid "{} completed successfully in {:.1f} seconds, average speed: {:.1f} MB/s"
+msgstr "{} успішно завершено за {:.1f} секунд, середня швидкість: {:.1f} МБ/с"
+
+#: robocopyManager.py:978
+msgid "{} completed successfully using alternative method"
+msgstr "{} успішно завершено за допомогою альтернативного методу"
+
+#: robocopyManager.py:985
+msgid "{} completed with warnings (code: {})"
+msgstr "{} завершено з попередженнями (код: {})"
+
+#: robocopyManager.py:982
+msgid "{} failed with error: {}"
+msgstr "{} не вдалося з помилкою: {}"
+
+#: robocopyManager.py:903
+msgid "{} in progress... {} seconds elapsed"
+msgstr "{} виконується... минуло {} секунд"
+
+#: robocopyManager.py:878
+msgid "{} started. You can continue working while it runs in background."
+msgstr "{} розпочато. Ви можете продовжувати працювати, поки він виконується у фоновому режимі."
+
+#: robocopyManager.py:929
+msgid "{}: {}% complete, speed: {:.1f} MB/s"
+msgstr "{}: {}% завершено, швидкість: {:.1f} МБ/с"

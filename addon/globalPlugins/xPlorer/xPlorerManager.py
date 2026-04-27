@@ -66,6 +66,11 @@ class xPlorerSettingsPanel(SettingsPanel):
 			wx.CheckBox(self, label=_("Suppress announcement of '- File Explorer' in window titles"))
 		)
 		self.sayFileExplorer.SetValue(conf["sayFileExplorer"])
+		
+		self.autoPasteClipboardToRename = sHelper.addItem(
+			wx.CheckBox(self, label=_("Automatically paste clipboard content into rename field"))
+		)
+		self.autoPasteClipboardToRename.SetValue(conf.get("autoPasteClipboardToRename", True))
 
 	def onSave(self):
 		conf = {
@@ -73,6 +78,7 @@ class xPlorerSettingsPanel(SettingsPanel):
 			"announceEmptyFolder": self.announceEmptyFolder.GetValue(),
 			"suppressDirectUIAnnounce": self.suppressDirectUIAnnounce.GetValue(),
 			"sayFileExplorer": self.sayFileExplorer.GetValue(),
+			"autoPasteClipboardToRename": self.autoPasteClipboardToRename.GetValue(),
 		}
 		saveConfig(conf)
 
@@ -234,7 +240,6 @@ class ExplorerManager:
 						pass
 				core.callLater(200, set_focus)
 		
-		# Do NOT speak here. Let NVDA handle default speech for list items.
 		nextHandler()
 
 	def _getFolderPath(self, listObj):
@@ -272,7 +277,6 @@ class ExplorerManager:
 					try:
 						focus.UIASelectionItemPattern.Select()
 						api.setNavigatorObject(focus)
-						# NVDA will speak automatically when focus moves, so no extra ui.message here.
 					except:
 						pass
 				else:

@@ -1,55 +1,39 @@
 # config.py
 
-import config
-import addonHandler
+import os
+import json
+from logHandler import log
 
-addonHandler.initTranslation()
+CONFIG_DIR = os.path.join(os.path.expanduser("~"), "AppData", "Roaming", "nvda", "ChaiChaimee")
+CONFIG_FILE = os.path.join(CONFIG_DIR, "xplorer.json")
 
-CONFIG_SECTION = "xPlorer"
-CONFIG_SPEC = {
-	"autoSelectFirstItem": "boolean(default=True)",
-	"announceEmptyFolder": "boolean(default=True)",
-	"suppressDirectUIAnnounce": "boolean(default=True)",
-	"sayFileExplorer": "boolean(default=True)",
+DEFAULT_CONFIG = {
+	"autoSelectFirstItem": True,
+	"announceEmptyFolder": True,
+	"suppressDirectUIAnnounce": True,
+	"sayFileExplorer": True,
+	"autoPasteClipboardToRename": True,
 }
 
 def loadConfig():
-	# Create config if not exists
-	if CONFIG_SECTION not in config.conf:
-		config.conf[CONFIG_SECTION] = {}
-		
-	# Set defaults for missing keys
-	conf = config.conf[CONFIG_SECTION]
-	for key, spec in CONFIG_SPEC.items():
-		if "default=" in spec and key not in conf:
-			default_value = spec.split("default=")[1].split(")")[0]
-			if default_value == "True":
-				conf[key] = True
-			elif default_value == "False":
-				conf[key] = False
-			else:
-				conf[key] = default_value
-		
-	# Convert string values to boolean
-	result = {}
-	for key in CONFIG_SPEC:
-		if key in conf:
-			value = conf[key]
-			if isinstance(value, str):
-				if value.lower() in ("true", "1", "yes", "on"):
-					result[key] = True
-				elif value.lower() in ("false", "0", "no", "off"):
-					result[key] = False
-				else:
-					result[key] = value
-			else:
-				result[key] = value
-		else:
-			result[key] = conf.get(key, None)
-				
-	return result
+	if not os.path.exists(CONFIG_FILE):
+		return DEFAULT_CONFIG.copy()
+	try:
+		with open(CONFIG_FILE, "r", encoding="utf-8") as f:
+			conf = json.load(f)
+		for key, value in DEFAULT_CONFIG.items():
+			if key not in conf:
+				conf[key] = value
+		return conf
+	except Exception as e:
+		log.error(f"Error loading config: {e}")
+		return DEFAULT_CONFIG.copy()
 
-def saveConfig(confDict):
-	# Update configuration
-	config.conf[CONFIG_SECTION] = confDict
-	config.conf.save()
+def saveConfig(conf):
+	try:
+		if not os.path.exists(CONFIG_DIR):
+			os.makedirs(CONFIG_DIR)
+		with open(CONFIG_FILE, "w", encoding="utf-8") as f:
+			json.dump(conf, f, indent=2, ensure_ascii=False)
+	except Exception as e:
+		log.error(f"Error saving config: {e}")

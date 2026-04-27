@@ -27,20 +27,103 @@ import shutil
 import tones
 import urllib.parse
 import time
-from .xPlorerManager import xPlorerSettingsPanel, ExplorerManager
-from .fileOperations import FileOperations
-from .compressionManager import CompressionManager
-from .clipboardManager import ClipboardManager
-from .selectionManager import SelectionManager
-from .robocopyManager import RobocopyManager
-from .txt2folder import TxtToFolder
-from .createFile import CreateFileManager
-from .contextMenu import ContextMenuManager
-from .folderInfo import FolderInfoManager   # Added
+
+log.debug("xPlorer: Starting imports")
+
+try:
+    from .xPlorerManager import xPlorerSettingsPanel, ExplorerManager
+    log.debug("xPlorer: xPlorerManager imported")
+except Exception as e:
+    log.error(f"xPlorer: Failed to import xPlorerManager: {e}")
+    raise
+
+try:
+    from .fileOperations import FileOperations
+    log.debug("xPlorer: fileOperations imported")
+except Exception as e:
+    log.error(f"xPlorer: Failed to import fileOperations: {e}")
+    raise
+
+try:
+    from .compressionManager import CompressionManager
+    log.debug("xPlorer: compressionManager imported")
+except Exception as e:
+    log.error(f"xPlorer: Failed to import compressionManager: {e}")
+    raise
+
+try:
+    from .clipboardManager import ClipboardManager
+    log.debug("xPlorer: clipboardManager imported")
+except Exception as e:
+    log.error(f"xPlorer: Failed to import clipboardManager: {e}")
+    raise
+
+try:
+    from .selectionManager import SelectionManager
+    log.debug("xPlorer: selectionManager imported")
+except Exception as e:
+    log.error(f"xPlorer: Failed to import selectionManager: {e}")
+    raise
+
+try:
+    from .robocopyManager import RobocopyManager
+    log.debug("xPlorer: robocopyManager imported")
+except Exception as e:
+    log.error(f"xPlorer: Failed to import robocopyManager: {e}")
+    raise
+
+try:
+    from .txt2folder import TxtToFolder
+    log.debug("xPlorer: txt2folder imported")
+except Exception as e:
+    log.error(f"xPlorer: Failed to import txt2folder: {e}")
+    raise
+
+try:
+    from .createFile import CreateFileManager
+    log.debug("xPlorer: createFile imported")
+except Exception as e:
+    log.error(f"xPlorer: Failed to import createFile: {e}")
+    raise
+
+try:
+    from .contextMenu import ContextMenuManager
+    log.debug("xPlorer: contextMenu imported")
+except Exception as e:
+    log.error(f"xPlorer: Failed to import contextMenu: {e}")
+    raise
+
+try:
+    from .folderInfo import FolderInfoManager
+    log.debug("xPlorer: folderInfo imported")
+except Exception as e:
+    log.error(f"xPlorer: Failed to import folderInfo: {e}")
+    raise
+
+try:
+    from .case import CaseConverter
+    log.debug("xPlorer: case imported")
+except Exception as e:
+    log.error(f"xPlorer: Failed to import case: {e}")
+    raise
+
+try:
+    from .folder_creation_dialog import FolderCreationDialog
+    log.debug("xPlorer: folder_creation_dialog imported")
+except Exception as e:
+    log.error(f"xPlorer: Failed to import folder_creation_dialog: {e}")
+    raise
+
+try:
+    from .folder_creator import type_clipboard_into_rename_if_suitable
+    log.debug("xPlorer: folder_creator imported")
+except Exception as e:
+    log.error(f"xPlorer: Failed to import folder_creator: {e}")
+    raise
 
 addonHandler.initTranslation()
 
-log.debug("xPlorer __init__: start import")
+log.debug("xPlorer __init__: all imports successful")
 
 _last_tap_time_compress = 0
 _tap_count_compress = 0
@@ -75,7 +158,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self.txt2folder = TxtToFolder(self)
 			self.createFileManager = CreateFileManager(self)
 			self.contextMenuManager = ContextMenuManager(self)
-			self.folderInfo = FolderInfoManager(self)   # Added
+			self.folderInfo = FolderInfoManager(self)
+			self.caseConverter = CaseConverter()
 			
 			self._last_window = None
 			self._last_window_hwnd = None
@@ -102,7 +186,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self.selection.cleanup()
 			self.robocopy.cleanup()
 			self.createFileManager.cleanup()
-			self.folderInfo.cleanup()   # Added
+			self.folderInfo.cleanup()
 			self.manager.terminate()
 			self._cancelAllTimers()
 			log.debug("xPlorer GlobalPlugin terminated successfully")
@@ -520,6 +604,29 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	script_renameFile.category = _("xPlorer")
 	script_renameFile.gestures = ["kb(desktop):NVDA+shift+f2"]
 
+	# -------------------------------
+	# NEW SCRIPT: Auto-paste when creating new folder (Ctrl+Shift+N)
+	# -------------------------------
+	def script_createFolderWithAutoPaste(self, gesture):
+		focus = api.getFocusObject()
+		if not focus or focus.appModule.appName != "explorer":
+			# Not in Explorer: pass the original key
+			self._handleNonExplorerGesture(gesture)
+			return
+
+		# Let Windows create the folder and enter rename mode
+		gesture.send()
+
+		# Check configuration before auto-pasting
+		conf = loadConfig()
+		if conf.get("autoPasteClipboardToRename", True):
+			# Wait for the rename edit control to appear
+			core.callLater(600, type_clipboard_into_rename_if_suitable)
+
+	script_createFolderWithAutoPaste.__doc__ = _("Create new folder and paste clipboard content into rename field")
+	script_createFolderWithAutoPaste.category = _("xPlorer")
+	script_createFolderWithAutoPaste.gestures = ["kb(desktop):control+shift+n"]
+
 	def _openSettings(self):
 		try:
 			wx.CallAfter(self._showSettingsDialog)
@@ -536,6 +643,51 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def _showContextMenu(self):
 		self.contextMenuManager.showContextMenu()
+
+	def _createMultipleFolders(self):
+		current_path = self._getCurrentPath()
+		if not current_path:
+			ui.message(_("No Explorer folder detected"))
+			return
+		def show_dialog():
+			try:
+				dlg = FolderCreationDialog(gui.mainFrame, current_path)
+				dlg.Raise()
+				dlg.SetFocus()
+				if dlg.ShowModal() == wx.ID_OK:
+					dlg.process_input()
+				dlg.Destroy()
+			except Exception as e:
+				log.error(f"Error in folder creation dialog: {e}")
+				ui.message(_("Error creating folders"))
+		wx.CallAfter(show_dialog)
+
+	def _convertFolderNames(self, conversion_type):
+		selected_items, shell_window = self._getSelectedItems()
+		folders_to_convert = []
+		if selected_items:
+			for name, path in selected_items:
+				if os.path.isdir(path):
+					folders_to_convert.append(path)
+		if not folders_to_convert:
+			current_path = self._getCurrentPath()
+			if current_path and os.path.isdir(current_path):
+				folders_to_convert = [current_path]
+			else:
+				ui.message(_("No folders selected or current folder not available"))
+				return
+		try:
+			if conversion_type == "uppercase":
+				self.caseConverter.convert_folder_to_uppercase(folders_to_convert)
+			elif conversion_type == "lowercase":
+				self.caseConverter.convert_folder_to_lowercase(folders_to_convert)
+			elif conversion_type == "titlecase":
+				self.caseConverter.convert_folder_to_titlecase(folders_to_convert)
+			elif conversion_type == "headlinecase":
+				self.caseConverter.convert_folder_to_headlinecase(folders_to_convert)
+		except Exception as e:
+			log.error(f"Error converting folder names: {e}")
+			ui.message(_("Error during conversion"))
 
 	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
 		self.manager.chooseNVDAObjectOverlayClasses(obj, clsList)

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: xPlorer 2026.4.4\n"
+"Project-Id-Version: xPlorer 2026.5.1\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-04-21 08:59+0700\n"
+"POT-Creation-Date: 2026-04-27 15:57+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: English\n"
@@ -11,6 +11,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: DevOn Addon\n"
+
+#: folder_creation_dialog.py:60
+msgid "&Apply"
+msgstr "&Apply"
+
+#: folder_creation_dialog.py:61
+msgid "&Cancel"
+msgstr "&Cancel"
 
 #: robocopyManager.py:223
 msgid "1 day"
@@ -60,6 +68,10 @@ msgstr "Add destination folder"
 msgid "Announce 'Empty Folder' when entering an empty folder"
 msgstr "Announce 'Empty Folder' when entering an empty folder"
 
+#: xPlorerManager.py:71
+msgid "Automatically paste clipboard content into rename field"
+msgstr "Automatically paste clipboard content into rename field"
+
 #: xPlorerManager.py:51
 msgid "Automatically select the first item"
 msgstr "Automatically select the first item"
@@ -85,13 +97,17 @@ msgstr "Cannot find unique name for: {name}"
 msgid "Cannot get destination"
 msgstr "Cannot get destination"
 
-#: __init__.py:528
+#: __init__.py:635
 msgid "Cannot open settings dialog"
 msgstr "Cannot open settings dialog"
 
 #: txt2folder.py:69
 msgid "Cannot process RTF file: striprtf module not available"
 msgstr "Cannot process RTF file: striprtf module not available"
+
+#: contextMenu.py:46
+msgid "Case Converter for Folders"
+msgstr "Case Converter for Folders"
 
 #: robocopyManager.py:348
 msgid "Choose destination folder"
@@ -105,7 +121,7 @@ msgstr "Clear all settings"
 msgid "Completed"
 msgstr "Completed"
 
-#: contextMenu.py:24
+#: contextMenu.py:25
 msgid "Compress zip"
 msgstr "Compress zip"
 
@@ -153,7 +169,7 @@ msgstr "Copied source path to clipboard"
 msgid "Copied {count} item names to clipboard"
 msgstr "Copied {count} item names to clipboard"
 
-#: __init__.py:345
+#: __init__.py:429
 msgid "Copied: {path}"
 msgstr "Copied: {path}"
 
@@ -161,37 +177,53 @@ msgstr "Copied: {path}"
 msgid "Copy"
 msgstr "Copy"
 
-#: contextMenu.py:25
+#: contextMenu.py:27
 msgid "Copy address bar"
 msgstr "Copy address bar"
 
-#: contextMenu.py:26
+#: contextMenu.py:28
 msgid "Copy content"
 msgstr "Copy content"
 
-#: __init__.py:432
+#: __init__.py:516
 msgid "Copy content (single tap) or invert selection (double tap)"
 msgstr "Copy content (single tap) or invert selection (double tap)"
 
-#: contextMenu.py:27
+#: contextMenu.py:29
 msgid "Copy selected file and folder names"
 msgstr "Copy selected file and folder names"
 
-#: __init__.py:387
+#: __init__.py:471
 msgid "Copy selected names (single tap) or copy address bar (double tap)"
 msgstr "Copy selected names (single tap) or copy address bar (double tap)"
 
-#: __init__.py:347
+#: __init__.py:431
 #: clipboardManager.py:57
 #: clipboardManager.py:169
 #: robocopyManager.py:187
 msgid "Could not open clipboard"
 msgstr "Could not open clipboard"
 
-#: contextMenu.py:28
+#: contextMenu.py:30
 #: createFile.py:16
 msgid "Create File"
 msgstr "Create File"
+
+#: folder_creation_dialog.py:14
+msgid "Create Multiple Folders"
+msgstr "Create Multiple Folders"
+
+#: contextMenu.py:43
+msgid "Create Multiple Folders..."
+msgstr "Create Multiple Folders..."
+
+#: folder_creation_dialog.py:42
+msgid "Create main folder and then subfolders"
+msgstr "Create main folder and then subfolders"
+
+#: __init__.py:626
+msgid "Create new folder and paste clipboard content into rename field"
+msgstr "Create new folder and paste clipboard content into rename field"
 
 #: createFile.py:237
 msgid "Current path is not a directory"
@@ -209,6 +241,10 @@ msgstr "Destination folders list"
 msgid "Destination folders:"
 msgstr "Destination folders:"
 
+#: folder_creation_dialog.py:46
+msgid "Edit individual folder names"
+msgstr "Edit individual folder names"
+
 #: robocopyManager.py:115
 msgid "Elapsed time: {} seconds"
 msgstr "Elapsed time: {} seconds"
@@ -221,7 +257,7 @@ msgstr "Empty Folder"
 msgid "Enable automatic synchronization"
 msgstr "Enable automatic synchronization"
 
-#: folderInfo.py:77
+#: folderInfo.py:78
 msgid "Error calculating folder info"
 msgstr "Error calculating folder info"
 
@@ -249,6 +285,26 @@ msgstr "Error creating base folder"
 msgid "Error creating files"
 msgstr "Error creating files"
 
+#: folder_creation_dialog.py:219
+msgid "Error creating folder: {number}"
+msgstr "Error creating folder: {number}"
+
+#: __init__.py:662
+msgid "Error creating folders"
+msgstr "Error creating folders"
+
+#: folder_creation_dialog.py:179
+msgid "Error creating main folder"
+msgstr "Error creating main folder"
+
+#: folder_creation_dialog.py:201
+msgid "Error creating subfolder: {number}"
+msgstr "Error creating subfolder: {number}"
+
+#: __init__.py:690
+msgid "Error during conversion"
+msgstr "Error during conversion"
+
 #: robocopyManager.py:990
 msgid "Error during {}: {}"
 msgstr "Error during {}: {}"
@@ -269,7 +325,7 @@ msgstr "Error opening create file dialog"
 msgid "Error opening rename dialog"
 msgstr "Error opening rename dialog"
 
-#: __init__.py:535
+#: __init__.py:642
 msgid "Error opening settings"
 msgstr "Error opening settings"
 
@@ -302,6 +358,13 @@ msgstr "Estimated time remaining: {}"
 #: createFile.py:84
 msgid "Extension:"
 msgstr "Extension:"
+
+#: case.py:115
+#: case.py:129
+#: case.py:150
+#: case.py:164
+msgid "Failed to rename any folders"
+msgstr "Failed to rename any folders"
 
 #: createFile.py:163
 msgid "File count cannot exceed 10"
@@ -336,6 +399,11 @@ msgstr "File name:"
 msgid "File renamed to {name}"
 msgstr "File renamed to {name}"
 
+#: folder_creation_dialog.py:113
+#: folder_creation_dialog.py:158
+msgid "Folder"
+msgstr "Folder"
+
 #: txt2folder.py:106
 #: txt2folder.py:182
 msgid "Folder '{}' already exists, creating '{}' instead"
@@ -345,6 +413,14 @@ msgstr "Folder '{}' already exists, creating '{}' instead"
 msgid "Folder info"
 msgstr "Folder info"
 
+#: folder_creation_dialog.py:27
+msgid "Folder title:"
+msgstr "Folder title:"
+
+#: contextMenu.py:50
+msgid "Headline Case"
+msgstr "Headline Case"
+
 #: robocopyManager.py:434
 msgid "Immediate sync completed: {}/{} destinations"
 msgstr "Immediate sync completed: {}/{} destinations"
@@ -353,12 +429,16 @@ msgstr "Immediate sync completed: {}/{} destinations"
 msgid "Invalid destination"
 msgstr "Invalid destination"
 
+#: folder_creation_dialog.py:169
+msgid "Invalid number for folders"
+msgstr "Invalid number for folders"
+
 #: robocopyManager.py:407
 #: robocopyManager.py:447
 msgid "Invalid time format"
 msgstr "Invalid time format"
 
-#: contextMenu.py:29
+#: contextMenu.py:26
 msgid "Invert selection"
 msgstr "Invert selection"
 
@@ -369,6 +449,14 @@ msgstr "Inverted selection: {inverted} of {total} items selected"
 #: robocopyManager.py:868
 msgid "Large file detected, using compression for speed"
 msgstr "Large file detected, using compression for speed"
+
+#: contextMenu.py:48
+msgid "Lowercase"
+msgstr "Lowercase"
+
+#: folder_creation_dialog.py:166
+msgid "Maximum 100 folders allowed"
+msgstr "Maximum 100 folders allowed"
 
 #: robocopyManager.py:62
 msgid "Minimize"
@@ -394,6 +482,10 @@ msgstr "Move"
 msgid "Next scheduled backup for {}: {}"
 msgstr "Next scheduled backup for {}: {}"
 
+#: __init__.py:650
+msgid "No Explorer folder detected"
+msgstr "No Explorer folder detected"
+
 #: fileOperations.py:300
 #: fileOperations.py:410
 msgid "No access to size data"
@@ -411,12 +503,24 @@ msgstr "No content could be read from selected files"
 msgid "No files were created"
 msgstr "No files were created"
 
+#: case.py:106
+#: case.py:120
+#: case.py:141
+#: case.py:155
+msgid "No folders found"
+msgstr "No folders found"
+
+#: __init__.py:677
+msgid "No folders selected or current folder not available"
+msgstr "No folders selected or current folder not available"
+
+#: folder_creation_dialog.py:230
 #: txt2folder.py:155
 #: txt2folder.py:208
 msgid "No folders were created"
 msgstr "No folders were created"
 
-#: folderInfo.py:29
+#: folderInfo.py:30
 msgid "No item selected"
 msgstr "No item selected"
 
@@ -459,11 +563,19 @@ msgstr "Not in File Explorer"
 msgid "Number of files to create:"
 msgstr "Number of files to create:"
 
+#: folder_creation_dialog.py:163
+msgid "Number of folders must be at least 1"
+msgstr "Number of folders must be at least 1"
+
+#: folder_creation_dialog.py:35
+msgid "Number of folders:"
+msgstr "Number of folders:"
+
 #: robocopyManager.py:241
 msgid "OK"
 msgstr "OK"
 
-#: __init__.py:502
+#: __init__.py:586
 msgid "Open xPlorer context menu"
 msgstr "Open xPlorer context menu"
 
@@ -483,7 +595,7 @@ msgstr "Please select a folder"
 msgid "Please select only one file"
 msgstr "Please select only one file"
 
-#: folderInfo.py:34
+#: folderInfo.py:35
 #: robocopyManager.py:667
 msgid "Please select only one folder"
 msgstr "Please select only one folder"
@@ -512,8 +624,8 @@ msgstr "Remove selected destination"
 msgid "Remove selected source"
 msgstr "Remove selected source"
 
-#: __init__.py:519
-#: contextMenu.py:30
+#: __init__.py:603
+#: contextMenu.py:31
 msgid "Rename selected file"
 msgstr "Rename selected file"
 
@@ -521,11 +633,11 @@ msgstr "Rename selected file"
 msgid "Robocopy"
 msgstr "Robocopy"
 
-#: contextMenu.py:31
+#: contextMenu.py:32
 msgid "Say size"
 msgstr "Say size"
 
-#: __init__.py:477
+#: __init__.py:561
 msgid "Say size (single tap) or compress zip (double tap)"
 msgstr "Say size (single tap) or compress zip (double tap)"
 
@@ -550,7 +662,7 @@ msgstr "Select one item only"
 msgid "Selected file does not exist"
 msgstr "Selected file does not exist"
 
-#: folderInfo.py:40
+#: folderInfo.py:41
 msgid "Selected item is not a folder"
 msgstr "Selected item is not a folder"
 
@@ -604,6 +716,34 @@ msgstr "Starting {} operation in background..."
 msgid "Starting..."
 msgstr "Starting..."
 
+#: case.py:162
+msgid "Successfully converted {count} folders to headline case"
+msgstr "Successfully converted {count} folders to headline case"
+
+#: case.py:127
+msgid "Successfully converted {count} folders to lowercase"
+msgstr "Successfully converted {count} folders to lowercase"
+
+#: case.py:148
+msgid "Successfully converted {count} folders to title case"
+msgstr "Successfully converted {count} folders to title case"
+
+#: case.py:113
+msgid "Successfully converted {count} folders to uppercase"
+msgstr "Successfully converted {count} folders to uppercase"
+
+#: folder_creation_dialog.py:226
+msgid "Successfully created 1 folder"
+msgstr "Successfully created 1 folder"
+
+#: folder_creation_dialog.py:224
+msgid "Successfully created main folder only"
+msgstr "Successfully created main folder only"
+
+#: folder_creation_dialog.py:228
+msgid "Successfully created {count} folders"
+msgstr "Successfully created {count} folders"
+
 #: txt2folder.py:150
 #: txt2folder.py:203
 msgid "Successfully created {} folders in '{}'"
@@ -625,9 +765,13 @@ msgstr "Sync error occurred"
 msgid "Synchronization interval:"
 msgstr "Synchronization interval:"
 
-#: contextMenu.py:45
+#: contextMenu.py:42
 msgid "TXT to Folder"
 msgstr "TXT to Folder"
+
+#: contextMenu.py:49
+msgid "Title Case"
+msgstr "Title Case"
 
 #: clipboardManager.py:104
 msgid "Total file size is too large to copy content"
@@ -641,13 +785,17 @@ msgstr "Trying alternative copy method..."
 msgid "Unable to get current directory"
 msgstr "Unable to get current directory"
 
-#: __init__.py:349
+#: __init__.py:433
 msgid "Unable to get current path"
 msgstr "Unable to get current path"
 
 #: selectionManager.py:32
 msgid "Unable to get folder view"
 msgstr "Unable to get folder view"
+
+#: contextMenu.py:47
+msgid "Uppercase"
+msgstr "Uppercase"
 
 #: clipboardManager.py:124
 msgid "[Error processing RTF file]"
@@ -661,15 +809,15 @@ msgstr "[RTF content - striprtf module not available]"
 msgid "compression failed: {error}"
 msgstr "compression failed: {error}"
 
-#: contextMenu.py:38
+#: contextMenu.py:36
 msgid "copy"
 msgstr "copy"
 
-#: contextMenu.py:42
+#: contextMenu.py:40
 msgid "mirror Backup"
 msgstr "mirror Backup"
 
-#: contextMenu.py:39
+#: contextMenu.py:37
 msgid "move"
 msgstr "move"
 
@@ -681,21 +829,22 @@ msgstr "new_file"
 msgid "new_file_{index}"
 msgstr "new_file_{index}"
 
-#: contextMenu.py:40
+#: contextMenu.py:38
 msgid "paste"
 msgstr "paste"
 
-#: __init__.py:60
-#: __init__.py:388
-#: __init__.py:433
-#: __init__.py:478
-#: __init__.py:503
-#: __init__.py:520
+#: __init__.py:143
+#: __init__.py:472
+#: __init__.py:517
+#: __init__.py:562
+#: __init__.py:587
+#: __init__.py:604
+#: __init__.py:627
 #: xPlorerManager.py:44
 msgid "xPlorer"
 msgstr "xPlorer"
 
-#: contextMenu.py:49
+#: contextMenu.py:22
 msgid "xPlorer Settings"
 msgstr "xPlorer Settings"
 
@@ -707,7 +856,7 @@ msgstr "{count} files created"
 msgid "{count} items {size}"
 msgstr "{count} items {size}"
 
-#: folderInfo.py:65
+#: folderInfo.py:66
 msgid "{subfolders} subfolders and {files} files"
 msgstr "{subfolders} subfolders and {files} files"
 

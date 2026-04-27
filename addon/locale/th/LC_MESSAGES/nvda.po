@@ -1,0 +1,893 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: xPlorer 2026.5.1\n"
+"Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
+"POT-Creation-Date: 2026-04-27 15:57+0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: chaiBot and Malee Yamazaki\n"
+"Language-Team: Thai\n"
+"Language: th\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: DevOn Addon\n"
+
+#: folder_creation_dialog.py:60
+msgid "&Apply"
+msgstr "&นำไปใช้"
+
+#: folder_creation_dialog.py:61
+msgid "&Cancel"
+msgstr "&ยกเลิก"
+
+#: robocopyManager.py:223
+msgid "1 day"
+msgstr "1 วัน"
+
+#: createFile.py:305
+msgid "1 file created"
+msgstr "สร้างไฟล์ 1 ไฟล์"
+
+#: robocopyManager.py:222
+msgid "1 hour"
+msgstr "1 ชั่วโมง"
+
+#: robocopyManager.py:223
+msgid "1 month"
+msgstr "1 เดือน"
+
+#: robocopyManager.py:223
+msgid "15 days"
+msgstr "15 วัน"
+
+#: robocopyManager.py:222
+msgid "15 minutes"
+msgstr "15 นาที"
+
+#: robocopyManager.py:222
+msgid "30 minutes"
+msgstr "30 นาที"
+
+#: robocopyManager.py:223
+msgid "7 days"
+msgstr "7 วัน"
+
+#: compressionManager.py:159
+msgid "7-Zip compression failed, trying built-in method..."
+msgstr "การบีบอัดด้วย 7-Zip ล้มเหลว กำลังลองใช้วิธีภายในตัว..."
+
+#: fileOperations.py:474
+msgid "A file with this name already exists"
+msgstr "มีไฟล์ชื่อนี้อยู่แล้ว"
+
+#: robocopyManager.py:209
+msgid "Add destination folder"
+msgstr "เพิ่มโฟลเดอร์ปลายทาง"
+
+#: xPlorerManager.py:56
+msgid "Announce 'Empty Folder' when entering an empty folder"
+msgstr "ประกาศ 'โฟลเดอร์ว่าง' เมื่อเข้าสู่โฟลเดอร์ว่าง"
+
+#: xPlorerManager.py:71
+msgid "Automatically paste clipboard content into rename field"
+msgstr "วางเนื้อหาคลิปบอร์ดลงในช่องเปลี่ยนชื่อโดยอัตโนมัติ"
+
+#: xPlorerManager.py:51
+msgid "Automatically select the first item"
+msgstr "เลือกรายการแรกโดยอัตโนมัติ"
+
+#: compressionManager.py:268
+msgid "Built-in compression failed: {error}"
+msgstr "การบีบอัดภายในตัวล้มเหลว: {error}"
+
+#: robocopyManager.py:61
+#: robocopyManager.py:242
+msgid "Cancel"
+msgstr "ยกเลิก"
+
+#: clipboardManager.py:77
+msgid "Cannot copy content of folders, please select files only"
+msgstr "ไม่สามารถคัดลอกเนื้อหาของโฟลเดอร์ได้ กรุณาเลือกเฉพาะไฟล์"
+
+#: createFile.py:290
+msgid "Cannot find unique name for: {name}"
+msgstr "ไม่พบชื่อที่ไม่ซ้ำสำหรับ: {name}"
+
+#: robocopyManager.py:761
+msgid "Cannot get destination"
+msgstr "ไม่สามารถรับปลายทางได้"
+
+#: __init__.py:635
+msgid "Cannot open settings dialog"
+msgstr "ไม่สามารถเปิดหน้าต่างตั้งค่าได้"
+
+#: txt2folder.py:69
+msgid "Cannot process RTF file: striprtf module not available"
+msgstr "ไม่สามารถประมวลผลไฟล์ RTF: โมดูล striprtf ไม่พร้อมใช้งาน"
+
+#: contextMenu.py:46
+msgid "Case Converter for Folders"
+msgstr "ตัวแปลงตัวพิมพ์สำหรับโฟลเดอร์"
+
+#: robocopyManager.py:348
+msgid "Choose destination folder"
+msgstr "เลือกโฟลเดอร์ปลายทาง"
+
+#: robocopyManager.py:239
+msgid "Clear all settings"
+msgstr "ล้างการตั้งค่าทั้งหมด"
+
+#: compressionManager.py:264
+msgid "Completed"
+msgstr "เสร็จสมบูรณ์"
+
+#: contextMenu.py:25
+msgid "Compress zip"
+msgstr "บีบอัด zip"
+
+#: compressionManager.py:144
+#: compressionManager.py:161
+msgid "Compressing files"
+msgstr "กำลังบีบอัดไฟล์"
+
+#: compressionManager.py:70
+msgid "Compressing..."
+msgstr "กำลังบีบอัด..."
+
+#: compressionManager.py:244
+#: compressionManager.py:258
+msgid "Compressing: {percent}%"
+msgstr "กำลังบีบอัด: {percent}%"
+
+#: compressionManager.py:92
+#: compressionManager.py:262
+msgid "Compression cancelled"
+msgstr "ยกเลิกการบีบอัด"
+
+#: compressionManager.py:94
+#: compressionManager.py:265
+msgid "Compression completed {name}"
+msgstr "บีบอัดเสร็จสมบูรณ์ {name}"
+
+#: clipboardManager.py:165
+msgid "Content from 1 file copied to clipboard"
+msgstr "คัดลอกเนื้อหาจาก 1 ไฟล์ไปยังคลิปบอร์ด"
+
+#: clipboardManager.py:167
+msgid "Content from {count} files copied to clipboard"
+msgstr "คัดลอกเนื้อหาจาก {count} ไฟล์ไปยังคลิปบอร์ด"
+
+#: clipboardManager.py:53
+msgid "Copied 1 item name to clipboard"
+msgstr "คัดลอกชื่อรายการ 1 รายการไปยังคลิปบอร์ด"
+
+#: robocopyManager.py:185
+msgid "Copied source path to clipboard"
+msgstr "คัดลอกเส้นทางต้นทางไปยังคลิปบอร์ด"
+
+#: clipboardManager.py:55
+msgid "Copied {count} item names to clipboard"
+msgstr "คัดลอกชื่อรายการ {count} รายการไปยังคลิปบอร์ด"
+
+#: __init__.py:429
+msgid "Copied: {path}"
+msgstr "คัดลอกแล้ว: {path}"
+
+#: robocopyManager.py:771
+msgid "Copy"
+msgstr "คัดลอก"
+
+#: contextMenu.py:27
+msgid "Copy address bar"
+msgstr "คัดลอกแถบที่อยู่"
+
+#: contextMenu.py:28
+msgid "Copy content"
+msgstr "คัดลอกเนื้อหา"
+
+#: __init__.py:516
+msgid "Copy content (single tap) or invert selection (double tap)"
+msgstr "คัดลอกเนื้อหา (แตะครั้งเดียว) หรือกลับการเลือก (แตะสองครั้ง)"
+
+#: contextMenu.py:29
+msgid "Copy selected file and folder names"
+msgstr "คัดลอกชื่อไฟล์และโฟลเดอร์ที่เลือก"
+
+#: __init__.py:471
+msgid "Copy selected names (single tap) or copy address bar (double tap)"
+msgstr "คัดลอกชื่อที่เลือก (แตะครั้งเดียว) หรือคัดลอกแถบที่อยู่ (แตะสองครั้ง)"
+
+#: __init__.py:431
+#: clipboardManager.py:57
+#: clipboardManager.py:169
+#: robocopyManager.py:187
+msgid "Could not open clipboard"
+msgstr "ไม่สามารถเปิดคลิปบอร์ดได้"
+
+#: contextMenu.py:30
+#: createFile.py:16
+msgid "Create File"
+msgstr "สร้างไฟล์"
+
+#: folder_creation_dialog.py:14
+msgid "Create Multiple Folders"
+msgstr "สร้างโฟลเดอร์หลายรายการ"
+
+#: contextMenu.py:43
+msgid "Create Multiple Folders..."
+msgstr "สร้างโฟลเดอร์หลายรายการ..."
+
+#: folder_creation_dialog.py:42
+msgid "Create main folder and then subfolders"
+msgstr "สร้างโฟลเดอร์หลักแล้วจึงสร้างโฟลเดอร์ย่อย"
+
+#: __init__.py:626
+msgid "Create new folder and paste clipboard content into rename field"
+msgstr "สร้างโฟลเดอร์ใหม่และวางเนื้อหาคลิปบอร์ดลงในช่องเปลี่ยนชื่อ"
+
+#: createFile.py:237
+msgid "Current path is not a directory"
+msgstr "เส้นทางปัจจุบันไม่ใช่ไดเรกทอรี"
+
+#: robocopyManager.py:817
+msgid "Destination already exists, overwriting..."
+msgstr "ปลายทางมีอยู่แล้ว กำลังเขียนทับ..."
+
+#: robocopyManager.py:205
+msgid "Destination folders list"
+msgstr "รายการโฟลเดอร์ปลายทาง"
+
+#: robocopyManager.py:203
+msgid "Destination folders:"
+msgstr "โฟลเดอร์ปลายทาง:"
+
+#: folder_creation_dialog.py:46
+msgid "Edit individual folder names"
+msgstr "แก้ไขชื่อโฟลเดอร์แต่ละรายการ"
+
+#: robocopyManager.py:115
+msgid "Elapsed time: {} seconds"
+msgstr "เวลาที่ผ่านไป: {} วินาที"
+
+#: xPlorerManager.py:40
+msgid "Empty Folder"
+msgstr "โฟลเดอร์ว่าง"
+
+#: robocopyManager.py:217
+msgid "Enable automatic synchronization"
+msgstr "เปิดใช้งานการซิงโครไนซ์อัตโนมัติ"
+
+#: folderInfo.py:78
+msgid "Error calculating folder info"
+msgstr "ข้อผิดพลาดในการคำนวณข้อมูลโฟลเดอร์"
+
+#: fileOperations.py:401
+msgid "Error calculating size"
+msgstr "ข้อผิดพลาดในการคำนวณขนาด"
+
+#: compressionManager.py:173
+msgid "Error compressing files"
+msgstr "ข้อผิดพลาดในการบีบอัดไฟล์"
+
+#: clipboardManager.py:173
+msgid "Error copying file content"
+msgstr "ข้อผิดพลาดในการคัดลอกเนื้อหาไฟล์"
+
+#: clipboardManager.py:61
+msgid "Error copying names to clipboard"
+msgstr "ข้อผิดพลาดในการคัดลอกชื่อไปยังคลิปบอร์ด"
+
+#: txt2folder.py:116
+msgid "Error creating base folder"
+msgstr "ข้อผิดพลาดในการสร้างโฟลเดอร์ฐาน"
+
+#: createFile.py:311
+msgid "Error creating files"
+msgstr "ข้อผิดพลาดในการสร้างไฟล์"
+
+#: folder_creation_dialog.py:219
+msgid "Error creating folder: {number}"
+msgstr "ข้อผิดพลาดในการสร้างโฟลเดอร์: {number}"
+
+#: __init__.py:662
+msgid "Error creating folders"
+msgstr "ข้อผิดพลาดในการสร้างโฟลเดอร์"
+
+#: folder_creation_dialog.py:179
+msgid "Error creating main folder"
+msgstr "ข้อผิดพลาดในการสร้างโฟลเดอร์หลัก"
+
+#: folder_creation_dialog.py:201
+msgid "Error creating subfolder: {number}"
+msgstr "ข้อผิดพลาดในการสร้างโฟลเดอร์ย่อย: {number}"
+
+#: __init__.py:690
+msgid "Error during conversion"
+msgstr "ข้อผิดพลาดระหว่างการแปลง"
+
+#: robocopyManager.py:990
+msgid "Error during {}: {}"
+msgstr "ข้อผิดพลาดระหว่าง {}: {}"
+
+#: compressionManager.py:101
+msgid "Error in compression process: {error}"
+msgstr "ข้อผิดพลาดในกระบวนการบีบอัด: {error}"
+
+#: selectionManager.py:65
+msgid "Error inverting selection"
+msgstr "ข้อผิดพลาดในการกลับการเลือก"
+
+#: createFile.py:262
+msgid "Error opening create file dialog"
+msgstr "ข้อผิดพลาดในการเปิดหน้าต่างสร้างไฟล์"
+
+#: fileOperations.py:488
+msgid "Error opening rename dialog"
+msgstr "ข้อผิดพลาดในการเปิดหน้าต่างเปลี่ยนชื่อ"
+
+#: __init__.py:642
+msgid "Error opening settings"
+msgstr "ข้อผิดพลาดในการเปิดการตั้งค่า"
+
+#: txt2folder.py:212
+msgid "Error processing text file: {}"
+msgstr "ข้อผิดพลาดในการประมวลผลไฟล์ข้อความ: {}"
+
+#: txt2folder.py:80
+msgid "Error reading RTF file"
+msgstr "ข้อผิดพลาดในการอ่านไฟล์ RTF"
+
+#: txt2folder.py:215
+msgid "Error reading file encoding"
+msgstr "ข้อผิดพลาดในการอ่านการเข้ารหัสไฟล์"
+
+#: fileOperations.py:453
+#: fileOperations.py:482
+msgid "Error renaming file"
+msgstr "ข้อผิดพลาดในการเปลี่ยนชื่อไฟล์"
+
+#: robocopyManager.py:784
+#: txt2folder.py:219
+msgid "Error: {}"
+msgstr "ข้อผิดพลาด: {}"
+
+#: robocopyManager.py:111
+msgid "Estimated time remaining: {}"
+msgstr "เวลาที่เหลือโดยประมาณ: {}"
+
+#: createFile.py:84
+msgid "Extension:"
+msgstr "นามสกุล:"
+
+#: case.py:115
+#: case.py:129
+#: case.py:150
+#: case.py:164
+msgid "Failed to rename any folders"
+msgstr "ไม่สามารถเปลี่ยนชื่อโฟลเดอร์ใด ๆ"
+
+#: createFile.py:163
+msgid "File count cannot exceed 10"
+msgstr "จำนวนไฟล์ต้องไม่เกิน 10"
+
+#: createFile.py:160
+msgid "File count must be at least 1"
+msgstr "จำนวนไฟล์ต้องมีอย่างน้อย 1"
+
+#: createFile.py:131
+msgid "File name"
+msgstr "ชื่อไฟล์"
+
+#: fileOperations.py:57
+msgid "File name cannot be empty"
+msgstr "ชื่อไฟล์ต้องไม่ว่างเปล่า"
+
+#: fileOperations.py:470
+msgid "File name not changed"
+msgstr "ไม่ได้เปลี่ยนชื่อไฟล์"
+
+#: createFile.py:77
+#: createFile.py:132
+msgid "File name {index}:"
+msgstr "ชื่อไฟล์ {index}:"
+
+#: createFile.py:75
+msgid "File name:"
+msgstr "ชื่อไฟล์:"
+
+#: fileOperations.py:479
+msgid "File renamed to {name}"
+msgstr "เปลี่ยนชื่อไฟล์เป็น {name}"
+
+#: folder_creation_dialog.py:113
+#: folder_creation_dialog.py:158
+msgid "Folder"
+msgstr "โฟลเดอร์"
+
+#: txt2folder.py:106
+#: txt2folder.py:182
+msgid "Folder '{}' already exists, creating '{}' instead"
+msgstr "มีโฟลเดอร์ '{}' อยู่แล้ว จะสร้าง '{}' แทน"
+
+#: contextMenu.py:52
+msgid "Folder info"
+msgstr "ข้อมูลโฟลเดอร์"
+
+#: folder_creation_dialog.py:27
+msgid "Folder title:"
+msgstr "ชื่อเรื่องโฟลเดอร์:"
+
+#: contextMenu.py:50
+msgid "Headline Case"
+msgstr "ตัวพิมพ์หัวข้อข่าว"
+
+#: robocopyManager.py:434
+msgid "Immediate sync completed: {}/{} destinations"
+msgstr "ซิงโครไนซ์ทันทีเสร็จสมบูรณ์: {}/{} ปลายทาง"
+
+#: robocopyManager.py:767
+msgid "Invalid destination"
+msgstr "ปลายทางไม่ถูกต้อง"
+
+#: folder_creation_dialog.py:169
+msgid "Invalid number for folders"
+msgstr "จำนวนโฟลเดอร์ไม่ถูกต้อง"
+
+#: robocopyManager.py:407
+#: robocopyManager.py:447
+msgid "Invalid time format"
+msgstr "รูปแบบเวลาไม่ถูกต้อง"
+
+#: contextMenu.py:26
+msgid "Invert selection"
+msgstr "กลับการเลือก"
+
+#: selectionManager.py:60
+msgid "Inverted selection: {inverted} of {total} items selected"
+msgstr "กลับการเลือกแล้ว: เลือก {inverted} จากทั้งหมด {total} รายการ"
+
+#: robocopyManager.py:868
+msgid "Large file detected, using compression for speed"
+msgstr "ตรวจพบไฟล์ขนาดใหญ่ ใช้การบีบอัดเพื่อความเร็ว"
+
+#: contextMenu.py:48
+msgid "Lowercase"
+msgstr "ตัวพิมพ์เล็ก"
+
+#: folder_creation_dialog.py:166
+msgid "Maximum 100 folders allowed"
+msgstr "อนุญาตสูงสุด 100 โฟลเดอร์"
+
+#: robocopyManager.py:62
+msgid "Minimize"
+msgstr "ย่อเล็กสุด"
+
+#: robocopyManager.py:145
+msgid "Mirror Backup Settings"
+msgstr "การตั้งค่าการสำรองข้อมูลแบบมิเรอร์"
+
+#: robocopyManager.py:716
+msgid "Mirror backup configured successfully"
+msgstr "กำหนดค่าการสำรองข้อมูลแบบมิเรอร์สำเร็จ"
+
+#: robocopyManager.py:718
+msgid "Mirror backup disabled"
+msgstr "ปิดใช้งานการสำรองข้อมูลแบบมิเรอร์"
+
+#: robocopyManager.py:771
+msgid "Move"
+msgstr "ย้าย"
+
+#: robocopyManager.py:609
+msgid "Next scheduled backup for {}: {}"
+msgstr "การสำรองข้อมูลตามกำหนดเวลาครั้งถัดไปสำหรับ {}: {}"
+
+#: __init__.py:650
+msgid "No Explorer folder detected"
+msgstr "ไม่พบโฟลเดอร์ของ Explorer"
+
+#: fileOperations.py:300
+#: fileOperations.py:410
+msgid "No access to size data"
+msgstr "ไม่สามารถเข้าถึงข้อมูลขนาด"
+
+#: selectionManager.py:27
+msgid "No active File Explorer window found"
+msgstr "ไม่พบหน้าต่าง File Explorer ที่ทำงานอยู่"
+
+#: clipboardManager.py:156
+msgid "No content could be read from selected files"
+msgstr "ไม่สามารถอ่านเนื้อหาจากไฟล์ที่เลือกได้"
+
+#: createFile.py:303
+msgid "No files were created"
+msgstr "ไม่มีการสร้างไฟล์"
+
+#: case.py:106
+#: case.py:120
+#: case.py:141
+#: case.py:155
+msgid "No folders found"
+msgstr "ไม่พบโฟลเดอร์"
+
+#: __init__.py:677
+msgid "No folders selected or current folder not available"
+msgstr "ไม่ได้เลือกโฟลเดอร์หรือโฟลเดอร์ปัจจุบันไม่พร้อมใช้งาน"
+
+#: folder_creation_dialog.py:230
+#: txt2folder.py:155
+#: txt2folder.py:208
+msgid "No folders were created"
+msgstr "ไม่มีการสร้างโฟลเดอร์"
+
+#: folderInfo.py:30
+msgid "No item selected"
+msgstr "ไม่ได้เลือกรายการ"
+
+#: selectionManager.py:40
+msgid "No items in folder"
+msgstr "ไม่มีรายการในโฟลเดอร์"
+
+#: clipboardManager.py:30
+#: clipboardManager.py:72
+#: compressionManager.py:132
+#: fileOperations.py:289
+#: fileOperations.py:433
+msgid "No items selected"
+msgstr "ไม่ได้เลือกรายการ"
+
+#: robocopyManager.py:749
+msgid "No pending operation"
+msgstr "ไม่มีงานที่ค้างอยู่"
+
+#: clipboardManager.py:93
+msgid "No text files selected"
+msgstr "ไม่ได้เลือกไฟล์ข้อความ"
+
+#: txt2folder.py:91
+#: txt2folder.py:167
+msgid "No valid folder names found in the file"
+msgstr "ไม่พบชื่อโฟลเดอร์ที่ถูกต้องในไฟล์"
+
+#: createFile.py:227
+#: robocopyManager.py:663
+#: robocopyManager.py:724
+#: robocopyManager.py:737
+#: robocopyManager.py:755
+#: selectionManager.py:21
+#: txt2folder.py:43
+msgid "Not in File Explorer"
+msgstr "ไม่อยู่ใน File Explorer"
+
+#: createFile.py:27
+msgid "Number of files to create:"
+msgstr "จำนวนไฟล์ที่จะสร้าง:"
+
+#: folder_creation_dialog.py:163
+msgid "Number of folders must be at least 1"
+msgstr "จำนวนโฟลเดอร์ต้องมีอย่างน้อย 1"
+
+#: folder_creation_dialog.py:35
+msgid "Number of folders:"
+msgstr "จำนวนโฟลเดอร์:"
+
+#: robocopyManager.py:241
+msgid "OK"
+msgstr "ตกลง"
+
+#: __init__.py:586
+msgid "Open xPlorer context menu"
+msgstr "เปิดเมนูบริบท xPlorer"
+
+#: txt2folder.py:55
+msgid "Please select a .txt or .rtf file"
+msgstr "กรุณาเลือกไฟล์ .txt หรือ .rtf"
+
+#: fileOperations.py:443
+msgid "Please select a file, not a folder"
+msgstr "กรุณาเลือกไฟล์ ไม่ใช่โฟลเดอร์"
+
+#: robocopyManager.py:671
+msgid "Please select a folder"
+msgstr "กรุณาเลือกโฟลเดอร์"
+
+#: fileOperations.py:437
+msgid "Please select only one file"
+msgstr "กรุณาเลือกเพียงไฟล์เดียว"
+
+#: folderInfo.py:35
+#: robocopyManager.py:667
+msgid "Please select only one folder"
+msgstr "กรุณาเลือกเพียงโฟลเดอร์เดียว"
+
+#: txt2folder.py:48
+msgid "Please select only one text file"
+msgstr "กรุณาเลือกเพียงไฟล์ข้อความเดียว"
+
+#: robocopyManager.py:46
+msgid "Preparing operation..."
+msgstr "กำลังเตรียมการทำงาน..."
+
+#: robocopyManager.py:103
+msgid "Processing: {}"
+msgstr "กำลังประมวลผล: {}"
+
+#: robocopyManager.py:105
+msgid "Progress: {}%"
+msgstr "ความคืบหน้า: {}%"
+
+#: robocopyManager.py:210
+msgid "Remove selected destination"
+msgstr "ลบปลายทางที่เลือก"
+
+#: robocopyManager.py:198
+msgid "Remove selected source"
+msgstr "ลบต้นทางที่เลือก"
+
+#: __init__.py:603
+#: contextMenu.py:31
+msgid "Rename selected file"
+msgstr "เปลี่ยนชื่อไฟล์ที่เลือก"
+
+#: contextMenu.py:35
+msgid "Robocopy"
+msgstr "Robocopy"
+
+#: contextMenu.py:32
+msgid "Say size"
+msgstr "อ่านขนาด"
+
+#: __init__.py:561
+msgid "Say size (single tap) or compress zip (double tap)"
+msgstr "อ่านขนาด (แตะครั้งเดียว) หรือบีบอัด zip (แตะสองครั้ง)"
+
+#: robocopyManager.py:648
+msgid "Scheduled backup completed: {}/{} destinations"
+msgstr "การสำรองข้อมูลตามกำหนดเวลาเสร็จสมบูรณ์: {}/{} ปลายทาง"
+
+#: robocopyManager.py:623
+msgid "Scheduled mirror backup started for {}"
+msgstr "เริ่มการสำรองข้อมูลแบบมิเรอร์ตามกำหนดเวลาสำหรับ {}"
+
+#: robocopyManager.py:231
+msgid "Scheduled time:"
+msgstr "เวลาตามกำหนด:"
+
+#: robocopyManager.py:728
+#: robocopyManager.py:741
+msgid "Select one item only"
+msgstr "เลือกเพียงรายการเดียว"
+
+#: txt2folder.py:60
+msgid "Selected file does not exist"
+msgstr "ไฟล์ที่เลือกไม่มีอยู่"
+
+#: folderInfo.py:41
+msgid "Selected item is not a folder"
+msgstr "รายการที่เลือกไม่ใช่โฟลเดอร์"
+
+#: createFile.py:199
+msgid "Some files will use default names"
+msgstr "ไฟล์บางไฟล์จะใช้ชื่อเริ่มต้น"
+
+#: robocopyManager.py:404
+#: robocopyManager.py:444
+msgid "Source and destination required"
+msgstr "ต้องระบุต้นทางและปลายทาง"
+
+#: robocopyManager.py:792
+msgid "Source does not exist"
+msgstr "ต้นทางไม่มีอยู่"
+
+#: robocopyManager.py:193
+msgid "Source folders (select to edit):"
+msgstr "โฟลเดอร์ต้นทาง (เลือกเพื่อแก้ไข):"
+
+#: robocopyManager.py:195
+msgid "Source folders list"
+msgstr "รายการโฟลเดอร์ต้นทาง"
+
+#: robocopyManager.py:732
+msgid "Source for copy: {}"
+msgstr "ต้นทางสำหรับการคัดลอก: {}"
+
+#: robocopyManager.py:745
+msgid "Source for move: {}"
+msgstr "ต้นทางสำหรับการย้าย: {}"
+
+#: robocopyManager.py:121
+msgid "Speed: {}"
+msgstr "ความเร็ว: {}"
+
+#: robocopyManager.py:240
+msgid "Start synchronization"
+msgstr "เริ่มการซิงโครไนซ์"
+
+#: robocopyManager.py:410
+msgid "Starting immediate mirror sync..."
+msgstr "กำลังเริ่มการซิงโครไนซ์แบบมิเรอร์ทันที..."
+
+#: robocopyManager.py:774
+msgid "Starting {} operation in background..."
+msgstr "กำลังเริ่มการทำงาน {} ในเบื้องหลัง..."
+
+#: compressionManager.py:144
+#: compressionManager.py:161
+msgid "Starting..."
+msgstr "กำลังเริ่มต้น..."
+
+#: case.py:162
+msgid "Successfully converted {count} folders to headline case"
+msgstr "แปลง {count} โฟลเดอร์เป็นตัวพิมพ์หัวข้อข่าวสำเร็จ"
+
+#: case.py:127
+msgid "Successfully converted {count} folders to lowercase"
+msgstr "แปลง {count} โฟลเดอร์เป็นตัวพิมพ์เล็กสำเร็จ"
+
+#: case.py:148
+msgid "Successfully converted {count} folders to title case"
+msgstr "แปลง {count} โฟลเดอร์เป็นตัวพิมพ์หัวเรื่องสำเร็จ"
+
+#: case.py:113
+msgid "Successfully converted {count} folders to uppercase"
+msgstr "แปลง {count} โฟลเดอร์เป็นตัวพิมพ์ใหญ่สำเร็จ"
+
+#: folder_creation_dialog.py:226
+msgid "Successfully created 1 folder"
+msgstr "สร้าง 1 โฟลเดอร์สำเร็จ"
+
+#: folder_creation_dialog.py:224
+msgid "Successfully created main folder only"
+msgstr "สร้างเฉพาะโฟลเดอร์หลักสำเร็จ"
+
+#: folder_creation_dialog.py:228
+msgid "Successfully created {count} folders"
+msgstr "สร้าง {count} โฟลเดอร์สำเร็จ"
+
+#: txt2folder.py:150
+#: txt2folder.py:203
+msgid "Successfully created {} folders in '{}'"
+msgstr "สร้าง {} โฟลเดอร์ใน '{}' สำเร็จ"
+
+#: xPlorerManager.py:66
+msgid "Suppress announcement of '- File Explorer' in window titles"
+msgstr "ระงับการประกาศ '- File Explorer' ในชื่อหน้าต่าง"
+
+#: xPlorerManager.py:61
+msgid "Suppress announcement of DirectUIHWND class"
+msgstr "ระงับการประกาศคลาส DirectUIHWND"
+
+#: robocopyManager.py:438
+msgid "Sync error occurred"
+msgstr "เกิดข้อผิดพลาดในการซิงโครไนซ์"
+
+#: robocopyManager.py:220
+msgid "Synchronization interval:"
+msgstr "ช่วงเวลาซิงโครไนซ์:"
+
+#: contextMenu.py:42
+msgid "TXT to Folder"
+msgstr "TXT เป็นโฟลเดอร์"
+
+#: contextMenu.py:49
+msgid "Title Case"
+msgstr "ตัวพิมพ์หัวเรื่อง"
+
+#: clipboardManager.py:104
+msgid "Total file size is too large to copy content"
+msgstr "ขนาดไฟล์รวมใหญ่เกินไปที่จะคัดลอกเนื้อหา"
+
+#: robocopyManager.py:963
+msgid "Trying alternative copy method..."
+msgstr "กำลังลองวิธีการคัดลอกอื่น..."
+
+#: createFile.py:233
+msgid "Unable to get current directory"
+msgstr "ไม่สามารถรับไดเรกทอรีปัจจุบัน"
+
+#: __init__.py:433
+msgid "Unable to get current path"
+msgstr "ไม่สามารถรับเส้นทางปัจจุบัน"
+
+#: selectionManager.py:32
+msgid "Unable to get folder view"
+msgstr "ไม่สามารถรับมุมมองโฟลเดอร์"
+
+#: contextMenu.py:47
+msgid "Uppercase"
+msgstr "ตัวพิมพ์ใหญ่"
+
+#: clipboardManager.py:124
+msgid "[Error processing RTF file]"
+msgstr "[ข้อผิดพลาดในการประมวลผลไฟล์ RTF]"
+
+#: clipboardManager.py:126
+msgid "[RTF content - striprtf module not available]"
+msgstr "[เนื้อหา RTF - โมดูล striprtf ไม่พร้อมใช้งาน]"
+
+#: compressionManager.py:97
+msgid "compression failed: {error}"
+msgstr "การบีบอัดล้มเหลว: {error}"
+
+#: contextMenu.py:36
+msgid "copy"
+msgstr "คัดลอก"
+
+#: contextMenu.py:40
+msgid "mirror Backup"
+msgstr "สำรองข้อมูลแบบมิเรอร์"
+
+#: contextMenu.py:37
+msgid "move"
+msgstr "ย้าย"
+
+#: createFile.py:183
+msgid "new_file"
+msgstr "ไฟล์ใหม่"
+
+#: createFile.py:185
+msgid "new_file_{index}"
+msgstr "ไฟล์ใหม่_{index}"
+
+#: contextMenu.py:38
+msgid "paste"
+msgstr "วาง"
+
+#: __init__.py:143
+#: __init__.py:472
+#: __init__.py:517
+#: __init__.py:562
+#: __init__.py:587
+#: __init__.py:604
+#: __init__.py:627
+#: xPlorerManager.py:44
+msgid "xPlorer"
+msgstr "xPlorer"
+
+#: contextMenu.py:22
+msgid "xPlorer Settings"
+msgstr "การตั้งค่า xPlorer"
+
+#: createFile.py:307
+msgid "{count} files created"
+msgstr "สร้าง {count} ไฟล์"
+
+#: fileOperations.py:420
+msgid "{count} items {size}"
+msgstr "{count} รายการ {size}"
+
+#: folderInfo.py:66
+msgid "{subfolders} subfolders and {files} files"
+msgstr "{subfolders} โฟลเดอร์ย่อยและ {files} ไฟล์"
+
+#: robocopyManager.py:950
+msgid "{} completed successfully in {:.1f} seconds"
+msgstr "{} เสร็จสมบูรณ์ใน {:.1f} วินาที"
+
+#: robocopyManager.py:947
+msgid "{} completed successfully in {:.1f} seconds, average speed: {:.1f} MB/s"
+msgstr "{} เสร็จสมบูรณ์ใน {:.1f} วินาที ความเร็วเฉลี่ย: {:.1f} MB/s"
+
+#: robocopyManager.py:978
+msgid "{} completed successfully using alternative method"
+msgstr "{} เสร็จสมบูรณ์โดยใช้วิธีการอื่น"
+
+#: robocopyManager.py:985
+msgid "{} completed with warnings (code: {})"
+msgstr "{} เสร็จสมบูรณ์พร้อมคำเตือน (รหัส: {})"
+
+#: robocopyManager.py:982
+msgid "{} failed with error: {}"
+msgstr "{} ล้มเหลวด้วยข้อผิดพลาด: {}"
+
+#: robocopyManager.py:903
+msgid "{} in progress... {} seconds elapsed"
+msgstr "{} กำลังดำเนินการ... เวลาผ่านไป {} วินาที"
+
+#: robocopyManager.py:878
+msgid "{} started. You can continue working while it runs in background."
+msgstr "{} เริ่มต้นแล้ว คุณสามารถทำงานต่อได้ในขณะที่มันทำงานเบื้องหลัง"
+
+#: robocopyManager.py:929
+msgid "{}: {}% complete, speed: {:.1f} MB/s"
+msgstr "{}: เสร็จ {}% ความเร็ว: {:.1f} MB/s"

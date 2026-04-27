@@ -1,0 +1,893 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: xPlorer 2026.5.1\n"
+"Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
+"POT-Creation-Date: 2026-04-27 15:57+0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: chaiBot and Malee Yamazaki\n"
+"Language-Team: Hungarian\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: DevOn Addon\n"
+
+#: folder_creation_dialog.py:60
+msgid "&Apply"
+msgstr "&Alkalmaz"
+
+#: folder_creation_dialog.py:61
+msgid "&Cancel"
+msgstr "&Mégse"
+
+#: robocopyManager.py:223
+msgid "1 day"
+msgstr "1 nap"
+
+#: createFile.py:305
+msgid "1 file created"
+msgstr "1 fájl létrehozva"
+
+#: robocopyManager.py:222
+msgid "1 hour"
+msgstr "1 óra"
+
+#: robocopyManager.py:223
+msgid "1 month"
+msgstr "1 hónap"
+
+#: robocopyManager.py:223
+msgid "15 days"
+msgstr "15 nap"
+
+#: robocopyManager.py:222
+msgid "15 minutes"
+msgstr "15 perc"
+
+#: robocopyManager.py:222
+msgid "30 minutes"
+msgstr "30 perc"
+
+#: robocopyManager.py:223
+msgid "7 days"
+msgstr "7 nap"
+
+#: compressionManager.py:159
+msgid "7-Zip compression failed, trying built-in method..."
+msgstr "A 7-Zip tömörítés sikertelen, beépített módszer kipróbálása..."
+
+#: fileOperations.py:474
+msgid "A file with this name already exists"
+msgstr "Ezen a néven már létezik fájl"
+
+#: robocopyManager.py:209
+msgid "Add destination folder"
+msgstr "Célmappa hozzáadása"
+
+#: xPlorerManager.py:56
+msgid "Announce 'Empty Folder' when entering an empty folder"
+msgstr "„Üres mappa” bejelentése üres mappába lépéskor"
+
+#: xPlorerManager.py:71
+msgid "Automatically paste clipboard content into rename field"
+msgstr "Vágólap tartalmának automatikus beillesztése az átnevező mezőbe"
+
+#: xPlorerManager.py:51
+msgid "Automatically select the first item"
+msgstr "Első elem automatikus kiválasztása"
+
+#: compressionManager.py:268
+msgid "Built-in compression failed: {error}"
+msgstr "Beépített tömörítés sikertelen: {error}"
+
+#: robocopyManager.py:61
+#: robocopyManager.py:242
+msgid "Cancel"
+msgstr "Mégse"
+
+#: clipboardManager.py:77
+msgid "Cannot copy content of folders, please select files only"
+msgstr "Mappák tartalmát nem lehet másolni, kérjük, csak fájlokat válasszon"
+
+#: createFile.py:290
+msgid "Cannot find unique name for: {name}"
+msgstr "Nem található egyedi név ehhez: {name}"
+
+#: robocopyManager.py:761
+msgid "Cannot get destination"
+msgstr "Nem érhető el a cél"
+
+#: __init__.py:635
+msgid "Cannot open settings dialog"
+msgstr "Nem nyitható meg a beállítások párbeszédablak"
+
+#: txt2folder.py:69
+msgid "Cannot process RTF file: striprtf module not available"
+msgstr "Az RTF fájl nem dolgozható fel: a striprtf modul nem elérhető"
+
+#: contextMenu.py:46
+msgid "Case Converter for Folders"
+msgstr "Nagybetű/kisbetű konverter mappákhoz"
+
+#: robocopyManager.py:348
+msgid "Choose destination folder"
+msgstr "Válasszon célmappát"
+
+#: robocopyManager.py:239
+msgid "Clear all settings"
+msgstr "Összes beállítás törlése"
+
+#: compressionManager.py:264
+msgid "Completed"
+msgstr "Kész"
+
+#: contextMenu.py:25
+msgid "Compress zip"
+msgstr "Zip tömörítés"
+
+#: compressionManager.py:144
+#: compressionManager.py:161
+msgid "Compressing files"
+msgstr "Fájlok tömörítése"
+
+#: compressionManager.py:70
+msgid "Compressing..."
+msgstr "Tömörítés..."
+
+#: compressionManager.py:244
+#: compressionManager.py:258
+msgid "Compressing: {percent}%"
+msgstr "Tömörítés: {percent}%"
+
+#: compressionManager.py:92
+#: compressionManager.py:262
+msgid "Compression cancelled"
+msgstr "Tömörítés megszakítva"
+
+#: compressionManager.py:94
+#: compressionManager.py:265
+msgid "Compression completed {name}"
+msgstr "Tömörítés kész: {name}"
+
+#: clipboardManager.py:165
+msgid "Content from 1 file copied to clipboard"
+msgstr "1 fájl tartalma a vágólapra másolva"
+
+#: clipboardManager.py:167
+msgid "Content from {count} files copied to clipboard"
+msgstr "{count} fájl tartalma a vágólapra másolva"
+
+#: clipboardManager.py:53
+msgid "Copied 1 item name to clipboard"
+msgstr "1 elem neve a vágólapra másolva"
+
+#: robocopyManager.py:185
+msgid "Copied source path to clipboard"
+msgstr "Forrás elérési út a vágólapra másolva"
+
+#: clipboardManager.py:55
+msgid "Copied {count} item names to clipboard"
+msgstr "{count} elem neve a vágólapra másolva"
+
+#: __init__.py:429
+msgid "Copied: {path}"
+msgstr "Másolva: {path}"
+
+#: robocopyManager.py:771
+msgid "Copy"
+msgstr "Másolás"
+
+#: contextMenu.py:27
+msgid "Copy address bar"
+msgstr "Címsor másolása"
+
+#: contextMenu.py:28
+msgid "Copy content"
+msgstr "Tartalom másolása"
+
+#: __init__.py:516
+msgid "Copy content (single tap) or invert selection (double tap)"
+msgstr "Tartalom másolása (egy koppintás) vagy kijelölés megfordítása (dupla koppintás)"
+
+#: contextMenu.py:29
+msgid "Copy selected file and folder names"
+msgstr "Kijelölt fájl- és mappanevek másolása"
+
+#: __init__.py:471
+msgid "Copy selected names (single tap) or copy address bar (double tap)"
+msgstr "Kijelölt nevek másolása (egy koppintás) vagy címsor másolása (dupla koppintás)"
+
+#: __init__.py:431
+#: clipboardManager.py:57
+#: clipboardManager.py:169
+#: robocopyManager.py:187
+msgid "Could not open clipboard"
+msgstr "Nem sikerült megnyitni a vágólapot"
+
+#: contextMenu.py:30
+#: createFile.py:16
+msgid "Create File"
+msgstr "Fájl létrehozása"
+
+#: folder_creation_dialog.py:14
+msgid "Create Multiple Folders"
+msgstr "Több mappa létrehozása"
+
+#: contextMenu.py:43
+msgid "Create Multiple Folders..."
+msgstr "Több mappa létrehozása..."
+
+#: folder_creation_dialog.py:42
+msgid "Create main folder and then subfolders"
+msgstr "Főmappa létrehozása, majd almappák"
+
+#: __init__.py:626
+msgid "Create new folder and paste clipboard content into rename field"
+msgstr "Új mappa létrehozása és vágólap tartalmának beillesztése az átnevező mezőbe"
+
+#: createFile.py:237
+msgid "Current path is not a directory"
+msgstr "Az aktuális elérési út nem könyvtár"
+
+#: robocopyManager.py:817
+msgid "Destination already exists, overwriting..."
+msgstr "A cél már létezik, felülírás..."
+
+#: robocopyManager.py:205
+msgid "Destination folders list"
+msgstr "Célmappák listája"
+
+#: robocopyManager.py:203
+msgid "Destination folders:"
+msgstr "Célmappák:"
+
+#: folder_creation_dialog.py:46
+msgid "Edit individual folder names"
+msgstr "Egyéni mappanevek szerkesztése"
+
+#: robocopyManager.py:115
+msgid "Elapsed time: {} seconds"
+msgstr "Eltelt idő: {} másodperc"
+
+#: xPlorerManager.py:40
+msgid "Empty Folder"
+msgstr "Üres mappa"
+
+#: robocopyManager.py:217
+msgid "Enable automatic synchronization"
+msgstr "Automatikus szinkronizáció engedélyezése"
+
+#: folderInfo.py:78
+msgid "Error calculating folder info"
+msgstr "Hiba a mappa információinak kiszámításakor"
+
+#: fileOperations.py:401
+msgid "Error calculating size"
+msgstr "Hiba a méret kiszámításakor"
+
+#: compressionManager.py:173
+msgid "Error compressing files"
+msgstr "Hiba a fájlok tömörítésekor"
+
+#: clipboardManager.py:173
+msgid "Error copying file content"
+msgstr "Hiba a fájl tartalmának másolásakor"
+
+#: clipboardManager.py:61
+msgid "Error copying names to clipboard"
+msgstr "Hiba a nevek vágólapra másolásakor"
+
+#: txt2folder.py:116
+msgid "Error creating base folder"
+msgstr "Hiba az alapmappa létrehozásakor"
+
+#: createFile.py:311
+msgid "Error creating files"
+msgstr "Hiba a fájlok létrehozásakor"
+
+#: folder_creation_dialog.py:219
+msgid "Error creating folder: {number}"
+msgstr "Hiba a mappa létrehozásakor: {number}"
+
+#: __init__.py:662
+msgid "Error creating folders"
+msgstr "Hiba a mappák létrehozásakor"
+
+#: folder_creation_dialog.py:179
+msgid "Error creating main folder"
+msgstr "Hiba a főmappa létrehozásakor"
+
+#: folder_creation_dialog.py:201
+msgid "Error creating subfolder: {number}"
+msgstr "Hiba az almappa létrehozásakor: {number}"
+
+#: __init__.py:690
+msgid "Error during conversion"
+msgstr "Hiba az átalakítás során"
+
+#: robocopyManager.py:990
+msgid "Error during {}: {}"
+msgstr "Hiba a(z) {} közben: {}"
+
+#: compressionManager.py:101
+msgid "Error in compression process: {error}"
+msgstr "Hiba a tömörítési folyamatban: {error}"
+
+#: selectionManager.py:65
+msgid "Error inverting selection"
+msgstr "Hiba a kijelölés megfordításakor"
+
+#: createFile.py:262
+msgid "Error opening create file dialog"
+msgstr "Hiba a fájl létrehozása párbeszédablak megnyitásakor"
+
+#: fileOperations.py:488
+msgid "Error opening rename dialog"
+msgstr "Hiba az átnevezés párbeszédablak megnyitásakor"
+
+#: __init__.py:642
+msgid "Error opening settings"
+msgstr "Hiba a beállítások megnyitásakor"
+
+#: txt2folder.py:212
+msgid "Error processing text file: {}"
+msgstr "Hiba a szövegfájl feldolgozásakor: {}"
+
+#: txt2folder.py:80
+msgid "Error reading RTF file"
+msgstr "Hiba az RTF fájl olvasásakor"
+
+#: txt2folder.py:215
+msgid "Error reading file encoding"
+msgstr "Hiba a fájlkódolás olvasásakor"
+
+#: fileOperations.py:453
+#: fileOperations.py:482
+msgid "Error renaming file"
+msgstr "Hiba a fájl átnevezésekor"
+
+#: robocopyManager.py:784
+#: txt2folder.py:219
+msgid "Error: {}"
+msgstr "Hiba: {}"
+
+#: robocopyManager.py:111
+msgid "Estimated time remaining: {}"
+msgstr "Becsült hátralévő idő: {}"
+
+#: createFile.py:84
+msgid "Extension:"
+msgstr "Kiterjesztés:"
+
+#: case.py:115
+#: case.py:129
+#: case.py:150
+#: case.py:164
+msgid "Failed to rename any folders"
+msgstr "Egyetlen mappa átnevezése sem sikerült"
+
+#: createFile.py:163
+msgid "File count cannot exceed 10"
+msgstr "A fájlok száma nem haladhatja meg a 10-et"
+
+#: createFile.py:160
+msgid "File count must be at least 1"
+msgstr "A fájlok számának legalább 1-nek kell lennie"
+
+#: createFile.py:131
+msgid "File name"
+msgstr "Fájlnév"
+
+#: fileOperations.py:57
+msgid "File name cannot be empty"
+msgstr "A fájlnév nem lehet üres"
+
+#: fileOperations.py:470
+msgid "File name not changed"
+msgstr "A fájlnév nem változott"
+
+#: createFile.py:77
+#: createFile.py:132
+msgid "File name {index}:"
+msgstr "Fájlnév {index}:"
+
+#: createFile.py:75
+msgid "File name:"
+msgstr "Fájlnév:"
+
+#: fileOperations.py:479
+msgid "File renamed to {name}"
+msgstr "Fájl átnevezve erre: {name}"
+
+#: folder_creation_dialog.py:113
+#: folder_creation_dialog.py:158
+msgid "Folder"
+msgstr "Mappa"
+
+#: txt2folder.py:106
+#: txt2folder.py:182
+msgid "Folder '{}' already exists, creating '{}' instead"
+msgstr "A(z) '{}' mappa már létezik, ehelyett '{}' létrehozása"
+
+#: contextMenu.py:52
+msgid "Folder info"
+msgstr "Mappa információ"
+
+#: folder_creation_dialog.py:27
+msgid "Folder title:"
+msgstr "Mappa címe:"
+
+#: contextMenu.py:50
+msgid "Headline Case"
+msgstr "Címsor kis- és nagybetű"
+
+#: robocopyManager.py:434
+msgid "Immediate sync completed: {}/{} destinations"
+msgstr "Azonnali szinkronizáció kész: {}/{} cél"
+
+#: robocopyManager.py:767
+msgid "Invalid destination"
+msgstr "Érvénytelen cél"
+
+#: folder_creation_dialog.py:169
+msgid "Invalid number for folders"
+msgstr "Érvénytelen szám a mappákhoz"
+
+#: robocopyManager.py:407
+#: robocopyManager.py:447
+msgid "Invalid time format"
+msgstr "Érvénytelen időformátum"
+
+#: contextMenu.py:26
+msgid "Invert selection"
+msgstr "Kijelölés megfordítása"
+
+#: selectionManager.py:60
+msgid "Inverted selection: {inverted} of {total} items selected"
+msgstr "Megfordított kijelölés: {total} elem közül {inverted} kijelölve"
+
+#: robocopyManager.py:868
+msgid "Large file detected, using compression for speed"
+msgstr "Nagy fájl észlelve, tömörítés használata a gyorsaság érdekében"
+
+#: contextMenu.py:48
+msgid "Lowercase"
+msgstr "Kisbetűs"
+
+#: folder_creation_dialog.py:166
+msgid "Maximum 100 folders allowed"
+msgstr "Legfeljebb 100 mappa engedélyezett"
+
+#: robocopyManager.py:62
+msgid "Minimize"
+msgstr "Kis méret"
+
+#: robocopyManager.py:145
+msgid "Mirror Backup Settings"
+msgstr "Tükör biztonsági mentés beállításai"
+
+#: robocopyManager.py:716
+msgid "Mirror backup configured successfully"
+msgstr "Tükör biztonsági mentés sikeresen konfigurálva"
+
+#: robocopyManager.py:718
+msgid "Mirror backup disabled"
+msgstr "Tükör biztonsági mentés letiltva"
+
+#: robocopyManager.py:771
+msgid "Move"
+msgstr "Áthelyezés"
+
+#: robocopyManager.py:609
+msgid "Next scheduled backup for {}: {}"
+msgstr "Következő ütemezett biztonsági mentés a(z) {} számára: {}"
+
+#: __init__.py:650
+msgid "No Explorer folder detected"
+msgstr "Nem észlelhető Explorer mappa"
+
+#: fileOperations.py:300
+#: fileOperations.py:410
+msgid "No access to size data"
+msgstr "Nincs hozzáférés a méretadatokhoz"
+
+#: selectionManager.py:27
+msgid "No active File Explorer window found"
+msgstr "Nem található aktív Fájlkezelő ablak"
+
+#: clipboardManager.py:156
+msgid "No content could be read from selected files"
+msgstr "Nem olvasható tartalom a kijelölt fájlokból"
+
+#: createFile.py:303
+msgid "No files were created"
+msgstr "Nem jött létre egyetlen fájl sem"
+
+#: case.py:106
+#: case.py:120
+#: case.py:141
+#: case.py:155
+msgid "No folders found"
+msgstr "Nem található mappa"
+
+#: __init__.py:677
+msgid "No folders selected or current folder not available"
+msgstr "Nincs mappa kijelölve, vagy az aktuális mappa nem elérhető"
+
+#: folder_creation_dialog.py:230
+#: txt2folder.py:155
+#: txt2folder.py:208
+msgid "No folders were created"
+msgstr "Nem jött létre egyetlen mappa sem"
+
+#: folderInfo.py:30
+msgid "No item selected"
+msgstr "Nincs elem kijelölve"
+
+#: selectionManager.py:40
+msgid "No items in folder"
+msgstr "Nincsenek elemek a mappában"
+
+#: clipboardManager.py:30
+#: clipboardManager.py:72
+#: compressionManager.py:132
+#: fileOperations.py:289
+#: fileOperations.py:433
+msgid "No items selected"
+msgstr "Nincs elem kijelölve"
+
+#: robocopyManager.py:749
+msgid "No pending operation"
+msgstr "Nincs függőben lévő művelet"
+
+#: clipboardManager.py:93
+msgid "No text files selected"
+msgstr "Nincs szövegfájl kijelölve"
+
+#: txt2folder.py:91
+#: txt2folder.py:167
+msgid "No valid folder names found in the file"
+msgstr "A fájlban nem találhatók érvényes mappanevek"
+
+#: createFile.py:227
+#: robocopyManager.py:663
+#: robocopyManager.py:724
+#: robocopyManager.py:737
+#: robocopyManager.py:755
+#: selectionManager.py:21
+#: txt2folder.py:43
+msgid "Not in File Explorer"
+msgstr "Nincs a Fájlkezelőben"
+
+#: createFile.py:27
+msgid "Number of files to create:"
+msgstr "Létrehozandó fájlok száma:"
+
+#: folder_creation_dialog.py:163
+msgid "Number of folders must be at least 1"
+msgstr "A mappák számának legalább 1-nek kell lennie"
+
+#: folder_creation_dialog.py:35
+msgid "Number of folders:"
+msgstr "Mappák száma:"
+
+#: robocopyManager.py:241
+msgid "OK"
+msgstr "OK"
+
+#: __init__.py:586
+msgid "Open xPlorer context menu"
+msgstr "xPlorer helyi menü megnyitása"
+
+#: txt2folder.py:55
+msgid "Please select a .txt or .rtf file"
+msgstr "Kérjük, válasszon .txt vagy .rtf fájlt"
+
+#: fileOperations.py:443
+msgid "Please select a file, not a folder"
+msgstr "Kérjük, válasszon fájlt, ne mappát"
+
+#: robocopyManager.py:671
+msgid "Please select a folder"
+msgstr "Kérjük, válasszon mappát"
+
+#: fileOperations.py:437
+msgid "Please select only one file"
+msgstr "Kérjük, csak egy fájlt válasszon"
+
+#: folderInfo.py:35
+#: robocopyManager.py:667
+msgid "Please select only one folder"
+msgstr "Kérjük, csak egy mappát válasszon"
+
+#: txt2folder.py:48
+msgid "Please select only one text file"
+msgstr "Kérjük, csak egy szövegfájlt válasszon"
+
+#: robocopyManager.py:46
+msgid "Preparing operation..."
+msgstr "Művelet előkészítése..."
+
+#: robocopyManager.py:103
+msgid "Processing: {}"
+msgstr "Feldolgozás: {}"
+
+#: robocopyManager.py:105
+msgid "Progress: {}%"
+msgstr "Állapot: {}%"
+
+#: robocopyManager.py:210
+msgid "Remove selected destination"
+msgstr "Kijelölt cél eltávolítása"
+
+#: robocopyManager.py:198
+msgid "Remove selected source"
+msgstr "Kijelölt forrás eltávolítása"
+
+#: __init__.py:603
+#: contextMenu.py:31
+msgid "Rename selected file"
+msgstr "Kijelölt fájl átnevezése"
+
+#: contextMenu.py:35
+msgid "Robocopy"
+msgstr "Robocopy"
+
+#: contextMenu.py:32
+msgid "Say size"
+msgstr "Méret kimondása"
+
+#: __init__.py:561
+msgid "Say size (single tap) or compress zip (double tap)"
+msgstr "Méret kimondása (egy koppintás) vagy zip tömörítés (dupla koppintás)"
+
+#: robocopyManager.py:648
+msgid "Scheduled backup completed: {}/{} destinations"
+msgstr "Ütemezett biztonsági mentés kész: {}/{} cél"
+
+#: robocopyManager.py:623
+msgid "Scheduled mirror backup started for {}"
+msgstr "Ütemezett tükör biztonsági mentés elindítva a következőhöz: {}"
+
+#: robocopyManager.py:231
+msgid "Scheduled time:"
+msgstr "Ütemezett idő:"
+
+#: robocopyManager.py:728
+#: robocopyManager.py:741
+msgid "Select one item only"
+msgstr "Csak egy elemet válasszon"
+
+#: txt2folder.py:60
+msgid "Selected file does not exist"
+msgstr "A kijelölt fájl nem létezik"
+
+#: folderInfo.py:41
+msgid "Selected item is not a folder"
+msgstr "A kijelölt elem nem mappa"
+
+#: createFile.py:199
+msgid "Some files will use default names"
+msgstr "Egyes fájlok alapértelmezett neveket használnak"
+
+#: robocopyManager.py:404
+#: robocopyManager.py:444
+msgid "Source and destination required"
+msgstr "Forrás és cél megadása kötelező"
+
+#: robocopyManager.py:792
+msgid "Source does not exist"
+msgstr "A forrás nem létezik"
+
+#: robocopyManager.py:193
+msgid "Source folders (select to edit):"
+msgstr "Forrásmappák (válasszon a szerkesztéshez):"
+
+#: robocopyManager.py:195
+msgid "Source folders list"
+msgstr "Forrásmappák listája"
+
+#: robocopyManager.py:732
+msgid "Source for copy: {}"
+msgstr "Másolás forrása: {}"
+
+#: robocopyManager.py:745
+msgid "Source for move: {}"
+msgstr "Áthelyezés forrása: {}"
+
+#: robocopyManager.py:121
+msgid "Speed: {}"
+msgstr "Sebesség: {}"
+
+#: robocopyManager.py:240
+msgid "Start synchronization"
+msgstr "Szinkronizáció indítása"
+
+#: robocopyManager.py:410
+msgid "Starting immediate mirror sync..."
+msgstr "Azonnali tükörszinkronizáció indítása..."
+
+#: robocopyManager.py:774
+msgid "Starting {} operation in background..."
+msgstr "{} művelet indítása a háttérben..."
+
+#: compressionManager.py:144
+#: compressionManager.py:161
+msgid "Starting..."
+msgstr "Indítás..."
+
+#: case.py:162
+msgid "Successfully converted {count} folders to headline case"
+msgstr "{count} mappa sikeresen átalakítva címsor kis- és nagybetűssé"
+
+#: case.py:127
+msgid "Successfully converted {count} folders to lowercase"
+msgstr "{count} mappa sikeresen átalakítva kisbetűssé"
+
+#: case.py:148
+msgid "Successfully converted {count} folders to title case"
+msgstr "{count} mappa sikeresen átalakítva cím kis- és nagybetűssé"
+
+#: case.py:113
+msgid "Successfully converted {count} folders to uppercase"
+msgstr "{count} mappa sikeresen átalakítva nagybetűssé"
+
+#: folder_creation_dialog.py:226
+msgid "Successfully created 1 folder"
+msgstr "Sikeresen létrehozva 1 mappa"
+
+#: folder_creation_dialog.py:224
+msgid "Successfully created main folder only"
+msgstr "Sikeresen létrehozva csak a főmappa"
+
+#: folder_creation_dialog.py:228
+msgid "Successfully created {count} folders"
+msgstr "Sikeresen létrehozva {count} mappa"
+
+#: txt2folder.py:150
+#: txt2folder.py:203
+msgid "Successfully created {} folders in '{}'"
+msgstr "Sikeresen létrehozva {} mappa itt: '{}'"
+
+#: xPlorerManager.py:66
+msgid "Suppress announcement of '- File Explorer' in window titles"
+msgstr "„- Fájlkezelő” bejelentésének letiltása az ablakcímekben"
+
+#: xPlorerManager.py:61
+msgid "Suppress announcement of DirectUIHWND class"
+msgstr "DirectUIHWND osztály bejelentésének letiltása"
+
+#: robocopyManager.py:438
+msgid "Sync error occurred"
+msgstr "Szinkronizációs hiba történt"
+
+#: robocopyManager.py:220
+msgid "Synchronization interval:"
+msgstr "Szinkronizációs intervallum:"
+
+#: contextMenu.py:42
+msgid "TXT to Folder"
+msgstr "TXT mappává"
+
+#: contextMenu.py:49
+msgid "Title Case"
+msgstr "Cím kis- és nagybetű"
+
+#: clipboardManager.py:104
+msgid "Total file size is too large to copy content"
+msgstr "A teljes fájlméret túl nagy a tartalom másolásához"
+
+#: robocopyManager.py:963
+msgid "Trying alternative copy method..."
+msgstr "Alternatív másolási módszer kipróbálása..."
+
+#: createFile.py:233
+msgid "Unable to get current directory"
+msgstr "Nem sikerült lekérni az aktuális könyvtárat"
+
+#: __init__.py:433
+msgid "Unable to get current path"
+msgstr "Nem sikerült lekérni az aktuális elérési utat"
+
+#: selectionManager.py:32
+msgid "Unable to get folder view"
+msgstr "Nem sikerült lekérni a mappanézetet"
+
+#: contextMenu.py:47
+msgid "Uppercase"
+msgstr "Nagybetűs"
+
+#: clipboardManager.py:124
+msgid "[Error processing RTF file]"
+msgstr "[Hiba az RTF fájl feldolgozásakor]"
+
+#: clipboardManager.py:126
+msgid "[RTF content - striprtf module not available]"
+msgstr "[RTF tartalom - a striprtf modul nem elérhető]"
+
+#: compressionManager.py:97
+msgid "compression failed: {error}"
+msgstr "tömörítés sikertelen: {error}"
+
+#: contextMenu.py:36
+msgid "copy"
+msgstr "másolás"
+
+#: contextMenu.py:40
+msgid "mirror Backup"
+msgstr "tükör biztonsági mentés"
+
+#: contextMenu.py:37
+msgid "move"
+msgstr "áthelyezés"
+
+#: createFile.py:183
+msgid "new_file"
+msgstr "új_fájl"
+
+#: createFile.py:185
+msgid "new_file_{index}"
+msgstr "új_fájl_{index}"
+
+#: contextMenu.py:38
+msgid "paste"
+msgstr "beillesztés"
+
+#: __init__.py:143
+#: __init__.py:472
+#: __init__.py:517
+#: __init__.py:562
+#: __init__.py:587
+#: __init__.py:604
+#: __init__.py:627
+#: xPlorerManager.py:44
+msgid "xPlorer"
+msgstr "xPlorer"
+
+#: contextMenu.py:22
+msgid "xPlorer Settings"
+msgstr "xPlorer beállítások"
+
+#: createFile.py:307
+msgid "{count} files created"
+msgstr "{count} fájl létrehozva"
+
+#: fileOperations.py:420
+msgid "{count} items {size}"
+msgstr "{count} elem {size}"
+
+#: folderInfo.py:66
+msgid "{subfolders} subfolders and {files} files"
+msgstr "{subfolders} almappa és {files} fájl"
+
+#: robocopyManager.py:950
+msgid "{} completed successfully in {:.1f} seconds"
+msgstr "{} sikeresen befejeződött {:.1f} másodperc alatt"
+
+#: robocopyManager.py:947
+msgid "{} completed successfully in {:.1f} seconds, average speed: {:.1f} MB/s"
+msgstr "{} sikeresen befejeződött {:.1f} másodperc alatt, átlagsebesség: {:.1f} MB/s"
+
+#: robocopyManager.py:978
+msgid "{} completed successfully using alternative method"
+msgstr "{} sikeresen befejeződött alternatív módszer használatával"
+
+#: robocopyManager.py:985
+msgid "{} completed with warnings (code: {})"
+msgstr "{} figyelmeztetésekkel fejeződött be (kód: {})"
+
+#: robocopyManager.py:982
+msgid "{} failed with error: {}"
+msgstr "{} sikertelen, hiba: {}"
+
+#: robocopyManager.py:903
+msgid "{} in progress... {} seconds elapsed"
+msgstr "{} folyamatban... {} másodperc telt el"
+
+#: robocopyManager.py:878
+msgid "{} started. You can continue working while it runs in background."
+msgstr "{} elindult. Folytathatja a munkát, amíg a háttérben fut."
+
+#: robocopyManager.py:929
+msgid "{}: {}% complete, speed: {:.1f} MB/s"
+msgstr "{}: {}% kész, sebesség: {:.1f} MB/s"

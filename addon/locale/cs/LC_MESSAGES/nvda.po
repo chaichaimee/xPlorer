@@ -1,0 +1,893 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: xPlorer 2026.5.1\n"
+"Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
+"POT-Creation-Date: 2026-04-27 15:57+0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Gemini AI\n"
+"Language-Team: Czech\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: DevOn Addon\n"
+
+#: folder_creation_dialog.py:60
+msgid "&Apply"
+msgstr "&Použít"
+
+#: folder_creation_dialog.py:61
+msgid "&Cancel"
+msgstr "&Zrušit"
+
+#: robocopyManager.py:223
+msgid "1 day"
+msgstr "1 den"
+
+#: createFile.py:305
+msgid "1 file created"
+msgstr "1 soubor vytvořen"
+
+#: robocopyManager.py:222
+msgid "1 hour"
+msgstr "1 hodina"
+
+#: robocopyManager.py:223
+msgid "1 month"
+msgstr "1 měsíc"
+
+#: robocopyManager.py:223
+msgid "15 days"
+msgstr "15 dní"
+
+#: robocopyManager.py:222
+msgid "15 minutes"
+msgstr "15 minut"
+
+#: robocopyManager.py:222
+msgid "30 minutes"
+msgstr "30 minut"
+
+#: robocopyManager.py:223
+msgid "7 days"
+msgstr "7 dní"
+
+#: compressionManager.py:159
+msgid "7-Zip compression failed, trying built-in method..."
+msgstr "Komprese 7-Zip selhala, zkouším vestavěnou metodu..."
+
+#: fileOperations.py:474
+msgid "A file with this name already exists"
+msgstr "Soubor s tímto názvem již existuje"
+
+#: robocopyManager.py:209
+msgid "Add destination folder"
+msgstr "Přidat cílovou složku"
+
+#: xPlorerManager.py:56
+msgid "Announce 'Empty Folder' when entering an empty folder"
+msgstr "Ohlásit 'Prázdná složka' při vstupu do prázdné složky"
+
+#: xPlorerManager.py:71
+msgid "Automatically paste clipboard content into rename field"
+msgstr "Automaticky vložit obsah schránky do pole pro přejmenování"
+
+#: xPlorerManager.py:51
+msgid "Automatically select the first item"
+msgstr "Automaticky vybrat první položku"
+
+#: compressionManager.py:268
+msgid "Built-in compression failed: {error}"
+msgstr "Vestavěná komprese selhala: {error}"
+
+#: robocopyManager.py:61
+#: robocopyManager.py:242
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: clipboardManager.py:77
+msgid "Cannot copy content of folders, please select files only"
+msgstr "Nelze kopírovat obsah složek, vyberte prosím pouze soubory"
+
+#: createFile.py:290
+msgid "Cannot find unique name for: {name}"
+msgstr "Nelze najít jedinečný název pro: {name}"
+
+#: robocopyManager.py:761
+msgid "Cannot get destination"
+msgstr "Nelze získat cíl"
+
+#: __init__.py:635
+msgid "Cannot open settings dialog"
+msgstr "Nelze otevřít dialog nastavení"
+
+#: txt2folder.py:69
+msgid "Cannot process RTF file: striprtf module not available"
+msgstr "Nelze zpracovat soubor RTF: modul striprtf není k dispozici"
+
+#: contextMenu.py:46
+msgid "Case Converter for Folders"
+msgstr "Převodník velikosti písmen pro složky"
+
+#: robocopyManager.py:348
+msgid "Choose destination folder"
+msgstr "Vybrat cílovou složku"
+
+#: robocopyManager.py:239
+msgid "Clear all settings"
+msgstr "Vymazat všechna nastavení"
+
+#: compressionManager.py:264
+msgid "Completed"
+msgstr "Dokončeno"
+
+#: contextMenu.py:25
+msgid "Compress zip"
+msgstr "Komprimovat do zip"
+
+#: compressionManager.py:144
+#: compressionManager.py:161
+msgid "Compressing files"
+msgstr "Komprimace souborů"
+
+#: compressionManager.py:70
+msgid "Compressing..."
+msgstr "Komprimuji..."
+
+#: compressionManager.py:244
+#: compressionManager.py:258
+msgid "Compressing: {percent}%"
+msgstr "Komprimuji: {percent}%"
+
+#: compressionManager.py:92
+#: compressionManager.py:262
+msgid "Compression cancelled"
+msgstr "Komprese zrušena"
+
+#: compressionManager.py:94
+#: compressionManager.py:265
+msgid "Compression completed {name}"
+msgstr "Komprese dokončena {name}"
+
+#: clipboardManager.py:165
+msgid "Content from 1 file copied to clipboard"
+msgstr "Obsah z 1 souboru zkopírován do schránky"
+
+#: clipboardManager.py:167
+msgid "Content from {count} files copied to clipboard"
+msgstr "Obsah z {count} souborů zkopírován do schránky"
+
+#: clipboardManager.py:53
+msgid "Copied 1 item name to clipboard"
+msgstr "Název 1 položky zkopírován do schránky"
+
+#: robocopyManager.py:185
+msgid "Copied source path to clipboard"
+msgstr "Zdrojová cesta zkopírována do schránky"
+
+#: clipboardManager.py:55
+msgid "Copied {count} item names to clipboard"
+msgstr "Názvy {count} položek zkopírovány do schránky"
+
+#: __init__.py:429
+msgid "Copied: {path}"
+msgstr "Zkopírováno: {path}"
+
+#: robocopyManager.py:771
+msgid "Copy"
+msgstr "Kopírovat"
+
+#: contextMenu.py:27
+msgid "Copy address bar"
+msgstr "Kopírovat adresní řádek"
+
+#: contextMenu.py:28
+msgid "Copy content"
+msgstr "Kopírovat obsah"
+
+#: __init__.py:516
+msgid "Copy content (single tap) or invert selection (double tap)"
+msgstr "Kopírovat obsah (jedno klepnutí) nebo invertovat výběr (dvojité klepnutí)"
+
+#: contextMenu.py:29
+msgid "Copy selected file and folder names"
+msgstr "Kopírovat názvy vybraných souborů a složek"
+
+#: __init__.py:471
+msgid "Copy selected names (single tap) or copy address bar (double tap)"
+msgstr "Kopírovat vybrané názvy (jedno klepnutí) nebo kopírovat adresní řádek (dvojité klepnutí)"
+
+#: __init__.py:431
+#: clipboardManager.py:57
+#: clipboardManager.py:169
+#: robocopyManager.py:187
+msgid "Could not open clipboard"
+msgstr "Nelze otevřít schránku"
+
+#: contextMenu.py:30
+#: createFile.py:16
+msgid "Create File"
+msgstr "Vytvořit soubor"
+
+#: folder_creation_dialog.py:14
+msgid "Create Multiple Folders"
+msgstr "Vytvořit více složek"
+
+#: contextMenu.py:43
+msgid "Create Multiple Folders..."
+msgstr "Vytvořit více složek..."
+
+#: folder_creation_dialog.py:42
+msgid "Create main folder and then subfolders"
+msgstr "Vytvořit hlavní složku a poté podsložky"
+
+#: __init__.py:626
+msgid "Create new folder and paste clipboard content into rename field"
+msgstr "Vytvořit novou složku a vložit obsah schránky do pole pro přejmenování"
+
+#: createFile.py:237
+msgid "Current path is not a directory"
+msgstr "Aktuální cesta není adresář"
+
+#: robocopyManager.py:817
+msgid "Destination already exists, overwriting..."
+msgstr "Cíl již existuje, přepisuji..."
+
+#: robocopyManager.py:205
+msgid "Destination folders list"
+msgstr "Seznam cílových složek"
+
+#: robocopyManager.py:203
+msgid "Destination folders:"
+msgstr "Cílové složky:"
+
+#: folder_creation_dialog.py:46
+msgid "Edit individual folder names"
+msgstr "Upravit jednotlivé názvy složek"
+
+#: robocopyManager.py:115
+msgid "Elapsed time: {} seconds"
+msgstr "Uplynulý čas: {} sekund"
+
+#: xPlorerManager.py:40
+msgid "Empty Folder"
+msgstr "Prázdná složka"
+
+#: robocopyManager.py:217
+msgid "Enable automatic synchronization"
+msgstr "Povolit automatickou synchronizaci"
+
+#: folderInfo.py:78
+msgid "Error calculating folder info"
+msgstr "Chyba při výpočtu informací o složce"
+
+#: fileOperations.py:401
+msgid "Error calculating size"
+msgstr "Chyba při výpočtu velikosti"
+
+#: compressionManager.py:173
+msgid "Error compressing files"
+msgstr "Chyba při komprimaci souborů"
+
+#: clipboardManager.py:173
+msgid "Error copying file content"
+msgstr "Chyba při kopírování obsahu souboru"
+
+#: clipboardManager.py:61
+msgid "Error copying names to clipboard"
+msgstr "Chyba při kopírování názvů do schránky"
+
+#: txt2folder.py:116
+msgid "Error creating base folder"
+msgstr "Chyba při vytváření základní složky"
+
+#: createFile.py:311
+msgid "Error creating files"
+msgstr "Chyba při vytváření souborů"
+
+#: folder_creation_dialog.py:219
+msgid "Error creating folder: {number}"
+msgstr "Chyba při vytváření složky: {number}"
+
+#: __init__.py:662
+msgid "Error creating folders"
+msgstr "Chyba při vytváření složek"
+
+#: folder_creation_dialog.py:179
+msgid "Error creating main folder"
+msgstr "Chyba při vytváření hlavní složky"
+
+#: folder_creation_dialog.py:201
+msgid "Error creating subfolder: {number}"
+msgstr "Chyba při vytváření podsložky: {number}"
+
+#: __init__.py:690
+msgid "Error during conversion"
+msgstr "Chyba během převodu"
+
+#: robocopyManager.py:990
+msgid "Error during {}: {}"
+msgstr "Chyba během {}: {}"
+
+#: compressionManager.py:101
+msgid "Error in compression process: {error}"
+msgstr "Chyba v procesu komprese: {error}"
+
+#: selectionManager.py:65
+msgid "Error inverting selection"
+msgstr "Chyba při inverzi výběru"
+
+#: createFile.py:262
+msgid "Error opening create file dialog"
+msgstr "Chyba při otevírání dialogu pro vytvoření souboru"
+
+#: fileOperations.py:488
+msgid "Error opening rename dialog"
+msgstr "Chyba při otevírání dialogu pro přejmenování"
+
+#: __init__.py:642
+msgid "Error opening settings"
+msgstr "Chyba při otevírání nastavení"
+
+#: txt2folder.py:212
+msgid "Error processing text file: {}"
+msgstr "Chyba při zpracování textového souboru: {}"
+
+#: txt2folder.py:80
+msgid "Error reading RTF file"
+msgstr "Chyba při čtení souboru RTF"
+
+#: txt2folder.py:215
+msgid "Error reading file encoding"
+msgstr "Chyba při čtení kódování souboru"
+
+#: fileOperations.py:453
+#: fileOperations.py:482
+msgid "Error renaming file"
+msgstr "Chyba při přejmenování souboru"
+
+#: robocopyManager.py:784
+#: txt2folder.py:219
+msgid "Error: {}"
+msgstr "Chyba: {}"
+
+#: robocopyManager.py:111
+msgid "Estimated time remaining: {}"
+msgstr "Odhadovaný zbývající čas: {}"
+
+#: createFile.py:84
+msgid "Extension:"
+msgstr "Přípona:"
+
+#: case.py:115
+#: case.py:129
+#: case.py:150
+#: case.py:164
+msgid "Failed to rename any folders"
+msgstr "Nepodařilo se přejmenovat žádné složky"
+
+#: createFile.py:163
+msgid "File count cannot exceed 10"
+msgstr "Počet souborů nesmí překročit 10"
+
+#: createFile.py:160
+msgid "File count must be at least 1"
+msgstr "Počet souborů musí být alespoň 1"
+
+#: createFile.py:131
+msgid "File name"
+msgstr "Název souboru"
+
+#: fileOperations.py:57
+msgid "File name cannot be empty"
+msgstr "Název souboru nesmí být prázdný"
+
+#: fileOperations.py:470
+msgid "File name not changed"
+msgstr "Název souboru nebyl změněn"
+
+#: createFile.py:77
+#: createFile.py:132
+msgid "File name {index}:"
+msgstr "Název souboru {index}:"
+
+#: createFile.py:75
+msgid "File name:"
+msgstr "Název souboru:"
+
+#: fileOperations.py:479
+msgid "File renamed to {name}"
+msgstr "Soubor přejmenován na {name}"
+
+#: folder_creation_dialog.py:113
+#: folder_creation_dialog.py:158
+msgid "Folder"
+msgstr "Složka"
+
+#: txt2folder.py:106
+#: txt2folder.py:182
+msgid "Folder '{}' already exists, creating '{}' instead"
+msgstr "Složka '{}' již existuje, místo ní vytvářím '{}'"
+
+#: contextMenu.py:52
+msgid "Folder info"
+msgstr "Informace o složce"
+
+#: folder_creation_dialog.py:27
+msgid "Folder title:"
+msgstr "Název složky:"
+
+#: contextMenu.py:50
+msgid "Headline Case"
+msgstr "Velká počáteční písmena (Headline Case)"
+
+#: robocopyManager.py:434
+msgid "Immediate sync completed: {}/{} destinations"
+msgstr "Okamžitá synchronizace dokončena: {}/{} cílů"
+
+#: robocopyManager.py:767
+msgid "Invalid destination"
+msgstr "Neplatný cíl"
+
+#: folder_creation_dialog.py:169
+msgid "Invalid number for folders"
+msgstr "Neplatné číslo pro složky"
+
+#: robocopyManager.py:407
+#: robocopyManager.py:447
+msgid "Invalid time format"
+msgstr "Neplatný formát času"
+
+#: contextMenu.py:26
+msgid "Invert selection"
+msgstr "Invertovat výběr"
+
+#: selectionManager.py:60
+msgid "Inverted selection: {inverted} of {total} items selected"
+msgstr "Invertovaný výběr: vybráno {inverted} z {total} položek"
+
+#: robocopyManager.py:868
+msgid "Large file detected, using compression for speed"
+msgstr "Detekován velký soubor, pro urychlení použita komprese"
+
+#: contextMenu.py:48
+msgid "Lowercase"
+msgstr "Malá písmena"
+
+#: folder_creation_dialog.py:166
+msgid "Maximum 100 folders allowed"
+msgstr "Povoleno maximálně 100 složek"
+
+#: robocopyManager.py:62
+msgid "Minimize"
+msgstr "Minimalizovat"
+
+#: robocopyManager.py:145
+msgid "Mirror Backup Settings"
+msgstr "Nastavení zrcadlového zálohování"
+
+#: robocopyManager.py:716
+msgid "Mirror backup configured successfully"
+msgstr "Zrcadlové zálohování úspěšně nakonfigurováno"
+
+#: robocopyManager.py:718
+msgid "Mirror backup disabled"
+msgstr "Zrcadlové zálohování zakázáno"
+
+#: robocopyManager.py:771
+msgid "Move"
+msgstr "Přesunout"
+
+#: robocopyManager.py:609
+msgid "Next scheduled backup for {}: {}"
+msgstr "Další plánovaná záloha pro {}: {}"
+
+#: __init__.py:650
+msgid "No Explorer folder detected"
+msgstr "Nebyla detekována žádná složka Průzkumníka"
+
+#: fileOperations.py:300
+#: fileOperations.py:410
+msgid "No access to size data"
+msgstr "Žádný přístup k údajům o velikosti"
+
+#: selectionManager.py:27
+msgid "No active File Explorer window found"
+msgstr "Nebylo nalezeno žádné aktivní okno Průzkumníka souborů"
+
+#: clipboardManager.py:156
+msgid "No content could be read from selected files"
+msgstr "Z vybraných souborů nebylo možné přečíst žádný obsah"
+
+#: createFile.py:303
+msgid "No files were created"
+msgstr "Nebyly vytvořeny žádné soubory"
+
+#: case.py:106
+#: case.py:120
+#: case.py:141
+#: case.py:155
+msgid "No folders found"
+msgstr "Nebyly nalezeny žádné složky"
+
+#: __init__.py:677
+msgid "No folders selected or current folder not available"
+msgstr "Nejsou vybrány žádné složky nebo aktuální složka není k dispozici"
+
+#: folder_creation_dialog.py:230
+#: txt2folder.py:155
+#: txt2folder.py:208
+msgid "No folders were created"
+msgstr "Nebyly vytvořeny žádné složky"
+
+#: folderInfo.py:30
+msgid "No item selected"
+msgstr "Není vybrána žádná položka"
+
+#: selectionManager.py:40
+msgid "No items in folder"
+msgstr "Ve složce nejsou žádné položky"
+
+#: clipboardManager.py:30
+#: clipboardManager.py:72
+#: compressionManager.py:132
+#: fileOperations.py:289
+#: fileOperations.py:433
+msgid "No items selected"
+msgstr "Nejsou vybrány žádné položky"
+
+#: robocopyManager.py:749
+msgid "No pending operation"
+msgstr "Žádná čekající operace"
+
+#: clipboardManager.py:93
+msgid "No text files selected"
+msgstr "Nejsou vybrány žádné textové soubory"
+
+#: txt2folder.py:91
+#: txt2folder.py:167
+msgid "No valid folder names found in the file"
+msgstr "V souboru nebyly nalezeny žádné platné názvy složek"
+
+#: createFile.py:227
+#: robocopyManager.py:663
+#: robocopyManager.py:724
+#: robocopyManager.py:737
+#: robocopyManager.py:755
+#: selectionManager.py:21
+#: txt2folder.py:43
+msgid "Not in File Explorer"
+msgstr "Není v Průzkumníku souborů"
+
+#: createFile.py:27
+msgid "Number of files to create:"
+msgstr "Počet souborů k vytvoření:"
+
+#: folder_creation_dialog.py:163
+msgid "Number of folders must be at least 1"
+msgstr "Počet složek musí být alespoň 1"
+
+#: folder_creation_dialog.py:35
+msgid "Number of folders:"
+msgstr "Počet složek:"
+
+#: robocopyManager.py:241
+msgid "OK"
+msgstr "OK"
+
+#: __init__.py:586
+msgid "Open xPlorer context menu"
+msgstr "Otevřít kontextovou nabídku xPlorer"
+
+#: txt2folder.py:55
+msgid "Please select a .txt or .rtf file"
+msgstr "Vyberte prosím soubor .txt nebo .rtf"
+
+#: fileOperations.py:443
+msgid "Please select a file, not a folder"
+msgstr "Vyberte prosím soubor, nikoli složku"
+
+#: robocopyManager.py:671
+msgid "Please select a folder"
+msgstr "Vyberte prosím složku"
+
+#: fileOperations.py:437
+msgid "Please select only one file"
+msgstr "Vyberte prosím pouze jeden soubor"
+
+#: folderInfo.py:35
+#: robocopyManager.py:667
+msgid "Please select only one folder"
+msgstr "Vyberte prosím pouze jednu složku"
+
+#: txt2folder.py:48
+msgid "Please select only one text file"
+msgstr "Vyberte prosím pouze jeden textový soubor"
+
+#: robocopyManager.py:46
+msgid "Preparing operation..."
+msgstr "Příprava operace..."
+
+#: robocopyManager.py:103
+msgid "Processing: {}"
+msgstr "Zpracovávám: {}"
+
+#: robocopyManager.py:105
+msgid "Progress: {}%"
+msgstr "Průběh: {}%"
+
+#: robocopyManager.py:210
+msgid "Remove selected destination"
+msgstr "Odstranit vybraný cíl"
+
+#: robocopyManager.py:198
+msgid "Remove selected source"
+msgstr "Odstranit vybraný zdroj"
+
+#: __init__.py:603
+#: contextMenu.py:31
+msgid "Rename selected file"
+msgstr "Přejmenovat vybraný soubor"
+
+#: contextMenu.py:35
+msgid "Robocopy"
+msgstr "Robocopy"
+
+#: contextMenu.py:32
+msgid "Say size"
+msgstr "Ohlásit velikost"
+
+#: __init__.py:561
+msgid "Say size (single tap) or compress zip (double tap)"
+msgstr "Ohlásit velikost (jedno klepnutí) nebo komprimovat zip (dvojité klepnutí)"
+
+#: robocopyManager.py:648
+msgid "Scheduled backup completed: {}/{} destinations"
+msgstr "Plánovaná záloha dokončena: {}/{} cílů"
+
+#: robocopyManager.py:623
+msgid "Scheduled mirror backup started for {}"
+msgstr "Plánované zrcadlové zálohování zahájeno pro {}"
+
+#: robocopyManager.py:231
+msgid "Scheduled time:"
+msgstr "Naplánovaný čas:"
+
+#: robocopyManager.py:728
+#: robocopyManager.py:741
+msgid "Select one item only"
+msgstr "Vyberte pouze jednu položku"
+
+#: txt2folder.py:60
+msgid "Selected file does not exist"
+msgstr "Vybraný soubor neexistuje"
+
+#: folderInfo.py:41
+msgid "Selected item is not a folder"
+msgstr "Vybraná položka není složka"
+
+#: createFile.py:199
+msgid "Some files will use default names"
+msgstr "Některé soubory budou používat výchozí názvy"
+
+#: robocopyManager.py:404
+#: robocopyManager.py:444
+msgid "Source and destination required"
+msgstr "Vyžadován zdroj a cíl"
+
+#: robocopyManager.py:792
+msgid "Source does not exist"
+msgstr "Zdroj neexistuje"
+
+#: robocopyManager.py:193
+msgid "Source folders (select to edit):"
+msgstr "Zdrojové složky (vyberte pro úpravu):"
+
+#: robocopyManager.py:195
+msgid "Source folders list"
+msgstr "Seznam zdrojových složek"
+
+#: robocopyManager.py:732
+msgid "Source for copy: {}"
+msgstr "Zdroj pro kopírování: {}"
+
+#: robocopyManager.py:745
+msgid "Source for move: {}"
+msgstr "Zdroj pro přesun: {}"
+
+#: robocopyManager.py:121
+msgid "Speed: {}"
+msgstr "Rychlost: {}"
+
+#: robocopyManager.py:240
+msgid "Start synchronization"
+msgstr "Spustit synchronizaci"
+
+#: robocopyManager.py:410
+msgid "Starting immediate mirror sync..."
+msgstr "Spouštění okamžité zrcadlové synchronizace..."
+
+#: robocopyManager.py:774
+msgid "Starting {} operation in background..."
+msgstr "Spouštění operace {} na pozadí..."
+
+#: compressionManager.py:144
+#: compressionManager.py:161
+msgid "Starting..."
+msgstr "Spouštění..."
+
+#: case.py:162
+msgid "Successfully converted {count} folders to headline case"
+msgstr "Úspěšně převedeno {count} složek na formát Headline Case"
+
+#: case.py:127
+msgid "Successfully converted {count} folders to lowercase"
+msgstr "Úspěšně převedeno {count} složek na malá písmena"
+
+#: case.py:148
+msgid "Successfully converted {count} folders to title case"
+msgstr "Úspěšně převedeno {count} složek na formát Title Case"
+
+#: case.py:113
+msgid "Successfully converted {count} folders to uppercase"
+msgstr "Úspěšně převedeno {count} složek na velká písmena"
+
+#: folder_creation_dialog.py:226
+msgid "Successfully created 1 folder"
+msgstr "Úspěšně vytvořena 1 složka"
+
+#: folder_creation_dialog.py:224
+msgid "Successfully created main folder only"
+msgstr "Úspěšně vytvořena pouze hlavní složka"
+
+#: folder_creation_dialog.py:228
+msgid "Successfully created {count} folders"
+msgstr "Úspěšně vytvořeno {count} složek"
+
+#: txt2folder.py:150
+#: txt2folder.py:203
+msgid "Successfully created {} folders in '{}'"
+msgstr "Úspěšně vytvořeno {} složek v '{}'"
+
+#: xPlorerManager.py:66
+msgid "Suppress announcement of '- File Explorer' in window titles"
+msgstr "Potlačit oznamování '- Průzkumník souborů' v názvech oken"
+
+#: xPlorerManager.py:61
+msgid "Suppress announcement of DirectUIHWND class"
+msgstr "Potlačit oznamování třídy DirectUIHWND"
+
+#: robocopyManager.py:438
+msgid "Sync error occurred"
+msgstr "Došlo k chybě synchronizace"
+
+#: robocopyManager.py:220
+msgid "Synchronization interval:"
+msgstr "Interval synchronizace:"
+
+#: contextMenu.py:42
+msgid "TXT to Folder"
+msgstr "TXT do složky"
+
+#: contextMenu.py:49
+msgid "Title Case"
+msgstr "Velká počáteční písmena slov (Title Case)"
+
+#: clipboardManager.py:104
+msgid "Total file size is too large to copy content"
+msgstr "Celková velikost souborů je příliš velká pro kopírování obsahu"
+
+#: robocopyManager.py:963
+msgid "Trying alternative copy method..."
+msgstr "Zkouším alternativní metodu kopírování..."
+
+#: createFile.py:233
+msgid "Unable to get current directory"
+msgstr "Nelze získat aktuální adresář"
+
+#: __init__.py:433
+msgid "Unable to get current path"
+msgstr "Nelze získat aktuální cestu"
+
+#: selectionManager.py:32
+msgid "Unable to get folder view"
+msgstr "Nelze získat zobrazení složky"
+
+#: contextMenu.py:47
+msgid "Uppercase"
+msgstr "Velká písmena"
+
+#: clipboardManager.py:124
+msgid "[Error processing RTF file]"
+msgstr "[Chyba při zpracování souboru RTF]"
+
+#: clipboardManager.py:126
+msgid "[RTF content - striprtf module not available]"
+msgstr "[Obsah RTF - modul striprtf není k dispozici]"
+
+#: compressionManager.py:97
+msgid "compression failed: {error}"
+msgstr "komprese selhala: {error}"
+
+#: contextMenu.py:36
+msgid "copy"
+msgstr "kopírovat"
+
+#: contextMenu.py:40
+msgid "mirror Backup"
+msgstr "zrcadlová záloha"
+
+#: contextMenu.py:37
+msgid "move"
+msgstr "přesunout"
+
+#: createFile.py:183
+msgid "new_file"
+msgstr "novy_soubor"
+
+#: createFile.py:185
+msgid "new_file_{index}"
+msgstr "novy_soubor_{index}"
+
+#: contextMenu.py:38
+msgid "paste"
+msgstr "vložit"
+
+#: __init__.py:143
+#: __init__.py:472
+#: __init__.py:517
+#: __init__.py:562
+#: __init__.py:587
+#: __init__.py:604
+#: __init__.py:627
+#: xPlorerManager.py:44
+msgid "xPlorer"
+msgstr "xPlorer"
+
+#: contextMenu.py:22
+msgid "xPlorer Settings"
+msgstr "Nastavení xPlorer"
+
+#: createFile.py:307
+msgid "{count} files created"
+msgstr "{count} souborů vytvořeno"
+
+#: fileOperations.py:420
+msgid "{count} items {size}"
+msgstr "{count} položek {size}"
+
+#: folderInfo.py:66
+msgid "{subfolders} subfolders and {files} files"
+msgstr "{subfolders} podsložek a {files} souborů"
+
+#: robocopyManager.py:950
+msgid "{} completed successfully in {:.1f} seconds"
+msgstr "{} úspěšně dokončeno za {:.1f} sekund"
+
+#: robocopyManager.py:947
+msgid "{} completed successfully in {:.1f} seconds, average speed: {:.1f} MB/s"
+msgstr "{} úspěšně dokončeno za {:.1f} sekund, průměrná rychlost: {:.1f} MB/s"
+
+#: robocopyManager.py:978
+msgid "{} completed successfully using alternative method"
+msgstr "{} úspěšně dokončeno pomocí alternativní metody"
+
+#: robocopyManager.py:985
+msgid "{} completed with warnings (code: {})"
+msgstr "{} dokončeno s varováním (kód: {})"
+
+#: robocopyManager.py:982
+msgid "{} failed with error: {}"
+msgstr "{} selhalo s chybou: {}"
+
+#: robocopyManager.py:903
+msgid "{} in progress... {} seconds elapsed"
+msgstr "{} probíhá... uplynulo {} sekund"
+
+#: robocopyManager.py:878
+msgid "{} started. You can continue working while it runs in background."
+msgstr "{} zahájeno. Během běhu na pozadí můžete pokračovat v práci."
+
+#: robocopyManager.py:929
+msgid "{}: {}% complete, speed: {:.1f} MB/s"
+msgstr "{}: {}% dokončeno, rychlost: {:.1f} MB/s"

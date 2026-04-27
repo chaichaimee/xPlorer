@@ -1,0 +1,893 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: xPlorer 2026.5.1\n"
+"Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
+"POT-Creation-Date: 2026-04-27 15:57+0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: chaiBot and Malee Yamazaki\n"
+"Language-Team: Romanian\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: DevOn Addon\n"
+
+#: folder_creation_dialog.py:60
+msgid "&Apply"
+msgstr "&Aplicare"
+
+#: folder_creation_dialog.py:61
+msgid "&Cancel"
+msgstr "&Anulare"
+
+#: robocopyManager.py:223
+msgid "1 day"
+msgstr "1 zi"
+
+#: createFile.py:305
+msgid "1 file created"
+msgstr "1 fișier creat"
+
+#: robocopyManager.py:222
+msgid "1 hour"
+msgstr "1 oră"
+
+#: robocopyManager.py:223
+msgid "1 month"
+msgstr "1 lună"
+
+#: robocopyManager.py:223
+msgid "15 days"
+msgstr "15 zile"
+
+#: robocopyManager.py:222
+msgid "15 minutes"
+msgstr "15 minute"
+
+#: robocopyManager.py:222
+msgid "30 minutes"
+msgstr "30 minute"
+
+#: robocopyManager.py:223
+msgid "7 days"
+msgstr "7 zile"
+
+#: compressionManager.py:159
+msgid "7-Zip compression failed, trying built-in method..."
+msgstr "Comprimarea 7-Zip a eșuat, se încearcă metoda încorporată..."
+
+#: fileOperations.py:474
+msgid "A file with this name already exists"
+msgstr "Un fișier cu acest nume există deja"
+
+#: robocopyManager.py:209
+msgid "Add destination folder"
+msgstr "Adăugare folder destinație"
+
+#: xPlorerManager.py:56
+msgid "Announce 'Empty Folder' when entering an empty folder"
+msgstr "Anunță 'Folder gol' la intrarea într-un folder gol"
+
+#: xPlorerManager.py:71
+msgid "Automatically paste clipboard content into rename field"
+msgstr "Lipește automat conținutul clipboard-ului în câmpul de redenumire"
+
+#: xPlorerManager.py:51
+msgid "Automatically select the first item"
+msgstr "Selectează automat primul element"
+
+#: compressionManager.py:268
+msgid "Built-in compression failed: {error}"
+msgstr "Comprimarea încorporată a eșuat: {error}"
+
+#: robocopyManager.py:61
+#: robocopyManager.py:242
+msgid "Cancel"
+msgstr "Anulare"
+
+#: clipboardManager.py:77
+msgid "Cannot copy content of folders, please select files only"
+msgstr "Nu se poate copia conținutul folderelor, selectați numai fișiere"
+
+#: createFile.py:290
+msgid "Cannot find unique name for: {name}"
+msgstr "Nu se poate găsi un nume unic pentru: {name}"
+
+#: robocopyManager.py:761
+msgid "Cannot get destination"
+msgstr "Nu se poate obține destinația"
+
+#: __init__.py:635
+msgid "Cannot open settings dialog"
+msgstr "Nu se poate deschide dialogul de setări"
+
+#: txt2folder.py:69
+msgid "Cannot process RTF file: striprtf module not available"
+msgstr "Nu se poate procesa fișierul RTF: modulul striprtf nu este disponibil"
+
+#: contextMenu.py:46
+msgid "Case Converter for Folders"
+msgstr "Convertor majuscule/minuscule pentru foldere"
+
+#: robocopyManager.py:348
+msgid "Choose destination folder"
+msgstr "Alegeți folderul destinație"
+
+#: robocopyManager.py:239
+msgid "Clear all settings"
+msgstr "Ștergeți toate setările"
+
+#: compressionManager.py:264
+msgid "Completed"
+msgstr "Finalizat"
+
+#: contextMenu.py:25
+msgid "Compress zip"
+msgstr "Comprimare zip"
+
+#: compressionManager.py:144
+#: compressionManager.py:161
+msgid "Compressing files"
+msgstr "Se comprimă fișierele"
+
+#: compressionManager.py:70
+msgid "Compressing..."
+msgstr "Se comprimă..."
+
+#: compressionManager.py:244
+#: compressionManager.py:258
+msgid "Compressing: {percent}%"
+msgstr "Se comprimă: {percent}%"
+
+#: compressionManager.py:92
+#: compressionManager.py:262
+msgid "Compression cancelled"
+msgstr "Comprimare anulată"
+
+#: compressionManager.py:94
+#: compressionManager.py:265
+msgid "Compression completed {name}"
+msgstr "Comprimare finalizată {name}"
+
+#: clipboardManager.py:165
+msgid "Content from 1 file copied to clipboard"
+msgstr "Conținutul a 1 fișier copiat în clipboard"
+
+#: clipboardManager.py:167
+msgid "Content from {count} files copied to clipboard"
+msgstr "Conținutul a {count} fișiere copiat în clipboard"
+
+#: clipboardManager.py:53
+msgid "Copied 1 item name to clipboard"
+msgstr "1 nume de element copiat în clipboard"
+
+#: robocopyManager.py:185
+msgid "Copied source path to clipboard"
+msgstr "Calea sursă copiată în clipboard"
+
+#: clipboardManager.py:55
+msgid "Copied {count} item names to clipboard"
+msgstr "{count} nume de elemente copiate în clipboard"
+
+#: __init__.py:429
+msgid "Copied: {path}"
+msgstr "Copiat: {path}"
+
+#: robocopyManager.py:771
+msgid "Copy"
+msgstr "Copiere"
+
+#: contextMenu.py:27
+msgid "Copy address bar"
+msgstr "Copiere bară de adrese"
+
+#: contextMenu.py:28
+msgid "Copy content"
+msgstr "Copiere conținut"
+
+#: __init__.py:516
+msgid "Copy content (single tap) or invert selection (double tap)"
+msgstr "Copiere conținut (atingere simplă) sau inversare selecție (atingere dublă)"
+
+#: contextMenu.py:29
+msgid "Copy selected file and folder names"
+msgstr "Copiere nume fișiere și foldere selectate"
+
+#: __init__.py:471
+msgid "Copy selected names (single tap) or copy address bar (double tap)"
+msgstr "Copiere nume selectate (atingere simplă) sau copiere bară de adrese (atingere dublă)"
+
+#: __init__.py:431
+#: clipboardManager.py:57
+#: clipboardManager.py:169
+#: robocopyManager.py:187
+msgid "Could not open clipboard"
+msgstr "Nu s-a putut deschide clipboard-ul"
+
+#: contextMenu.py:30
+#: createFile.py:16
+msgid "Create File"
+msgstr "Creare fișier"
+
+#: folder_creation_dialog.py:14
+msgid "Create Multiple Folders"
+msgstr "Creare foldere multiple"
+
+#: contextMenu.py:43
+msgid "Create Multiple Folders..."
+msgstr "Creare foldere multiple..."
+
+#: folder_creation_dialog.py:42
+msgid "Create main folder and then subfolders"
+msgstr "Creați folderul principal și apoi subfolderele"
+
+#: __init__.py:626
+msgid "Create new folder and paste clipboard content into rename field"
+msgstr "Creați un folder nou și lipiți conținutul clipboard-ului în câmpul de redenumire"
+
+#: createFile.py:237
+msgid "Current path is not a directory"
+msgstr "Calea curentă nu este un director"
+
+#: robocopyManager.py:817
+msgid "Destination already exists, overwriting..."
+msgstr "Destinația există deja, suprascriere..."
+
+#: robocopyManager.py:205
+msgid "Destination folders list"
+msgstr "Lista folderelor destinație"
+
+#: robocopyManager.py:203
+msgid "Destination folders:"
+msgstr "Foldere destinație:"
+
+#: folder_creation_dialog.py:46
+msgid "Edit individual folder names"
+msgstr "Editați numele individuale ale folderelor"
+
+#: robocopyManager.py:115
+msgid "Elapsed time: {} seconds"
+msgstr "Timp scurs: {} secunde"
+
+#: xPlorerManager.py:40
+msgid "Empty Folder"
+msgstr "Folder gol"
+
+#: robocopyManager.py:217
+msgid "Enable automatic synchronization"
+msgstr "Activați sincronizarea automată"
+
+#: folderInfo.py:78
+msgid "Error calculating folder info"
+msgstr "Eroare la calcularea informațiilor folderului"
+
+#: fileOperations.py:401
+msgid "Error calculating size"
+msgstr "Eroare la calcularea dimensiunii"
+
+#: compressionManager.py:173
+msgid "Error compressing files"
+msgstr "Eroare la comprimarea fișierelor"
+
+#: clipboardManager.py:173
+msgid "Error copying file content"
+msgstr "Eroare la copierea conținutului fișierului"
+
+#: clipboardManager.py:61
+msgid "Error copying names to clipboard"
+msgstr "Eroare la copierea numelor în clipboard"
+
+#: txt2folder.py:116
+msgid "Error creating base folder"
+msgstr "Eroare la crearea folderului de bază"
+
+#: createFile.py:311
+msgid "Error creating files"
+msgstr "Eroare la crearea fișierelor"
+
+#: folder_creation_dialog.py:219
+msgid "Error creating folder: {number}"
+msgstr "Eroare la crearea folderului: {number}"
+
+#: __init__.py:662
+msgid "Error creating folders"
+msgstr "Eroare la crearea folderelor"
+
+#: folder_creation_dialog.py:179
+msgid "Error creating main folder"
+msgstr "Eroare la crearea folderului principal"
+
+#: folder_creation_dialog.py:201
+msgid "Error creating subfolder: {number}"
+msgstr "Eroare la crearea subfolderului: {number}"
+
+#: __init__.py:690
+msgid "Error during conversion"
+msgstr "Eroare în timpul conversiei"
+
+#: robocopyManager.py:990
+msgid "Error during {}: {}"
+msgstr "Eroare în timpul {}: {}"
+
+#: compressionManager.py:101
+msgid "Error in compression process: {error}"
+msgstr "Eroare în procesul de comprimare: {error}"
+
+#: selectionManager.py:65
+msgid "Error inverting selection"
+msgstr "Eroare la inversarea selecției"
+
+#: createFile.py:262
+msgid "Error opening create file dialog"
+msgstr "Eroare la deschiderea dialogului de creare fișier"
+
+#: fileOperations.py:488
+msgid "Error opening rename dialog"
+msgstr "Eroare la deschiderea dialogului de redenumire"
+
+#: __init__.py:642
+msgid "Error opening settings"
+msgstr "Eroare la deschiderea setărilor"
+
+#: txt2folder.py:212
+msgid "Error processing text file: {}"
+msgstr "Eroare la procesarea fișierului text: {}"
+
+#: txt2folder.py:80
+msgid "Error reading RTF file"
+msgstr "Eroare la citirea fișierului RTF"
+
+#: txt2folder.py:215
+msgid "Error reading file encoding"
+msgstr "Eroare la citirea codificării fișierului"
+
+#: fileOperations.py:453
+#: fileOperations.py:482
+msgid "Error renaming file"
+msgstr "Eroare la redenumirea fișierului"
+
+#: robocopyManager.py:784
+#: txt2folder.py:219
+msgid "Error: {}"
+msgstr "Eroare: {}"
+
+#: robocopyManager.py:111
+msgid "Estimated time remaining: {}"
+msgstr "Timp estimat rămas: {}"
+
+#: createFile.py:84
+msgid "Extension:"
+msgstr "Extensie:"
+
+#: case.py:115
+#: case.py:129
+#: case.py:150
+#: case.py:164
+msgid "Failed to rename any folders"
+msgstr "Nu s-a reușit redenumirea niciunui folder"
+
+#: createFile.py:163
+msgid "File count cannot exceed 10"
+msgstr "Numărul de fișiere nu poate depăși 10"
+
+#: createFile.py:160
+msgid "File count must be at least 1"
+msgstr "Numărul de fișiere trebuie să fie cel puțin 1"
+
+#: createFile.py:131
+msgid "File name"
+msgstr "Nume fișier"
+
+#: fileOperations.py:57
+msgid "File name cannot be empty"
+msgstr "Numele fișierului nu poate fi gol"
+
+#: fileOperations.py:470
+msgid "File name not changed"
+msgstr "Numele fișierului nu a fost schimbat"
+
+#: createFile.py:77
+#: createFile.py:132
+msgid "File name {index}:"
+msgstr "Nume fișier {index}:"
+
+#: createFile.py:75
+msgid "File name:"
+msgstr "Nume fișier:"
+
+#: fileOperations.py:479
+msgid "File renamed to {name}"
+msgstr "Fișier redenumit în {name}"
+
+#: folder_creation_dialog.py:113
+#: folder_creation_dialog.py:158
+msgid "Folder"
+msgstr "Folder"
+
+#: txt2folder.py:106
+#: txt2folder.py:182
+msgid "Folder '{}' already exists, creating '{}' instead"
+msgstr "Folderul '{}' există deja, se creează '{}' în schimb"
+
+#: contextMenu.py:52
+msgid "Folder info"
+msgstr "Informații folder"
+
+#: folder_creation_dialog.py:27
+msgid "Folder title:"
+msgstr "Titlu folder:"
+
+#: contextMenu.py:50
+msgid "Headline Case"
+msgstr "Casetă titlu"
+
+#: robocopyManager.py:434
+msgid "Immediate sync completed: {}/{} destinations"
+msgstr "Sincronizarea imediată finalizată: {}/{} destinații"
+
+#: robocopyManager.py:767
+msgid "Invalid destination"
+msgstr "Destinație invalidă"
+
+#: folder_creation_dialog.py:169
+msgid "Invalid number for folders"
+msgstr "Număr invalid pentru foldere"
+
+#: robocopyManager.py:407
+#: robocopyManager.py:447
+msgid "Invalid time format"
+msgstr "Format oră invalid"
+
+#: contextMenu.py:26
+msgid "Invert selection"
+msgstr "Inversare selecție"
+
+#: selectionManager.py:60
+msgid "Inverted selection: {inverted} of {total} items selected"
+msgstr "Selecție inversată: {inverted} din {total} elemente selectate"
+
+#: robocopyManager.py:868
+msgid "Large file detected, using compression for speed"
+msgstr "Fișier mare detectat, se folosește comprimarea pentru viteză"
+
+#: contextMenu.py:48
+msgid "Lowercase"
+msgstr "Minuscule"
+
+#: folder_creation_dialog.py:166
+msgid "Maximum 100 folders allowed"
+msgstr "Maximum 100 de foldere permise"
+
+#: robocopyManager.py:62
+msgid "Minimize"
+msgstr "Minimizare"
+
+#: robocopyManager.py:145
+msgid "Mirror Backup Settings"
+msgstr "Setări copie de siguranță oglindă"
+
+#: robocopyManager.py:716
+msgid "Mirror backup configured successfully"
+msgstr "Copie de siguranță oglindă configurată cu succes"
+
+#: robocopyManager.py:718
+msgid "Mirror backup disabled"
+msgstr "Copie de siguranță oglindă dezactivată"
+
+#: robocopyManager.py:771
+msgid "Move"
+msgstr "Mutare"
+
+#: robocopyManager.py:609
+msgid "Next scheduled backup for {}: {}"
+msgstr "Următoarea copie de siguranță programată pentru {}: {}"
+
+#: __init__.py:650
+msgid "No Explorer folder detected"
+msgstr "Niciun folder Explorer detectat"
+
+#: fileOperations.py:300
+#: fileOperations.py:410
+msgid "No access to size data"
+msgstr "Fără acces la datele de dimensiune"
+
+#: selectionManager.py:27
+msgid "No active File Explorer window found"
+msgstr "Nicio fereastră activă File Explorer găsită"
+
+#: clipboardManager.py:156
+msgid "No content could be read from selected files"
+msgstr "Niciun conținut nu a putut fi citit din fișierele selectate"
+
+#: createFile.py:303
+msgid "No files were created"
+msgstr "Nu a fost creat niciun fișier"
+
+#: case.py:106
+#: case.py:120
+#: case.py:141
+#: case.py:155
+msgid "No folders found"
+msgstr "Niciun folder găsit"
+
+#: __init__.py:677
+msgid "No folders selected or current folder not available"
+msgstr "Niciun folder selectat sau folderul curent nu este disponibil"
+
+#: folder_creation_dialog.py:230
+#: txt2folder.py:155
+#: txt2folder.py:208
+msgid "No folders were created"
+msgstr "Nu a fost creat niciun folder"
+
+#: folderInfo.py:30
+msgid "No item selected"
+msgstr "Niciun element selectat"
+
+#: selectionManager.py:40
+msgid "No items in folder"
+msgstr "Niciun element în folder"
+
+#: clipboardManager.py:30
+#: clipboardManager.py:72
+#: compressionManager.py:132
+#: fileOperations.py:289
+#: fileOperations.py:433
+msgid "No items selected"
+msgstr "Niciun element selectat"
+
+#: robocopyManager.py:749
+msgid "No pending operation"
+msgstr "Nicio operațiune în așteptare"
+
+#: clipboardManager.py:93
+msgid "No text files selected"
+msgstr "Niciun fișier text selectat"
+
+#: txt2folder.py:91
+#: txt2folder.py:167
+msgid "No valid folder names found in the file"
+msgstr "Niciun nume de folder valid găsit în fișier"
+
+#: createFile.py:227
+#: robocopyManager.py:663
+#: robocopyManager.py:724
+#: robocopyManager.py:737
+#: robocopyManager.py:755
+#: selectionManager.py:21
+#: txt2folder.py:43
+msgid "Not in File Explorer"
+msgstr "Nu este în File Explorer"
+
+#: createFile.py:27
+msgid "Number of files to create:"
+msgstr "Numărul de fișiere de creat:"
+
+#: folder_creation_dialog.py:163
+msgid "Number of folders must be at least 1"
+msgstr "Numărul de foldere trebuie să fie cel puțin 1"
+
+#: folder_creation_dialog.py:35
+msgid "Number of folders:"
+msgstr "Numărul de foldere:"
+
+#: robocopyManager.py:241
+msgid "OK"
+msgstr "OK"
+
+#: __init__.py:586
+msgid "Open xPlorer context menu"
+msgstr "Deschideți meniul contextual xPlorer"
+
+#: txt2folder.py:55
+msgid "Please select a .txt or .rtf file"
+msgstr "Vă rugăm să selectați un fișier .txt sau .rtf"
+
+#: fileOperations.py:443
+msgid "Please select a file, not a folder"
+msgstr "Vă rugăm să selectați un fișier, nu un folder"
+
+#: robocopyManager.py:671
+msgid "Please select a folder"
+msgstr "Vă rugăm să selectați un folder"
+
+#: fileOperations.py:437
+msgid "Please select only one file"
+msgstr "Vă rugăm să selectați un singur fișier"
+
+#: folderInfo.py:35
+#: robocopyManager.py:667
+msgid "Please select only one folder"
+msgstr "Vă rugăm să selectați un singur folder"
+
+#: txt2folder.py:48
+msgid "Please select only one text file"
+msgstr "Vă rugăm să selectați un singur fișier text"
+
+#: robocopyManager.py:46
+msgid "Preparing operation..."
+msgstr "Se pregătește operațiunea..."
+
+#: robocopyManager.py:103
+msgid "Processing: {}"
+msgstr "Procesare: {}"
+
+#: robocopyManager.py:105
+msgid "Progress: {}%"
+msgstr "Progres: {}%"
+
+#: robocopyManager.py:210
+msgid "Remove selected destination"
+msgstr "Eliminare destinație selectată"
+
+#: robocopyManager.py:198
+msgid "Remove selected source"
+msgstr "Eliminare sursă selectată"
+
+#: __init__.py:603
+#: contextMenu.py:31
+msgid "Rename selected file"
+msgstr "Redenumiți fișierul selectat"
+
+#: contextMenu.py:35
+msgid "Robocopy"
+msgstr "Robocopy"
+
+#: contextMenu.py:32
+msgid "Say size"
+msgstr "Spune dimensiunea"
+
+#: __init__.py:561
+msgid "Say size (single tap) or compress zip (double tap)"
+msgstr "Spune dimensiunea (atingere simplă) sau comprimare zip (atingere dublă)"
+
+#: robocopyManager.py:648
+msgid "Scheduled backup completed: {}/{} destinations"
+msgstr "Copie de siguranță programată finalizată: {}/{} destinații"
+
+#: robocopyManager.py:623
+msgid "Scheduled mirror backup started for {}"
+msgstr "Copie de siguranță oglindă programată a început pentru {}"
+
+#: robocopyManager.py:231
+msgid "Scheduled time:"
+msgstr "Oră programată:"
+
+#: robocopyManager.py:728
+#: robocopyManager.py:741
+msgid "Select one item only"
+msgstr "Selectați un singur element"
+
+#: txt2folder.py:60
+msgid "Selected file does not exist"
+msgstr "Fișierul selectat nu există"
+
+#: folderInfo.py:41
+msgid "Selected item is not a folder"
+msgstr "Elementul selectat nu este un folder"
+
+#: createFile.py:199
+msgid "Some files will use default names"
+msgstr "Unele fișiere vor folosi nume implicite"
+
+#: robocopyManager.py:404
+#: robocopyManager.py:444
+msgid "Source and destination required"
+msgstr "Sursă și destinație necesare"
+
+#: robocopyManager.py:792
+msgid "Source does not exist"
+msgstr "Sursa nu există"
+
+#: robocopyManager.py:193
+msgid "Source folders (select to edit):"
+msgstr "Foldere sursă (selectați pentru a edita):"
+
+#: robocopyManager.py:195
+msgid "Source folders list"
+msgstr "Lista folderelor sursă"
+
+#: robocopyManager.py:732
+msgid "Source for copy: {}"
+msgstr "Sursă pentru copiere: {}"
+
+#: robocopyManager.py:745
+msgid "Source for move: {}"
+msgstr "Sursă pentru mutare: {}"
+
+#: robocopyManager.py:121
+msgid "Speed: {}"
+msgstr "Viteză: {}"
+
+#: robocopyManager.py:240
+msgid "Start synchronization"
+msgstr "Porniți sincronizarea"
+
+#: robocopyManager.py:410
+msgid "Starting immediate mirror sync..."
+msgstr "Se pornește sincronizarea oglindă imediată..."
+
+#: robocopyManager.py:774
+msgid "Starting {} operation in background..."
+msgstr "Se pornește operațiunea {} în fundal..."
+
+#: compressionManager.py:144
+#: compressionManager.py:161
+msgid "Starting..."
+msgstr "Pornire..."
+
+#: case.py:162
+msgid "Successfully converted {count} folders to headline case"
+msgstr "{count} foldere convertite cu succes în casetă titlu"
+
+#: case.py:127
+msgid "Successfully converted {count} folders to lowercase"
+msgstr "{count} foldere convertite cu succes în minuscule"
+
+#: case.py:148
+msgid "Successfully converted {count} folders to title case"
+msgstr "{count} foldere convertite cu succes în majuscule/minuscule de titlu"
+
+#: case.py:113
+msgid "Successfully converted {count} folders to uppercase"
+msgstr "{count} foldere convertite cu succes în majuscule"
+
+#: folder_creation_dialog.py:226
+msgid "Successfully created 1 folder"
+msgstr "1 folder creat cu succes"
+
+#: folder_creation_dialog.py:224
+msgid "Successfully created main folder only"
+msgstr "S-a creat cu succes numai folderul principal"
+
+#: folder_creation_dialog.py:228
+msgid "Successfully created {count} folders"
+msgstr "{count} foldere create cu succes"
+
+#: txt2folder.py:150
+#: txt2folder.py:203
+msgid "Successfully created {} folders in '{}'"
+msgstr "{} foldere create cu succes în '{}'"
+
+#: xPlorerManager.py:66
+msgid "Suppress announcement of '- File Explorer' in window titles"
+msgstr "Suprimați anunțul lui '- File Explorer' din titlurile ferestrelor"
+
+#: xPlorerManager.py:61
+msgid "Suppress announcement of DirectUIHWND class"
+msgstr "Suprimați anunțul clasei DirectUIHWND"
+
+#: robocopyManager.py:438
+msgid "Sync error occurred"
+msgstr "A apărut o eroare de sincronizare"
+
+#: robocopyManager.py:220
+msgid "Synchronization interval:"
+msgstr "Interval de sincronizare:"
+
+#: contextMenu.py:42
+msgid "TXT to Folder"
+msgstr "TXT în folder"
+
+#: contextMenu.py:49
+msgid "Title Case"
+msgstr "Majuscule/minuscule de titlu"
+
+#: clipboardManager.py:104
+msgid "Total file size is too large to copy content"
+msgstr "Dimensiunea totală a fișierului este prea mare pentru a copia conținutul"
+
+#: robocopyManager.py:963
+msgid "Trying alternative copy method..."
+msgstr "Se încearcă metoda alternativă de copiere..."
+
+#: createFile.py:233
+msgid "Unable to get current directory"
+msgstr "Nu se poate obține directorul curent"
+
+#: __init__.py:433
+msgid "Unable to get current path"
+msgstr "Nu se poate obține calea curentă"
+
+#: selectionManager.py:32
+msgid "Unable to get folder view"
+msgstr "Nu se poate obține vizualizarea folderului"
+
+#: contextMenu.py:47
+msgid "Uppercase"
+msgstr "Majuscule"
+
+#: clipboardManager.py:124
+msgid "[Error processing RTF file]"
+msgstr "[Eroare la procesarea fișierului RTF]"
+
+#: clipboardManager.py:126
+msgid "[RTF content - striprtf module not available]"
+msgstr "[Conținut RTF - modulul striprtf nu este disponibil]"
+
+#: compressionManager.py:97
+msgid "compression failed: {error}"
+msgstr "comprimarea a eșuat: {error}"
+
+#: contextMenu.py:36
+msgid "copy"
+msgstr "copiere"
+
+#: contextMenu.py:40
+msgid "mirror Backup"
+msgstr "copie de siguranță oglindă"
+
+#: contextMenu.py:37
+msgid "move"
+msgstr "mutare"
+
+#: createFile.py:183
+msgid "new_file"
+msgstr "fișier_nou"
+
+#: createFile.py:185
+msgid "new_file_{index}"
+msgstr "fișier_nou_{index}"
+
+#: contextMenu.py:38
+msgid "paste"
+msgstr "lipire"
+
+#: __init__.py:143
+#: __init__.py:472
+#: __init__.py:517
+#: __init__.py:562
+#: __init__.py:587
+#: __init__.py:604
+#: __init__.py:627
+#: xPlorerManager.py:44
+msgid "xPlorer"
+msgstr "xPlorer"
+
+#: contextMenu.py:22
+msgid "xPlorer Settings"
+msgstr "Setări xPlorer"
+
+#: createFile.py:307
+msgid "{count} files created"
+msgstr "{count} fișiere create"
+
+#: fileOperations.py:420
+msgid "{count} items {size}"
+msgstr "{count} elemente {size}"
+
+#: folderInfo.py:66
+msgid "{subfolders} subfolders and {files} files"
+msgstr "{subfolders} subfoldere și {files} fișiere"
+
+#: robocopyManager.py:950
+msgid "{} completed successfully in {:.1f} seconds"
+msgstr "{} finalizat cu succes în {:.1f} secunde"
+
+#: robocopyManager.py:947
+msgid "{} completed successfully in {:.1f} seconds, average speed: {:.1f} MB/s"
+msgstr "{} finalizat cu succes în {:.1f} secunde, viteză medie: {:.1f} MB/s"
+
+#: robocopyManager.py:978
+msgid "{} completed successfully using alternative method"
+msgstr "{} finalizat cu succes folosind metoda alternativă"
+
+#: robocopyManager.py:985
+msgid "{} completed with warnings (code: {})"
+msgstr "{} finalizat cu avertismente (cod: {})"
+
+#: robocopyManager.py:982
+msgid "{} failed with error: {}"
+msgstr "{} a eșuat cu eroarea: {}"
+
+#: robocopyManager.py:903
+msgid "{} in progress... {} seconds elapsed"
+msgstr "{} în progres... au trecut {} secunde"
+
+#: robocopyManager.py:878
+msgid "{} started. You can continue working while it runs in background."
+msgstr "{} a început. Puteți continua să lucrați în timp ce rulează în fundal."
+
+#: robocopyManager.py:929
+msgid "{}: {}% complete, speed: {:.1f} MB/s"
+msgstr "{}: {}% finalizat, viteză: {:.1f} MB/s"

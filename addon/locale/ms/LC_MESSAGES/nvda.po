@@ -1,0 +1,893 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: xPlorer 2026.5.1\n"
+"Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
+"POT-Creation-Date: 2026-04-27 15:57+0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: chaiBot and Malee Yamazaki\n"
+"Language-Team: Malay\n"
+"Language: ms\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: DevOn Addon\n"
+
+#: folder_creation_dialog.py:60
+msgid "&Apply"
+msgstr "&Guna"
+
+#: folder_creation_dialog.py:61
+msgid "&Cancel"
+msgstr "&Batal"
+
+#: robocopyManager.py:223
+msgid "1 day"
+msgstr "1 hari"
+
+#: createFile.py:305
+msgid "1 file created"
+msgstr "1 fail dicipta"
+
+#: robocopyManager.py:222
+msgid "1 hour"
+msgstr "1 jam"
+
+#: robocopyManager.py:223
+msgid "1 month"
+msgstr "1 bulan"
+
+#: robocopyManager.py:223
+msgid "15 days"
+msgstr "15 hari"
+
+#: robocopyManager.py:222
+msgid "15 minutes"
+msgstr "15 minit"
+
+#: robocopyManager.py:222
+msgid "30 minutes"
+msgstr "30 minit"
+
+#: robocopyManager.py:223
+msgid "7 days"
+msgstr "7 hari"
+
+#: compressionManager.py:159
+msgid "7-Zip compression failed, trying built-in method..."
+msgstr "Mampatan 7-Zip gagal, mencuba kaedah terbina dalam..."
+
+#: fileOperations.py:474
+msgid "A file with this name already exists"
+msgstr "Fail dengan nama ini sudah wujud"
+
+#: robocopyManager.py:209
+msgid "Add destination folder"
+msgstr "Tambah folder destinasi"
+
+#: xPlorerManager.py:56
+msgid "Announce 'Empty Folder' when entering an empty folder"
+msgstr "Umumkan 'Folder Kosong' apabila memasuki folder kosong"
+
+#: xPlorerManager.py:71
+msgid "Automatically paste clipboard content into rename field"
+msgstr "Tampal kandungan papan keratan secara automatik ke medan ubah nama"
+
+#: xPlorerManager.py:51
+msgid "Automatically select the first item"
+msgstr "Pilih item pertama secara automatik"
+
+#: compressionManager.py:268
+msgid "Built-in compression failed: {error}"
+msgstr "Mampatan terbina dalam gagal: {error}"
+
+#: robocopyManager.py:61
+#: robocopyManager.py:242
+msgid "Cancel"
+msgstr "Batal"
+
+#: clipboardManager.py:77
+msgid "Cannot copy content of folders, please select files only"
+msgstr "Tidak boleh menyalin kandungan folder, sila pilih fail sahaja"
+
+#: createFile.py:290
+msgid "Cannot find unique name for: {name}"
+msgstr "Tidak dapat mencari nama unik untuk: {name}"
+
+#: robocopyManager.py:761
+msgid "Cannot get destination"
+msgstr "Tidak dapat mendapatkan destinasi"
+
+#: __init__.py:635
+msgid "Cannot open settings dialog"
+msgstr "Tidak dapat membuka dialog tetapan"
+
+#: txt2folder.py:69
+msgid "Cannot process RTF file: striprtf module not available"
+msgstr "Tidak dapat memproses fail RTF: modul striprtf tidak tersedia"
+
+#: contextMenu.py:46
+msgid "Case Converter for Folders"
+msgstr "Penukar Huruf untuk Folder"
+
+#: robocopyManager.py:348
+msgid "Choose destination folder"
+msgstr "Pilih folder destinasi"
+
+#: robocopyManager.py:239
+msgid "Clear all settings"
+msgstr "Kosongkan semua tetapan"
+
+#: compressionManager.py:264
+msgid "Completed"
+msgstr "Selesai"
+
+#: contextMenu.py:25
+msgid "Compress zip"
+msgstr "Mampat zip"
+
+#: compressionManager.py:144
+#: compressionManager.py:161
+msgid "Compressing files"
+msgstr "Memampat fail"
+
+#: compressionManager.py:70
+msgid "Compressing..."
+msgstr "Memampat..."
+
+#: compressionManager.py:244
+#: compressionManager.py:258
+msgid "Compressing: {percent}%"
+msgstr "Memampat: {percent}%"
+
+#: compressionManager.py:92
+#: compressionManager.py:262
+msgid "Compression cancelled"
+msgstr "Mampatan dibatalkan"
+
+#: compressionManager.py:94
+#: compressionManager.py:265
+msgid "Compression completed {name}"
+msgstr "Mampatan selesai {name}"
+
+#: clipboardManager.py:165
+msgid "Content from 1 file copied to clipboard"
+msgstr "Kandungan daripada 1 fail disalin ke papan keratan"
+
+#: clipboardManager.py:167
+msgid "Content from {count} files copied to clipboard"
+msgstr "Kandungan daripada {count} fail disalin ke papan keratan"
+
+#: clipboardManager.py:53
+msgid "Copied 1 item name to clipboard"
+msgstr "1 nama item disalin ke papan keratan"
+
+#: robocopyManager.py:185
+msgid "Copied source path to clipboard"
+msgstr "Laluan sumber disalin ke papan keratan"
+
+#: clipboardManager.py:55
+msgid "Copied {count} item names to clipboard"
+msgstr "{count} nama item disalin ke papan keratan"
+
+#: __init__.py:429
+msgid "Copied: {path}"
+msgstr "Disalin: {path}"
+
+#: robocopyManager.py:771
+msgid "Copy"
+msgstr "Salin"
+
+#: contextMenu.py:27
+msgid "Copy address bar"
+msgstr "Salin bar alamat"
+
+#: contextMenu.py:28
+msgid "Copy content"
+msgstr "Salin kandungan"
+
+#: __init__.py:516
+msgid "Copy content (single tap) or invert selection (double tap)"
+msgstr "Salin kandungan (ketik sekali) atau songsangkan pilihan (ketik dua kali)"
+
+#: contextMenu.py:29
+msgid "Copy selected file and folder names"
+msgstr "Salin nama fail dan folder yang dipilih"
+
+#: __init__.py:471
+msgid "Copy selected names (single tap) or copy address bar (double tap)"
+msgstr "Salin nama yang dipilih (ketik sekali) atau salin bar alamat (ketik dua kali)"
+
+#: __init__.py:431
+#: clipboardManager.py:57
+#: clipboardManager.py:169
+#: robocopyManager.py:187
+msgid "Could not open clipboard"
+msgstr "Tidak dapat membuka papan keratan"
+
+#: contextMenu.py:30
+#: createFile.py:16
+msgid "Create File"
+msgstr "Cipta Fail"
+
+#: folder_creation_dialog.py:14
+msgid "Create Multiple Folders"
+msgstr "Cipta Pelbagai Folder"
+
+#: contextMenu.py:43
+msgid "Create Multiple Folders..."
+msgstr "Cipta Pelbagai Folder..."
+
+#: folder_creation_dialog.py:42
+msgid "Create main folder and then subfolders"
+msgstr "Cipta folder utama dan kemudian subfolder"
+
+#: __init__.py:626
+msgid "Create new folder and paste clipboard content into rename field"
+msgstr "Cipta folder baharu dan tampal kandungan papan keratan ke medan ubah nama"
+
+#: createFile.py:237
+msgid "Current path is not a directory"
+msgstr "Laluan semasa bukan direktori"
+
+#: robocopyManager.py:817
+msgid "Destination already exists, overwriting..."
+msgstr "Destinasi sudah wujud, menimpa..."
+
+#: robocopyManager.py:205
+msgid "Destination folders list"
+msgstr "Senarai folder destinasi"
+
+#: robocopyManager.py:203
+msgid "Destination folders:"
+msgstr "Folder destinasi:"
+
+#: folder_creation_dialog.py:46
+msgid "Edit individual folder names"
+msgstr "Edit nama folder individu"
+
+#: robocopyManager.py:115
+msgid "Elapsed time: {} seconds"
+msgstr "Masa berlalu: {} saat"
+
+#: xPlorerManager.py:40
+msgid "Empty Folder"
+msgstr "Folder Kosong"
+
+#: robocopyManager.py:217
+msgid "Enable automatic synchronization"
+msgstr "Dayakan penyegerakan automatik"
+
+#: folderInfo.py:78
+msgid "Error calculating folder info"
+msgstr "Ralat mengira maklumat folder"
+
+#: fileOperations.py:401
+msgid "Error calculating size"
+msgstr "Ralat mengira saiz"
+
+#: compressionManager.py:173
+msgid "Error compressing files"
+msgstr "Ralat memampat fail"
+
+#: clipboardManager.py:173
+msgid "Error copying file content"
+msgstr "Ralat menyalin kandungan fail"
+
+#: clipboardManager.py:61
+msgid "Error copying names to clipboard"
+msgstr "Ralat menyalin nama ke papan keratan"
+
+#: txt2folder.py:116
+msgid "Error creating base folder"
+msgstr "Ralat mencipta folder asas"
+
+#: createFile.py:311
+msgid "Error creating files"
+msgstr "Ralat mencipta fail"
+
+#: folder_creation_dialog.py:219
+msgid "Error creating folder: {number}"
+msgstr "Ralat mencipta folder: {number}"
+
+#: __init__.py:662
+msgid "Error creating folders"
+msgstr "Ralat mencipta folder"
+
+#: folder_creation_dialog.py:179
+msgid "Error creating main folder"
+msgstr "Ralat mencipta folder utama"
+
+#: folder_creation_dialog.py:201
+msgid "Error creating subfolder: {number}"
+msgstr "Ralat mencipta subfolder: {number}"
+
+#: __init__.py:690
+msgid "Error during conversion"
+msgstr "Ralat semasa penukaran"
+
+#: robocopyManager.py:990
+msgid "Error during {}: {}"
+msgstr "Ralat semasa {}: {}"
+
+#: compressionManager.py:101
+msgid "Error in compression process: {error}"
+msgstr "Ralat dalam proses mampatan: {error}"
+
+#: selectionManager.py:65
+msgid "Error inverting selection"
+msgstr "Ralat menyongsangkan pilihan"
+
+#: createFile.py:262
+msgid "Error opening create file dialog"
+msgstr "Ralat membuka dialog cipta fail"
+
+#: fileOperations.py:488
+msgid "Error opening rename dialog"
+msgstr "Ralat membuka dialog ubah nama"
+
+#: __init__.py:642
+msgid "Error opening settings"
+msgstr "Ralat membuka tetapan"
+
+#: txt2folder.py:212
+msgid "Error processing text file: {}"
+msgstr "Ralat memproses fail teks: {}"
+
+#: txt2folder.py:80
+msgid "Error reading RTF file"
+msgstr "Ralat membaca fail RTF"
+
+#: txt2folder.py:215
+msgid "Error reading file encoding"
+msgstr "Ralat membaca pengekodan fail"
+
+#: fileOperations.py:453
+#: fileOperations.py:482
+msgid "Error renaming file"
+msgstr "Ralat menukar nama fail"
+
+#: robocopyManager.py:784
+#: txt2folder.py:219
+msgid "Error: {}"
+msgstr "Ralat: {}"
+
+#: robocopyManager.py:111
+msgid "Estimated time remaining: {}"
+msgstr "Anggaran masa yang tinggal: {}"
+
+#: createFile.py:84
+msgid "Extension:"
+msgstr "Sambungan:"
+
+#: case.py:115
+#: case.py:129
+#: case.py:150
+#: case.py:164
+msgid "Failed to rename any folders"
+msgstr "Gagal menukar nama mana-mana folder"
+
+#: createFile.py:163
+msgid "File count cannot exceed 10"
+msgstr "Bilangan fail tidak boleh melebihi 10"
+
+#: createFile.py:160
+msgid "File count must be at least 1"
+msgstr "Bilangan fail mestilah sekurang-kurangnya 1"
+
+#: createFile.py:131
+msgid "File name"
+msgstr "Nama fail"
+
+#: fileOperations.py:57
+msgid "File name cannot be empty"
+msgstr "Nama fail tidak boleh kosong"
+
+#: fileOperations.py:470
+msgid "File name not changed"
+msgstr "Nama fail tidak diubah"
+
+#: createFile.py:77
+#: createFile.py:132
+msgid "File name {index}:"
+msgstr "Nama fail {index}:"
+
+#: createFile.py:75
+msgid "File name:"
+msgstr "Nama fail:"
+
+#: fileOperations.py:479
+msgid "File renamed to {name}"
+msgstr "Fail dinamakan semula kepada {name}"
+
+#: folder_creation_dialog.py:113
+#: folder_creation_dialog.py:158
+msgid "Folder"
+msgstr "Folder"
+
+#: txt2folder.py:106
+#: txt2folder.py:182
+msgid "Folder '{}' already exists, creating '{}' instead"
+msgstr "Folder '{}' sudah wujud, mencipta '{}' sebagai ganti"
+
+#: contextMenu.py:52
+msgid "Folder info"
+msgstr "Maklumat folder"
+
+#: folder_creation_dialog.py:27
+msgid "Folder title:"
+msgstr "Tajuk folder:"
+
+#: contextMenu.py:50
+msgid "Headline Case"
+msgstr "Huruf Tajuk Berita"
+
+#: robocopyManager.py:434
+msgid "Immediate sync completed: {}/{} destinations"
+msgstr "Penyegerakan segera selesai: {}/{} destinasi"
+
+#: robocopyManager.py:767
+msgid "Invalid destination"
+msgstr "Destinasi tidak sah"
+
+#: folder_creation_dialog.py:169
+msgid "Invalid number for folders"
+msgstr "Nombor untuk folder tidak sah"
+
+#: robocopyManager.py:407
+#: robocopyManager.py:447
+msgid "Invalid time format"
+msgstr "Format masa tidak sah"
+
+#: contextMenu.py:26
+msgid "Invert selection"
+msgstr "Songsangkan pilihan"
+
+#: selectionManager.py:60
+msgid "Inverted selection: {inverted} of {total} items selected"
+msgstr "Pilihan disongsangkan: {inverted} daripada {total} item dipilih"
+
+#: robocopyManager.py:868
+msgid "Large file detected, using compression for speed"
+msgstr "Fail besar dikesan, menggunakan mampatan untuk kelajuan"
+
+#: contextMenu.py:48
+msgid "Lowercase"
+msgstr "Huruf kecil"
+
+#: folder_creation_dialog.py:166
+msgid "Maximum 100 folders allowed"
+msgstr "Maksimum 100 folder dibenarkan"
+
+#: robocopyManager.py:62
+msgid "Minimize"
+msgstr "Minimumkan"
+
+#: robocopyManager.py:145
+msgid "Mirror Backup Settings"
+msgstr "Tetapan Sandaran Cermin"
+
+#: robocopyManager.py:716
+msgid "Mirror backup configured successfully"
+msgstr "Sandaran cermin dikonfigurasi dengan jayanya"
+
+#: robocopyManager.py:718
+msgid "Mirror backup disabled"
+msgstr "Sandaran cermin dilumpuhkan"
+
+#: robocopyManager.py:771
+msgid "Move"
+msgstr "Alih"
+
+#: robocopyManager.py:609
+msgid "Next scheduled backup for {}: {}"
+msgstr "Sandaran berjadual seterusnya untuk {}: {}"
+
+#: __init__.py:650
+msgid "No Explorer folder detected"
+msgstr "Tiada folder Explorer dikesan"
+
+#: fileOperations.py:300
+#: fileOperations.py:410
+msgid "No access to size data"
+msgstr "Tiada akses kepada data saiz"
+
+#: selectionManager.py:27
+msgid "No active File Explorer window found"
+msgstr "Tiada tetingkap File Explorer aktif ditemui"
+
+#: clipboardManager.py:156
+msgid "No content could be read from selected files"
+msgstr "Tiada kandungan boleh dibaca daripada fail yang dipilih"
+
+#: createFile.py:303
+msgid "No files were created"
+msgstr "Tiada fail dicipta"
+
+#: case.py:106
+#: case.py:120
+#: case.py:141
+#: case.py:155
+msgid "No folders found"
+msgstr "Tiada folder ditemui"
+
+#: __init__.py:677
+msgid "No folders selected or current folder not available"
+msgstr "Tiada folder dipilih atau folder semasa tidak tersedia"
+
+#: folder_creation_dialog.py:230
+#: txt2folder.py:155
+#: txt2folder.py:208
+msgid "No folders were created"
+msgstr "Tiada folder dicipta"
+
+#: folderInfo.py:30
+msgid "No item selected"
+msgstr "Tiada item dipilih"
+
+#: selectionManager.py:40
+msgid "No items in folder"
+msgstr "Tiada item dalam folder"
+
+#: clipboardManager.py:30
+#: clipboardManager.py:72
+#: compressionManager.py:132
+#: fileOperations.py:289
+#: fileOperations.py:433
+msgid "No items selected"
+msgstr "Tiada item dipilih"
+
+#: robocopyManager.py:749
+msgid "No pending operation"
+msgstr "Tiada operasi yang tertunda"
+
+#: clipboardManager.py:93
+msgid "No text files selected"
+msgstr "Tiada fail teks dipilih"
+
+#: txt2folder.py:91
+#: txt2folder.py:167
+msgid "No valid folder names found in the file"
+msgstr "Tiada nama folder yang sah ditemui dalam fail"
+
+#: createFile.py:227
+#: robocopyManager.py:663
+#: robocopyManager.py:724
+#: robocopyManager.py:737
+#: robocopyManager.py:755
+#: selectionManager.py:21
+#: txt2folder.py:43
+msgid "Not in File Explorer"
+msgstr "Tidak dalam File Explorer"
+
+#: createFile.py:27
+msgid "Number of files to create:"
+msgstr "Bilangan fail yang akan dicipta:"
+
+#: folder_creation_dialog.py:163
+msgid "Number of folders must be at least 1"
+msgstr "Bilangan folder mestilah sekurang-kurangnya 1"
+
+#: folder_creation_dialog.py:35
+msgid "Number of folders:"
+msgstr "Bilangan folder:"
+
+#: robocopyManager.py:241
+msgid "OK"
+msgstr "OK"
+
+#: __init__.py:586
+msgid "Open xPlorer context menu"
+msgstr "Buka menu konteks xPlorer"
+
+#: txt2folder.py:55
+msgid "Please select a .txt or .rtf file"
+msgstr "Sila pilih fail .txt atau .rtf"
+
+#: fileOperations.py:443
+msgid "Please select a file, not a folder"
+msgstr "Sila pilih fail, bukan folder"
+
+#: robocopyManager.py:671
+msgid "Please select a folder"
+msgstr "Sila pilih folder"
+
+#: fileOperations.py:437
+msgid "Please select only one file"
+msgstr "Sila pilih hanya satu fail"
+
+#: folderInfo.py:35
+#: robocopyManager.py:667
+msgid "Please select only one folder"
+msgstr "Sila pilih hanya satu folder"
+
+#: txt2folder.py:48
+msgid "Please select only one text file"
+msgstr "Sila pilih hanya satu fail teks"
+
+#: robocopyManager.py:46
+msgid "Preparing operation..."
+msgstr "Menyediakan operasi..."
+
+#: robocopyManager.py:103
+msgid "Processing: {}"
+msgstr "Memproses: {}"
+
+#: robocopyManager.py:105
+msgid "Progress: {}%"
+msgstr "Kemajuan: {}%"
+
+#: robocopyManager.py:210
+msgid "Remove selected destination"
+msgstr "Alih keluar destinasi yang dipilih"
+
+#: robocopyManager.py:198
+msgid "Remove selected source"
+msgstr "Alih keluar sumber yang dipilih"
+
+#: __init__.py:603
+#: contextMenu.py:31
+msgid "Rename selected file"
+msgstr "Ubah nama fail yang dipilih"
+
+#: contextMenu.py:35
+msgid "Robocopy"
+msgstr "Robocopy"
+
+#: contextMenu.py:32
+msgid "Say size"
+msgstr "Sebut saiz"
+
+#: __init__.py:561
+msgid "Say size (single tap) or compress zip (double tap)"
+msgstr "Sebut saiz (ketik sekali) atau mampat zip (ketik dua kali)"
+
+#: robocopyManager.py:648
+msgid "Scheduled backup completed: {}/{} destinations"
+msgstr "Sandaran berjadual selesai: {}/{} destinasi"
+
+#: robocopyManager.py:623
+msgid "Scheduled mirror backup started for {}"
+msgstr "Sandaran cermin berjadual dimulakan untuk {}"
+
+#: robocopyManager.py:231
+msgid "Scheduled time:"
+msgstr "Masa berjadual:"
+
+#: robocopyManager.py:728
+#: robocopyManager.py:741
+msgid "Select one item only"
+msgstr "Pilih hanya satu item"
+
+#: txt2folder.py:60
+msgid "Selected file does not exist"
+msgstr "Fail yang dipilih tidak wujud"
+
+#: folderInfo.py:41
+msgid "Selected item is not a folder"
+msgstr "Item yang dipilih bukan folder"
+
+#: createFile.py:199
+msgid "Some files will use default names"
+msgstr "Beberapa fail akan menggunakan nama lalai"
+
+#: robocopyManager.py:404
+#: robocopyManager.py:444
+msgid "Source and destination required"
+msgstr "Sumber dan destinasi diperlukan"
+
+#: robocopyManager.py:792
+msgid "Source does not exist"
+msgstr "Sumber tidak wujud"
+
+#: robocopyManager.py:193
+msgid "Source folders (select to edit):"
+msgstr "Folder sumber (pilih untuk mengedit):"
+
+#: robocopyManager.py:195
+msgid "Source folders list"
+msgstr "Senarai folder sumber"
+
+#: robocopyManager.py:732
+msgid "Source for copy: {}"
+msgstr "Sumber untuk salinan: {}"
+
+#: robocopyManager.py:745
+msgid "Source for move: {}"
+msgstr "Sumber untuk alihan: {}"
+
+#: robocopyManager.py:121
+msgid "Speed: {}"
+msgstr "Kelajuan: {}"
+
+#: robocopyManager.py:240
+msgid "Start synchronization"
+msgstr "Mulakan penyegerakan"
+
+#: robocopyManager.py:410
+msgid "Starting immediate mirror sync..."
+msgstr "Memulakan penyegerakan cermin segera..."
+
+#: robocopyManager.py:774
+msgid "Starting {} operation in background..."
+msgstr "Memulakan operasi {} di latar belakang..."
+
+#: compressionManager.py:144
+#: compressionManager.py:161
+msgid "Starting..."
+msgstr "Bermula..."
+
+#: case.py:162
+msgid "Successfully converted {count} folders to headline case"
+msgstr "Berjaya menukar {count} folder kepada huruf tajuk berita"
+
+#: case.py:127
+msgid "Successfully converted {count} folders to lowercase"
+msgstr "Berjaya menukar {count} folder kepada huruf kecil"
+
+#: case.py:148
+msgid "Successfully converted {count} folders to title case"
+msgstr "Berjaya menukar {count} folder kepada huruf tajuk"
+
+#: case.py:113
+msgid "Successfully converted {count} folders to uppercase"
+msgstr "Berjaya menukar {count} folder kepada huruf besar"
+
+#: folder_creation_dialog.py:226
+msgid "Successfully created 1 folder"
+msgstr "Berjaya mencipta 1 folder"
+
+#: folder_creation_dialog.py:224
+msgid "Successfully created main folder only"
+msgstr "Berjaya mencipta hanya folder utama"
+
+#: folder_creation_dialog.py:228
+msgid "Successfully created {count} folders"
+msgstr "Berjaya mencipta {count} folder"
+
+#: txt2folder.py:150
+#: txt2folder.py:203
+msgid "Successfully created {} folders in '{}'"
+msgstr "Berjaya mencipta {} folder dalam '{}'"
+
+#: xPlorerManager.py:66
+msgid "Suppress announcement of '- File Explorer' in window titles"
+msgstr "Tindas pengumuman '- File Explorer' dalam tajuk tetingkap"
+
+#: xPlorerManager.py:61
+msgid "Suppress announcement of DirectUIHWND class"
+msgstr "Tindas pengumuman kelas DirectUIHWND"
+
+#: robocopyManager.py:438
+msgid "Sync error occurred"
+msgstr "Ralat penyegerakan berlaku"
+
+#: robocopyManager.py:220
+msgid "Synchronization interval:"
+msgstr "Selang penyegerakan:"
+
+#: contextMenu.py:42
+msgid "TXT to Folder"
+msgstr "TXT ke Folder"
+
+#: contextMenu.py:49
+msgid "Title Case"
+msgstr "Huruf Tajuk"
+
+#: clipboardManager.py:104
+msgid "Total file size is too large to copy content"
+msgstr "Saiz fail keseluruhan terlalu besar untuk menyalin kandungan"
+
+#: robocopyManager.py:963
+msgid "Trying alternative copy method..."
+msgstr "Mencuba kaedah salinan alternatif..."
+
+#: createFile.py:233
+msgid "Unable to get current directory"
+msgstr "Tidak dapat mendapatkan direktori semasa"
+
+#: __init__.py:433
+msgid "Unable to get current path"
+msgstr "Tidak dapat mendapatkan laluan semasa"
+
+#: selectionManager.py:32
+msgid "Unable to get folder view"
+msgstr "Tidak dapat mendapatkan paparan folder"
+
+#: contextMenu.py:47
+msgid "Uppercase"
+msgstr "Huruf besar"
+
+#: clipboardManager.py:124
+msgid "[Error processing RTF file]"
+msgstr "[Ralat memproses fail RTF]"
+
+#: clipboardManager.py:126
+msgid "[RTF content - striprtf module not available]"
+msgstr "[Kandungan RTF - modul striprtf tidak tersedia]"
+
+#: compressionManager.py:97
+msgid "compression failed: {error}"
+msgstr "mampatan gagal: {error}"
+
+#: contextMenu.py:36
+msgid "copy"
+msgstr "salin"
+
+#: contextMenu.py:40
+msgid "mirror Backup"
+msgstr "sandaran cermin"
+
+#: contextMenu.py:37
+msgid "move"
+msgstr "alih"
+
+#: createFile.py:183
+msgid "new_file"
+msgstr "fail_baru"
+
+#: createFile.py:185
+msgid "new_file_{index}"
+msgstr "fail_baru_{index}"
+
+#: contextMenu.py:38
+msgid "paste"
+msgstr "tampal"
+
+#: __init__.py:143
+#: __init__.py:472
+#: __init__.py:517
+#: __init__.py:562
+#: __init__.py:587
+#: __init__.py:604
+#: __init__.py:627
+#: xPlorerManager.py:44
+msgid "xPlorer"
+msgstr "xPlorer"
+
+#: contextMenu.py:22
+msgid "xPlorer Settings"
+msgstr "Tetapan xPlorer"
+
+#: createFile.py:307
+msgid "{count} files created"
+msgstr "{count} fail dicipta"
+
+#: fileOperations.py:420
+msgid "{count} items {size}"
+msgstr "{count} item {size}"
+
+#: folderInfo.py:66
+msgid "{subfolders} subfolders and {files} files"
+msgstr "{subfolders} subfolder dan {files} fail"
+
+#: robocopyManager.py:950
+msgid "{} completed successfully in {:.1f} seconds"
+msgstr "{} selesai dengan jayanya dalam {:.1f} saat"
+
+#: robocopyManager.py:947
+msgid "{} completed successfully in {:.1f} seconds, average speed: {:.1f} MB/s"
+msgstr "{} selesai dengan jayanya dalam {:.1f} saat, kelajuan purata: {:.1f} MB/s"
+
+#: robocopyManager.py:978
+msgid "{} completed successfully using alternative method"
+msgstr "{} selesai dengan jayanya menggunakan kaedah alternatif"
+
+#: robocopyManager.py:985
+msgid "{} completed with warnings (code: {})"
+msgstr "{} selesai dengan amaran (kod: {})"
+
+#: robocopyManager.py:982
+msgid "{} failed with error: {}"
+msgstr "{} gagal dengan ralat: {}"
+
+#: robocopyManager.py:903
+msgid "{} in progress... {} seconds elapsed"
+msgstr "{} sedang berjalan... {} saat berlalu"
+
+#: robocopyManager.py:878
+msgid "{} started. You can continue working while it runs in background."
+msgstr "{} dimulakan. Anda boleh terus bekerja semasa ia berjalan di latar belakang."
+
+#: robocopyManager.py:929
+msgid "{}: {}% complete, speed: {:.1f} MB/s"
+msgstr "{}: {}% selesai, kelajuan: {:.1f} MB/s"

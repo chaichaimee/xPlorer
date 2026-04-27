@@ -1,0 +1,893 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: xPlorer 2026.5.1\n"
+"Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
+"POT-Creation-Date: 2026-04-27 15:57+0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: chaiBot and Malee Yamazaki\n"
+"Language-Team: Lao\n"
+"Language: lo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: DevOn Addon\n"
+
+#: folder_creation_dialog.py:60
+msgid "&Apply"
+msgstr "&ນຳໃຊ້"
+
+#: folder_creation_dialog.py:61
+msgid "&Cancel"
+msgstr "&ຍົກເລີກ"
+
+#: robocopyManager.py:223
+msgid "1 day"
+msgstr "1 ມື້"
+
+#: createFile.py:305
+msgid "1 file created"
+msgstr "ສ້າງແຟ້ມ 1 ແຟ້ມ"
+
+#: robocopyManager.py:222
+msgid "1 hour"
+msgstr "1 ຊົ່ວໂມງ"
+
+#: robocopyManager.py:223
+msgid "1 month"
+msgstr "1 ເດືອນ"
+
+#: robocopyManager.py:223
+msgid "15 days"
+msgstr "15 ມື້"
+
+#: robocopyManager.py:222
+msgid "15 minutes"
+msgstr "15 ນາທີ"
+
+#: robocopyManager.py:222
+msgid "30 minutes"
+msgstr "30 ນາທີ"
+
+#: robocopyManager.py:223
+msgid "7 days"
+msgstr "7 ມື້"
+
+#: compressionManager.py:159
+msgid "7-Zip compression failed, trying built-in method..."
+msgstr "ການບີບອັດ 7-Zip ລົ້ມເຫຼວ, ກຳລັງລອງໃຊ້ວິທີໃນຕົວ..."
+
+#: fileOperations.py:474
+msgid "A file with this name already exists"
+msgstr "ມີແຟ້ມທີ່ມີຊື່ນີ້ຢູ່ແລ້ວ"
+
+#: robocopyManager.py:209
+msgid "Add destination folder"
+msgstr "ເພີ່ມໂຟນ​ເດີປາຍທາງ"
+
+#: xPlorerManager.py:56
+msgid "Announce 'Empty Folder' when entering an empty folder"
+msgstr "ປະກາດ 'ໂຟນເດີຫວ່າງ' ເມື່ອເຂົ້າໄປໃນໂຟນເດີຫວ່າງ"
+
+#: xPlorerManager.py:71
+msgid "Automatically paste clipboard content into rename field"
+msgstr "ວາງເນື້ອໃນຄລິບບອດໃສ່ຊ່ອງປ່ຽນຊື່ໂດຍອັດຕະໂນມັດ"
+
+#: xPlorerManager.py:51
+msgid "Automatically select the first item"
+msgstr "ເລືອກລາຍການທຳອິດໂດຍອັດຕະໂນມັດ"
+
+#: compressionManager.py:268
+msgid "Built-in compression failed: {error}"
+msgstr "ການບີບອັດໃນຕົວລົ້ມເຫຼວ: {error}"
+
+#: robocopyManager.py:61
+#: robocopyManager.py:242
+msgid "Cancel"
+msgstr "ຍົກເລີກ"
+
+#: clipboardManager.py:77
+msgid "Cannot copy content of folders, please select files only"
+msgstr "ບໍ່ສາມາດສຳເນົາເນື້ອໃນຂອງໂຟນເດີ, ກະລຸນາເລືອກສະເພາະແຟ້ມ"
+
+#: createFile.py:290
+msgid "Cannot find unique name for: {name}"
+msgstr "ບໍ່ສາມາດຊອກຫາຊື່ທີ່ຊ້ຳກັນສຳລັບ: {name}"
+
+#: robocopyManager.py:761
+msgid "Cannot get destination"
+msgstr "ບໍ່ສາມາດເອົາປາຍທາງ"
+
+#: __init__.py:635
+msgid "Cannot open settings dialog"
+msgstr "ບໍ່ສາມາດເປີດໜ້າຕ່າງການຕັ້ງຄ່າ"
+
+#: txt2folder.py:69
+msgid "Cannot process RTF file: striprtf module not available"
+msgstr "ບໍ່ສາມາດປະມວນຜົນແຟ້ມ RTF: ໂມດູນ striprtf ບໍ່ມີ"
+
+#: contextMenu.py:46
+msgid "Case Converter for Folders"
+msgstr "ຕົວແປງຕົວພິມສຳລັບໂຟນເດີ"
+
+#: robocopyManager.py:348
+msgid "Choose destination folder"
+msgstr "ເລືອກໂຟນເດີປາຍທາງ"
+
+#: robocopyManager.py:239
+msgid "Clear all settings"
+msgstr "ລຶບການຕັ້ງຄ່າທັງໝົດ"
+
+#: compressionManager.py:264
+msgid "Completed"
+msgstr "ສຳເລັດ"
+
+#: contextMenu.py:25
+msgid "Compress zip"
+msgstr "ບີບອັດ zip"
+
+#: compressionManager.py:144
+#: compressionManager.py:161
+msgid "Compressing files"
+msgstr "ກຳລັງບີບອັດແຟ້ມ"
+
+#: compressionManager.py:70
+msgid "Compressing..."
+msgstr "ກຳລັງບີບອັດ..."
+
+#: compressionManager.py:244
+#: compressionManager.py:258
+msgid "Compressing: {percent}%"
+msgstr "ກຳລັງບີບອັດ: {percent}%"
+
+#: compressionManager.py:92
+#: compressionManager.py:262
+msgid "Compression cancelled"
+msgstr "ຍົກເລີກການບີບອັດ"
+
+#: compressionManager.py:94
+#: compressionManager.py:265
+msgid "Compression completed {name}"
+msgstr "ບີບອັດສຳເລັດ {name}"
+
+#: clipboardManager.py:165
+msgid "Content from 1 file copied to clipboard"
+msgstr "ເນື້ອໃນຈາກ 1 ແຟ້ມຖືກສຳເນົາໃສ່ຄລິບບອດ"
+
+#: clipboardManager.py:167
+msgid "Content from {count} files copied to clipboard"
+msgstr "ເນື້ອໃນຈາກ {count} ແຟ້ມຖືກສຳເນົາໃສ່ຄລິບບອດ"
+
+#: clipboardManager.py:53
+msgid "Copied 1 item name to clipboard"
+msgstr "ສຳເນົາຊື່ລາຍການ 1 ລາຍການໃສ່ຄລິບບອດ"
+
+#: robocopyManager.py:185
+msgid "Copied source path to clipboard"
+msgstr "ສຳເນົາເສັ້ນທາງຕົ້ນສະບັບໃສ່ຄລິບບອດ"
+
+#: clipboardManager.py:55
+msgid "Copied {count} item names to clipboard"
+msgstr "ສຳເນົາຊື່ລາຍການ {count} ລາຍການໃສ່ຄລິບບອດ"
+
+#: __init__.py:429
+msgid "Copied: {path}"
+msgstr "ສຳເນົາແລ້ວ: {path}"
+
+#: robocopyManager.py:771
+msgid "Copy"
+msgstr "ສຳເນົາ"
+
+#: contextMenu.py:27
+msgid "Copy address bar"
+msgstr "ສຳເນົາແຖບທີ່ຢູ່"
+
+#: contextMenu.py:28
+msgid "Copy content"
+msgstr "ສຳເນົາເນື້ອໃນ"
+
+#: __init__.py:516
+msgid "Copy content (single tap) or invert selection (double tap)"
+msgstr "ສຳເນົາເນື້ອໃນ (ກົດດຽວ) ຫຼື ກັບການເລືອກ (ກົດສອງຄັ້ງ)"
+
+#: contextMenu.py:29
+msgid "Copy selected file and folder names"
+msgstr "ສຳເນົາຊື່ແຟ້ມ ແລະ ໂຟນເດີທີ່ເລືອກ"
+
+#: __init__.py:471
+msgid "Copy selected names (single tap) or copy address bar (double tap)"
+msgstr "ສຳເນົາຊື່ທີ່ເລືອກ (ກົດດຽວ) ຫຼື ສຳເນົາແຖບທີ່ຢູ່ (ກົດສອງຄັ້ງ)"
+
+#: __init__.py:431
+#: clipboardManager.py:57
+#: clipboardManager.py:169
+#: robocopyManager.py:187
+msgid "Could not open clipboard"
+msgstr "ບໍ່ສາມາດເປີດຄລິບບອດ"
+
+#: contextMenu.py:30
+#: createFile.py:16
+msgid "Create File"
+msgstr "ສ້າງແຟ້ມ"
+
+#: folder_creation_dialog.py:14
+msgid "Create Multiple Folders"
+msgstr "ສ້າງຫຼາຍໂຟນເດີ"
+
+#: contextMenu.py:43
+msgid "Create Multiple Folders..."
+msgstr "ສ້າງຫຼາຍໂຟນເດີ..."
+
+#: folder_creation_dialog.py:42
+msgid "Create main folder and then subfolders"
+msgstr "ສ້າງໂຟນເດີຫຼັກ ແລະ ຈາກນັ້ນໂຟນເດີຍ່ອຍ"
+
+#: __init__.py:626
+msgid "Create new folder and paste clipboard content into rename field"
+msgstr "ສ້າງໂຟນເດີໃໝ່ ແລະ ວາງເນື້ອໃນຄລິບບອດໃສ່ຊ່ອງປ່ຽນຊື່"
+
+#: createFile.py:237
+msgid "Current path is not a directory"
+msgstr "ເສັ້ນທາງປັດຈຸບັນບໍ່ແມ່ນໄດເລກະທໍລີ"
+
+#: robocopyManager.py:817
+msgid "Destination already exists, overwriting..."
+msgstr "ປາຍທາງມີຢູ່ແລ້ວ, ກຳລັງຂຽນທັບ..."
+
+#: robocopyManager.py:205
+msgid "Destination folders list"
+msgstr "ລາຍຊື່ໂຟນເດີປາຍທາງ"
+
+#: robocopyManager.py:203
+msgid "Destination folders:"
+msgstr "ໂຟນເດີປາຍທາງ:"
+
+#: folder_creation_dialog.py:46
+msgid "Edit individual folder names"
+msgstr "ແກ້ໄຂຊື່ໂຟນເດີແຕ່ລະອັນ"
+
+#: robocopyManager.py:115
+msgid "Elapsed time: {} seconds"
+msgstr "ເວລາຜ່ານໄປ: {} ວິນາທີ"
+
+#: xPlorerManager.py:40
+msgid "Empty Folder"
+msgstr "ໂຟນເດີຫວ່າງ"
+
+#: robocopyManager.py:217
+msgid "Enable automatic synchronization"
+msgstr "ເປີດໃຊ້ການຊິງຄ໌ໂດຍອັດຕະໂນມັດ"
+
+#: folderInfo.py:78
+msgid "Error calculating folder info"
+msgstr "ຜິດພາດໃນການຄຳນວນຂໍ້ມູນໂຟນເດີ"
+
+#: fileOperations.py:401
+msgid "Error calculating size"
+msgstr "ຜິດພາດໃນການຄຳນວນຂະໜາດ"
+
+#: compressionManager.py:173
+msgid "Error compressing files"
+msgstr "ຜິດພາດໃນການບີບອັດແຟ້ມ"
+
+#: clipboardManager.py:173
+msgid "Error copying file content"
+msgstr "ຜິດພາດໃນການສຳເນົາເນື້ອໃນແຟ້ມ"
+
+#: clipboardManager.py:61
+msgid "Error copying names to clipboard"
+msgstr "ຜິດພາດໃນການສຳເນົາຊື່ໃສ່ຄລິບບອດ"
+
+#: txt2folder.py:116
+msgid "Error creating base folder"
+msgstr "ຜິດພາດໃນການສ້າງໂຟນເດີພື້ນຖານ"
+
+#: createFile.py:311
+msgid "Error creating files"
+msgstr "ຜິດພາດໃນການສ້າງແຟ້ມ"
+
+#: folder_creation_dialog.py:219
+msgid "Error creating folder: {number}"
+msgstr "ຜິດພາດໃນການສ້າງໂຟນເດີ: {number}"
+
+#: __init__.py:662
+msgid "Error creating folders"
+msgstr "ຜິດພາດໃນການສ້າງໂຟນເດີ"
+
+#: folder_creation_dialog.py:179
+msgid "Error creating main folder"
+msgstr "ຜິດພາດໃນການສ້າງໂຟນເດີຫຼັກ"
+
+#: folder_creation_dialog.py:201
+msgid "Error creating subfolder: {number}"
+msgstr "ຜິດພາດໃນການສ້າງໂຟນເດີຍ່ອຍ: {number}"
+
+#: __init__.py:690
+msgid "Error during conversion"
+msgstr "ຜິດພາດໃນລະຫວ່າງການແປງ"
+
+#: robocopyManager.py:990
+msgid "Error during {}: {}"
+msgstr "ຜິດພາດໃນລະຫວ່າງ {}: {}"
+
+#: compressionManager.py:101
+msgid "Error in compression process: {error}"
+msgstr "ຜິດພາດໃນຂະບວນການບີບອັດ: {error}"
+
+#: selectionManager.py:65
+msgid "Error inverting selection"
+msgstr "ຜິດພາດໃນການກັບການເລືອກ"
+
+#: createFile.py:262
+msgid "Error opening create file dialog"
+msgstr "ຜິດພາດໃນການເປີດໜ້າຕ່າງສ້າງແຟ້ມ"
+
+#: fileOperations.py:488
+msgid "Error opening rename dialog"
+msgstr "ຜິດພາດໃນການເປີດໜ້າຕ່າງປ່ຽນຊື່"
+
+#: __init__.py:642
+msgid "Error opening settings"
+msgstr "ຜິດພາດໃນການເປີດການຕັ້ງຄ່າ"
+
+#: txt2folder.py:212
+msgid "Error processing text file: {}"
+msgstr "ຜິດພາດໃນການປະມວນຜົນແຟ້ມຂໍ້ຄວາມ: {}"
+
+#: txt2folder.py:80
+msgid "Error reading RTF file"
+msgstr "ຜິດພາດໃນການອ່ານແຟ້ມ RTF"
+
+#: txt2folder.py:215
+msgid "Error reading file encoding"
+msgstr "ຜິດພາດໃນການອ່ານການເຂົ້າລະຫັດແຟ້ມ"
+
+#: fileOperations.py:453
+#: fileOperations.py:482
+msgid "Error renaming file"
+msgstr "ຜິດພາດໃນການປ່ຽນຊື່ແຟ້ມ"
+
+#: robocopyManager.py:784
+#: txt2folder.py:219
+msgid "Error: {}"
+msgstr "ຜິດພາດ: {}"
+
+#: robocopyManager.py:111
+msgid "Estimated time remaining: {}"
+msgstr "ເວລາທີ່ຄາດວ່າຈະເຫຼືອ: {}"
+
+#: createFile.py:84
+msgid "Extension:"
+msgstr "ສ່ວນຂະຫຍາຍ:"
+
+#: case.py:115
+#: case.py:129
+#: case.py:150
+#: case.py:164
+msgid "Failed to rename any folders"
+msgstr "ປ່ຽນຊື່ໂຟນເດີໃດບໍ່ສຳເລັດ"
+
+#: createFile.py:163
+msgid "File count cannot exceed 10"
+msgstr "ຈຳນວນແຟ້ມຕ້ອງບໍ່ເກີນ 10"
+
+#: createFile.py:160
+msgid "File count must be at least 1"
+msgstr "ຈຳນວນແຟ້ມຕ້ອງຢ່າງໜ້ອຍ 1"
+
+#: createFile.py:131
+msgid "File name"
+msgstr "ຊື່ແຟ້ມ"
+
+#: fileOperations.py:57
+msgid "File name cannot be empty"
+msgstr "ຊື່ແຟ້ມບໍ່ສາມາດຫວ່າງເປົ່າ"
+
+#: fileOperations.py:470
+msgid "File name not changed"
+msgstr "ຊື່ແຟ້ມບໍ່ໄດ້ປ່ຽນ"
+
+#: createFile.py:77
+#: createFile.py:132
+msgid "File name {index}:"
+msgstr "ຊື່ແຟ້ມ {index}:"
+
+#: createFile.py:75
+msgid "File name:"
+msgstr "ຊື່ແຟ້ມ:"
+
+#: fileOperations.py:479
+msgid "File renamed to {name}"
+msgstr "ປ່ຽນຊື່ແຟ້ມເປັນ {name}"
+
+#: folder_creation_dialog.py:113
+#: folder_creation_dialog.py:158
+msgid "Folder"
+msgstr "ໂຟນເດີ"
+
+#: txt2folder.py:106
+#: txt2folder.py:182
+msgid "Folder '{}' already exists, creating '{}' instead"
+msgstr "ໂຟນເດີ '{}' ມີຢູ່ແລ້ວ, ສ້າງ '{}' ແທນ"
+
+#: contextMenu.py:52
+msgid "Folder info"
+msgstr "ຂໍ້ມູນໂຟນເດີ"
+
+#: folder_creation_dialog.py:27
+msgid "Folder title:"
+msgstr "ຫົວຂໍ້ໂຟນເດີ:"
+
+#: contextMenu.py:50
+msgid "Headline Case"
+msgstr "ຕົວພິມຫົວຂ່າວ"
+
+#: robocopyManager.py:434
+msgid "Immediate sync completed: {}/{} destinations"
+msgstr "ຊິງຄ໌ທັນທີສຳເລັດ: {}/{} ປາຍທາງ"
+
+#: robocopyManager.py:767
+msgid "Invalid destination"
+msgstr "ປາຍທາງບໍ່ຖືກຕ້ອງ"
+
+#: folder_creation_dialog.py:169
+msgid "Invalid number for folders"
+msgstr "ຈຳນວນສຳລັບໂຟນເດີບໍ່ຖືກຕ້ອງ"
+
+#: robocopyManager.py:407
+#: robocopyManager.py:447
+msgid "Invalid time format"
+msgstr "ຮູບແບບເວລາບໍ່ຖືກຕ້ອງ"
+
+#: contextMenu.py:26
+msgid "Invert selection"
+msgstr "ກັບການເລືອກ"
+
+#: selectionManager.py:60
+msgid "Inverted selection: {inverted} of {total} items selected"
+msgstr "ກັບການເລືອກ: ເລືອກ {inverted} ຈາກທັງໝົດ {total} ລາຍການ"
+
+#: robocopyManager.py:868
+msgid "Large file detected, using compression for speed"
+msgstr "ກວດພົບແຟ້ມໃຫຍ່, ໃຊ້ການບີບອັດເພື່ອຄວາມໄວ"
+
+#: contextMenu.py:48
+msgid "Lowercase"
+msgstr "ຕົວພິມນ້ອຍ"
+
+#: folder_creation_dialog.py:166
+msgid "Maximum 100 folders allowed"
+msgstr "ອະນຸຍາດສູງສຸດ 100 ໂຟນເດີ"
+
+#: robocopyManager.py:62
+msgid "Minimize"
+msgstr "ຫຼຸດນ້ອຍທີ່ສຸດ"
+
+#: robocopyManager.py:145
+msgid "Mirror Backup Settings"
+msgstr "ການຕັ້ງຄ່າສຳຮອງແບບກະຈົກ"
+
+#: robocopyManager.py:716
+msgid "Mirror backup configured successfully"
+msgstr "ຕັ້ງຄ່າການສຳຮອງແບບກະຈົກສຳເລັດ"
+
+#: robocopyManager.py:718
+msgid "Mirror backup disabled"
+msgstr "ປິດການສຳຮອງແບບກະຈົກ"
+
+#: robocopyManager.py:771
+msgid "Move"
+msgstr "ຍ້າຍ"
+
+#: robocopyManager.py:609
+msgid "Next scheduled backup for {}: {}"
+msgstr "ການສຳຮອງຕາມກຳນົດເວລາຕໍ່ໄປສຳລັບ {}: {}"
+
+#: __init__.py:650
+msgid "No Explorer folder detected"
+msgstr "ບໍ່ພົບໂຟນເດີ Explorer"
+
+#: fileOperations.py:300
+#: fileOperations.py:410
+msgid "No access to size data"
+msgstr "ບໍ່ສາມາດເຂົ້າເຖິງຂໍ້ມູນຂະໜາດ"
+
+#: selectionManager.py:27
+msgid "No active File Explorer window found"
+msgstr "ບໍ່ພົບໜ້າຕ່າງ File Explorer ທີ່ໃຊ້ງານຢູ່"
+
+#: clipboardManager.py:156
+msgid "No content could be read from selected files"
+msgstr "ບໍ່ສາມາດອ່ານເນື້ອໃນຈາກແຟ້ມທີ່ເລືອກ"
+
+#: createFile.py:303
+msgid "No files were created"
+msgstr "ບໍ່ມີການສ້າງແຟ້ມ"
+
+#: case.py:106
+#: case.py:120
+#: case.py:141
+#: case.py:155
+msgid "No folders found"
+msgstr "ບໍ່ພົບໂຟນເດີ"
+
+#: __init__.py:677
+msgid "No folders selected or current folder not available"
+msgstr "ບໍ່ໄດ້ເລືອກໂຟນເດີ ຫຼື ໂຟນເດີປັດຈຸບັນບໍ່ມີ"
+
+#: folder_creation_dialog.py:230
+#: txt2folder.py:155
+#: txt2folder.py:208
+msgid "No folders were created"
+msgstr "ບໍ່ມີການສ້າງໂຟນເດີ"
+
+#: folderInfo.py:30
+msgid "No item selected"
+msgstr "ບໍ່ໄດ້ເລືອກລາຍການ"
+
+#: selectionManager.py:40
+msgid "No items in folder"
+msgstr "ບໍ່ມີລາຍການໃນໂຟນເດີ"
+
+#: clipboardManager.py:30
+#: clipboardManager.py:72
+#: compressionManager.py:132
+#: fileOperations.py:289
+#: fileOperations.py:433
+msgid "No items selected"
+msgstr "ບໍ່ໄດ້ເລືອກລາຍການ"
+
+#: robocopyManager.py:749
+msgid "No pending operation"
+msgstr "ບໍ່ມີການດຳເນີນການທີ່ຄ້າງຢູ່"
+
+#: clipboardManager.py:93
+msgid "No text files selected"
+msgstr "ບໍ່ໄດ້ເລືອກແຟ້ມຂໍ້ຄວາມ"
+
+#: txt2folder.py:91
+#: txt2folder.py:167
+msgid "No valid folder names found in the file"
+msgstr "ບໍ່ພົບຊື່ໂຟນເດີທີ່ຖືກຕ້ອງໃນແຟ້ມ"
+
+#: createFile.py:227
+#: robocopyManager.py:663
+#: robocopyManager.py:724
+#: robocopyManager.py:737
+#: robocopyManager.py:755
+#: selectionManager.py:21
+#: txt2folder.py:43
+msgid "Not in File Explorer"
+msgstr "ບໍ່ຢູ່ໃນ File Explorer"
+
+#: createFile.py:27
+msgid "Number of files to create:"
+msgstr "ຈຳນວນແຟ້ມທີ່ຈະສ້າງ:"
+
+#: folder_creation_dialog.py:163
+msgid "Number of folders must be at least 1"
+msgstr "ຈຳນວນໂຟນເດີຕ້ອງຢ່າງໜ້ອຍ 1"
+
+#: folder_creation_dialog.py:35
+msgid "Number of folders:"
+msgstr "ຈຳນວນໂຟນເດີ:"
+
+#: robocopyManager.py:241
+msgid "OK"
+msgstr "ຕົກລົງ"
+
+#: __init__.py:586
+msgid "Open xPlorer context menu"
+msgstr "ເປີດເມນູບໍລິບົດ xPlorer"
+
+#: txt2folder.py:55
+msgid "Please select a .txt or .rtf file"
+msgstr "ກະລຸນາເລືອກແຟ້ມ .txt ຫຼື .rtf"
+
+#: fileOperations.py:443
+msgid "Please select a file, not a folder"
+msgstr "ກະລຸນາເລືອກແຟ້ມ, ບໍ່ແມ່ນໂຟນເດີ"
+
+#: robocopyManager.py:671
+msgid "Please select a folder"
+msgstr "ກະລຸນາເລືອກໂຟນເດີ"
+
+#: fileOperations.py:437
+msgid "Please select only one file"
+msgstr "ກະລຸນາເລືອກພຽງແຕ່ຫນຶ່ງແຟ້ມເທົ່ານັ້ນ"
+
+#: folderInfo.py:35
+#: robocopyManager.py:667
+msgid "Please select only one folder"
+msgstr "ກະລຸນາເລືອກພຽງແຕ່ຫນຶ່ງໂຟນເດີເທົ່ານັ້ນ"
+
+#: txt2folder.py:48
+msgid "Please select only one text file"
+msgstr "ກະລຸນາເລືອກພຽງແຕ່ຫນຶ່ງແຟ້ມຂໍ້ຄວາມເທົ່ານັ້ນ"
+
+#: robocopyManager.py:46
+msgid "Preparing operation..."
+msgstr "ກຳລັງກະກຽມການດຳເນີນງານ..."
+
+#: robocopyManager.py:103
+msgid "Processing: {}"
+msgstr "ກຳລັງປະມວນຜົນ: {}"
+
+#: robocopyManager.py:105
+msgid "Progress: {}%"
+msgstr "ຄວາມຄືບໜ້າ: {}%"
+
+#: robocopyManager.py:210
+msgid "Remove selected destination"
+msgstr "ລຶບປາຍທາງທີ່ເລືອກ"
+
+#: robocopyManager.py:198
+msgid "Remove selected source"
+msgstr "ລຶບຕົ້ນສະບັບທີ່ເລືອກ"
+
+#: __init__.py:603
+#: contextMenu.py:31
+msgid "Rename selected file"
+msgstr "ປ່ຽນຊື່ແຟ້ມທີ່ເລືອກ"
+
+#: contextMenu.py:35
+msgid "Robocopy"
+msgstr "Robocopy"
+
+#: contextMenu.py:32
+msgid "Say size"
+msgstr "ບອກຂະໜາດ"
+
+#: __init__.py:561
+msgid "Say size (single tap) or compress zip (double tap)"
+msgstr "ບອກຂະໜາດ (ກົດດຽວ) ຫຼື ບີບອັດ zip (ກົດສອງຄັ້ງ)"
+
+#: robocopyManager.py:648
+msgid "Scheduled backup completed: {}/{} destinations"
+msgstr "ການສຳຮອງຕາມກຳນົດສຳເລັດ: {}/{} ປາຍທາງ"
+
+#: robocopyManager.py:623
+msgid "Scheduled mirror backup started for {}"
+msgstr "ເລີ່ມການສຳຮອງແບບກະຈົກຕາມກຳນົດສຳລັບ {}"
+
+#: robocopyManager.py:231
+msgid "Scheduled time:"
+msgstr "ເວລາຕາມກຳນົດ:"
+
+#: robocopyManager.py:728
+#: robocopyManager.py:741
+msgid "Select one item only"
+msgstr "ເລືອກພຽງແຕ່ຫນຶ່ງລາຍການ"
+
+#: txt2folder.py:60
+msgid "Selected file does not exist"
+msgstr "ແຟ້ມທີ່ເລືອກບໍ່ມີຢູ່"
+
+#: folderInfo.py:41
+msgid "Selected item is not a folder"
+msgstr "ລາຍການທີ່ເລືອກບໍ່ແມ່ນໂຟນເດີ"
+
+#: createFile.py:199
+msgid "Some files will use default names"
+msgstr "ບາງແຟ້ມຈະໃຊ້ຊື່ເລີ່ມຕົ້ນ"
+
+#: robocopyManager.py:404
+#: robocopyManager.py:444
+msgid "Source and destination required"
+msgstr "ຕ້ອງການຕົ້ນສະບັບ ແລະ ປາຍທາງ"
+
+#: robocopyManager.py:792
+msgid "Source does not exist"
+msgstr "ຕົ້ນສະບັບບໍ່ມີຢູ່"
+
+#: robocopyManager.py:193
+msgid "Source folders (select to edit):"
+msgstr "ໂຟນເດີຕົ້ນສະບັບ (ເລືອກເພື່ອແກ້ໄຂ):"
+
+#: robocopyManager.py:195
+msgid "Source folders list"
+msgstr "ລາຍຊື່ໂຟນເດີຕົ້ນສະບັບ"
+
+#: robocopyManager.py:732
+msgid "Source for copy: {}"
+msgstr "ຕົ້ນສະບັບສຳລັບການສຳເນົາ: {}"
+
+#: robocopyManager.py:745
+msgid "Source for move: {}"
+msgstr "ຕົ້ນສະບັບສຳລັບການຍ້າຍ: {}"
+
+#: robocopyManager.py:121
+msgid "Speed: {}"
+msgstr "ຄວາມໄວ: {}"
+
+#: robocopyManager.py:240
+msgid "Start synchronization"
+msgstr "ເລີ່ມການຊິງຄ໌"
+
+#: robocopyManager.py:410
+msgid "Starting immediate mirror sync..."
+msgstr "ກຳລັງເລີ່ມຊິງຄ໌ກະຈົກທັນທີ..."
+
+#: robocopyManager.py:774
+msgid "Starting {} operation in background..."
+msgstr "ກຳລັງເລີ່ມການດຳເນີນງານ {} ໃນພື້ນຫຼັງ..."
+
+#: compressionManager.py:144
+#: compressionManager.py:161
+msgid "Starting..."
+msgstr "ກຳລັງເລີ່ມຕົ້ນ..."
+
+#: case.py:162
+msgid "Successfully converted {count} folders to headline case"
+msgstr "ປ່ຽນ {count} ໂຟນເດີເປັນຕົວພິມຫົວຂ່າວສຳເລັດ"
+
+#: case.py:127
+msgid "Successfully converted {count} folders to lowercase"
+msgstr "ປ່ຽນ {count} ໂຟນເດີເປັນຕົວພິມນ້ອຍສຳເລັດ"
+
+#: case.py:148
+msgid "Successfully converted {count} folders to title case"
+msgstr "ປ່ຽນ {count} ໂຟນເດີເປັນຕົວພິມຫົວຂໍ້ສຳເລັດ"
+
+#: case.py:113
+msgid "Successfully converted {count} folders to uppercase"
+msgstr "ປ່ຽນ {count} ໂຟນເດີເປັນຕົວພິມໃຫຍ່ສຳເລັດ"
+
+#: folder_creation_dialog.py:226
+msgid "Successfully created 1 folder"
+msgstr "ສ້າງ 1 ໂຟນເດີສຳເລັດ"
+
+#: folder_creation_dialog.py:224
+msgid "Successfully created main folder only"
+msgstr "ສ້າງສະເພາະໂຟນເດີຫຼັກສຳເລັດ"
+
+#: folder_creation_dialog.py:228
+msgid "Successfully created {count} folders"
+msgstr "ສ້າງ {count} ໂຟນເດີສຳເລັດ"
+
+#: txt2folder.py:150
+#: txt2folder.py:203
+msgid "Successfully created {} folders in '{}'"
+msgstr "ສ້າງ {} ໂຟນເດີໃນ '{}' ສຳເລັດ"
+
+#: xPlorerManager.py:66
+msgid "Suppress announcement of '- File Explorer' in window titles"
+msgstr "ປ້ອງກັນການປະກາດ '- File Explorer' ໃນຫົວຂໍ້ຂອງໜ້າຕ່າງ"
+
+#: xPlorerManager.py:61
+msgid "Suppress announcement of DirectUIHWND class"
+msgstr "ປ້ອງກັນການປະກາດຄລາສ DirectUIHWND"
+
+#: robocopyManager.py:438
+msgid "Sync error occurred"
+msgstr "ເກີດຂໍ້ຜິດພາດການຊິງຄ໌"
+
+#: robocopyManager.py:220
+msgid "Synchronization interval:"
+msgstr "ໄລຍະຫ່າງການຊິງຄ໌:"
+
+#: contextMenu.py:42
+msgid "TXT to Folder"
+msgstr "TXT ເປັນໂຟນເດີ"
+
+#: contextMenu.py:49
+msgid "Title Case"
+msgstr "ຕົວພິມຫົວຂໍ້"
+
+#: clipboardManager.py:104
+msgid "Total file size is too large to copy content"
+msgstr "ຂະໜາດແຟ້ມທັງໝົດໃຫຍ່ເກີນໄປທີ່ຈະສຳເນົາເນື້ອໃນ"
+
+#: robocopyManager.py:963
+msgid "Trying alternative copy method..."
+msgstr "ກຳລັງລອງໃຊ້ວິທີການສຳເນົາທາງເລືອກ..."
+
+#: createFile.py:233
+msgid "Unable to get current directory"
+msgstr "ບໍ່ສາມາດເອົາໄດເລກະທໍລີປັດຈຸບັນ"
+
+#: __init__.py:433
+msgid "Unable to get current path"
+msgstr "ບໍ່ສາມາດເອົາເສັ້ນທາງປັດຈຸບັນ"
+
+#: selectionManager.py:32
+msgid "Unable to get folder view"
+msgstr "ບໍ່ສາມາດເອົາມຸມມອງໂຟນເດີ"
+
+#: contextMenu.py:47
+msgid "Uppercase"
+msgstr "ຕົວພິມໃຫຍ່"
+
+#: clipboardManager.py:124
+msgid "[Error processing RTF file]"
+msgstr "[ຜິດພາດໃນການປະມວນຜົນແຟ້ມ RTF]"
+
+#: clipboardManager.py:126
+msgid "[RTF content - striprtf module not available]"
+msgstr "[ເນື້ອໃນ RTF - ໂມດູນ striprtf ບໍ່ມີ]"
+
+#: compressionManager.py:97
+msgid "compression failed: {error}"
+msgstr "ການບີບອັດລົ້ມເຫຼວ: {error}"
+
+#: contextMenu.py:36
+msgid "copy"
+msgstr "ສຳເນົາ"
+
+#: contextMenu.py:40
+msgid "mirror Backup"
+msgstr "ສຳຮອງແບບກະຈົກ"
+
+#: contextMenu.py:37
+msgid "move"
+msgstr "ຍ້າຍ"
+
+#: createFile.py:183
+msgid "new_file"
+msgstr "ແຟ້ມໃໝ່"
+
+#: createFile.py:185
+msgid "new_file_{index}"
+msgstr "ແຟ້ມໃໝ່_{index}"
+
+#: contextMenu.py:38
+msgid "paste"
+msgstr "ວາງ"
+
+#: __init__.py:143
+#: __init__.py:472
+#: __init__.py:517
+#: __init__.py:562
+#: __init__.py:587
+#: __init__.py:604
+#: __init__.py:627
+#: xPlorerManager.py:44
+msgid "xPlorer"
+msgstr "xPlorer"
+
+#: contextMenu.py:22
+msgid "xPlorer Settings"
+msgstr "ການຕັ້ງຄ່າ xPlorer"
+
+#: createFile.py:307
+msgid "{count} files created"
+msgstr "ສ້າງ {count} ແຟ້ມ"
+
+#: fileOperations.py:420
+msgid "{count} items {size}"
+msgstr "{count} ລາຍການ {size}"
+
+#: folderInfo.py:66
+msgid "{subfolders} subfolders and {files} files"
+msgstr "{subfolders} ໂຟນເດີຍ່ອຍ ແລະ {files} ແຟ້ມ"
+
+#: robocopyManager.py:950
+msgid "{} completed successfully in {:.1f} seconds"
+msgstr "{} ສຳເລັດໃນ {:.1f} ວິນາທີ"
+
+#: robocopyManager.py:947
+msgid "{} completed successfully in {:.1f} seconds, average speed: {:.1f} MB/s"
+msgstr "{} ສຳເລັດໃນ {:.1f} ວິນາທີ, ຄວາມໄວສະເລ່ຍ: {:.1f} MB/s"
+
+#: robocopyManager.py:978
+msgid "{} completed successfully using alternative method"
+msgstr "{} ສຳເລັດໂດຍໃຊ້ວິທີການທາງເລືອກ"
+
+#: robocopyManager.py:985
+msgid "{} completed with warnings (code: {})"
+msgstr "{} ສຳເລັດພ້ອມຄຳເຕືອນ (ລະຫັດ: {})"
+
+#: robocopyManager.py:982
+msgid "{} failed with error: {}"
+msgstr "{} ລົ້ມເຫຼວດ້ວຍຂໍ້ຜິດພາດ: {}"
+
+#: robocopyManager.py:903
+msgid "{} in progress... {} seconds elapsed"
+msgstr "{} ກຳລັງດຳເນີນງານ... ຜ່ານໄປ {} ວິນາທີ"
+
+#: robocopyManager.py:878
+msgid "{} started. You can continue working while it runs in background."
+msgstr "{} ເລີ່ມຕົ້ນແລ້ວ. ທ່ານສາມາດສືບຕໍ່ເຮັດວຽກໄດ້ໃນຂະນະທີ່ມັນເຮັດວຽກຢູ່ໃນພື້ນຫຼັງ."
+
+#: robocopyManager.py:929
+msgid "{}: {}% complete, speed: {:.1f} MB/s"
+msgstr "{}: {}% ສຳເລັດ, ຄວາມໄວ: {:.1f} MB/s"

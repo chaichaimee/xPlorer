@@ -1,4 +1,5 @@
 # folderInfo.py
+
 import os
 import threading
 import wx

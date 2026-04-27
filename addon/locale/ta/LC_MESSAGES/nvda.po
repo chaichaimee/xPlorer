@@ -1,0 +1,893 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: xPlorer 2026.5.1\n"
+"Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
+"POT-Creation-Date: 2026-04-27 15:57+0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: chaiBot and Malee Yamazaki\n"
+"Language-Team: Tamil\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: DevOn Addon\n"
+
+#: folder_creation_dialog.py:60
+msgid "&Apply"
+msgstr "&பயன்படுத்து"
+
+#: folder_creation_dialog.py:61
+msgid "&Cancel"
+msgstr "&ரத்துசெய்"
+
+#: robocopyManager.py:223
+msgid "1 day"
+msgstr "1 நாள்"
+
+#: createFile.py:305
+msgid "1 file created"
+msgstr "1 கோப்பு உருவாக்கப்பட்டது"
+
+#: robocopyManager.py:222
+msgid "1 hour"
+msgstr "1 மணி நேரம்"
+
+#: robocopyManager.py:223
+msgid "1 month"
+msgstr "1 மாதம்"
+
+#: robocopyManager.py:223
+msgid "15 days"
+msgstr "15 நாட்கள்"
+
+#: robocopyManager.py:222
+msgid "15 minutes"
+msgstr "15 நிமிடங்கள்"
+
+#: robocopyManager.py:222
+msgid "30 minutes"
+msgstr "30 நிமிடங்கள்"
+
+#: robocopyManager.py:223
+msgid "7 days"
+msgstr "7 நாட்கள்"
+
+#: compressionManager.py:159
+msgid "7-Zip compression failed, trying built-in method..."
+msgstr "7-Zip சுருக்கம் தோல்வியடைந்தது, உள்ளமைக்கப்பட்ட முறையை முயற்சிக்கிறது..."
+
+#: fileOperations.py:474
+msgid "A file with this name already exists"
+msgstr "இந்தப் பெயருடைய கோப்பு ஏற்கனவே உள்ளது"
+
+#: robocopyManager.py:209
+msgid "Add destination folder"
+msgstr "இலக்கு கோப்புறையைச் சேர்"
+
+#: xPlorerManager.py:56
+msgid "Announce 'Empty Folder' when entering an empty folder"
+msgstr "வெற்று கோப்புறைக்குள் நுழையும்போது 'வெற்று கோப்புறை' அறிவிப்பு செய்"
+
+#: xPlorerManager.py:71
+msgid "Automatically paste clipboard content into rename field"
+msgstr "கிளிப்போர்டு உள்ளடக்கத்தை மறுபெயரிடு புலத்தில் தானாக ஒட்டு"
+
+#: xPlorerManager.py:51
+msgid "Automatically select the first item"
+msgstr "முதல் உருப்படியை தானாகத் தேர்ந்தெடு"
+
+#: compressionManager.py:268
+msgid "Built-in compression failed: {error}"
+msgstr "உள்ளமைக்கப்பட்ட சுருக்கம் தோல்வியடைந்தது: {error}"
+
+#: robocopyManager.py:61
+#: robocopyManager.py:242
+msgid "Cancel"
+msgstr "ரத்துசெய்"
+
+#: clipboardManager.py:77
+msgid "Cannot copy content of folders, please select files only"
+msgstr "கோப்புறைகளின் உள்ளடக்கத்தை நகலெடுக்க முடியாது, தயவுசெய்து கோப்புகளை மட்டும் தேர்ந்தெடுக்கவும்"
+
+#: createFile.py:290
+msgid "Cannot find unique name for: {name}"
+msgstr "{name} க்கான தனித்த பெயரைக் காண முடியவில்லை"
+
+#: robocopyManager.py:761
+msgid "Cannot get destination"
+msgstr "இலக்கைப் பெற முடியவில்லை"
+
+#: __init__.py:635
+msgid "Cannot open settings dialog"
+msgstr "அமைப்புகள் உரையாடலைத் திறக்க முடியவில்லை"
+
+#: txt2folder.py:69
+msgid "Cannot process RTF file: striprtf module not available"
+msgstr "RTF கோப்பைச் செயலாக்க முடியவில்லை: striprtf தொகுதி கிடைக்கவில்லை"
+
+#: contextMenu.py:46
+msgid "Case Converter for Folders"
+msgstr "கோப்புறைகளுக்கான எழுத்துரு மாற்றி"
+
+#: robocopyManager.py:348
+msgid "Choose destination folder"
+msgstr "இலக்குக் கோப்புறையைத் தேர்வுசெய்"
+
+#: robocopyManager.py:239
+msgid "Clear all settings"
+msgstr "அனைத்து அமைப்புகளையும் அழி"
+
+#: compressionManager.py:264
+msgid "Completed"
+msgstr "முடிந்தது"
+
+#: contextMenu.py:25
+msgid "Compress zip"
+msgstr "zip சுருக்கு"
+
+#: compressionManager.py:144
+#: compressionManager.py:161
+msgid "Compressing files"
+msgstr "கோப்புகளைச் சுருக்குகிறது"
+
+#: compressionManager.py:70
+msgid "Compressing..."
+msgstr "சுருக்குகிறது..."
+
+#: compressionManager.py:244
+#: compressionManager.py:258
+msgid "Compressing: {percent}%"
+msgstr "சுருக்குகிறது: {percent}%"
+
+#: compressionManager.py:92
+#: compressionManager.py:262
+msgid "Compression cancelled"
+msgstr "சுருக்கம் ரத்துசெய்யப்பட்டது"
+
+#: compressionManager.py:94
+#: compressionManager.py:265
+msgid "Compression completed {name}"
+msgstr "சுருக்கம் முடிந்தது {name}"
+
+#: clipboardManager.py:165
+msgid "Content from 1 file copied to clipboard"
+msgstr "1 கோப்பின் உள்ளடக்கம் கிளிப்போர்டுக்கு நகலெடுக்கப்பட்டது"
+
+#: clipboardManager.py:167
+msgid "Content from {count} files copied to clipboard"
+msgstr "{count} கோப்புகளின் உள்ளடக்கம் கிளிப்போர்டுக்கு நகலெடுக்கப்பட்டது"
+
+#: clipboardManager.py:53
+msgid "Copied 1 item name to clipboard"
+msgstr "1 உருப்படியின் பெயர் கிளிப்போர்டுக்கு நகலெடுக்கப்பட்டது"
+
+#: robocopyManager.py:185
+msgid "Copied source path to clipboard"
+msgstr "மூலப் பாதை கிளிப்போர்டுக்கு நகலெடுக்கப்பட்டது"
+
+#: clipboardManager.py:55
+msgid "Copied {count} item names to clipboard"
+msgstr "{count} உருப்படிகளின் பெயர்கள் கிளிப்போர்டுக்கு நகலெடுக்கப்பட்டன"
+
+#: __init__.py:429
+msgid "Copied: {path}"
+msgstr "நகலெடுக்கப்பட்டது: {path}"
+
+#: robocopyManager.py:771
+msgid "Copy"
+msgstr "நகலெடு"
+
+#: contextMenu.py:27
+msgid "Copy address bar"
+msgstr "முகவரிப் பட்டையை நகலெடு"
+
+#: contextMenu.py:28
+msgid "Copy content"
+msgstr "உள்ளடக்கத்தை நகலெடு"
+
+#: __init__.py:516
+msgid "Copy content (single tap) or invert selection (double tap)"
+msgstr "உள்ளடக்கத்தை நகலெடு (ஒற்றைத் தட்டு) அல்லது தேர்வைத் தலைகீழாக்கு (இரட்டைத் தட்டு)"
+
+#: contextMenu.py:29
+msgid "Copy selected file and folder names"
+msgstr "தேர்ந்தெடுக்கப்பட்ட கோப்பு மற்றும் கோப்புறைப் பெயர்களை நகலெடு"
+
+#: __init__.py:471
+msgid "Copy selected names (single tap) or copy address bar (double tap)"
+msgstr "தேர்ந்தெடுக்கப்பட்ட பெயர்களை நகலெடு (ஒற்றைத் தட்டு) அல்லது முகவரிப் பட்டையை நகலெடு (இரட்டைத் தட்டு)"
+
+#: __init__.py:431
+#: clipboardManager.py:57
+#: clipboardManager.py:169
+#: robocopyManager.py:187
+msgid "Could not open clipboard"
+msgstr "கிளிப்போர்டைத் திறக்க முடியவில்லை"
+
+#: contextMenu.py:30
+#: createFile.py:16
+msgid "Create File"
+msgstr "கோப்பை உருவாக்கு"
+
+#: folder_creation_dialog.py:14
+msgid "Create Multiple Folders"
+msgstr "பல கோப்புறைகளை உருவாக்கு"
+
+#: contextMenu.py:43
+msgid "Create Multiple Folders..."
+msgstr "பல கோப்புறைகளை உருவாக்கு..."
+
+#: folder_creation_dialog.py:42
+msgid "Create main folder and then subfolders"
+msgstr "முதன்மைக் கோப்புறையையும் பின்னர் துணைக் கோப்புறைகளையும் உருவாக்கு"
+
+#: __init__.py:626
+msgid "Create new folder and paste clipboard content into rename field"
+msgstr "புதிய கோப்புறையை உருவாக்கி, கிளிப்போர்டு உள்ளடக்கத்தை மறுபெயரிடு புலத்தில் ஒட்டு"
+
+#: createFile.py:237
+msgid "Current path is not a directory"
+msgstr "தற்போதைய பாதை அடைவு இல்லை"
+
+#: robocopyManager.py:817
+msgid "Destination already exists, overwriting..."
+msgstr "இலக்கு ஏற்கனவே உள்ளது, மேலெழுதுகிறது..."
+
+#: robocopyManager.py:205
+msgid "Destination folders list"
+msgstr "இலக்குக் கோப்புறைகள் பட்டியல்"
+
+#: robocopyManager.py:203
+msgid "Destination folders:"
+msgstr "இலக்குக் கோப்புறைகள்:"
+
+#: folder_creation_dialog.py:46
+msgid "Edit individual folder names"
+msgstr "தனிப்பட்ட கோப்புறைப் பெயர்களைத் திருத்து"
+
+#: robocopyManager.py:115
+msgid "Elapsed time: {} seconds"
+msgstr "கழிந்த நேரம்: {} விநாடிகள்"
+
+#: xPlorerManager.py:40
+msgid "Empty Folder"
+msgstr "வெற்று கோப்புறை"
+
+#: robocopyManager.py:217
+msgid "Enable automatic synchronization"
+msgstr "தானியங்கி ஒத்திசைவை இயக்கு"
+
+#: folderInfo.py:78
+msgid "Error calculating folder info"
+msgstr "கோப்புறைத் தகவலைக் கணக்கிடுவதில் பிழை"
+
+#: fileOperations.py:401
+msgid "Error calculating size"
+msgstr "அளவைக் கணக்கிடுவதில் பிழை"
+
+#: compressionManager.py:173
+msgid "Error compressing files"
+msgstr "கோப்புகளைச் சுருக்குவதில் பிழை"
+
+#: clipboardManager.py:173
+msgid "Error copying file content"
+msgstr "கோப்பு உள்ளடக்கத்தை நகலெடுப்பதில் பிழை"
+
+#: clipboardManager.py:61
+msgid "Error copying names to clipboard"
+msgstr "பெயர்களை கிளிப்போர்டுக்கு நகலெடுப்பதில் பிழை"
+
+#: txt2folder.py:116
+msgid "Error creating base folder"
+msgstr "அடிப்படைக் கோப்புறையை உருவாக்குவதில் பிழை"
+
+#: createFile.py:311
+msgid "Error creating files"
+msgstr "கோப்புகளை உருவாக்குவதில் பிழை"
+
+#: folder_creation_dialog.py:219
+msgid "Error creating folder: {number}"
+msgstr "கோப்புறையை உருவாக்குவதில் பிழை: {number}"
+
+#: __init__.py:662
+msgid "Error creating folders"
+msgstr "கோப்புறைகளை உருவாக்குவதில் பிழை"
+
+#: folder_creation_dialog.py:179
+msgid "Error creating main folder"
+msgstr "முதன்மைக் கோப்புறையை உருவாக்குவதில் பிழை"
+
+#: folder_creation_dialog.py:201
+msgid "Error creating subfolder: {number}"
+msgstr "துணைக் கோப்புறையை உருவாக்குவதில் பிழை: {number}"
+
+#: __init__.py:690
+msgid "Error during conversion"
+msgstr "மாற்றத்தின் போது பிழை"
+
+#: robocopyManager.py:990
+msgid "Error during {}: {}"
+msgstr "{} செயல்பாட்டின் போது பிழை: {}"
+
+#: compressionManager.py:101
+msgid "Error in compression process: {error}"
+msgstr "சுருக்கச் செயல்பாட்டில் பிழை: {error}"
+
+#: selectionManager.py:65
+msgid "Error inverting selection"
+msgstr "தேர்வைத் தலைகீழாக்குவதில் பிழை"
+
+#: createFile.py:262
+msgid "Error opening create file dialog"
+msgstr "கோப்பு உருவாக்கு உரையாடலைத் திறப்பதில் பிழை"
+
+#: fileOperations.py:488
+msgid "Error opening rename dialog"
+msgstr "மறுபெயரிடு உரையாடலைத் திறப்பதில் பிழை"
+
+#: __init__.py:642
+msgid "Error opening settings"
+msgstr "அமைப்புகளைத் திறப்பதில் பிழை"
+
+#: txt2folder.py:212
+msgid "Error processing text file: {}"
+msgstr "உரைக் கோப்பைச் செயலாக்குவதில் பிழை: {}"
+
+#: txt2folder.py:80
+msgid "Error reading RTF file"
+msgstr "RTF கோப்பைப் படிப்பதில் பிழை"
+
+#: txt2folder.py:215
+msgid "Error reading file encoding"
+msgstr "கோப்பு குறியாக்கத்தைப் படிப்பதில் பிழை"
+
+#: fileOperations.py:453
+#: fileOperations.py:482
+msgid "Error renaming file"
+msgstr "கோப்பை மறுபெயரிடுவதில் பிழை"
+
+#: robocopyManager.py:784
+#: txt2folder.py:219
+msgid "Error: {}"
+msgstr "பிழை: {}"
+
+#: robocopyManager.py:111
+msgid "Estimated time remaining: {}"
+msgstr "மதிப்பிடப்பட்ட மீதி நேரம்: {}"
+
+#: createFile.py:84
+msgid "Extension:"
+msgstr "நீட்சி:"
+
+#: case.py:115
+#: case.py:129
+#: case.py:150
+#: case.py:164
+msgid "Failed to rename any folders"
+msgstr "எந்தக் கோப்புறையையும் மறுபெயரிட முடியவில்லை"
+
+#: createFile.py:163
+msgid "File count cannot exceed 10"
+msgstr "கோப்புகளின் எண்ணிக்கை 10 ஐத் தாண்டக்கூடாது"
+
+#: createFile.py:160
+msgid "File count must be at least 1"
+msgstr "கோப்புகளின் எண்ணிக்கை குறைந்தது 1 ஆக இருக்க வேண்டும்"
+
+#: createFile.py:131
+msgid "File name"
+msgstr "கோப்பின் பெயர்"
+
+#: fileOperations.py:57
+msgid "File name cannot be empty"
+msgstr "கோப்பின் பெயர் காலியாக இருக்கக்கூடாது"
+
+#: fileOperations.py:470
+msgid "File name not changed"
+msgstr "கோப்பின் பெயர் மாற்றப்படவில்லை"
+
+#: createFile.py:77
+#: createFile.py:132
+msgid "File name {index}:"
+msgstr "கோப்பின் பெயர் {index}:"
+
+#: createFile.py:75
+msgid "File name:"
+msgstr "கோப்பின் பெயர்:"
+
+#: fileOperations.py:479
+msgid "File renamed to {name}"
+msgstr "கோப்பு {name} என மறுபெயரிடப்பட்டது"
+
+#: folder_creation_dialog.py:113
+#: folder_creation_dialog.py:158
+msgid "Folder"
+msgstr "கோப்புறை"
+
+#: txt2folder.py:106
+#: txt2folder.py:182
+msgid "Folder '{}' already exists, creating '{}' instead"
+msgstr "'{}' கோப்புறை ஏற்கனவே உள்ளது, அதற்குப் பதிலாக '{}' உருவாக்கப்படுகிறது"
+
+#: contextMenu.py:52
+msgid "Folder info"
+msgstr "கோப்புறைத் தகவல்"
+
+#: folder_creation_dialog.py:27
+msgid "Folder title:"
+msgstr "கோப்புறைத் தலைப்பு:"
+
+#: contextMenu.py:50
+msgid "Headline Case"
+msgstr "தலைப்பு எழுத்துரு"
+
+#: robocopyManager.py:434
+msgid "Immediate sync completed: {}/{} destinations"
+msgstr "உடனடி ஒத்திசைவு முடிந்தது: {}/{} இலக்குகள்"
+
+#: robocopyManager.py:767
+msgid "Invalid destination"
+msgstr "செல்லாத இலக்கு"
+
+#: folder_creation_dialog.py:169
+msgid "Invalid number for folders"
+msgstr "கோப்புறைகளுக்கான எண் செல்லாது"
+
+#: robocopyManager.py:407
+#: robocopyManager.py:447
+msgid "Invalid time format"
+msgstr "செல்லாத நேர வடிவம்"
+
+#: contextMenu.py:26
+msgid "Invert selection"
+msgstr "தேர்வைத் தலைகீழாக்கு"
+
+#: selectionManager.py:60
+msgid "Inverted selection: {inverted} of {total} items selected"
+msgstr "தலைகீழாக்கப்பட்ட தேர்வு: மொத்தம் {total} உருப்படிகளில் {inverted} தேர்ந்தெடுக்கப்பட்டது"
+
+#: robocopyManager.py:868
+msgid "Large file detected, using compression for speed"
+msgstr "பெரிய கோப்பு கண்டறியப்பட்டது, வேகத்திற்காக சுருக்கம் பயன்படுத்தப்படுகிறது"
+
+#: contextMenu.py:48
+msgid "Lowercase"
+msgstr "சிற்றெழுத்து"
+
+#: folder_creation_dialog.py:166
+msgid "Maximum 100 folders allowed"
+msgstr "அதிகபட்சம் 100 கோப்புறைகள் அனுமதிக்கப்படும்"
+
+#: robocopyManager.py:62
+msgid "Minimize"
+msgstr "சிறிதாக்கு"
+
+#: robocopyManager.py:145
+msgid "Mirror Backup Settings"
+msgstr "பிரதி காப்பு அமைப்புகள்"
+
+#: robocopyManager.py:716
+msgid "Mirror backup configured successfully"
+msgstr "பிரதி காப்பு வெற்றிகரமாக உள்ளமைக்கப்பட்டது"
+
+#: robocopyManager.py:718
+msgid "Mirror backup disabled"
+msgstr "பிரதி காப்பு முடக்கப்பட்டது"
+
+#: robocopyManager.py:771
+msgid "Move"
+msgstr "நகர்த்து"
+
+#: robocopyManager.py:609
+msgid "Next scheduled backup for {}: {}"
+msgstr "{} க்கான அடுத்த திட்டமிடப்பட்ட காப்பு: {}"
+
+#: __init__.py:650
+msgid "No Explorer folder detected"
+msgstr "எக்ஸ்ப்ளோரர் கோப்புறை எதுவும் கண்டறியப்படவில்லை"
+
+#: fileOperations.py:300
+#: fileOperations.py:410
+msgid "No access to size data"
+msgstr "அளவுத் தரவுகளுக்கான அணுகல் இல்லை"
+
+#: selectionManager.py:27
+msgid "No active File Explorer window found"
+msgstr "செயலில் உள்ள கோப்பு எக்ஸ்ப்ளோரர் சாளரம் எதுவும் காணப்படவில்லை"
+
+#: clipboardManager.py:156
+msgid "No content could be read from selected files"
+msgstr "தேர்ந்தெடுக்கப்பட்ட கோப்புகளில் இருந்து எந்த உள்ளடக்கத்தையும் படிக்க முடியவில்லை"
+
+#: createFile.py:303
+msgid "No files were created"
+msgstr "எந்தக் கோப்புகளும் உருவாக்கப்படவில்லை"
+
+#: case.py:106
+#: case.py:120
+#: case.py:141
+#: case.py:155
+msgid "No folders found"
+msgstr "கோப்புறைகள் எதுவும் காணப்படவில்லை"
+
+#: __init__.py:677
+msgid "No folders selected or current folder not available"
+msgstr "கோப்புறைகள் எதுவும் தேர்ந்தெடுக்கப்படவில்லை அல்லது தற்போதைய கோப்புறை கிடைக்கவில்லை"
+
+#: folder_creation_dialog.py:230
+#: txt2folder.py:155
+#: txt2folder.py:208
+msgid "No folders were created"
+msgstr "எந்தக் கோப்புறைகளும் உருவாக்கப்படவில்லை"
+
+#: folderInfo.py:30
+msgid "No item selected"
+msgstr "உருப்படி எதுவும் தேர்ந்தெடுக்கப்படவில்லை"
+
+#: selectionManager.py:40
+msgid "No items in folder"
+msgstr "கோப்புறையில் உருப்படிகள் எதுவும் இல்லை"
+
+#: clipboardManager.py:30
+#: clipboardManager.py:72
+#: compressionManager.py:132
+#: fileOperations.py:289
+#: fileOperations.py:433
+msgid "No items selected"
+msgstr "உருப்படிகள் எதுவும் தேர்ந்தெடுக்கப்படவில்லை"
+
+#: robocopyManager.py:749
+msgid "No pending operation"
+msgstr "நிலுவையிலுள்ள செயல்பாடு எதுவுமில்லை"
+
+#: clipboardManager.py:93
+msgid "No text files selected"
+msgstr "உரைக் கோப்புகள் எதுவும் தேர்ந்தெடுக்கப்படவில்லை"
+
+#: txt2folder.py:91
+#: txt2folder.py:167
+msgid "No valid folder names found in the file"
+msgstr "கோப்பில் செல்லுபடியாகும் கோப்புறைப் பெயர்கள் எதுவும் காணப்படவில்லை"
+
+#: createFile.py:227
+#: robocopyManager.py:663
+#: robocopyManager.py:724
+#: robocopyManager.py:737
+#: robocopyManager.py:755
+#: selectionManager.py:21
+#: txt2folder.py:43
+msgid "Not in File Explorer"
+msgstr "கோப்பு எக்ஸ்ப்ளோரரில் இல்லை"
+
+#: createFile.py:27
+msgid "Number of files to create:"
+msgstr "உருவாக்க வேண்டிய கோப்புகளின் எண்ணிக்கை:"
+
+#: folder_creation_dialog.py:163
+msgid "Number of folders must be at least 1"
+msgstr "கோப்புறைகளின் எண்ணிக்கை குறைந்தது 1 ஆக இருக்க வேண்டும்"
+
+#: folder_creation_dialog.py:35
+msgid "Number of folders:"
+msgstr "கோப்புறைகளின் எண்ணிக்கை:"
+
+#: robocopyManager.py:241
+msgid "OK"
+msgstr "சரி"
+
+#: __init__.py:586
+msgid "Open xPlorer context menu"
+msgstr "xPlorer சூழல் மெனுவைத் திற"
+
+#: txt2folder.py:55
+msgid "Please select a .txt or .rtf file"
+msgstr "தயவுசெய்து ஒரு .txt அல்லது .rtf கோப்பைத் தேர்ந்தெடுக்கவும்"
+
+#: fileOperations.py:443
+msgid "Please select a file, not a folder"
+msgstr "தயவுசெய்து ஒரு கோப்பைத் தேர்ந்தெடுக்கவும், கோப்புறையை அல்ல"
+
+#: robocopyManager.py:671
+msgid "Please select a folder"
+msgstr "தயவுசெய்து ஒரு கோப்புறையைத் தேர்ந்தெடுக்கவும்"
+
+#: fileOperations.py:437
+msgid "Please select only one file"
+msgstr "தயவுசெய்து ஒரே ஒரு கோப்பை மட்டும் தேர்ந்தெடுக்கவும்"
+
+#: folderInfo.py:35
+#: robocopyManager.py:667
+msgid "Please select only one folder"
+msgstr "தயவுசெய்து ஒரே ஒரு கோப்புறையை மட்டும் தேர்ந்தெடுக்கவும்"
+
+#: txt2folder.py:48
+msgid "Please select only one text file"
+msgstr "தயவுசெய்து ஒரே ஒரு உரைக் கோப்பை மட்டும் தேர்ந்தெடுக்கவும்"
+
+#: robocopyManager.py:46
+msgid "Preparing operation..."
+msgstr "செயல்பாட்டைத் தயாரிக்கிறது..."
+
+#: robocopyManager.py:103
+msgid "Processing: {}"
+msgstr "செயலாக்குகிறது: {}"
+
+#: robocopyManager.py:105
+msgid "Progress: {}%"
+msgstr "முன்னேற்றம்: {}%"
+
+#: robocopyManager.py:210
+msgid "Remove selected destination"
+msgstr "தேர்ந்தெடுக்கப்பட்ட இலக்கை அகற்று"
+
+#: robocopyManager.py:198
+msgid "Remove selected source"
+msgstr "தேர்ந்தெடுக்கப்பட்ட மூலத்தை அகற்று"
+
+#: __init__.py:603
+#: contextMenu.py:31
+msgid "Rename selected file"
+msgstr "தேர்ந்தெடுக்கப்பட்ட கோப்பை மறுபெயரிடு"
+
+#: contextMenu.py:35
+msgid "Robocopy"
+msgstr "ரோபோகாபி"
+
+#: contextMenu.py:32
+msgid "Say size"
+msgstr "அளவைக் கூறு"
+
+#: __init__.py:561
+msgid "Say size (single tap) or compress zip (double tap)"
+msgstr "அளவைக் கூறு (ஒற்றைத் தட்டு) அல்லது zip சுருக்கு (இரட்டைத் தட்டு)"
+
+#: robocopyManager.py:648
+msgid "Scheduled backup completed: {}/{} destinations"
+msgstr "திட்டமிடப்பட்ட காப்பு முடிந்தது: {}/{} இலக்குகள்"
+
+#: robocopyManager.py:623
+msgid "Scheduled mirror backup started for {}"
+msgstr "{} க்கான திட்டமிடப்பட்ட பிரதி காப்பு தொடங்கப்பட்டது"
+
+#: robocopyManager.py:231
+msgid "Scheduled time:"
+msgstr "திட்டமிடப்பட்ட நேரம்:"
+
+#: robocopyManager.py:728
+#: robocopyManager.py:741
+msgid "Select one item only"
+msgstr "ஒரே ஒரு உருப்படியை மட்டும் தேர்ந்தெடுக்கவும்"
+
+#: txt2folder.py:60
+msgid "Selected file does not exist"
+msgstr "தேர்ந்தெடுக்கப்பட்ட கோப்பு இல்லை"
+
+#: folderInfo.py:41
+msgid "Selected item is not a folder"
+msgstr "தேர்ந்தெடுக்கப்பட்ட உருப்படி ஒரு கோப்புறை அல்ல"
+
+#: createFile.py:199
+msgid "Some files will use default names"
+msgstr "சில கோப்புகள் இயல்புநிலைப் பெயர்களைப் பயன்படுத்தும்"
+
+#: robocopyManager.py:404
+#: robocopyManager.py:444
+msgid "Source and destination required"
+msgstr "மூலமும் இலக்கும் தேவை"
+
+#: robocopyManager.py:792
+msgid "Source does not exist"
+msgstr "மூலம் இல்லை"
+
+#: robocopyManager.py:193
+msgid "Source folders (select to edit):"
+msgstr "மூலக் கோப்புறைகள் (திருத்தத் தேர்ந்தெடுக்கவும்):"
+
+#: robocopyManager.py:195
+msgid "Source folders list"
+msgstr "மூலக் கோப்புறைகள் பட்டியல்"
+
+#: robocopyManager.py:732
+msgid "Source for copy: {}"
+msgstr "நகலெடுப்பதற்கான மூலம்: {}"
+
+#: robocopyManager.py:745
+msgid "Source for move: {}"
+msgstr "நகர்த்துவதற்கான மூலம்: {}"
+
+#: robocopyManager.py:121
+msgid "Speed: {}"
+msgstr "வேகம்: {}"
+
+#: robocopyManager.py:240
+msgid "Start synchronization"
+msgstr "ஒத்திசைவைத் தொடங்கு"
+
+#: robocopyManager.py:410
+msgid "Starting immediate mirror sync..."
+msgstr "உடனடி பிரதி ஒத்திசைவைத் தொடங்குகிறது..."
+
+#: robocopyManager.py:774
+msgid "Starting {} operation in background..."
+msgstr "பின்னணியில் {} செயல்பாட்டைத் தொடங்குகிறது..."
+
+#: compressionManager.py:144
+#: compressionManager.py:161
+msgid "Starting..."
+msgstr "தொடங்குகிறது..."
+
+#: case.py:162
+msgid "Successfully converted {count} folders to headline case"
+msgstr "{count} கோப்புறைகள் தலைப்பு எழுத்துருவுக்கு வெற்றிகரமாக மாற்றப்பட்டன"
+
+#: case.py:127
+msgid "Successfully converted {count} folders to lowercase"
+msgstr "{count} கோப்புறைகள் சிற்றெழுத்துக்கு வெற்றிகரமாக மாற்றப்பட்டன"
+
+#: case.py:148
+msgid "Successfully converted {count} folders to title case"
+msgstr "{count} கோப்புறைகள் தலைப்பு எழுத்துருவுக்கு வெற்றிகரமாக மாற்றப்பட்டன"
+
+#: case.py:113
+msgid "Successfully converted {count} folders to uppercase"
+msgstr "{count} கோப்புறைகள் பெரியெழுத்துக்கு வெற்றிகரமாக மாற்றப்பட்டன"
+
+#: folder_creation_dialog.py:226
+msgid "Successfully created 1 folder"
+msgstr "1 கோப்புறை வெற்றிகரமாக உருவாக்கப்பட்டது"
+
+#: folder_creation_dialog.py:224
+msgid "Successfully created main folder only"
+msgstr "முதன்மைக் கோப்புறை மட்டும் வெற்றிகரமாக உருவாக்கப்பட்டது"
+
+#: folder_creation_dialog.py:228
+msgid "Successfully created {count} folders"
+msgstr "{count} கோப்புறைகள் வெற்றிகரமாக உருவாக்கப்பட்டன"
+
+#: txt2folder.py:150
+#: txt2folder.py:203
+msgid "Successfully created {} folders in '{}'"
+msgstr "'{}' இல் {} கோப்புறைகள் வெற்றிகரமாக உருவாக்கப்பட்டன"
+
+#: xPlorerManager.py:66
+msgid "Suppress announcement of '- File Explorer' in window titles"
+msgstr "சாளரத் தலைப்புகளில் '- கோப்பு எக்ஸ்ப்ளோரர்' அறிவிப்பை அடக்கு"
+
+#: xPlorerManager.py:61
+msgid "Suppress announcement of DirectUIHWND class"
+msgstr "DirectUIHWND வகுப்பின் அறிவிப்பை அடக்கு"
+
+#: robocopyManager.py:438
+msgid "Sync error occurred"
+msgstr "ஒத்திசைவுப் பிழை ஏற்பட்டது"
+
+#: robocopyManager.py:220
+msgid "Synchronization interval:"
+msgstr "ஒத்திசைவு இடைவெளி:"
+
+#: contextMenu.py:42
+msgid "TXT to Folder"
+msgstr "TXT ஐ கோப்புறையாக்கு"
+
+#: contextMenu.py:49
+msgid "Title Case"
+msgstr "தலைப்பு எழுத்துரு"
+
+#: clipboardManager.py:104
+msgid "Total file size is too large to copy content"
+msgstr "மொத்த கோப்பு அளவு உள்ளடக்கத்தை நகலெடுப்பதற்கு மிகப்பெரியது"
+
+#: robocopyManager.py:963
+msgid "Trying alternative copy method..."
+msgstr "மாற்று நகலெடுப்பு முறையை முயற்சிக்கிறது..."
+
+#: createFile.py:233
+msgid "Unable to get current directory"
+msgstr "தற்போதைய அடைவைப் பெற முடியவில்லை"
+
+#: __init__.py:433
+msgid "Unable to get current path"
+msgstr "தற்போதைய பாதையைப் பெற முடியவில்லை"
+
+#: selectionManager.py:32
+msgid "Unable to get folder view"
+msgstr "கோப்புறைக் காட்சியைப் பெற முடியவில்லை"
+
+#: contextMenu.py:47
+msgid "Uppercase"
+msgstr "பெரியெழுத்து"
+
+#: clipboardManager.py:124
+msgid "[Error processing RTF file]"
+msgstr "[RTF கோப்பைச் செயலாக்குவதில் பிழை]"
+
+#: clipboardManager.py:126
+msgid "[RTF content - striprtf module not available]"
+msgstr "[RTF உள்ளடக்கம் - striprtf தொகுதி கிடைக்கவில்லை]"
+
+#: compressionManager.py:97
+msgid "compression failed: {error}"
+msgstr "சுருக்கம் தோல்வியடைந்தது: {error}"
+
+#: contextMenu.py:36
+msgid "copy"
+msgstr "நகலெடு"
+
+#: contextMenu.py:40
+msgid "mirror Backup"
+msgstr "பிரதி காப்பு"
+
+#: contextMenu.py:37
+msgid "move"
+msgstr "நகர்த்து"
+
+#: createFile.py:183
+msgid "new_file"
+msgstr "புதிய_கோப்பு"
+
+#: createFile.py:185
+msgid "new_file_{index}"
+msgstr "புதிய_கோப்பு_{index}"
+
+#: contextMenu.py:38
+msgid "paste"
+msgstr "ஒட்டு"
+
+#: __init__.py:143
+#: __init__.py:472
+#: __init__.py:517
+#: __init__.py:562
+#: __init__.py:587
+#: __init__.py:604
+#: __init__.py:627
+#: xPlorerManager.py:44
+msgid "xPlorer"
+msgstr "xPlorer"
+
+#: contextMenu.py:22
+msgid "xPlorer Settings"
+msgstr "xPlorer அமைப்புகள்"
+
+#: createFile.py:307
+msgid "{count} files created"
+msgstr "{count} கோப்புகள் உருவாக்கப்பட்டன"
+
+#: fileOperations.py:420
+msgid "{count} items {size}"
+msgstr "{count} உருப்படிகள் {size}"
+
+#: folderInfo.py:66
+msgid "{subfolders} subfolders and {files} files"
+msgstr "{subfolders} துணைக் கோப்புறைகள் மற்றும் {files} கோப்புகள்"
+
+#: robocopyManager.py:950
+msgid "{} completed successfully in {:.1f} seconds"
+msgstr "{} {:.1f} விநாடிகளில் வெற்றிகரமாக முடிந்தது"
+
+#: robocopyManager.py:947
+msgid "{} completed successfully in {:.1f} seconds, average speed: {:.1f} MB/s"
+msgstr "{} {:.1f} விநாடிகளில் வெற்றிகரமாக முடிந்தது, சராசரி வேகம்: {:.1f} MB/s"
+
+#: robocopyManager.py:978
+msgid "{} completed successfully using alternative method"
+msgstr "{} மாற்று முறையைப் பயன்படுத்தி வெற்றிகரமாக முடிந்தது"
+
+#: robocopyManager.py:985
+msgid "{} completed with warnings (code: {})"
+msgstr "{} எச்சரிக்கைகளுடன் முடிந்தது (குறியீடு: {})"
+
+#: robocopyManager.py:982
+msgid "{} failed with error: {}"
+msgstr "{} பிழையுடன் தோல்வியடைந்தது: {}"
+
+#: robocopyManager.py:903
+msgid "{} in progress... {} seconds elapsed"
+msgstr "{} செயல்பாட்டில் உள்ளது... {} விநாடிகள் கழிந்தன"
+
+#: robocopyManager.py:878
+msgid "{} started. You can continue working while it runs in background."
+msgstr "{} தொடங்கப்பட்டது. இது பின்னணியில் இயங்கும்போது நீங்கள் தொடர்ந்து வேலை செய்யலாம்."
+
+#: robocopyManager.py:929
+msgid "{}: {}% complete, speed: {:.1f} MB/s"
+msgstr "{}: {}% முடிந்தது, வேகம்: {:.1f} MB/s"

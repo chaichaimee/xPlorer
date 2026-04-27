@@ -1,0 +1,893 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: xPlorer 2026.5.1\n"
+"Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
+"POT-Creation-Date: 2026-04-27 15:57+0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: chaiBot and Malee Yamazaki\n"
+"Language-Team: Croatian\n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: DevOn Addon\n"
+
+#: folder_creation_dialog.py:60
+msgid "&Apply"
+msgstr "&Primjeni"
+
+#: folder_creation_dialog.py:61
+msgid "&Cancel"
+msgstr "&Odustani"
+
+#: robocopyManager.py:223
+msgid "1 day"
+msgstr "1 dan"
+
+#: createFile.py:305
+msgid "1 file created"
+msgstr "1 datoteka stvorena"
+
+#: robocopyManager.py:222
+msgid "1 hour"
+msgstr "1 sat"
+
+#: robocopyManager.py:223
+msgid "1 month"
+msgstr "1 mjesec"
+
+#: robocopyManager.py:223
+msgid "15 days"
+msgstr "15 dana"
+
+#: robocopyManager.py:222
+msgid "15 minutes"
+msgstr "15 minuta"
+
+#: robocopyManager.py:222
+msgid "30 minutes"
+msgstr "30 minuta"
+
+#: robocopyManager.py:223
+msgid "7 days"
+msgstr "7 dana"
+
+#: compressionManager.py:159
+msgid "7-Zip compression failed, trying built-in method..."
+msgstr "7-Zip kompresija nije uspjela, pokušavam ugrađenu metodu..."
+
+#: fileOperations.py:474
+msgid "A file with this name already exists"
+msgstr "Datoteka s ovim imenom već postoji"
+
+#: robocopyManager.py:209
+msgid "Add destination folder"
+msgstr "Dodaj odredišnu mapu"
+
+#: xPlorerManager.py:56
+msgid "Announce 'Empty Folder' when entering an empty folder"
+msgstr "Najavi 'Prazna mapa' prilikom ulaska u praznu mapu"
+
+#: xPlorerManager.py:71
+msgid "Automatically paste clipboard content into rename field"
+msgstr "Automatski zalijepi sadržaj međuspremnika u polje za preimenovanje"
+
+#: xPlorerManager.py:51
+msgid "Automatically select the first item"
+msgstr "Automatski odaberi prvu stavku"
+
+#: compressionManager.py:268
+msgid "Built-in compression failed: {error}"
+msgstr "Ugrađena kompresija nije uspjela: {error}"
+
+#: robocopyManager.py:61
+#: robocopyManager.py:242
+msgid "Cancel"
+msgstr "Odustani"
+
+#: clipboardManager.py:77
+msgid "Cannot copy content of folders, please select files only"
+msgstr "Ne mogu kopirati sadržaj mapa, molimo odaberite samo datoteke"
+
+#: createFile.py:290
+msgid "Cannot find unique name for: {name}"
+msgstr "Ne mogu pronaći jedinstveno ime za: {name}"
+
+#: robocopyManager.py:761
+msgid "Cannot get destination"
+msgstr "Ne mogu dohvatiti odredište"
+
+#: __init__.py:635
+msgid "Cannot open settings dialog"
+msgstr "Ne mogu otvoriti dijaloški okvir postavki"
+
+#: txt2folder.py:69
+msgid "Cannot process RTF file: striprtf module not available"
+msgstr "Ne mogu obraditi RTF datoteku: modul striprtf nije dostupan"
+
+#: contextMenu.py:46
+msgid "Case Converter for Folders"
+msgstr "Pretvarač slova za mape"
+
+#: robocopyManager.py:348
+msgid "Choose destination folder"
+msgstr "Odaberite odredišnu mapu"
+
+#: robocopyManager.py:239
+msgid "Clear all settings"
+msgstr "Očisti sve postavke"
+
+#: compressionManager.py:264
+msgid "Completed"
+msgstr "Završeno"
+
+#: contextMenu.py:25
+msgid "Compress zip"
+msgstr "Kompresiraj u zip"
+
+#: compressionManager.py:144
+#: compressionManager.py:161
+msgid "Compressing files"
+msgstr "Kompresiranje datoteka"
+
+#: compressionManager.py:70
+msgid "Compressing..."
+msgstr "Kompresiranje..."
+
+#: compressionManager.py:244
+#: compressionManager.py:258
+msgid "Compressing: {percent}%"
+msgstr "Kompresiranje: {percent}%"
+
+#: compressionManager.py:92
+#: compressionManager.py:262
+msgid "Compression cancelled"
+msgstr "Kompresija otkazana"
+
+#: compressionManager.py:94
+#: compressionManager.py:265
+msgid "Compression completed {name}"
+msgstr "Kompresija završena {name}"
+
+#: clipboardManager.py:165
+msgid "Content from 1 file copied to clipboard"
+msgstr "Sadržaj iz 1 datoteke kopiran u međuspremnik"
+
+#: clipboardManager.py:167
+msgid "Content from {count} files copied to clipboard"
+msgstr "Sadržaj iz {count} datoteka kopiran u međuspremnik"
+
+#: clipboardManager.py:53
+msgid "Copied 1 item name to clipboard"
+msgstr "Kopirano 1 ime stavke u međuspremnik"
+
+#: robocopyManager.py:185
+msgid "Copied source path to clipboard"
+msgstr "Kopirana putanja izvora u međuspremnik"
+
+#: clipboardManager.py:55
+msgid "Copied {count} item names to clipboard"
+msgstr "Kopirano {count} imena stavki u međuspremnik"
+
+#: __init__.py:429
+msgid "Copied: {path}"
+msgstr "Kopirano: {path}"
+
+#: robocopyManager.py:771
+msgid "Copy"
+msgstr "Kopiraj"
+
+#: contextMenu.py:27
+msgid "Copy address bar"
+msgstr "Kopiraj adresnu traku"
+
+#: contextMenu.py:28
+msgid "Copy content"
+msgstr "Kopiraj sadržaj"
+
+#: __init__.py:516
+msgid "Copy content (single tap) or invert selection (double tap)"
+msgstr "Kopiraj sadržaj (jedan dodir) ili obrni odabir (dva dodira)"
+
+#: contextMenu.py:29
+msgid "Copy selected file and folder names"
+msgstr "Kopiraj imena odabranih datoteka i mapa"
+
+#: __init__.py:471
+msgid "Copy selected names (single tap) or copy address bar (double tap)"
+msgstr "Kopiraj odabrana imena (jedan dodir) ili kopiraj adresnu traku (dva dodira)"
+
+#: __init__.py:431
+#: clipboardManager.py:57
+#: clipboardManager.py:169
+#: robocopyManager.py:187
+msgid "Could not open clipboard"
+msgstr "Ne mogu otvoriti međuspremnik"
+
+#: contextMenu.py:30
+#: createFile.py:16
+msgid "Create File"
+msgstr "Stvori datoteku"
+
+#: folder_creation_dialog.py:14
+msgid "Create Multiple Folders"
+msgstr "Stvori više mapa"
+
+#: contextMenu.py:43
+msgid "Create Multiple Folders..."
+msgstr "Stvori više mapa..."
+
+#: folder_creation_dialog.py:42
+msgid "Create main folder and then subfolders"
+msgstr "Stvori glavnu mapu, a zatim podmape"
+
+#: __init__.py:626
+msgid "Create new folder and paste clipboard content into rename field"
+msgstr "Stvori novu mapu i zalijepi sadržaj međuspremnika u polje za preimenovanje"
+
+#: createFile.py:237
+msgid "Current path is not a directory"
+msgstr "Trenutna putanja nije direktorij"
+
+#: robocopyManager.py:817
+msgid "Destination already exists, overwriting..."
+msgstr "Odredište već postoji, prepisujem..."
+
+#: robocopyManager.py:205
+msgid "Destination folders list"
+msgstr "Popis odredišnih mapa"
+
+#: robocopyManager.py:203
+msgid "Destination folders:"
+msgstr "Odredišne mape:"
+
+#: folder_creation_dialog.py:46
+msgid "Edit individual folder names"
+msgstr "Uredi pojedinačna imena mapa"
+
+#: robocopyManager.py:115
+msgid "Elapsed time: {} seconds"
+msgstr "Proteklo vrijeme: {} sekundi"
+
+#: xPlorerManager.py:40
+msgid "Empty Folder"
+msgstr "Prazna mapa"
+
+#: robocopyManager.py:217
+msgid "Enable automatic synchronization"
+msgstr "Omogući automatsku sinkronizaciju"
+
+#: folderInfo.py:78
+msgid "Error calculating folder info"
+msgstr "Pogreška pri izračunu informacija o mapi"
+
+#: fileOperations.py:401
+msgid "Error calculating size"
+msgstr "Pogreška pri izračunu veličine"
+
+#: compressionManager.py:173
+msgid "Error compressing files"
+msgstr "Pogreška pri kompresiji datoteka"
+
+#: clipboardManager.py:173
+msgid "Error copying file content"
+msgstr "Pogreška pri kopiranju sadržaja datoteke"
+
+#: clipboardManager.py:61
+msgid "Error copying names to clipboard"
+msgstr "Pogreška pri kopiranju imena u međuspremnik"
+
+#: txt2folder.py:116
+msgid "Error creating base folder"
+msgstr "Pogreška pri stvaranju osnovne mape"
+
+#: createFile.py:311
+msgid "Error creating files"
+msgstr "Pogreška pri stvaranju datoteka"
+
+#: folder_creation_dialog.py:219
+msgid "Error creating folder: {number}"
+msgstr "Pogreška pri stvaranju mape: {number}"
+
+#: __init__.py:662
+msgid "Error creating folders"
+msgstr "Pogreška pri stvaranju mapa"
+
+#: folder_creation_dialog.py:179
+msgid "Error creating main folder"
+msgstr "Pogreška pri stvaranju glavne mape"
+
+#: folder_creation_dialog.py:201
+msgid "Error creating subfolder: {number}"
+msgstr "Pogreška pri stvaranju podmape: {number}"
+
+#: __init__.py:690
+msgid "Error during conversion"
+msgstr "Pogreška tijekom pretvorbe"
+
+#: robocopyManager.py:990
+msgid "Error during {}: {}"
+msgstr "Pogreška tijekom {}: {}"
+
+#: compressionManager.py:101
+msgid "Error in compression process: {error}"
+msgstr "Pogreška u procesu kompresije: {error}"
+
+#: selectionManager.py:65
+msgid "Error inverting selection"
+msgstr "Pogreška pri obrtanju odabira"
+
+#: createFile.py:262
+msgid "Error opening create file dialog"
+msgstr "Pogreška pri otvaranju dijaloškog okvira za stvaranje datoteke"
+
+#: fileOperations.py:488
+msgid "Error opening rename dialog"
+msgstr "Pogreška pri otvaranju dijaloškog okvira za preimenovanje"
+
+#: __init__.py:642
+msgid "Error opening settings"
+msgstr "Pogreška pri otvaranju postavki"
+
+#: txt2folder.py:212
+msgid "Error processing text file: {}"
+msgstr "Pogreška pri obradi tekstualne datoteke: {}"
+
+#: txt2folder.py:80
+msgid "Error reading RTF file"
+msgstr "Pogreška pri čitanju RTF datoteke"
+
+#: txt2folder.py:215
+msgid "Error reading file encoding"
+msgstr "Pogreška pri čitanju kodiranja datoteke"
+
+#: fileOperations.py:453
+#: fileOperations.py:482
+msgid "Error renaming file"
+msgstr "Pogreška pri preimenovanju datoteke"
+
+#: robocopyManager.py:784
+#: txt2folder.py:219
+msgid "Error: {}"
+msgstr "Pogreška: {}"
+
+#: robocopyManager.py:111
+msgid "Estimated time remaining: {}"
+msgstr "Procijenjeno preostalo vrijeme: {}"
+
+#: createFile.py:84
+msgid "Extension:"
+msgstr "Ekstenzija:"
+
+#: case.py:115
+#: case.py:129
+#: case.py:150
+#: case.py:164
+msgid "Failed to rename any folders"
+msgstr "Neuspjelo preimenovanje bilo koje mape"
+
+#: createFile.py:163
+msgid "File count cannot exceed 10"
+msgstr "Broj datoteka ne može biti veći od 10"
+
+#: createFile.py:160
+msgid "File count must be at least 1"
+msgstr "Broj datoteka mora biti najmanje 1"
+
+#: createFile.py:131
+msgid "File name"
+msgstr "Ime datoteke"
+
+#: fileOperations.py:57
+msgid "File name cannot be empty"
+msgstr "Ime datoteke ne može biti prazno"
+
+#: fileOperations.py:470
+msgid "File name not changed"
+msgstr "Ime datoteke nije promijenjeno"
+
+#: createFile.py:77
+#: createFile.py:132
+msgid "File name {index}:"
+msgstr "Ime datoteke {index}:"
+
+#: createFile.py:75
+msgid "File name:"
+msgstr "Ime datoteke:"
+
+#: fileOperations.py:479
+msgid "File renamed to {name}"
+msgstr "Datoteka preimenovana u {name}"
+
+#: folder_creation_dialog.py:113
+#: folder_creation_dialog.py:158
+msgid "Folder"
+msgstr "Mapa"
+
+#: txt2folder.py:106
+#: txt2folder.py:182
+msgid "Folder '{}' already exists, creating '{}' instead"
+msgstr "Mapa '{}' već postoji, stvaram '{}' umjesto nje"
+
+#: contextMenu.py:52
+msgid "Folder info"
+msgstr "Informacije o mapi"
+
+#: folder_creation_dialog.py:27
+msgid "Folder title:"
+msgstr "Naslov mape:"
+
+#: contextMenu.py:50
+msgid "Headline Case"
+msgstr "Naslovni slučaj"
+
+#: robocopyManager.py:434
+msgid "Immediate sync completed: {}/{} destinations"
+msgstr "Trenutačna sinkronizacija završena: {}/{} odredišta"
+
+#: robocopyManager.py:767
+msgid "Invalid destination"
+msgstr "Nevažeće odredište"
+
+#: folder_creation_dialog.py:169
+msgid "Invalid number for folders"
+msgstr "Nevažeći broj za mape"
+
+#: robocopyManager.py:407
+#: robocopyManager.py:447
+msgid "Invalid time format"
+msgstr "Nevažeći format vremena"
+
+#: contextMenu.py:26
+msgid "Invert selection"
+msgstr "Obrni odabir"
+
+#: selectionManager.py:60
+msgid "Inverted selection: {inverted} of {total} items selected"
+msgstr "Obrnuti odabir: {inverted} od {total} stavki odabrano"
+
+#: robocopyManager.py:868
+msgid "Large file detected, using compression for speed"
+msgstr "Otkrivena velika datoteka, koristim kompresiju radi brzine"
+
+#: contextMenu.py:48
+msgid "Lowercase"
+msgstr "Mala slova"
+
+#: folder_creation_dialog.py:166
+msgid "Maximum 100 folders allowed"
+msgstr "Dopušteno najviše 100 mapa"
+
+#: robocopyManager.py:62
+msgid "Minimize"
+msgstr "Minimiziraj"
+
+#: robocopyManager.py:145
+msgid "Mirror Backup Settings"
+msgstr "Postavke zrcalnog sigurnosnog kopiranja"
+
+#: robocopyManager.py:716
+msgid "Mirror backup configured successfully"
+msgstr "Zrcalno sigurnosno kopiranje uspješno konfigurirano"
+
+#: robocopyManager.py:718
+msgid "Mirror backup disabled"
+msgstr "Zrcalno sigurnosno kopiranje onemogućeno"
+
+#: robocopyManager.py:771
+msgid "Move"
+msgstr "Premjesti"
+
+#: robocopyManager.py:609
+msgid "Next scheduled backup for {}: {}"
+msgstr "Sljedeće zakazano sigurnosno kopiranje za {}: {}"
+
+#: __init__.py:650
+msgid "No Explorer folder detected"
+msgstr "Nije otkrivena Explorer mapa"
+
+#: fileOperations.py:300
+#: fileOperations.py:410
+msgid "No access to size data"
+msgstr "Nema pristupa podacima o veličini"
+
+#: selectionManager.py:27
+msgid "No active File Explorer window found"
+msgstr "Nije pronađen aktivni prozor File Explorera"
+
+#: clipboardManager.py:156
+msgid "No content could be read from selected files"
+msgstr "Nije moguće pročitati sadržaj odabranih datoteka"
+
+#: createFile.py:303
+msgid "No files were created"
+msgstr "Nije stvorena nijedna datoteka"
+
+#: case.py:106
+#: case.py:120
+#: case.py:141
+#: case.py:155
+msgid "No folders found"
+msgstr "Nije pronađena nijedna mapa"
+
+#: __init__.py:677
+msgid "No folders selected or current folder not available"
+msgstr "Nijedna mapa nije odabrana ili trenutna mapa nije dostupna"
+
+#: folder_creation_dialog.py:230
+#: txt2folder.py:155
+#: txt2folder.py:208
+msgid "No folders were created"
+msgstr "Nije stvorena nijedna mapa"
+
+#: folderInfo.py:30
+msgid "No item selected"
+msgstr "Nijedna stavka nije odabrana"
+
+#: selectionManager.py:40
+msgid "No items in folder"
+msgstr "Nema stavki u mapi"
+
+#: clipboardManager.py:30
+#: clipboardManager.py:72
+#: compressionManager.py:132
+#: fileOperations.py:289
+#: fileOperations.py:433
+msgid "No items selected"
+msgstr "Nijedna stavka nije odabrana"
+
+#: robocopyManager.py:749
+msgid "No pending operation"
+msgstr "Nema operacije na čekanju"
+
+#: clipboardManager.py:93
+msgid "No text files selected"
+msgstr "Nijedna tekstualna datoteka nije odabrana"
+
+#: txt2folder.py:91
+#: txt2folder.py:167
+msgid "No valid folder names found in the file"
+msgstr "U datoteci nisu pronađena valjana imena mapa"
+
+#: createFile.py:227
+#: robocopyManager.py:663
+#: robocopyManager.py:724
+#: robocopyManager.py:737
+#: robocopyManager.py:755
+#: selectionManager.py:21
+#: txt2folder.py:43
+msgid "Not in File Explorer"
+msgstr "Nije u File Exploreru"
+
+#: createFile.py:27
+msgid "Number of files to create:"
+msgstr "Broj datoteka za stvaranje:"
+
+#: folder_creation_dialog.py:163
+msgid "Number of folders must be at least 1"
+msgstr "Broj mapa mora biti najmanje 1"
+
+#: folder_creation_dialog.py:35
+msgid "Number of folders:"
+msgstr "Broj mapa:"
+
+#: robocopyManager.py:241
+msgid "OK"
+msgstr "U redu"
+
+#: __init__.py:586
+msgid "Open xPlorer context menu"
+msgstr "Otvori xPlorer kontekstni izbornik"
+
+#: txt2folder.py:55
+msgid "Please select a .txt or .rtf file"
+msgstr "Molimo odaberite .txt ili .rtf datoteku"
+
+#: fileOperations.py:443
+msgid "Please select a file, not a folder"
+msgstr "Molimo odaberite datoteku, a ne mapu"
+
+#: robocopyManager.py:671
+msgid "Please select a folder"
+msgstr "Molimo odaberite mapu"
+
+#: fileOperations.py:437
+msgid "Please select only one file"
+msgstr "Molimo odaberite samo jednu datoteku"
+
+#: folderInfo.py:35
+#: robocopyManager.py:667
+msgid "Please select only one folder"
+msgstr "Molimo odaberite samo jednu mapu"
+
+#: txt2folder.py:48
+msgid "Please select only one text file"
+msgstr "Molimo odaberite samo jednu tekstualnu datoteku"
+
+#: robocopyManager.py:46
+msgid "Preparing operation..."
+msgstr "Pripremanje operacije..."
+
+#: robocopyManager.py:103
+msgid "Processing: {}"
+msgstr "Obrada: {}"
+
+#: robocopyManager.py:105
+msgid "Progress: {}%"
+msgstr "Napredak: {}%"
+
+#: robocopyManager.py:210
+msgid "Remove selected destination"
+msgstr "Ukloni odabrano odredište"
+
+#: robocopyManager.py:198
+msgid "Remove selected source"
+msgstr "Ukloni odabrani izvor"
+
+#: __init__.py:603
+#: contextMenu.py:31
+msgid "Rename selected file"
+msgstr "Preimenuj odabranu datoteku"
+
+#: contextMenu.py:35
+msgid "Robocopy"
+msgstr "Robocopy"
+
+#: contextMenu.py:32
+msgid "Say size"
+msgstr "Izloci veličinu"
+
+#: __init__.py:561
+msgid "Say size (single tap) or compress zip (double tap)"
+msgstr "Izloci veličinu (jedan dodir) ili kompresiraj u zip (dva dodira)"
+
+#: robocopyManager.py:648
+msgid "Scheduled backup completed: {}/{} destinations"
+msgstr "Zakazano sigurnosno kopiranje završeno: {}/{} odredišta"
+
+#: robocopyManager.py:623
+msgid "Scheduled mirror backup started for {}"
+msgstr "Zakazano zrcalno sigurnosno kopiranje započeto za {}"
+
+#: robocopyManager.py:231
+msgid "Scheduled time:"
+msgstr "Zakazano vrijeme:"
+
+#: robocopyManager.py:728
+#: robocopyManager.py:741
+msgid "Select one item only"
+msgstr "Odaberite samo jednu stavku"
+
+#: txt2folder.py:60
+msgid "Selected file does not exist"
+msgstr "Odabrana datoteka ne postoji"
+
+#: folderInfo.py:41
+msgid "Selected item is not a folder"
+msgstr "Odabrana stavka nije mapa"
+
+#: createFile.py:199
+msgid "Some files will use default names"
+msgstr "Neke će datoteke koristiti zadana imena"
+
+#: robocopyManager.py:404
+#: robocopyManager.py:444
+msgid "Source and destination required"
+msgstr "Potrebni su izvor i odredište"
+
+#: robocopyManager.py:792
+msgid "Source does not exist"
+msgstr "Izvor ne postoji"
+
+#: robocopyManager.py:193
+msgid "Source folders (select to edit):"
+msgstr "Izvorne mape (odaberite za uređivanje):"
+
+#: robocopyManager.py:195
+msgid "Source folders list"
+msgstr "Popis izvornih mapa"
+
+#: robocopyManager.py:732
+msgid "Source for copy: {}"
+msgstr "Izvor za kopiranje: {}"
+
+#: robocopyManager.py:745
+msgid "Source for move: {}"
+msgstr "Izvor za premještanje: {}"
+
+#: robocopyManager.py:121
+msgid "Speed: {}"
+msgstr "Brzina: {}"
+
+#: robocopyManager.py:240
+msgid "Start synchronization"
+msgstr "Pokreni sinkronizaciju"
+
+#: robocopyManager.py:410
+msgid "Starting immediate mirror sync..."
+msgstr "Pokretanje trenutačne zrcalne sinkronizacije..."
+
+#: robocopyManager.py:774
+msgid "Starting {} operation in background..."
+msgstr "Pokretanje operacije {} u pozadini..."
+
+#: compressionManager.py:144
+#: compressionManager.py:161
+msgid "Starting..."
+msgstr "Pokretanje..."
+
+#: case.py:162
+msgid "Successfully converted {count} folders to headline case"
+msgstr "Uspješno pretvoreno {count} mapa u naslovni slučaj"
+
+#: case.py:127
+msgid "Successfully converted {count} folders to lowercase"
+msgstr "Uspješno pretvoreno {count} mapa u mala slova"
+
+#: case.py:148
+msgid "Successfully converted {count} folders to title case"
+msgstr "Uspješno pretvoreno {count} mapa u naslovna slova"
+
+#: case.py:113
+msgid "Successfully converted {count} folders to uppercase"
+msgstr "Uspješno pretvoreno {count} mapa u velika slova"
+
+#: folder_creation_dialog.py:226
+msgid "Successfully created 1 folder"
+msgstr "Uspješno stvorena 1 mapa"
+
+#: folder_creation_dialog.py:224
+msgid "Successfully created main folder only"
+msgstr "Uspješno stvorena samo glavna mapa"
+
+#: folder_creation_dialog.py:228
+msgid "Successfully created {count} folders"
+msgstr "Uspješno stvoreno {count} mapa"
+
+#: txt2folder.py:150
+#: txt2folder.py:203
+msgid "Successfully created {} folders in '{}'"
+msgstr "Uspješno stvoreno {} mapa u '{}'"
+
+#: xPlorerManager.py:66
+msgid "Suppress announcement of '- File Explorer' in window titles"
+msgstr "Priguši najavu '- File Explorer' u naslovima prozora"
+
+#: xPlorerManager.py:61
+msgid "Suppress announcement of DirectUIHWND class"
+msgstr "Priguši najavu klase DirectUIHWND"
+
+#: robocopyManager.py:438
+msgid "Sync error occurred"
+msgstr "Došlo je do pogreške sinkronizacije"
+
+#: robocopyManager.py:220
+msgid "Synchronization interval:"
+msgstr "Interval sinkronizacije:"
+
+#: contextMenu.py:42
+msgid "TXT to Folder"
+msgstr "TXT u mapu"
+
+#: contextMenu.py:49
+msgid "Title Case"
+msgstr "Naslovna slova"
+
+#: clipboardManager.py:104
+msgid "Total file size is too large to copy content"
+msgstr "Ukupna veličina datoteke je prevelika za kopiranje sadržaja"
+
+#: robocopyManager.py:963
+msgid "Trying alternative copy method..."
+msgstr "Pokušavam alternativnu metodu kopiranja..."
+
+#: createFile.py:233
+msgid "Unable to get current directory"
+msgstr "Nije moguće dohvatiti trenutni direktorij"
+
+#: __init__.py:433
+msgid "Unable to get current path"
+msgstr "Nije moguće dohvatiti trenutnu putanju"
+
+#: selectionManager.py:32
+msgid "Unable to get folder view"
+msgstr "Nije moguće dohvatiti prikaz mape"
+
+#: contextMenu.py:47
+msgid "Uppercase"
+msgstr "Velika slova"
+
+#: clipboardManager.py:124
+msgid "[Error processing RTF file]"
+msgstr "[Pogreška pri obradi RTF datoteke]"
+
+#: clipboardManager.py:126
+msgid "[RTF content - striprtf module not available]"
+msgstr "[RTF sadržaj - modul striprtf nije dostupan]"
+
+#: compressionManager.py:97
+msgid "compression failed: {error}"
+msgstr "kompresija nije uspjela: {error}"
+
+#: contextMenu.py:36
+msgid "copy"
+msgstr "kopiraj"
+
+#: contextMenu.py:40
+msgid "mirror Backup"
+msgstr "zrcalno sigurnosno kopiranje"
+
+#: contextMenu.py:37
+msgid "move"
+msgstr "premjesti"
+
+#: createFile.py:183
+msgid "new_file"
+msgstr "nova_datoteka"
+
+#: createFile.py:185
+msgid "new_file_{index}"
+msgstr "nova_datoteka_{index}"
+
+#: contextMenu.py:38
+msgid "paste"
+msgstr "zalijepi"
+
+#: __init__.py:143
+#: __init__.py:472
+#: __init__.py:517
+#: __init__.py:562
+#: __init__.py:587
+#: __init__.py:604
+#: __init__.py:627
+#: xPlorerManager.py:44
+msgid "xPlorer"
+msgstr "xPlorer"
+
+#: contextMenu.py:22
+msgid "xPlorer Settings"
+msgstr "xPlorer postavke"
+
+#: createFile.py:307
+msgid "{count} files created"
+msgstr "{count} datoteka stvoreno"
+
+#: fileOperations.py:420
+msgid "{count} items {size}"
+msgstr "{count} stavki {size}"
+
+#: folderInfo.py:66
+msgid "{subfolders} subfolders and {files} files"
+msgstr "{subfolders} podmapa i {files} datoteka"
+
+#: robocopyManager.py:950
+msgid "{} completed successfully in {:.1f} seconds"
+msgstr "{} uspješno završeno za {:.1f} sekundi"
+
+#: robocopyManager.py:947
+msgid "{} completed successfully in {:.1f} seconds, average speed: {:.1f} MB/s"
+msgstr "{} uspješno završeno za {:.1f} sekundi, prosječna brzina: {:.1f} MB/s"
+
+#: robocopyManager.py:978
+msgid "{} completed successfully using alternative method"
+msgstr "{} uspješno završeno korištenjem alternativne metode"
+
+#: robocopyManager.py:985
+msgid "{} completed with warnings (code: {})"
+msgstr "{} završeno s upozorenjima (kod: {})"
+
+#: robocopyManager.py:982
+msgid "{} failed with error: {}"
+msgstr "{} nije uspjelo s pogreškom: {}"
+
+#: robocopyManager.py:903
+msgid "{} in progress... {} seconds elapsed"
+msgstr "{} u tijeku... proteklo {} sekundi"
+
+#: robocopyManager.py:878
+msgid "{} started. You can continue working while it runs in background."
+msgstr "{} započeto. Možete nastaviti raditi dok se izvodi u pozadini."
+
+#: robocopyManager.py:929
+msgid "{}: {}% complete, speed: {:.1f} MB/s"
+msgstr "{}: {}% završeno, brzina: {:.1f} MB/s"

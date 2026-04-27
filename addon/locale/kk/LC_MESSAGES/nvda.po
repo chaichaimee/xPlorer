@@ -1,0 +1,893 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: xPlorer 2026.5.1\n"
+"Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
+"POT-Creation-Date: 2026-04-27 15:57+0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: chaiBot and Malee Yamazaki\n"
+"Language-Team: Kazakh\n"
+"Language: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: DevOn Addon\n"
+
+#: folder_creation_dialog.py:60
+msgid "&Apply"
+msgstr "&Қолдану"
+
+#: folder_creation_dialog.py:61
+msgid "&Cancel"
+msgstr "&Болдырмау"
+
+#: robocopyManager.py:223
+msgid "1 day"
+msgstr "1 күн"
+
+#: createFile.py:305
+msgid "1 file created"
+msgstr "1 файл жасалды"
+
+#: robocopyManager.py:222
+msgid "1 hour"
+msgstr "1 сағат"
+
+#: robocopyManager.py:223
+msgid "1 month"
+msgstr "1 ай"
+
+#: robocopyManager.py:223
+msgid "15 days"
+msgstr "15 күн"
+
+#: robocopyManager.py:222
+msgid "15 minutes"
+msgstr "15 минут"
+
+#: robocopyManager.py:222
+msgid "30 minutes"
+msgstr "30 минут"
+
+#: robocopyManager.py:223
+msgid "7 days"
+msgstr "7 күн"
+
+#: compressionManager.py:159
+msgid "7-Zip compression failed, trying built-in method..."
+msgstr "7-Zip сығымдау сәтсіз болды, кіріктірілген әдіс сыналуда..."
+
+#: fileOperations.py:474
+msgid "A file with this name already exists"
+msgstr "Бұл атаудағы файл қазірдің өзінде бар"
+
+#: robocopyManager.py:209
+msgid "Add destination folder"
+msgstr "Мақсатты буманы қосу"
+
+#: xPlorerManager.py:56
+msgid "Announce 'Empty Folder' when entering an empty folder"
+msgstr "Бос бумаға кіргенде 'Бос бума' деп хабарлау"
+
+#: xPlorerManager.py:71
+msgid "Automatically paste clipboard content into rename field"
+msgstr "Алмасу буферінің мазмұнын атауды өзгерту өрісіне автоматты түрде қою"
+
+#: xPlorerManager.py:51
+msgid "Automatically select the first item"
+msgstr "Бірінші элементті автоматты түрде таңдау"
+
+#: compressionManager.py:268
+msgid "Built-in compression failed: {error}"
+msgstr "Кіріктірілген сығымдау сәтсіз болды: {error}"
+
+#: robocopyManager.py:61
+#: robocopyManager.py:242
+msgid "Cancel"
+msgstr "Болдырмау"
+
+#: clipboardManager.py:77
+msgid "Cannot copy content of folders, please select files only"
+msgstr "Бумалардың мазмұнын көшіру мүмкін емес, тек файлдарды таңдаңыз"
+
+#: createFile.py:290
+msgid "Cannot find unique name for: {name}"
+msgstr "{name} үшін бірегей атау табылмады"
+
+#: robocopyManager.py:761
+msgid "Cannot get destination"
+msgstr "Мақсатты алу мүмкін емес"
+
+#: __init__.py:635
+msgid "Cannot open settings dialog"
+msgstr "Баптаулар терезесін ашу мүмкін емес"
+
+#: txt2folder.py:69
+msgid "Cannot process RTF file: striprtf module not available"
+msgstr "RTF файлын өңдеу мүмкін емес: striprtf модулі қолжетімді емес"
+
+#: contextMenu.py:46
+msgid "Case Converter for Folders"
+msgstr "Бумалар үшін регистр түрлендіргіші"
+
+#: robocopyManager.py:348
+msgid "Choose destination folder"
+msgstr "Мақсатты буманы таңдаңыз"
+
+#: robocopyManager.py:239
+msgid "Clear all settings"
+msgstr "Барлық баптауларды өшіру"
+
+#: compressionManager.py:264
+msgid "Completed"
+msgstr "Аяқталды"
+
+#: contextMenu.py:25
+msgid "Compress zip"
+msgstr "Zip сығымдау"
+
+#: compressionManager.py:144
+#: compressionManager.py:161
+msgid "Compressing files"
+msgstr "Файлдарды сығымдау"
+
+#: compressionManager.py:70
+msgid "Compressing..."
+msgstr "Сығымдалуда..."
+
+#: compressionManager.py:244
+#: compressionManager.py:258
+msgid "Compressing: {percent}%"
+msgstr "Сығымдалуда: {percent}%"
+
+#: compressionManager.py:92
+#: compressionManager.py:262
+msgid "Compression cancelled"
+msgstr "Сығымдау болдырылды"
+
+#: compressionManager.py:94
+#: compressionManager.py:265
+msgid "Compression completed {name}"
+msgstr "Сығымдау аяқталды {name}"
+
+#: clipboardManager.py:165
+msgid "Content from 1 file copied to clipboard"
+msgstr "1 файлдың мазмұны алмасу буферіне көшірілді"
+
+#: clipboardManager.py:167
+msgid "Content from {count} files copied to clipboard"
+msgstr "{count} файлдың мазмұны алмасу буферіне көшірілді"
+
+#: clipboardManager.py:53
+msgid "Copied 1 item name to clipboard"
+msgstr "1 элементтің атауы алмасу буферіне көшірілді"
+
+#: robocopyManager.py:185
+msgid "Copied source path to clipboard"
+msgstr "Бастапқы жол алмасу буферіне көшірілді"
+
+#: clipboardManager.py:55
+msgid "Copied {count} item names to clipboard"
+msgstr "{count} элементтің атауы алмасу буферіне көшірілді"
+
+#: __init__.py:429
+msgid "Copied: {path}"
+msgstr "Көшірілді: {path}"
+
+#: robocopyManager.py:771
+msgid "Copy"
+msgstr "Көшіру"
+
+#: contextMenu.py:27
+msgid "Copy address bar"
+msgstr "Мекенжай жолағын көшіру"
+
+#: contextMenu.py:28
+msgid "Copy content"
+msgstr "Мазмұнын көшіру"
+
+#: __init__.py:516
+msgid "Copy content (single tap) or invert selection (double tap)"
+msgstr "Мазмұнын көшіру (бір рет басу) немесе таңдауды кері қайтару (екі рет басу)"
+
+#: contextMenu.py:29
+msgid "Copy selected file and folder names"
+msgstr "Таңдалған файл мен бума атауларын көшіру"
+
+#: __init__.py:471
+msgid "Copy selected names (single tap) or copy address bar (double tap)"
+msgstr "Таңдалған атауларды көшіру (бір рет басу) немесе мекенжай жолағын көшіру (екі рет басу)"
+
+#: __init__.py:431
+#: clipboardManager.py:57
+#: clipboardManager.py:169
+#: robocopyManager.py:187
+msgid "Could not open clipboard"
+msgstr "Алмасу буферін ашу мүмкін болмады"
+
+#: contextMenu.py:30
+#: createFile.py:16
+msgid "Create File"
+msgstr "Файл жасау"
+
+#: folder_creation_dialog.py:14
+msgid "Create Multiple Folders"
+msgstr "Бірнеше бума жасау"
+
+#: contextMenu.py:43
+msgid "Create Multiple Folders..."
+msgstr "Бірнеше бума жасау..."
+
+#: folder_creation_dialog.py:42
+msgid "Create main folder and then subfolders"
+msgstr "Негізгі буманы, содан кейін ішкі бумаларды жасау"
+
+#: __init__.py:626
+msgid "Create new folder and paste clipboard content into rename field"
+msgstr "Жаңа бума жасау және алмасу буферінің мазмұнын атауды өзгерту өрісіне қою"
+
+#: createFile.py:237
+msgid "Current path is not a directory"
+msgstr "Ағымдағы жол каталог емес"
+
+#: robocopyManager.py:817
+msgid "Destination already exists, overwriting..."
+msgstr "Мақсат қазірдің өзінде бар, үстінен жазылуда..."
+
+#: robocopyManager.py:205
+msgid "Destination folders list"
+msgstr "Мақсатты бумалар тізімі"
+
+#: robocopyManager.py:203
+msgid "Destination folders:"
+msgstr "Мақсатты бумалар:"
+
+#: folder_creation_dialog.py:46
+msgid "Edit individual folder names"
+msgstr "Жеке бума атауларын өңдеу"
+
+#: robocopyManager.py:115
+msgid "Elapsed time: {} seconds"
+msgstr "Өткен уақыт: {} секунд"
+
+#: xPlorerManager.py:40
+msgid "Empty Folder"
+msgstr "Бос бума"
+
+#: robocopyManager.py:217
+msgid "Enable automatic synchronization"
+msgstr "Автоматты синхрондауды қосу"
+
+#: folderInfo.py:78
+msgid "Error calculating folder info"
+msgstr "Бума ақпаратын есептеу кезінде қате"
+
+#: fileOperations.py:401
+msgid "Error calculating size"
+msgstr "Өлшемді есептеу кезінде қате"
+
+#: compressionManager.py:173
+msgid "Error compressing files"
+msgstr "Файлдарды сығымдау кезінде қате"
+
+#: clipboardManager.py:173
+msgid "Error copying file content"
+msgstr "Файл мазмұнын көшіру кезінде қате"
+
+#: clipboardManager.py:61
+msgid "Error copying names to clipboard"
+msgstr "Атауларды алмасу буферіне көшіру кезінде қате"
+
+#: txt2folder.py:116
+msgid "Error creating base folder"
+msgstr "Негізгі буманы жасау кезінде қате"
+
+#: createFile.py:311
+msgid "Error creating files"
+msgstr "Файлдарды жасау кезінде қате"
+
+#: folder_creation_dialog.py:219
+msgid "Error creating folder: {number}"
+msgstr "Буманы жасау кезінде қате: {number}"
+
+#: __init__.py:662
+msgid "Error creating folders"
+msgstr "Бумаларды жасау кезінде қате"
+
+#: folder_creation_dialog.py:179
+msgid "Error creating main folder"
+msgstr "Негізгі буманы жасау кезінде қате"
+
+#: folder_creation_dialog.py:201
+msgid "Error creating subfolder: {number}"
+msgstr "Ішкі буманы жасау кезінде қате: {number}"
+
+#: __init__.py:690
+msgid "Error during conversion"
+msgstr "Түрлендіру кезінде қате"
+
+#: robocopyManager.py:990
+msgid "Error during {}: {}"
+msgstr "{} кезінде қате: {}"
+
+#: compressionManager.py:101
+msgid "Error in compression process: {error}"
+msgstr "Сығымдау процесінде қате: {error}"
+
+#: selectionManager.py:65
+msgid "Error inverting selection"
+msgstr "Таңдауды кері қайтару кезінде қате"
+
+#: createFile.py:262
+msgid "Error opening create file dialog"
+msgstr "Файл жасау терезесін ашу кезінде қате"
+
+#: fileOperations.py:488
+msgid "Error opening rename dialog"
+msgstr "Атауды өзгерту терезесін ашу кезінде қате"
+
+#: __init__.py:642
+msgid "Error opening settings"
+msgstr "Баптауларды ашу кезінде қате"
+
+#: txt2folder.py:212
+msgid "Error processing text file: {}"
+msgstr "Мәтіндік файлды өңдеу кезінде қате: {}"
+
+#: txt2folder.py:80
+msgid "Error reading RTF file"
+msgstr "RTF файлын оқу кезінде қате"
+
+#: txt2folder.py:215
+msgid "Error reading file encoding"
+msgstr "Файл кодтауын оқу кезінде қате"
+
+#: fileOperations.py:453
+#: fileOperations.py:482
+msgid "Error renaming file"
+msgstr "Файлдың атауын өзгерту кезінде қате"
+
+#: robocopyManager.py:784
+#: txt2folder.py:219
+msgid "Error: {}"
+msgstr "Қате: {}"
+
+#: robocopyManager.py:111
+msgid "Estimated time remaining: {}"
+msgstr "Қалған болжамды уақыт: {}"
+
+#: createFile.py:84
+msgid "Extension:"
+msgstr "Кеңейту:"
+
+#: case.py:115
+#: case.py:129
+#: case.py:150
+#: case.py:164
+msgid "Failed to rename any folders"
+msgstr "Ешбір буманың атауын өзгерту сәтсіз болды"
+
+#: createFile.py:163
+msgid "File count cannot exceed 10"
+msgstr "Файл саны 10-нан аспауы керек"
+
+#: createFile.py:160
+msgid "File count must be at least 1"
+msgstr "Файл саны кемінде 1 болуы керек"
+
+#: createFile.py:131
+msgid "File name"
+msgstr "Файл атауы"
+
+#: fileOperations.py:57
+msgid "File name cannot be empty"
+msgstr "Файл атауы бос болмауы керек"
+
+#: fileOperations.py:470
+msgid "File name not changed"
+msgstr "Файл атауы өзгертілмеді"
+
+#: createFile.py:77
+#: createFile.py:132
+msgid "File name {index}:"
+msgstr "Файл атауы {index}:"
+
+#: createFile.py:75
+msgid "File name:"
+msgstr "Файл атауы:"
+
+#: fileOperations.py:479
+msgid "File renamed to {name}"
+msgstr "Файлдың атауы {name} болып өзгертілді"
+
+#: folder_creation_dialog.py:113
+#: folder_creation_dialog.py:158
+msgid "Folder"
+msgstr "Бума"
+
+#: txt2folder.py:106
+#: txt2folder.py:182
+msgid "Folder '{}' already exists, creating '{}' instead"
+msgstr "'{}' бумасы қазірдің өзінде бар, оның орнына '{}' жасалуда"
+
+#: contextMenu.py:52
+msgid "Folder info"
+msgstr "Бума ақпараты"
+
+#: folder_creation_dialog.py:27
+msgid "Folder title:"
+msgstr "Бума тақырыбы:"
+
+#: contextMenu.py:50
+msgid "Headline Case"
+msgstr "Тақырыпша регистрі"
+
+#: robocopyManager.py:434
+msgid "Immediate sync completed: {}/{} destinations"
+msgstr "Лездік синхрондау аяқталды: {}/{} мақсат"
+
+#: robocopyManager.py:767
+msgid "Invalid destination"
+msgstr "Жарамсыз мақсат"
+
+#: folder_creation_dialog.py:169
+msgid "Invalid number for folders"
+msgstr "Бумалар үшін жарамсыз сан"
+
+#: robocopyManager.py:407
+#: robocopyManager.py:447
+msgid "Invalid time format"
+msgstr "Жарамсыз уақыт пішімі"
+
+#: contextMenu.py:26
+msgid "Invert selection"
+msgstr "Таңдауды кері қайтару"
+
+#: selectionManager.py:60
+msgid "Inverted selection: {inverted} of {total} items selected"
+msgstr "Таңдау кері қайтарылды: барлығы {total} элементтен {inverted} таңдалды"
+
+#: robocopyManager.py:868
+msgid "Large file detected, using compression for speed"
+msgstr "Үлкен файл анықталды, жылдамдық үшін сығымдау қолданылуда"
+
+#: contextMenu.py:48
+msgid "Lowercase"
+msgstr "Кіші регистр"
+
+#: folder_creation_dialog.py:166
+msgid "Maximum 100 folders allowed"
+msgstr "Ең көп дегенде 100 бумаға рұқсат етіледі"
+
+#: robocopyManager.py:62
+msgid "Minimize"
+msgstr "Кішірейту"
+
+#: robocopyManager.py:145
+msgid "Mirror Backup Settings"
+msgstr "Айналық резервтік көшірме баптаулары"
+
+#: robocopyManager.py:716
+msgid "Mirror backup configured successfully"
+msgstr "Айналық резервтік көшірме сәтті конфигурацияланды"
+
+#: robocopyManager.py:718
+msgid "Mirror backup disabled"
+msgstr "Айналық резервтік көшірме өшірілді"
+
+#: robocopyManager.py:771
+msgid "Move"
+msgstr "Жылжыту"
+
+#: robocopyManager.py:609
+msgid "Next scheduled backup for {}: {}"
+msgstr "{} үшін келесі жоспарланған резервтік көшірме: {}"
+
+#: __init__.py:650
+msgid "No Explorer folder detected"
+msgstr "Explorer бумасы анықталмады"
+
+#: fileOperations.py:300
+#: fileOperations.py:410
+msgid "No access to size data"
+msgstr "Өлшем деректеріне қолжетімділік жоқ"
+
+#: selectionManager.py:27
+msgid "No active File Explorer window found"
+msgstr "Белсенді File Explorer терезесі табылмады"
+
+#: clipboardManager.py:156
+msgid "No content could be read from selected files"
+msgstr "Таңдалған файлдардан ешқандай мазмұн оқылмады"
+
+#: createFile.py:303
+msgid "No files were created"
+msgstr "Ешбір файл жасалмады"
+
+#: case.py:106
+#: case.py:120
+#: case.py:141
+#: case.py:155
+msgid "No folders found"
+msgstr "Ешбір бума табылмады"
+
+#: __init__.py:677
+msgid "No folders selected or current folder not available"
+msgstr "Ешбір бума таңдалмаған немесе ағымдағы бума қолжетімді емес"
+
+#: folder_creation_dialog.py:230
+#: txt2folder.py:155
+#: txt2folder.py:208
+msgid "No folders were created"
+msgstr "Ешбір бума жасалмады"
+
+#: folderInfo.py:30
+msgid "No item selected"
+msgstr "Ешбір элемент таңдалмаған"
+
+#: selectionManager.py:40
+msgid "No items in folder"
+msgstr "Бумада элементтер жоқ"
+
+#: clipboardManager.py:30
+#: clipboardManager.py:72
+#: compressionManager.py:132
+#: fileOperations.py:289
+#: fileOperations.py:433
+msgid "No items selected"
+msgstr "Ешбір элемент таңдалмаған"
+
+#: robocopyManager.py:749
+msgid "No pending operation"
+msgstr "Күтіліп тұрған операция жоқ"
+
+#: clipboardManager.py:93
+msgid "No text files selected"
+msgstr "Ешбір мәтіндік файл таңдалмаған"
+
+#: txt2folder.py:91
+#: txt2folder.py:167
+msgid "No valid folder names found in the file"
+msgstr "Файлдан ешбір жарамды бума атауы табылмады"
+
+#: createFile.py:227
+#: robocopyManager.py:663
+#: robocopyManager.py:724
+#: robocopyManager.py:737
+#: robocopyManager.py:755
+#: selectionManager.py:21
+#: txt2folder.py:43
+msgid "Not in File Explorer"
+msgstr "File Explorer ішінде емес"
+
+#: createFile.py:27
+msgid "Number of files to create:"
+msgstr "Жасалатын файлдар саны:"
+
+#: folder_creation_dialog.py:163
+msgid "Number of folders must be at least 1"
+msgstr "Бумалар саны кемінде 1 болуы керек"
+
+#: folder_creation_dialog.py:35
+msgid "Number of folders:"
+msgstr "Бумалар саны:"
+
+#: robocopyManager.py:241
+msgid "OK"
+msgstr "ОК"
+
+#: __init__.py:586
+msgid "Open xPlorer context menu"
+msgstr "xPlorer контекстік мәзірін ашу"
+
+#: txt2folder.py:55
+msgid "Please select a .txt or .rtf file"
+msgstr ".txt немесе .rtf файлын таңдаңыз"
+
+#: fileOperations.py:443
+msgid "Please select a file, not a folder"
+msgstr "Файл таңдаңыз, бума емес"
+
+#: robocopyManager.py:671
+msgid "Please select a folder"
+msgstr "Буманы таңдаңыз"
+
+#: fileOperations.py:437
+msgid "Please select only one file"
+msgstr "Тек бір файлды таңдаңыз"
+
+#: folderInfo.py:35
+#: robocopyManager.py:667
+msgid "Please select only one folder"
+msgstr "Тек бір буманы таңдаңыз"
+
+#: txt2folder.py:48
+msgid "Please select only one text file"
+msgstr "Тек бір мәтіндік файлды таңдаңыз"
+
+#: robocopyManager.py:46
+msgid "Preparing operation..."
+msgstr "Операция дайындалуда..."
+
+#: robocopyManager.py:103
+msgid "Processing: {}"
+msgstr "Өңделуде: {}"
+
+#: robocopyManager.py:105
+msgid "Progress: {}%"
+msgstr "Үрдіс: {}%"
+
+#: robocopyManager.py:210
+msgid "Remove selected destination"
+msgstr "Таңдалған мақсатты жою"
+
+#: robocopyManager.py:198
+msgid "Remove selected source"
+msgstr "Таңдалған бастапқыны жою"
+
+#: __init__.py:603
+#: contextMenu.py:31
+msgid "Rename selected file"
+msgstr "Таңдалған файлдың атауын өзгерту"
+
+#: contextMenu.py:35
+msgid "Robocopy"
+msgstr "Robocopy"
+
+#: contextMenu.py:32
+msgid "Say size"
+msgstr "Өлшемді айту"
+
+#: __init__.py:561
+msgid "Say size (single tap) or compress zip (double tap)"
+msgstr "Өлшемді айту (бір рет басу) немесе zip сығымдау (екі рет басу)"
+
+#: robocopyManager.py:648
+msgid "Scheduled backup completed: {}/{} destinations"
+msgstr "Жоспарланған резервтік көшірме аяқталды: {}/{} мақсат"
+
+#: robocopyManager.py:623
+msgid "Scheduled mirror backup started for {}"
+msgstr "{} үшін жоспарланған айналық резервтік көшірме басталды"
+
+#: robocopyManager.py:231
+msgid "Scheduled time:"
+msgstr "Жоспарланған уақыт:"
+
+#: robocopyManager.py:728
+#: robocopyManager.py:741
+msgid "Select one item only"
+msgstr "Тек бір элементті таңдаңыз"
+
+#: txt2folder.py:60
+msgid "Selected file does not exist"
+msgstr "Таңдалған файл жоқ"
+
+#: folderInfo.py:41
+msgid "Selected item is not a folder"
+msgstr "Таңдалған элемент бума емес"
+
+#: createFile.py:199
+msgid "Some files will use default names"
+msgstr "Кейбір файлдар әдепкі атауларды пайдаланады"
+
+#: robocopyManager.py:404
+#: robocopyManager.py:444
+msgid "Source and destination required"
+msgstr "Бастапқы және мақсат қажет"
+
+#: robocopyManager.py:792
+msgid "Source does not exist"
+msgstr "Бастапқы жоқ"
+
+#: robocopyManager.py:193
+msgid "Source folders (select to edit):"
+msgstr "Бастапқы бумалар (өңдеу үшін таңдаңыз):"
+
+#: robocopyManager.py:195
+msgid "Source folders list"
+msgstr "Бастапқы бумалар тізімі"
+
+#: robocopyManager.py:732
+msgid "Source for copy: {}"
+msgstr "Көшіру үшін бастапқы: {}"
+
+#: robocopyManager.py:745
+msgid "Source for move: {}"
+msgstr "Жылжыту үшін бастапқы: {}"
+
+#: robocopyManager.py:121
+msgid "Speed: {}"
+msgstr "Жылдамдық: {}"
+
+#: robocopyManager.py:240
+msgid "Start synchronization"
+msgstr "Синхрондауды бастау"
+
+#: robocopyManager.py:410
+msgid "Starting immediate mirror sync..."
+msgstr "Лездік айналық синхрондау басталуда..."
+
+#: robocopyManager.py:774
+msgid "Starting {} operation in background..."
+msgstr "{} операциясы фонда басталуда..."
+
+#: compressionManager.py:144
+#: compressionManager.py:161
+msgid "Starting..."
+msgstr "Басталуда..."
+
+#: case.py:162
+msgid "Successfully converted {count} folders to headline case"
+msgstr "{count} бума тақырыпша регистріне сәтті түрлендірілді"
+
+#: case.py:127
+msgid "Successfully converted {count} folders to lowercase"
+msgstr "{count} бума кіші регистрге сәтті түрлендірілді"
+
+#: case.py:148
+msgid "Successfully converted {count} folders to title case"
+msgstr "{count} бума тақырыптық регистрге сәтті түрлендірілді"
+
+#: case.py:113
+msgid "Successfully converted {count} folders to uppercase"
+msgstr "{count} бума үлкен регистрге сәтті түрлендірілді"
+
+#: folder_creation_dialog.py:226
+msgid "Successfully created 1 folder"
+msgstr "1 бума сәтті жасалды"
+
+#: folder_creation_dialog.py:224
+msgid "Successfully created main folder only"
+msgstr "Тек негізгі бума сәтті жасалды"
+
+#: folder_creation_dialog.py:228
+msgid "Successfully created {count} folders"
+msgstr "{count} бума сәтті жасалды"
+
+#: txt2folder.py:150
+#: txt2folder.py:203
+msgid "Successfully created {} folders in '{}'"
+msgstr "'{}' ішінде {} бума сәтті жасалды"
+
+#: xPlorerManager.py:66
+msgid "Suppress announcement of '- File Explorer' in window titles"
+msgstr "Терезе тақырыптарындағы '- File Explorer' хабарламасын басу"
+
+#: xPlorerManager.py:61
+msgid "Suppress announcement of DirectUIHWND class"
+msgstr "DirectUIHWND класының хабарламасын басу"
+
+#: robocopyManager.py:438
+msgid "Sync error occurred"
+msgstr "Синхрондау қатесі орын алды"
+
+#: robocopyManager.py:220
+msgid "Synchronization interval:"
+msgstr "Синхрондау аралығы:"
+
+#: contextMenu.py:42
+msgid "TXT to Folder"
+msgstr "TXT-тен бумаға"
+
+#: contextMenu.py:49
+msgid "Title Case"
+msgstr "Тақырыптық регистр"
+
+#: clipboardManager.py:104
+msgid "Total file size is too large to copy content"
+msgstr "Файлдың жалпы өлшемі мазмұнды көшіру үшін тым үлкен"
+
+#: robocopyManager.py:963
+msgid "Trying alternative copy method..."
+msgstr "Балама көшіру әдісі сыналуда..."
+
+#: createFile.py:233
+msgid "Unable to get current directory"
+msgstr "Ағымдағы каталогты алу мүмкін емес"
+
+#: __init__.py:433
+msgid "Unable to get current path"
+msgstr "Ағымдағы жолды алу мүмкін емес"
+
+#: selectionManager.py:32
+msgid "Unable to get folder view"
+msgstr "Бума көрінісін алу мүмкін емес"
+
+#: contextMenu.py:47
+msgid "Uppercase"
+msgstr "Үлкен регистр"
+
+#: clipboardManager.py:124
+msgid "[Error processing RTF file]"
+msgstr "[RTF файлын өңдеу қатесі]"
+
+#: clipboardManager.py:126
+msgid "[RTF content - striprtf module not available]"
+msgstr "[RTF мазмұны - striprtf модулі қолжетімді емес]"
+
+#: compressionManager.py:97
+msgid "compression failed: {error}"
+msgstr "сығымдау сәтсіз болды: {error}"
+
+#: contextMenu.py:36
+msgid "copy"
+msgstr "көшіру"
+
+#: contextMenu.py:40
+msgid "mirror Backup"
+msgstr "айналық резервтік көшірме"
+
+#: contextMenu.py:37
+msgid "move"
+msgstr "жылжыту"
+
+#: createFile.py:183
+msgid "new_file"
+msgstr "жаңа_файл"
+
+#: createFile.py:185
+msgid "new_file_{index}"
+msgstr "жаңа_файл_{index}"
+
+#: contextMenu.py:38
+msgid "paste"
+msgstr "қою"
+
+#: __init__.py:143
+#: __init__.py:472
+#: __init__.py:517
+#: __init__.py:562
+#: __init__.py:587
+#: __init__.py:604
+#: __init__.py:627
+#: xPlorerManager.py:44
+msgid "xPlorer"
+msgstr "xPlorer"
+
+#: contextMenu.py:22
+msgid "xPlorer Settings"
+msgstr "xPlorer баптаулары"
+
+#: createFile.py:307
+msgid "{count} files created"
+msgstr "{count} файл жасалды"
+
+#: fileOperations.py:420
+msgid "{count} items {size}"
+msgstr "{count} элемент {size}"
+
+#: folderInfo.py:66
+msgid "{subfolders} subfolders and {files} files"
+msgstr "{subfolders} ішкі бума және {files} файл"
+
+#: robocopyManager.py:950
+msgid "{} completed successfully in {:.1f} seconds"
+msgstr "{} {:.1f} секундта сәтті аяқталды"
+
+#: robocopyManager.py:947
+msgid "{} completed successfully in {:.1f} seconds, average speed: {:.1f} MB/s"
+msgstr "{} {:.1f} секундта сәтті аяқталды, орташа жылдамдық: {:.1f} MB/s"
+
+#: robocopyManager.py:978
+msgid "{} completed successfully using alternative method"
+msgstr "{} балама әдіс арқылы сәтті аяқталды"
+
+#: robocopyManager.py:985
+msgid "{} completed with warnings (code: {})"
+msgstr "{} ескертулермен аяқталды (код: {})"
+
+#: robocopyManager.py:982
+msgid "{} failed with error: {}"
+msgstr "{} қатемен сәтсіз аяқталды: {}"
+
+#: robocopyManager.py:903
+msgid "{} in progress... {} seconds elapsed"
+msgstr "{} орындалуда... {} секунд өтті"
+
+#: robocopyManager.py:878
+msgid "{} started. You can continue working while it runs in background."
+msgstr "{} басталды. Ол фонда орындалып жатқанда жұмысыңызды жалғастыра аласыз."
+
+#: robocopyManager.py:929
+msgid "{}: {}% complete, speed: {:.1f} MB/s"
+msgstr "{}: {}% аяқталды, жылдамдық: {:.1f} MB/s"

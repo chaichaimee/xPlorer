@@ -1,0 +1,893 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: xPlorer 2026.5.1\n"
+"Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
+"POT-Creation-Date: 2026-04-27 15:57+0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: chaiBot and Malee Yamazaki\n"
+"Language-Team: Hindi\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: DevOn Addon\n"
+
+#: folder_creation_dialog.py:60
+msgid "&Apply"
+msgstr "&लागू करें"
+
+#: folder_creation_dialog.py:61
+msgid "&Cancel"
+msgstr "&रद्द करें"
+
+#: robocopyManager.py:223
+msgid "1 day"
+msgstr "1 दिन"
+
+#: createFile.py:305
+msgid "1 file created"
+msgstr "1 फ़ाइल बनाई गई"
+
+#: robocopyManager.py:222
+msgid "1 hour"
+msgstr "1 घंटा"
+
+#: robocopyManager.py:223
+msgid "1 month"
+msgstr "1 महीना"
+
+#: robocopyManager.py:223
+msgid "15 days"
+msgstr "15 दिन"
+
+#: robocopyManager.py:222
+msgid "15 minutes"
+msgstr "15 मिनट"
+
+#: robocopyManager.py:222
+msgid "30 minutes"
+msgstr "30 मिनट"
+
+#: robocopyManager.py:223
+msgid "7 days"
+msgstr "7 दिन"
+
+#: compressionManager.py:159
+msgid "7-Zip compression failed, trying built-in method..."
+msgstr "7-ज़िप संपीड़न विफल रहा, अंतर्निहित विधि आज़मा रहे हैं..."
+
+#: fileOperations.py:474
+msgid "A file with this name already exists"
+msgstr "इस नाम की एक फ़ाइल पहले से मौजूद है"
+
+#: robocopyManager.py:209
+msgid "Add destination folder"
+msgstr "गंतव्य फ़ोल्डर जोड़ें"
+
+#: xPlorerManager.py:56
+msgid "Announce 'Empty Folder' when entering an empty folder"
+msgstr "खाली फ़ोल्डर में प्रवेश करते समय 'खाली फ़ोल्डर' की घोषणा करें"
+
+#: xPlorerManager.py:71
+msgid "Automatically paste clipboard content into rename field"
+msgstr "क्लिपबोर्ड सामग्री स्वचालित रूप से नाम बदलने वाले फ़ील्ड में चिपकाएँ"
+
+#: xPlorerManager.py:51
+msgid "Automatically select the first item"
+msgstr "स्वचालित रूप से पहली वस्तु का चयन करें"
+
+#: compressionManager.py:268
+msgid "Built-in compression failed: {error}"
+msgstr "अंतर्निहित संपीड़न विफल: {error}"
+
+#: robocopyManager.py:61
+#: robocopyManager.py:242
+msgid "Cancel"
+msgstr "रद्द करें"
+
+#: clipboardManager.py:77
+msgid "Cannot copy content of folders, please select files only"
+msgstr "फ़ोल्डरों की सामग्री कॉपी नहीं कर सकते, कृपया केवल फ़ाइलें चुनें"
+
+#: createFile.py:290
+msgid "Cannot find unique name for: {name}"
+msgstr "{name} के लिए अद्वितीय नाम नहीं मिल सकता"
+
+#: robocopyManager.py:761
+msgid "Cannot get destination"
+msgstr "गंतव्य प्राप्त नहीं कर सकता"
+
+#: __init__.py:635
+msgid "Cannot open settings dialog"
+msgstr "सेटिंग्स डायलॉग नहीं खोल सकता"
+
+#: txt2folder.py:69
+msgid "Cannot process RTF file: striprtf module not available"
+msgstr "RTF फ़ाइल संसाधित नहीं कर सकता: striprtf मॉड्यूल उपलब्ध नहीं है"
+
+#: contextMenu.py:46
+msgid "Case Converter for Folders"
+msgstr "फ़ोल्डरों के लिए केस कन्वर्टर"
+
+#: robocopyManager.py:348
+msgid "Choose destination folder"
+msgstr "गंतव्य फ़ोल्डर चुनें"
+
+#: robocopyManager.py:239
+msgid "Clear all settings"
+msgstr "सभी सेटिंग्स साफ़ करें"
+
+#: compressionManager.py:264
+msgid "Completed"
+msgstr "पूर्ण हुआ"
+
+#: contextMenu.py:25
+msgid "Compress zip"
+msgstr "ज़िप संपीड़ित करें"
+
+#: compressionManager.py:144
+#: compressionManager.py:161
+msgid "Compressing files"
+msgstr "फ़ाइलें संपीड़ित की जा रही हैं"
+
+#: compressionManager.py:70
+msgid "Compressing..."
+msgstr "संपीड़ित किया जा रहा है..."
+
+#: compressionManager.py:244
+#: compressionManager.py:258
+msgid "Compressing: {percent}%"
+msgstr "संपीड़न: {percent}%"
+
+#: compressionManager.py:92
+#: compressionManager.py:262
+msgid "Compression cancelled"
+msgstr "संपीड़न रद्द कर दिया गया"
+
+#: compressionManager.py:94
+#: compressionManager.py:265
+msgid "Compression completed {name}"
+msgstr "संपीड़न पूर्ण हुआ {name}"
+
+#: clipboardManager.py:165
+msgid "Content from 1 file copied to clipboard"
+msgstr "1 फ़ाइल की सामग्री क्लिपबोर्ड पर कॉपी की गई"
+
+#: clipboardManager.py:167
+msgid "Content from {count} files copied to clipboard"
+msgstr "{count} फ़ाइलों की सामग्री क्लिपबोर्ड पर कॉपी की गई"
+
+#: clipboardManager.py:53
+msgid "Copied 1 item name to clipboard"
+msgstr "1 वस्तु का नाम क्लिपबोर्ड पर कॉपी किया गया"
+
+#: robocopyManager.py:185
+msgid "Copied source path to clipboard"
+msgstr "स्रोत पथ क्लिपबोर्ड पर कॉपी किया गया"
+
+#: clipboardManager.py:55
+msgid "Copied {count} item names to clipboard"
+msgstr "{count} वस्तुओं के नाम क्लिपबोर्ड पर कॉपी किए गए"
+
+#: __init__.py:429
+msgid "Copied: {path}"
+msgstr "कॉपी किया गया: {path}"
+
+#: robocopyManager.py:771
+msgid "Copy"
+msgstr "कॉपी करें"
+
+#: contextMenu.py:27
+msgid "Copy address bar"
+msgstr "पता बार कॉपी करें"
+
+#: contextMenu.py:28
+msgid "Copy content"
+msgstr "सामग्री कॉपी करें"
+
+#: __init__.py:516
+msgid "Copy content (single tap) or invert selection (double tap)"
+msgstr "सामग्री कॉपी करें (एक टैप) या चयन उल्टा करें (दो टैप)"
+
+#: contextMenu.py:29
+msgid "Copy selected file and folder names"
+msgstr "चयनित फ़ाइल और फ़ोल्डर नाम कॉपी करें"
+
+#: __init__.py:471
+msgid "Copy selected names (single tap) or copy address bar (double tap)"
+msgstr "चयनित नाम कॉपी करें (एक टैप) या पता बार कॉपी करें (दो टैप)"
+
+#: __init__.py:431
+#: clipboardManager.py:57
+#: clipboardManager.py:169
+#: robocopyManager.py:187
+msgid "Could not open clipboard"
+msgstr "क्लिपबोर्ड नहीं खोल सका"
+
+#: contextMenu.py:30
+#: createFile.py:16
+msgid "Create File"
+msgstr "फ़ाइल बनाएँ"
+
+#: folder_creation_dialog.py:14
+msgid "Create Multiple Folders"
+msgstr "एकाधिक फ़ोल्डर बनाएँ"
+
+#: contextMenu.py:43
+msgid "Create Multiple Folders..."
+msgstr "एकाधिक फ़ोल्डर बनाएँ..."
+
+#: folder_creation_dialog.py:42
+msgid "Create main folder and then subfolders"
+msgstr "मुख्य फ़ोल्डर और फिर उपफ़ोल्डर बनाएँ"
+
+#: __init__.py:626
+msgid "Create new folder and paste clipboard content into rename field"
+msgstr "नया फ़ोल्डर बनाएँ और क्लिपबोर्ड सामग्री नाम बदलने वाले फ़ील्ड में चिपकाएँ"
+
+#: createFile.py:237
+msgid "Current path is not a directory"
+msgstr "वर्तमान पथ एक निर्देशिका नहीं है"
+
+#: robocopyManager.py:817
+msgid "Destination already exists, overwriting..."
+msgstr "गंतव्य पहले से मौजूद है, अधिलेखित किया जा रहा है..."
+
+#: robocopyManager.py:205
+msgid "Destination folders list"
+msgstr "गंतव्य फ़ोल्डर सूची"
+
+#: robocopyManager.py:203
+msgid "Destination folders:"
+msgstr "गंतव्य फ़ोल्डर:"
+
+#: folder_creation_dialog.py:46
+msgid "Edit individual folder names"
+msgstr "व्यक्तिगत फ़ोल्डर नाम संपादित करें"
+
+#: robocopyManager.py:115
+msgid "Elapsed time: {} seconds"
+msgstr "बीता समय: {} सेकंड"
+
+#: xPlorerManager.py:40
+msgid "Empty Folder"
+msgstr "खाली फ़ोल्डर"
+
+#: robocopyManager.py:217
+msgid "Enable automatic synchronization"
+msgstr "स्वचालित सिंक्रनाइज़ेशन सक्षम करें"
+
+#: folderInfo.py:78
+msgid "Error calculating folder info"
+msgstr "फ़ोल्डर जानकारी की गणना करने में त्रुटि"
+
+#: fileOperations.py:401
+msgid "Error calculating size"
+msgstr "आकार की गणना करने में त्रुटि"
+
+#: compressionManager.py:173
+msgid "Error compressing files"
+msgstr "फ़ाइलों को संपीड़ित करने में त्रुटि"
+
+#: clipboardManager.py:173
+msgid "Error copying file content"
+msgstr "फ़ाइल सामग्री कॉपी करने में त्रुटि"
+
+#: clipboardManager.py:61
+msgid "Error copying names to clipboard"
+msgstr "नाम क्लिपबोर्ड पर कॉपी करने में त्रुटि"
+
+#: txt2folder.py:116
+msgid "Error creating base folder"
+msgstr "आधार फ़ोल्डर बनाने में त्रुटि"
+
+#: createFile.py:311
+msgid "Error creating files"
+msgstr "फ़ाइलें बनाने में त्रुटि"
+
+#: folder_creation_dialog.py:219
+msgid "Error creating folder: {number}"
+msgstr "फ़ोल्डर बनाने में त्रुटि: {number}"
+
+#: __init__.py:662
+msgid "Error creating folders"
+msgstr "फ़ोल्डर बनाने में त्रुटि"
+
+#: folder_creation_dialog.py:179
+msgid "Error creating main folder"
+msgstr "मुख्य फ़ोल्डर बनाने में त्रुटि"
+
+#: folder_creation_dialog.py:201
+msgid "Error creating subfolder: {number}"
+msgstr "उपफ़ोल्डर बनाने में त्रुटि: {number}"
+
+#: __init__.py:690
+msgid "Error during conversion"
+msgstr "रूपांतरण के दौरान त्रुटि"
+
+#: robocopyManager.py:990
+msgid "Error during {}: {}"
+msgstr "{} के दौरान त्रुटि: {}"
+
+#: compressionManager.py:101
+msgid "Error in compression process: {error}"
+msgstr "संपीड़न प्रक्रिया में त्रुटि: {error}"
+
+#: selectionManager.py:65
+msgid "Error inverting selection"
+msgstr "चयन उल्टा करने में त्रुटि"
+
+#: createFile.py:262
+msgid "Error opening create file dialog"
+msgstr "फ़ाइल बनाएँ डायलॉग खोलने में त्रुटि"
+
+#: fileOperations.py:488
+msgid "Error opening rename dialog"
+msgstr "नाम बदलें डायलॉग खोलने में त्रुटि"
+
+#: __init__.py:642
+msgid "Error opening settings"
+msgstr "सेटिंग्स खोलने में त्रुटि"
+
+#: txt2folder.py:212
+msgid "Error processing text file: {}"
+msgstr "टेक्स्ट फ़ाइल संसाधित करने में त्रुटि: {}"
+
+#: txt2folder.py:80
+msgid "Error reading RTF file"
+msgstr "RTF फ़ाइल पढ़ने में त्रुटि"
+
+#: txt2folder.py:215
+msgid "Error reading file encoding"
+msgstr "फ़ाइल एन्कोडिंग पढ़ने में त्रुटि"
+
+#: fileOperations.py:453
+#: fileOperations.py:482
+msgid "Error renaming file"
+msgstr "फ़ाइल का नाम बदलने में त्रुटि"
+
+#: robocopyManager.py:784
+#: txt2folder.py:219
+msgid "Error: {}"
+msgstr "त्रुटि: {}"
+
+#: robocopyManager.py:111
+msgid "Estimated time remaining: {}"
+msgstr "शेष अनुमानित समय: {}"
+
+#: createFile.py:84
+msgid "Extension:"
+msgstr "एक्सटेंशन:"
+
+#: case.py:115
+#: case.py:129
+#: case.py:150
+#: case.py:164
+msgid "Failed to rename any folders"
+msgstr "किसी भी फ़ोल्डर का नाम बदलने में विफल"
+
+#: createFile.py:163
+msgid "File count cannot exceed 10"
+msgstr "फ़ाइलों की संख्या 10 से अधिक नहीं हो सकती"
+
+#: createFile.py:160
+msgid "File count must be at least 1"
+msgstr "फ़ाइलों की संख्या कम से कम 1 होनी चाहिए"
+
+#: createFile.py:131
+msgid "File name"
+msgstr "फ़ाइल नाम"
+
+#: fileOperations.py:57
+msgid "File name cannot be empty"
+msgstr "फ़ाइल नाम खाली नहीं हो सकता"
+
+#: fileOperations.py:470
+msgid "File name not changed"
+msgstr "फ़ाइल नाम नहीं बदला गया"
+
+#: createFile.py:77
+#: createFile.py:132
+msgid "File name {index}:"
+msgstr "फ़ाइल नाम {index}:"
+
+#: createFile.py:75
+msgid "File name:"
+msgstr "फ़ाइल नाम:"
+
+#: fileOperations.py:479
+msgid "File renamed to {name}"
+msgstr "फ़ाइल का नाम बदलकर {name} किया गया"
+
+#: folder_creation_dialog.py:113
+#: folder_creation_dialog.py:158
+msgid "Folder"
+msgstr "फ़ोल्डर"
+
+#: txt2folder.py:106
+#: txt2folder.py:182
+msgid "Folder '{}' already exists, creating '{}' instead"
+msgstr "फ़ोल्डर '{}' पहले से मौजूद है, इसके बजाय '{}' बनाया जा रहा है"
+
+#: contextMenu.py:52
+msgid "Folder info"
+msgstr "फ़ोल्डर जानकारी"
+
+#: folder_creation_dialog.py:27
+msgid "Folder title:"
+msgstr "फ़ोल्डर शीर्षक:"
+
+#: contextMenu.py:50
+msgid "Headline Case"
+msgstr "हेडलाइन केस"
+
+#: robocopyManager.py:434
+msgid "Immediate sync completed: {}/{} destinations"
+msgstr "तत्काल सिंक पूर्ण: {}/{} गंतव्य"
+
+#: robocopyManager.py:767
+msgid "Invalid destination"
+msgstr "अमान्य गंतव्य"
+
+#: folder_creation_dialog.py:169
+msgid "Invalid number for folders"
+msgstr "फ़ोल्डरों के लिए अमान्य संख्या"
+
+#: robocopyManager.py:407
+#: robocopyManager.py:447
+msgid "Invalid time format"
+msgstr "अमान्य समय प्रारूप"
+
+#: contextMenu.py:26
+msgid "Invert selection"
+msgstr "चयन उल्टा करें"
+
+#: selectionManager.py:60
+msgid "Inverted selection: {inverted} of {total} items selected"
+msgstr "उल्टा चयन: कुल {total} में से {inverted} वस्तुएँ चयनित"
+
+#: robocopyManager.py:868
+msgid "Large file detected, using compression for speed"
+msgstr "बड़ी फ़ाइल का पता चला, गति के लिए संपीड़न का उपयोग किया जा रहा है"
+
+#: contextMenu.py:48
+msgid "Lowercase"
+msgstr "लोअरकेस"
+
+#: folder_creation_dialog.py:166
+msgid "Maximum 100 folders allowed"
+msgstr "अधिकतम 100 फ़ोल्डरों की अनुमति है"
+
+#: robocopyManager.py:62
+msgid "Minimize"
+msgstr "छोटा करें"
+
+#: robocopyManager.py:145
+msgid "Mirror Backup Settings"
+msgstr "मिरर बैकअप सेटिंग्स"
+
+#: robocopyManager.py:716
+msgid "Mirror backup configured successfully"
+msgstr "मिरर बैकअप सफलतापूर्वक कॉन्फ़िगर किया गया"
+
+#: robocopyManager.py:718
+msgid "Mirror backup disabled"
+msgstr "मिरर बैकअप अक्षम किया गया"
+
+#: robocopyManager.py:771
+msgid "Move"
+msgstr "स्थानांतरित करें"
+
+#: robocopyManager.py:609
+msgid "Next scheduled backup for {}: {}"
+msgstr "{} के लिए अगला अनुसूचित बैकअप: {}"
+
+#: __init__.py:650
+msgid "No Explorer folder detected"
+msgstr "कोई एक्सप्लोरर फ़ोल्डर नहीं मिला"
+
+#: fileOperations.py:300
+#: fileOperations.py:410
+msgid "No access to size data"
+msgstr "आकार डेटा तक पहुँच नहीं है"
+
+#: selectionManager.py:27
+msgid "No active File Explorer window found"
+msgstr "कोई सक्रिय फ़ाइल एक्सप्लोरर विंडो नहीं मिली"
+
+#: clipboardManager.py:156
+msgid "No content could be read from selected files"
+msgstr "चयनित फ़ाइलों से कोई सामग्री नहीं पढ़ी जा सकी"
+
+#: createFile.py:303
+msgid "No files were created"
+msgstr "कोई फ़ाइल नहीं बनाई गई"
+
+#: case.py:106
+#: case.py:120
+#: case.py:141
+#: case.py:155
+msgid "No folders found"
+msgstr "कोई फ़ोल्डर नहीं मिला"
+
+#: __init__.py:677
+msgid "No folders selected or current folder not available"
+msgstr "कोई फ़ोल्डर चयनित नहीं है या वर्तमान फ़ोल्डर उपलब्ध नहीं है"
+
+#: folder_creation_dialog.py:230
+#: txt2folder.py:155
+#: txt2folder.py:208
+msgid "No folders were created"
+msgstr "कोई फ़ोल्डर नहीं बनाया गया"
+
+#: folderInfo.py:30
+msgid "No item selected"
+msgstr "कोई वस्तु चयनित नहीं"
+
+#: selectionManager.py:40
+msgid "No items in folder"
+msgstr "फ़ोल्डर में कोई वस्तु नहीं"
+
+#: clipboardManager.py:30
+#: clipboardManager.py:72
+#: compressionManager.py:132
+#: fileOperations.py:289
+#: fileOperations.py:433
+msgid "No items selected"
+msgstr "कोई वस्तु चयनित नहीं"
+
+#: robocopyManager.py:749
+msgid "No pending operation"
+msgstr "कोई लंबित कार्य नहीं"
+
+#: clipboardManager.py:93
+msgid "No text files selected"
+msgstr "कोई टेक्स्ट फ़ाइल चयनित नहीं"
+
+#: txt2folder.py:91
+#: txt2folder.py:167
+msgid "No valid folder names found in the file"
+msgstr "फ़ाइल में कोई मान्य फ़ोल्डर नाम नहीं मिला"
+
+#: createFile.py:227
+#: robocopyManager.py:663
+#: robocopyManager.py:724
+#: robocopyManager.py:737
+#: robocopyManager.py:755
+#: selectionManager.py:21
+#: txt2folder.py:43
+msgid "Not in File Explorer"
+msgstr "फ़ाइल एक्सप्लोरर में नहीं"
+
+#: createFile.py:27
+msgid "Number of files to create:"
+msgstr "बनाई जाने वाली फ़ाइलों की संख्या:"
+
+#: folder_creation_dialog.py:163
+msgid "Number of folders must be at least 1"
+msgstr "फ़ोल्डरों की संख्या कम से कम 1 होनी चाहिए"
+
+#: folder_creation_dialog.py:35
+msgid "Number of folders:"
+msgstr "फ़ोल्डरों की संख्या:"
+
+#: robocopyManager.py:241
+msgid "OK"
+msgstr "ठीक है"
+
+#: __init__.py:586
+msgid "Open xPlorer context menu"
+msgstr "xPlorer संदर्भ मेनू खोलें"
+
+#: txt2folder.py:55
+msgid "Please select a .txt or .rtf file"
+msgstr "कृपया .txt या .rtf फ़ाइल चुनें"
+
+#: fileOperations.py:443
+msgid "Please select a file, not a folder"
+msgstr "कृपया एक फ़ाइल चुनें, फ़ोल्डर नहीं"
+
+#: robocopyManager.py:671
+msgid "Please select a folder"
+msgstr "कृपया एक फ़ोल्डर चुनें"
+
+#: fileOperations.py:437
+msgid "Please select only one file"
+msgstr "कृपया केवल एक फ़ाइल चुनें"
+
+#: folderInfo.py:35
+#: robocopyManager.py:667
+msgid "Please select only one folder"
+msgstr "कृपया केवल एक फ़ोल्डर चुनें"
+
+#: txt2folder.py:48
+msgid "Please select only one text file"
+msgstr "कृपया केवल एक टेक्स्ट फ़ाइल चुनें"
+
+#: robocopyManager.py:46
+msgid "Preparing operation..."
+msgstr "कार्य तैयार किया जा रहा है..."
+
+#: robocopyManager.py:103
+msgid "Processing: {}"
+msgstr "प्रसंस्करण: {}"
+
+#: robocopyManager.py:105
+msgid "Progress: {}%"
+msgstr "प्रगति: {}%"
+
+#: robocopyManager.py:210
+msgid "Remove selected destination"
+msgstr "चयनित गंतव्य हटाएँ"
+
+#: robocopyManager.py:198
+msgid "Remove selected source"
+msgstr "चयनित स्रोत हटाएँ"
+
+#: __init__.py:603
+#: contextMenu.py:31
+msgid "Rename selected file"
+msgstr "चयनित फ़ाइल का नाम बदलें"
+
+#: contextMenu.py:35
+msgid "Robocopy"
+msgstr "रोबोकॉपी"
+
+#: contextMenu.py:32
+msgid "Say size"
+msgstr "आकार बताएँ"
+
+#: __init__.py:561
+msgid "Say size (single tap) or compress zip (double tap)"
+msgstr "आकार बताएँ (एक टैप) या ज़िप संपीड़ित करें (दो टैप)"
+
+#: robocopyManager.py:648
+msgid "Scheduled backup completed: {}/{} destinations"
+msgstr "अनुसूचित बैकअप पूर्ण: {}/{} गंतव्य"
+
+#: robocopyManager.py:623
+msgid "Scheduled mirror backup started for {}"
+msgstr "{} के लिए अनुसूचित मिरर बैकअप शुरू हुआ"
+
+#: robocopyManager.py:231
+msgid "Scheduled time:"
+msgstr "अनुसूचित समय:"
+
+#: robocopyManager.py:728
+#: robocopyManager.py:741
+msgid "Select one item only"
+msgstr "केवल एक वस्तु चुनें"
+
+#: txt2folder.py:60
+msgid "Selected file does not exist"
+msgstr "चयनित फ़ाइल मौजूद नहीं है"
+
+#: folderInfo.py:41
+msgid "Selected item is not a folder"
+msgstr "चयनित वस्तु एक फ़ोल्डर नहीं है"
+
+#: createFile.py:199
+msgid "Some files will use default names"
+msgstr "कुछ फ़ाइलें डिफ़ॉल्ट नामों का उपयोग करेंगी"
+
+#: robocopyManager.py:404
+#: robocopyManager.py:444
+msgid "Source and destination required"
+msgstr "स्रोत और गंतव्य आवश्यक है"
+
+#: robocopyManager.py:792
+msgid "Source does not exist"
+msgstr "स्रोत मौजूद नहीं है"
+
+#: robocopyManager.py:193
+msgid "Source folders (select to edit):"
+msgstr "स्रोत फ़ोल्डर (संपादित करने के लिए चुनें):"
+
+#: robocopyManager.py:195
+msgid "Source folders list"
+msgstr "स्रोत फ़ोल्डर सूची"
+
+#: robocopyManager.py:732
+msgid "Source for copy: {}"
+msgstr "कॉपी के लिए स्रोत: {}"
+
+#: robocopyManager.py:745
+msgid "Source for move: {}"
+msgstr "स्थानांतरण के लिए स्रोत: {}"
+
+#: robocopyManager.py:121
+msgid "Speed: {}"
+msgstr "गति: {}"
+
+#: robocopyManager.py:240
+msgid "Start synchronization"
+msgstr "सिंक्रनाइज़ेशन शुरू करें"
+
+#: robocopyManager.py:410
+msgid "Starting immediate mirror sync..."
+msgstr "तत्काल मिरर सिंक शुरू किया जा रहा है..."
+
+#: robocopyManager.py:774
+msgid "Starting {} operation in background..."
+msgstr "पृष्ठभूमि में {} कार्य शुरू किया जा रहा है..."
+
+#: compressionManager.py:144
+#: compressionManager.py:161
+msgid "Starting..."
+msgstr "शुरू किया जा रहा है..."
+
+#: case.py:162
+msgid "Successfully converted {count} folders to headline case"
+msgstr "{count} फ़ोल्डर सफलतापूर्वक हेडलाइन केस में परिवर्तित किए गए"
+
+#: case.py:127
+msgid "Successfully converted {count} folders to lowercase"
+msgstr "{count} फ़ोल्डर सफलतापूर्वक लोअरकेस में परिवर्तित किए गए"
+
+#: case.py:148
+msgid "Successfully converted {count} folders to title case"
+msgstr "{count} फ़ोल्डर सफलतापूर्वक टाइटल केस में परिवर्तित किए गए"
+
+#: case.py:113
+msgid "Successfully converted {count} folders to uppercase"
+msgstr "{count} फ़ोल्डर सफलतापूर्वक अपरकेस में परिवर्तित किए गए"
+
+#: folder_creation_dialog.py:226
+msgid "Successfully created 1 folder"
+msgstr "1 फ़ोल्डर सफलतापूर्वक बनाया गया"
+
+#: folder_creation_dialog.py:224
+msgid "Successfully created main folder only"
+msgstr "केवल मुख्य फ़ोल्डर सफलतापूर्वक बनाया गया"
+
+#: folder_creation_dialog.py:228
+msgid "Successfully created {count} folders"
+msgstr "{count} फ़ोल्डर सफलतापूर्वक बनाए गए"
+
+#: txt2folder.py:150
+#: txt2folder.py:203
+msgid "Successfully created {} folders in '{}'"
+msgstr "'{}' में {} फ़ोल्डर सफलतापूर्वक बनाए गए"
+
+#: xPlorerManager.py:66
+msgid "Suppress announcement of '- File Explorer' in window titles"
+msgstr "विंडो शीर्षकों में '- फ़ाइल एक्सप्लोरर' की घोषणा को दबाएँ"
+
+#: xPlorerManager.py:61
+msgid "Suppress announcement of DirectUIHWND class"
+msgstr "DirectUIHWND वर्ग की घोषणा को दबाएँ"
+
+#: robocopyManager.py:438
+msgid "Sync error occurred"
+msgstr "सिंक त्रुटि हुई"
+
+#: robocopyManager.py:220
+msgid "Synchronization interval:"
+msgstr "सिंक्रनाइज़ेशन अंतराल:"
+
+#: contextMenu.py:42
+msgid "TXT to Folder"
+msgstr "TXT से फ़ोल्डर"
+
+#: contextMenu.py:49
+msgid "Title Case"
+msgstr "टाइटल केस"
+
+#: clipboardManager.py:104
+msgid "Total file size is too large to copy content"
+msgstr "कुल फ़ाइल आकार सामग्री कॉपी करने के लिए बहुत बड़ा है"
+
+#: robocopyManager.py:963
+msgid "Trying alternative copy method..."
+msgstr "वैकल्पिक कॉपी विधि आज़माई जा रही है..."
+
+#: createFile.py:233
+msgid "Unable to get current directory"
+msgstr "वर्तमान निर्देशिका प्राप्त करने में असमर्थ"
+
+#: __init__.py:433
+msgid "Unable to get current path"
+msgstr "वर्तमान पथ प्राप्त करने में असमर्थ"
+
+#: selectionManager.py:32
+msgid "Unable to get folder view"
+msgstr "फ़ोल्डर दृश्य प्राप्त करने में असमर्थ"
+
+#: contextMenu.py:47
+msgid "Uppercase"
+msgstr "अपरकेस"
+
+#: clipboardManager.py:124
+msgid "[Error processing RTF file]"
+msgstr "[RTF फ़ाइल संसाधित करने में त्रुटि]"
+
+#: clipboardManager.py:126
+msgid "[RTF content - striprtf module not available]"
+msgstr "[RTF सामग्री - striprtf मॉड्यूल उपलब्ध नहीं है]"
+
+#: compressionManager.py:97
+msgid "compression failed: {error}"
+msgstr "संपीड़न विफल: {error}"
+
+#: contextMenu.py:36
+msgid "copy"
+msgstr "कॉपी करें"
+
+#: contextMenu.py:40
+msgid "mirror Backup"
+msgstr "मिरर बैकअप"
+
+#: contextMenu.py:37
+msgid "move"
+msgstr "स्थानांतरित करें"
+
+#: createFile.py:183
+msgid "new_file"
+msgstr "नई_फ़ाइल"
+
+#: createFile.py:185
+msgid "new_file_{index}"
+msgstr "नई_फ़ाइल_{index}"
+
+#: contextMenu.py:38
+msgid "paste"
+msgstr "चिपकाएँ"
+
+#: __init__.py:143
+#: __init__.py:472
+#: __init__.py:517
+#: __init__.py:562
+#: __init__.py:587
+#: __init__.py:604
+#: __init__.py:627
+#: xPlorerManager.py:44
+msgid "xPlorer"
+msgstr "xPlorer"
+
+#: contextMenu.py:22
+msgid "xPlorer Settings"
+msgstr "xPlorer सेटिंग्स"
+
+#: createFile.py:307
+msgid "{count} files created"
+msgstr "{count} फ़ाइलें बनाई गईं"
+
+#: fileOperations.py:420
+msgid "{count} items {size}"
+msgstr "{count} वस्तुएँ {size}"
+
+#: folderInfo.py:66
+msgid "{subfolders} subfolders and {files} files"
+msgstr "{subfolders} उपफ़ोल्डर और {files} फ़ाइलें"
+
+#: robocopyManager.py:950
+msgid "{} completed successfully in {:.1f} seconds"
+msgstr "{} {:.1f} सेकंड में सफलतापूर्वक पूर्ण हुआ"
+
+#: robocopyManager.py:947
+msgid "{} completed successfully in {:.1f} seconds, average speed: {:.1f} MB/s"
+msgstr "{} {:.1f} सेकंड में सफलतापूर्वक पूर्ण हुआ, औसत गति: {:.1f} MB/s"
+
+#: robocopyManager.py:978
+msgid "{} completed successfully using alternative method"
+msgstr "{} वैकल्पिक विधि का उपयोग करके सफलतापूर्वक पूर्ण हुआ"
+
+#: robocopyManager.py:985
+msgid "{} completed with warnings (code: {})"
+msgstr "{} चेतावनियों के साथ पूर्ण हुआ (कोड: {})"
+
+#: robocopyManager.py:982
+msgid "{} failed with error: {}"
+msgstr "{} त्रुटि के साथ विफल रहा: {}"
+
+#: robocopyManager.py:903
+msgid "{} in progress... {} seconds elapsed"
+msgstr "{} प्रगति पर है... {} सेकंड बीत चुके हैं"
+
+#: robocopyManager.py:878
+msgid "{} started. You can continue working while it runs in background."
+msgstr "{} शुरू हुआ। आप पृष्ठभूमि में चलते समय काम करना जारी रख सकते हैं।"
+
+#: robocopyManager.py:929
+msgid "{}: {}% complete, speed: {:.1f} MB/s"
+msgstr "{}: {}% पूर्ण, गति: {:.1f} MB/s"
