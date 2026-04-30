@@ -1,7 +1,0 @@
-xPlorer v2026.5.1
-
-https://github.com/chaichaimee/xPlorer/releases/download/2026.5.1/xPlorer-v2026.5.1.nvda-addon
-
-https://github.com/chaichaimee/xPlorer
-
-Chai Chaimee
