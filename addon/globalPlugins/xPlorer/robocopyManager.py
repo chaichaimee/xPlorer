@@ -18,23 +18,18 @@ import tones
 import globalVars
 import tempfile
 import shutil
-import math
+import core
 
 addonHandler.initTranslation()
 
 class ProgressDialog(wx.Dialog):
-	"""Dialog to show progress for robocopy operations"""
 	def __init__(self, parent, title, total_operations):
-		super().__init__(
-			parent,
-			title=title,
-			style=wx.DEFAULT_DIALOG_STYLE | wx.RESIZE_BORDER
-		)
+		super().__init__(parent, title=title, style=wx.DEFAULT_DIALOG_STYLE | wx.RESIZE_BORDER)
 		self.total_operations = total_operations
 		self.current_operation = 0
 		self.is_cancelled = False
 		self.last_progress_time = 0
-		self.progress_interval = 1  # Update progress every 1 second
+		self.progress_interval = 1
 		self.start_time = time.time()
 		self.InitUI()
 		self.CentreOnScreen()
@@ -49,11 +44,9 @@ class ProgressDialog(wx.Dialog):
 		self.gauge = wx.Gauge(self, range=100)
 		sHelper.addItem(self.gauge, proportion=0, flag=wx.EXPAND)
 		
-		# Add time estimation label
 		self.time_label = wx.StaticText(self, label="")
 		sHelper.addItem(self.time_label)
 		
-		# Add speed information
 		self.speed_label = wx.StaticText(self, label="")
 		sHelper.addItem(self.speed_label)
 		
@@ -81,12 +74,10 @@ class ProgressDialog(wx.Dialog):
 		self.Iconize(True)
 		
 	def UpdateProgress(self, current, total, operation_name="", estimated_time="", speed=""):
-		"""Update progress bar and label with rate limiting"""
 		if self.is_cancelled:
 			return False
 			
 		current_time = time.time()
-		# Only update UI at specified interval to prevent freezing
 		if current_time - self.last_progress_time < self.progress_interval:
 			return True
 			
@@ -96,7 +87,6 @@ class ProgressDialog(wx.Dialog):
 		self.gauge.SetValue(percentage)
 		
 		if operation_name:
-			# Shorten long file names for display
 			display_name = os.path.basename(operation_name)
 			if len(display_name) > 30:
 				display_name = display_name[:15] + "..." + display_name[-15:]
@@ -106,7 +96,6 @@ class ProgressDialog(wx.Dialog):
 			
 		self.progress_label.SetLabel(label_text)
 		
-		# Update time estimation if provided
 		if estimated_time:
 			self.time_label.SetLabel(_("Estimated time remaining: {}").format(estimated_time))
 		else:
@@ -116,7 +105,6 @@ class ProgressDialog(wx.Dialog):
 			else:
 				self.time_label.SetLabel("")
 				
-		# Update speed information
 		if speed:
 			self.speed_label.SetLabel(_("Speed: {}").format(speed))
 		else:
@@ -124,7 +112,6 @@ class ProgressDialog(wx.Dialog):
 			
 		self.progress_label.GetContainingSizer().Layout()
 		
-		# Play progress tone every 25% for feedback
 		if percentage > 0 and percentage % 25 == 0:
 			if percentage == 25:
 				tones.beep(800, 100)
@@ -133,18 +120,13 @@ class ProgressDialog(wx.Dialog):
 			elif percentage == 75:
 				tones.beep(1200, 100)
 		
-		# Process pending events but don't yield too much
 		wx.GetApp().Yield(True)
 		return True
 
 
 class MirrorBackupDialog(wx.Dialog):
 	def __init__(self, parent, source_path, existing_config=None, all_configs=None):
-		super().__init__(
-			parent,
-			title=_("Mirror Backup Settings"),
-			style=wx.DEFAULT_DIALOG_STYLE | wx.RESIZE_BORDER | wx.STAY_ON_TOP
-		)
+		super().__init__(parent, title=_("Mirror Backup Settings"), style=wx.DEFAULT_DIALOG_STYLE | wx.RESIZE_BORDER | wx.STAY_ON_TOP)
 		self.source_path = source_path
 		self.destinations = []
 		self.sync_enabled = False
@@ -156,28 +138,19 @@ class MirrorBackupDialog(wx.Dialog):
 		self.removed_source = None
 		self.InitUI()
 		self.CentreOnScreen()
-		
-		# Bind ESC key to close dialog
 		self.Bind(wx.EVT_CHAR_HOOK, self.onKeyDown)
 		
 	def onKeyDown(self, evt):
-		"""Handle key events"""
 		key_code = evt.GetKeyCode()
-		
-		# ESC key to close dialog
 		if key_code == wx.WXK_ESCAPE:
 			self.EndModal(wx.ID_CANCEL)
 			return
-		
-		# Ctrl+C for copy
 		if evt.ControlDown() and key_code == ord('C'):
 			self.copySourceToClipboard()
 			return
-			
 		evt.Skip()
 		
 	def copySourceToClipboard(self):
-		"""Copy source path to clipboard"""
 		if self.source_path:
 			if wx.TheClipboard.Open():
 				wx.TheClipboard.SetData(wx.TextDataObject(self.source_path))
@@ -269,12 +242,10 @@ class MirrorBackupDialog(wx.Dialog):
 		ok_btn.Bind(wx.EVT_BUTTON, self.onOk)
 		self.Bind(wx.EVT_CLOSE, self.onCancel)
 		
-		# Set dialog to be on top and focus
 		self.Raise()
 		self.SetFocus()
 		
 	def ShowModal(self):
-		"""Override ShowModal to ensure dialog is on top"""
 		self.Raise()
 		self.SetFocus()
 		return super().ShowModal()
@@ -475,20 +446,15 @@ class RobocopyManager:
 
 	def loadMirrorConfig(self):
 		try:
-			# New config path
 			config_dir = os.path.join(globalVars.appArgs.configPath, "ChaiChaimee")
 			new_path = os.path.join(config_dir, "mirror.json")
 			old_path = os.path.join(globalVars.appArgs.configPath, "mirror.json")
 			
-			# Check if old config exists and new doesn't, then migrate
 			if os.path.exists(old_path) and not os.path.exists(new_path):
-				# Ensure new directory exists
 				os.makedirs(config_dir, exist_ok=True)
-				# Move file
 				shutil.move(old_path, new_path)
 				log.info(f"Migrated mirror.json from {old_path} to {new_path}")
 			
-			# Load from new path if exists
 			if os.path.exists(new_path):
 				with open(new_path, 'r', encoding='utf-8') as f:
 					data = json.load(f)
@@ -510,64 +476,46 @@ class RobocopyManager:
 			log.error(f"Save mirror config error: {e}")
 
 	def calculateNextRunTime(self, cfg):
-		"""Calculate next run time based on interval and scheduled time"""
 		interval = cfg.get('interval', 900)
 		st = cfg.get('scheduled_time', '00:00')
 		now = datetime.now()
 		
-		# For intervals less than a day, just add the interval
 		if interval < 86400:
 			return now + timedelta(seconds=interval)
 		
-		# For daily or longer intervals, use scheduled time
 		try:
 			h, m = map(int, st.split(':'))
 			target = now.replace(hour=h, minute=m, second=0, microsecond=0)
 			
-			# Store last run time if not exists
 			if 'last_run' not in cfg:
-				# For first run, if target time has passed today, schedule for next interval
 				if target <= now:
-					# Add interval based on days
-					if interval == 86400:  # 1 day
+					if interval == 86400:
 						target += timedelta(days=1)
-					elif interval == 604800:  # 7 days
+					elif interval == 604800:
 						target += timedelta(days=7)
-					elif interval == 1296000:  # 15 days
+					elif interval == 1296000:
 						target += timedelta(days=15)
-					elif interval == 2592000:  # 30 days (1 month)
-						# Approximate month as 30 days
+					elif interval == 2592000:
 						target += timedelta(days=30)
 				return target
 			else:
-				# For subsequent runs, calculate based on last run time
 				try:
 					last_run = datetime.fromisoformat(cfg['last_run'])
-					# Calculate next run by adding interval to last run
 					next_run = last_run + timedelta(seconds=interval)
-					
-					# If next_run is in the past (e.g., system was off), schedule for today
 					if next_run <= now:
-						# Find the next scheduled time after now
-						if interval == 86400:  # Daily
-							# Schedule for today at scheduled time, if passed, schedule for tomorrow
+						if interval == 86400:
 							target_today = now.replace(hour=h, minute=m, second=0, microsecond=0)
 							if target_today <= now:
 								next_run = target_today + timedelta(days=1)
 							else:
 								next_run = target_today
 						else:
-							# For longer intervals, calculate based on last run
 							days_to_add = interval // 86400
 							next_run = last_run + timedelta(days=days_to_add)
-							
-							# If still in the past, keep adding intervals until in the future
 							while next_run <= now:
 								next_run += timedelta(days=days_to_add)
-					
 					return next_run
 				except:
-					# If error parsing last_run, fall back to default calculation
 					if target <= now:
 						days_to_add = interval // 86400
 						target += timedelta(days=days_to_add)
@@ -576,9 +524,7 @@ class RobocopyManager:
 			return now + timedelta(seconds=interval)
 
 	def updateLastRunTime(self, cfg):
-		"""Update last run time in config"""
 		cfg['last_run'] = datetime.now().isoformat()
-		# Find and update the config in the list
 		for i, c in enumerate(self.mirror_configs):
 			if c.get('source') == cfg.get('source'):
 				self.mirror_configs[i] = cfg
@@ -594,7 +540,6 @@ class RobocopyManager:
 			if old and old.is_alive():
 				old.cancel()
 		
-		# Calculate delay until next run
 		next_run = self.calculateNextRunTime(cfg)
 		delay = max(0, (next_run - datetime.now()).total_seconds())
 		
@@ -617,7 +562,6 @@ class RobocopyManager:
 		if not src or not dests:
 			return
 
-		# Update last run time before starting backup
 		self.updateLastRunTime(cfg)
 		
 		wx.CallAfter(ui.message, _("Scheduled mirror backup started for {}").format(
@@ -648,7 +592,6 @@ class RobocopyManager:
 			wx.CallAfter(ui.message, _("Scheduled backup completed: {}/{} destinations").format(success, len(dests)))
 			wx.CallAfter(tones.beep, 1500, 500)
 			
-			# Restart timer for next run
 			if cfg.get('enabled', False):
 				wx.CallAfter(self.startMirrorTimer, cfg, announce=True)
 
@@ -662,38 +605,42 @@ class RobocopyManager:
 		if not focus or focus.appModule.appName != "explorer":
 			ui.message(_("Not in File Explorer"))
 			return
-		items, _ = self.plugin._getSelectedItems()
-		if not items or len(items) > 1:
-			ui.message(_("Please select only one folder"))
-			return
-		src = items[0][1]
-		if not os.path.isdir(src):
-			ui.message(_("Please select a folder"))
-			return
-		existing = self.getMirrorConfig(src)
 		
-		# Ensure dialog appears on top
-		def show_dialog():
-			dlg = MirrorBackupDialog(gui.mainFrame, src, existing, self.mirror_configs)
-			result = dlg.ShowModal()
+		def process_selected_items(selected_data):
+			selected_items, _ = selected_data
+			if not selected_items or len(selected_items) > 1:
+				ui.message(addonHandler.gettext("Please select only one folder"))
+				return
 			
-			if hasattr(dlg, 'removed_source') and dlg.removed_source:
-				self.mirror_configs = [c for c in self.mirror_configs if c.get('source') != dlg.removed_source]
-				if dlg.removed_source in self.mirror_timers:
-					t = self.mirror_timers[dlg.removed_source].get('timer')
-					if t and t.is_alive():
-						t.cancel()
-					del self.mirror_timers[dlg.removed_source]
-				self.saveMirrorConfig()
-			if result == wx.ID_OK and dlg.source_path:
-				self.setupMirrorBackup(
-					dlg.source_path, dlg.destinations,
-					dlg.sync_enabled, dlg.sync_interval, dlg.scheduled_time
-				)
-			dlg.Destroy()
+			src = selected_items[0][1]
+			if not os.path.isdir(src):
+				ui.message(addonHandler.gettext("Please select a folder"))
+				return
+			
+			existing = self.getMirrorConfig(src)
+			
+			def show_dialog():
+				dlg = MirrorBackupDialog(gui.mainFrame, src, existing, self.mirror_configs)
+				result = dlg.ShowModal()
+				
+				if hasattr(dlg, 'removed_source') and dlg.removed_source:
+					self.mirror_configs = [c for c in self.mirror_configs if c.get('source') != dlg.removed_source]
+					if dlg.removed_source in self.mirror_timers:
+						t = self.mirror_timers[dlg.removed_source].get('timer')
+						if t and t.is_alive():
+							t.cancel()
+						del self.mirror_timers[dlg.removed_source]
+					self.saveMirrorConfig()
+				if result == wx.ID_OK and dlg.source_path:
+					self.setupMirrorBackup(
+						dlg.source_path, dlg.destinations,
+						dlg.sync_enabled, dlg.sync_interval, dlg.scheduled_time
+					)
+				dlg.Destroy()
+			
+			wx.CallAfter(show_dialog)
 		
-		# Show dialog with focus
-		wx.CallAfter(show_dialog)
+		self.plugin._getSelectedItemsDeferred(process_selected_items, 500)
 
 	def setupMirrorBackup(self, src, dests, enabled, interval, time_str="00:00"):
 		self.mirror_configs = [c for c in self.mirror_configs if c.get('source') != src]
@@ -749,7 +696,6 @@ class RobocopyManager:
 			ui.message(_("No pending operation"))
 			return
 		
-		# Get destination from current folder in Explorer
 		focus = api.getFocusObject()
 		if not focus or focus.appModule.appName != "explorer":
 			ui.message(_("Not in File Explorer"))
@@ -761,7 +707,6 @@ class RobocopyManager:
 				ui.message(_("Cannot get destination"))
 				return
 			
-			# Get destination path
 			dest = urllib.parse.unquote(shell.LocationURL[8:])
 			if not os.path.isdir(dest):
 				ui.message(_("Invalid destination"))
@@ -770,11 +715,9 @@ class RobocopyManager:
 			is_move = self.pending_operation == 'move'
 			operation_name = _("Move") if is_move else _("Copy")
 			
-			# Show initial message
 			ui.message(_("Starting {} operation in background...").format(operation_name))
 			tones.beep(800, 100)
 			
-			# Run operation in background thread
 			threading.Thread(target=self._execute_paste_operation, 
 						   args=(dest, is_move, operation_name), 
 						   daemon=True).start()
@@ -785,59 +728,34 @@ class RobocopyManager:
 			self.pending_source = self.pending_operation = None
 
 	def _execute_paste_operation(self, dest, is_move, operation_name):
-		"""Execute paste operation in background thread"""
 		try:
-			# Check if source exists
 			if not os.path.exists(self.pending_source):
 				wx.CallAfter(ui.message, _("Source does not exist"))
 				return
 			
-			# Check if source is a directory or file
 			source_is_dir = os.path.isdir(self.pending_source)
-			
-			# Get file size for progress estimation
 			total_size = 0
 			if not source_is_dir:
 				try:
 					total_size = os.path.getsize(self.pending_source)
 				except:
 					pass
-			else:
-				# For directories, we can't easily get total size without scanning
-				# We'll use a different approach for progress
-				pass
 			
-			# Build optimized robocopy command for maximum speed
 			if source_is_dir:
 				source_dir = self.pending_source
 				dest_dir = os.path.join(dest, os.path.basename(source_dir))
 				
-				# Check if destination already exists
 				if os.path.exists(dest_dir):
 					wx.CallAfter(ui.message, _("Destination already exists, overwriting..."))
 				
 				cmd = [
 					'robocopy', source_dir, dest_dir,
-					'/E',  # Copy subdirectories, including empty ones
-					'/COPYALL',  # Copy all file info
-					'/DCOPY:DAT',  # Copy directory timestamps
-					'/R:1',  # Retry only once for speed
-					'/W:1',  # Wait 1 second between retries
-					'/MT:128',  # Use 128 threads for maximum speed
-					'/NP',  # No progress percentage
-					'/NFL',  # No file list
-					'/NDL',  # No directory list
-					'/NJH',  # No job header
-					'/NJS',  # No job summary
-					'/J',  # Use unbuffered I/O for large files
-					'/FFT',  # Assume FAT file times
-					'/DCOPY:T',  # Copy directory timestamps
-					'/ZB',  # Restartable mode for large files
-					'/V',  # Verbose output
-					'/XD', '$RECYCLE.BIN', 'System Volume Information',  # Exclude system folders
-					'/XA:SH',  # Exclude hidden system files
-					'/XJ',  # Exclude junction points
-					'/NOOFFLOAD'  # Disable offloading to hardware
+					'/E', '/COPYALL', '/DCOPY:DAT',
+					'/R:1', '/W:1', '/MT:128',
+					'/NP', '/NFL', '/NDL',
+					'/NJH', '/NJS', '/J', '/FFT', '/ZB',
+					'/XD', '$RECYCLE.BIN', 'System Volume Information',
+					'/XA:SH', '/XJ', '/NOOFFLOAD'
 				]
 			else:
 				source_file = self.pending_source
@@ -845,44 +763,28 @@ class RobocopyManager:
 				
 				cmd = [
 					'robocopy', os.path.dirname(source_file), dest_file_path,
-					os.path.basename(source_file),  # Specify the file name
-					'/COPYALL',  # Copy all file info
-					'/R:1',  # Retry only once for speed
-					'/W:1',  # Wait 1 second between retries
-					'/MT:128',  # Use 128 threads for maximum speed
-					'/NP',  # No progress percentage
-					'/NFL',  # No file list
-					'/NDL',  # No directory list
-					'/NJH',  # No job header
-					'/NJS',  # No job summary
-					'/J',  # Use unbuffered I/O for large files
-					'/FFT',  # Assume FAT file times
-					'/ZB',  # Restartable mode for large files
-					'/V',  # Verbose output
-					'/NOOFFLOAD'  # Disable offloading to hardware
+					os.path.basename(source_file),
+					'/COPYALL', '/R:1', '/W:1', '/MT:128',
+					'/NP', '/NFL', '/NDL', '/NJH', '/NJS',
+					'/J', '/FFT', '/ZB', '/NOOFFLOAD'
 				]
 			
-			# For very large files (over 1GB), add compression for network transfer
-			if total_size > 1073741824:  # 1GB
+			if total_size > 1073741824:
 				cmd.append('/COMPRESS')
 				wx.CallAfter(ui.message, _("Large file detected, using compression for speed"))
 			
 			if is_move:
-				cmd.append('/MOVE')  # Move files and directories
+				cmd.append('/MOVE')
 			
-			# Create log file
 			log_file = os.path.join(tempfile.gettempdir(), f"robocopy_{operation_name.lower()}_{int(time.time())}.log")
 			cmd.append(f'/LOG+:{log_file}')
 			
-			# Announce start
 			wx.CallAfter(ui.message, _("{} started. You can continue working while it runs in background.").format(operation_name))
 			
-			# Start timer for progress updates
 			start_time = time.time()
 			last_progress_update = start_time
 			last_size_check = start_time
 			
-			# Start robocopy process without blocking
 			process = subprocess.Popen(
 				cmd,
 				creationflags=subprocess.CREATE_NO_WINDOW,
@@ -890,20 +792,15 @@ class RobocopyManager:
 				stderr=subprocess.DEVNULL
 			)
 			
-			# Monitor process without blocking
 			while process.poll() is None:
 				current_time = time.time()
 				elapsed = current_time - start_time
 				
-				# Update progress every 5 seconds
 				if current_time - last_progress_update >= 5:
-					# Calculate estimated speed
 					if source_is_dir or total_size == 0:
-						# For directories or unknown size, just report elapsed time
 						wx.CallAfter(ui.message, _("{} in progress... {} seconds elapsed").format(
 							operation_name, int(elapsed)))
 					else:
-						# For single files, check destination file size
 						if current_time - last_size_check >= 2:
 							dest_file = os.path.join(dest, os.path.basename(self.pending_source))
 							copied_size = 0
@@ -917,8 +814,7 @@ class RobocopyManager:
 								percentage = int((copied_size / total_size) * 100)
 								speed_mbps = (copied_size / (1024 * 1024)) / elapsed if elapsed > 0 else 0
 								
-								# Play tone based on progress
-								if percentage % 25 == 0:
+								if percentage % 25 == 0 and percentage > 0:
 									if percentage == 25:
 										wx.CallAfter(tones.beep, 800, 100)
 									elif percentage == 50:
@@ -933,13 +829,10 @@ class RobocopyManager:
 					
 					last_progress_update = current_time
 				
-				# Small sleep to prevent high CPU usage
 				time.sleep(0.5)
 			
-			# Get return code
 			return_code = process.returncode
 			
-			# Success codes are 0-7 for robocopy
 			if return_code <= 7:
 				elapsed_total = time.time() - start_time
 				if total_size > 0:
@@ -951,7 +844,6 @@ class RobocopyManager:
 						operation_name, elapsed_total))
 				wx.CallAfter(tones.beep, 1500, 300)
 				
-				# Refresh Explorer window to show new files
 				try:
 					shell = self.plugin._getActiveExplorerWindow()
 					if shell:
@@ -959,10 +851,7 @@ class RobocopyManager:
 				except:
 					pass
 			elif return_code == 16:
-				# Serious error - try alternative method
 				wx.CallAfter(ui.message, _("Trying alternative copy method..."))
-				
-				# Try using shutil for large files or problematic copies
 				try:
 					if source_is_dir:
 						if is_move:
@@ -990,5 +879,4 @@ class RobocopyManager:
 			wx.CallAfter(ui.message, _("Error during {}: {}").format(operation_name, str(e)))
 			wx.CallAfter(tones.beep, 500, 300)
 		finally:
-			# Reset pending operation
 			self.pending_source = self.pending_operation = None
