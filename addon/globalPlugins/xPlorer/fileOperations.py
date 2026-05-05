@@ -12,6 +12,7 @@ import threading
 from logHandler import log
 import addonHandler
 import tones
+import core
 
 addonHandler.initTranslation()
 
@@ -75,35 +76,37 @@ class FileOperations:
 		self._beep_timer = None
 		self._calculation_active = False
 		self._stop_beep_event = threading.Event()
+		self._size_thread = None
 
 	def cleanup(self):
+		self._stop_calculation()
 		if self.renameDialog:
 			try:
 				self.renameDialog.Destroy()
 			except:
 				pass
+
+	def _stop_calculation(self):
+		self._calculation_active = False
 		self._stop_beeping()
+		if self._size_thread and self._size_thread.is_alive():
+			self._size_thread.join(timeout=1.0)
 
 	def _start_beeping(self):
-		"""Start beeping every 2 seconds to indicate processing"""
 		self._stop_beep_event.clear()
 		self._beep_timer = threading.Timer(2.0, self._beep_interval)
 		self._beep_timer.daemon = True
 		self._beep_timer.start()
 
 	def _stop_beeping(self):
-		"""Stop the beeping timer"""
 		self._stop_beep_event.set()
 		if self._beep_timer:
 			self._beep_timer.cancel()
 			self._beep_timer = None
 
 	def _beep_interval(self):
-		"""Beep and schedule next beep if still processing"""
 		if not self._stop_beep_event.is_set():
-			# Play a short beep tone (440 Hz, 100 ms)
 			wx.CallAfter(tones.beep, 440, 100)
-			# Schedule next beep
 			self._beep_timer = threading.Timer(2.0, self._beep_interval)
 			self._beep_timer.daemon = True
 			self._beep_timer.start()
@@ -122,17 +125,13 @@ class FileOperations:
 		return sResult
 
 	def _get_folder_size_powershell_fast(self, folder_path):
-		"""Get folder size using PowerShell with optimized command - fastest method"""
 		try:
-			# Optimized PowerShell command using .NET methods directly
-			# This method is much faster than Get-ChildItem for large folders
 			ps_command = f"""
 			$path = '{folder_path}'
 			$totalSize = 0L
 			
 			function Get-Size($directory) {{
 				try {{
-					# Get all files in current directory
 					$files = [System.IO.Directory]::EnumerateFiles($directory)
 					foreach ($file in $files) {{
 						try {{
@@ -140,7 +139,6 @@ class FileOperations:
 						}} catch {{ }}
 					}}
 					
-					# Get all subdirectories
 					$dirs = [System.IO.Directory]::EnumerateDirectories($directory)
 					foreach ($dir in $dirs) {{
 						Get-Size $dir
@@ -157,7 +155,7 @@ class FileOperations:
 				capture_output=True,
 				text=True,
 				encoding='utf-8',
-				timeout=30,  # 30 second timeout
+				timeout=10,
 				creationflags=subprocess.CREATE_NO_WINDOW
 			)
 			
@@ -166,7 +164,6 @@ class FileOperations:
 				if size_str and size_str.isdigit():
 					return int(size_str)
 				else:
-					# Try alternative parsing
 					try:
 						return int(float(size_str))
 					except:
@@ -184,25 +181,23 @@ class FileOperations:
 			return None
 
 	def _get_folder_size_windows_api(self, folder_path):
-		"""Get folder size using Windows API through ctypes - very fast for large folders"""
 		try:
 			import ctypes
-			from ctypes import wintypes, windll
+			from ctypes import wintypes, windll, c_longlong, c_ulonglong, POINTER, Structure, c_int, c_uint, c_void_p
 			
-			# Define structures and functions
-			class LARGE_INTEGER(ctypes.Structure):
-				_fields_ = [("QuadPart", ctypes.c_longlong)]
+			class LARGE_INTEGER(Structure):
+				_fields_ = [("QuadPart", c_longlong)]
 				
 			GetFileSizeEx = windll.kernel32.GetFileSizeEx
-			GetFileSizeEx.argtypes = [wintypes.HANDLE, ctypes.POINTER(LARGE_INTEGER)]
+			GetFileSizeEx.argtypes = [wintypes.HANDLE, POINTER(LARGE_INTEGER)]
 			GetFileSizeEx.restype = wintypes.BOOL
 			
 			FindFirstFile = windll.kernel32.FindFirstFileW
-			FindFirstFile.argtypes = [wintypes.LPCWSTR, ctypes.POINTER(wintypes.WIN32_FIND_DATAW)]
+			FindFirstFile.argtypes = [wintypes.LPCWSTR, POINTER(wintypes.WIN32_FIND_DATAW)]
 			FindFirstFile.restype = wintypes.HANDLE
 			
 			FindNextFile = windll.kernel32.FindNextFileW
-			FindNextFile.argtypes = [wintypes.HANDLE, ctypes.POINTER(wintypes.WIN32_FIND_DATAW)]
+			FindNextFile.argtypes = [wintypes.HANDLE, POINTER(wintypes.WIN32_FIND_DATAW)]
 			FindNextFile.restype = wintypes.BOOL
 			
 			FindClose = windll.kernel32.FindClose
@@ -223,13 +218,12 @@ class FileOperations:
 						if name not in ('.', '..'):
 							full_path = os.path.join(path, name)
 							
-							if find_data.dwFileAttributes & 16:  # Directory
+							if find_data.dwFileAttributes & 16:
 								total += get_folder_size_recursive(full_path)
 							else:
-								# File size calculation
 								size_high = find_data.nFileSizeHigh
 								size_low = find_data.nFileSizeLow
-								file_size = (size_high << 32) + size_low
+								file_size = (c_ulonglong(size_high).value << 32) + size_low
 								total += file_size
 						
 						if not FindNextFile(handle, ctypes.byref(find_data)):
@@ -246,25 +240,20 @@ class FileOperations:
 			return None
 
 	def _calculate_folder_size_fast(self, folder_path):
-		"""Calculate folder size using the fastest available method"""
-		# Try Windows API first (fastest)
-		size = self._get_folder_size_windows_api(folder_path)
-		if size is not None:
-			log.debug(f"Windows API size: {size} bytes")
-			return size
-			
-		# Try optimized PowerShell
-		size = self._get_folder_size_powershell_fast(folder_path)
-		if size is not None:
-			log.debug(f"PowerShell size: {size} bytes")
-			return size
-			
+		api_size = self._get_folder_size_windows_api(folder_path)
+		if api_size is not None:
+			log.debug(f"Windows API size: {api_size} bytes")
+			return api_size
+		
+		ps_size = self._get_folder_size_powershell_fast(folder_path)
+		if ps_size is not None:
+			log.debug(f"PowerShell size: {ps_size} bytes")
+			return ps_size
+		
 		return None
 
 	def _check_access_permission(self, path):
-		"""Check if we have permission to access the path"""
 		try:
-			# Try to list contents of the directory
 			if os.path.isdir(path):
 				next(os.scandir(path), None)
 				return True
@@ -276,10 +265,9 @@ class FileOperations:
 		except (PermissionError, OSError, WindowsError):
 			return False
 		except Exception:
-			return True  # If we can't determine, assume we have access
+			return True
 
 	def saySize(self):
-		"""say size for single or multiple selected items with progress indication"""
 		focus = api.getFocusObject()
 		if not focus or focus.appModule.appName != "explorer":
 			return
@@ -289,7 +277,6 @@ class FileOperations:
 			ui.message(_("No items selected"))
 			return
 		
-		# Check access permissions for all selected items
 		inaccessible_items = []
 		for name, path in selectedItems:
 			if not self._check_access_permission(path):
@@ -302,23 +289,20 @@ class FileOperations:
 			else:
 				log.debug(f"Skipping inaccessible items: {inaccessible_items}")
 		
-		# Start beeping to indicate processing
+		self._stop_calculation()  # ensure previous calculation is stopped
 		self._calculation_active = True
 		self._start_beeping()
 		
-		# Calculate in a separate thread to avoid blocking
 		def calculate_size():
 			try:
 				totalSize = 0
 				isDrive = False
 				accessibleItemCount = 0
 				
-				# Calculate total size for all selected items
 				for name, path in selectedItems:
 					if not self._calculation_active:
 						break
 					
-					# Skip inaccessible items
 					if name in inaccessible_items:
 						continue
 					
@@ -341,7 +325,6 @@ class FileOperations:
 						except Exception as e:
 							log.error(f"Error getting drive size for {name}: {e}")
 					elif self.plugin.objFSO.FolderExists(path):
-						# Use fast method for folders
 						start_time = time.time()
 						folderSize = self._calculate_folder_size_fast(path)
 						
@@ -350,48 +333,40 @@ class FileOperations:
 							elapsed = time.time() - start_time
 							log.debug(f"Folder (fast): {name}, Size: {folderSize}, Time: {elapsed:.2f}s")
 						else:
-							# Fallback to quick estimation for folders
-							try:
-								# Try to get size using os.scandir for a quick estimate
-								folderSize = 0
-								count = 0
-								max_files_to_check = 1000  # Limit for quick estimation
-								
-								for root, dirs, files in os.walk(path):
-									for f in files:
-										if count >= max_files_to_check or not self._calculation_active:
-											break
-										fp = os.path.join(root, f)
-										try:
-											folderSize += os.path.getsize(fp)
-											count += 1
-										except (OSError, WindowsError):
-											pass
+							# fallback estimate
+							folderSize = 0
+							count = 0
+							max_files_to_check = 1000
+							
+							for root, dirs, files in os.walk(path):
+								for f in files:
 									if count >= max_files_to_check or not self._calculation_active:
 										break
-								
-								# If we checked many files, assume average file size
-								if count > 0:
-									avg_size = folderSize / count
-									# Estimate total files (this is just a rough guess)
-									estimated_total_files = count * 10  # Conservative estimate
-									folderSize = avg_size * estimated_total_files
-								
-								totalSize += folderSize
-								elapsed = time.time() - start_time
-								log.debug(f"Folder (estimate): {name}, Size: {folderSize}, Time: {elapsed:.2f}s")
-							except Exception as e:
-								log.error(f"Error estimating folder size for {name}: {e}")
-								# Add a minimal size to avoid "No access to size data" message
-								totalSize += 1024  # 1KB minimum
+									fp = os.path.join(root, f)
+									try:
+										folderSize += os.path.getsize(fp)
+										count += 1
+									except (OSError, WindowsError):
+										pass
+								if count >= max_files_to_check or not self._calculation_active:
+									break
+								# yield to other threads
+								time.sleep(0.01)
+							
+							if count > 0:
+								avg_size = folderSize / count
+								estimated_total_files = count * 10
+								folderSize = avg_size * estimated_total_files
+							
+							totalSize += folderSize
+							elapsed = time.time() - start_time
+							log.debug(f"Folder (estimate): {name}, Size: {folderSize}, Time: {elapsed:.2f}s")
 				
 				log.debug(f"Accessible items: {accessibleItemCount}, Total size: {totalSize} bytes")
 				
-				# Stop beeping
 				self._stop_beeping()
 				self._calculation_active = False
 				
-				# Return results to main thread
 				wx.CallAfter(self._display_size_result, totalSize, isDrive, accessibleItemCount)
 				
 			except Exception as e:
@@ -400,12 +375,10 @@ class FileOperations:
 				self._calculation_active = False
 				wx.CallAfter(ui.message, _("Error calculating size"))
 		
-		# Start calculation thread
-		thread = threading.Thread(target=calculate_size, daemon=True)
-		thread.start()
+		self._size_thread = threading.Thread(target=calculate_size, daemon=True)
+		self._size_thread.start()
 
 	def _display_size_result(self, totalSize, isDrive, itemCount):
-		"""Display the calculated size result"""
 		if totalSize == 0 and not isDrive:
 			ui.message(_("No access to size data"))
 			return
@@ -422,7 +395,6 @@ class FileOperations:
 		ui.message(s_Info)
 
 	def renameFile(self):
-		"""Rename selected file"""
 		focus = api.getFocusObject()
 		if not focus or focus.appModule.appName != "explorer":
 			return

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: xPlorer 2026.5.1\n"
+"Project-Id-Version: xPlorer 2026.5.3\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-04-27 15:57+0700\n"
+"POT-Creation-Date: 2026-05-05 11:02+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: English\n"
@@ -56,7 +56,7 @@ msgstr "7 days"
 msgid "7-Zip compression failed, trying built-in method..."
 msgstr "7-Zip compression failed, trying built-in method..."
 
-#: fileOperations.py:474
+#: fileOperations.py:446
 msgid "A file with this name already exists"
 msgstr "A file with this name already exists"
 
@@ -64,15 +64,15 @@ msgstr "A file with this name already exists"
 msgid "Add destination folder"
 msgstr "Add destination folder"
 
-#: xPlorerManager.py:56
+#: xPlorerManager.py:60
 msgid "Announce 'Empty Folder' when entering an empty folder"
 msgstr "Announce 'Empty Folder' when entering an empty folder"
 
-#: xPlorerManager.py:71
+#: xPlorerManager.py:75
 msgid "Automatically paste clipboard content into rename field"
 msgstr "Automatically paste clipboard content into rename field"
 
-#: xPlorerManager.py:51
+#: xPlorerManager.py:55
 msgid "Automatically select the first item"
 msgstr "Automatically select the first item"
 
@@ -97,7 +97,7 @@ msgstr "Cannot find unique name for: {name}"
 msgid "Cannot get destination"
 msgstr "Cannot get destination"
 
-#: __init__.py:635
+#: __init__.py:718
 msgid "Cannot open settings dialog"
 msgstr "Cannot open settings dialog"
 
@@ -169,7 +169,7 @@ msgstr "Copied source path to clipboard"
 msgid "Copied {count} item names to clipboard"
 msgstr "Copied {count} item names to clipboard"
 
-#: __init__.py:429
+#: __init__.py:520
 msgid "Copied: {path}"
 msgstr "Copied: {path}"
 
@@ -185,7 +185,7 @@ msgstr "Copy address bar"
 msgid "Copy content"
 msgstr "Copy content"
 
-#: __init__.py:516
+#: __init__.py:609
 msgid "Copy content (single tap) or invert selection (double tap)"
 msgstr "Copy content (single tap) or invert selection (double tap)"
 
@@ -193,11 +193,11 @@ msgstr "Copy content (single tap) or invert selection (double tap)"
 msgid "Copy selected file and folder names"
 msgstr "Copy selected file and folder names"
 
-#: __init__.py:471
+#: __init__.py:565
 msgid "Copy selected names (single tap) or copy address bar (double tap)"
 msgstr "Copy selected names (single tap) or copy address bar (double tap)"
 
-#: __init__.py:431
+#: __init__.py:522
 #: clipboardManager.py:57
 #: clipboardManager.py:169
 #: robocopyManager.py:187
@@ -221,7 +221,7 @@ msgstr "Create Multiple Folders..."
 msgid "Create main folder and then subfolders"
 msgstr "Create main folder and then subfolders"
 
-#: __init__.py:626
+#: __init__.py:709
 msgid "Create new folder and paste clipboard content into rename field"
 msgstr "Create new folder and paste clipboard content into rename field"
 
@@ -249,7 +249,7 @@ msgstr "Edit individual folder names"
 msgid "Elapsed time: {} seconds"
 msgstr "Elapsed time: {} seconds"
 
-#: xPlorerManager.py:40
+#: xPlorerManager.py:43
 msgid "Empty Folder"
 msgstr "Empty Folder"
 
@@ -257,11 +257,11 @@ msgstr "Empty Folder"
 msgid "Enable automatic synchronization"
 msgstr "Enable automatic synchronization"
 
-#: folderInfo.py:78
+#: folderInfo.py:69
 msgid "Error calculating folder info"
 msgstr "Error calculating folder info"
 
-#: fileOperations.py:401
+#: fileOperations.py:376
 msgid "Error calculating size"
 msgstr "Error calculating size"
 
@@ -289,7 +289,7 @@ msgstr "Error creating files"
 msgid "Error creating folder: {number}"
 msgstr "Error creating folder: {number}"
 
-#: __init__.py:662
+#: __init__.py:745
 msgid "Error creating folders"
 msgstr "Error creating folders"
 
@@ -301,7 +301,7 @@ msgstr "Error creating main folder"
 msgid "Error creating subfolder: {number}"
 msgstr "Error creating subfolder: {number}"
 
-#: __init__.py:690
+#: __init__.py:782
 msgid "Error during conversion"
 msgstr "Error during conversion"
 
@@ -321,11 +321,11 @@ msgstr "Error inverting selection"
 msgid "Error opening create file dialog"
 msgstr "Error opening create file dialog"
 
-#: fileOperations.py:488
+#: fileOperations.py:460
 msgid "Error opening rename dialog"
 msgstr "Error opening rename dialog"
 
-#: __init__.py:642
+#: __init__.py:725
 msgid "Error opening settings"
 msgstr "Error opening settings"
 
@@ -341,8 +341,8 @@ msgstr "Error reading RTF file"
 msgid "Error reading file encoding"
 msgstr "Error reading file encoding"
 
-#: fileOperations.py:453
-#: fileOperations.py:482
+#: fileOperations.py:425
+#: fileOperations.py:454
 msgid "Error renaming file"
 msgstr "Error renaming file"
 
@@ -359,10 +359,10 @@ msgstr "Estimated time remaining: {}"
 msgid "Extension:"
 msgstr "Extension:"
 
-#: case.py:115
-#: case.py:129
-#: case.py:150
-#: case.py:164
+#: case.py:120
+#: case.py:137
+#: case.py:160
+#: case.py:176
 msgid "Failed to rename any folders"
 msgstr "Failed to rename any folders"
 
@@ -378,11 +378,11 @@ msgstr "File count must be at least 1"
 msgid "File name"
 msgstr "File name"
 
-#: fileOperations.py:57
+#: fileOperations.py:58
 msgid "File name cannot be empty"
 msgstr "File name cannot be empty"
 
-#: fileOperations.py:470
+#: fileOperations.py:442
 msgid "File name not changed"
 msgstr "File name not changed"
 
@@ -395,7 +395,7 @@ msgstr "File name {index}:"
 msgid "File name:"
 msgstr "File name:"
 
-#: fileOperations.py:479
+#: fileOperations.py:451
 msgid "File renamed to {name}"
 msgstr "File renamed to {name}"
 
@@ -482,12 +482,12 @@ msgstr "Move"
 msgid "Next scheduled backup for {}: {}"
 msgstr "Next scheduled backup for {}: {}"
 
-#: __init__.py:650
+#: __init__.py:733
 msgid "No Explorer folder detected"
 msgstr "No Explorer folder detected"
 
-#: fileOperations.py:300
-#: fileOperations.py:410
+#: fileOperations.py:287
+#: fileOperations.py:383
 msgid "No access to size data"
 msgstr "No access to size data"
 
@@ -503,14 +503,14 @@ msgstr "No content could be read from selected files"
 msgid "No files were created"
 msgstr "No files were created"
 
-#: case.py:106
-#: case.py:120
-#: case.py:141
-#: case.py:155
+#: case.py:107
+#: case.py:125
+#: case.py:149
+#: case.py:165
 msgid "No folders found"
 msgstr "No folders found"
 
-#: __init__.py:677
+#: __init__.py:762
 msgid "No folders selected or current folder not available"
 msgstr "No folders selected or current folder not available"
 
@@ -520,7 +520,7 @@ msgstr "No folders selected or current folder not available"
 msgid "No folders were created"
 msgstr "No folders were created"
 
-#: folderInfo.py:30
+#: folderInfo.py:28
 msgid "No item selected"
 msgstr "No item selected"
 
@@ -531,8 +531,8 @@ msgstr "No items in folder"
 #: clipboardManager.py:30
 #: clipboardManager.py:72
 #: compressionManager.py:132
-#: fileOperations.py:289
-#: fileOperations.py:433
+#: fileOperations.py:277
+#: fileOperations.py:405
 msgid "No items selected"
 msgstr "No items selected"
 
@@ -575,7 +575,7 @@ msgstr "Number of folders:"
 msgid "OK"
 msgstr "OK"
 
-#: __init__.py:586
+#: __init__.py:678
 msgid "Open xPlorer context menu"
 msgstr "Open xPlorer context menu"
 
@@ -583,7 +583,7 @@ msgstr "Open xPlorer context menu"
 msgid "Please select a .txt or .rtf file"
 msgstr "Please select a .txt or .rtf file"
 
-#: fileOperations.py:443
+#: fileOperations.py:415
 msgid "Please select a file, not a folder"
 msgstr "Please select a file, not a folder"
 
@@ -591,11 +591,11 @@ msgstr "Please select a file, not a folder"
 msgid "Please select a folder"
 msgstr "Please select a folder"
 
-#: fileOperations.py:437
+#: fileOperations.py:409
 msgid "Please select only one file"
 msgstr "Please select only one file"
 
-#: folderInfo.py:35
+#: folderInfo.py:33
 #: robocopyManager.py:667
 msgid "Please select only one folder"
 msgstr "Please select only one folder"
@@ -624,7 +624,7 @@ msgstr "Remove selected destination"
 msgid "Remove selected source"
 msgstr "Remove selected source"
 
-#: __init__.py:603
+#: __init__.py:692
 #: contextMenu.py:31
 msgid "Rename selected file"
 msgstr "Rename selected file"
@@ -637,7 +637,7 @@ msgstr "Robocopy"
 msgid "Say size"
 msgstr "Say size"
 
-#: __init__.py:561
+#: __init__.py:653
 msgid "Say size (single tap) or compress zip (double tap)"
 msgstr "Say size (single tap) or compress zip (double tap)"
 
@@ -662,7 +662,7 @@ msgstr "Select one item only"
 msgid "Selected file does not exist"
 msgstr "Selected file does not exist"
 
-#: folderInfo.py:41
+#: folderInfo.py:39
 msgid "Selected item is not a folder"
 msgstr "Selected item is not a folder"
 
@@ -716,19 +716,19 @@ msgstr "Starting {} operation in background..."
 msgid "Starting..."
 msgstr "Starting..."
 
-#: case.py:162
+#: case.py:174
 msgid "Successfully converted {count} folders to headline case"
 msgstr "Successfully converted {count} folders to headline case"
 
-#: case.py:127
+#: case.py:135
 msgid "Successfully converted {count} folders to lowercase"
 msgstr "Successfully converted {count} folders to lowercase"
 
-#: case.py:148
+#: case.py:158
 msgid "Successfully converted {count} folders to title case"
 msgstr "Successfully converted {count} folders to title case"
 
-#: case.py:113
+#: case.py:118
 msgid "Successfully converted {count} folders to uppercase"
 msgstr "Successfully converted {count} folders to uppercase"
 
@@ -749,11 +749,11 @@ msgstr "Successfully created {count} folders"
 msgid "Successfully created {} folders in '{}'"
 msgstr "Successfully created {} folders in '{}'"
 
-#: xPlorerManager.py:66
+#: xPlorerManager.py:70
 msgid "Suppress announcement of '- File Explorer' in window titles"
 msgstr "Suppress announcement of '- File Explorer' in window titles"
 
-#: xPlorerManager.py:61
+#: xPlorerManager.py:65
 msgid "Suppress announcement of DirectUIHWND class"
 msgstr "Suppress announcement of DirectUIHWND class"
 
@@ -785,7 +785,7 @@ msgstr "Trying alternative copy method..."
 msgid "Unable to get current directory"
 msgstr "Unable to get current directory"
 
-#: __init__.py:433
+#: __init__.py:524
 msgid "Unable to get current path"
 msgstr "Unable to get current path"
 
@@ -833,14 +833,14 @@ msgstr "new_file_{index}"
 msgid "paste"
 msgstr "paste"
 
-#: __init__.py:143
-#: __init__.py:472
-#: __init__.py:517
-#: __init__.py:562
-#: __init__.py:587
-#: __init__.py:604
-#: __init__.py:627
-#: xPlorerManager.py:44
+#: __init__.py:144
+#: __init__.py:566
+#: __init__.py:610
+#: __init__.py:654
+#: __init__.py:679
+#: __init__.py:693
+#: __init__.py:710
+#: xPlorerManager.py:48
 msgid "xPlorer"
 msgstr "xPlorer"
 
@@ -852,11 +852,11 @@ msgstr "xPlorer Settings"
 msgid "{count} files created"
 msgstr "{count} files created"
 
-#: fileOperations.py:420
+#: fileOperations.py:393
 msgid "{count} items {size}"
 msgstr "{count} items {size}"
 
-#: folderInfo.py:66
+#: folderInfo.py:60
 msgid "{subfolders} subfolders and {files} files"
 msgstr "{subfolders} subfolders and {files} files"
 

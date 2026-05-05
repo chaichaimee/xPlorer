@@ -7,6 +7,7 @@ import shutil
 import re
 import addonHandler
 from logHandler import log
+import core
 
 addonHandler.initTranslation()
 
@@ -106,9 +107,13 @@ class CaseConverter:
 			ui.message(_("No folders found"))
 			return
 		success = 0
-		for folder in folders:
+		total = len(folders)
+		for idx, folder in enumerate(folders):
 			if self._rename_folder_only(folder, str.upper):
 				success += 1
+			# Yield to other events every 5 folders
+			if idx % 5 == 0:
+				core.callLater(1, lambda: None)  # just yield
 		if success > 0:
 			ui.message(_("Successfully converted {count} folders to uppercase").format(count=success))
 		else:
@@ -120,9 +125,12 @@ class CaseConverter:
 			ui.message(_("No folders found"))
 			return
 		success = 0
-		for folder in folders:
+		total = len(folders)
+		for idx, folder in enumerate(folders):
 			if self._rename_folder_only(folder, str.lower):
 				success += 1
+			if idx % 5 == 0:
+				core.callLater(1, lambda: None)
 		if success > 0:
 			ui.message(_("Successfully converted {count} folders to lowercase").format(count=success))
 		else:
@@ -141,9 +149,11 @@ class CaseConverter:
 			ui.message(_("No folders found"))
 			return
 		success = 0
-		for folder in folders:
+		for idx, folder in enumerate(folders):
 			if self._rename_folder_only(folder, to_title_case):
 				success += 1
+			if idx % 5 == 0:
+				core.callLater(1, lambda: None)
 		if success > 0:
 			ui.message(_("Successfully converted {count} folders to title case").format(count=success))
 		else:
@@ -155,9 +165,11 @@ class CaseConverter:
 			ui.message(_("No folders found"))
 			return
 		success = 0
-		for folder in folders:
+		for idx, folder in enumerate(folders):
 			if self._rename_folder_only(folder, self._to_headline_case):
 				success += 1
+			if idx % 5 == 0:
+				core.callLater(1, lambda: None)
 		if success > 0:
 			ui.message(_("Successfully converted {count} folders to headline case").format(count=success))
 		else:
