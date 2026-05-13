@@ -6,6 +6,8 @@ import os
 import ui
 import tones
 import time
+import threading
+from logHandler import log
 
 addonHandler.initTranslation()
 
@@ -16,11 +18,12 @@ class FolderCreationDialog(wx.Dialog):
 		self.folder_edit_controls = []
 		self.last_update_time = 0
 		self.update_timer = None
-		self.init_ui()
+		self._creation_thread = None
+		self._init_ui()
 		self.CentreOnScreen()
 		self.Raise()
 		
-	def init_ui(self):
+	def _init_ui(self):
 		main_sizer = wx.BoxSizer(wx.VERTICAL)
 		
 		title_sizer = wx.BoxSizer(wx.HORIZONTAL)
@@ -45,7 +48,7 @@ class FolderCreationDialog(wx.Dialog):
 		
 		self.edit_names_checkbox = wx.CheckBox(self, label=_("Edit individual folder names"))
 		self.edit_names_checkbox.SetValue(False)
-		self.edit_names_checkbox.Bind(wx.EVT_CHECKBOX, self.on_edit_names_changed)
+		self.edit_names_checkbox.Bind(wx.EVT_CHECKBOX, self._on_edit_names_changed)
 		main_sizer.Add(self.edit_names_checkbox, 0, wx.ALL | wx.EXPAND, 5)
 		
 		self.scrolled_window = wx.ScrolledWindow(self)
@@ -53,7 +56,6 @@ class FolderCreationDialog(wx.Dialog):
 		self.preview_sizer = wx.BoxSizer(wx.VERTICAL)
 		self.scrolled_window.SetSizer(self.preview_sizer)
 		self.scrolled_window.Hide()
-		
 		main_sizer.Add(self.scrolled_window, 1, wx.ALL | wx.EXPAND, 5)
 		
 		button_sizer = wx.BoxSizer(wx.HORIZONTAL)
@@ -66,42 +68,42 @@ class FolderCreationDialog(wx.Dialog):
 		self.SetSizer(main_sizer)
 		self.SetSize((500, 400))
 		
-		self.title_text.Bind(wx.EVT_TEXT, self.on_title_changed)
-		self.number_text.Bind(wx.EVT_TEXT, self.on_number_changed)
-		self.Bind(wx.EVT_CHAR_HOOK, self.on_char_hook)
+		self.title_text.Bind(wx.EVT_TEXT, self._on_title_changed)
+		self.number_text.Bind(wx.EVT_TEXT, self._on_number_changed)
+		self.Bind(wx.EVT_CHAR_HOOK, self._on_char_hook)
 		
-		wx.CallLater(100, self.update_preview)
-		
-	def on_char_hook(self, event):
+		core.callLater(100, self._update_preview)
+
+	def _on_char_hook(self, event):
 		if event.GetKeyCode() == wx.WXK_ESCAPE:
 			self.EndModal(wx.ID_CANCEL)
 		event.Skip()
 	
-	def on_title_changed(self, event):
-		self.schedule_update()
+	def _on_title_changed(self, event):
+		self._schedule_update()
 		event.Skip()
 	
-	def on_number_changed(self, event):
-		self.schedule_update()
+	def _on_number_changed(self, event):
+		self._schedule_update()
 		event.Skip()
 	
-	def schedule_update(self):
+	def _schedule_update(self):
 		current_time = time.time()
 		self.last_update_time = current_time
 		if self.update_timer:
 			self.update_timer.Stop()
-		self.update_timer = wx.CallLater(300, self.update_preview)
+		self.update_timer = core.callLater(300, self._update_preview)
 	
-	def on_edit_names_changed(self, event):
+	def _on_edit_names_changed(self, event):
 		if self.edit_names_checkbox.GetValue():
 			self.scrolled_window.Show()
-			self.update_preview()
+			self._update_preview()
 		else:
 			self.scrolled_window.Hide()
 		self.Layout()
 		event.Skip()
 	
-	def update_preview(self):
+	def _update_preview(self):
 		if not self.edit_names_checkbox.GetValue():
 			if self.scrolled_window.IsShown():
 				self.scrolled_window.Hide()
@@ -127,7 +129,6 @@ class FolderCreationDialog(wx.Dialog):
 		
 		if current_count != num_folders:
 			current_values = [ctrl.GetValue() for ctrl in self.folder_edit_controls]
-			
 			for control in self.folder_edit_controls:
 				control.Destroy()
 			self.folder_edit_controls.clear()
@@ -137,12 +138,8 @@ class FolderCreationDialog(wx.Dialog):
 				number_label = wx.StaticText(self.scrolled_window, label=f"{i:02d}")
 				folder_sizer.Add(number_label, 0, wx.ALL | wx.ALIGN_CENTER_VERTICAL, 5)
 				folder_edit = wx.TextCtrl(self.scrolled_window)
-				
 				if i <= len(current_values):
 					folder_edit.SetValue(current_values[i-1])
-				else:
-					folder_edit.SetValue("")
-				
 				folder_sizer.Add(folder_edit, 1, wx.ALL | wx.EXPAND, 5)
 				self.preview_sizer.Add(folder_sizer, 0, wx.EXPAND)
 				self.folder_edit_controls.append(folder_edit)
@@ -171,81 +168,80 @@ class FolderCreationDialog(wx.Dialog):
 		
 		create_subfolders = self.subfolder_checkbox.GetValue()
 		edit_names = self.edit_names_checkbox.GetValue()
-		created_count = 0
+		
+		folder_names = []
+		if edit_names:
+			for i in range(1, num_folders + 1):
+				if i <= len(self.folder_edit_controls):
+					folder_name = self.folder_edit_controls[i-1].GetValue().strip()
+					if folder_name:
+						folder_names.append(folder_name)
+		else:
+			for i in range(1, num_folders + 1):
+				folder_names.append(f"{title}{i}")
+		
+		if not folder_names:
+			ui.message(_("No valid folder names provided"))
+			return
 		
 		if create_subfolders:
-			success, main_folder_name = self.create_folder(title, self.current_path)
+			success, main_folder_name = self._create_folder(title, self.current_path)
 			if not success:
 				ui.message(_("Error creating main folder"))
 				return
 			main_folder_path = os.path.join(self.current_path, main_folder_name)
 			tones.beep(1000, 100)
-			created_count += 1
-			
-			for i in range(1, num_folders + 1):
-				if edit_names and i <= len(self.folder_edit_controls):
-					folder_name = self.folder_edit_controls[i-1].GetValue().strip()
-					if not folder_name:
-						continue
-				else:
-					folder_name = f"{i:02d}{title}"
-				
-				folder_name = self.clean_folder_name(folder_name)
-				if not folder_name:
-					continue
-					
-				sub_success, sub_folder_name = self.create_folder(folder_name, main_folder_path)
-				if sub_success:
-					created_count += 1
-				else:
-					ui.message(_("Error creating subfolder: {number}").format(number=i))
+			self._start_background_creation(folder_names, main_folder_path, True)
 		else:
-			for i in range(1, num_folders + 1):
-				if edit_names and i <= len(self.folder_edit_controls):
-					folder_name = self.folder_edit_controls[i-1].GetValue().strip()
-					if not folder_name:
-						continue
-				else:
-					folder_name = f"{title}{i}"
-				
-				folder_name = self.clean_folder_name(folder_name)
-				if not folder_name:
-					continue
-					
-				success, folder_name = self.create_folder(folder_name, self.current_path)
-				if success:
-					created_count += 1
-				else:
-					ui.message(_("Error creating folder: {number}").format(number=i))
+			self._start_background_creation(folder_names, self.current_path, False)
+	
+	def _start_background_creation(self, folder_names, base_path, is_subfolder_mode):
+		ui.message(_("Creating folders in background..."))
 		
-		if created_count > 0:
+		def worker():
+			created = 0
+			total = len(folder_names)
+			for idx, folder_name in enumerate(folder_names):
+				cleaned = self._clean_folder_name(folder_name)
+				if not cleaned:
+					continue
+				success, _ = self._create_folder(cleaned, base_path)
+				if success:
+					created += 1
+				if idx % 10 == 0 and idx > 0:
+					wx.CallAfter(ui.message, _("Created {count} of {total} folders...").format(count=idx, total=total))
+				time.sleep(0.002)
+			wx.CallAfter(self._on_creation_done, created, total, is_subfolder_mode)
+		
+		self._creation_thread = threading.Thread(target=worker, daemon=True)
+		self._creation_thread.start()
+	
+	def _on_creation_done(self, created, total, is_subfolder_mode):
+		if created > 0:
 			tones.beep(1200, 100)
-			if created_count == 1 and create_subfolders:
+			if created == 1 and is_subfolder_mode:
 				ui.message(_("Successfully created main folder only"))
-			elif created_count == 1 and not create_subfolders:
+			elif created == 1 and not is_subfolder_mode:
 				ui.message(_("Successfully created 1 folder"))
 			else:
-				ui.message(_("Successfully created {count} folders").format(count=created_count))
+				ui.message(_("Successfully created {count} of {total} folders").format(count=created, total=total))
 		else:
 			ui.message(_("No folders were created"))
 	
-	def clean_folder_name(self, name):
+	def _clean_folder_name(self, name):
 		invalid_chars = '<>:"/\\|?*'
 		cleaned_name = name
 		for char in invalid_chars:
 			cleaned_name = cleaned_name.replace(char, '_')
 		cleaned_name = cleaned_name.strip('. ')
-		if not cleaned_name:
-			return ""
-		return cleaned_name
+		return cleaned_name if cleaned_name else ""
 	
-	def create_folder(self, base_name, base_path):
+	def _create_folder(self, base_name, base_path):
 		if not base_path or not os.path.exists(base_path):
 			return False, None
-		cleaned_name = self.clean_folder_name(base_name)
+		cleaned_name = self._clean_folder_name(base_name)
 		if not cleaned_name:
 			return False, None
-			
 		original_name = cleaned_name
 		counter = 1
 		folder_path = os.path.join(base_path, original_name)

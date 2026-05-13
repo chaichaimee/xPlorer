@@ -23,6 +23,11 @@ addonHandler.initTranslation()
 
 log.debug("xPlorerManager module loaded")
 
+_global_plugin_instance = None
+
+def set_global_plugin(plugin):
+	global _global_plugin_instance
+	_global_plugin_instance = plugin
 
 class LaconicFocusAncestor(NVDAObject):
 	isPresentableFocusAncestor = False
@@ -35,14 +40,12 @@ class LaconicFocusAncestor(NVDAObject):
 				return "FakeDirectUIHWND"
 		return super().windowClassName
 
-
 class EmptyFolderStaticText(NVDAObject):
 	def _get_name(self):
 		conf = loadConfig()
 		if conf.get("announceEmptyFolder", True):
 			return _("Empty Folder")
 		return super().name
-
 
 class xPlorerSettingsPanel(SettingsPanel):
 	title = _("xPlorer")
@@ -85,14 +88,8 @@ class xPlorerSettingsPanel(SettingsPanel):
 			"autoPasteClipboardToRename": self.autoPasteClipboardToRename.GetValue(),
 		}
 		saveConfig(conf)
-		try:
-			import globalPluginHandler
-			plugin = globalPluginHandler.getGlobalPlugin()
-			if plugin and hasattr(plugin, 'manager'):
-				plugin.manager._update_speech_dict_for_title()
-		except:
-			pass
-
+		if _global_plugin_instance and hasattr(_global_plugin_instance, 'manager'):
+			_global_plugin_instance.manager._update_speech_dict_for_title()
 
 class ExplorerManager:
 	def __init__(self, plugin):
@@ -114,6 +111,7 @@ class ExplorerManager:
 		
 		self._cached_provider_desc = {}
 		self._cache_timeout = 0.5
+		self._max_cache_size = 20
 		
 		self._foregroundTransition = False
 		self._foregroundTransitionTimer = None
@@ -153,18 +151,14 @@ class ExplorerManager:
 	def _should_process_event(self, obj):
 		if not obj:
 			return False
-		
 		current_time = time.time()
-		
 		try:
 			obj_id = (obj.windowHandle, obj.role, id(obj))
 		except:
 			obj_id = id(obj)
-		
 		if obj_id == self._last_processed_obj:
 			if current_time - self._last_processed_time < self._debounce_interval:
 				return False
-		
 		self._last_processed_obj = obj_id
 		self._last_processed_time = current_time
 		return True
@@ -172,21 +166,20 @@ class ExplorerManager:
 	def _is_explorer_list_cached(self, obj):
 		if not obj or obj.role != Role.LIST:
 			return False
-		
 		if not isinstance(obj, UIA):
 			return False
-		
 		try:
 			handle = obj.windowHandle
 			current_time = time.time()
-			
 			if handle in self._cached_provider_desc:
 				desc, timestamp = self._cached_provider_desc[handle]
 				if current_time - timestamp < self._cache_timeout:
 					return desc
-			
 			provider_desc = obj.UIAElement.CachedProviderDescription.lower()
 			is_explorer = "explorerframe.dll" in provider_desc
+			if len(self._cached_provider_desc) >= self._max_cache_size:
+				oldest = min(self._cached_provider_desc.items(), key=lambda x: x[1][1])[0]
+				del self._cached_provider_desc[oldest]
 			self._cached_provider_desc[handle] = (is_explorer, current_time)
 			return is_explorer
 		except:
@@ -214,7 +207,7 @@ class ExplorerManager:
 		try:
 			if hasattr(obj, 'windowClassName') and obj.windowClassName == "DirectUIHWND":
 				return False
-			_ = obj.role
+			_ignore = obj.role
 			return True
 		except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError):
 			return False
@@ -247,6 +240,8 @@ class ExplorerManager:
 			self._foregroundTransitionTimer = None
 
 	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
+		if not obj or not obj.appModule:
+			return
 		conf = self.getConfig()
 		if obj.appModule.appName == "explorer":
 			if conf.get("suppressDirectUIAnnounce", True) and obj.role in (Role.LIST, Role.TOOLBAR):
@@ -255,61 +250,59 @@ class ExplorerManager:
 				clsList.insert(0, EmptyFolderStaticText)
 
 	def event_gainFocus(self, obj, nextHandler):
-		if self._foregroundTransition:
-			nextHandler()
-			return
-		
-		if not self._should_process_event(obj):
-			nextHandler()
-			return
-		
-		if not self._is_valid_uia_object(obj):
-			nextHandler()
-			return
-		
-		appName = obj.appModule.appName if obj and obj.appModule else ""
-		conf = self.getConfig()
-		should_suppress = conf.get("sayFileExplorer", True)
-		
-		if should_suppress != self._last_sayFileExplorer_setting:
-			self._update_speech_dict_for_title()
-		
-		if appName == "explorer":
-			if not self._explorer_focused:
-				self._explorer_focused = True
-				if should_suppress and self._temp_entry is None:
-					self._add_temp_entry()
-				elif not should_suppress and self._temp_entry is not None:
-					self._remove_temp_entry()
+		try:
+			if self._foregroundTransition:
+				nextHandler()
+				return
+			if obj is None or obj.appModule is None:
+				nextHandler()
+				return
+			if not self._should_process_event(obj):
+				nextHandler()
+				return
+			if not self._is_valid_uia_object(obj):
+				nextHandler()
+				return
+			
+			appName = obj.appModule.appName
+			conf = self.getConfig()
+			should_suppress = conf.get("sayFileExplorer", True)
+			if should_suppress != self._last_sayFileExplorer_setting:
+				self._update_speech_dict_for_title()
+			
+			if appName == "explorer":
+				if not self._explorer_focused:
+					self._explorer_focused = True
+					if should_suppress and self._temp_entry is None:
+						self._add_temp_entry()
+					elif not should_suppress and self._temp_entry is not None:
+						self._remove_temp_entry()
 			else:
-				if should_suppress and self._temp_entry is None:
-					self._add_temp_entry()
-				elif not should_suppress and self._temp_entry is not None:
+				if self._explorer_focused:
+					self._explorer_focused = False
 					self._remove_temp_entry()
-		else:
-			if self._explorer_focused:
-				self._explorer_focused = False
-				self._remove_temp_entry()
-		
-		if self.suppressAnnouncements or self.contextMenuActive or self.suppressAllAnnouncements:
+			
+			if self.suppressAnnouncements or self.contextMenuActive or self.suppressAllAnnouncements:
+				nextHandler()
+				return
+			
+			if not self._isValidExplorerContext(obj):
+				nextHandler()
+				return
+			
+			if obj.role == Role.PANE and obj.firstChild and hasattr(obj.firstChild, "UIAAutomationId"):
+				if obj.firstChild.UIAAutomationId == "HomeListView":
+					def set_focus():
+						try:
+							if obj.firstChild and obj.firstChild.children and len(obj.firstChild.children) > 1:
+								obj.firstChild.children[1].setFocus()
+						except:
+							pass
+					core.callLater(200, set_focus)
 			nextHandler()
-			return
-		
-		if not self._isValidExplorerContext(obj):
+		except Exception as e:
+			log.error(f"event_gainFocus failed: {e}")
 			nextHandler()
-			return
-		
-		if obj.role == Role.PANE and obj.firstChild and hasattr(obj.firstChild, "UIAAutomationId"):
-			if obj.firstChild.UIAAutomationId == "HomeListView":
-				def set_focus():
-					try:
-						if obj.firstChild and obj.firstChild.children and len(obj.firstChild.children) > 1:
-							obj.firstChild.children[1].setFocus()
-					except:
-						pass
-				core.callLater(200, set_focus)
-		
-		nextHandler()
 
 	def _getFolderPath(self, listObj):
 		try:
@@ -323,41 +316,31 @@ class ExplorerManager:
 		return None
 
 	def event_focusEntered(self, obj, nextHandler):
-		# Auto-select first item immediately when entering a folder list
 		if not self._foregroundTransition:
 			conf = self.getConfig()
 			if conf.get("autoSelectFirstItem", True):
-				# Check if this is an Explorer list view
 				if self._isExplorerList(obj):
-					# Get the item that currently has focus (should be the first item or the one navigator is on)
 					focus = obj.objectWithFocus()
 					if focus is not None and focus.role == Role.LISTITEM:
 						try:
 							if hasattr(focus, 'UIASelectionItemPattern') and focus.UIASelectionItemPattern is not None:
-								# Select synchronously before the focus speech is generated
 								focus.UIASelectionItemPattern.Select()
-								# Set navigator object to the selected item for consistency
 								api.setNavigatorObject(focus)
 						except Exception as e:
 							log.debug(f"Auto-select failed: {e}")
-		
-		# Always call next handler to allow normal focus speech
 		nextHandler()
 
 	def event_foreground(self, obj, nextHandler):
 		current_time = time.time()
 		self._last_foreground_time = current_time
-		
 		if obj and obj.appModule and obj.appModule.appName == "explorer":
 			if not self._foregroundTransition:
 				self._foregroundTransition = True
 				self._cached_provider_desc.clear()
 				log.debug("Foreground transition detected, delaying explorer operations")
-				
 				if self._foregroundTransitionTimer:
 					self._foregroundTransitionTimer.cancel()
 				self._foregroundTransitionTimer = core.callLater(250, self._clearForegroundTransition)
-			
 			conf = self.getConfig()
 			should_suppress = conf.get("sayFileExplorer", True)
 			if should_suppress != self._last_sayFileExplorer_setting:
@@ -368,11 +351,9 @@ class ExplorerManager:
 			if self._explorer_focused:
 				self._explorer_focused = False
 				self._remove_temp_entry()
-		
 		if self.suppressAllAnnouncements:
 			nextHandler()
 			return
-		
 		nextHandler()
 	
 	def _clearForegroundTransition(self):

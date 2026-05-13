@@ -18,74 +18,75 @@ class CreateFileDialog(wx.Dialog):
 		self.file_data = []
 		self.files_created = False
 		self.file_inputs = []
-		self.InitUI()
+		self.first_name_ctrl = None
+		self._init_ui()
 		
-	def InitUI(self):
-		mainSizer = wx.BoxSizer(wx.VERTICAL)
-		sHelper = gui.guiHelper.BoxSizerHelper(self, orientation=wx.VERTICAL)
+	def _init_ui(self):
+		main_sizer = wx.BoxSizer(wx.VERTICAL)
+		s_helper = gui.guiHelper.BoxSizerHelper(self, orientation=wx.VERTICAL)
 		
-		sHelper.addItem(wx.StaticText(self, label=_("Number of files to create:")))
-		self.countCtrl = wx.SpinCtrl(self, min=1, max=10, initial=1)
-		sHelper.addItem(self.countCtrl)
+		s_helper.addItem(wx.StaticText(self, label=_("Number of files to create:")))
+		self.count_ctrl = wx.SpinCtrl(self, min=1, max=10, initial=1)
+		s_helper.addItem(self.count_ctrl)
 		
-		self.scrolledPanel = wx.ScrolledWindow(self)
-		self.scrolledPanel.SetScrollRate(0, 20)
-		sHelper.addItem(self.scrolledPanel, proportion=1, flag=wx.EXPAND)
+		self.scrolled_panel = wx.ScrolledWindow(self)
+		self.scrolled_panel.SetScrollRate(0, 20)
+		s_helper.addItem(self.scrolled_panel, proportion=1, flag=wx.EXPAND)
 		
-		self.fieldsSizer = wx.BoxSizer(wx.VERTICAL)
-		self.scrolledPanel.SetSizer(self.fieldsSizer)
+		self.fields_sizer = wx.BoxSizer(wx.VERTICAL)
+		self.scrolled_panel.SetSizer(self.fields_sizer)
 		
 		self._create_file_field(1, is_first=True)
-		self.scrolledPanel.SetMinSize((400, 200))
+		self.scrolled_panel.SetMinSize((400, 200))
 		
-		self.countCtrl.Bind(wx.EVT_SPINCTRL, self.onCountChanged)
+		self.count_ctrl.Bind(wx.EVT_SPINCTRL, self._on_count_changed)
 		
-		btnSizer = self.CreateButtonSizer(wx.OK | wx.CANCEL)
-		sHelper.addItem(btnSizer, flag=wx.ALIGN_CENTER)
+		btn_sizer = self.CreateButtonSizer(wx.OK | wx.CANCEL)
+		s_helper.addItem(btn_sizer, flag=wx.ALIGN_CENTER)
 		
-		self.SetSizer(mainSizer)
-		mainSizer.Fit(self)
+		self.SetSizer(main_sizer)
+		main_sizer.Fit(self)
 		self.CentreOnScreen()
 		
-		self.firstNameCtrl.SetFocus()
+		self.first_name_ctrl.SetFocus()
 		
-		self.Bind(wx.EVT_BUTTON, self.OnOk, id=wx.ID_OK)
-		self.Bind(wx.EVT_BUTTON, self.OnCancel, id=wx.ID_CANCEL)
-		self.Bind(wx.EVT_TEXT_ENTER, self.OnOk)
-		self.Bind(wx.EVT_CLOSE, self.OnClose)
+		self.Bind(wx.EVT_BUTTON, self._on_ok, id=wx.ID_OK)
+		self.Bind(wx.EVT_BUTTON, self._on_cancel, id=wx.ID_CANCEL)
+		self.Bind(wx.EVT_TEXT_ENTER, self._on_ok)
+		self.Bind(wx.EVT_CLOSE, self._on_close)
 		
 	def _create_file_field(self, index, is_first=False):
-		fieldPanel = wx.Panel(self.scrolledPanel)
-		fieldSizer = wx.BoxSizer(wx.HORIZONTAL)
-		fieldPanel.SetSizer(fieldSizer)
+		field_panel = wx.Panel(self.scrolled_panel)
+		field_sizer = wx.BoxSizer(wx.HORIZONTAL)
+		field_panel.SetSizer(field_sizer)
 		
 		if is_first:
-			nameLabel = wx.StaticText(fieldPanel, label=_("File name:"))
+			name_label = wx.StaticText(field_panel, label=_("File name:"))
 		else:
-			nameLabel = wx.StaticText(fieldPanel, label=_("File name {index}:").format(index=index))
-		fieldSizer.Add(nameLabel, 0, wx.ALIGN_CENTER_VERTICAL | wx.RIGHT, 5)
+			name_label = wx.StaticText(field_panel, label=_("File name {index}:").format(index=index))
+		field_sizer.Add(name_label, 0, wx.ALIGN_CENTER_VERTICAL | wx.RIGHT, 5)
 		
-		nameCtrl = wx.TextCtrl(fieldPanel)
-		fieldSizer.Add(nameCtrl, 1, wx.EXPAND | wx.RIGHT, 10)
+		name_ctrl = wx.TextCtrl(field_panel)
+		field_sizer.Add(name_ctrl, 1, wx.EXPAND | wx.RIGHT, 10)
 		
-		extLabel = wx.StaticText(fieldPanel, label=_("Extension:"))
-		fieldSizer.Add(extLabel, 0, wx.ALIGN_CENTER_VERTICAL | wx.RIGHT, 5)
+		ext_label = wx.StaticText(field_panel, label=_("Extension:"))
+		field_sizer.Add(ext_label, 0, wx.ALIGN_CENTER_VERTICAL | wx.RIGHT, 5)
 		
-		extCtrl = wx.TextCtrl(fieldPanel, value="txt")
-		fieldSizer.Add(extCtrl, 0, wx.EXPAND)
+		ext_ctrl = wx.TextCtrl(field_panel, value="txt")
+		field_sizer.Add(ext_ctrl, 0, wx.EXPAND)
 		
-		self.fieldsSizer.Add(fieldPanel, 0, wx.EXPAND | wx.TOP, 5)
+		self.fields_sizer.Add(field_panel, 0, wx.EXPAND | wx.TOP, 5)
 		
 		if index == 1:
-			self.firstNameCtrl = nameCtrl
-			fieldPanel.Show()
+			self.first_name_ctrl = name_ctrl
+			field_panel.Show()
 		else:
-			fieldPanel.Hide()
+			field_panel.Hide()
 			
 		self.file_inputs.append({
-			'panel': fieldPanel,
-			'nameCtrl': nameCtrl,
-			'extCtrl': extCtrl,
+			'panel': field_panel,
+			'name_ctrl': name_ctrl,
+			'ext_ctrl': ext_ctrl,
 			'index': index,
 			'is_first': is_first
 		})
@@ -113,22 +114,22 @@ class CreateFileDialog(wx.Dialog):
 				else:
 					file_input['panel'].Hide()
 			
-			self.fieldsSizer.Layout()
-			self.scrolledPanel.Layout()
+			self.fields_sizer.Layout()
+			self.scrolled_panel.Layout()
 			self.Layout()
-			self.scrolledPanel.FitInside()
+			self.scrolled_panel.FitInside()
 		except Exception as e:
 			log.error(f"Error updating file fields: {e}")
 		
-	def onCountChanged(self, event):
+	def _on_count_changed(self, event):
 		try:
-			count = self.countCtrl.GetValue()
+			count = self.count_ctrl.GetValue()
 			self._update_file_fields(count)
 		except Exception as e:
 			log.error(f"Error in onCountChanged: {e}")
 		
-	def OnOk(self, event):
-		count = self.countCtrl.GetValue()
+	def _on_ok(self, event):
+		count = self.count_ctrl.GetValue()
 		
 		if count < 1:
 			ui.message(_("File count must be at least 1"))
@@ -143,11 +144,11 @@ class CreateFileDialog(wx.Dialog):
 		for i in range(count):
 			if i < len(self.file_inputs):
 				file_input = self.file_inputs[i]
-				nameCtrl = file_input['nameCtrl']
-				extCtrl = file_input['extCtrl']
+				name_ctrl = file_input['name_ctrl']
+				ext_ctrl = file_input['ext_ctrl']
 				
-				name = nameCtrl.GetValue().strip()
-				ext = extCtrl.GetValue().strip()
+				name = name_ctrl.GetValue().strip()
+				ext = ext_ctrl.GetValue().strip()
 				
 				if not name:
 					has_empty_name = True
@@ -171,10 +172,10 @@ class CreateFileDialog(wx.Dialog):
 		self.files_created = True
 		self.EndModal(wx.ID_OK)
 		
-	def OnCancel(self, event):
+	def _on_cancel(self, event):
 		self.EndModal(wx.ID_CANCEL)
 		
-	def OnClose(self, event):
+	def _on_close(self, event):
 		self.EndModal(wx.ID_CANCEL)
 
 
@@ -182,6 +183,7 @@ class CreateFileManager:
 	def __init__(self, plugin):
 		self.plugin = plugin
 		self.create_file_dialog = None
+		self._retry_attempts = 0
 		
 	def cleanup(self):
 		if self.create_file_dialog:
@@ -193,25 +195,38 @@ class CreateFileManager:
 	def create_file(self):
 		focus = api.getFocusObject()
 		if not focus or focus.appModule.appName != "explorer":
-			ui.message(addonHandler.gettext("Not in File Explorer"))
+			ui.message(_("Not in File Explorer"))
+			log.debug("create_file: Not in Explorer")
 			return
-			
-		self._get_path_with_retry(3, 150)
 		
-	def _get_path_with_retry(self, attempts_left, delay_ms):
 		current_path = self.plugin._getCurrentPath()
+		log.debug(f"create_file: initial path = {current_path}")
 		if current_path and os.path.isdir(current_path):
 			wx.CallAfter(self._show_create_file_dialog, current_path)
+		else:
+			self._retry_attempts = 0
+			core.callLater(300, self._retry_get_path)
+		
+	def _retry_get_path(self):
+		self._retry_attempts += 1
+		if self._retry_attempts > 3:
+			ui.message(_("Unable to get current directory after multiple attempts"))
+			log.debug("create_file: path retry exhausted")
 			return
 		
-		if attempts_left <= 0:
-			ui.message(addonHandler.gettext("Unable to get current directory after multiple attempts"))
-			return
-		
-		core.callLater(delay_ms, lambda: self._get_path_with_retry(attempts_left - 1, delay_ms))
+		current_path = self.plugin._getCurrentPath()
+		log.debug(f"create_file: retry {self._retry_attempts}, path = {current_path}")
+		if current_path and os.path.isdir(current_path):
+			wx.CallAfter(self._show_create_file_dialog, current_path)
+		else:
+			core.callLater(300, self._retry_get_path)
 		
 	def _show_create_file_dialog(self, current_path):
 		try:
+			log.debug(f"Showing create file dialog for path: {current_path}")
+			if gui.mainFrame:
+				gui.mainFrame.prePopup()
+			
 			if self.create_file_dialog and self.create_file_dialog.IsShown():
 				self.create_file_dialog.Destroy()
 				
@@ -227,19 +242,21 @@ class CreateFileManager:
 			
 		except Exception as e:
 			log.error(f"Error showing create file dialog: {e}")
-			ui.message(addonHandler.gettext("Error opening create file dialog"))
+			ui.message(_("Error opening create file dialog"))
 			if self.create_file_dialog:
 				try:
 					self.create_file_dialog.Destroy()
 				except:
 					pass
 				self.create_file_dialog = None
+		finally:
+			if gui.mainFrame:
+				gui.mainFrame.postPopup()
 				
 	def _create_files(self, directory, file_data):
 		try:
 			created_count = 0
-			
-			for i, (name, ext) in enumerate(file_data, 1):
+			for name, ext in file_data:
 				file_name = f"{name}{ext}"
 				file_path = os.path.join(directory, file_name)
 				
@@ -251,7 +268,7 @@ class CreateFileManager:
 						file_path = os.path.join(directory, file_name)
 						counter += 1
 						if counter > 100:
-							ui.message(addonHandler.gettext("Cannot find unique name for: {name}").format(name=name))
+							ui.message(_("Cannot find unique name for: {name}").format(name=name))
 							break
 				
 				try:
@@ -262,12 +279,11 @@ class CreateFileManager:
 					log.error(f"Error creating file {file_path}: {e}")
 					
 			if created_count == 0:
-				ui.message(addonHandler.gettext("No files were created"))
+				ui.message(_("No files were created"))
 			elif created_count == 1:
-				ui.message(addonHandler.gettext("1 file created"))
+				ui.message(_("1 file created"))
 			else:
-				ui.message(addonHandler.gettext("{count} files created").format(count=created_count))
-				
+				ui.message(_("{count} files created").format(count=created_count))
 		except Exception as e:
 			log.error(f"Error in create_files: {e}")
-			ui.message(addonHandler.gettext("Error creating files"))
+			ui.message(_("Error creating files"))

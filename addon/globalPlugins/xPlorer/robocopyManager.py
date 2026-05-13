@@ -7,876 +7,205 @@ import wx
 import gui
 import gui.guiHelper
 import subprocess
-import json
 import threading
 import time
-from datetime import datetime, timedelta
 from logHandler import log
 import addonHandler
-import urllib.parse
-import tones
-import globalVars
-import tempfile
-import shutil
 import core
+import tones
+import comtypes.client
+from urllib.parse import unquote
 
 addonHandler.initTranslation()
 
 class ProgressDialog(wx.Dialog):
-	def __init__(self, parent, title, total_operations):
-		super().__init__(parent, title=title, style=wx.DEFAULT_DIALOG_STYLE | wx.RESIZE_BORDER)
-		self.total_operations = total_operations
-		self.current_operation = 0
+	def __init__(self, parent, title):
+		super().__init__(parent, title=title, style=wx.DEFAULT_DIALOG_STYLE | wx.RESIZE_BORDER | wx.STAY_ON_TOP)
 		self.is_cancelled = False
-		self.last_progress_time = 0
-		self.progress_interval = 1
-		self.start_time = time.time()
-		self.InitUI()
+		self._gauge = None
+		self._label = None
+		self._cancel_btn = None
+		self._init_ui()
 		self.CentreOnScreen()
-		
-	def InitUI(self):
-		mainSizer = wx.BoxSizer(wx.VERTICAL)
-		sHelper = gui.guiHelper.BoxSizerHelper(self, orientation=wx.VERTICAL)
-		
-		self.progress_label = wx.StaticText(self, label=_("Preparing operation..."))
-		sHelper.addItem(self.progress_label)
-		
-		self.gauge = wx.Gauge(self, range=100)
-		sHelper.addItem(self.gauge, proportion=0, flag=wx.EXPAND)
-		
-		self.time_label = wx.StaticText(self, label="")
-		sHelper.addItem(self.time_label)
-		
-		self.speed_label = wx.StaticText(self, label="")
-		sHelper.addItem(self.speed_label)
-		
+
+	def _init_ui(self):
+		main_sizer = wx.BoxSizer(wx.VERTICAL)
+		s_helper = gui.guiHelper.BoxSizerHelper(self, orientation=wx.VERTICAL)
+		self._label = wx.StaticText(self, label=_("Initializing Robocopy..."))
+		s_helper.addItem(self._label)
+		self._gauge = wx.Gauge(self, range=100)
+		s_helper.addItem(self._gauge, proportion=0, flag=wx.EXPAND)
 		btn_sizer = wx.BoxSizer(wx.HORIZONTAL)
-		self.cancel_btn = wx.Button(self, label=_("Cancel"))
-		self.minimize_btn = wx.Button(self, label=_("Minimize"))
-		btn_sizer.Add(self.cancel_btn, 1, wx.RIGHT, 5)
-		btn_sizer.Add(self.minimize_btn, 1)
-		sHelper.addItem(btn_sizer, flag=wx.ALIGN_CENTER)
-		
-		mainSizer.Add(sHelper.sizer, 1, wx.EXPAND|wx.ALL, 10)
-		self.SetSizer(mainSizer)
-		mainSizer.Fit(self)
-		self.SetSize((450, 200))
-		
-		self.cancel_btn.Bind(wx.EVT_BUTTON, self.onCancel)
-		self.minimize_btn.Bind(wx.EVT_BUTTON, self.onMinimize)
-		self.Bind(wx.EVT_CLOSE, self.onCancel)
-		
-	def onCancel(self, evt):
+		self._cancel_btn = wx.Button(self, label=_("Cancel"))
+		btn_sizer.Add(self._cancel_btn, 1, wx.ALL, 5)
+		main_sizer.Add(s_helper.sizer, 1, wx.EXPAND | wx.ALL, 10)
+		main_sizer.Add(btn_sizer, 0, wx.ALIGN_CENTER | wx.BOTTOM, 10)
+		self.SetSizer(main_sizer)
+		main_sizer.Fit(self)
+		self._cancel_btn.Bind(wx.EVT_BUTTON, self._on_cancel)
+
+	def _on_cancel(self, evt):
 		self.is_cancelled = True
 		self.EndModal(wx.ID_CANCEL)
-		
-	def onMinimize(self, evt):
-		self.Iconize(True)
-		
-	def UpdateProgress(self, current, total, operation_name="", estimated_time="", speed=""):
-		if self.is_cancelled:
-			return False
-			
-		current_time = time.time()
-		if current_time - self.last_progress_time < self.progress_interval:
-			return True
-			
-		self.last_progress_time = current_time
-		
-		percentage = int((current / total) * 100) if total > 0 else 0
-		self.gauge.SetValue(percentage)
-		
-		if operation_name:
-			display_name = os.path.basename(operation_name)
-			if len(display_name) > 30:
-				display_name = display_name[:15] + "..." + display_name[-15:]
-			label_text = _("Processing: {}").format(display_name)
-		else:
-			label_text = _("Progress: {}%").format(percentage)
-			
-		self.progress_label.SetLabel(label_text)
-		
-		if estimated_time:
-			self.time_label.SetLabel(_("Estimated time remaining: {}").format(estimated_time))
-		else:
-			elapsed = int(current_time - self.start_time)
-			if elapsed > 0:
-				self.time_label.SetLabel(_("Elapsed time: {} seconds").format(elapsed))
-			else:
-				self.time_label.SetLabel("")
-				
-		if speed:
-			self.speed_label.SetLabel(_("Speed: {}").format(speed))
-		else:
-			self.speed_label.SetLabel("")
-			
-		self.progress_label.GetContainingSizer().Layout()
-		
-		if percentage > 0 and percentage % 25 == 0:
-			if percentage == 25:
-				tones.beep(800, 100)
-			elif percentage == 50:
-				tones.beep(1000, 100)
-			elif percentage == 75:
-				tones.beep(1200, 100)
-		
-		wx.GetApp().Yield(True)
-		return True
 
-
-class MirrorBackupDialog(wx.Dialog):
-	def __init__(self, parent, source_path, existing_config=None, all_configs=None):
-		super().__init__(parent, title=_("Mirror Backup Settings"), style=wx.DEFAULT_DIALOG_STYLE | wx.RESIZE_BORDER | wx.STAY_ON_TOP)
-		self.source_path = source_path
-		self.destinations = []
-		self.sync_enabled = False
-		self.sync_interval = 900
-		self.scheduled_time = datetime.now().strftime("%H:%M")
-		self.existing_config = existing_config
-		self.all_configs = all_configs or []
-		self.current_config = None
-		self.removed_source = None
-		self.InitUI()
-		self.CentreOnScreen()
-		self.Bind(wx.EVT_CHAR_HOOK, self.onKeyDown)
-		
-	def onKeyDown(self, evt):
-		key_code = evt.GetKeyCode()
-		if key_code == wx.WXK_ESCAPE:
-			self.EndModal(wx.ID_CANCEL)
-			return
-		if evt.ControlDown() and key_code == ord('C'):
-			self.copySourceToClipboard()
-			return
-		evt.Skip()
-		
-	def copySourceToClipboard(self):
-		if self.source_path:
-			if wx.TheClipboard.Open():
-				wx.TheClipboard.SetData(wx.TextDataObject(self.source_path))
-				wx.TheClipboard.Close()
-				ui.message(_("Copied source path to clipboard"))
-			else:
-				ui.message(_("Could not open clipboard"))
-		
-	def InitUI(self):
-		mainSizer = wx.BoxSizer(wx.VERTICAL)
-		sHelper = gui.guiHelper.BoxSizerHelper(self, orientation=wx.VERTICAL)
-
-		sHelper.addItem(wx.StaticText(self, label=_("Source folders (select to edit):")))
-		self.source_list = wx.ListBox(self, style=wx.LB_SINGLE, size=(-1, 80))
-		self.source_list.SetName(_("Source folders list"))
-		sHelper.addItem(self.source_list, proportion=1, flag=wx.EXPAND)
-
-		self.remove_source_btn = wx.Button(self, label=_("Remove selected source"))
-		sHelper.addItem(self.remove_source_btn)
-
-		sHelper.addItem(wx.StaticText(self, label=""))
-
-		sHelper.addItem(wx.StaticText(self, label=_("Destination folders:")))
-		self.dest_list = wx.ListBox(self, style=wx.LB_SINGLE, size=(-1, 120))
-		self.dest_list.SetName(_("Destination folders list"))
-		sHelper.addItem(self.dest_list, proportion=1, flag=wx.EXPAND)
-
-		btn_sizer = wx.BoxSizer(wx.HORIZONTAL)
-		add_btn = wx.Button(self, label=_("Add destination folder"))
-		remove_btn = wx.Button(self, label=_("Remove selected destination"))
-		btn_sizer.Add(add_btn, 1, wx.RIGHT, 5)
-		btn_sizer.Add(remove_btn, 1)
-		sHelper.addItem(btn_sizer)
-
-		sHelper.addItem(wx.StaticText(self, label=""))
-
-		self.sync_checkbox = sHelper.addItem(wx.CheckBox(self, label=_("Enable automatic synchronization")))
-		self.sync_checkbox.SetValue(False)
-
-		sHelper.addItem(wx.StaticText(self, label=_("Synchronization interval:")))
-		self.interval_combo = wx.ComboBox(self, choices=[
-			_("15 minutes"), _("30 minutes"), _("1 hour"),
-			_("1 day"), _("7 days"), _("15 days"), _("1 month")
-		], style=wx.CB_READONLY)
-		self.interval_combo.SetSelection(0)
-		self.interval_combo.Enable(False)
-		sHelper.addItem(self.interval_combo)
-
-		self.time_panel = wx.Panel(self)
-		time_sizer = wx.BoxSizer(wx.HORIZONTAL)
-		time_sizer.Add(wx.StaticText(self.time_panel, label=_("Scheduled time:")), flag=wx.RIGHT|wx.ALIGN_CENTER_VERTICAL, border=5)
-		self.time_ctrl = wx.TextCtrl(self.time_panel, value=self.scheduled_time, size=(60,-1))
-		time_sizer.Add(self.time_ctrl)
-		self.time_panel.SetSizer(time_sizer)
-		self.time_panel.Hide()
-		sHelper.addItem(self.time_panel)
-
-		btn_sizer2 = wx.BoxSizer(wx.HORIZONTAL)
-		clear_btn = wx.Button(self, label=_("Clear all settings"))
-		sync_btn = wx.Button(self, label=_("Start synchronization"))
-		ok_btn = wx.Button(self, label=_("OK"))
-		cancel_btn = wx.Button(self, wx.ID_CANCEL, label=_("Cancel"))
-		btn_sizer2.Add(clear_btn, 1, wx.RIGHT, 5)
-		btn_sizer2.Add(sync_btn, 1, wx.RIGHT, 5)
-		btn_sizer2.Add(ok_btn, 1, wx.RIGHT, 5)
-		btn_sizer2.Add(cancel_btn, 1)
-		sHelper.addItem(btn_sizer2, flag=wx.ALIGN_CENTER)
-
-		mainSizer.Add(sHelper.sizer, 1, wx.EXPAND|wx.ALL, 10)
-		self.SetSizer(mainSizer)
-		mainSizer.Fit(self)
-		self.SetSize((620, 680))
-		self.CentreOnScreen()
-
-		self.populateSourceList()
-		if self.existing_config:
-			self.loadExistingConfig()
-		elif self.source_path:
-			self.loadConfigForSource(self.source_path)
-
-		self.source_list.Bind(wx.EVT_LISTBOX, self.onSourceSelected)
-		add_btn.Bind(wx.EVT_BUTTON, self.onAddDestination)
-		remove_btn.Bind(wx.EVT_BUTTON, self.onRemoveDestination)
-		self.remove_source_btn.Bind(wx.EVT_BUTTON, self.onRemoveSource)
-		self.sync_checkbox.Bind(wx.EVT_CHECKBOX, self.onSyncCheck)
-		self.interval_combo.Bind(wx.EVT_COMBOBOX, self.onIntervalChange)
-		clear_btn.Bind(wx.EVT_BUTTON, self.onClear)
-		sync_btn.Bind(wx.EVT_BUTTON, self.onSync)
-		ok_btn.Bind(wx.EVT_BUTTON, self.onOk)
-		self.Bind(wx.EVT_CLOSE, self.onCancel)
-		
-		self.Raise()
-		self.SetFocus()
-		
-	def ShowModal(self):
-		self.Raise()
-		self.SetFocus()
-		return super().ShowModal()
-
-	def populateSourceList(self):
-		all_sources = []
-		if self.all_configs:
-			for c in self.all_configs:
-				if 'source' in c:
-					all_sources.append(c['source'])
-		if self.source_path and self.source_path not in all_sources:
-			all_sources.insert(0, self.source_path)
-		elif self.source_path:
-			all_sources.remove(self.source_path)
-			all_sources.insert(0, self.source_path)
-		for s in all_sources:
-			self.source_list.Append(s)
-		if self.source_path:
-			for i in range(self.source_list.GetCount()):
-				if self.source_list.GetString(i) == self.source_path:
-					self.source_list.SetSelection(i)
-					break
-
-	def loadConfigForSource(self, path=None):
-		path = path or self.source_path
-		self.current_config = next((c for c in self.all_configs if c.get('source') == path), None)
-		if self.current_config:
-			self.loadExistingConfig()
-		else:
-			self.destinations = []
-			self.dest_list.Clear()
-			self.sync_checkbox.SetValue(False)
-			self.interval_combo.SetSelection(0)
-			self.interval_combo.Enable(False)
-			self.time_panel.Hide()
-			self.time_ctrl.SetValue(datetime.now().strftime("%H:%M"))
-
-	def loadExistingConfig(self):
-		config = self.current_config or self.existing_config
-		if not config:
-			return
-		self.destinations = config.get('destinations', [])
-		self.dest_list.Clear()
-		for d in self.destinations:
-			self.dest_list.Append(d)
-		self.sync_checkbox.SetValue(config.get('enabled', False))
-		interval = config.get('interval', 900)
-		intervals = [900, 1800, 3600, 86400, 604800, 1296000, 2592000]
-		if interval in intervals:
-			self.interval_combo.SetSelection(intervals.index(interval))
-		self.scheduled_time = config.get('scheduled_time', datetime.now().strftime("%H:%M"))
-		self.time_ctrl.SetValue(self.scheduled_time)
-		self.updateTimePanelVisibility()
-		self.interval_combo.Enable(self.sync_checkbox.GetValue())
-
-	def updateTimePanelVisibility(self):
-		idx = self.interval_combo.GetSelection()
-		if idx != wx.NOT_FOUND and idx >= 3:
-			self.time_panel.Show()
-		else:
-			self.time_panel.Hide()
-		self.Layout()
-
-	def onSourceSelected(self, evt):
-		sel = self.source_list.GetSelection()
-		if sel != wx.NOT_FOUND:
-			self.source_path = self.source_list.GetString(sel)
-			self.loadConfigForSource(self.source_path)
-
-	def onAddDestination(self, evt):
-		with wx.DirDialog(self, _("Choose destination folder")) as dlg:
-			if dlg.ShowModal() == wx.ID_OK:
-				path = dlg.GetPath()
-				if path not in self.destinations:
-					self.destinations.append(path)
-					self.dest_list.Append(path)
-					self.dest_list.SetSelection(self.dest_list.GetCount() - 1)
-
-	def onRemoveDestination(self, evt):
-		sel = self.dest_list.GetSelection()
-		if sel != wx.NOT_FOUND:
-			self.destinations.pop(sel)
-			self.dest_list.Delete(sel)
-
-	def onRemoveSource(self, evt):
-		sel = self.source_list.GetSelection()
-		if sel != wx.NOT_FOUND:
-			self.removed_source = self.source_list.GetString(sel)
-			self.source_list.Delete(sel)
-			if self.source_list.GetCount() > 0:
-				self.source_list.SetSelection(0)
-				self.source_path = self.source_list.GetString(0)
-				self.loadConfigForSource(self.source_path)
-			else:
-				self.source_path = None
-				self.destinations = []
-				self.dest_list.Clear()
-				self.sync_checkbox.SetValue(False)
-
-	def onSyncCheck(self, evt):
-		self.interval_combo.Enable(self.sync_checkbox.GetValue())
-		self.updateTimePanelVisibility()
-
-	def onIntervalChange(self, evt):
-		self.updateTimePanelVisibility()
-
-	def onClear(self, evt):
-		self.destinations = []
-		self.dest_list.Clear()
-		self.sync_checkbox.SetValue(False)
-		self.interval_combo.SetSelection(0)
-		self.interval_combo.Enable(False)
-		self.time_panel.Hide()
-		self.time_ctrl.SetValue(datetime.now().strftime("%H:%M"))
-
-	def validateTime(self, t):
-		try:
-			if len(t) != 5 or t[2] != ':':
-				return False
-			h, m = int(t[:2]), int(t[3:])
-			return 0 <= h <= 23 and 0 <= m <= 59
-		except:
-			return False
-
-	def onSync(self, evt):
-		if not self.source_path or not self.destinations:
-			ui.message(_("Source and destination required"))
-			return
-		if self.time_panel.IsShown() and not self.validateTime(self.time_ctrl.GetValue()):
-			ui.message(_("Invalid time format"))
-			return
-
-		ui.message(_("Starting immediate mirror sync..."))
-
-		def sync_thread():
-			success = 0
-			log_file = os.path.join(tempfile.gettempdir(), "robocopy_mirror_manual.log")
-			try:
-				for dest in self.destinations:
-					cmd = [
-						'robocopy', self.source_path, dest,
-						'/MIR', '/E', '/COPYALL', '/DCOPY:DAT',
-						'/R:3', '/W:5', '/MT:32',
-						'/NP', '/NFL', '/NDL',
-						'/LOG+:' + log_file
-					]
-					p = subprocess.Popen(
-						cmd,
-						creationflags=subprocess.CREATE_NO_WINDOW,
-						stdout=subprocess.DEVNULL,
-						stderr=subprocess.DEVNULL
-					)
-					p.wait()
-					if p.returncode <= 7:
-						success += 1
-
-				wx.CallAfter(ui.message, _("Immediate sync completed: {}/{} destinations").format(success, len(self.destinations)))
-				wx.CallAfter(tones.beep, 1500, 500)
-			except Exception as e:
-				log.error(f"Manual sync error: {e}")
-				wx.CallAfter(ui.message, _("Sync error occurred"))
-
-		threading.Thread(target=sync_thread, daemon=True).start()
-
-	def onOk(self, evt):
-		if not self.source_path or not self.destinations:
-			ui.message(_("Source and destination required"))
-			return
-		if self.time_panel.IsShown() and not self.validateTime(self.time_ctrl.GetValue()):
-			ui.message(_("Invalid time format"))
-			return
-		self.sync_enabled = self.sync_checkbox.GetValue()
-		idx = self.interval_combo.GetSelection()
-		intervals = [900, 1800, 3600, 86400, 604800, 1296000, 2592000]
-		self.sync_interval = intervals[idx] if 0 <= idx < len(intervals) else 900
-		self.scheduled_time = self.time_ctrl.GetValue()
-		self.EndModal(wx.ID_OK)
-
-	def onCancel(self, evt):
-		self.EndModal(wx.ID_CANCEL)
-
+	def update_progress(self, percentage, status_text=""):
+		def _update():
+			if not self or not self._gauge:
+				return
+			self._gauge.SetValue(int(percentage))
+			if status_text:
+				self._label.SetLabel(status_text)
+		wx.CallAfter(_update)
 
 class RobocopyManager:
 	def __init__(self, plugin):
 		self.plugin = plugin
-		self.pending_source = None
-		self.pending_operation = None
-		self.mirror_timers = {}
-		self.mirror_configs = []
-		self.loadMirrorConfig()
+		self.source_items = []
+		self.operation_type = "copy"
+		self.active_process = None
 
-	def cleanup(self):
-		for data in list(self.mirror_timers.values()):
-			t = data.get('timer')
-			if t and t.is_alive():
-				t.cancel()
-		self.mirror_timers.clear()
-
-	def loadMirrorConfig(self):
+	def _get_explorer_data_via_com(self, get_selection=True):
+		paths = []
+		current_folder = None
 		try:
-			config_dir = os.path.join(globalVars.appArgs.configPath, "ChaiChaimee")
-			new_path = os.path.join(config_dir, "mirror.json")
-			old_path = os.path.join(globalVars.appArgs.configPath, "mirror.json")
-			
-			if os.path.exists(old_path) and not os.path.exists(new_path):
-				os.makedirs(config_dir, exist_ok=True)
-				shutil.move(old_path, new_path)
-				log.info(f"Migrated mirror.json from {old_path} to {new_path}")
-			
-			if os.path.exists(new_path):
-				with open(new_path, 'r', encoding='utf-8') as f:
-					data = json.load(f)
-					self.mirror_configs = data if isinstance(data, list) else []
-				for cfg in self.mirror_configs:
-					if cfg.get('enabled', False):
-						self.startMirrorTimer(cfg, announce=False)
-		except Exception as e:
-			log.error(f"Load mirror config error: {e}")
-
-	def saveMirrorConfig(self):
-		try:
-			config_dir = os.path.join(globalVars.appArgs.configPath, "ChaiChaimee")
-			os.makedirs(config_dir, exist_ok=True)
-			path = os.path.join(config_dir, "mirror.json")
-			with open(path, 'w', encoding='utf-8') as f:
-				json.dump(self.mirror_configs, f, indent=2, ensure_ascii=False)
-		except Exception as e:
-			log.error(f"Save mirror config error: {e}")
-
-	def calculateNextRunTime(self, cfg):
-		interval = cfg.get('interval', 900)
-		st = cfg.get('scheduled_time', '00:00')
-		now = datetime.now()
-		
-		if interval < 86400:
-			return now + timedelta(seconds=interval)
-		
-		try:
-			h, m = map(int, st.split(':'))
-			target = now.replace(hour=h, minute=m, second=0, microsecond=0)
-			
-			if 'last_run' not in cfg:
-				if target <= now:
-					if interval == 86400:
-						target += timedelta(days=1)
-					elif interval == 604800:
-						target += timedelta(days=7)
-					elif interval == 1296000:
-						target += timedelta(days=15)
-					elif interval == 2592000:
-						target += timedelta(days=30)
-				return target
-			else:
+			shell = comtypes.client.CreateObject("Shell.Application")
+			fg_hwnd = api.getForegroundObject().windowHandle
+			for window in shell.Windows():
 				try:
-					last_run = datetime.fromisoformat(cfg['last_run'])
-					next_run = last_run + timedelta(seconds=interval)
-					if next_run <= now:
-						if interval == 86400:
-							target_today = now.replace(hour=h, minute=m, second=0, microsecond=0)
-							if target_today <= now:
-								next_run = target_today + timedelta(days=1)
-							else:
-								next_run = target_today
-						else:
-							days_to_add = interval // 86400
-							next_run = last_run + timedelta(days=days_to_add)
-							while next_run <= now:
-								next_run += timedelta(days=days_to_add)
-					return next_run
+					if window.hwnd == fg_hwnd:
+						if get_selection:
+							selection = window.Document.SelectedItems()
+							for i in range(selection.Count):
+								paths.append(selection.Item(i).Path)
+						try:
+							current_folder = window.Document.Folder.Self.Path
+						except:
+							url = window.LocationURL
+							if url.startswith("file:///"):
+								current_folder = unquote(url[8:].replace("/", "\\"))
+						break
 				except:
-					if target <= now:
-						days_to_add = interval // 86400
-						target += timedelta(days=days_to_add)
-					return target
-		except:
-			return now + timedelta(seconds=interval)
-
-	def updateLastRunTime(self, cfg):
-		cfg['last_run'] = datetime.now().isoformat()
-		for i, c in enumerate(self.mirror_configs):
-			if c.get('source') == cfg.get('source'):
-				self.mirror_configs[i] = cfg
-				break
-		self.saveMirrorConfig()
-
-	def startMirrorTimer(self, cfg, announce=True):
-		src = cfg.get('source')
-		if not src or not os.path.exists(src):
-			return
-		if src in self.mirror_timers:
-			old = self.mirror_timers[src].get('timer')
-			if old and old.is_alive():
-				old.cancel()
-		
-		next_run = self.calculateNextRunTime(cfg)
-		delay = max(0, (next_run - datetime.now()).total_seconds())
-		
-		timer = threading.Timer(delay, lambda: wx.CallAfter(self.executeMirrorBackup, cfg))
-		timer.daemon = True
-		timer.start()
-		
-		self.mirror_timers[src] = {'timer': timer, 'next_run': next_run}
-		
-		if announce:
-			next_time = next_run.strftime("%H:%M %d/%m/%Y")
-			ui.message(_("Next scheduled backup for {}: {}").format(
-				os.path.basename(src) if len(src) < 50 else src[:50] + "...",
-				next_time
-			))
-
-	def executeMirrorBackup(self, cfg):
-		src = cfg.get('source')
-		dests = cfg.get('destinations', [])
-		if not src or not dests:
-			return
-
-		self.updateLastRunTime(cfg)
-		
-		wx.CallAfter(ui.message, _("Scheduled mirror backup started for {}").format(
-			os.path.basename(src) if len(src) < 50 else src[:50] + "..."
-		))
-		log_file = os.path.join(tempfile.gettempdir(), "robocopy_mirror_scheduled.log")
-
-		def run():
-			success = 0
-			for d in dests:
-				cmd = [
-					'robocopy', src, d,
-					'/MIR', '/E', '/COPYALL', '/DCOPY:DAT',
-					'/R:3', '/W:5', '/MT:32',
-					'/NP', '/NFL', '/NDL',
-					'/LOG+:' + log_file
-				]
-				p = subprocess.Popen(
-					cmd,
-					creationflags=subprocess.CREATE_NO_WINDOW,
-					stdout=subprocess.DEVNULL,
-					stderr=subprocess.DEVNULL
-				)
-				p.wait()
-				if p.returncode <= 7:
-					success += 1
-
-			wx.CallAfter(ui.message, _("Scheduled backup completed: {}/{} destinations").format(success, len(dests)))
-			wx.CallAfter(tones.beep, 1500, 500)
-			
-			if cfg.get('enabled', False):
-				wx.CallAfter(self.startMirrorTimer, cfg, announce=True)
-
-		threading.Thread(target=run, daemon=True).start()
-
-	def getMirrorConfig(self, path):
-		return next((c for c in self.mirror_configs if c.get('source') == path), None)
-
-	def showMirrorBackupDialog(self):
-		focus = api.getFocusObject()
-		if not focus or focus.appModule.appName != "explorer":
-			ui.message(_("Not in File Explorer"))
-			return
-		
-		def process_selected_items(selected_data):
-			selected_items, _ = selected_data
-			if not selected_items or len(selected_items) > 1:
-				ui.message(addonHandler.gettext("Please select only one folder"))
-				return
-			
-			src = selected_items[0][1]
-			if not os.path.isdir(src):
-				ui.message(addonHandler.gettext("Please select a folder"))
-				return
-			
-			existing = self.getMirrorConfig(src)
-			
-			def show_dialog():
-				dlg = MirrorBackupDialog(gui.mainFrame, src, existing, self.mirror_configs)
-				result = dlg.ShowModal()
-				
-				if hasattr(dlg, 'removed_source') and dlg.removed_source:
-					self.mirror_configs = [c for c in self.mirror_configs if c.get('source') != dlg.removed_source]
-					if dlg.removed_source in self.mirror_timers:
-						t = self.mirror_timers[dlg.removed_source].get('timer')
-						if t and t.is_alive():
-							t.cancel()
-						del self.mirror_timers[dlg.removed_source]
-					self.saveMirrorConfig()
-				if result == wx.ID_OK and dlg.source_path:
-					self.setupMirrorBackup(
-						dlg.source_path, dlg.destinations,
-						dlg.sync_enabled, dlg.sync_interval, dlg.scheduled_time
-					)
-				dlg.Destroy()
-			
-			wx.CallAfter(show_dialog)
-		
-		self.plugin._getSelectedItemsDeferred(process_selected_items, 500)
-
-	def setupMirrorBackup(self, src, dests, enabled, interval, time_str="00:00"):
-		self.mirror_configs = [c for c in self.mirror_configs if c.get('source') != src]
-		if src in self.mirror_timers:
-			t = self.mirror_timers[src].get('timer')
-			if t and t.is_alive():
-				t.cancel()
-			del self.mirror_timers[src]
-		if enabled and dests:
-			cfg = {
-				'source': src,
-				'destinations': dests,
-				'enabled': True,
-				'interval': interval,
-				'scheduled_time': time_str,
-				'last_updated': datetime.now().isoformat()
-			}
-			self.mirror_configs.append(cfg)
-			self.startMirrorTimer(cfg, announce=True)
-			ui.message(_("Mirror backup configured successfully"))
-		else:
-			ui.message(_("Mirror backup disabled"))
-		self.saveMirrorConfig()
+					continue
+		except Exception as e:
+			log.debug(f"Robocopy COM Error: {e}")
+		return paths if get_selection else current_folder
 
 	def copy(self):
-		focus = api.getFocusObject()
-		if not focus or focus.appModule.appName != "explorer":
-			ui.message(_("Not in File Explorer"))
+		paths = self._get_explorer_data_via_com(get_selection=True)
+		if not paths:
+			tones.beep(200, 150)
+			ui.message(_("No items selected"))
 			return
-		items, _ = self.plugin._getSelectedItems()
-		if not items or len(items) > 1:
-			ui.message(_("Select one item only"))
-			return
-		self.pending_source = items[0][1]
-		self.pending_operation = 'copy'
-		ui.message(_("Source for copy: {}").format(os.path.basename(self.pending_source)))
+		self.source_items = paths
+		self.operation_type = "copy"
+		tones.beep(440, 150)
+		ui.message(_("Robocopy: {count} items ready").format(count=len(paths)))
 
 	def move(self):
-		focus = api.getFocusObject()
-		if not focus or focus.appModule.appName != "explorer":
-			ui.message(_("Not in File Explorer"))
+		paths = self._get_explorer_data_via_com(get_selection=True)
+		if not paths:
+			tones.beep(200, 150)
+			ui.message(_("No items selected"))
 			return
-		items, _ = self.plugin._getSelectedItems()
-		if not items or len(items) > 1:
-			ui.message(_("Select one item only"))
-			return
-		self.pending_source = items[0][1]
-		self.pending_operation = 'move'
-		ui.message(_("Source for move: {}").format(os.path.basename(self.pending_source)))
+		self.source_items = paths
+		self.operation_type = "move"
+		tones.beep(440, 150)
+		ui.message(_("Robocopy: {count} items ready to move").format(count=len(paths)))
 
 	def paste(self):
-		if not self.pending_source or not self.pending_operation:
-			ui.message(_("No pending operation"))
+		if not self.source_items:
+			tones.beep(200, 150)
+			ui.message(_("Nothing to paste"))
 			return
-		
-		focus = api.getFocusObject()
-		if not focus or focus.appModule.appName != "explorer":
-			ui.message(_("Not in File Explorer"))
+		dest_path = self._get_explorer_data_via_com(get_selection=False)
+		if not dest_path:
+			dest_path = getattr(self.plugin.manager, "lastExplorerPath", None)
+		if not dest_path:
+			dest_path = self.plugin._getCurrentPath()
+		if not dest_path or not os.path.exists(dest_path):
+			tones.beep(200, 150)
+			ui.message(_("Destination not found"))
 			return
-		
-		try:
-			shell = self.plugin._getActiveExplorerWindow()
-			if not shell:
-				ui.message(_("Cannot get destination"))
-				return
-			
-			dest = urllib.parse.unquote(shell.LocationURL[8:])
-			if not os.path.isdir(dest):
-				ui.message(_("Invalid destination"))
-				return
-			
-			is_move = self.pending_operation == 'move'
-			operation_name = _("Move") if is_move else _("Copy")
-			
-			ui.message(_("Starting {} operation in background...").format(operation_name))
-			tones.beep(800, 100)
-			
-			threading.Thread(target=self._execute_paste_operation, 
-						   args=(dest, is_move, operation_name), 
-						   daemon=True).start()
-			
-		except Exception as e:
-			log.error(f"Paste setup error: {e}")
-			ui.message(_("Error: {}").format(str(e)))
-			self.pending_source = self.pending_operation = None
+		tones.beep(880, 200)
+		thread = threading.Thread(
+			target=self._run_transfer, 
+			args=(list(self.source_items), dest_path, self.operation_type == "move")
+		)
+		thread.daemon = True
+		thread.start()
+		self.source_items = []
 
-	def _execute_paste_operation(self, dest, is_move, operation_name):
-		try:
-			if not os.path.exists(self.pending_source):
-				wx.CallAfter(ui.message, _("Source does not exist"))
-				return
-			
-			source_is_dir = os.path.isdir(self.pending_source)
-			total_size = 0
-			if not source_is_dir:
-				try:
-					total_size = os.path.getsize(self.pending_source)
-				except:
-					pass
-			
-			if source_is_dir:
-				source_dir = self.pending_source
-				dest_dir = os.path.join(dest, os.path.basename(source_dir))
-				
-				if os.path.exists(dest_dir):
-					wx.CallAfter(ui.message, _("Destination already exists, overwriting..."))
-				
-				cmd = [
-					'robocopy', source_dir, dest_dir,
-					'/E', '/COPYALL', '/DCOPY:DAT',
-					'/R:1', '/W:1', '/MT:128',
-					'/NP', '/NFL', '/NDL',
-					'/NJH', '/NJS', '/J', '/FFT', '/ZB',
-					'/XD', '$RECYCLE.BIN', 'System Volume Information',
-					'/XA:SH', '/XJ', '/NOOFFLOAD'
-				]
+	def _run_transfer(self, sources, dest, is_move):
+		dlg = None
+		def create_dlg():
+			nonlocal dlg
+			dlg = ProgressDialog(gui.mainFrame, _("xPloyer Robocopy"))
+			dlg.Show()
+		wx.CallAfter(create_dlg)
+		time.sleep(0.3)
+		for source in sources:
+			if dlg and dlg.is_cancelled:
+				break
+			source_name = os.path.basename(source)
+			is_dir = os.path.isdir(source)
+			if is_dir:
+				target_dest = os.path.join(dest, source_name)
+				cmd = ["robocopy", source, target_dest, "/E", "/MT:8", "/R:3", "/W:5", "/XJ", "/NP"]
 			else:
-				source_file = self.pending_source
-				dest_file_path = dest
-				
-				cmd = [
-					'robocopy', os.path.dirname(source_file), dest_file_path,
-					os.path.basename(source_file),
-					'/COPYALL', '/R:1', '/W:1', '/MT:128',
-					'/NP', '/NFL', '/NDL', '/NJH', '/NJS',
-					'/J', '/FFT', '/ZB', '/NOOFFLOAD'
-				]
-			
-			if total_size > 1073741824:
-				cmd.append('/COMPRESS')
-				wx.CallAfter(ui.message, _("Large file detected, using compression for speed"))
-			
+				source_dir = os.path.dirname(source)
+				cmd = ["robocopy", source_dir, dest, source_name, "/MT:8", "/R:3", "/W:5", "/NP"]
 			if is_move:
-				cmd.append('/MOVE')
-			
-			log_file = os.path.join(tempfile.gettempdir(), f"robocopy_{operation_name.lower()}_{int(time.time())}.log")
-			cmd.append(f'/LOG+:{log_file}')
-			
-			wx.CallAfter(ui.message, _("{} started. You can continue working while it runs in background.").format(operation_name))
-			
-			start_time = time.time()
-			last_progress_update = start_time
-			last_size_check = start_time
-			
-			process = subprocess.Popen(
-				cmd,
-				creationflags=subprocess.CREATE_NO_WINDOW,
-				stdout=subprocess.DEVNULL,
-				stderr=subprocess.DEVNULL
+				cmd.append("/MOVE")
+			try:
+				startupinfo = subprocess.STARTUPINFO()
+				startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+				self.active_process = subprocess.Popen(
+					cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+					universal_newlines=True, startupinfo=startupinfo,
+					creationflags=subprocess.CREATE_NO_WINDOW
+				)
+				start_time = time.time()
+				for line in self.active_process.stdout:
+					if dlg and dlg.is_cancelled:
+						self.active_process.terminate()
+						break
+					if time.time() - start_time > 60:
+						log.warning("Robocopy timeout after 60 seconds")
+						self.active_process.terminate()
+						break
+					if "%" in line:
+						try:
+							pct = float(line.split("%")[0].strip().split()[-1])
+							if dlg:
+								dlg.update_progress(pct, _("Transferring: {name}").format(name=source_name))
+						except:
+							continue
+				self.active_process.wait()
+			except Exception as e:
+				log.exception("Robocopy error")
+				continue
+		def cleanup_dlg():
+			if dlg:
+				dlg.Destroy()
+		wx.CallAfter(cleanup_dlg)
+		tones.beep(1760, 300)
+		ui.message(_("Robocopy finished"))
+
+	def showMirrorBackupDialog(self):
+		def show_dialog():
+			dlg = wx.MessageDialog(
+				gui.mainFrame,
+				_("Mirror Backup feature is not yet implemented.\nThis will perform robocopy with /MIR option."),
+				_("Mirror Backup"),
+				wx.OK | wx.ICON_INFORMATION
 			)
-			
-			while process.poll() is None:
-				current_time = time.time()
-				elapsed = current_time - start_time
-				
-				if current_time - last_progress_update >= 5:
-					if source_is_dir or total_size == 0:
-						wx.CallAfter(ui.message, _("{} in progress... {} seconds elapsed").format(
-							operation_name, int(elapsed)))
-					else:
-						if current_time - last_size_check >= 2:
-							dest_file = os.path.join(dest, os.path.basename(self.pending_source))
-							copied_size = 0
-							try:
-								if os.path.exists(dest_file):
-									copied_size = os.path.getsize(dest_file)
-							except:
-								pass
-							
-							if total_size > 0 and copied_size > 0:
-								percentage = int((copied_size / total_size) * 100)
-								speed_mbps = (copied_size / (1024 * 1024)) / elapsed if elapsed > 0 else 0
-								
-								if percentage % 25 == 0 and percentage > 0:
-									if percentage == 25:
-										wx.CallAfter(tones.beep, 800, 100)
-									elif percentage == 50:
-										wx.CallAfter(tones.beep, 1000, 100)
-									elif percentage == 75:
-										wx.CallAfter(tones.beep, 1200, 100)
-								
-								wx.CallAfter(ui.message, _("{}: {}% complete, speed: {:.1f} MB/s").format(
-									operation_name, percentage, speed_mbps))
-							
-							last_size_check = current_time
-					
-					last_progress_update = current_time
-				
-				time.sleep(0.5)
-			
-			return_code = process.returncode
-			
-			if return_code <= 7:
-				elapsed_total = time.time() - start_time
-				if total_size > 0:
-					speed_mbps = (total_size / (1024 * 1024)) / elapsed_total if elapsed_total > 0 else 0
-					wx.CallAfter(ui.message, _("{} completed successfully in {:.1f} seconds, average speed: {:.1f} MB/s").format(
-						operation_name, elapsed_total, speed_mbps))
-				else:
-					wx.CallAfter(ui.message, _("{} completed successfully in {:.1f} seconds").format(
-						operation_name, elapsed_total))
-				wx.CallAfter(tones.beep, 1500, 300)
-				
-				try:
-					shell = self.plugin._getActiveExplorerWindow()
-					if shell:
-						shell.Refresh()
-				except:
-					pass
-			elif return_code == 16:
-				wx.CallAfter(ui.message, _("Trying alternative copy method..."))
-				try:
-					if source_is_dir:
-						if is_move:
-							shutil.move(self.pending_source, os.path.join(dest, os.path.basename(self.pending_source)))
-						else:
-							shutil.copytree(self.pending_source, os.path.join(dest, os.path.basename(self.pending_source)))
-					else:
-						if is_move:
-							shutil.move(self.pending_source, os.path.join(dest, os.path.basename(self.pending_source)))
-						else:
-							shutil.copy2(self.pending_source, dest)
-					
-					wx.CallAfter(ui.message, _("{} completed successfully using alternative method").format(operation_name))
-					wx.CallAfter(tones.beep, 1500, 300)
-				except Exception as alt_e:
-					log.error(f"Alternative method error: {alt_e}")
-					wx.CallAfter(ui.message, _("{} failed with error: {}").format(operation_name, str(alt_e)))
-					wx.CallAfter(tones.beep, 500, 300)
-			else:
-				wx.CallAfter(ui.message, _("{} completed with warnings (code: {})").format(operation_name, return_code))
-				wx.CallAfter(tones.beep, 1000, 200)
-			
-		except Exception as e:
-			log.error(f"Paste error: {e}")
-			wx.CallAfter(ui.message, _("Error during {}: {}").format(operation_name, str(e)))
-			wx.CallAfter(tones.beep, 500, 300)
-		finally:
-			self.pending_source = self.pending_operation = None
+			dlg.ShowModal()
+			dlg.Destroy()
+		wx.CallAfter(show_dialog)
+
+	def cleanup(self):
+		if self.active_process and self.active_process.poll() is None:
+			try:
+				self.active_process.terminate()
+			except:
+				pass

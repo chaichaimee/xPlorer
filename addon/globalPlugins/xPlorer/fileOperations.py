@@ -17,42 +17,43 @@ import core
 addonHandler.initTranslation()
 
 class RenameDialog(wx.Dialog):
-	def __init__(self, parent, fileName):
+	def __init__(self, parent, file_name):
 		super().__init__(parent, title="")
-		self.fileName = fileName
-		self.newName = None
-		self.InitUI()
+		self.file_name = file_name
+		self.new_name = None
+		self.name_ctrl = None
+		self.ext_ctrl = None
+		self._init_ui()
 		
-	def InitUI(self):
-		mainSizer = wx.BoxSizer(wx.VERTICAL)
-		sHelper = gui.guiHelper.BoxSizerHelper(self, orientation=wx.VERTICAL)
+	def _init_ui(self):
+		main_sizer = wx.BoxSizer(wx.VERTICAL)
+		s_helper = gui.guiHelper.BoxSizerHelper(self, orientation=wx.VERTICAL)
 		
-		name, ext = os.path.splitext(self.fileName)
+		name, ext = os.path.splitext(self.file_name)
 		
-		self.nameCtrl = sHelper.addItem(wx.TextCtrl(self, value=name))
-		self.nameCtrl.SelectAll()
+		self.name_ctrl = s_helper.addItem(wx.TextCtrl(self, value=name))
+		self.name_ctrl.SelectAll()
 		
 		if ext and ext.startswith('.'):
 			ext = ext[1:]
-		self.extCtrl = sHelper.addItem(wx.TextCtrl(self, value=ext))
+		self.ext_ctrl = s_helper.addItem(wx.TextCtrl(self, value=ext))
 		
-		btnSizer = self.CreateButtonSizer(wx.OK | wx.CANCEL)
-		sHelper.addItem(btnSizer, flag=wx.ALIGN_CENTER)
+		btn_sizer = self.CreateButtonSizer(wx.OK | wx.CANCEL)
+		s_helper.addItem(btn_sizer, flag=wx.ALIGN_CENTER)
 		
-		self.SetSizer(mainSizer)
-		mainSizer.Fit(self)
-		
+		self.SetSizer(main_sizer)
+		main_sizer.Fit(self)
 		self.CentreOnScreen()
-		self.nameCtrl.SetFocus()
+		self.name_ctrl.SetFocus()
 		
-		self.Bind(wx.EVT_BUTTON, self.OnOk, id=wx.ID_OK)
-		self.Bind(wx.EVT_BUTTON, self.OnCancel, id=wx.ID_CANCEL)
-		self.Bind(wx.EVT_TEXT_ENTER, self.OnOk)
-		self.Bind(wx.EVT_CLOSE, self.OnClose)
+		self.Bind(wx.EVT_BUTTON, self._on_ok, id=wx.ID_OK)
+		self.Bind(wx.EVT_BUTTON, self._on_cancel, id=wx.ID_CANCEL)
+		self.Bind(wx.EVT_TEXT_ENTER, self._on_ok)
+		self.Bind(wx.EVT_CLOSE, self._on_close)
 		
-	def OnOk(self, event):
-		name = self.nameCtrl.Value.strip()
-		ext = self.extCtrl.Value.strip()
+	def _on_ok(self, event):
+		name = self.name_ctrl.Value.strip()
+		ext = self.ext_ctrl.Value.strip()
 		
 		if not name:
 			ui.message(_("File name cannot be empty"))
@@ -60,19 +61,19 @@ class RenameDialog(wx.Dialog):
 			
 		if ext:
 			ext = "." + ext
-		self.newName = name + ext
+		self.new_name = name + ext
 		self.EndModal(wx.ID_OK)
 		
-	def OnCancel(self, event):
+	def _on_cancel(self, event):
 		self.EndModal(wx.ID_CANCEL)
 		
-	def OnClose(self, event):
+	def _on_close(self, event):
 		self.EndModal(wx.ID_CANCEL)
 
 class FileOperations:
 	def __init__(self, plugin):
 		self.plugin = plugin
-		self.renameDialog = None
+		self.rename_dialog = None
 		self._beep_timer = None
 		self._calculation_active = False
 		self._stop_beep_event = threading.Event()
@@ -80,9 +81,9 @@ class FileOperations:
 
 	def cleanup(self):
 		self._stop_calculation()
-		if self.renameDialog:
+		if self.rename_dialog:
 			try:
-				self.renameDialog.Destroy()
+				self.rename_dialog.Destroy()
 			except:
 				pass
 
@@ -106,79 +107,23 @@ class FileOperations:
 
 	def _beep_interval(self):
 		if not self._stop_beep_event.is_set():
-			wx.CallAfter(tones.beep, 440, 100)
+			core.callLater(0, tones.beep, 440, 100)
 			self._beep_timer = threading.Timer(2.0, self._beep_interval)
 			self._beep_timer.daemon = True
 			self._beep_timer.start()
 
-	def _RecalcSize(self, iResult, iTotalSize=0):
-		fResult = float(iResult)
-		if iTotalSize > 0:
-			iTotalSize = float(iTotalSize)
-			fResult = iTotalSize - fResult    
+	def _recalc_size(self, i_result, i_total_size=0):
+		f_result = float(i_result)
+		if i_total_size > 0:
+			i_total_size = float(i_total_size)
+			f_result = i_total_size - f_result    
 		i = 0
-		while fResult >= 1024:
-			fResult = fResult / 1024
+		while f_result >= 1024:
+			f_result = f_result / 1024
 			i = i + 1
-		sRecalcSize = ' {:.2f}'.format(fResult)
-		sResult = (sRecalcSize, i)
-		return sResult
-
-	def _get_folder_size_powershell_fast(self, folder_path):
-		try:
-			ps_command = f"""
-			$path = '{folder_path}'
-			$totalSize = 0L
-			
-			function Get-Size($directory) {{
-				try {{
-					$files = [System.IO.Directory]::EnumerateFiles($directory)
-					foreach ($file in $files) {{
-						try {{
-							$totalSize += (New-Object System.IO.FileInfo $file).Length
-						}} catch {{ }}
-					}}
-					
-					$dirs = [System.IO.Directory]::EnumerateDirectories($directory)
-					foreach ($dir in $dirs) {{
-						Get-Size $dir
-					}}
-				}} catch {{ }}
-			}}
-			
-			Get-Size $path
-			$totalSize
-			"""
-			
-			result = subprocess.run(
-				["powershell", "-Command", ps_command],
-				capture_output=True,
-				text=True,
-				encoding='utf-8',
-				timeout=10,
-				creationflags=subprocess.CREATE_NO_WINDOW
-			)
-			
-			if result.returncode == 0 and result.stdout.strip():
-				size_str = result.stdout.strip()
-				if size_str and size_str.isdigit():
-					return int(size_str)
-				else:
-					try:
-						return int(float(size_str))
-					except:
-						log.debug(f"PowerShell returned non-numeric: {size_str}")
-						return None
-			else:
-				log.debug(f"PowerShell failed (returncode={result.returncode}): {result.stderr}")
-				return None
-				
-		except subprocess.TimeoutExpired:
-			log.warning(f"PowerShell timeout for folder: {folder_path}")
-			return None
-		except Exception as e:
-			log.error(f"Error in PowerShell folder size calculation: {e}")
-			return None
+		s_recalc_size = ' {:.2f}'.format(f_result)
+		s_result = (s_recalc_size, i)
+		return s_result
 
 	def _get_folder_size_windows_api(self, folder_path):
 		try:
@@ -204,37 +149,50 @@ class FileOperations:
 			FindClose.argtypes = [wintypes.HANDLE]
 			FindClose.restype = wintypes.BOOL
 			
-			def get_folder_size_recursive(path):
+			def get_folder_size_iterative(start_path):
 				total = 0
-				find_data = wintypes.WIN32_FIND_DATAW()
-				handle = FindFirstFile(os.path.join(path, "*"), ctypes.byref(find_data))
-				
-				if handle == wintypes.HANDLE(-1):
-					return total
-				
-				try:
-					while True:
-						name = find_data.cFileName
-						if name not in ('.', '..'):
-							full_path = os.path.join(path, name)
-							
-							if find_data.dwFileAttributes & 16:
-								total += get_folder_size_recursive(full_path)
-							else:
-								size_high = find_data.nFileSizeHigh
-								size_low = find_data.nFileSizeLow
-								file_size = (c_ulonglong(size_high).value << 32) + size_low
-								total += file_size
-						
-						if not FindNextFile(handle, ctypes.byref(find_data)):
-							break
-				finally:
-					FindClose(handle)
-				
+				stack = [start_path]
+				while stack:
+					current_path = stack.pop()
+					find_data = wintypes.WIN32_FIND_DATAW()
+					handle = FindFirstFile(os.path.join(current_path, "*"), ctypes.byref(find_data))
+					if handle == wintypes.HANDLE(-1):
+						continue
+					try:
+						while True:
+							name = find_data.cFileName
+							if name not in ('.', '..'):
+								full_path = os.path.join(current_path, name)
+								if find_data.dwFileAttributes & 16:
+									stack.append(full_path)
+							if not FindNextFile(handle, ctypes.byref(find_data)):
+								break
+					finally:
+						FindClose(handle)
+				stack = [start_path]
+				while stack:
+					current_path = stack.pop()
+					find_data = wintypes.WIN32_FIND_DATAW()
+					handle = FindFirstFile(os.path.join(current_path, "*"), ctypes.byref(find_data))
+					if handle == wintypes.HANDLE(-1):
+						continue
+					try:
+						while True:
+							name = find_data.cFileName
+							if name not in ('.', '..'):
+								full_path = os.path.join(current_path, name)
+								if not (find_data.dwFileAttributes & 16):
+									size_high = find_data.nFileSizeHigh
+									size_low = find_data.nFileSizeLow
+									file_size = (c_ulonglong(size_high).value << 32) + size_low
+									total += file_size
+							if not FindNextFile(handle, ctypes.byref(find_data)):
+								break
+					finally:
+						FindClose(handle)
 				return total
 			
-			return get_folder_size_recursive(folder_path)
-			
+			return get_folder_size_iterative(folder_path)
 		except Exception as e:
 			log.error(f"Error in Windows API folder size calculation: {e}")
 			return None
@@ -242,14 +200,7 @@ class FileOperations:
 	def _calculate_folder_size_fast(self, folder_path):
 		api_size = self._get_folder_size_windows_api(folder_path)
 		if api_size is not None:
-			log.debug(f"Windows API size: {api_size} bytes")
 			return api_size
-		
-		ps_size = self._get_folder_size_powershell_fast(folder_path)
-		if ps_size is not None:
-			log.debug(f"PowerShell size: {ps_size} bytes")
-			return ps_size
-		
 		return None
 
 	def _check_access_permission(self, path):
@@ -272,7 +223,7 @@ class FileOperations:
 		if not focus or focus.appModule.appName != "explorer":
 			return
 			
-		selectedItems, shellWindow = self.plugin._getSelectedItems()
+		selectedItems, _ignore = self.plugin._getSelectedItems()
 		if not selectedItems:
 			ui.message(_("No items selected"))
 			return
@@ -282,185 +233,145 @@ class FileOperations:
 			if not self._check_access_permission(path):
 				inaccessible_items.append(name)
 		
-		if inaccessible_items:
-			if len(inaccessible_items) == len(selectedItems):
-				ui.message(_("No access to size data"))
-				return
-			else:
-				log.debug(f"Skipping inaccessible items: {inaccessible_items}")
+		if inaccessible_items and len(inaccessible_items) == len(selectedItems):
+			ui.message(_("No access to size data"))
+			return
 		
-		self._stop_calculation()  # ensure previous calculation is stopped
+		self._stop_calculation()
 		self._calculation_active = True
 		self._start_beeping()
 		
 		def calculate_size():
 			try:
-				totalSize = 0
-				isDrive = False
-				accessibleItemCount = 0
+				total_size = 0
+				is_drive = False
+				accessible_item_count = 0
 				
 				for name, path in selectedItems:
 					if not self._calculation_active:
 						break
-					
 					if name in inaccessible_items:
 						continue
-					
-					accessibleItemCount += 1
-					
+					accessible_item_count += 1
 					if self.plugin.objFSO.FileExists(path):
 						try:
-							fileSize = self.plugin.objFSO.GetFile(path).Size
-							totalSize += fileSize
-							log.debug(f"File: {name}, Size: {fileSize}")
+							file_size = self.plugin.objFSO.GetFile(path).Size
+							total_size += file_size
 						except Exception as e:
 							log.error(f"Error getting file size for {name}: {e}")
 					elif self.plugin.objFSO.DriveExists(path):
-						isDrive = True
+						is_drive = True
 						try:
 							drive = self.plugin.objFSO.GetDrive(path)
-							usedSize = drive.TotalSize - drive.FreeSpace
-							totalSize += usedSize
-							log.debug(f"Drive: {name}, Used Size: {usedSize}")
+							used_size = drive.TotalSize - drive.FreeSpace
+							total_size += used_size
 						except Exception as e:
 							log.error(f"Error getting drive size for {name}: {e}")
 					elif self.plugin.objFSO.FolderExists(path):
-						start_time = time.time()
-						folderSize = self._calculate_folder_size_fast(path)
-						
-						if folderSize is not None and folderSize > 0:
-							totalSize += folderSize
-							elapsed = time.time() - start_time
-							log.debug(f"Folder (fast): {name}, Size: {folderSize}, Time: {elapsed:.2f}s")
+						folder_size = self._calculate_folder_size_fast(path)
+						if folder_size is not None and folder_size > 0:
+							total_size += folder_size
 						else:
-							# fallback estimate
-							folderSize = 0
+							folder_size = 0
 							count = 0
 							max_files_to_check = 1000
-							
-							for root, dirs, files in os.walk(path):
+							for root, _, files in os.walk(path):
 								for f in files:
 									if count >= max_files_to_check or not self._calculation_active:
 										break
 									fp = os.path.join(root, f)
 									try:
-										folderSize += os.path.getsize(fp)
+										folder_size += os.path.getsize(fp)
 										count += 1
 									except (OSError, WindowsError):
 										pass
 								if count >= max_files_to_check or not self._calculation_active:
 									break
-								# yield to other threads
 								time.sleep(0.01)
-							
 							if count > 0:
-								avg_size = folderSize / count
+								avg_size = folder_size / count
 								estimated_total_files = count * 10
-								folderSize = avg_size * estimated_total_files
-							
-							totalSize += folderSize
-							elapsed = time.time() - start_time
-							log.debug(f"Folder (estimate): {name}, Size: {folderSize}, Time: {elapsed:.2f}s")
-				
-				log.debug(f"Accessible items: {accessibleItemCount}, Total size: {totalSize} bytes")
+								folder_size = avg_size * estimated_total_files
+							total_size += folder_size
 				
 				self._stop_beeping()
 				self._calculation_active = False
-				
-				wx.CallAfter(self._display_size_result, totalSize, isDrive, accessibleItemCount)
-				
+				core.callLater(0, self._display_size_result, total_size, is_drive, accessible_item_count)
 			except Exception as e:
 				log.error(f"Error in size calculation thread: {e}")
 				self._stop_beeping()
 				self._calculation_active = False
-				wx.CallAfter(ui.message, _("Error calculating size"))
+				core.callLater(0, ui.message, _("Error calculating size"))
 		
 		self._size_thread = threading.Thread(target=calculate_size, daemon=True)
 		self._size_thread.start()
 
-	def _display_size_result(self, totalSize, isDrive, itemCount):
-		if totalSize == 0 and not isDrive:
+	def _display_size_result(self, total_size, is_drive, item_count):
+		if total_size == 0 and not is_drive:
 			ui.message(_("No access to size data"))
 			return
-			
-		colRecalc = self._RecalcSize(totalSize)
-		
-		sDimension = [" bytes", " KB", " MB", " GB", " TB"][colRecalc[1]]
-		sRecalcSize = colRecalc[0]
-		s_Info = sRecalcSize + sDimension
-		
-		if itemCount > 1:
-			s_Info = _("{count} items {size}").format(count=itemCount, size=s_Info)
-			
-		ui.message(s_Info)
+		col_recalc = self._recalc_size(total_size)
+		s_dimension = [" bytes", " KB", " MB", " GB", " TB"][col_recalc[1]]
+		s_recalc_size = col_recalc[0]
+		s_info = s_recalc_size + s_dimension
+		if item_count > 1:
+			s_info = _("{count} items {size}").format(count=item_count, size=s_info)
+		ui.message(s_info)
 
 	def renameFile(self):
 		focus = api.getFocusObject()
 		if not focus or focus.appModule.appName != "explorer":
 			return
-			
 		try:
-			selectedItems, shellWindow = self.plugin._getSelectedItems()
+			selectedItems, _ignore = self.plugin._getSelectedItems()
 			if not selectedItems:
 				ui.message(_("No items selected"))
 				return
-				
 			if len(selectedItems) > 1:
 				ui.message(_("Please select only one file"))
 				return
-				
-			filePath = selectedItems[0][1]
-			
-			if not os.path.isfile(filePath):
+			file_path = selectedItems[0][1]
+			if not os.path.isfile(file_path):
 				ui.message(_("Please select a file, not a folder"))
 				return
-				
-			fileName = os.path.basename(filePath)
-			dirName = os.path.dirname(filePath)
-			
-			wx.CallAfter(self._showRenameDialog, fileName, dirName, filePath)
-				
+			file_name = os.path.basename(file_path)
+			dir_name = os.path.dirname(file_path)
+			wx.CallAfter(self._show_rename_dialog, file_name, dir_name, file_path)
 		except Exception as e:
 			log.error(f"Error in renameFile: {e}")
 			ui.message(_("Error renaming file"))
 
-	def _showRenameDialog(self, fileName, dirName, filePath):
+	def _show_rename_dialog(self, file_name, dir_name, file_path):
+		dialog = None
 		try:
-			if self.renameDialog and self.renameDialog.IsShown():
-				self.renameDialog.Destroy()
-				
-			self.renameDialog = RenameDialog(gui.mainFrame, fileName)
+			if gui.mainFrame:
+				gui.mainFrame.prePopup()
 			
-			self.renameDialog.Raise()
+			dialog = RenameDialog(gui.mainFrame, file_name)
+			dialog.CentreOnScreen()
+			dialog.Raise()
 			
-			result = self.renameDialog.ShowModal()
+			result = dialog.ShowModal()
 			
-			if result == wx.ID_OK and self.renameDialog.newName:
-				newPath = os.path.join(dirName, self.renameDialog.newName)
-				
-				if newPath == filePath:
+			if result == wx.ID_OK and dialog.new_name:
+				new_path = os.path.join(dir_name, dialog.new_name)
+				if new_path == file_path:
 					ui.message(_("File name not changed"))
 					return
-					
-				if os.path.exists(newPath):
+				if os.path.exists(new_path):
 					ui.message(_("A file with this name already exists"))
 					return
-					
 				try:
-					os.rename(filePath, newPath)
-					ui.message(_("File renamed to {name}").format(name=self.renameDialog.newName))
+					os.rename(file_path, new_path)
+					ui.message(_("File renamed to {name}").format(name=dialog.new_name))
 				except Exception as e:
 					log.error(f"Error renaming file: {e}")
 					ui.message(_("Error renaming file"))
-					
-			self.renameDialog.Destroy()
-			self.renameDialog = None
 		except Exception as e:
 			log.error(f"Error showing rename dialog: {e}")
 			ui.message(_("Error opening rename dialog"))
-			if self.renameDialog:
-				try:
-					self.renameDialog.Destroy()
-				except:
-					pass
-				self.renameDialog = None
+		finally:
+			if dialog:
+				dialog.Destroy()
+			if gui.mainFrame:
+				gui.mainFrame.postPopup()

@@ -44,10 +44,12 @@ def type_clipboard_into_rename_if_suitable():
 	clipboard_text = None
 	try:
 		if wx.TheClipboard.Open():
-			data = wx.TextDataObject()
-			if wx.TheClipboard.GetData(data):
-				clipboard_text = data.GetText().strip()
-			wx.TheClipboard.Close()
+			try:
+				data = wx.TextDataObject()
+				if wx.TheClipboard.GetData(data):
+					clipboard_text = data.GetText().strip()
+			finally:
+				wx.TheClipboard.Close()
 	except Exception:
 		return
 
@@ -65,12 +67,10 @@ def type_clipboard_into_rename_if_suitable():
 				log.debug("No focused window for auto-paste")
 				return
 
-			# Method 1: Direct EM_REPLACESEL for edit controls
 			EM_SETSEL = 0x00B1
 			EM_REPLACESEL = 0x00C2
 			WM_SETTEXT = 0x000C
 
-			# Select all text in the edit field
 			ctypes.windll.user32.SendMessageW(focused_hwnd, EM_SETSEL, 0, -1)
 			core.callLater(30, lambda: ctypes.windll.user32.SendMessageW(focused_hwnd, EM_REPLACESEL, 0, cleaned_text))
 			core.callLater(100, lambda: ctypes.windll.user32.SendMessageW(focused_hwnd, WM_SETTEXT, 0, cleaned_text))
@@ -81,7 +81,6 @@ def type_clipboard_into_rename_if_suitable():
 			log.debug(f"EM_REPLACESEL failed: {e}")
 
 		try:
-			# Method 2: Use clipboard replacement + Ctrl+V via keybd_event
 			backup = None
 			try:
 				backup = api.getClipData()
@@ -90,7 +89,6 @@ def type_clipboard_into_rename_if_suitable():
 
 			api.copyToClip(cleaned_text)
 
-			# Send Ctrl+V using keybd_event (more reliable than KeyboardInputGesture)
 			VK_CONTROL = 0x11
 			VK_V = 0x56
 			KEYEVENTF_KEYUP = 0x0002
@@ -112,7 +110,6 @@ def type_clipboard_into_rename_if_suitable():
 			log.debug(f"keybd_event failed: {e}")
 
 		try:
-			# Method 3: Unicode SendInput fallback
 			INPUT_KEYBOARD = 1
 			KEYEVENTF_KEYUP = 0x0002
 			KEYEVENTF_UNICODE = 0x0004
@@ -140,11 +137,9 @@ def type_clipboard_into_rename_if_suitable():
 				inp.u.ki.time = 0
 				inp.u.ki.dwExtraInfo = ctypes.pointer(ctypes.c_ulong(0))
 				ctypes.windll.user32.SendInput(1, ctypes.byref(inp), ctypes.sizeof(INPUT))
-				# key up
 				inp.u.ki.dwFlags |= KEYEVENTF_KEYUP
 				ctypes.windll.user32.SendInput(1, ctypes.byref(inp), ctypes.sizeof(INPUT))
 
-			# Select all
 			ctypes.windll.user32.keybd_event(VK_CONTROL, 0, 0, 0)
 			ctypes.windll.user32.keybd_event(ord('A'), 0, 0, 0)
 			ctypes.windll.user32.keybd_event(ord('A'), 0, KEYEVENTF_KEYUP, 0)

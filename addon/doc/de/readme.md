@@ -6,112 +6,84 @@
 
 <br>
 
-<p align="center">Verbessern Sie Ihr Dateiexplorer-Erlebnis mit fortschrittlicher Automatisierung und nahtlosen Navigationswerkzeugen.</p>
+<p align="center">Verbessern Sie die Dateiverwaltung im Windows Datei-Explorer mit Automatisierung und intelligenten Tools, die das Original übertreffen.</p>
 
 <br>
 
-<p align="center"><b>author:</b> chai chaimee</p>
-<p align="center"><b>url:</b> https://github.com/chaichaimee/xPlorer</p>
+<p align="center"><b>Autor:</b> chai chaimee</p>
+<p align="center"><b>URL:</b> https://github.com/chaichaimee/xPlorer</p>
 
 ---
 
 ## <p align="center">Beschreibung</p>
-
-**xPlorer** ist eine umfassende Produktivitätssuite für NVDA-Benutzer, die speziell entwickelt wurde, um den Windows-Dateiexplorer intelligenter und effizienter zu machen. Es beseitigt Reibungspunkte in der täglichen Dateiverwaltung, indem es sich wiederholende Aufgaben automatisiert und die Navigation optimiert. Egal, ob Sie Ordnerstrukturen im Stapel erstellen, Namen mit professioneller Gehäusekonvertierung standardisieren oder Text aus Dateien extrahieren, ohne sie zu öffnen – xPlorer bietet jedem Benutzer ein nahtloses Erlebnis auf Entwicklerniveau. Es geht darum, mehr mit weniger Tastendrücken zu erreichen.
+**xPlorer** ist ein neues Phänomen in der Dateiverwaltung für NVDA-Benutzer, die maximale Geschwindigkeit und Präzision verlangen. Wir verwandeln den Windows Datei-Explorer in eine leistungsstarke Workstation, indem wir redundante und mühsame Schritte eliminieren. Egal, ob Sie ein Programmierer sind, der große Projekte verwaltet, oder ein allgemeiner Benutzer, der Organisation sucht, xPlorer hilft Ihnen, massive Datenmengen in Sekundenbruchteilen zu bewältigen, mit Hotkeys, die auf tatsächlicher Ergonomie basieren.
 
 <br>
 
 ## <p align="center">Was ist neu</p>
-
-• **Mehrere Ordner erstellen:** Erstellen Sie sofort eine gesamte Verzeichnisstruktur aus einer einzigen Liste.  
+• **Das Robo-System:** Revolutionieren Sie das Kopieren und Verschieben von Dateien mit einer speziellen Engine, die über 50 % schneller arbeitet als das Windows-Standardsystem.  
 <br>
-• **Groß-/Kleinschreibung-Konverter für Ordner:** Standardisieren Sie Ordnernamen mit professionellen Optionen (GROSSBUCHSTABEN, kleinbuchstaben, Wortanfang groß, Satzanfang groß).  
-<br>
-• **Detaillierte Ordnerinfos:** Erhalten Sie Echtzeit-Größe und Elementanzahl für Ordner direkt aus dem Menü.  
-<br>
-• **Titel-Optimierung:** Unterdrücken Sie das redundante "- Dateiexplorer" in Fenstertiteln für eine sauberere Sprachausgabe.  
-<br>
-• **Sofortige Ordnererstellung:** Verwenden Sie beim Erstellen eines neuen Ordners automatisch den Inhalt der Zwischenablage als Namen.
+• **Direkte Dateiverarbeitung:** Ein direktes Dateiverarbeitungssystem, das den Ressourcenverbrauch der Maschine reduziert und die Stabilität beim Umgang mit großen Datenmengen erhöht.
 
 <br>
 
 ## <p align="center">Tastenkombinationen</p>
 
-> **NVDA+Shift+X** : Öffnet das xPlorer-Kontextmenü  
-> (Der zentrale Hub für alle professionellen Funktionen, einschließlich Gehäusekonverter und Multi-Ordner-Ersteller)
+> **NVDA+Shift+R (Robo Copy & Move)**  
+> • **Einmal tippen:** Robo Copy (Zielort für Datei oder Ordner sperren)  
+> • **Zweimal tippen:** Robo Paste (Kopierte Dateien/Ordner sofort am Zielort einfügen)  
+> • **Dreimal tippen:** **Robo Move (Schnellbefehl zum Verschieben von Dateien - verschiebt Daten mit maximaler Geschwindigkeit von der Quelle hierher)**
 
-> **NVDA+Shift+Z** > • **Einmal drücken** : Größe ansagen (Ansage der Gesamtgröße der ausgewählten Elemente)  
-> • **Zweimal drücken** : Als Zip komprimieren (Ausgewählte Dateien in ein .zip mit intelligenter Namensgebung archivieren)
+> **NVDA+Shift+X** : xPlorer-Menü (Zentrale für erweiterte Namensverwaltung und Tools zur Ordnererstellung)
 
-> **NVDA+Shift+C** > • **Einmal drücken** : Ausgewählte Namen kopieren (Kopiert Namen der ausgewählten Dateien oder Ordner in die Zwischenablage)  
-> • **Zweimal drücken** : Pfad des aktuellen Ordners kopieren (Den vollständigen Pfad des aktuellen Ordners abrufen)
+> **NVDA+Shift+Z**  
+> • **Einmal tippen:** Größe ansagen (Berechnet und verkündet die Gesamtgröße aller ausgewählten Dateien präzise)  
+> • **Zweimal tippen:** In Zip komprimieren (Kombiniert ausgewählte Dateien in einer .zip-Datei mit automatischer Benennung)
 
-> **NVDA+Shift+V** > • **Einmal drücken** : Inhalt kopieren (Textinhalt direkt aus der ausgewählten Datei extrahieren und kopieren)  
-> • **Zweimal drücken** : Auswahl umkehren (Schnelles Umschalten des Fokus zwischen ausgewählten und nicht ausgewählten Elementen)
+> **NVDA+Shift+C**  
+> • **Einmal tippen:** Ausgewählte Namen kopieren (Kopiert nur Dateinamen zur weiteren Verwendung)  
+> • **Zweimal tippen:** Adressleiste kopieren (Kopiert den aktuellen Ordnerpfad)
 
-> **NVDA+Shift+F2** : Nur Datei umbenennen  
-> (Konzentriert sich nur auf den Dateinamen und schützt die Dateierweiterung vor versehentlichen Änderungen)
+> **NVDA+Shift+V**  
+> • **Einmal tippen:** Inhalt kopieren (Extrahiert Text aus einer Datei in die Zwischenablage, ohne die Datei zu öffnen)  
+> • **Zweimal tippen:** Auswahl umkehren (Schaltet die Auswahl der verbleibenden Dateien im Ordner um)
 
-> **Control+Shift+N** : Neuen Ordner mit Auto-Einfügen erstellen  
-> (Erstellt einen neuen Ordner und fügt den Inhalt der Zwischenablage sofort als Namen ein)
+> **NVDA+Shift+F2** : Nur Datei umbenennen (Benennt die Datei um, während die Erweiterung sicher erhalten bleibt)
+
+> **Control+Shift+N** : Ordner mit Auto-Namen erstellen (Erstellt einen neuen Ordner und benennt ihn automatisch nach dem Inhalt der Zwischenablage)
 
 <br>
 
 ## <p align="center">Funktionen</p>
 
-### <p align="center">1. Erweiterte Stapel-Ordnererstellung</p>
+### 1. Robo-System: Dateiverschiebung in Industriestärke
+Verabschieden Sie sich von den Verzögerungen des herkömmlichen Strg+C und Strg+V mit dem **Robo-System**, das speziell für die Verwaltung großer Dateimengen entwickelt wurde.
+* **Überlegene Geschwindigkeit:** Beim Verschieben großer Dateien oder Ordner, die Tausende von Unterdateien enthalten, verwendet das Robo-System eine direkte Pfadzugriffslogik, die die Verarbeitungszeit im Vergleich zu Standard-Windows-Befehlen um mehr als die Hälfte reduziert.
+* **Robo Move (Dreimal tippen):** Dies ist das Ass für die Datenorganisation. Tippen Sie einfach dreimal, und das System "zieht" die Daten von der Quelle und platziert sie sofort mit maximaler Geschwindigkeit am Ziel. Perfekt für Projekte, bei denen Daten häufig über Laufwerke oder Ordner verschoben werden.
 
-Die Funktion **"Mehrere Ordner erstellen"** (im xPlorer-Menü) wurde für ernsthafte Organisation entwickelt. Anstatt Ordner einzeln zu erstellen, können Sie eine Liste von Namen in einen Dialog einfügen oder tippen. xPlorer verarbeitet die gesamte Liste und erstellt jeden Ordner in Ihrem aktuellen Verzeichnis in einem Augenblick. Es ist die ultimative Zeitersparnis beim Einrichten neuer Projekte oder Kategorien.
+### 2. Erweitertes Erstellen von Ordner-Batches
+Diese Funktion wurde entwickelt, um repetitive Arbeit zu reduzieren. Wenn Sie 10, 20 oder 100 Ordner auf einmal erstellen müssen, öffnen Sie einfach das Menü **"Mehrere Ordner erstellen"** und fügen Sie die Liste ein. Das System schreibt die Ordnerstruktur gleichzeitig in einem Durchgang auf die Festplatte, sodass Sie ein neues Projekt in weniger als 2 Sekunden einrichten können.
 
-### <p align="center">2. Professioneller Konverter für Groß-/Kleinschreibung</p>
+### 3. Professioneller Case Converter
+Professionalität misst sich an der Liebe zum Detail. xPlorer hilft Ihnen, Datei- und Ordnernamen systemweit im gleichen Muster zu organisieren, egal ob **GROSSBUCHSTABEN** für wichtige Dokumente oder **Title Case** für die Ästhetik. Sie können hunderte von Dateien mit einem einzigen Menüaufruf umbenennen.
 
-Stellen Sie sicher, dass Ihr Dateisystem sauber und konsistent aussieht. Wählen Sie einen oder mehrere Ordner aus und nutzen Sie das xPlorer-Menü, um Namen sofort zu konvertieren:  
-<br>
-• **UPPERCASE:** Konvertiert alles in Großbuchstaben (z. B. "PROJEKT DATEN").  
-<br>
-• **lowercase:** Konvertiert alles in Kleinbuchstaben (z. B. "projekt daten").  
-<br>
-• **Title Case:** Schreibt den ersten Buchstaben jedes Wortes groß (z. B. "Projekt Daten").  
-<br>
-• **Sentence case:** Nur der allererste Buchstabe wird großgeschrieben (z. B. "Projekt daten").
+### 4. Sofortige Extraktion von Dateiinhalten
+An Tagen, an denen Sie dringende Daten prüfen müssen, ermöglicht Ihnen xPlorer den sofortigen Zugriff auf den Inhalt textbasierter Dateien, ohne darauf warten zu müssen, dass Notepad oder andere Dateibetrachter geöffnet werden. Drücken Sie einfach **NVDA+Shift+V**, und der interne Inhalt wird extrahiert, damit Sie ihn sofort lesen oder einfügen können, was die CPU-Last reduziert und Zeit spart.
 
-### <p align="center">3. Intelligente "Zwischenablage zu Ordner" Erstellung</p>
+### 5. Intelligenter Workflow "Zwischenablage zu Ordner"
+Integriert den Arbeitsablauf zwischen Datenerfassung und Speicherung. Wenn Sie einen Projektnamen aus einer E-Mail oder einem Chat kopieren, drücken Sie einfach **Strg+Shift+N** im Datei-Explorer, und das System erstellt sofort einen neuen Ordner mit diesem Namen, wodurch die Schritte F2 drücken und Namen einfügen auf eine einzige Aktion reduziert werden.
 
-Mit xPlorer wird das Erstellen von Ordnern zu einem einstufigen Prozess. Durch Drücken von **Control+Shift+N** prüft das Add-on Ihre Zwischenablage. Wenn Sie einen Namen aus einer E-Mail oder einem Dokument kopiert haben, wird der Ordner erstellt und dieser Name automatisch in das Bearbeitungsfeld eingefügt. Kein manuelles Umbenennen oder Einfügen mehr – einfach kopieren, Hotkey drücken, fertig.
-
-### <p align="center">4. Extraktion von Dateiinhalten</p>
-
-Sparen Sie Zeit, indem Sie Text extrahieren, ohne Anwendungen zu öffnen. **Einmaliges Drücken von NVDA+Shift+V** kopiert den Text aus einer ausgewählten Datei direkt in Ihre Zwischenablage. Dies funktioniert mühelos mit verschiedenen textbasierten Formaten und ermöglicht es Ihnen, Daten aus Skripten oder Protokollen zu erfassen, während Sie sich auf das Explorer-Fenster konzentrieren.
-
-### <p align="center">5. Intelligente Zip-Archivierung</p>
-
-Durch **zweimaliges Drücken von NVDA+Shift+Z** packt xPlorer Ihre Auswahl in eine Zip-Datei. Es verhindert intelligent Datenverlust, indem es nach vorhandenen Dateien sucht und neuen Archiven ein numerisches Suffix hinzufügt. Hintergrundtöne halten Sie über den Komprimierungsfortschritt auf dem Laufenden, ohne dass eine visuelle Überwachung erforderlich ist.
-
-### <p align="center">6. xPlorer Einstellungen</p>
-
-Passen Sie Ihr Erlebnis über **NVDA-Einstellungen > xPlorer** an. Die Optionen sind so angeordnet, dass sie Ihren Workflow optimieren:  
-<br>
-<br>
-• **Erstes Element automatisch auswählen:** Wenn Sie einen Ordner betreten, setzt xPlorer den Fokus automatisch auf die erste Datei oder den ersten Ordner, damit Sie sofort navigieren können.  
-<br>
-• **'Leerer Ordner' ansagen, wenn ein leerer Ordner betreten wird:** Bietet eine klare Bestätigung, dass ein Verzeichnis keine Elemente enthält.  
-<br>
-• **Ansage der DirectUIHWND-Klasse unterdrücken:** Entfernt technisches Durcheinander aus der NVDA-Sprachausgabe für eine sauberere Benutzeroberfläche.  
-<br>
-• **Ansage von '- Dateiexplorer' im Fenstertitel unterdrücken:** Verkürzt Fenstertitel-Ansagen, damit Sie Ordner schneller identifizieren können.  
-<br>
-• **Inhalt der Zwischenablage automatisch in das Umbenennungsfeld einfügen:** Ermöglicht xPlorer beim Erstellen neuer Ordner, Namen automatisch aus Ihrer Zwischenablage auszufüllen.
+### 6. Intelligente Zip-Archivierung
+Das Komprimieren von Dateien wird mit dem **Smart Zip**-System, das automatisch auf doppelte Dateinamen prüft, kein Problem mehr sein. Wenn doppelte Namen vorhanden sind, hängt das System fortlaufende Nummern an, um das Überschreiben wichtiger Daten zu verhindern, zusammen mit Audio-Benachrichtigungen (Beep-Codes), die Sie über den Status des Vorgangs informieren, ohne dass Sie den Bildschirm überprüfen müssen.
 
 <br>
 
 ---
 
-<br>
-<br>
+<br><br>
 
 ## <p align="center">Unterstützen Sie mich</p>
-
-<p align="center">Wenn dieses Tool Ihr Leben erleichtert hat, ziehen Sie in Erwägung, das nächste Update mit einer kleinen Spende zu unterstützen.</p>
+<p align="center">Wenn dieses Tool Ihre Arbeit einfacher und schneller gemacht hat, können Sie mich hier als Ermutigung unterstützen, die Entwicklung neuer Funktionen fortzusetzen.</p>
 
 <br>
 
@@ -123,8 +95,8 @@ Passen Sie Ihr Erlebnis über **NVDA-Einstellungen > xPlorer** an. Die Optionen 
 
 <br>
 
-<p align="center">Ihre Unterstützung bedeutet mir viel. Lassen Sie uns gemeinsam etwas Großartiges bauen!</p>
+<p align="center">Jede Unterstützung ist eine treibende Kraft für uns, die besten Werkzeuge für alle Benutzer zu entwickeln.</p>
 
 <br>
 
-<p align="center">© 2026 Chai Chaimee NVDA Add-on Veröffentlicht unter GNU GPL</p>
+<p align="center">&copy; 2026 Chai Chaimee NVDA Add-on Veröffentlicht unter GNU GPL.</p>

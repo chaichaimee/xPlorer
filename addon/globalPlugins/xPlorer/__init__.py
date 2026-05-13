@@ -23,17 +23,14 @@ import sys
 import time
 import urllib.parse
 
-# COM imports
 import comtypes.client
-from comtypes import COMError as ComTypesCOMError
-from _ctypes import COMError as CtypesCOMError
+from comtypes import COMError
 
 addonHandler.initTranslation()
 log.debug("xPlorer: Initializing add-on")
 
-# Import submodules
 try:
-	from .xPlorerManager import xPlorerSettingsPanel, ExplorerManager
+	from .xPlorerManager import xPlorerSettingsPanel, ExplorerManager, set_global_plugin
 	log.debug("xPlorer: xPlorerManager imported")
 except Exception as e:
 	log.exception("Failed to import xPlorerManager")
@@ -125,7 +122,6 @@ except Exception as e:
 
 log.debug("xPlorer: All modules imported successfully")
 
-# Global tap counters
 _last_tap_time_compress = 0
 _tap_count_compress = 0
 _compress_timer = None
@@ -138,6 +134,10 @@ _last_tap_time_invert = 0
 _tap_count_invert = 0
 _invert_timer = None
 
+_last_tap_time_robocopy = 0
+_tap_count_robocopy = 0
+_robocopy_timer = None
+
 _double_tap_threshold = 0.5
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
@@ -147,14 +147,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		log.debug("xPlorer GlobalPlugin.__init__ starting")
 		try:
 			super().__init__()
-			# Create COM objects once
 			self.objShellApp = comtypes.client.CreateObject("Shell.Application")
 			self.objFSO = comtypes.client.CreateObject("scripting.FileSystemObject")
 			
-			# Register settings panel
 			gui.settingsDialogs.NVDASettingsDialog.categoryClasses.append(xPlorerSettingsPanel)
 			
-			# Initialize managers
 			self.manager = ExplorerManager(self)
 			self.fileOps = FileOperations(self)
 			self.compression = CompressionManager(self)
@@ -167,7 +164,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self.folderInfo = FolderInfoManager(self)
 			self.caseConverter = CaseConverter()
 			
-			# Caching for Explorer windows
 			self._last_window = None
 			self._last_window_hwnd = None
 			self._last_window_time = 0
@@ -175,12 +171,19 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			
 			self._cached_explorer_hwnd = None
 			self._cached_explorer_time = 0
-			self._cache_valid_duration = 1.0
+			self._cached_explorer_path = None
+			self._cache_valid_duration = 0.8
 			
 			self._striprtf_available = None
 			tools_dir = os.path.join(os.path.dirname(__file__), "tools")
 			if os.path.exists(tools_dir) and tools_dir not in sys.path:
 				sys.path.insert(0, tools_dir)
+			
+			self._cached_selected_folder_paths = []
+			self._case_cache_valid = False
+			self._suppress_counter = 0
+			
+			set_global_plugin(self)
 			
 			log.debug("xPlorer GlobalPlugin initialized successfully")
 		except Exception as e:
@@ -200,24 +203,28 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self.folderInfo.cleanup()
 			self.manager.terminate()
 			self._cancelAllTimers()
+			self._cached_selected_folder_paths = []
+			self._case_cache_valid = False
+			self.objShellApp = None
+			self.objFSO = None
 			log.debug("xPlorer GlobalPlugin terminated successfully")
 		except Exception as e:
 			log.exception("Error in xPlorer GlobalPlugin.terminate")
 
 	def _cancelAllTimers(self):
-		global _compress_timer, _copy_timer, _invert_timer
-		
+		global _compress_timer, _copy_timer, _invert_timer, _robocopy_timer
 		if _compress_timer:
 			_compress_timer.Stop()
 			_compress_timer = None
-		
 		if _copy_timer:
 			_copy_timer.Stop()
 			_copy_timer = None
-			
 		if _invert_timer:
 			_invert_timer.Stop()
 			_invert_timer = None
+		if _robocopy_timer:
+			_robocopy_timer.Stop()
+			_robocopy_timer = None
 
 	def _getStriprtfModule(self):
 		if self._striprtf_available is None:
@@ -243,144 +250,73 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if self.manager._foregroundTransition:
 			log.debug("Foreground transition active, skipping path retrieval")
 			return None
+		
+		current_time = time.time()
+		if (self._cached_explorer_hwnd and self._cached_explorer_path and 
+			current_time - self._cached_explorer_time < self._cache_valid_duration):
+			if os.path.isdir(self._cached_explorer_path):
+				return self._cached_explorer_path
+		
 		try:
 			fg = api.getForegroundObject()
 			if not fg or not fg.appModule or fg.appModule.appName != "explorer":
-				return None
-
-			if hasattr(fg, 'windowClassName'):
-				winClass = fg.windowClassName
-				if winClass == "CabinetWClass" and self.manager._last_foreground_time > 0:
-					if time.time() - self.manager._last_foreground_time < 0.5:
-						log.debug("CabinetWClass detected during transition, deferring")
-						return None
+				return self._cached_explorer_path if self._cached_explorer_path else None
 
 			target_hwnd = fg.windowHandle
 			if not winUser.isWindow(target_hwnd):
-				return None
-
-			current_time = time.time()
-			if (self._cached_explorer_hwnd == target_hwnd and 
-				current_time - self._cached_explorer_time < self._cache_valid_duration):
-				if self._last_window and winUser.isWindow(self._last_window_hwnd):
-					try:
-						if hasattr(self._last_window, "Document") and self._last_window.Document:
-							folder = self._last_window.Document.Folder
-							if folder and hasattr(folder, "Self"):
-								path = folder.Self.Path
-								if path and os.path.isdir(path):
-									return os.path.normpath(path)
-					except (ComTypesCOMError, CtypesCOMError, AttributeError):
-						pass
+				return self._cached_explorer_path if self._cached_explorer_path else None
 
 			shell = self.objShellApp
 			if not shell:
-				return None
+				return self._cached_explorer_path if self._cached_explorer_path else None
 
-			path_result = [None]
-
-			def enum_windows():
-				try:
-					for window in shell.Windows():
-						try:
-							if not window or window.hwnd != target_hwnd:
-								continue
-
-							if hasattr(window, "Document") and window.Document:
-								folder = window.Document.Folder
-								if folder and hasattr(folder, "Self"):
-									path = folder.Self.Path
-									if path and os.path.isdir(path):
-										self._last_window = window
-										self._last_window_hwnd = window.hwnd
-										self._last_window_time = current_time
-										self._cached_explorer_hwnd = target_hwnd
-										self._cached_explorer_time = current_time
-										path_result[0] = os.path.normpath(path)
-										return
-
-							if hasattr(window, "LocationURL") and window.LocationURL:
-								url = window.LocationURL
-								if url.startswith("file:///"):
-									try:
-										path = urllib.parse.unquote(url[8:])
-									except Exception:
-										path = url[8:]
-									path = path.replace("/", "\\")
-									if os.path.isdir(path):
-										self._last_window = window
-										self._last_window_hwnd = window.hwnd
-										self._last_window_time = current_time
-										self._cached_explorer_hwnd = target_hwnd
-										self._cached_explorer_time = current_time
-										path_result[0] = os.path.normpath(path)
-										return
-
-							if hasattr(window, "LocationName") and window.LocationName:
-								possible_path = window.LocationName
-								if os.path.isabs(possible_path) and os.path.isdir(possible_path):
-									self._last_window = window
-									self._last_window_hwnd = window.hwnd
-									self._last_window_time = current_time
-									self._cached_explorer_hwnd = target_hwnd
-									self._cached_explorer_time = current_time
-									path_result[0] = os.path.normpath(possible_path)
-									return
-						except (ComTypesCOMError, CtypesCOMError, AttributeError):
+			path_result = None
+			try:
+				for window in shell.Windows():
+					try:
+						if not window or window.hwnd != target_hwnd:
 							continue
-				except (ComTypesCOMError, CtypesCOMError):
-					pass
-
-				if path_result[0] is None:
-					try:
-						focus = api.getFocusObject()
-						if focus and focus.appModule and focus.appModule.appName == "explorer":
-							focus_hwnd = focus.windowHandle
-							for window in shell.Windows():
-								try:
-									if not window or window.hwnd != focus_hwnd:
-										continue
-									if hasattr(window, "Document") and window.Document:
-										folder = window.Document.Folder
-										if folder and hasattr(folder, "Self"):
-											path = folder.Self.Path
-											if path and os.path.isdir(path):
-												self._last_window = window
-												self._last_window_hwnd = window.hwnd
-												self._last_window_time = current_time
-												self._cached_explorer_hwnd = focus_hwnd
-												self._cached_explorer_time = current_time
-												path_result[0] = os.path.normpath(path)
-												return
-								except (ComTypesCOMError, CtypesCOMError, AttributeError):
-									continue
-					except (ComTypesCOMError, CtypesCOMError):
-						pass
-
-			enum_windows()
-
-			if path_result[0] is not None:
-				return path_result[0]
-
-			if (self._last_window and self._last_window_hwnd and 
-				current_time - self._last_window_time < 2.0):
-				if winUser.isWindow(self._last_window_hwnd):
-					try:
-						if hasattr(self._last_window, "Document") and self._last_window.Document:
-							folder = self._last_window.Document.Folder
+						if hasattr(window, "Document") and window.Document:
+							folder = window.Document.Folder
 							if folder and hasattr(folder, "Self"):
 								path = folder.Self.Path
 								if path and os.path.isdir(path):
-									return os.path.normpath(path)
-					except (ComTypesCOMError, CtypesCOMError, AttributeError):
-						pass
+									path_result = os.path.normpath(path)
+									break
+						if hasattr(window, "LocationURL") and window.LocationURL:
+							url = window.LocationURL
+							if url.startswith("file:///"):
+								try:
+									path = urllib.parse.unquote(url[8:])
+								except Exception:
+									path = url[8:]
+								path = path.replace("/", "\\")
+								if os.path.isdir(path):
+									path_result = os.path.normpath(path)
+									break
+					except (COMError, AttributeError):
+						continue
+			except COMError as e:
+				log.debug(f"COM error enumerating windows: {e}")
+				return self._cached_explorer_path if self._cached_explorer_path else None
 
-		except (ComTypesCOMError, CtypesCOMError) as e:
+			if path_result:
+				self._cached_explorer_hwnd = target_hwnd
+				self._cached_explorer_time = current_time
+				self._cached_explorer_path = path_result
+				return path_result
+
+			if (self._cached_explorer_path and 
+				current_time - self._cached_explorer_time < 2.0):
+				if os.path.isdir(self._cached_explorer_path):
+					return self._cached_explorer_path
+
+		except COMError as e:
 			log.debug(f"COM error in _getCurrentPathFromExplorer: {e}")
 		except Exception as e:
 			log.error(f"Error in _getCurrentPathFromExplorer: {e}")
 		
-		return None
+		return self._cached_explorer_path if self._cached_explorer_path else None
 
 	def _getActiveExplorerWindow(self):
 		if self.manager._foregroundTransition:
@@ -388,7 +324,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			return None
 		try:
 			current_time = time.time()
-			
 			if (self._last_window and self._last_window_hwnd and 
 				current_time - self._last_window_time < 1.0):
 				if winUser.isWindow(self._last_window_hwnd):
@@ -397,63 +332,44 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			fg = api.getForegroundObject()
 			if not fg or not fg.appModule or fg.appModule.appName != "explorer":
 				return None
-
-			if hasattr(fg, 'windowClassName'):
-				winClass = fg.windowClassName
-				if winClass == "CabinetWClass" and self.manager._last_foreground_time > 0:
-					if time.time() - self.manager._last_foreground_time < 0.5:
-						log.debug("CabinetWClass during transition, skipping window")
-						return None
-
+			
 			target_hwnd = fg.windowHandle
-
 			shell = self.objShellApp
 			if not shell:
 				return None
-
-			for window in shell.Windows():
-				try:
-					if not window or window.hwnd != target_hwnd:
-						continue
-
-					if hasattr(window, "Document") and window.Document:
-						self._last_window = window
-						self._last_window_hwnd = window.hwnd
-						self._last_window_time = current_time
-						return window
-				except (ComTypesCOMError, CtypesCOMError, AttributeError):
-					continue
-
-			focus = api.getFocusObject()
-			if focus and focus.appModule and focus.appModule.appName == "explorer":
-				focus_hwnd = focus.windowHandle
+			
+			try:
 				for window in shell.Windows():
 					try:
-						if not window or window.hwnd != focus_hwnd:
+						if not window or window.hwnd != target_hwnd:
 							continue
 						if hasattr(window, "Document") and window.Document:
 							self._last_window = window
 							self._last_window_hwnd = window.hwnd
 							self._last_window_time = current_time
 							return window
-					except (ComTypesCOMError, CtypesCOMError, AttributeError):
+					except (COMError, AttributeError):
 						continue
-
-			for window in shell.Windows():
-				try:
-					if window and window.Visible and window.Name == "File Explorer":
-						if hasattr(window, "Document") and window.Document:
-							self._last_window = window
-							self._last_window_hwnd = window.hwnd
-							self._last_window_time = current_time
-							return window
-				except (ComTypesCOMError, CtypesCOMError, AttributeError):
-					continue
-
-			return None
+			except COMError:
+				pass
 			
-		except (ComTypesCOMError, CtypesCOMError) as e:
-			log.debug(f"COM error in _getActiveExplorerWindow: {e}")
+			focus = api.getFocusObject()
+			if focus and focus.appModule and focus.appModule.appName == "explorer":
+				focus_hwnd = focus.windowHandle
+				try:
+					for window in shell.Windows():
+						try:
+							if not window or window.hwnd != focus_hwnd:
+								continue
+							if hasattr(window, "Document") and window.Document:
+								self._last_window = window
+								self._last_window_hwnd = window.hwnd
+								self._last_window_time = current_time
+								return window
+						except (COMError, AttributeError):
+							continue
+				except COMError:
+					pass
 			return None
 		except Exception as e:
 			log.error(f"Error getting active Explorer window: {e}")
@@ -470,19 +386,14 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			shellWindow = self._getActiveExplorerWindow()
 			if not shellWindow:
 				return None, None
-				
 			try:
 				if not hasattr(shellWindow, "document") or not shellWindow.document:
 					return None, None
-					
 				document = shellWindow.document
-				
 				if self.manager.lastExplorerDocument != document:
 					self.manager.lastExplorerDocument = document
-					log.debug("Switched to new Explorer document/tab")
-			except (ComTypesCOMError, CtypesCOMError, AttributeError):
+			except (COMError, AttributeError):
 				return None, None
-				
 			selectedItems = []
 			try:
 				if hasattr(document, 'SelectedItems'):
@@ -490,14 +401,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 					for i in range(selectedItemsCount):
 						item = document.SelectedItems().Item(i)
 						selectedItems.append((item.Name, item.Path))
-			except (ComTypesCOMError, CtypesCOMError, AttributeError):
+			except (COMError, AttributeError):
 				pass
-				
 			return selectedItems if selectedItems else None, shellWindow
-			
-		except (ComTypesCOMError, CtypesCOMError) as e:
-			log.debug(f"COM error in _getSelectedItems: {e}")
-			return None, None
 		except Exception as e:
 			log.debug(f"Error in _getSelectedItems: {e}")
 			return None, None
@@ -505,19 +411,24 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def _executeWithSilence(self, func):
 		import speech
 		speech.cancelSpeech()
+		self._suppress_counter += 1
 		self.manager.suppressAllAnnouncements = True
 		try:
 			func()
 		finally:
-			core.callLater(1000, lambda: setattr(self.manager, 'suppressAllAnnouncements', False))
+			self._suppress_counter -= 1
+			if self._suppress_counter == 0:
+				core.callLater(1000, lambda: setattr(self.manager, 'suppressAllAnnouncements', False))
 
 	def _copyAddressBar(self):
 		def do_copy(path):
 			if path:
 				if wx.TheClipboard.Open():
-					wx.TheClipboard.SetData(wx.TextDataObject(path))
-					wx.TheClipboard.Close()
-					ui.message(_("Copied: {path}").format(path=path))
+					try:
+						wx.TheClipboard.SetData(wx.TextDataObject(path))
+						ui.message(_("Copied: {path}").format(path=path))
+					finally:
+						wx.TheClipboard.Close()
 				else:
 					ui.message(_("Could not open clipboard"))
 			else:
@@ -533,29 +444,22 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		except Exception as e:
 			log.debug(f"Error sending original key: {e}")
 
-	# -------------------------------------------------------------------------
-	# Scripts with double-tap support (using wx.CallLater for timers)
-	# -------------------------------------------------------------------------
 	def script_copySelectedNamesOrAddressBar(self, gesture):
 		focus = api.getFocusObject()
 		if not focus or focus.appModule.appName != "explorer":
 			self._handleNonExplorerGesture(gesture)
 			return
-			
 		global _last_tap_time_copy, _tap_count_copy, _copy_timer
-		
 		current_time = time.time()
 		if current_time - _last_tap_time_copy > _double_tap_threshold:
 			_tap_count_copy = 0
 			if _copy_timer:
 				_copy_timer.Stop()
 				_copy_timer = None
-		
 		_tap_count_copy += 1
 		_last_tap_time_copy = current_time
-		
 		if _tap_count_copy == 1:
-			_copy_timer = wx.CallLater(int(_double_tap_threshold * 1000), self._processCopyTap)
+			_copy_timer = core.callLater(int(_double_tap_threshold * 1000), self._processCopyTap)
 		elif _tap_count_copy >= 2:
 			if _copy_timer:
 				_copy_timer.Stop()
@@ -568,16 +472,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def _processCopyTap(self):
 		global _tap_count_copy, _copy_timer
-		
 		if _copy_timer:
 			_copy_timer.Stop()
 			_copy_timer = None
-		
 		if _tap_count_copy == 1:
 			self._executeWithSilence(self.clipboard.copySelectedNames)
 		elif _tap_count_copy >= 2:
 			self._executeWithSilence(self._copyAddressBar)
-		
 		_tap_count_copy = 0
 
 	def script_invertSelection_double_tap(self, gesture):
@@ -585,21 +486,17 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if not focus or focus.appModule.appName != "explorer":
 			self._handleNonExplorerGesture(gesture)
 			return
-			
 		global _last_tap_time_invert, _tap_count_invert, _invert_timer
-		
 		current_time = time.time()
 		if current_time - _last_tap_time_invert > _double_tap_threshold:
 			_tap_count_invert = 0
 			if _invert_timer:
 				_invert_timer.Stop()
 				_invert_timer = None
-		
 		_tap_count_invert += 1
 		_last_tap_time_invert = current_time
-		
 		if _tap_count_invert == 1:
-			_invert_timer = wx.CallLater(int(_double_tap_threshold * 1000), self._processInvertTap)
+			_invert_timer = core.callLater(int(_double_tap_threshold * 1000), self._processInvertTap)
 		elif _tap_count_invert >= 2:
 			if _invert_timer:
 				_invert_timer.Stop()
@@ -612,16 +509,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def _processInvertTap(self):
 		global _tap_count_invert, _invert_timer
-		
 		if _invert_timer:
 			_invert_timer.Stop()
 			_invert_timer = None
-		
 		if _tap_count_invert == 1:
 			self._executeWithSilence(self.clipboard.copyFileContent)
 		elif _tap_count_invert >= 2:
 			self._executeWithSilence(self.selection.invertSelection)
-		
 		_tap_count_invert = 0
 
 	def script_compressZip_double_tap(self, gesture):
@@ -629,21 +523,17 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if not focus or focus.appModule.appName != "explorer":
 			self._handleNonExplorerGesture(gesture)
 			return
-			
 		global _last_tap_time_compress, _tap_count_compress, _compress_timer
-		
 		current_time = time.time()
 		if current_time - _last_tap_time_compress > _double_tap_threshold:
 			_tap_count_compress = 0
 			if _compress_timer:
 				_compress_timer.Stop()
 				_compress_timer = None
-		
 		_tap_count_compress += 1
 		_last_tap_time_compress = current_time
-		
 		if _tap_count_compress == 1:
-			_compress_timer = wx.CallLater(int(_double_tap_threshold * 1000), self._processCompressTap)
+			_compress_timer = core.callLater(int(_double_tap_threshold * 1000), self._processCompressTap)
 		elif _tap_count_compress >= 2:
 			if _compress_timer:
 				_compress_timer.Stop()
@@ -656,23 +546,85 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def _processCompressTap(self):
 		global _tap_count_compress, _compress_timer
-		
 		if _compress_timer:
 			_compress_timer.Stop()
 			_compress_timer = None
-		
 		if _tap_count_compress == 1:
 			self._executeWithSilence(self.fileOps.saySize)
 		elif _tap_count_compress >= 2:
 			core.callLater(50, self._executeWithSilence, self.compression.compressZip)
-		
 		_tap_count_compress = 0
+
+	def script_robocopyMultitap(self, gesture):
+		focus = api.getFocusObject()
+		if not focus or focus.appModule.appName != "explorer":
+			self._handleNonExplorerGesture(gesture)
+			return
+		global _last_tap_time_robocopy, _tap_count_robocopy, _robocopy_timer
+		current_time = time.time()
+		if current_time - _last_tap_time_robocopy > _double_tap_threshold:
+			_tap_count_robocopy = 0
+			if _robocopy_timer:
+				_robocopy_timer.Stop()
+				_robocopy_timer = None
+		_tap_count_robocopy += 1
+		_last_tap_time_robocopy = current_time
+		if _tap_count_robocopy == 1:
+			_robocopy_timer = core.callLater(int(_double_tap_threshold * 1000), self._processRobocopyTap)
+		elif _tap_count_robocopy >= 3:
+			if _robocopy_timer:
+				_robocopy_timer.Stop()
+				_robocopy_timer = None
+			self._processRobocopyTap()
+
+	script_robocopyMultitap.__doc__ = _("Robocopy: single tap copy, double tap paste, triple tap move")
+	script_robocopyMultitap.category = _("xPlorer")
+	script_robocopyMultitap.gestures = ["kb(desktop):NVDA+shift+r"]
+
+	def _processRobocopyTap(self):
+		global _tap_count_robocopy, _robocopy_timer
+		if _robocopy_timer:
+			_robocopy_timer.Stop()
+			_robocopy_timer = None
+		if _tap_count_robocopy == 1:
+			self._executeWithSilence(self.robocopy.copy)
+		elif _tap_count_robocopy == 2:
+			self._executeWithSilence(self.robocopy.paste)
+		elif _tap_count_robocopy == 3:
+			self._executeWithSilence(self.robocopy.move)
+		_tap_count_robocopy = 0
+
+	def _cache_selected_folders_for_case(self):
+		self._cached_selected_folder_paths = []
+		self._case_cache_valid = False
+		try:
+			selected_items, _ = self._getSelectedItems()
+			if selected_items:
+				folder_paths = []
+				for name, path in selected_items:
+					if os.path.isdir(path):
+						folder_paths.append(path)
+				if folder_paths:
+					self._cached_selected_folder_paths = folder_paths
+					self._case_cache_valid = True
+					log.debug(f"Cached {len(folder_paths)} folders for case conversion")
+		except Exception as e:
+			log.debug(f"Failed to cache selected folders: {e}")
+
+	def _get_cached_or_selected_folders(self):
+		if self._case_cache_valid and self._cached_selected_folder_paths:
+			return self._cached_selected_folder_paths
+		selected_items, _ = self._getSelectedItems()
+		if selected_items:
+			return [path for name, path in selected_items if os.path.isdir(path)]
+		return []
 
 	def script_openXPlorerContextMenu(self, gesture):
 		focus = api.getFocusObject()
 		if not focus or focus.appModule.appName != "explorer":
 			self._handleNonExplorerGesture(gesture)
 			return
+		self._cache_selected_folders_for_case()
 		self._showContextMenu()
 
 	script_openXPlorerContextMenu.__doc__ = _("Open xPlorer context menu")
@@ -698,9 +650,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if not focus or focus.appModule.appName != "explorer":
 			self._handleNonExplorerGesture(gesture)
 			return
-
 		gesture.send()
-
 		from .config import loadConfig
 		conf = loadConfig()
 		if conf.get("autoPasteClipboardToRename", True):
@@ -712,7 +662,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def _openSettings(self):
 		try:
-			wx.CallAfter(self._showSettingsDialog)
+			core.callLater(0, self._showSettingsDialog)
 		except Exception as e:
 			log.error(f"Error opening settings dialog: {e}")
 			ui.message(_("Cannot open settings dialog"))
@@ -743,29 +693,31 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				except Exception as e:
 					log.error(f"Error in folder creation dialog: {e}")
 					ui.message(_("Error creating folders"))
-			wx.CallAfter(show_dialog)
+			core.callLater(0, show_dialog)
 		self._getCurrentPathDeferred(do_create, 200)
 
 	def _convertFolderNames(self, conversion_type):
-		def do_convert(selected_data):
-			selected_items, shell_window = selected_data
-			folders_to_convert = []
-			if selected_items:
-				for name, path in selected_items:
-					if os.path.isdir(path):
-						folders_to_convert.append(path)
-			if not folders_to_convert:
-				def get_path_callback(path):
-					if path and os.path.isdir(path):
-						folders_to_convert = [path]
-					else:
-						ui.message(_("No folders selected or current folder not available"))
-						return
-					self._perform_conversion(conversion_type, folders_to_convert)
-				self._getCurrentPathDeferred(get_path_callback, 200)
+		def do_convert(folder_paths):
+			if not folder_paths:
+				ui.message(_("No folders selected"))
+				self._case_cache_valid = False
 				return
-			self._perform_conversion(conversion_type, folders_to_convert)
-		self._getSelectedItemsDeferred(do_convert, 200)
+			self._perform_conversion(conversion_type, folder_paths)
+			self._case_cache_valid = False
+		
+		cached_folders = self._get_cached_or_selected_folders()
+		if cached_folders:
+			do_convert(cached_folders)
+			return
+		
+		def get_path_callback(path):
+			if path and os.path.isdir(path):
+				do_convert([path])
+			else:
+				ui.message(_("No folders selected or current folder not available"))
+			self._case_cache_valid = False
+		
+		self._getCurrentPathDeferred(get_path_callback, 200)
 
 	def _perform_conversion(self, conversion_type, folders_to_convert):
 		try:
@@ -785,12 +737,16 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self.manager.chooseNVDAObjectOverlayClasses(obj, clsList)
 
 	def event_gainFocus(self, obj, nextHandler):
-		if obj and obj.appModule and obj.appModule.appName == "explorer":
-			if hasattr(obj, 'windowHandle'):
-				if obj.windowHandle != self._last_window_hwnd:
-					self._last_window = None
-					self._last_window_hwnd = None
-		self.manager.event_gainFocus(obj, nextHandler)
+		try:
+			if obj and obj.appModule and obj.appModule.appName == "explorer":
+				if hasattr(obj, 'windowHandle'):
+					if obj.windowHandle != self._last_window_hwnd:
+						self._last_window = None
+						self._last_window_hwnd = None
+			self.manager.event_gainFocus(obj, nextHandler)
+		except Exception as e:
+			log.error(f"event_gainFocus error: {e}")
+			nextHandler()
 
 	def event_focusEntered(self, obj, nextHandler):
 		self.manager.event_focusEntered(obj, nextHandler)
