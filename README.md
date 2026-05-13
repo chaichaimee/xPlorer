@@ -6,7 +6,7 @@
 
 <br>
 
-<p align="center">Elevate your File Explorer experience with advanced automation and seamless navigation tools.</p>
+<p align="center">Enhance file management on Windows File Explorer with automation and intelligent tools that outperform the original.</p>
 
 <br>
 
@@ -16,102 +16,74 @@
 ---
 
 ## <p align="center">Description</p>
-
-**xPlorer** is a comprehensive productivity suite for NVDA users, specifically designed to make Windows File Explorer smarter and more efficient. It removes the friction from everyday file management by automating repetitive tasks and streamlining navigation. Whether you are batch-creating folder structures, standardizing names with professional case conversion, or extracting text from files without opening them, xPlorer provides a seamless, developer-grade experience for every user. It’s about doing more with fewer keystrokes.
+**xPlorer** is a new phenomenon in file management for NVDA users who demand maximum speed and precision. We transform Windows File Explorer into a powerful workstation by eliminating redundant and tedious steps. Whether you are a programmer managing large projects or a general user seeking organization, xPlorer helps you handle massive amounts of data in a fraction of a second, with hotkeys designed based on actual ergonomics.
 
 <br>
 
 ## <p align="center">What's New</p>
-
-• **Create Multiple Folders:** Instantly generate an entire directory structure from a single list.  
+• **The Robo System:** Revolutionize copying and moving files with a special engine that works over 50% faster than Windows standard system.  
 <br>
-• **Case Converter for Folders:** Standardize folder names with professional casing options (UPPER, lower, Title, Sentence).  
-<br>
-• **Detailed Folder Info:** Get real-time size and item counts for folders directly from the menu.  
-<br>
-• **Title Optimization:** Suppress the redundant "- File Explorer" in window titles for cleaner speech output.  
-<br>
-• **Instant Folder Creation:** Automatically use clipboard content as a name when creating a new folder.
+• **Direct File Processing:** A direct file processing system that reduces machine resource usage and increases stability when handling large amounts of data.
 
 <br>
 
 ## <p align="center">Hot Keys</p>
 
-> **NVDA+Shift+X** : Open xPlorer Context Menu  
-> (The master hub for all professional features including Case Converter and Multi-Folder Creator)
+> **NVDA+Shift+R (Robo Copy & Move)**  
+> • **Single Tap:** Robo Copy (Lock target file or folder location)  
+> • **Double Tap:** Robo Paste (Paste copied files/folders to destination immediately)  
+> • **Triple Tap:** **Robo Move (Quick file move command - move data from source to here at maximum speed)**
 
-> **NVDA+Shift+Z** > • **Single Tap** : Say Size (Announce the total size of selected items)  
-> • **Double Tap** : Compress Zip (Archive selected files into a .zip with intelligent naming)
+> **NVDA+Shift+X** : xPlorer Menu (Hub of advanced name management and folder creation tools)
 
-> **NVDA+Shift+C** > • **Single Tap** : Copy Selected Names (Copy names of selected files or folders to clipboard)  
-> • **Double Tap** : Copy Address Bar Current Folder (Grab the current folder's full path)
+> **NVDA+Shift+Z**  
+> • **Single Tap:** Say Size (Calculate and announce total size of all selected files accurately)  
+> • **Double Tap:** Compress Zip (Combine selected files into .zip with automatic naming)
 
-> **NVDA+Shift+V** > • **Single Tap** : Copy Content (Extract and copy text content directly from the selected file)  
-> • **Double Tap** : Invert Selection (Quickly toggle focus between selected and unselected items)
+> **NVDA+Shift+C**  
+> • **Single Tap:** Copy Selected Names (Copy only file names for use)  
+> • **Double Tap:** Copy Address Bar (Copy current folder path)
 
-> **NVDA+Shift+F2** : Rename File Only  
-> (Focuses on the filename only, protecting the file extension from accidental changes)
+> **NVDA+Shift+V**  
+> • **Single Tap:** Copy Content (Extract text inside file to clipboard without opening the file)  
+> • **Double Tap:** Invert Selection (Toggle selection of remaining files in the folder)
 
-> **Control+Shift+N** : Create New Folder with Auto-Paste  
-> (Creates a new folder and instantly pastes your clipboard content as its name)
+> **NVDA+Shift+F2** : Rename File Only (Rename file while safely preserving the extension)
+
+> **Control+Shift+N** : Create Folder with Auto-Name (Create new folder and automatically name it from clipboard)
 
 <br>
 
 ## <p align="center">Features</p>
 
-### <p align="center">1. Advanced Batch Folder Creation</p>
+### 1. Robo System: Industrial-Strength File Moving Power
+Say goodbye to the delays of traditional Ctrl+C and Ctrl+V with the **Robo System**, specifically designed for managing large volumes of files.
+* **Superior Speed:** When moving large files or folders, or those containing thousands of sub-files, the Robo system uses direct file path access logic, reducing processing time by more than half compared to standard Windows commands.
+* **Robo Move (Triple Tap):** This is the ace for data organization. Just tap three times, and the system will 'pull' data from the source and place it at the destination instantly at maximum speed. Perfect for projects that frequently move data across drives or folders.
 
-The **"Create Multiple Folders"** feature (found in the xPlorer Menu) is built for serious organization. Instead of creating folders one by one, you can paste or type a list of names into a single dialog. xPlorer will process the entire list and build every folder in your current directory in one heartbeat. It’s the ultimate time-saver for setting up new projects or categories.
+### 2. Advanced Batch Folder Creation
+This feature is designed to reduce repetitive work. If you need to create 10, 20, or 100 folders at once, simply open the **"Create Multiple Folders"** menu and paste the list. The system will write the folder structure to disk simultaneously in one go, allowing you to set up a new project in under 2 seconds.
 
-### <p align="center">2. Professional Case Converter</p>
+### 3. Professional Case Converter
+Professionalism is measured by attention to detail. xPlorer helps you organize file and folder names into the same pattern across the system, whether it's **UPPERCASE** for important documents or **Title Case** for aesthetics. You can rename hundreds of files with a single menu press.
 
-Ensure your file system looks clean and consistent. Select any folder(s) and use the xPlorer Menu to convert names instantly:  
-<br>
-• **UPPERCASE:** Converts everything to capital letters (e.g., "PROJECT DATA").  
-<br>
-• **lowercase:** Converts everything to small letters (e.g., "project data").  
-<br>
-• **Title Case:** Capitalizes the first letter of each word (e.g., "Project Data").  
-<br>
-• **Sentence case:** Only the very first letter is capitalized (e.g., "Project data").
+### 4. Instant File Content Extraction
+On days when you need to check urgent data, xPlorer lets you instantly access the content of text-based files without waiting to open Notepad or other file readers. Just press **NVDA+Shift+V**, and the internal content will be extracted for you to read or paste immediately, reducing CPU load and saving your time.
 
-### <p align="center">3. Smart "Clipboard to Folder" Creation</p>
+### 5. Smart "Clipboard to Folder" Workflow
+Integrates the workflow between data retrieval and storage into one. When you copy a project name from an email or chat, just press **Control+Shift+N** in File Explorer, and the system will create a new folder and assign that name immediately, reducing the steps of pressing F2 and pasting the name to a single action.
 
-With xPlorer, creating folders becomes a one-step process. By pressing **Control+Shift+N**, the add-on checks your clipboard. If you have a name copied from an email or document, it creates the folder and automatically pastes that name into the edit field. No more manual renaming or pasting—just copy, press the hotkey, and you're done.
-
-### <p align="center">4. File Content Extraction</p>
-
-Save time by extracting text without opening applications. **Single Tap NVDA+Shift+V** to pull text from a selected file directly into your clipboard. This works effortlessly with various text-based formats, allowing you to grab data from scripts or logs while staying focused in the Explorer window.
-
-### <p align="center">5. Intelligent Zip Archiving</p>
-
-By **Double Tapping NVDA+Shift+Z**, xPlorer packs your selection into a zip file. It intelligently prevents data loss by checking for existing files and adding a numeric suffix to new archives. Background audio tones keep you informed of the compression progress without visual monitoring.
-
-### <p align="center">6. xPlorer Settings Panel</p>
-
-Customize your experience via **NVDA Settings > xPlorer**. The options are arranged to optimize your workflow:  
-<br>
-<br>
-• **Automatically select the first item:** When you enter a folder, xPlorer will automatically place your focus on the first file or folder, so you can start navigating immediately.  
-<br>
-• **Announce 'Empty Folder' when entering an empty folder:** Provides clear vocal confirmation that a directory contains no items, saving you from unnecessary arrowing.  
-<br>
-• **Suppress announcement of DirectUIHWND class:** Removes technical clutter from NVDA's speech, providing a cleaner and more professional audio interface.  
-<br>
-• **Suppress announcement of '- File Explorer' in window titles:** Shortens window title announcements by removing the redundant software name, helping you identify folders faster.  
-<br>
-• **Automatically paste clipboard content into rename field:** Specifically when creating new folders, this allows xPlorer to automatically fill in names from your clipboard for maximum efficiency.
+### 6. Intelligent Zip Archiving
+File compression will no longer be a hassle with the **Smart Zip** system that automatically checks for duplicate file names. If duplicate names exist, the system will append sequential numbers to prevent overwriting important data, along with audio notifications (beep codes) that inform you of the operation status without needing to check the screen.
 
 <br>
 
 ---
 
-<br>
-<br>
+<br><br>
 
 ## <p align="center">Support Me</p>
-
-<p align="center">If this tool has made your life easier, consider fueling the next update with a small donation.</p>
+<p align="center">If this tool has made your work easier and faster, you can support me here as encouragement to continue developing new features.</p>
 
 <br>
 
@@ -123,8 +95,8 @@ Customize your experience via **NVDA Settings > xPlorer**. The options are arran
 
 <br>
 
-<p align="center">Your support means the world. Let's build something great together</p>
+<p align="center">Every support is a driving force for us to create the best tools for all users.</p>
 
 <br>
 
-<p align="center">© 2026 Chai Chaimee NVDA Add-on Released under GNU GPL</p>
+<p align="center">&copy; 2026 Chai Chaimee NVDA Add-on Released under GNU GPL.</p>
