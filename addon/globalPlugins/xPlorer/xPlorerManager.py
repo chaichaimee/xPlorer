@@ -16,6 +16,7 @@ import core
 import speechDictHandler
 from speechDictHandler import SpeechDictEntry
 import time
+import eventHandler
 from comtypes import COMError as ComTypesCOMError
 from _ctypes import COMError as CtypesCOMError
 
@@ -44,38 +45,38 @@ class EmptyFolderStaticText(NVDAObject):
 	def _get_name(self):
 		conf = loadConfig()
 		if conf.get("announceEmptyFolder", True):
-			return _("Empty Folder")
+			return "Empty Folder"
 		return super().name
 
 class xPlorerSettingsPanel(SettingsPanel):
-	title = _("xPlorer")
+	title = "xPlorer"
 
 	def makeSettings(self, settingsSizer):
 		conf = loadConfig()
 		sHelper = gui.guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
 		
 		self.autoSelectFirstItem = sHelper.addItem(
-			wx.CheckBox(self, label=_("Automatically select the first item"))
+			wx.CheckBox(self, label="Automatically select the first item")
 		)
 		self.autoSelectFirstItem.SetValue(conf["autoSelectFirstItem"])
 		
 		self.announceEmptyFolder = sHelper.addItem(
-			wx.CheckBox(self, label=_("Announce 'Empty Folder' when entering an empty folder"))
+			wx.CheckBox(self, label="Announce 'Empty Folder' when entering an empty folder")
 		)
 		self.announceEmptyFolder.SetValue(conf["announceEmptyFolder"])
 		
 		self.suppressDirectUIAnnounce = sHelper.addItem(
-			wx.CheckBox(self, label=_("Suppress announcement of DirectUIHWND class"))
+			wx.CheckBox(self, label="Suppress announcement of DirectUIHWND class")
 		)
 		self.suppressDirectUIAnnounce.SetValue(conf["suppressDirectUIAnnounce"])
 		
 		self.sayFileExplorer = sHelper.addItem(
-			wx.CheckBox(self, label=_("Suppress announcement of '- File Explorer' in window titles"))
+			wx.CheckBox(self, label="Suppress announcement of '- File Explorer' in window titles")
 		)
 		self.sayFileExplorer.SetValue(conf["sayFileExplorer"])
 		
 		self.autoPasteClipboardToRename = sHelper.addItem(
-			wx.CheckBox(self, label=_("Automatically paste clipboard content into rename field"))
+			wx.CheckBox(self, label="Automatically paste clipboard content into rename field")
 		)
 		self.autoPasteClipboardToRename.SetValue(conf.get("autoPasteClipboardToRename", True))
 
@@ -105,7 +106,7 @@ class ExplorerManager:
 		self._temp_entry = None
 		self._explorer_focused = False
 		
-		self._last_processed_obj = None
+		self._last_processed_key = None
 		self._last_processed_time = 0
 		self._debounce_interval = 0.05
 		
@@ -153,13 +154,13 @@ class ExplorerManager:
 			return False
 		current_time = time.time()
 		try:
-			obj_id = (obj.windowHandle, obj.role, id(obj))
-		except:
-			obj_id = id(obj)
-		if obj_id == self._last_processed_obj:
+			obj_key = (obj.windowHandle, obj.role, id(obj))
+		except Exception:
+			obj_key = id(obj)
+		if self._last_processed_key == obj_key:
 			if current_time - self._last_processed_time < self._debounce_interval:
 				return False
-		self._last_processed_obj = obj_id
+		self._last_processed_key = obj_key
 		self._last_processed_time = current_time
 		return True
 
@@ -182,7 +183,7 @@ class ExplorerManager:
 				del self._cached_provider_desc[oldest]
 			self._cached_provider_desc[handle] = (is_explorer, current_time)
 			return is_explorer
-		except:
+		except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError):
 			return False
 
 	def _isExplorerList(self, obj):
@@ -257,6 +258,9 @@ class ExplorerManager:
 			if obj is None or obj.appModule is None:
 				nextHandler()
 				return
+			if eventHandler.isPendingEvents("gainFocus"):
+				nextHandler()
+				return
 			if not self._should_process_event(obj):
 				nextHandler()
 				return
@@ -290,15 +294,19 @@ class ExplorerManager:
 				nextHandler()
 				return
 			
-			if obj.role == Role.PANE and obj.firstChild and hasattr(obj.firstChild, "UIAAutomationId"):
-				if obj.firstChild.UIAAutomationId == "HomeListView":
-					def set_focus():
-						try:
-							if obj.firstChild and obj.firstChild.children and len(obj.firstChild.children) > 1:
-								obj.firstChild.children[1].setFocus()
-						except:
-							pass
-					core.callLater(200, set_focus)
+			try:
+				if obj.role == Role.PANE and obj.firstChild and hasattr(obj.firstChild, "UIAAutomationId"):
+					if obj.firstChild.UIAAutomationId == "HomeListView":
+						def set_focus():
+							try:
+								if obj.firstChild and obj.firstChild.children and len(obj.firstChild.children) > 1:
+									obj.firstChild.children[1].setFocus()
+							except Exception:
+								pass
+						core.callLater(200, set_focus)
+			except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError):
+				pass
+
 			nextHandler()
 		except Exception as e:
 			log.error(f"event_gainFocus failed: {e}")
@@ -311,7 +319,7 @@ class ExplorerManager:
 				parent = parent.parent
 			if parent and parent.role == Role.WINDOW:
 				return parent.name
-		except:
+		except Exception:
 			pass
 		return None
 

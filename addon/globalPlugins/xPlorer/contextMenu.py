@@ -36,8 +36,6 @@ class ContextMenuManager:
 		copy_item = robocopy_menu.Append(wx.ID_ANY, _("copy"))
 		move_item = robocopy_menu.Append(wx.ID_ANY, _("move"))
 		paste_item = robocopy_menu.Append(wx.ID_ANY, _("paste"))
-		robocopy_menu.AppendSeparator()
-		mirror_item = robocopy_menu.Append(wx.ID_ANY, _("mirror Backup"))
 
 		txt_to_folder_item = menu.Append(wx.ID_ANY, _("TXT to Folder"))
 		create_multiple_folders_item = menu.Append(wx.ID_ANY, _("Create Multiple Folders..."))
@@ -54,7 +52,6 @@ class ContextMenuManager:
 		robocopy_menu.Bind(wx.EVT_MENU, lambda evt: core.callLater(0, self.plugin._executeWithSilence, self.plugin.robocopy.copy), copy_item)
 		robocopy_menu.Bind(wx.EVT_MENU, lambda evt: core.callLater(0, self.plugin._executeWithSilence, self.plugin.robocopy.move), move_item)
 		robocopy_menu.Bind(wx.EVT_MENU, lambda evt: core.callLater(0, self.plugin._executeWithSilence, self.plugin.robocopy.paste), paste_item)
-		robocopy_menu.Bind(wx.EVT_MENU, lambda evt: core.callLater(0, self.plugin.robocopy.showMirrorBackupDialog), mirror_item)
 
 		case_menu.Bind(wx.EVT_MENU, lambda evt: core.callLater(0, self.plugin._executeWithSilence, lambda: self.plugin._convertFolderNames("uppercase")), uppercase_item)
 		case_menu.Bind(wx.EVT_MENU, lambda evt: core.callLater(0, self.plugin._executeWithSilence, lambda: self.plugin._convertFolderNames("lowercase")), lowercase_item)

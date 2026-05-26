@@ -9,12 +9,12 @@ import gui.guiHelper
 import subprocess
 import threading
 import time
-from logHandler import log
 import addonHandler
 import core
 import tones
 import comtypes.client
 from urllib.parse import unquote
+from logHandler import log
 
 addonHandler.initTranslation()
 
@@ -31,12 +31,12 @@ class ProgressDialog(wx.Dialog):
 	def _init_ui(self):
 		main_sizer = wx.BoxSizer(wx.VERTICAL)
 		s_helper = gui.guiHelper.BoxSizerHelper(self, orientation=wx.VERTICAL)
-		self._label = wx.StaticText(self, label=_("Initializing Robocopy..."))
+		self._label = wx.StaticText(self, label="Initializing Robocopy...")
 		s_helper.addItem(self._label)
 		self._gauge = wx.Gauge(self, range=100)
 		s_helper.addItem(self._gauge, proportion=0, flag=wx.EXPAND)
 		btn_sizer = wx.BoxSizer(wx.HORIZONTAL)
-		self._cancel_btn = wx.Button(self, label=_("Cancel"))
+		self._cancel_btn = wx.Button(self, label="Cancel")
 		btn_sizer.Add(self._cancel_btn, 1, wx.ALL, 5)
 		main_sizer.Add(s_helper.sizer, 1, wx.EXPAND | wx.ALL, 10)
 		main_sizer.Add(btn_sizer, 0, wx.ALIGN_CENTER | wx.BOTTOM, 10)
@@ -79,12 +79,12 @@ class RobocopyManager:
 								paths.append(selection.Item(i).Path)
 						try:
 							current_folder = window.Document.Folder.Self.Path
-						except:
+						except Exception:
 							url = window.LocationURL
 							if url.startswith("file:///"):
 								current_folder = unquote(url[8:].replace("/", "\\"))
 						break
-				except:
+				except Exception:
 					continue
 		except Exception as e:
 			log.debug(f"Robocopy COM Error: {e}")
@@ -94,28 +94,28 @@ class RobocopyManager:
 		paths = self._get_explorer_data_via_com(get_selection=True)
 		if not paths:
 			tones.beep(200, 150)
-			ui.message(_("No items selected"))
+			ui.message("No items selected")
 			return
 		self.source_items = paths
 		self.operation_type = "copy"
 		tones.beep(440, 150)
-		ui.message(_("Robocopy: {count} items ready").format(count=len(paths)))
+		ui.message(f"Robocopy: {len(paths)} items ready")
 
 	def move(self):
 		paths = self._get_explorer_data_via_com(get_selection=True)
 		if not paths:
 			tones.beep(200, 150)
-			ui.message(_("No items selected"))
+			ui.message("No items selected")
 			return
 		self.source_items = paths
 		self.operation_type = "move"
 		tones.beep(440, 150)
-		ui.message(_("Robocopy: {count} items ready to move").format(count=len(paths)))
+		ui.message(f"Robocopy: {len(paths)} items ready to move")
 
 	def paste(self):
 		if not self.source_items:
 			tones.beep(200, 150)
-			ui.message(_("Nothing to paste"))
+			ui.message("Nothing to paste")
 			return
 		dest_path = self._get_explorer_data_via_com(get_selection=False)
 		if not dest_path:
@@ -124,7 +124,7 @@ class RobocopyManager:
 			dest_path = self.plugin._getCurrentPath()
 		if not dest_path or not os.path.exists(dest_path):
 			tones.beep(200, 150)
-			ui.message(_("Destination not found"))
+			ui.message("Destination not found")
 			return
 		tones.beep(880, 200)
 		thread = threading.Thread(
@@ -139,73 +139,100 @@ class RobocopyManager:
 		dlg = None
 		def create_dlg():
 			nonlocal dlg
-			dlg = ProgressDialog(gui.mainFrame, _("xPloyer Robocopy"))
+			dlg = ProgressDialog(gui.mainFrame, "xPloyer Robocopy")
 			dlg.Show()
 		wx.CallAfter(create_dlg)
 		time.sleep(0.3)
-		for source in sources:
+
+		total_files = len(sources)
+		for idx, source in enumerate(sources):
 			if dlg and dlg.is_cancelled:
 				break
 			source_name = os.path.basename(source)
 			is_dir = os.path.isdir(source)
+
 			if is_dir:
 				target_dest = os.path.join(dest, source_name)
-				cmd = ["robocopy", source, target_dest, "/E", "/MT:8", "/R:3", "/W:5", "/XJ", "/NP"]
+				cmd = ["robocopy", source, target_dest, "/E", "/MT:8", "/R:5", "/W:5", "/V", "/NP", "/XJ"]
 			else:
 				source_dir = os.path.dirname(source)
-				cmd = ["robocopy", source_dir, dest, source_name, "/MT:8", "/R:3", "/W:5", "/NP"]
+				cmd = ["robocopy", source_dir, dest, source_name, "/MT:8", "/R:5", "/W:5", "/V", "/NP"]
 			if is_move:
 				cmd.append("/MOVE")
+
 			try:
 				startupinfo = subprocess.STARTUPINFO()
 				startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
 				self.active_process = subprocess.Popen(
-					cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-					universal_newlines=True, startupinfo=startupinfo,
+					cmd,
+					stdout=subprocess.PIPE,
+					stderr=subprocess.STDOUT,
+					universal_newlines=True,
+					startupinfo=startupinfo,
 					creationflags=subprocess.CREATE_NO_WINDOW
 				)
-				start_time = time.time()
+
+				stdout_lines = []
 				for line in self.active_process.stdout:
+					stdout_lines.append(line)
 					if dlg and dlg.is_cancelled:
 						self.active_process.terminate()
 						break
-					if time.time() - start_time > 60:
-						log.warning("Robocopy timeout after 60 seconds")
-						self.active_process.terminate()
-						break
-					if "%" in line:
-						try:
-							pct = float(line.split("%")[0].strip().split()[-1])
-							if dlg:
-								dlg.update_progress(pct, _("Transferring: {name}").format(name=source_name))
-						except:
-							continue
+					wx.CallAfter(dlg.update_progress, int((idx + 1) / total_files * 100), f"Processing: {source_name}")
+
 				self.active_process.wait()
+				exit_code = self.active_process.returncode
+
+				if exit_code is not None:
+					if exit_code >= 8:
+						error_msg = f"Robocopy error for {source_name} (exit code: {exit_code})"
+						log.error(error_msg)
+						core.callLater(0, ui.message, error_msg)
+						def stop_and_notify():
+							if dlg:
+								dlg.Destroy()
+							ui.message("Copy failed due to errors. Check NVDA log.")
+						wx.CallAfter(stop_and_notify)
+						return
+					else:
+						log.debug(f"Robocopy success for {source_name} (exit code: {exit_code})")
+				else:
+					log.warning(f"Robocopy for {source_name} finished but exit code is None")
+
+				if not is_dir and not self._verify_file_copy(source, os.path.join(dest, source_name)):
+					error_msg = f"Verification failed for {source_name}"
+					log.error(error_msg)
+					core.callLater(0, ui.message, error_msg)
+					return
+
 			except Exception as e:
-				log.exception("Robocopy error")
+				log.exception(f"Robocopy error for {source_name}: {e}")
 				continue
+
 		def cleanup_dlg():
 			if dlg:
 				dlg.Destroy()
 		wx.CallAfter(cleanup_dlg)
 		tones.beep(1760, 300)
-		ui.message(_("Robocopy finished"))
+		ui.message("Robocopy finished successfully")
 
-	def showMirrorBackupDialog(self):
-		def show_dialog():
-			dlg = wx.MessageDialog(
-				gui.mainFrame,
-				_("Mirror Backup feature is not yet implemented.\nThis will perform robocopy with /MIR option."),
-				_("Mirror Backup"),
-				wx.OK | wx.ICON_INFORMATION
-			)
-			dlg.ShowModal()
-			dlg.Destroy()
-		wx.CallAfter(show_dialog)
+	def _verify_file_copy(self, source_path, dest_path):
+		try:
+			if not os.path.exists(dest_path):
+				return False
+			src_size = os.path.getsize(source_path)
+			dst_size = os.path.getsize(dest_path)
+			if src_size != dst_size:
+				log.warning(f"Size mismatch: {source_path} ({src_size}) vs {dest_path} ({dst_size})")
+				return False
+			return True
+		except Exception as e:
+			log.error(f"Verification error: {e}")
+			return False
 
 	def cleanup(self):
 		if self.active_process and self.active_process.poll() is None:
 			try:
 				self.active_process.terminate()
-			except:
+			except Exception:
 				pass
