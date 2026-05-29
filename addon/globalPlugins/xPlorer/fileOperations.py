@@ -112,96 +112,32 @@ class FileOperations:
 			self._beep_timer.daemon = True
 			self._beep_timer.start()
 
-	def _recalc_size(self, i_result, i_total_size=0):
-		f_result = float(i_result)
-		if i_total_size > 0:
-			i_total_size = float(i_total_size)
-			f_result = i_total_size - f_result    
-		i = 0
-		while f_result >= 1024:
-			f_result = f_result / 1024
-			i = i + 1
-		s_recalc_size = ' {:.2f}'.format(f_result)
-		s_result = (s_recalc_size, i)
-		return s_result
+	def _format_size(self, size_in_bytes):
+		if size_in_bytes < 1024:
+			return f"{size_in_bytes} bytes"
+		elif size_in_bytes < 1024 * 1024:
+			return f"{size_in_bytes / 1024:.2f} KB"
+		elif size_in_bytes < 1024 * 1024 * 1024:
+			return f"{size_in_bytes / (1024 * 1024):.2f} MB"
+		else:
+			return f"{size_in_bytes / (1024 * 1024 * 1024):.2f} GB"
 
-	def _get_folder_size_windows_api(self, folder_path):
+	def _get_folder_size_accurate(self, folder_path):
+		total_size = 0
 		try:
-			import ctypes
-			from ctypes import wintypes, windll, c_longlong, c_ulonglong, POINTER, Structure, c_int, c_uint, c_void_p
-			
-			class LARGE_INTEGER(Structure):
-				_fields_ = [("QuadPart", c_longlong)]
-				
-			GetFileSizeEx = windll.kernel32.GetFileSizeEx
-			GetFileSizeEx.argtypes = [wintypes.HANDLE, POINTER(LARGE_INTEGER)]
-			GetFileSizeEx.restype = wintypes.BOOL
-			
-			FindFirstFile = windll.kernel32.FindFirstFileW
-			FindFirstFile.argtypes = [wintypes.LPCWSTR, POINTER(wintypes.WIN32_FIND_DATAW)]
-			FindFirstFile.restype = wintypes.HANDLE
-			
-			FindNextFile = windll.kernel32.FindNextFileW
-			FindNextFile.argtypes = [wintypes.HANDLE, POINTER(wintypes.WIN32_FIND_DATAW)]
-			FindNextFile.restype = wintypes.BOOL
-			
-			FindClose = windll.kernel32.FindClose
-			FindClose.argtypes = [wintypes.HANDLE]
-			FindClose.restype = wintypes.BOOL
-			
-			def get_folder_size_iterative(start_path):
-				total = 0
-				stack = [start_path]
-				while stack:
-					current_path = stack.pop()
-					find_data = wintypes.WIN32_FIND_DATAW()
-					handle = FindFirstFile(os.path.join(current_path, "*"), ctypes.byref(find_data))
-					if handle == wintypes.HANDLE(-1):
-						continue
+			for root, dirs, files in os.walk(folder_path):
+				if not self._calculation_active:
+					return 0
+				for file_name in files:
+					file_path = os.path.join(root, file_name)
 					try:
-						while True:
-							name = find_data.cFileName
-							if name not in ('.', '..'):
-								full_path = os.path.join(current_path, name)
-								if find_data.dwFileAttributes & 16:
-									stack.append(full_path)
-							if not FindNextFile(handle, ctypes.byref(find_data)):
-								break
-					finally:
-						FindClose(handle)
-				stack = [start_path]
-				while stack:
-					current_path = stack.pop()
-					find_data = wintypes.WIN32_FIND_DATAW()
-					handle = FindFirstFile(os.path.join(current_path, "*"), ctypes.byref(find_data))
-					if handle == wintypes.HANDLE(-1):
-						continue
-					try:
-						while True:
-							name = find_data.cFileName
-							if name not in ('.', '..'):
-								full_path = os.path.join(current_path, name)
-								if not (find_data.dwFileAttributes & 16):
-									size_high = find_data.nFileSizeHigh
-									size_low = find_data.nFileSizeLow
-									file_size = (c_ulonglong(size_high).value << 32) + size_low
-									total += file_size
-							if not FindNextFile(handle, ctypes.byref(find_data)):
-								break
-					finally:
-						FindClose(handle)
-				return total
-			
-			return get_folder_size_iterative(folder_path)
+						total_size += os.path.getsize(file_path)
+					except (OSError, WindowsError, PermissionError):
+						pass
+			return total_size
 		except Exception as e:
-			log.error(f"Error in Windows API folder size calculation: {e}")
-			return None
-
-	def _calculate_folder_size_fast(self, folder_path):
-		api_size = self._get_folder_size_windows_api(folder_path)
-		if api_size is not None:
-			return api_size
-		return None
+			log.error(f"Error calculating folder size for {folder_path}: {e}")
+			return 0
 
 	def _check_access_permission(self, path):
 		try:
@@ -223,17 +159,17 @@ class FileOperations:
 		if not focus or focus.appModule.appName != "explorer":
 			return
 			
-		selectedItems, _ignore = self.plugin._getSelectedItems()
-		if not selectedItems:
+		selected_items, _ignore = self.plugin._getSelectedItems()
+		if not selected_items:
 			ui.message(_("No items selected"))
 			return
 		
 		inaccessible_items = []
-		for name, path in selectedItems:
+		for name, path in selected_items:
 			if not self._check_access_permission(path):
 				inaccessible_items.append(name)
 		
-		if inaccessible_items and len(inaccessible_items) == len(selectedItems):
+		if inaccessible_items and len(inaccessible_items) == len(selected_items):
 			ui.message(_("No access to size data"))
 			return
 		
@@ -244,59 +180,67 @@ class FileOperations:
 		def calculate_size():
 			try:
 				total_size = 0
-				is_drive = False
 				accessible_item_count = 0
+				is_drive = False
 				
-				for name, path in selectedItems:
+				for name, path in selected_items:
 					if not self._calculation_active:
 						break
 					if name in inaccessible_items:
 						continue
+						
 					accessible_item_count += 1
-					if self.plugin.objFSO.FileExists(path):
+					
+					if os.path.isfile(path):
 						try:
-							file_size = self.plugin.objFSO.GetFile(path).Size
+							file_size = os.path.getsize(path)
 							total_size += file_size
 						except Exception as e:
 							log.error(f"Error getting file size for {name}: {e}")
-					elif self.plugin.objFSO.DriveExists(path):
-						is_drive = True
+							
+					elif os.path.isdir(path):
 						try:
-							drive = self.plugin.objFSO.GetDrive(path)
-							used_size = drive.TotalSize - drive.FreeSpace
-							total_size += used_size
+							drive_letter = os.path.splitdrive(path)[0]
+							if drive_letter and len(drive_letter) == 2 and drive_letter[1] == ':':
+								if path == drive_letter + "\\":
+									is_drive = True
+									import ctypes
+									free_bytes = ctypes.c_ulonglong(0)
+									total_bytes = ctypes.c_ulonglong(0)
+									if ctypes.windll.kernel32.GetDiskFreeSpaceExW(
+										ctypes.c_wchar_p(path), None,
+										ctypes.byref(total_bytes),
+										ctypes.byref(free_bytes)
+									):
+										used_size = total_bytes.value - free_bytes.value
+										total_size += used_size
+									continue
+							
+							folder_size = self._get_folder_size_accurate(path)
+							total_size += folder_size
 						except Exception as e:
-							log.error(f"Error getting drive size for {name}: {e}")
-					elif self.plugin.objFSO.FolderExists(path):
-						folder_size = self._calculate_folder_size_fast(path)
-						if folder_size is not None and folder_size > 0:
-							total_size += folder_size
-						else:
-							folder_size = 0
-							count = 0
-							max_files_to_check = 1000
-							for root, _, files in os.walk(path):
-								for f in files:
-									if count >= max_files_to_check or not self._calculation_active:
-										break
-									fp = os.path.join(root, f)
-									try:
-										folder_size += os.path.getsize(fp)
-										count += 1
-									except (OSError, WindowsError):
-										pass
-								if count >= max_files_to_check or not self._calculation_active:
-									break
-								time.sleep(0.01)
-							if count > 0:
-								avg_size = folder_size / count
-								estimated_total_files = count * 10
-								folder_size = avg_size * estimated_total_files
-							total_size += folder_size
+							log.error(f"Error getting folder size for {name}: {e}")
 				
 				self._stop_beeping()
 				self._calculation_active = False
-				core.callLater(0, self._display_size_result, total_size, is_drive, accessible_item_count)
+				
+				formatted_size = self._format_size(total_size)
+				
+				if accessible_item_count == 0:
+					display_message = _("No access to size data")
+				elif accessible_item_count == 1:
+					if is_drive:
+						display_message = formatted_size
+					else:
+						display_message = formatted_size
+				else:
+					display_message = _("{count} items {size}").format(
+						count=accessible_item_count, 
+						size=formatted_size
+					)
+				
+				core.callLater(0, ui.message, display_message)
+				
 			except Exception as e:
 				log.error(f"Error in size calculation thread: {e}")
 				self._stop_beeping()
@@ -305,18 +249,6 @@ class FileOperations:
 		
 		self._size_thread = threading.Thread(target=calculate_size, daemon=True)
 		self._size_thread.start()
-
-	def _display_size_result(self, total_size, is_drive, item_count):
-		if total_size == 0 and not is_drive:
-			ui.message(_("No access to size data"))
-			return
-		col_recalc = self._recalc_size(total_size)
-		s_dimension = [" bytes", " KB", " MB", " GB", " TB"][col_recalc[1]]
-		s_recalc_size = col_recalc[0]
-		s_info = s_recalc_size + s_dimension
-		if item_count > 1:
-			s_info = _("{count} items {size}").format(count=item_count, size=s_info)
-		ui.message(s_info)
 
 	def renameFile(self):
 		focus = api.getFocusObject()

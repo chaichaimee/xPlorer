@@ -1,4 +1,6 @@
 # contextMenu.py
+# Copyright (C) 2026 Chai Chaimee
+# Licensed under GNU General Public License. See COPYING.txt for details.
 
 import wx
 import gui
@@ -19,7 +21,7 @@ class ContextMenuManager:
 	def _create_context_menu(self):
 		menu = wx.Menu()
 
-		settings_item = menu.Append(wx.ID_ANY, _("xPlorer Settings"))
+		create_file_item = menu.Append(wx.ID_ANY, _("Create File"))
 		menu.AppendSeparator()
 
 		compress_item = menu.Append(wx.ID_ANY, _("Compress zip"))
@@ -27,7 +29,6 @@ class ContextMenuManager:
 		copy_address_item = menu.Append(wx.ID_ANY, _("Copy address bar"))
 		copy_content_item = menu.Append(wx.ID_ANY, _("Copy content"))
 		copy_names_item = menu.Append(wx.ID_ANY, _("Copy selected file and folder names"))
-		create_file_item = menu.Append(wx.ID_ANY, _("Create File"))
 		rename_item = menu.Append(wx.ID_ANY, _("Rename selected file"))
 		say_size_item = menu.Append(wx.ID_ANY, _("Say size"))
 
@@ -47,6 +48,7 @@ class ContextMenuManager:
 		titlecase_item = case_menu.Append(wx.ID_ANY, _("Title Case"))
 		headlinecase_item = case_menu.Append(wx.ID_ANY, _("Headline Case"))
 
+		settings_item = menu.Append(wx.ID_ANY, _("xPlorer Settings"))
 		folder_info_item = menu.Append(wx.ID_ANY, _("Folder info"))
 
 		robocopy_menu.Bind(wx.EVT_MENU, lambda evt: core.callLater(0, self.plugin._executeWithSilence, self.plugin.robocopy.copy), copy_item)
@@ -58,17 +60,17 @@ class ContextMenuManager:
 		case_menu.Bind(wx.EVT_MENU, lambda evt: core.callLater(0, self.plugin._executeWithSilence, lambda: self.plugin._convertFolderNames("titlecase")), titlecase_item)
 		case_menu.Bind(wx.EVT_MENU, lambda evt: core.callLater(0, self.plugin._executeWithSilence, lambda: self.plugin._convertFolderNames("headlinecase")), headlinecase_item)
 
-		menu.Bind(wx.EVT_MENU, lambda evt: core.callLater(0, self.plugin._openSettings), settings_item)
+		menu.Bind(wx.EVT_MENU, lambda evt: core.callLater(0, self.plugin._executeWithSilence, self.plugin.createFileManager.create_file), create_file_item)
 		menu.Bind(wx.EVT_MENU, lambda evt: core.callLater(0, self.plugin._executeWithSilence, self.plugin.compression.compressZip), compress_item)
 		menu.Bind(wx.EVT_MENU, lambda evt: core.callLater(0, self.plugin._executeWithSilence, self.plugin.selection.invertSelection), invert_selection_item)
 		menu.Bind(wx.EVT_MENU, lambda evt: core.callLater(0, self.plugin._executeWithSilence, self.plugin._copyAddressBar), copy_address_item)
 		menu.Bind(wx.EVT_MENU, lambda evt: core.callLater(0, self.plugin._executeWithSilence, self.plugin.clipboard.copyFileContent), copy_content_item)
 		menu.Bind(wx.EVT_MENU, lambda evt: core.callLater(0, self.plugin._executeWithSilence, self.plugin.clipboard.copySelectedNames), copy_names_item)
-		menu.Bind(wx.EVT_MENU, lambda evt: core.callLater(0, self.plugin._executeWithSilence, self.plugin.createFileManager.create_file), create_file_item)
 		menu.Bind(wx.EVT_MENU, lambda evt: core.callLater(0, self.plugin._executeWithSilence, self.plugin.fileOps.renameFile), rename_item)
 		menu.Bind(wx.EVT_MENU, lambda evt: core.callLater(0, self.plugin._executeWithSilence, self.plugin.fileOps.saySize), say_size_item)
 		menu.Bind(wx.EVT_MENU, lambda evt: core.callLater(800, self.plugin._executeWithSilence, self.plugin.txt2folder.convert_txt_to_folder), txt_to_folder_item)
 		menu.Bind(wx.EVT_MENU, lambda evt: core.callLater(0, self.plugin._executeWithSilence, self.plugin._createMultipleFolders), create_multiple_folders_item)
+		menu.Bind(wx.EVT_MENU, lambda evt: core.callLater(0, self.plugin._executeWithSilence, self.plugin._openSettings), settings_item)
 		menu.Bind(wx.EVT_MENU, lambda evt: core.callLater(0, self.plugin._executeWithSilence, self.plugin.folderInfo.get_folder_info), folder_info_item)
 
 		return menu
