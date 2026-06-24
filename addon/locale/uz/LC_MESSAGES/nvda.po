@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: xPlorer 2026.5.5\n"
+"Project-Id-Version: xPlorer 2026.7.0\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-04-27 15:57+0700\n"
+"POT-Creation-Date: 2026-06-24 13:09+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Uzbek\n"
@@ -12,882 +12,648 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: DevOn Addon\n"
 
-#: folder_creation_dialog.py:60
+#: folder_creation_dialog.py:62
 msgid "&Apply"
 msgstr "&Qo'llash"
 
-#: folder_creation_dialog.py:61
+#: folder_creation_dialog.py:63
 msgid "&Cancel"
 msgstr "&Bekor qilish"
 
-#: robocopyManager.py:223
-msgid "1 day"
-msgstr "1 kun"
-
-#: createFile.py:305
+#: createFile.py:284
 msgid "1 file created"
 msgstr "1 fayl yaratildi"
 
-#: robocopyManager.py:222
-msgid "1 hour"
-msgstr "1 soat"
-
-#: robocopyManager.py:223
-msgid "1 month"
-msgstr "1 oy"
-
-#: robocopyManager.py:223
-msgid "15 days"
-msgstr "15 kun"
-
-#: robocopyManager.py:222
-msgid "15 minutes"
-msgstr "15 daqiqa"
-
-#: robocopyManager.py:222
-msgid "30 minutes"
-msgstr "30 daqiqa"
-
-#: robocopyManager.py:223
-msgid "7 days"
-msgstr "7 kun"
-
-#: compressionManager.py:159
-msgid "7-Zip compression failed, trying built-in method..."
-msgstr "7-Zip siqish muvaffaqiyatsiz tugadi, o'rnatilgan usul sinab ko'rilmoqda..."
-
-#: fileOperations.py:474
+#: fileOperations.py:294
 msgid "A file with this name already exists"
-msgstr "Ushbu nomdagi fayl allaqachon mavjud"
+msgstr "Bu nomdagi fayl allaqachon mavjud"
 
-#: robocopyManager.py:209
-msgid "Add destination folder"
-msgstr "Belgilangan jildni qo'shish"
-
-#: xPlorerManager.py:56
-msgid "Announce 'Empty Folder' when entering an empty folder"
-msgstr "Bo'sh jildga kirganda 'Bo'sh jild' deb e'lon qilish"
-
-#: xPlorerManager.py:71
-msgid "Automatically paste clipboard content into rename field"
-msgstr "Bufer tarkibini avtomatik ravishda nom o'zgartirish maydoniga qo'yish"
-
-#: xPlorerManager.py:51
-msgid "Automatically select the first item"
-msgstr "Birinchi elementni avtomatik tanlash"
-
-#: compressionManager.py:268
+#: compressionManager.py:288
 msgid "Built-in compression failed: {error}"
 msgstr "O'rnatilgan siqish muvaffaqiyatsiz tugadi: {error}"
 
-#: robocopyManager.py:61
-#: robocopyManager.py:242
-msgid "Cancel"
-msgstr "Bekor qilish"
-
-#: clipboardManager.py:77
+#: clipboardManager.py:66
 msgid "Cannot copy content of folders, please select files only"
-msgstr "Jildlar tarkibini nusxalash mumkin emas, faqat fayllarni tanlang"
+msgstr "Papkalar tarkibini nusxalash mumkin emas, faqat fayllarni tanlang"
 
-#: createFile.py:290
+#: createFile.py:271
 msgid "Cannot find unique name for: {name}"
-msgstr "{name} uchun noyob nom topilmadi"
+msgstr "{name} uchun noyob nom topib bo'lmadi"
 
-#: robocopyManager.py:761
-msgid "Cannot get destination"
-msgstr "Belgilangan joyni olish mumkin emas"
-
-#: __init__.py:635
+#: __init__.py:660
 msgid "Cannot open settings dialog"
 msgstr "Sozlamalar oynasini ochib bo'lmadi"
 
 #: txt2folder.py:69
 msgid "Cannot process RTF file: striprtf module not available"
-msgstr "RTF faylini qayta ishlab bo'lmadi: striprtf moduli mavjud emas"
+msgstr "RTF faylni qayta ishlab bo'lmadi: striprtf moduli mavjud emas"
 
-#: contextMenu.py:46
+#: contextMenu.py:45
 msgid "Case Converter for Folders"
-msgstr "Jildlar uchun registr konvertori"
+msgstr "Papkalar uchun registr o'zgartirgich"
 
-#: robocopyManager.py:348
-msgid "Choose destination folder"
-msgstr "Belgilangan jildni tanlang"
+#: __init__.py:699
+msgid "Case converter not available"
+msgstr "Registr o'zgartirgich mavjud emas"
 
-#: robocopyManager.py:239
-msgid "Clear all settings"
-msgstr "Barcha sozlamalarni tozalash"
+#: __init__.py:420
+msgid "Clipboard manager not available"
+msgstr "Bufer menejeri mavjud emas"
 
-#: compressionManager.py:264
+#: compressionManager.py:284
 msgid "Completed"
 msgstr "Tugallandi"
 
-#: contextMenu.py:25
+#: contextMenu.py:27
 msgid "Compress zip"
-msgstr "Zip siqish"
+msgstr "Zipga siqish"
 
-#: compressionManager.py:144
-#: compressionManager.py:161
+#: compressionManager.py:160
+#: compressionManager.py:168
 msgid "Compressing files"
 msgstr "Fayllar siqilmoqda"
 
-#: compressionManager.py:70
+#: compressionManager.py:75
 msgid "Compressing..."
 msgstr "Siqilmoqda..."
 
-#: compressionManager.py:244
-#: compressionManager.py:258
+#: compressionManager.py:263
+#: compressionManager.py:277
 msgid "Compressing: {percent}%"
 msgstr "Siqilmoqda: {percent}%"
 
-#: compressionManager.py:92
-#: compressionManager.py:262
+#: compressionManager.py:110
+#: compressionManager.py:282
 msgid "Compression cancelled"
 msgstr "Siqish bekor qilindi"
 
-#: compressionManager.py:94
-#: compressionManager.py:265
+#: compressionManager.py:112
+#: compressionManager.py:285
 msgid "Compression completed {name}"
 msgstr "Siqish tugallandi {name}"
 
-#: clipboardManager.py:165
+#: __init__.py:500
+msgid "Compression manager not available"
+msgstr "Siqish menejeri mavjud emas"
+
+#: compressionManager.py:86
+msgid "Compression timed out"
+msgstr "Siqish vaqti tugadi"
+
+#: clipboardManager.py:133
 msgid "Content from 1 file copied to clipboard"
 msgstr "1 fayl tarkibi buferga nusxalandi"
 
-#: clipboardManager.py:167
+#: clipboardManager.py:135
 msgid "Content from {count} files copied to clipboard"
 msgstr "{count} fayl tarkibi buferga nusxalandi"
 
-#: clipboardManager.py:53
+#: __init__.py:607
+#: __init__.py:673
+msgid "Context menu manager not available"
+msgstr "Kontekst menyu menejeri mavjud emas"
+
+#: case.py:115
+msgid "Conversion already in progress"
+msgstr "O'zgartirish allaqachon davom etmoqda"
+
+#: case.py:132
+msgid "Converting"
+msgstr "O'zgartirilmoqda"
+
+#: clipboardManager.py:44
 msgid "Copied 1 item name to clipboard"
 msgstr "1 element nomi buferga nusxalandi"
 
-#: robocopyManager.py:185
-msgid "Copied source path to clipboard"
-msgstr "Manba yo'li buferga nusxalandi"
-
-#: clipboardManager.py:55
+#: clipboardManager.py:46
 msgid "Copied {count} item names to clipboard"
-msgstr "{count} element nomi buferga nusxalandi"
+msgstr "{count} element nomlari buferga nusxalandi"
 
-#: __init__.py:429
+#: __init__.py:396
 msgid "Copied: {path}"
 msgstr "Nusxalandi: {path}"
 
-#: robocopyManager.py:771
-msgid "Copy"
-msgstr "Nusxalash"
-
-#: contextMenu.py:27
+#: contextMenu.py:29
 msgid "Copy address bar"
-msgstr "Manzillar qatorini nusxalash"
+msgstr "Manzil satrini nusxalash"
 
-#: contextMenu.py:28
+#: contextMenu.py:30
 msgid "Copy content"
 msgstr "Tarkibni nusxalash"
 
-#: __init__.py:516
+#: __init__.py:483
 msgid "Copy content (single tap) or invert selection (double tap)"
-msgstr "Tarkibni nusxalash (bir marta bosish) yoki tanlovni teskari qilish (ikki marta bosish)"
+msgstr "Tarkibni nusxalash (bir marta bosish) yoki tanlovni teskari o'zgartirish (ikki marta bosish)"
 
-#: contextMenu.py:29
+#: contextMenu.py:31
 msgid "Copy selected file and folder names"
-msgstr "Tanlangan fayl va jild nomlarini nusxalash"
+msgstr "Tanlangan fayl va papka nomlarini nusxalash"
 
-#: __init__.py:471
+#: __init__.py:443
 msgid "Copy selected names (single tap) or copy address bar (double tap)"
-msgstr "Tanlangan nomlarni nusxalash (bir marta bosish) yoki manzillar qatorini nusxalash (ikki marta bosish)"
+msgstr "Tanlangan nomlarni nusxalash (bir marta bosish) yoki manzil satrini nusxalash (ikki marta bosish)"
 
-#: __init__.py:431
-#: clipboardManager.py:57
-#: clipboardManager.py:169
-#: robocopyManager.py:187
+#: __init__.py:400
+#: clipboardManager.py:50
+#: clipboardManager.py:139
 msgid "Could not open clipboard"
 msgstr "Bufer ochilmadi"
 
-#: contextMenu.py:30
-#: createFile.py:16
+#: contextMenu.py:24
+#: createFile.py:17
 msgid "Create File"
 msgstr "Fayl yaratish"
 
-#: folder_creation_dialog.py:14
+#: folder_creation_dialog.py:16
 msgid "Create Multiple Folders"
-msgstr "Bir nechta jild yaratish"
+msgstr "Bir nechta papka yaratish"
 
-#: contextMenu.py:43
+#: contextMenu.py:42
 msgid "Create Multiple Folders..."
-msgstr "Bir nechta jild yaratish..."
+msgstr "Bir nechta papka yaratish..."
 
-#: folder_creation_dialog.py:42
+#: folder_creation_dialog.py:45
 msgid "Create main folder and then subfolders"
-msgstr "Asosiy jildni, so'ngra ostjildlarni yaratish"
+msgstr "Asosiy papkani va keyin pastki papkalarni yaratish"
 
-#: __init__.py:626
+#: __init__.py:651
 msgid "Create new folder and paste clipboard content into rename field"
-msgstr "Yangi jild yaratish va bufer tarkibini nom o'zgartirish maydoniga qo'yish"
+msgstr "Yangi papka yaratish va bufer tarkibini nom o'zgartirish maydoniga qo'yish"
 
-#: createFile.py:237
-msgid "Current path is not a directory"
-msgstr "Joriy yo'l katalog emas"
+#: folder_creation_dialog.py:212
+msgid "Created {count} of {total} folders..."
+msgstr "{total} papkadan {count} tasi yaratildi..."
 
-#: robocopyManager.py:817
-msgid "Destination already exists, overwriting..."
-msgstr "Belgilangan joy allaqachon mavjud, ustiga yozilmoqda..."
+#: folder_creation_dialog.py:199
+msgid "Creating folders in background..."
+msgstr "Fonda papkalar yaratilmoqda..."
 
-#: robocopyManager.py:205
-msgid "Destination folders list"
-msgstr "Belgilangan jildlar ro'yxati"
-
-#: robocopyManager.py:203
-msgid "Destination folders:"
-msgstr "Belgilangan jildlar:"
-
-#: folder_creation_dialog.py:46
+#: folder_creation_dialog.py:49
 msgid "Edit individual folder names"
-msgstr "Alohida jild nomlarini tahrirlash"
+msgstr "Alohida papka nomlarini tahrirlash"
 
-#: robocopyManager.py:115
-msgid "Elapsed time: {} seconds"
-msgstr "O'tgan vaqt: {} soniya"
-
-#: xPlorerManager.py:40
-msgid "Empty Folder"
-msgstr "Bo'sh jild"
-
-#: robocopyManager.py:217
-msgid "Enable automatic synchronization"
-msgstr "Avtomatik sinxronizatsiyani yoqish"
-
-#: folderInfo.py:78
+#: folderInfo.py:71
 msgid "Error calculating folder info"
-msgstr "Jild ma'lumotlarini hisoblashda xato"
+msgstr "Papka ma'lumotlarini hisoblashda xatolik"
 
-#: fileOperations.py:401
+#: fileOperations.py:248
 msgid "Error calculating size"
-msgstr "Hajmni hisoblashda xato"
+msgstr "Hajmni hisoblashda xatolik"
 
-#: compressionManager.py:173
+#: compressionManager.py:196
 msgid "Error compressing files"
-msgstr "Fayllarni siqishda xato"
+msgstr "Fayllarni siqishda xatolik"
 
-#: clipboardManager.py:173
+#: clipboardManager.py:142
 msgid "Error copying file content"
-msgstr "Fayl tarkibini nusxalashda xato"
+msgstr "Fayl tarkibini nusxalashda xatolik"
 
-#: clipboardManager.py:61
+#: clipboardManager.py:53
 msgid "Error copying names to clipboard"
-msgstr "Nomlarni buferga nusxalashda xato"
+msgstr "Nomlarni buferga nusxalashda xatolik"
 
-#: txt2folder.py:116
+#: txt2folder.py:113
 msgid "Error creating base folder"
-msgstr "Asosiy jildni yaratishda xato"
+msgstr "Asosiy papkani yaratishda xatolik"
 
-#: createFile.py:311
+#: createFile.py:289
 msgid "Error creating files"
-msgstr "Fayllarni yaratishda xato"
+msgstr "Fayllarni yaratishda xatolik"
 
-#: folder_creation_dialog.py:219
-msgid "Error creating folder: {number}"
-msgstr "Jildni yaratishda xato: {number}"
-
-#: __init__.py:662
+#: __init__.py:693
 msgid "Error creating folders"
-msgstr "Jildlarni yaratishda xato"
+msgstr "Papkalarni yaratishda xatolik"
 
-#: folder_creation_dialog.py:179
+#: folder_creation_dialog.py:190
 msgid "Error creating main folder"
-msgstr "Asosiy jildni yaratishda xato"
+msgstr "Asosiy papkani yaratishda xatolik"
 
-#: folder_creation_dialog.py:201
-msgid "Error creating subfolder: {number}"
-msgstr "Ostjildni yaratishda xato: {number}"
-
-#: __init__.py:690
+#: __init__.py:737
 msgid "Error during conversion"
-msgstr "Konvertatsiya paytida xato"
+msgstr "O'zgartirish paytida xatolik"
 
-#: robocopyManager.py:990
-msgid "Error during {}: {}"
-msgstr "{} paytida xato: {}"
-
-#: compressionManager.py:101
+#: compressionManager.py:117
 msgid "Error in compression process: {error}"
-msgstr "Siqish jarayonida xato: {error}"
+msgstr "Siqish jarayonida xatolik: {error}"
 
-#: selectionManager.py:65
+#: selectionManager.py:71
 msgid "Error inverting selection"
-msgstr "Tanlovni teskari qilishda xato"
+msgstr "Tanlovni teskari o'zgartirishda xatolik"
 
-#: createFile.py:262
+#: createFile.py:245
 msgid "Error opening create file dialog"
-msgstr "Fayl yaratish oynasini ochishda xato"
+msgstr "Fayl yaratish oynasini ochishda xatolik"
 
-#: fileOperations.py:488
+#: fileOperations.py:304
 msgid "Error opening rename dialog"
-msgstr "Nom o'zgartirish oynasini ochishda xato"
+msgstr "Nom o'zgartirish oynasini ochishda xatolik"
 
-#: __init__.py:642
+#: __init__.py:667
 msgid "Error opening settings"
-msgstr "Sozlamalarni ochishda xato"
+msgstr "Sozlamalarni ochishda xatolik"
 
-#: txt2folder.py:212
+#: txt2folder.py:203
 msgid "Error processing text file: {}"
-msgstr "Matn faylini qayta ishlashda xato: {}"
+msgstr "Matn faylni qayta ishlashda xatolik: {}"
 
 #: txt2folder.py:80
 msgid "Error reading RTF file"
-msgstr "RTF faylini o'qishda xato"
+msgstr "RTF faylni o'qishda xatolik"
 
-#: txt2folder.py:215
+#: txt2folder.py:207
 msgid "Error reading file encoding"
-msgstr "Fayl kodlashini o'qishda xato"
+msgstr "Fayl kodlashini o'qishda xatolik"
 
-#: fileOperations.py:453
-#: fileOperations.py:482
+#: fileOperations.py:274
+#: fileOperations.py:301
 msgid "Error renaming file"
-msgstr "Fayl nomini o'zgartirishda xato"
+msgstr "Fayl nomini o'zgartirishda xatolik"
 
-#: robocopyManager.py:784
-#: txt2folder.py:219
+#: txt2folder.py:212
 msgid "Error: {}"
-msgstr "Xato: {}"
+msgstr "Xatolik: {}"
 
-#: robocopyManager.py:111
-msgid "Estimated time remaining: {}"
-msgstr "Qolgan taxminiy vaqt: {}"
-
-#: createFile.py:84
+#: createFile.py:72
 msgid "Extension:"
 msgstr "Kengaytma:"
 
-#: case.py:115
-#: case.py:129
-#: case.py:150
-#: case.py:164
+#: case.py:127
 msgid "Failed to rename any folders"
-msgstr "Hech qanday jild nomini o'zgartirib bo'lmadi"
+msgstr "Hech qanday papka nomini o'zgartirib bo'lmadi"
 
-#: createFile.py:163
+#: compressionManager.py:188
+msgid "Failed to start compression"
+msgstr "Siqishni boshlab bo'lmadi"
+
+#: createFile.py:138
 msgid "File count cannot exceed 10"
 msgstr "Fayllar soni 10 dan oshmasligi kerak"
 
-#: createFile.py:160
+#: createFile.py:135
 msgid "File count must be at least 1"
 msgstr "Fayllar soni kamida 1 bo'lishi kerak"
 
-#: createFile.py:131
+#: createFile.py:112
 msgid "File name"
 msgstr "Fayl nomi"
 
-#: fileOperations.py:57
+#: fileOperations.py:59
 msgid "File name cannot be empty"
 msgstr "Fayl nomi bo'sh bo'lishi mumkin emas"
 
-#: fileOperations.py:470
+#: fileOperations.py:291
 msgid "File name not changed"
 msgstr "Fayl nomi o'zgartirilmadi"
 
-#: createFile.py:77
-#: createFile.py:132
+#: createFile.py:66
+#: createFile.py:113
 msgid "File name {index}:"
 msgstr "Fayl nomi {index}:"
 
-#: createFile.py:75
+#: createFile.py:64
 msgid "File name:"
 msgstr "Fayl nomi:"
 
-#: fileOperations.py:479
+#: __init__.py:622
+msgid "File operations manager not available"
+msgstr "Fayl operatsiyalari menejeri mavjud emas"
+
+#: fileOperations.py:298
 msgid "File renamed to {name}"
 msgstr "Fayl nomi {name} ga o'zgartirildi"
 
-#: folder_creation_dialog.py:113
-#: folder_creation_dialog.py:158
+#: folder_creation_dialog.py:115
+#: folder_creation_dialog.py:155
 msgid "Folder"
-msgstr "Jild"
+msgstr "Papka"
 
-#: txt2folder.py:106
-#: txt2folder.py:182
+#: txt2folder.py:104
+#: txt2folder.py:174
 msgid "Folder '{}' already exists, creating '{}' instead"
-msgstr "'{}' jildi allaqachon mavjud, uning o'rniga '{}' yaratilmoqda"
+msgstr "'{}' papkasi allaqachon mavjud, uning o'rniga '{}' yaratilmoqda"
+
+#: __init__.py:677
+msgid "Folder creation dialog not available"
+msgstr "Papka yaratish oynasi mavjud emas"
+
+#: __init__.py:639
+msgid "Folder creator helper not available"
+msgstr "Papka yaratuvchi yordamchisi mavjud emas"
 
 #: contextMenu.py:52
 msgid "Folder info"
-msgstr "Jild ma'lumotlari"
+msgstr "Papka ma'lumotlari"
 
-#: folder_creation_dialog.py:27
+#: folder_creation_dialog.py:30
 msgid "Folder title:"
-msgstr "Jild sarlavhasi:"
+msgstr "Papka sarlavhasi:"
 
-#: contextMenu.py:50
+#: contextMenu.py:49
 msgid "Headline Case"
 msgstr "Sarlavha registri"
 
-#: robocopyManager.py:434
-msgid "Immediate sync completed: {}/{} destinations"
-msgstr "Zudlik bilan sinxronizatsiya tugallandi: {}/{} belgilangan joy"
-
-#: robocopyManager.py:767
-msgid "Invalid destination"
-msgstr "Yaroqsiz belgilangan joy"
-
-#: folder_creation_dialog.py:169
-msgid "Invalid number for folders"
-msgstr "Jildlar uchun yaroqsiz raqam"
-
-#: robocopyManager.py:407
-#: robocopyManager.py:447
-msgid "Invalid time format"
-msgstr "Yaroqsiz vaqt formati"
-
-#: contextMenu.py:26
-msgid "Invert selection"
-msgstr "Tanlovni teskari qilish"
-
-#: selectionManager.py:60
-msgid "Inverted selection: {inverted} of {total} items selected"
-msgstr "Teskari tanlov: jami {total} elementdan {inverted} tasi tanlangan"
-
-#: robocopyManager.py:868
-msgid "Large file detected, using compression for speed"
-msgstr "Katta fayl aniqlandi, tezlik uchun siqish qo'llanilmoqda"
-
-#: contextMenu.py:48
-msgid "Lowercase"
-msgstr "Kichik harf"
-
 #: folder_creation_dialog.py:166
+msgid "Invalid number for folders"
+msgstr "Papkalar uchun noto'g'ri raqam"
+
+#: contextMenu.py:28
+msgid "Invert selection"
+msgstr "Tanlovni teskari o'zgartirish"
+
+#: contextMenu.py:47
+msgid "Lowercase"
+msgstr "Kichik harflar"
+
+#: folder_creation_dialog.py:163
 msgid "Maximum 100 folders allowed"
-msgstr "Ko'pi bilan 100 ta jildga ruxsat beriladi"
+msgstr "Maksimal 100 papkaga ruxsat beriladi"
 
-#: robocopyManager.py:62
-msgid "Minimize"
-msgstr "Kichraytirish"
-
-#: robocopyManager.py:145
-msgid "Mirror Backup Settings"
-msgstr "Ko'zgu zaxira nusxasi sozlamalari"
-
-#: robocopyManager.py:716
-msgid "Mirror backup configured successfully"
-msgstr "Ko'zgu zaxira nusxasi muvaffaqiyatli sozlandi"
-
-#: robocopyManager.py:718
-msgid "Mirror backup disabled"
-msgstr "Ko'zgu zaxira nusxasi o'chirildi"
-
-#: robocopyManager.py:771
-msgid "Move"
-msgstr "Ko'chirish"
-
-#: robocopyManager.py:609
-msgid "Next scheduled backup for {}: {}"
-msgstr "{} uchun keyingi rejalashtirilgan zaxira nusxasi: {}"
-
-#: __init__.py:650
+#: __init__.py:681
 msgid "No Explorer folder detected"
-msgstr "Explorer jildi aniqlanmadi"
+msgstr "Explorer papkasi aniqlanmadi"
 
-#: fileOperations.py:300
-#: fileOperations.py:410
+#: fileOperations.py:173
+#: fileOperations.py:230
 msgid "No access to size data"
 msgstr "Hajm ma'lumotlariga kirish yo'q"
 
-#: selectionManager.py:27
+#: selectionManager.py:36
 msgid "No active File Explorer window found"
-msgstr "Faol Fayl Explorer oynasi topilmadi"
+msgstr "Faol File Explorer oynasi topilmadi"
 
-#: clipboardManager.py:156
+#: clipboardManager.py:127
 msgid "No content could be read from selected files"
-msgstr "Tanlangan fayllardan hech qanday tarkib o'qilmadi"
+msgstr "Tanlangan fayllardan hech qanday tarkib o'qib bo'lmadi"
 
-#: createFile.py:303
+#: createFile.py:282
 msgid "No files were created"
 msgstr "Hech qanday fayl yaratilmadi"
 
-#: case.py:106
-#: case.py:120
-#: case.py:141
-#: case.py:155
+#: case.py:142
+#: case.py:148
+#: case.py:157
+#: case.py:163
 msgid "No folders found"
-msgstr "Jildlar topilmadi"
+msgstr "Papkalar topilmadi"
 
-#: __init__.py:677
+#: __init__.py:703
+msgid "No folders selected"
+msgstr "Papkalar tanlanmagan"
+
+#: __init__.py:718
 msgid "No folders selected or current folder not available"
-msgstr "Hech qanday jild tanlanmagan yoki joriy jild mavjud emas"
+msgstr "Papkalar tanlanmagan yoki joriy papka mavjud emas"
 
-#: folder_creation_dialog.py:230
-#: txt2folder.py:155
-#: txt2folder.py:208
+#: folder_creation_dialog.py:229
+#: txt2folder.py:148
+#: txt2folder.py:198
 msgid "No folders were created"
-msgstr "Hech qanday jild yaratilmadi"
+msgstr "Hech qanday papka yaratilmadi"
 
 #: folderInfo.py:30
 msgid "No item selected"
-msgstr "Hech qanday element tanlanmagan"
+msgstr "Element tanlanmagan"
 
-#: selectionManager.py:40
+#: selectionManager.py:49
 msgid "No items in folder"
-msgstr "Jildda elementlar yo'q"
+msgstr "Papkada elementlar yo'q"
 
-#: clipboardManager.py:30
-#: clipboardManager.py:72
-#: compressionManager.py:132
-#: fileOperations.py:289
-#: fileOperations.py:433
+#: clipboardManager.py:27
+#: clipboardManager.py:62
+#: compressionManager.py:148
+#: fileOperations.py:164
+#: fileOperations.py:260
 msgid "No items selected"
-msgstr "Hech qanday element tanlanmagan"
+msgstr "Elementlar tanlanmagan"
 
-#: robocopyManager.py:749
-msgid "No pending operation"
-msgstr "Kutilayotgan operatsiya yo'q"
-
-#: clipboardManager.py:93
+#: clipboardManager.py:79
 msgid "No text files selected"
 msgstr "Matn fayllari tanlanmagan"
 
-#: txt2folder.py:91
-#: txt2folder.py:167
+#: txt2folder.py:90
+#: txt2folder.py:160
 msgid "No valid folder names found in the file"
-msgstr "Faylda yaroqli jild nomlari topilmadi"
+msgstr "Faylda haqiqiy papka nomlari topilmadi"
 
-#: createFile.py:227
-#: robocopyManager.py:663
-#: robocopyManager.py:724
-#: robocopyManager.py:737
-#: robocopyManager.py:755
-#: selectionManager.py:21
-#: txt2folder.py:43
+#: folder_creation_dialog.py:184
+msgid "No valid folder names provided"
+msgstr "Haqiqiy papka nomlari taqdim etilmagan"
+
+#: createFile.py:198
+#: selectionManager.py:30
+#: txt2folder.py:40
 msgid "Not in File Explorer"
-msgstr "Fayl Explorerda emas"
+msgstr "File Explorer da emas"
 
-#: createFile.py:27
+#: createFile.py:28
 msgid "Number of files to create:"
 msgstr "Yaratiladigan fayllar soni:"
 
-#: folder_creation_dialog.py:163
+#: folder_creation_dialog.py:160
 msgid "Number of folders must be at least 1"
-msgstr "Jildlar soni kamida 1 bo'lishi kerak"
+msgstr "Papkalar soni kamida 1 bo'lishi kerak"
 
-#: folder_creation_dialog.py:35
+#: folder_creation_dialog.py:38
 msgid "Number of folders:"
-msgstr "Jildlar soni:"
+msgstr "Papkalar soni:"
 
-#: robocopyManager.py:241
-msgid "OK"
-msgstr "OK"
-
-#: __init__.py:586
+#: __init__.py:616
 msgid "Open xPlorer context menu"
 msgstr "xPlorer kontekst menyusini ochish"
 
-#: txt2folder.py:55
+#: txt2folder.py:53
 msgid "Please select a .txt or .rtf file"
-msgstr "Iltimos, .txt yoki .rtf faylini tanlang"
+msgstr "Iltimos, .txt yoki .rtf faylni tanlang"
 
-#: fileOperations.py:443
+#: fileOperations.py:267
 msgid "Please select a file, not a folder"
-msgstr "Iltimos, faylni tanlang, jildni emas"
+msgstr "Iltimos, papka emas, fayl tanlang"
 
-#: robocopyManager.py:671
-msgid "Please select a folder"
-msgstr "Iltimos, jildni tanlang"
-
-#: fileOperations.py:437
+#: fileOperations.py:263
 msgid "Please select only one file"
-msgstr "Iltimos, faqat bitta faylni tanlang"
+msgstr "Iltimos, faqat bitta fayl tanlang"
 
 #: folderInfo.py:35
-#: robocopyManager.py:667
 msgid "Please select only one folder"
-msgstr "Iltimos, faqat bitta jildni tanlang"
+msgstr "Iltimos, faqat bitta papka tanlang"
 
-#: txt2folder.py:48
+#: txt2folder.py:46
 msgid "Please select only one text file"
 msgstr "Iltimos, faqat bitta matn faylini tanlang"
 
-#: robocopyManager.py:46
-msgid "Preparing operation..."
-msgstr "Operatsiya tayyorlanmoqda..."
+#: selectionManager.py:58
+msgid "Processing {count} items in background..."
+msgstr "Fonda {count} element qayta ishlanmoqda..."
 
-#: robocopyManager.py:103
-msgid "Processing: {}"
-msgstr "Qayta ishlanmoqda: {}"
-
-#: robocopyManager.py:105
-msgid "Progress: {}%"
-msgstr "Jarayon: {}%"
-
-#: robocopyManager.py:210
-msgid "Remove selected destination"
-msgstr "Tanlangan belgilangan joyni olib tashlash"
-
-#: robocopyManager.py:198
-msgid "Remove selected source"
-msgstr "Tanlangan manbani olib tashlash"
-
-#: __init__.py:603
-#: contextMenu.py:31
+#: __init__.py:633
+#: contextMenu.py:32
 msgid "Rename selected file"
 msgstr "Tanlangan fayl nomini o'zgartirish"
 
-#: contextMenu.py:35
+#: __init__.py:460
+msgid "Required manager not available"
+msgstr "Kerakli menejer mavjud emas"
+
+#: contextMenu.py:36
 msgid "Robocopy"
 msgstr "Robocopy"
 
-#: contextMenu.py:32
+#: __init__.py:540
+msgid "Robocopy manager not available"
+msgstr "Robocopy menejeri mavjud emas"
+
+#: __init__.py:563
+msgid "Robocopy: single tap copy, double tap paste, triple tap move"
+msgstr "Robocopy: bir marta bosish nusxalash, ikki marta bosish qo'yish, uch marta bosish ko'chirish"
+
+#: contextMenu.py:33
 msgid "Say size"
 msgstr "Hajmni aytish"
 
-#: __init__.py:561
+#: __init__.py:523
 msgid "Say size (single tap) or compress zip (double tap)"
-msgstr "Hajmni aytish (bir marta bosish) yoki zip siqish (ikki marta bosish)"
+msgstr "Hajmni aytish (bir marta bosish) yoki zipga siqish (ikki marta bosish)"
 
-#: robocopyManager.py:648
-msgid "Scheduled backup completed: {}/{} destinations"
-msgstr "Rejalashtirilgan zaxira nusxasi tugallandi: {}/{} belgilangan joy"
-
-#: robocopyManager.py:623
-msgid "Scheduled mirror backup started for {}"
-msgstr "{} uchun rejalashtirilgan ko'zgu zaxira nusxasi boshlandi"
-
-#: robocopyManager.py:231
-msgid "Scheduled time:"
-msgstr "Rejalashtirilgan vaqt:"
-
-#: robocopyManager.py:728
-#: robocopyManager.py:741
-msgid "Select one item only"
-msgstr "Faqat bitta elementni tanlang"
-
-#: txt2folder.py:60
+#: txt2folder.py:58
 msgid "Selected file does not exist"
 msgstr "Tanlangan fayl mavjud emas"
 
-#: folderInfo.py:41
+#: folderInfo.py:14
 msgid "Selected item is not a folder"
-msgstr "Tanlangan element jild emas"
+msgstr "Tanlangan element papka emas"
 
-#: createFile.py:199
+#: selectionManager.py:93
+msgid "Selected {count} items"
+msgstr "{count} element tanlandi"
+
+#: selectionManager.py:96
+msgid "Selection inverted"
+msgstr "Tanlov teskari o'zgartirildi"
+
+#: createFile.py:170
 msgid "Some files will use default names"
 msgstr "Ba'zi fayllar standart nomlardan foydalanadi"
 
-#: robocopyManager.py:404
-#: robocopyManager.py:444
-msgid "Source and destination required"
-msgstr "Manba va belgilangan joy talab qilinadi"
-
-#: robocopyManager.py:792
-msgid "Source does not exist"
-msgstr "Manba mavjud emas"
-
-#: robocopyManager.py:193
-msgid "Source folders (select to edit):"
-msgstr "Manba jildlar (tahrirlash uchun tanlang):"
-
-#: robocopyManager.py:195
-msgid "Source folders list"
-msgstr "Manba jildlar ro'yxati"
-
-#: robocopyManager.py:732
-msgid "Source for copy: {}"
-msgstr "Nusxalash uchun manba: {}"
-
-#: robocopyManager.py:745
-msgid "Source for move: {}"
-msgstr "Ko'chirish uchun manba: {}"
-
-#: robocopyManager.py:121
-msgid "Speed: {}"
-msgstr "Tezlik: {}"
-
-#: robocopyManager.py:240
-msgid "Start synchronization"
-msgstr "Sinxronizatsiyani boshlash"
-
-#: robocopyManager.py:410
-msgid "Starting immediate mirror sync..."
-msgstr "Zudlik bilan ko'zgu sinxronizatsiyasi boshlanmoqda..."
-
-#: robocopyManager.py:774
-msgid "Starting {} operation in background..."
-msgstr "Fonda {} operatsiyasi boshlanmoqda..."
-
-#: compressionManager.py:144
 #: compressionManager.py:161
 msgid "Starting..."
 msgstr "Boshlanmoqda..."
 
-#: case.py:162
+#: case.py:165
 msgid "Successfully converted {count} folders to headline case"
-msgstr "{count} jild sarlavha registriga muvaffaqiyatli o'zgartirildi"
+msgstr "{count} papka sarlavha registriga muvaffaqiyatli o'zgartirildi"
 
-#: case.py:127
+#: case.py:150
 msgid "Successfully converted {count} folders to lowercase"
-msgstr "{count} jild kichik harfga muvaffaqiyatli o'zgartirildi"
+msgstr "{count} papka kichik harflarga muvaffaqiyatli o'zgartirildi"
 
-#: case.py:148
+#: case.py:159
 msgid "Successfully converted {count} folders to title case"
-msgstr "{count} jild sarlavha registriga muvaffaqiyatli o'zgartirildi"
+msgstr "{count} papka sarlavha holatiga muvaffaqiyatli o'zgartirildi"
 
-#: case.py:113
+#: case.py:144
 msgid "Successfully converted {count} folders to uppercase"
-msgstr "{count} jild katta harfga muvaffaqiyatli o'zgartirildi"
+msgstr "{count} papka katta harflarga muvaffaqiyatli o'zgartirildi"
 
-#: folder_creation_dialog.py:226
+#: folder_creation_dialog.py:225
 msgid "Successfully created 1 folder"
-msgstr "1 jild muvaffaqiyatli yaratildi"
+msgstr "1 papka muvaffaqiyatli yaratildi"
 
-#: folder_creation_dialog.py:224
+#: folder_creation_dialog.py:223
 msgid "Successfully created main folder only"
-msgstr "Faqat asosiy jild muvaffaqiyatli yaratildi"
+msgstr "Faqat asosiy papka muvaffaqiyatli yaratildi"
 
-#: folder_creation_dialog.py:228
-msgid "Successfully created {count} folders"
-msgstr "{count} jild muvaffaqiyatli yaratildi"
+#: folder_creation_dialog.py:227
+msgid "Successfully created {count} of {total} folders"
+msgstr "{total} papkadan {count} tasi muvaffaqiyatli yaratildi"
 
-#: txt2folder.py:150
-#: txt2folder.py:203
+#: txt2folder.py:144
+#: txt2folder.py:194
 msgid "Successfully created {} folders in '{}'"
-msgstr "'{}' ichida {} jild muvaffaqiyatli yaratildi"
+msgstr "'{}' da {} papka muvaffaqiyatli yaratildi"
 
-#: xPlorerManager.py:66
-msgid "Suppress announcement of '- File Explorer' in window titles"
-msgstr "Oyna sarlavhalarida '- Fayl Explorer' e'lonini bostirish"
-
-#: xPlorerManager.py:61
-msgid "Suppress announcement of DirectUIHWND class"
-msgstr "DirectUIHWND sinfining e'lonini bostirish"
-
-#: robocopyManager.py:438
-msgid "Sync error occurred"
-msgstr "Sinxronizatsiya xatosi yuz berdi"
-
-#: robocopyManager.py:220
-msgid "Synchronization interval:"
-msgstr "Sinxronizatsiya oralig'i:"
-
-#: contextMenu.py:42
+#: contextMenu.py:14
 msgid "TXT to Folder"
-msgstr "TXT dan Jildga"
+msgstr "TXT dan papkaga"
 
-#: contextMenu.py:49
+#: contextMenu.py:48
 msgid "Title Case"
-msgstr "Sarlavha registri"
+msgstr "Sarlavha holati"
+
+#: clipboardManager.py:88
+msgid "Total file size is too large to copy content"
+msgstr "Jami fayl hajmi tarkibni nusxalash uchun juda katta"
+
+#: createFile.py:213
+msgid "Unable to get current directory after multiple attempts"
+msgstr "Bir necha urinishlardan so'ng joriy katalogni olishning iloji bo'lmadi"
+
+#: __init__.py:402
+msgid "Unable to get current path"
+msgstr "Joriy yo'lni olishning iloji bo'lmadi"
+
+#: selectionManager.py:14
+msgid "Unable to get folder view"
+msgstr "Papka ko'rinishini olishning iloji bo'lmadi"
+
+#: contextMenu.py:46
+msgid "Uppercase"
+msgstr "Katta harflar"
 
 #: clipboardManager.py:104
-msgid "Total file size is too large to copy content"
-msgstr "Umumiy fayl hajmi tarkibni nusxalash uchun juda katta"
-
-#: robocopyManager.py:963
-msgid "Trying alternative copy method..."
-msgstr "Muqobil nusxalash usuli sinab ko'rilmoqda..."
-
-#: createFile.py:233
-msgid "Unable to get current directory"
-msgstr "Joriy katalogni olib bo'lmadi"
-
-#: __init__.py:433
-msgid "Unable to get current path"
-msgstr "Joriy yo'lni olib bo'lmadi"
-
-#: selectionManager.py:32
-msgid "Unable to get folder view"
-msgstr "Jild ko'rinishini olib bo'lmadi"
-
-#: contextMenu.py:47
-msgid "Uppercase"
-msgstr "Katta harf"
-
-#: clipboardManager.py:124
 msgid "[Error processing RTF file]"
-msgstr "[RTF faylini qayta ishlashda xato]"
+msgstr "[RTF faylni qayta ishlashda xatolik]"
 
-#: clipboardManager.py:126
+#: clipboardManager.py:106
 msgid "[RTF content - striprtf module not available]"
 msgstr "[RTF tarkibi - striprtf moduli mavjud emas]"
 
-#: compressionManager.py:97
-msgid "compression failed: {error}"
-msgstr "siqish muvaffaqiyatsiz tugadi: {error}"
+#: compressionManager.py:114
+msgid "compression failed"
+msgstr "siqish muvaffaqiyatsiz tugadi"
 
-#: contextMenu.py:36
+#: contextMenu.py:37
 msgid "copy"
 msgstr "nusxalash"
 
-#: contextMenu.py:40
-msgid "mirror Backup"
-msgstr "ko'zgu zaxira nusxasi"
-
-#: contextMenu.py:37
+#: contextMenu.py:38
 msgid "move"
 msgstr "ko'chirish"
 
-#: createFile.py:183
+#: createFile.py:156
 msgid "new_file"
 msgstr "yangi_fayl"
 
-#: createFile.py:185
+#: createFile.py:158
 msgid "new_file_{index}"
 msgstr "yangi_fayl_{index}"
 
-#: contextMenu.py:38
+#: contextMenu.py:39
 msgid "paste"
 msgstr "qo'yish"
 
-#: __init__.py:143
-#: __init__.py:472
-#: __init__.py:517
-#: __init__.py:562
-#: __init__.py:587
-#: __init__.py:604
-#: __init__.py:627
-#: xPlorerManager.py:44
+#: __init__.py:110
+#: __init__.py:444
+#: __init__.py:484
+#: __init__.py:524
+#: __init__.py:564
+#: __init__.py:617
+#: __init__.py:634
+#: __init__.py:652
 msgid "xPlorer"
 msgstr "xPlorer"
 
-#: contextMenu.py:22
+#: contextMenu.py:51
 msgid "xPlorer Settings"
 msgstr "xPlorer sozlamalari"
 
-#: createFile.py:307
+#: createFile.py:286
 msgid "{count} files created"
 msgstr "{count} fayl yaratildi"
 
-#: fileOperations.py:420
+#: fileOperations.py:237
 msgid "{count} items {size}"
 msgstr "{count} element {size}"
 
-#: folderInfo.py:66
+#: folderInfo.py:62
 msgid "{subfolders} subfolders and {files} files"
-msgstr "{subfolders} ostjild va {files} fayl"
-
-#: robocopyManager.py:950
-msgid "{} completed successfully in {:.1f} seconds"
-msgstr "{} {:.1f} soniyada muvaffaqiyatli tugallandi"
-
-#: robocopyManager.py:947
-msgid "{} completed successfully in {:.1f} seconds, average speed: {:.1f} MB/s"
-msgstr "{} {:.1f} soniyada muvaffaqiyatli tugallandi, o'rtacha tezlik: {:.1f} MB/s"
-
-#: robocopyManager.py:978
-msgid "{} completed successfully using alternative method"
-msgstr "{} muqobil usul yordamida muvaffaqiyatli tugallandi"
-
-#: robocopyManager.py:985
-msgid "{} completed with warnings (code: {})"
-msgstr "{} ogohlantirishlar bilan tugallandi (kod: {})"
-
-#: robocopyManager.py:982
-msgid "{} failed with error: {}"
-msgstr "{} xato bilan muvaffaqiyatsiz tugadi: {}"
-
-#: robocopyManager.py:903
-msgid "{} in progress... {} seconds elapsed"
-msgstr "{} davom etmoqda... {} soniya o'tdi"
-
-#: robocopyManager.py:878
-msgid "{} started. You can continue working while it runs in background."
-msgstr "{} boshlandi. U fonda ishlayotganda ishlashni davom ettirishingiz mumkin."
-
-#: robocopyManager.py:929
-msgid "{}: {}% complete, speed: {:.1f} MB/s"
-msgstr "{}: {}% tugallandi, tezlik: {:.1f} MB/s"
+msgstr "{subfolders} pastki papka va {files} fayl"

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: xPlorer 2026.5.5\n"
+"Project-Id-Version: xPlorer 2026.7.0\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-04-27 15:57+0700\n"
+"POT-Creation-Date: 2026-06-24 13:09+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Bulgarian\n"
@@ -12,653 +12,509 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: DevOn Addon\n"
 
-#: folder_creation_dialog.py:60
+#: folder_creation_dialog.py:62
 msgid "&Apply"
 msgstr "&Приложи"
 
-#: folder_creation_dialog.py:61
+#: folder_creation_dialog.py:63
 msgid "&Cancel"
 msgstr "&Отказ"
 
-#: robocopyManager.py:223
-msgid "1 day"
-msgstr "1 ден"
-
-#: createFile.py:305
+#: createFile.py:284
 msgid "1 file created"
-msgstr "1 създаден файл"
+msgstr "1 файл е създаден"
 
-#: robocopyManager.py:222
-msgid "1 hour"
-msgstr "1 час"
-
-#: robocopyManager.py:223
-msgid "1 month"
-msgstr "1 месец"
-
-#: robocopyManager.py:223
-msgid "15 days"
-msgstr "15 дни"
-
-#: robocopyManager.py:222
-msgid "15 minutes"
-msgstr "15 минути"
-
-#: robocopyManager.py:222
-msgid "30 minutes"
-msgstr "30 минути"
-
-#: robocopyManager.py:223
-msgid "7 days"
-msgstr "7 дни"
-
-#: compressionManager.py:159
-msgid "7-Zip compression failed, trying built-in method..."
-msgstr "Компресирането със 7-Zip не бе успешно, опит с вградения метод..."
-
-#: fileOperations.py:474
+#: fileOperations.py:294
 msgid "A file with this name already exists"
 msgstr "Файл с това име вече съществува"
 
-#: robocopyManager.py:209
-msgid "Add destination folder"
-msgstr "Добави целева папка"
-
-#: xPlorerManager.py:56
-msgid "Announce 'Empty Folder' when entering an empty folder"
-msgstr "Обявявай 'Празна папка' при влизане в празна папка"
-
-#: xPlorerManager.py:71
-msgid "Automatically paste clipboard content into rename field"
-msgstr "Автоматично поставяй съдържанието на клипборда в полето за преименуване"
-
-#: xPlorerManager.py:51
-msgid "Automatically select the first item"
-msgstr "Автоматично избирай първия елемент"
-
-#: compressionManager.py:268
+#: compressionManager.py:288
 msgid "Built-in compression failed: {error}"
-msgstr "Вграденото компресиране не бе успешно: {error}"
+msgstr "Вграденото компресиране неуспешно: {error}"
 
-#: robocopyManager.py:61
-#: robocopyManager.py:242
-msgid "Cancel"
-msgstr "Отказ"
-
-#: clipboardManager.py:77
+#: clipboardManager.py:66
 msgid "Cannot copy content of folders, please select files only"
-msgstr "Не може да се копира съдържание на папки, моля изберете само файлове"
+msgstr "Не може да се копира съдържанието на папки, моля изберете само файлове"
 
-#: createFile.py:290
+#: createFile.py:271
 msgid "Cannot find unique name for: {name}"
 msgstr "Не може да се намери уникално име за: {name}"
 
-#: robocopyManager.py:761
-msgid "Cannot get destination"
-msgstr "Не може да се получи местоназначението"
-
-#: __init__.py:635
+#: __init__.py:660
 msgid "Cannot open settings dialog"
 msgstr "Не може да се отвори диалогът за настройки"
 
 #: txt2folder.py:69
 msgid "Cannot process RTF file: striprtf module not available"
-msgstr "RTF файлът не може да бъде обработен: модулът striprtf не е наличен"
+msgstr "Не може да се обработи RTF файл: модулът striprtf не е наличен"
 
-#: contextMenu.py:46
+#: contextMenu.py:45
 msgid "Case Converter for Folders"
-msgstr "Конвертор на регистъра за папки"
+msgstr "Конвертор на регистър за папки"
 
-#: robocopyManager.py:348
-msgid "Choose destination folder"
-msgstr "Изберете целева папка"
+#: __init__.py:699
+msgid "Case converter not available"
+msgstr "Конверторът на регистър не е наличен"
 
-#: robocopyManager.py:239
-msgid "Clear all settings"
-msgstr "Изчисти всички настройки"
+#: __init__.py:420
+msgid "Clipboard manager not available"
+msgstr "Мениджърът на клипборда не е наличен"
 
-#: compressionManager.py:264
+#: compressionManager.py:284
 msgid "Completed"
 msgstr "Завършено"
 
-#: contextMenu.py:25
+#: contextMenu.py:27
 msgid "Compress zip"
-msgstr "Компресирай в zip"
+msgstr "Компресиране в zip"
 
-#: compressionManager.py:144
-#: compressionManager.py:161
+#: compressionManager.py:160
+#: compressionManager.py:168
 msgid "Compressing files"
 msgstr "Компресиране на файлове"
 
-#: compressionManager.py:70
+#: compressionManager.py:75
 msgid "Compressing..."
 msgstr "Компресиране..."
 
-#: compressionManager.py:244
-#: compressionManager.py:258
+#: compressionManager.py:263
+#: compressionManager.py:277
 msgid "Compressing: {percent}%"
 msgstr "Компресиране: {percent}%"
 
-#: compressionManager.py:92
-#: compressionManager.py:262
+#: compressionManager.py:110
+#: compressionManager.py:282
 msgid "Compression cancelled"
 msgstr "Компресирането е отменено"
 
-#: compressionManager.py:94
-#: compressionManager.py:265
+#: compressionManager.py:112
+#: compressionManager.py:285
 msgid "Compression completed {name}"
-msgstr "Компресирането завърши {name}"
+msgstr "Компресирането на {name} завърши"
 
-#: clipboardManager.py:165
+#: __init__.py:500
+msgid "Compression manager not available"
+msgstr "Мениджърът на компресиране не е наличен"
+
+#: compressionManager.py:86
+msgid "Compression timed out"
+msgstr "Изчакването за компресиране изтече"
+
+#: clipboardManager.py:133
 msgid "Content from 1 file copied to clipboard"
-msgstr "Съдържанието на 1 файл е копирано в клипборда"
+msgstr "Съдържанието от 1 файл е копирано в клипборда"
 
-#: clipboardManager.py:167
+#: clipboardManager.py:135
 msgid "Content from {count} files copied to clipboard"
-msgstr "Съдържанието на {count} файла е копирано в клипборда"
+msgstr "Съдържанието от {count} файла е копирано в клипборда"
 
-#: clipboardManager.py:53
+#: __init__.py:607
+#: __init__.py:673
+msgid "Context menu manager not available"
+msgstr "Мениджърът на контекстното меню не е наличен"
+
+#: case.py:115
+msgid "Conversion already in progress"
+msgstr "Преобразуването вече е в ход"
+
+#: case.py:132
+msgid "Converting"
+msgstr "Преобразуване"
+
+#: clipboardManager.py:44
 msgid "Copied 1 item name to clipboard"
-msgstr "Името на 1 елемент е копирано в клипборда"
+msgstr "Копирано име на 1 елемент в клипборда"
 
-#: robocopyManager.py:185
-msgid "Copied source path to clipboard"
-msgstr "Пътят на източника е копиран в клипборда"
-
-#: clipboardManager.py:55
+#: clipboardManager.py:46
 msgid "Copied {count} item names to clipboard"
-msgstr "Имената на {count} елемента са копирани в клипборда"
+msgstr "Копирани имена на {count} елемента в клипборда"
 
-#: __init__.py:429
+#: __init__.py:396
 msgid "Copied: {path}"
 msgstr "Копирано: {path}"
 
-#: robocopyManager.py:771
-msgid "Copy"
-msgstr "Копирай"
-
-#: contextMenu.py:27
-msgid "Copy address bar"
-msgstr "Копирай адресната лента"
-
-#: contextMenu.py:28
-msgid "Copy content"
-msgstr "Копирай съдържанието"
-
-#: __init__.py:516
-msgid "Copy content (single tap) or invert selection (double tap)"
-msgstr "Копирай съдържание (еднократно натискане) или обърни избора (двукратно натискане)"
-
 #: contextMenu.py:29
-msgid "Copy selected file and folder names"
-msgstr "Копирай имената на избраните файлове и папки"
-
-#: __init__.py:471
-msgid "Copy selected names (single tap) or copy address bar (double tap)"
-msgstr "Копирай избраните имена (еднократно натискане) или копирай адресната лента (двукратно натискане)"
-
-#: __init__.py:431
-#: clipboardManager.py:57
-#: clipboardManager.py:169
-#: robocopyManager.py:187
-msgid "Could not open clipboard"
-msgstr "Клипбордът не може да бъде отворен"
+msgid "Copy address bar"
+msgstr "Копиране на адресната лента"
 
 #: contextMenu.py:30
-#: createFile.py:16
+msgid "Copy content"
+msgstr "Копиране на съдържание"
+
+#: __init__.py:483
+msgid "Copy content (single tap) or invert selection (double tap)"
+msgstr "Копиране на съдържание (едно докосване) или обръщане на избора (две докосвания)"
+
+#: contextMenu.py:31
+msgid "Copy selected file and folder names"
+msgstr "Копиране на имената на избраните файлове и папки"
+
+#: __init__.py:443
+msgid "Copy selected names (single tap) or copy address bar (double tap)"
+msgstr "Копиране на избраните имена (едно докосване) или копиране на адресната лента (две докосвания)"
+
+#: __init__.py:400
+#: clipboardManager.py:50
+#: clipboardManager.py:139
+msgid "Could not open clipboard"
+msgstr "Не може да се отвори клипбордът"
+
+#: contextMenu.py:24
+#: createFile.py:17
 msgid "Create File"
-msgstr "Създай файл"
+msgstr "Създаване на файл"
 
-#: folder_creation_dialog.py:14
+#: folder_creation_dialog.py:16
 msgid "Create Multiple Folders"
-msgstr "Създай множество папки"
+msgstr "Създаване на множество папки"
 
-#: contextMenu.py:43
+#: contextMenu.py:42
 msgid "Create Multiple Folders..."
-msgstr "Създай множество папки..."
+msgstr "Създаване на множество папки..."
 
-#: folder_creation_dialog.py:42
+#: folder_creation_dialog.py:45
 msgid "Create main folder and then subfolders"
-msgstr "Създай главна папка и след това подпапки"
+msgstr "Създаване на основна папка и след това подпапки"
 
-#: __init__.py:626
+#: __init__.py:651
 msgid "Create new folder and paste clipboard content into rename field"
-msgstr "Създай нова папка и постави съдържанието на клипборда в полето за преименуване"
+msgstr "Създаване на нова папка и поставяне на съдържанието от клипборда в полето за преименуване"
 
-#: createFile.py:237
-msgid "Current path is not a directory"
-msgstr "Текущият път не е директория"
+#: folder_creation_dialog.py:212
+msgid "Created {count} of {total} folders..."
+msgstr "Създадени {count} от {total} папки..."
 
-#: robocopyManager.py:817
-msgid "Destination already exists, overwriting..."
-msgstr "Местоназначението вече съществува, презаписване..."
+#: folder_creation_dialog.py:199
+msgid "Creating folders in background..."
+msgstr "Създаване на папки във фонов режим..."
 
-#: robocopyManager.py:205
-msgid "Destination folders list"
-msgstr "Списък с целеви папки"
-
-#: robocopyManager.py:203
-msgid "Destination folders:"
-msgstr "Целеви папки:"
-
-#: folder_creation_dialog.py:46
+#: folder_creation_dialog.py:49
 msgid "Edit individual folder names"
-msgstr "Редактирай индивидуални имена на папки"
+msgstr "Редактиране на отделни имена на папки"
 
-#: robocopyManager.py:115
-msgid "Elapsed time: {} seconds"
-msgstr "Изминало време: {} секунди"
-
-#: xPlorerManager.py:40
-msgid "Empty Folder"
-msgstr "Празна папка"
-
-#: robocopyManager.py:217
-msgid "Enable automatic synchronization"
-msgstr "Разреши автоматична синхронизация"
-
-#: folderInfo.py:78
+#: folderInfo.py:71
 msgid "Error calculating folder info"
 msgstr "Грешка при изчисляване на информацията за папката"
 
-#: fileOperations.py:401
+#: fileOperations.py:248
 msgid "Error calculating size"
 msgstr "Грешка при изчисляване на размера"
 
-#: compressionManager.py:173
+#: compressionManager.py:196
 msgid "Error compressing files"
 msgstr "Грешка при компресиране на файлове"
 
-#: clipboardManager.py:173
+#: clipboardManager.py:142
 msgid "Error copying file content"
-msgstr "Грешка при копиране съдържанието на файла"
+msgstr "Грешка при копиране на съдържанието на файла"
 
-#: clipboardManager.py:61
+#: clipboardManager.py:53
 msgid "Error copying names to clipboard"
 msgstr "Грешка при копиране на имената в клипборда"
 
-#: txt2folder.py:116
+#: txt2folder.py:113
 msgid "Error creating base folder"
-msgstr "Грешка при създаване на основната папка"
+msgstr "Грешка при създаване на основна папка"
 
-#: createFile.py:311
+#: createFile.py:289
 msgid "Error creating files"
 msgstr "Грешка при създаване на файлове"
 
-#: folder_creation_dialog.py:219
-msgid "Error creating folder: {number}"
-msgstr "Грешка при създаване на папка: {number}"
-
-#: __init__.py:662
+#: __init__.py:693
 msgid "Error creating folders"
 msgstr "Грешка при създаване на папки"
 
-#: folder_creation_dialog.py:179
+#: folder_creation_dialog.py:190
 msgid "Error creating main folder"
-msgstr "Грешка при създаване на главна папка"
+msgstr "Грешка при създаване на основна папка"
 
-#: folder_creation_dialog.py:201
-msgid "Error creating subfolder: {number}"
-msgstr "Грешка при създаване на подпапка: {number}"
-
-#: __init__.py:690
+#: __init__.py:737
 msgid "Error during conversion"
-msgstr "Грешка по време на конвертирането"
+msgstr "Грешка по време на преобразуване"
 
-#: robocopyManager.py:990
-msgid "Error during {}: {}"
-msgstr "Грешка по време на {}: {}"
-
-#: compressionManager.py:101
+#: compressionManager.py:117
 msgid "Error in compression process: {error}"
 msgstr "Грешка в процеса на компресиране: {error}"
 
-#: selectionManager.py:65
+#: selectionManager.py:71
 msgid "Error inverting selection"
 msgstr "Грешка при обръщане на избора"
 
-#: createFile.py:262
+#: createFile.py:245
 msgid "Error opening create file dialog"
 msgstr "Грешка при отваряне на диалога за създаване на файл"
 
-#: fileOperations.py:488
+#: fileOperations.py:304
 msgid "Error opening rename dialog"
 msgstr "Грешка при отваряне на диалога за преименуване"
 
-#: __init__.py:642
+#: __init__.py:667
 msgid "Error opening settings"
 msgstr "Грешка при отваряне на настройките"
 
-#: txt2folder.py:212
+#: txt2folder.py:203
 msgid "Error processing text file: {}"
-msgstr "Грешка при обработка на текстовия файл: {}"
+msgstr "Грешка при обработка на текстов файл: {}"
 
 #: txt2folder.py:80
 msgid "Error reading RTF file"
 msgstr "Грешка при четене на RTF файл"
 
-#: txt2folder.py:215
+#: txt2folder.py:207
 msgid "Error reading file encoding"
-msgstr "Грешка при четене на кодирането на файла"
+msgstr "Грешка при четене на кодировката на файла"
 
-#: fileOperations.py:453
-#: fileOperations.py:482
+#: fileOperations.py:274
+#: fileOperations.py:301
 msgid "Error renaming file"
 msgstr "Грешка при преименуване на файл"
 
-#: robocopyManager.py:784
-#: txt2folder.py:219
+#: txt2folder.py:212
 msgid "Error: {}"
 msgstr "Грешка: {}"
 
-#: robocopyManager.py:111
-msgid "Estimated time remaining: {}"
-msgstr "Очаквано оставащо време: {}"
-
-#: createFile.py:84
+#: createFile.py:72
 msgid "Extension:"
 msgstr "Разширение:"
 
-#: case.py:115
-#: case.py:129
-#: case.py:150
-#: case.py:164
+#: case.py:127
 msgid "Failed to rename any folders"
-msgstr "Неуспешно преименуване на папки"
+msgstr "Неуспешно преименуване на нито една папка"
 
-#: createFile.py:163
+#: compressionManager.py:188
+msgid "Failed to start compression"
+msgstr "Неуспешно стартиране на компресирането"
+
+#: createFile.py:138
 msgid "File count cannot exceed 10"
 msgstr "Броят на файловете не може да надвишава 10"
 
-#: createFile.py:160
+#: createFile.py:135
 msgid "File count must be at least 1"
-msgstr "Броят на файловете трябва да бъде поне 1"
+msgstr "Броят на файловете трябва да е поне 1"
 
-#: createFile.py:131
+#: createFile.py:112
 msgid "File name"
 msgstr "Име на файл"
 
-#: fileOperations.py:57
+#: fileOperations.py:59
 msgid "File name cannot be empty"
-msgstr "Името на файла не може да бъде празно"
+msgstr "Името на файла не може да е празно"
 
-#: fileOperations.py:470
+#: fileOperations.py:291
 msgid "File name not changed"
 msgstr "Името на файла не е променено"
 
-#: createFile.py:77
-#: createFile.py:132
+#: createFile.py:66
+#: createFile.py:113
 msgid "File name {index}:"
 msgstr "Име на файл {index}:"
 
-#: createFile.py:75
+#: createFile.py:64
 msgid "File name:"
 msgstr "Име на файл:"
 
-#: fileOperations.py:479
+#: __init__.py:622
+msgid "File operations manager not available"
+msgstr "Мениджърът на файлови операции не е наличен"
+
+#: fileOperations.py:298
 msgid "File renamed to {name}"
 msgstr "Файлът е преименуван на {name}"
 
-#: folder_creation_dialog.py:113
-#: folder_creation_dialog.py:158
+#: folder_creation_dialog.py:115
+#: folder_creation_dialog.py:155
 msgid "Folder"
 msgstr "Папка"
 
-#: txt2folder.py:106
-#: txt2folder.py:182
+#: txt2folder.py:104
+#: txt2folder.py:174
 msgid "Folder '{}' already exists, creating '{}' instead"
-msgstr "Папката '{}' вече съществува, създава се '{}' вместо нея"
+msgstr "Папка '{}' вече съществува, вместо това се създава '{}'"
+
+#: __init__.py:677
+msgid "Folder creation dialog not available"
+msgstr "Диалогът за създаване на папки не е наличен"
+
+#: __init__.py:639
+msgid "Folder creator helper not available"
+msgstr "Помощникът за създаване на папки не е наличен"
 
 #: contextMenu.py:52
 msgid "Folder info"
-msgstr "Информация за папката"
+msgstr "Информация за папка"
 
-#: folder_creation_dialog.py:27
+#: folder_creation_dialog.py:30
 msgid "Folder title:"
-msgstr "Заглавие на папката:"
+msgstr "Заглавие на папка:"
 
-#: contextMenu.py:50
+#: contextMenu.py:49
 msgid "Headline Case"
-msgstr "Регистър за заглавия (Headline Case)"
+msgstr "Заглавен регистър"
 
-#: robocopyManager.py:434
-msgid "Immediate sync completed: {}/{} destinations"
-msgstr "Незабавната синхронизация завърши: {}/{} местоназначения"
-
-#: robocopyManager.py:767
-msgid "Invalid destination"
-msgstr "Невалидно местоназначение"
-
-#: folder_creation_dialog.py:169
+#: folder_creation_dialog.py:166
 msgid "Invalid number for folders"
 msgstr "Невалиден брой папки"
 
-#: robocopyManager.py:407
-#: robocopyManager.py:447
-msgid "Invalid time format"
-msgstr "Невалиден формат на времето"
-
-#: contextMenu.py:26
+#: contextMenu.py:28
 msgid "Invert selection"
-msgstr "Обърни избора"
+msgstr "Обръщане на избора"
 
-#: selectionManager.py:60
-msgid "Inverted selection: {inverted} of {total} items selected"
-msgstr "Обърнат избор: избрани са {inverted} от {total} елемента"
-
-#: robocopyManager.py:868
-msgid "Large file detected, using compression for speed"
-msgstr "Открит е голям файл, използва се компресия за скорост"
-
-#: contextMenu.py:48
+#: contextMenu.py:47
 msgid "Lowercase"
 msgstr "Малки букви"
 
-#: folder_creation_dialog.py:166
+#: folder_creation_dialog.py:163
 msgid "Maximum 100 folders allowed"
-msgstr "Разрешени са максимум 100 папки"
+msgstr "Максимум 100 папки са разрешени"
 
-#: robocopyManager.py:62
-msgid "Minimize"
-msgstr "Минимизирай"
-
-#: robocopyManager.py:145
-msgid "Mirror Backup Settings"
-msgstr "Настройки за огледално архивиране"
-
-#: robocopyManager.py:716
-msgid "Mirror backup configured successfully"
-msgstr "Огледалното архивиране е конфигурирано успешно"
-
-#: robocopyManager.py:718
-msgid "Mirror backup disabled"
-msgstr "Огледалното архивиране е деактивирано"
-
-#: robocopyManager.py:771
-msgid "Move"
-msgstr "Премести"
-
-#: robocopyManager.py:609
-msgid "Next scheduled backup for {}: {}"
-msgstr "Следващ планиран архив за {}: {}"
-
-#: __init__.py:650
+#: __init__.py:681
 msgid "No Explorer folder detected"
-msgstr "Не е открита папка на Explorer"
+msgstr "Не е открита папка в Explorer"
 
-#: fileOperations.py:300
-#: fileOperations.py:410
+#: fileOperations.py:173
+#: fileOperations.py:230
 msgid "No access to size data"
 msgstr "Няма достъп до данните за размера"
 
-#: selectionManager.py:27
+#: selectionManager.py:36
 msgid "No active File Explorer window found"
 msgstr "Не е намерен активен прозорец на File Explorer"
 
-#: clipboardManager.py:156
+#: clipboardManager.py:127
 msgid "No content could be read from selected files"
-msgstr "Не може да бъде прочетено съдържание от избраните файлове"
+msgstr "Не може да се прочете съдържание от избраните файлове"
 
-#: createFile.py:303
+#: createFile.py:282
 msgid "No files were created"
 msgstr "Не са създадени файлове"
 
-#: case.py:106
-#: case.py:120
-#: case.py:141
-#: case.py:155
+#: case.py:142
+#: case.py:148
+#: case.py:157
+#: case.py:163
 msgid "No folders found"
 msgstr "Не са намерени папки"
 
-#: __init__.py:677
-msgid "No folders selected or current folder not available"
-msgstr "Няма избрани папки или текущата папка не е налична"
+#: __init__.py:703
+msgid "No folders selected"
+msgstr "Не са избрани папки"
 
-#: folder_creation_dialog.py:230
-#: txt2folder.py:155
-#: txt2folder.py:208
+#: __init__.py:718
+msgid "No folders selected or current folder not available"
+msgstr "Не са избрани папки или текущата папка не е налична"
+
+#: folder_creation_dialog.py:229
+#: txt2folder.py:148
+#: txt2folder.py:198
 msgid "No folders were created"
 msgstr "Не са създадени папки"
 
 #: folderInfo.py:30
 msgid "No item selected"
-msgstr "Няма избран елемент"
+msgstr "Не е избран елемент"
 
-#: selectionManager.py:40
+#: selectionManager.py:49
 msgid "No items in folder"
 msgstr "Няма елементи в папката"
 
-#: clipboardManager.py:30
-#: clipboardManager.py:72
-#: compressionManager.py:132
-#: fileOperations.py:289
-#: fileOperations.py:433
+#: clipboardManager.py:27
+#: clipboardManager.py:62
+#: compressionManager.py:148
+#: fileOperations.py:164
+#: fileOperations.py:260
 msgid "No items selected"
-msgstr "Няма избрани елементи"
+msgstr "Не са избрани елементи"
 
-#: robocopyManager.py:749
-msgid "No pending operation"
-msgstr "Няма чакаща операция"
-
-#: clipboardManager.py:93
+#: clipboardManager.py:79
 msgid "No text files selected"
-msgstr "Няма избрани текстови файлове"
+msgstr "Не са избрани текстови файлове"
 
-#: txt2folder.py:91
-#: txt2folder.py:167
+#: txt2folder.py:90
+#: txt2folder.py:160
 msgid "No valid folder names found in the file"
-msgstr "Във файла не са намерени валидни имена на папки"
+msgstr "Не са намерени валидни имена на папки във файла"
 
-#: createFile.py:227
-#: robocopyManager.py:663
-#: robocopyManager.py:724
-#: robocopyManager.py:737
-#: robocopyManager.py:755
-#: selectionManager.py:21
-#: txt2folder.py:43
+#: folder_creation_dialog.py:184
+msgid "No valid folder names provided"
+msgstr "Не са предоставени валидни имена на папки"
+
+#: createFile.py:198
+#: selectionManager.py:30
+#: txt2folder.py:40
 msgid "Not in File Explorer"
-msgstr "Не сте във File Explorer"
+msgstr "Не е в File Explorer"
 
-#: createFile.py:27
+#: createFile.py:28
 msgid "Number of files to create:"
 msgstr "Брой файлове за създаване:"
 
-#: folder_creation_dialog.py:163
+#: folder_creation_dialog.py:160
 msgid "Number of folders must be at least 1"
-msgstr "Броят на папките трябва да бъде поне 1"
+msgstr "Броят на папките трябва да е поне 1"
 
-#: folder_creation_dialog.py:35
+#: folder_creation_dialog.py:38
 msgid "Number of folders:"
 msgstr "Брой папки:"
 
-#: robocopyManager.py:241
-msgid "OK"
-msgstr "ОК"
-
-#: __init__.py:586
+#: __init__.py:616
 msgid "Open xPlorer context menu"
-msgstr "Отвори контекстното меню на xPlorer"
+msgstr "Отваряне на контекстното меню на xPlorer"
 
-#: txt2folder.py:55
+#: txt2folder.py:53
 msgid "Please select a .txt or .rtf file"
 msgstr "Моля, изберете .txt или .rtf файл"
 
-#: fileOperations.py:443
+#: fileOperations.py:267
 msgid "Please select a file, not a folder"
 msgstr "Моля, изберете файл, а не папка"
 
-#: robocopyManager.py:671
-msgid "Please select a folder"
-msgstr "Моля, изберете папка"
-
-#: fileOperations.py:437
+#: fileOperations.py:263
 msgid "Please select only one file"
 msgstr "Моля, изберете само един файл"
 
 #: folderInfo.py:35
-#: robocopyManager.py:667
 msgid "Please select only one folder"
 msgstr "Моля, изберете само една папка"
 
-#: txt2folder.py:48
+#: txt2folder.py:46
 msgid "Please select only one text file"
 msgstr "Моля, изберете само един текстов файл"
 
-#: robocopyManager.py:46
-msgid "Preparing operation..."
-msgstr "Подготовка на операцията..."
+#: selectionManager.py:58
+msgid "Processing {count} items in background..."
+msgstr "Обработка на {count} елемента във фонов режим..."
 
-#: robocopyManager.py:103
-msgid "Processing: {}"
-msgstr "Обработка: {}"
-
-#: robocopyManager.py:105
-msgid "Progress: {}%"
-msgstr "Прогрес: {}%"
-
-#: robocopyManager.py:210
-msgid "Remove selected destination"
-msgstr "Премахни избраното местоназначение"
-
-#: robocopyManager.py:198
-msgid "Remove selected source"
-msgstr "Премахни избрания източник"
-
-#: __init__.py:603
-#: contextMenu.py:31
+#: __init__.py:633
+#: contextMenu.py:32
 msgid "Rename selected file"
-msgstr "Преименувай избрания файл"
+msgstr "Преименуване на избрания файл"
 
-#: contextMenu.py:35
+#: __init__.py:460
+msgid "Required manager not available"
+msgstr "Необходимият мениджър не е наличен"
+
+#: contextMenu.py:36
 msgid "Robocopy"
 msgstr "Robocopy"
 
-#: contextMenu.py:32
+#: __init__.py:540
+msgid "Robocopy manager not available"
+msgstr "Мениджърът на Robocopy не е наличен"
+
+#: __init__.py:563
+msgid "Robocopy: single tap copy, double tap paste, triple tap move"
+msgstr "Robocopy: едно докосване копиране, две докосвания поставяне, три докосвания преместване"
+
+#: contextMenu.py:33
 msgid "Say size"
-msgstr "Изговори размера"
+msgstr "Кажи размера"
 
-#: __init__.py:561
+#: __init__.py:523
 msgid "Say size (single tap) or compress zip (double tap)"
-msgstr "Изговори размера (едно натискане) или компресирай в zip (двойно натискане)"
+msgstr "Кажи размера (едно докосване) или компресиране в zip (две докосвания)"
 
-#: robocopyManager.py:648
-msgid "Scheduled backup completed: {}/{} destinations"
-msgstr "Планираният архив завърши: {}/{} местоназначения"
-
-#: robocopyManager.py:623
-msgid "Scheduled mirror backup started for {}"
-msgstr "Планираното огледално архивиране започна за {}"
-
-#: robocopyManager.py:231
-msgid "Scheduled time:"
-msgstr "Планирано време:"
-
-#: robocopyManager.py:728
-#: robocopyManager.py:741
-msgid "Select one item only"
-msgstr "Изберете само един елемент"
-
-#: txt2folder.py:60
+#: txt2folder.py:58
 msgid "Selected file does not exist"
 msgstr "Избраният файл не съществува"
 
@@ -666,228 +522,138 @@ msgstr "Избраният файл не съществува"
 msgid "Selected item is not a folder"
 msgstr "Избраният елемент не е папка"
 
-#: createFile.py:199
+#: selectionManager.py:93
+msgid "Selected {count} items"
+msgstr "Избрани {count} елемента"
+
+#: selectionManager.py:96
+msgid "Selection inverted"
+msgstr "Изборът е обърнат"
+
+#: createFile.py:170
 msgid "Some files will use default names"
 msgstr "Някои файлове ще използват имена по подразбиране"
 
-#: robocopyManager.py:404
-#: robocopyManager.py:444
-msgid "Source and destination required"
-msgstr "Изискват се източник и местоназначение"
-
-#: robocopyManager.py:792
-msgid "Source does not exist"
-msgstr "Източникът не съществува"
-
-#: robocopyManager.py:193
-msgid "Source folders (select to edit):"
-msgstr "Изходни папки (изберете за редакция):"
-
-#: robocopyManager.py:195
-msgid "Source folders list"
-msgstr "Списък с изходни папки"
-
-#: robocopyManager.py:732
-msgid "Source for copy: {}"
-msgstr "Източник за копиране: {}"
-
-#: robocopyManager.py:745
-msgid "Source for move: {}"
-msgstr "Източник за преместване: {}"
-
-#: robocopyManager.py:121
-msgid "Speed: {}"
-msgstr "Скорост: {}"
-
-#: robocopyManager.py:240
-msgid "Start synchronization"
-msgstr "Започни синхронизация"
-
-#: robocopyManager.py:410
-msgid "Starting immediate mirror sync..."
-msgstr "Стартиране на незабавна огледална синхронизация..."
-
-#: robocopyManager.py:774
-msgid "Starting {} operation in background..."
-msgstr "Стартиране на операция {} във фонов режим..."
-
-#: compressionManager.py:144
 #: compressionManager.py:161
 msgid "Starting..."
 msgstr "Стартиране..."
 
-#: case.py:162
+#: case.py:165
 msgid "Successfully converted {count} folders to headline case"
-msgstr "Успешно конвертирани {count} папки в регистър за заглавия"
+msgstr "Успешно преобразувани {count} папки в заглавен регистър"
 
-#: case.py:127
+#: case.py:150
 msgid "Successfully converted {count} folders to lowercase"
-msgstr "Успешно конвертирани {count} папки в малки букви"
+msgstr "Успешно преобразувани {count} папки в малки букви"
 
-#: case.py:148
+#: case.py:159
 msgid "Successfully converted {count} folders to title case"
-msgstr "Успешно конвертирани {count} папки в регистър на заглавия (Title Case)"
+msgstr "Успешно преобразувани {count} папки в регистър на заглавие"
 
-#: case.py:113
+#: case.py:144
 msgid "Successfully converted {count} folders to uppercase"
-msgstr "Успешно конвертирани {count} папки в главни букви"
+msgstr "Успешно преобразувани {count} папки в главни букви"
 
-#: folder_creation_dialog.py:226
+#: folder_creation_dialog.py:225
 msgid "Successfully created 1 folder"
 msgstr "Успешно създадена 1 папка"
 
-#: folder_creation_dialog.py:224
+#: folder_creation_dialog.py:223
 msgid "Successfully created main folder only"
-msgstr "Успешно създадена само главна папка"
+msgstr "Успешно създадена само основна папка"
 
-#: folder_creation_dialog.py:228
-msgid "Successfully created {count} folders"
-msgstr "Успешно създадени {count} папки"
+#: folder_creation_dialog.py:227
+msgid "Successfully created {count} of {total} folders"
+msgstr "Успешно създадени {count} от {total} папки"
 
-#: txt2folder.py:150
-#: txt2folder.py:203
+#: txt2folder.py:144
+#: txt2folder.py:194
 msgid "Successfully created {} folders in '{}'"
 msgstr "Успешно създадени {} папки в '{}'"
 
-#: xPlorerManager.py:66
-msgid "Suppress announcement of '- File Explorer' in window titles"
-msgstr "Потискай обявяването на '- File Explorer' в заглавията на прозорците"
-
-#: xPlorerManager.py:61
-msgid "Suppress announcement of DirectUIHWND class"
-msgstr "Потискай обявяването на клас DirectUIHWND"
-
-#: robocopyManager.py:438
-msgid "Sync error occurred"
-msgstr "Възникна грешка при синхронизацията"
-
-#: robocopyManager.py:220
-msgid "Synchronization interval:"
-msgstr "Интервал на синхронизация:"
-
-#: contextMenu.py:42
+#: contextMenu.py:41
 msgid "TXT to Folder"
 msgstr "TXT към папка"
 
-#: contextMenu.py:49
+#: contextMenu.py:48
 msgid "Title Case"
-msgstr "Регистър на заглавия (Title Case)"
+msgstr "Регистър на заглавие"
 
-#: clipboardManager.py:104
+#: clipboardManager.py:88
 msgid "Total file size is too large to copy content"
 msgstr "Общият размер на файловете е твърде голям за копиране на съдържанието"
 
-#: robocopyManager.py:963
-msgid "Trying alternative copy method..."
-msgstr "Опит с алтернативен метод на копиране..."
+#: createFile.py:213
+msgid "Unable to get current directory after multiple attempts"
+msgstr "Не може да се получи текущата директория след множество опити"
 
-#: createFile.py:233
-msgid "Unable to get current directory"
-msgstr "Не може да се получи текущата директория"
-
-#: __init__.py:433
+#: __init__.py:402
 msgid "Unable to get current path"
 msgstr "Не може да се получи текущият път"
 
-#: selectionManager.py:32
+#: selectionManager.py:41
 msgid "Unable to get folder view"
-msgstr "Не може да се получи изглед на папката"
+msgstr "Не може да се получи изгледът на папката"
 
-#: contextMenu.py:47
+#: contextMenu.py:46
 msgid "Uppercase"
 msgstr "Главни букви"
 
-#: clipboardManager.py:124
+#: clipboardManager.py:104
 msgid "[Error processing RTF file]"
 msgstr "[Грешка при обработка на RTF файл]"
 
-#: clipboardManager.py:126
+#: clipboardManager.py:106
 msgid "[RTF content - striprtf module not available]"
 msgstr "[RTF съдържание - модулът striprtf не е наличен]"
 
-#: compressionManager.py:97
-msgid "compression failed: {error}"
-msgstr "компресирането не бе успешно: {error}"
+#: compressionManager.py:114
+msgid "compression failed"
+msgstr "компресирането неуспешно"
 
-#: contextMenu.py:36
+#: contextMenu.py:37
 msgid "copy"
 msgstr "копиране"
 
-#: contextMenu.py:40
-msgid "mirror Backup"
-msgstr "огледален архив"
-
-#: contextMenu.py:37
+#: contextMenu.py:38
 msgid "move"
 msgstr "преместване"
 
-#: createFile.py:183
+#: createFile.py:156
 msgid "new_file"
 msgstr "нов_файл"
 
-#: createFile.py:185
+#: createFile.py:158
 msgid "new_file_{index}"
 msgstr "нов_файл_{index}"
 
-#: contextMenu.py:38
+#: contextMenu.py:39
 msgid "paste"
 msgstr "поставяне"
 
-#: __init__.py:143
-#: __init__.py:472
-#: __init__.py:517
-#: __init__.py:562
-#: __init__.py:587
-#: __init__.py:604
-#: __init__.py:627
-#: xPlorerManager.py:44
+#: __init__.py:110
+#: __init__.py:444
+#: __init__.py:484
+#: __init__.py:524
+#: __init__.py:564
+#: __init__.py:617
+#: __init__.py:634
+#: __init__.py:652
 msgid "xPlorer"
 msgstr "xPlorer"
 
-#: contextMenu.py:22
+#: contextMenu.py:51
 msgid "xPlorer Settings"
 msgstr "Настройки на xPlorer"
 
-#: createFile.py:307
+#: createFile.py:286
 msgid "{count} files created"
-msgstr "{count} създадени файла"
+msgstr "Създадени {count} файла"
 
-#: fileOperations.py:420
+#: fileOperations.py:237
 msgid "{count} items {size}"
 msgstr "{count} елемента {size}"
 
-#: folderInfo.py:66
+#: folderInfo.py:62
 msgid "{subfolders} subfolders and {files} files"
 msgstr "{subfolders} подпапки и {files} файла"
-
-#: robocopyManager.py:950
-msgid "{} completed successfully in {:.1f} seconds"
-msgstr "{} завърши успешно за {:.1f} секунди"
-
-#: robocopyManager.py:947
-msgid "{} completed successfully in {:.1f} seconds, average speed: {:.1f} MB/s"
-msgstr "{} завърши успешно за {:.1f} секунди, средна скорост: {:.1f} MB/s"
-
-#: robocopyManager.py:978
-msgid "{} completed successfully using alternative method"
-msgstr "{} завърши успешно чрез алтернативен метод"
-
-#: robocopyManager.py:985
-msgid "{} completed with warnings (code: {})"
-msgstr "{} завърши с предупреждения (код: {})"
-
-#: robocopyManager.py:982
-msgid "{} failed with error: {}"
-msgstr "{} не бе успешно с грешка: {}"
-
-#: robocopyManager.py:903
-msgid "{} in progress... {} seconds elapsed"
-msgstr "{} в процес... изминали са {} секунди"
-
-#: robocopyManager.py:878
-msgid "{} started. You can continue working while it runs in background."
-msgstr "{} започна. Можете да продължите работа, докато се изпълнява във фонов режим."
-
-#: robocopyManager.py:929
-msgid "{}: {}% complete, speed: {:.1f} MB/s"
-msgstr "{}: {}% завършени, скорост: {:.1f} MB/s"

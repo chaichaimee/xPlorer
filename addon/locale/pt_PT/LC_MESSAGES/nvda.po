@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: xPlorer 2026.5.5\n"
+"Project-Id-Version: xPlorer 2026.7.0\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-04-27 15:57+0700\n"
+"POT-Creation-Date: 2026-06-24 13:09+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Portuguese (Portugal)\n"
@@ -12,324 +12,247 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: DevOn Addon\n"
 
-#: folder_creation_dialog.py:60
+#: folder_creation_dialog.py:62
 msgid "&Apply"
 msgstr "&Aplicar"
 
-#: folder_creation_dialog.py:61
+#: folder_creation_dialog.py:63
 msgid "&Cancel"
 msgstr "&Cancelar"
 
-#: robocopyManager.py:223
-msgid "1 day"
-msgstr "1 dia"
-
-#: createFile.py:305
+#: createFile.py:284
 msgid "1 file created"
 msgstr "1 ficheiro criado"
 
-#: robocopyManager.py:222
-msgid "1 hour"
-msgstr "1 hora"
-
-#: robocopyManager.py:223
-msgid "1 month"
-msgstr "1 mês"
-
-#: robocopyManager.py:223
-msgid "15 days"
-msgstr "15 dias"
-
-#: robocopyManager.py:222
-msgid "15 minutes"
-msgstr "15 minutos"
-
-#: robocopyManager.py:222
-msgid "30 minutes"
-msgstr "30 minutos"
-
-#: robocopyManager.py:223
-msgid "7 days"
-msgstr "7 dias"
-
-#: compressionManager.py:159
-msgid "7-Zip compression failed, trying built-in method..."
-msgstr "Falha na compressão 7-Zip, a tentar método integrado..."
-
-#: fileOperations.py:474
+#: fileOperations.py:294
 msgid "A file with this name already exists"
 msgstr "Já existe um ficheiro com este nome"
 
-#: robocopyManager.py:209
-msgid "Add destination folder"
-msgstr "Adicionar pasta de destino"
-
-#: xPlorerManager.py:56
-msgid "Announce 'Empty Folder' when entering an empty folder"
-msgstr "Anunciar 'Pasta Vazia' ao entrar numa pasta vazia"
-
-#: xPlorerManager.py:71
-msgid "Automatically paste clipboard content into rename field"
-msgstr "Colar automaticamente o conteúdo da área de transferência no campo de renomeação"
-
-#: xPlorerManager.py:51
-msgid "Automatically select the first item"
-msgstr "Selecionar automaticamente o primeiro item"
-
-#: compressionManager.py:268
+#: compressionManager.py:288
 msgid "Built-in compression failed: {error}"
-msgstr "Falha na compressão integrada: {error}"
+msgstr "A compressão incorporada falhou: {error}"
 
-#: robocopyManager.py:61
-#: robocopyManager.py:242
-msgid "Cancel"
-msgstr "Cancelar"
-
-#: clipboardManager.py:77
+#: clipboardManager.py:66
 msgid "Cannot copy content of folders, please select files only"
-msgstr "Não é possível copiar o conteúdo de pastas, selecione apenas ficheiros"
+msgstr "Não é possível copiar o conteúdo de pastas, seleccione apenas ficheiros"
 
-#: createFile.py:290
+#: createFile.py:271
 msgid "Cannot find unique name for: {name}"
 msgstr "Não é possível encontrar um nome único para: {name}"
 
-#: robocopyManager.py:761
-msgid "Cannot get destination"
-msgstr "Não é possível obter o destino"
-
-#: __init__.py:635
+#: __init__.py:660
 msgid "Cannot open settings dialog"
-msgstr "Não é possível abrir a caixa de diálogo de definições"
+msgstr "Não é possível abrir o diálogo de definições"
 
 #: txt2folder.py:69
 msgid "Cannot process RTF file: striprtf module not available"
-msgstr "Não é possível processar ficheiro RTF: módulo striprtf não disponível"
+msgstr "Não é possível processar o ficheiro RTF: módulo striprtf não disponível"
 
-#: contextMenu.py:46
+#: contextMenu.py:45
 msgid "Case Converter for Folders"
-msgstr "Conversor de Maiúsculas/Minúsculas para Pastas"
+msgstr "Conversor de maiúsculas/minúsculas para pastas"
 
-#: robocopyManager.py:348
-msgid "Choose destination folder"
-msgstr "Escolher pasta de destino"
+#: __init__.py:699
+msgid "Case converter not available"
+msgstr "Conversor de maiúsculas/minúsculas não disponível"
 
-#: robocopyManager.py:239
-msgid "Clear all settings"
-msgstr "Limpar todas as definições"
+#: __init__.py:420
+msgid "Clipboard manager not available"
+msgstr "Gestor da área de transferência não disponível"
 
-#: compressionManager.py:264
+#: compressionManager.py:284
 msgid "Completed"
 msgstr "Concluído"
 
-#: contextMenu.py:25
+#: contextMenu.py:27
 msgid "Compress zip"
-msgstr "Comprimir zip"
+msgstr "Comprimir para zip"
 
-#: compressionManager.py:144
-#: compressionManager.py:161
+#: compressionManager.py:160
+#: compressionManager.py:168
 msgid "Compressing files"
 msgstr "A comprimir ficheiros"
 
-#: compressionManager.py:70
+#: compressionManager.py:75
 msgid "Compressing..."
 msgstr "A comprimir..."
 
-#: compressionManager.py:244
-#: compressionManager.py:258
+#: compressionManager.py:263
+#: compressionManager.py:277
 msgid "Compressing: {percent}%"
 msgstr "A comprimir: {percent}%"
 
-#: compressionManager.py:92
-#: compressionManager.py:262
+#: compressionManager.py:110
+#: compressionManager.py:282
 msgid "Compression cancelled"
 msgstr "Compressão cancelada"
 
-#: compressionManager.py:94
-#: compressionManager.py:265
+#: compressionManager.py:112
+#: compressionManager.py:285
 msgid "Compression completed {name}"
-msgstr "Compressão concluída {name}"
+msgstr "Compressão de {name} concluída"
 
-#: clipboardManager.py:165
+#: __init__.py:500
+msgid "Compression manager not available"
+msgstr "Gestor de compressão não disponível"
+
+#: compressionManager.py:86
+msgid "Compression timed out"
+msgstr "Tempo limite da compressão expirou"
+
+#: clipboardManager.py:133
 msgid "Content from 1 file copied to clipboard"
 msgstr "Conteúdo de 1 ficheiro copiado para a área de transferência"
 
-#: clipboardManager.py:167
+#: clipboardManager.py:135
 msgid "Content from {count} files copied to clipboard"
 msgstr "Conteúdo de {count} ficheiros copiado para a área de transferência"
 
-#: clipboardManager.py:53
+#: __init__.py:607
+#: __init__.py:673
+msgid "Context menu manager not available"
+msgstr "Gestor do menu de contexto não disponível"
+
+#: case.py:115
+msgid "Conversion already in progress"
+msgstr "Conversão já em curso"
+
+#: case.py:132
+msgid "Converting"
+msgstr "A converter"
+
+#: clipboardManager.py:44
 msgid "Copied 1 item name to clipboard"
-msgstr "Copiado o nome de 1 item para a área de transferência"
+msgstr "Nome de 1 item copiado para a área de transferência"
 
-#: robocopyManager.py:185
-msgid "Copied source path to clipboard"
-msgstr "Caminho de origem copiado para a área de transferência"
-
-#: clipboardManager.py:55
+#: clipboardManager.py:46
 msgid "Copied {count} item names to clipboard"
-msgstr "Copiados {count} nomes de itens para a área de transferência"
+msgstr "Nomes de {count} itens copiados para a área de transferência"
 
-#: __init__.py:429
+#: __init__.py:396
 msgid "Copied: {path}"
 msgstr "Copiado: {path}"
 
-#: robocopyManager.py:771
-msgid "Copy"
-msgstr "Copiar"
-
-#: contextMenu.py:27
+#: contextMenu.py:29
 msgid "Copy address bar"
 msgstr "Copiar barra de endereços"
 
-#: contextMenu.py:28
+#: contextMenu.py:30
 msgid "Copy content"
 msgstr "Copiar conteúdo"
 
-#: __init__.py:516
+#: __init__.py:483
 msgid "Copy content (single tap) or invert selection (double tap)"
 msgstr "Copiar conteúdo (um toque) ou inverter seleção (dois toques)"
 
-#: contextMenu.py:29
+#: contextMenu.py:31
 msgid "Copy selected file and folder names"
-msgstr "Copiar nomes de ficheiros e pastas selecionados"
+msgstr "Copiar nomes dos ficheiros e pastas selecionados"
 
-#: __init__.py:471
+#: __init__.py:443
 msgid "Copy selected names (single tap) or copy address bar (double tap)"
 msgstr "Copiar nomes selecionados (um toque) ou copiar barra de endereços (dois toques)"
 
-#: __init__.py:431
-#: clipboardManager.py:57
-#: clipboardManager.py:169
-#: robocopyManager.py:187
+#: __init__.py:400
+#: clipboardManager.py:50
+#: clipboardManager.py:139
 msgid "Could not open clipboard"
 msgstr "Não foi possível abrir a área de transferência"
 
-#: contextMenu.py:30
-#: createFile.py:16
+#: contextMenu.py:24
+#: createFile.py:17
 msgid "Create File"
-msgstr "Criar Ficheiro"
+msgstr "Criar ficheiro"
 
-#: folder_creation_dialog.py:14
+#: folder_creation_dialog.py:16
 msgid "Create Multiple Folders"
-msgstr "Criar Múltiplas Pastas"
+msgstr "Criar várias pastas"
 
-#: contextMenu.py:43
+#: contextMenu.py:42
 msgid "Create Multiple Folders..."
-msgstr "Criar Múltiplas Pastas..."
+msgstr "Criar várias pastas..."
 
-#: folder_creation_dialog.py:42
+#: folder_creation_dialog.py:45
 msgid "Create main folder and then subfolders"
 msgstr "Criar pasta principal e depois subpastas"
 
-#: __init__.py:626
+#: __init__.py:651
 msgid "Create new folder and paste clipboard content into rename field"
-msgstr "Criar nova pasta e colar conteúdo da área de transferência no campo de renomeação"
+msgstr "Criar nova pasta e colar o conteúdo da área de transferência no campo de renomeação"
 
-#: createFile.py:237
-msgid "Current path is not a directory"
-msgstr "O caminho atual não é um diretório"
+#: folder_creation_dialog.py:212
+msgid "Created {count} of {total} folders..."
+msgstr "Criadas {count} de {total} pastas..."
 
-#: robocopyManager.py:817
-msgid "Destination already exists, overwriting..."
-msgstr "O destino já existe, a sobrescrever..."
+#: folder_creation_dialog.py:199
+msgid "Creating folders in background..."
+msgstr "A criar pastas em segundo plano..."
 
-#: robocopyManager.py:205
-msgid "Destination folders list"
-msgstr "Lista de pastas de destino"
-
-#: robocopyManager.py:203
-msgid "Destination folders:"
-msgstr "Pastas de destino:"
-
-#: folder_creation_dialog.py:46
+#: folder_creation_dialog.py:49
 msgid "Edit individual folder names"
-msgstr "Editar nomes individuais de pastas"
+msgstr "Editar nomes de pastas individuais"
 
-#: robocopyManager.py:115
-msgid "Elapsed time: {} seconds"
-msgstr "Tempo decorrido: {} segundos"
-
-#: xPlorerManager.py:40
-msgid "Empty Folder"
-msgstr "Pasta Vazia"
-
-#: robocopyManager.py:217
-msgid "Enable automatic synchronization"
-msgstr "Ativar sincronização automática"
-
-#: folderInfo.py:78
+#: folderInfo.py:71
 msgid "Error calculating folder info"
 msgstr "Erro ao calcular informações da pasta"
 
-#: fileOperations.py:401
+#: fileOperations.py:248
 msgid "Error calculating size"
-msgstr "Erro ao calcular o tamanho"
+msgstr "Erro ao calcular tamanho"
 
-#: compressionManager.py:173
+#: compressionManager.py:196
 msgid "Error compressing files"
 msgstr "Erro ao comprimir ficheiros"
 
-#: clipboardManager.py:173
+#: clipboardManager.py:142
 msgid "Error copying file content"
 msgstr "Erro ao copiar conteúdo do ficheiro"
 
-#: clipboardManager.py:61
+#: clipboardManager.py:53
 msgid "Error copying names to clipboard"
 msgstr "Erro ao copiar nomes para a área de transferência"
 
-#: txt2folder.py:116
+#: txt2folder.py:113
 msgid "Error creating base folder"
 msgstr "Erro ao criar pasta base"
 
-#: createFile.py:311
+#: createFile.py:289
 msgid "Error creating files"
 msgstr "Erro ao criar ficheiros"
 
-#: folder_creation_dialog.py:219
-msgid "Error creating folder: {number}"
-msgstr "Erro ao criar pasta: {number}"
-
-#: __init__.py:662
+#: __init__.py:693
 msgid "Error creating folders"
 msgstr "Erro ao criar pastas"
 
-#: folder_creation_dialog.py:179
+#: folder_creation_dialog.py:190
 msgid "Error creating main folder"
 msgstr "Erro ao criar pasta principal"
 
-#: folder_creation_dialog.py:201
-msgid "Error creating subfolder: {number}"
-msgstr "Erro ao criar subpasta: {number}"
-
-#: __init__.py:690
+#: __init__.py:737
 msgid "Error during conversion"
 msgstr "Erro durante a conversão"
 
-#: robocopyManager.py:990
-msgid "Error during {}: {}"
-msgstr "Erro durante {}: {}"
-
-#: compressionManager.py:101
+#: compressionManager.py:117
 msgid "Error in compression process: {error}"
 msgstr "Erro no processo de compressão: {error}"
 
-#: selectionManager.py:65
+#: selectionManager.py:71
 msgid "Error inverting selection"
 msgstr "Erro ao inverter seleção"
 
-#: createFile.py:262
+#: createFile.py:245
 msgid "Error opening create file dialog"
-msgstr "Erro ao abrir caixa de diálogo de criação de ficheiro"
+msgstr "Erro ao abrir diálogo de criação de ficheiro"
 
-#: fileOperations.py:488
+#: fileOperations.py:304
 msgid "Error opening rename dialog"
-msgstr "Erro ao abrir caixa de diálogo de renomeação"
+msgstr "Erro ao abrir diálogo de renomeação"
 
-#: __init__.py:642
+#: __init__.py:667
 msgid "Error opening settings"
 msgstr "Erro ao abrir definições"
 
-#: txt2folder.py:212
+#: txt2folder.py:203
 msgid "Error processing text file: {}"
 msgstr "Erro ao processar ficheiro de texto: {}"
 
@@ -337,328 +260,261 @@ msgstr "Erro ao processar ficheiro de texto: {}"
 msgid "Error reading RTF file"
 msgstr "Erro ao ler ficheiro RTF"
 
-#: txt2folder.py:215
+#: txt2folder.py:207
 msgid "Error reading file encoding"
 msgstr "Erro ao ler codificação do ficheiro"
 
-#: fileOperations.py:453
-#: fileOperations.py:482
+#: fileOperations.py:274
+#: fileOperations.py:301
 msgid "Error renaming file"
 msgstr "Erro ao renomear ficheiro"
 
-#: robocopyManager.py:784
-#: txt2folder.py:219
+#: txt2folder.py:212
 msgid "Error: {}"
 msgstr "Erro: {}"
 
-#: robocopyManager.py:111
-msgid "Estimated time remaining: {}"
-msgstr "Tempo estimado restante: {}"
-
-#: createFile.py:84
+#: createFile.py:72
 msgid "Extension:"
 msgstr "Extensão:"
 
-#: case.py:115
-#: case.py:129
-#: case.py:150
-#: case.py:164
+#: case.py:127
 msgid "Failed to rename any folders"
-msgstr "Falha ao renomear quaisquer pastas"
+msgstr "Não foi possível renomear nenhuma pasta"
 
-#: createFile.py:163
+#: compressionManager.py:188
+msgid "Failed to start compression"
+msgstr "Não foi possível iniciar a compressão"
+
+#: createFile.py:138
 msgid "File count cannot exceed 10"
 msgstr "O número de ficheiros não pode exceder 10"
 
-#: createFile.py:160
+#: createFile.py:135
 msgid "File count must be at least 1"
 msgstr "O número de ficheiros deve ser pelo menos 1"
 
-#: createFile.py:131
+#: createFile.py:112
 msgid "File name"
 msgstr "Nome do ficheiro"
 
-#: fileOperations.py:57
+#: fileOperations.py:59
 msgid "File name cannot be empty"
 msgstr "O nome do ficheiro não pode estar vazio"
 
-#: fileOperations.py:470
+#: fileOperations.py:291
 msgid "File name not changed"
-msgstr "O nome do ficheiro não foi alterado"
+msgstr "Nome do ficheiro não alterado"
 
-#: createFile.py:77
-#: createFile.py:132
+#: createFile.py:66
+#: createFile.py:113
 msgid "File name {index}:"
 msgstr "Nome do ficheiro {index}:"
 
-#: createFile.py:75
+#: createFile.py:64
 msgid "File name:"
 msgstr "Nome do ficheiro:"
 
-#: fileOperations.py:479
+#: __init__.py:622
+msgid "File operations manager not available"
+msgstr "Gestor de operações de ficheiros não disponível"
+
+#: fileOperations.py:298
 msgid "File renamed to {name}"
 msgstr "Ficheiro renomeado para {name}"
 
-#: folder_creation_dialog.py:113
-#: folder_creation_dialog.py:158
+#: folder_creation_dialog.py:115
+#: folder_creation_dialog.py:155
 msgid "Folder"
 msgstr "Pasta"
 
-#: txt2folder.py:106
-#: txt2folder.py:182
+#: txt2folder.py:104
+#: txt2folder.py:174
 msgid "Folder '{}' already exists, creating '{}' instead"
 msgstr "A pasta '{}' já existe, a criar '{}' em vez disso"
+
+#: __init__.py:677
+msgid "Folder creation dialog not available"
+msgstr "Diálogo de criação de pastas não disponível"
+
+#: __init__.py:639
+msgid "Folder creator helper not available"
+msgstr "Ajudante de criação de pastas não disponível"
 
 #: contextMenu.py:52
 msgid "Folder info"
 msgstr "Informações da pasta"
 
-#: folder_creation_dialog.py:27
+#: folder_creation_dialog.py:30
 msgid "Folder title:"
 msgstr "Título da pasta:"
 
-#: contextMenu.py:50
+#: contextMenu.py:49
 msgid "Headline Case"
-msgstr "Maiúsculas/Minúsculas de Título"
+msgstr "Maiúsculas de título"
 
-#: robocopyManager.py:434
-msgid "Immediate sync completed: {}/{} destinations"
-msgstr "Sincronização imediata concluída: {}/{} destinos"
-
-#: robocopyManager.py:767
-msgid "Invalid destination"
-msgstr "Destino inválido"
-
-#: folder_creation_dialog.py:169
+#: folder_creation_dialog.py:166
 msgid "Invalid number for folders"
 msgstr "Número inválido para pastas"
 
-#: robocopyManager.py:407
-#: robocopyManager.py:447
-msgid "Invalid time format"
-msgstr "Formato de hora inválido"
-
-#: contextMenu.py:26
+#: contextMenu.py:28
 msgid "Invert selection"
 msgstr "Inverter seleção"
 
-#: selectionManager.py:60
-msgid "Inverted selection: {inverted} of {total} items selected"
-msgstr "Seleção invertida: {inverted} de {total} itens selecionados"
-
-#: robocopyManager.py:868
-msgid "Large file detected, using compression for speed"
-msgstr "Ficheiro grande detetado, a usar compressão para velocidade"
-
-#: contextMenu.py:48
+#: contextMenu.py:47
 msgid "Lowercase"
 msgstr "Minúsculas"
 
-#: folder_creation_dialog.py:166
+#: folder_creation_dialog.py:163
 msgid "Maximum 100 folders allowed"
 msgstr "Máximo de 100 pastas permitidas"
 
-#: robocopyManager.py:62
-msgid "Minimize"
-msgstr "Minimizar"
-
-#: robocopyManager.py:145
-msgid "Mirror Backup Settings"
-msgstr "Definições de Cópia de Segurança Espelho"
-
-#: robocopyManager.py:716
-msgid "Mirror backup configured successfully"
-msgstr "Cópia de segurança espelho configurada com sucesso"
-
-#: robocopyManager.py:718
-msgid "Mirror backup disabled"
-msgstr "Cópia de segurança espelho desativada"
-
-#: robocopyManager.py:771
-msgid "Move"
-msgstr "Mover"
-
-#: robocopyManager.py:609
-msgid "Next scheduled backup for {}: {}"
-msgstr "Próxima cópia de segurança agendada para {}: {}"
-
-#: __init__.py:650
+#: __init__.py:681
 msgid "No Explorer folder detected"
-msgstr "Nenhuma pasta do Explorer detetada"
+msgstr "Nenhuma pasta do Explorador detetada"
 
-#: fileOperations.py:300
-#: fileOperations.py:410
+#: fileOperations.py:173
+#: fileOperations.py:230
 msgid "No access to size data"
 msgstr "Sem acesso aos dados de tamanho"
 
-#: selectionManager.py:27
+#: selectionManager.py:36
 msgid "No active File Explorer window found"
-msgstr "Nenhuma janela ativa do File Explorer encontrada"
+msgstr "Nenhuma janela ativa do Explorador de Ficheiros encontrada"
 
-#: clipboardManager.py:156
+#: clipboardManager.py:127
 msgid "No content could be read from selected files"
 msgstr "Não foi possível ler conteúdo dos ficheiros selecionados"
 
-#: createFile.py:303
+#: createFile.py:282
 msgid "No files were created"
-msgstr "Nenhum ficheiro foi criado"
+msgstr "Não foram criados ficheiros"
 
-#: case.py:106
-#: case.py:120
-#: case.py:141
-#: case.py:155
+#: case.py:142
+#: case.py:148
+#: case.py:157
+#: case.py:163
 msgid "No folders found"
 msgstr "Nenhuma pasta encontrada"
 
-#: __init__.py:677
+#: __init__.py:703
+msgid "No folders selected"
+msgstr "Nenhuma pasta selecionada"
+
+#: __init__.py:718
 msgid "No folders selected or current folder not available"
 msgstr "Nenhuma pasta selecionada ou pasta atual não disponível"
 
-#: folder_creation_dialog.py:230
-#: txt2folder.py:155
-#: txt2folder.py:208
+#: folder_creation_dialog.py:229
+#: txt2folder.py:148
+#: txt2folder.py:198
 msgid "No folders were created"
-msgstr "Nenhuma pasta foi criada"
+msgstr "Não foram criadas pastas"
 
 #: folderInfo.py:30
 msgid "No item selected"
 msgstr "Nenhum item selecionado"
 
-#: selectionManager.py:40
+#: selectionManager.py:49
 msgid "No items in folder"
-msgstr "Nenhum item na pasta"
+msgstr "Sem itens na pasta"
 
-#: clipboardManager.py:30
-#: clipboardManager.py:72
-#: compressionManager.py:132
-#: fileOperations.py:289
-#: fileOperations.py:433
+#: clipboardManager.py:27
+#: clipboardManager.py:62
+#: compressionManager.py:148
+#: fileOperations.py:164
+#: fileOperations.py:260
 msgid "No items selected"
 msgstr "Nenhum item selecionado"
 
-#: robocopyManager.py:749
-msgid "No pending operation"
-msgstr "Nenhuma operação pendente"
-
-#: clipboardManager.py:93
+#: clipboardManager.py:79
 msgid "No text files selected"
 msgstr "Nenhum ficheiro de texto selecionado"
 
-#: txt2folder.py:91
-#: txt2folder.py:167
+#: txt2folder.py:90
+#: txt2folder.py:160
 msgid "No valid folder names found in the file"
 msgstr "Nenhum nome de pasta válido encontrado no ficheiro"
 
-#: createFile.py:227
-#: robocopyManager.py:663
-#: robocopyManager.py:724
-#: robocopyManager.py:737
-#: robocopyManager.py:755
-#: selectionManager.py:21
-#: txt2folder.py:43
-msgid "Not in File Explorer"
-msgstr "Não está no File Explorer"
+#: folder_creation_dialog.py:184
+msgid "No valid folder names provided"
+msgstr "Nenhum nome de pasta válido fornecido"
 
-#: createFile.py:27
+#: createFile.py:198
+#: selectionManager.py:30
+#: txt2folder.py:40
+msgid "Not in File Explorer"
+msgstr "Não está no Explorador de Ficheiros"
+
+#: createFile.py:28
 msgid "Number of files to create:"
 msgstr "Número de ficheiros a criar:"
 
-#: folder_creation_dialog.py:163
+#: folder_creation_dialog.py:160
 msgid "Number of folders must be at least 1"
 msgstr "O número de pastas deve ser pelo menos 1"
 
-#: folder_creation_dialog.py:35
+#: folder_creation_dialog.py:38
 msgid "Number of folders:"
 msgstr "Número de pastas:"
 
-#: robocopyManager.py:241
-msgid "OK"
-msgstr "OK"
-
-#: __init__.py:586
+#: __init__.py:616
 msgid "Open xPlorer context menu"
 msgstr "Abrir menu de contexto do xPlorer"
 
-#: txt2folder.py:55
+#: txt2folder.py:53
 msgid "Please select a .txt or .rtf file"
 msgstr "Selecione um ficheiro .txt ou .rtf"
 
-#: fileOperations.py:443
+#: fileOperations.py:267
 msgid "Please select a file, not a folder"
 msgstr "Selecione um ficheiro, não uma pasta"
 
-#: robocopyManager.py:671
-msgid "Please select a folder"
-msgstr "Selecione uma pasta"
-
-#: fileOperations.py:437
+#: fileOperations.py:263
 msgid "Please select only one file"
 msgstr "Selecione apenas um ficheiro"
 
 #: folderInfo.py:35
-#: robocopyManager.py:667
 msgid "Please select only one folder"
 msgstr "Selecione apenas uma pasta"
 
-#: txt2folder.py:48
+#: txt2folder.py:46
 msgid "Please select only one text file"
 msgstr "Selecione apenas um ficheiro de texto"
 
-#: robocopyManager.py:46
-msgid "Preparing operation..."
-msgstr "A preparar operação..."
+#: selectionManager.py:58
+msgid "Processing {count} items in background..."
+msgstr "A processar {count} itens em segundo plano..."
 
-#: robocopyManager.py:103
-msgid "Processing: {}"
-msgstr "A processar: {}"
-
-#: robocopyManager.py:105
-msgid "Progress: {}%"
-msgstr "Progresso: {}%"
-
-#: robocopyManager.py:210
-msgid "Remove selected destination"
-msgstr "Remover destino selecionado"
-
-#: robocopyManager.py:198
-msgid "Remove selected source"
-msgstr "Remover origem selecionada"
-
-#: __init__.py:603
-#: contextMenu.py:31
+#: __init__.py:633
+#: contextMenu.py:32
 msgid "Rename selected file"
 msgstr "Renomear ficheiro selecionado"
 
-#: contextMenu.py:35
+#: __init__.py:460
+msgid "Required manager not available"
+msgstr "Gestor necessário não disponível"
+
+#: contextMenu.py:36
 msgid "Robocopy"
 msgstr "Robocopy"
 
-#: contextMenu.py:32
+#: __init__.py:540
+msgid "Robocopy manager not available"
+msgstr "Gestor de Robocopy não disponível"
+
+#: __init__.py:563
+msgid "Robocopy: single tap copy, double tap paste, triple tap move"
+msgstr "Robocopy: um toque copiar, dois toques colar, três toques mover"
+
+#: contextMenu.py:33
 msgid "Say size"
 msgstr "Dizer tamanho"
 
-#: __init__.py:561
+#: __init__.py:523
 msgid "Say size (single tap) or compress zip (double tap)"
-msgstr "Dizer tamanho (um toque) ou comprimir zip (dois toques)"
+msgstr "Dizer tamanho (um toque) ou comprimir para zip (dois toques)"
 
-#: robocopyManager.py:648
-msgid "Scheduled backup completed: {}/{} destinations"
-msgstr "Cópia de segurança agendada concluída: {}/{} destinos"
-
-#: robocopyManager.py:623
-msgid "Scheduled mirror backup started for {}"
-msgstr "Cópia de segurança espelho agendada iniciada para {}"
-
-#: robocopyManager.py:231
-msgid "Scheduled time:"
-msgstr "Hora agendada:"
-
-#: robocopyManager.py:728
-#: robocopyManager.py:741
-msgid "Select one item only"
-msgstr "Selecione apenas um item"
-
-#: txt2folder.py:60
+#: txt2folder.py:58
 msgid "Selected file does not exist"
 msgstr "O ficheiro selecionado não existe"
 
@@ -666,228 +522,138 @@ msgstr "O ficheiro selecionado não existe"
 msgid "Selected item is not a folder"
 msgstr "O item selecionado não é uma pasta"
 
-#: createFile.py:199
+#: selectionManager.py:93
+msgid "Selected {count} items"
+msgstr "{count} itens selecionados"
+
+#: selectionManager.py:96
+msgid "Selection inverted"
+msgstr "Seleção invertida"
+
+#: createFile.py:170
 msgid "Some files will use default names"
 msgstr "Alguns ficheiros usarão nomes predefinidos"
 
-#: robocopyManager.py:404
-#: robocopyManager.py:444
-msgid "Source and destination required"
-msgstr "Origem e destino necessários"
-
-#: robocopyManager.py:792
-msgid "Source does not exist"
-msgstr "A origem não existe"
-
-#: robocopyManager.py:193
-msgid "Source folders (select to edit):"
-msgstr "Pastas de origem (selecione para editar):"
-
-#: robocopyManager.py:195
-msgid "Source folders list"
-msgstr "Lista de pastas de origem"
-
-#: robocopyManager.py:732
-msgid "Source for copy: {}"
-msgstr "Origem para cópia: {}"
-
-#: robocopyManager.py:745
-msgid "Source for move: {}"
-msgstr "Origem para mover: {}"
-
-#: robocopyManager.py:121
-msgid "Speed: {}"
-msgstr "Velocidade: {}"
-
-#: robocopyManager.py:240
-msgid "Start synchronization"
-msgstr "Iniciar sincronização"
-
-#: robocopyManager.py:410
-msgid "Starting immediate mirror sync..."
-msgstr "A iniciar sincronização espelho imediata..."
-
-#: robocopyManager.py:774
-msgid "Starting {} operation in background..."
-msgstr "A iniciar operação {} em segundo plano..."
-
-#: compressionManager.py:144
 #: compressionManager.py:161
 msgid "Starting..."
 msgstr "A iniciar..."
 
-#: case.py:162
+#: case.py:165
 msgid "Successfully converted {count} folders to headline case"
-msgstr "{count} pastas convertidas com sucesso para maiúsculas/minúsculas de título"
+msgstr "{count} pastas convertidas com sucesso para maiúsculas de título"
 
-#: case.py:127
+#: case.py:150
 msgid "Successfully converted {count} folders to lowercase"
 msgstr "{count} pastas convertidas com sucesso para minúsculas"
 
-#: case.py:148
+#: case.py:159
 msgid "Successfully converted {count} folders to title case"
 msgstr "{count} pastas convertidas com sucesso para maiúsculas/minúsculas de título"
 
-#: case.py:113
+#: case.py:144
 msgid "Successfully converted {count} folders to uppercase"
 msgstr "{count} pastas convertidas com sucesso para maiúsculas"
 
-#: folder_creation_dialog.py:226
+#: folder_creation_dialog.py:225
 msgid "Successfully created 1 folder"
 msgstr "1 pasta criada com sucesso"
 
-#: folder_creation_dialog.py:224
+#: folder_creation_dialog.py:223
 msgid "Successfully created main folder only"
 msgstr "Apenas a pasta principal foi criada com sucesso"
 
-#: folder_creation_dialog.py:228
-msgid "Successfully created {count} folders"
-msgstr "{count} pastas criadas com sucesso"
+#: folder_creation_dialog.py:227
+msgid "Successfully created {count} of {total} folders"
+msgstr "{count} de {total} pastas criadas com sucesso"
 
-#: txt2folder.py:150
-#: txt2folder.py:203
+#: txt2folder.py:144
+#: txt2folder.py:194
 msgid "Successfully created {} folders in '{}'"
 msgstr "{} pastas criadas com sucesso em '{}'"
 
-#: xPlorerManager.py:66
-msgid "Suppress announcement of '- File Explorer' in window titles"
-msgstr "Suprimir anúncio de '- File Explorer' nos títulos das janelas"
-
-#: xPlorerManager.py:61
-msgid "Suppress announcement of DirectUIHWND class"
-msgstr "Suprimir anúncio da classe DirectUIHWND"
-
-#: robocopyManager.py:438
-msgid "Sync error occurred"
-msgstr "Ocorreu um erro de sincronização"
-
-#: robocopyManager.py:220
-msgid "Synchronization interval:"
-msgstr "Intervalo de sincronização:"
-
-#: contextMenu.py:42
+#: contextMenu.py:41
 msgid "TXT to Folder"
-msgstr "TXT para Pasta"
+msgstr "TXT para pasta"
 
-#: contextMenu.py:49
+#: contextMenu.py:48
 msgid "Title Case"
-msgstr "Maiúsculas/Minúsculas de Título"
+msgstr "Maiúsculas/minúsculas de título"
 
-#: clipboardManager.py:104
+#: clipboardManager.py:88
 msgid "Total file size is too large to copy content"
-msgstr "O tamanho total do ficheiro é demasiado grande para copiar o conteúdo"
+msgstr "O tamanho total dos ficheiros é demasiado grande para copiar o conteúdo"
 
-#: robocopyManager.py:963
-msgid "Trying alternative copy method..."
-msgstr "A tentar método de cópia alternativo..."
+#: createFile.py:213
+msgid "Unable to get current directory after multiple attempts"
+msgstr "Não foi possível obter o diretório atual após várias tentativas"
 
-#: createFile.py:233
-msgid "Unable to get current directory"
-msgstr "Não foi possível obter o diretório atual"
-
-#: __init__.py:433
+#: __init__.py:402
 msgid "Unable to get current path"
 msgstr "Não foi possível obter o caminho atual"
 
-#: selectionManager.py:32
+#: selectionManager.py:41
 msgid "Unable to get folder view"
 msgstr "Não foi possível obter a vista da pasta"
 
-#: contextMenu.py:47
+#: contextMenu.py:46
 msgid "Uppercase"
 msgstr "Maiúsculas"
 
-#: clipboardManager.py:124
+#: clipboardManager.py:104
 msgid "[Error processing RTF file]"
 msgstr "[Erro ao processar ficheiro RTF]"
 
-#: clipboardManager.py:126
+#: clipboardManager.py:106
 msgid "[RTF content - striprtf module not available]"
 msgstr "[Conteúdo RTF - módulo striprtf não disponível]"
 
-#: compressionManager.py:97
-msgid "compression failed: {error}"
-msgstr "falha na compressão: {error}"
+#: compressionManager.py:114
+msgid "compression failed"
+msgstr "compressão falhou"
 
-#: contextMenu.py:36
+#: contextMenu.py:37
 msgid "copy"
 msgstr "copiar"
 
-#: contextMenu.py:40
-msgid "mirror Backup"
-msgstr "cópia de segurança espelho"
-
-#: contextMenu.py:37
+#: contextMenu.py:38
 msgid "move"
 msgstr "mover"
 
-#: createFile.py:183
+#: createFile.py:156
 msgid "new_file"
 msgstr "novo_ficheiro"
 
-#: createFile.py:185
+#: createFile.py:158
 msgid "new_file_{index}"
 msgstr "novo_ficheiro_{index}"
 
-#: contextMenu.py:38
+#: contextMenu.py:39
 msgid "paste"
 msgstr "colar"
 
-#: __init__.py:143
-#: __init__.py:472
-#: __init__.py:517
-#: __init__.py:562
-#: __init__.py:587
-#: __init__.py:604
-#: __init__.py:627
-#: xPlorerManager.py:44
+#: __init__.py:110
+#: __init__.py:444
+#: __init__.py:484
+#: __init__.py:524
+#: __init__.py:564
+#: __init__.py:617
+#: __init__.py:634
+#: __init__.py:652
 msgid "xPlorer"
 msgstr "xPlorer"
 
-#: contextMenu.py:22
+#: contextMenu.py:51
 msgid "xPlorer Settings"
 msgstr "Definições do xPlorer"
 
-#: createFile.py:307
+#: createFile.py:286
 msgid "{count} files created"
 msgstr "{count} ficheiros criados"
 
-#: fileOperations.py:420
+#: fileOperations.py:237
 msgid "{count} items {size}"
 msgstr "{count} itens {size}"
 
-#: folderInfo.py:66
+#: folderInfo.py:62
 msgid "{subfolders} subfolders and {files} files"
 msgstr "{subfolders} subpastas e {files} ficheiros"
-
-#: robocopyManager.py:950
-msgid "{} completed successfully in {:.1f} seconds"
-msgstr "{} concluído com sucesso em {:.1f} segundos"
-
-#: robocopyManager.py:947
-msgid "{} completed successfully in {:.1f} seconds, average speed: {:.1f} MB/s"
-msgstr "{} concluído com sucesso em {:.1f} segundos, velocidade média: {:.1f} MB/s"
-
-#: robocopyManager.py:978
-msgid "{} completed successfully using alternative method"
-msgstr "{} concluído com sucesso usando método alternativo"
-
-#: robocopyManager.py:985
-msgid "{} completed with warnings (code: {})"
-msgstr "{} concluído com avisos (código: {})"
-
-#: robocopyManager.py:982
-msgid "{} failed with error: {}"
-msgstr "{} falhou com erro: {}"
-
-#: robocopyManager.py:903
-msgid "{} in progress... {} seconds elapsed"
-msgstr "{} em andamento... decorridos {} segundos"
-
-#: robocopyManager.py:878
-msgid "{} started. You can continue working while it runs in background."
-msgstr "{} iniciado. Pode continuar a trabalhar enquanto é executado em segundo plano."
-
-#: robocopyManager.py:929
-msgid "{}: {}% complete, speed: {:.1f} MB/s"
-msgstr "{}: {}% concluído, velocidade: {:.1f} MB/s"

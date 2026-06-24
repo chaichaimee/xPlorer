@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: xPlorer 2026.5.5\n"
+"Project-Id-Version: xPlorer 2026.7.0\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-04-27 15:57+0700\n"
+"POT-Creation-Date: 2026-06-24 13:09+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Korean\n"
@@ -12,882 +12,648 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: DevOn Addon\n"
 
-#: folder_creation_dialog.py:60
+#: folder_creation_dialog.py:62
 msgid "&Apply"
 msgstr "적용(&A)"
 
-#: folder_creation_dialog.py:61
+#: folder_creation_dialog.py:63
 msgid "&Cancel"
 msgstr "취소(&C)"
 
-#: robocopyManager.py:223
-msgid "1 day"
-msgstr "1일"
-
-#: createFile.py:305
+#: createFile.py:284
 msgid "1 file created"
-msgstr "파일 1개 생성됨"
+msgstr "파일 1개를 만들었습니다"
 
-#: robocopyManager.py:222
-msgid "1 hour"
-msgstr "1시간"
-
-#: robocopyManager.py:223
-msgid "1 month"
-msgstr "1개월"
-
-#: robocopyManager.py:223
-msgid "15 days"
-msgstr "15일"
-
-#: robocopyManager.py:222
-msgid "15 minutes"
-msgstr "15분"
-
-#: robocopyManager.py:222
-msgid "30 minutes"
-msgstr "30분"
-
-#: robocopyManager.py:223
-msgid "7 days"
-msgstr "7일"
-
-#: compressionManager.py:159
-msgid "7-Zip compression failed, trying built-in method..."
-msgstr "7-Zip 압축 실패, 내장 방법 시도 중..."
-
-#: fileOperations.py:474
+#: fileOperations.py:294
 msgid "A file with this name already exists"
 msgstr "이 이름의 파일이 이미 존재합니다"
 
-#: robocopyManager.py:209
-msgid "Add destination folder"
-msgstr "대상 폴더 추가"
-
-#: xPlorerManager.py:56
-msgid "Announce 'Empty Folder' when entering an empty folder"
-msgstr "빈 폴더에 들어갈 때 '빈 폴더' 알림"
-
-#: xPlorerManager.py:71
-msgid "Automatically paste clipboard content into rename field"
-msgstr "클립보드 내용을 자동으로 이름 바꾸기 필드에 붙여넣기"
-
-#: xPlorerManager.py:51
-msgid "Automatically select the first item"
-msgstr "첫 번째 항목 자동 선택"
-
-#: compressionManager.py:268
+#: compressionManager.py:288
 msgid "Built-in compression failed: {error}"
-msgstr "내장 압축 실패: {error}"
+msgstr "내장 압축에 실패했습니다: {error}"
 
-#: robocopyManager.py:61
-#: robocopyManager.py:242
-msgid "Cancel"
-msgstr "취소"
-
-#: clipboardManager.py:77
+#: clipboardManager.py:66
 msgid "Cannot copy content of folders, please select files only"
 msgstr "폴더의 내용은 복사할 수 없습니다. 파일만 선택하세요"
 
-#: createFile.py:290
+#: createFile.py:271
 msgid "Cannot find unique name for: {name}"
-msgstr "{name}에 대한 고유한 이름을 찾을 수 없음"
+msgstr "{name}에 대한 고유한 이름을 찾을 수 없습니다"
 
-#: robocopyManager.py:761
-msgid "Cannot get destination"
-msgstr "대상을 가져올 수 없음"
-
-#: __init__.py:635
+#: __init__.py:660
 msgid "Cannot open settings dialog"
-msgstr "설정 대화 상자를 열 수 없음"
+msgstr "설정 대화 상자를 열 수 없습니다"
 
 #: txt2folder.py:69
 msgid "Cannot process RTF file: striprtf module not available"
-msgstr "RTF 파일을 처리할 수 없음: striprtf 모듈을 사용할 수 없음"
+msgstr "RTF 파일을 처리할 수 없습니다: striprtf 모듈을 사용할 수 없습니다"
 
-#: contextMenu.py:46
+#: contextMenu.py:45
 msgid "Case Converter for Folders"
 msgstr "폴더 대소문자 변환기"
 
-#: robocopyManager.py:348
-msgid "Choose destination folder"
-msgstr "대상 폴더 선택"
+#: __init__.py:699
+msgid "Case converter not available"
+msgstr "대소문자 변환기를 사용할 수 없습니다"
 
-#: robocopyManager.py:239
-msgid "Clear all settings"
-msgstr "모든 설정 지우기"
+#: __init__.py:420
+msgid "Clipboard manager not available"
+msgstr "클립보드 관리자를 사용할 수 없습니다"
 
-#: compressionManager.py:264
+#: compressionManager.py:284
 msgid "Completed"
 msgstr "완료됨"
 
-#: contextMenu.py:25
+#: contextMenu.py:27
 msgid "Compress zip"
-msgstr "Zip 압축"
+msgstr "ZIP 압축"
 
-#: compressionManager.py:144
-#: compressionManager.py:161
+#: compressionManager.py:160
+#: compressionManager.py:168
 msgid "Compressing files"
 msgstr "파일 압축 중"
 
-#: compressionManager.py:70
+#: compressionManager.py:75
 msgid "Compressing..."
 msgstr "압축 중..."
 
-#: compressionManager.py:244
-#: compressionManager.py:258
+#: compressionManager.py:263
+#: compressionManager.py:277
 msgid "Compressing: {percent}%"
 msgstr "압축 중: {percent}%"
 
-#: compressionManager.py:92
-#: compressionManager.py:262
+#: compressionManager.py:110
+#: compressionManager.py:282
 msgid "Compression cancelled"
-msgstr "압축 취소됨"
+msgstr "압축이 취소되었습니다"
 
-#: compressionManager.py:94
-#: compressionManager.py:265
+#: compressionManager.py:112
+#: compressionManager.py:285
 msgid "Compression completed {name}"
-msgstr "압축 완료 {name}"
+msgstr "{name} 압축이 완료되었습니다"
 
-#: clipboardManager.py:165
+#: __init__.py:500
+msgid "Compression manager not available"
+msgstr "압축 관리자를 사용할 수 없습니다"
+
+#: compressionManager.py:86
+msgid "Compression timed out"
+msgstr "압축 시간이 초과되었습니다"
+
+#: clipboardManager.py:133
 msgid "Content from 1 file copied to clipboard"
-msgstr "파일 1개의 내용이 클립보드에 복사됨"
+msgstr "파일 1개의 내용을 클립보드에 복사했습니다"
 
-#: clipboardManager.py:167
+#: clipboardManager.py:135
 msgid "Content from {count} files copied to clipboard"
-msgstr "{count}개 파일의 내용이 클립보드에 복사됨"
+msgstr "{count}개 파일의 내용을 클립보드에 복사했습니다"
 
-#: clipboardManager.py:53
+#: __init__.py:607
+#: __init__.py:673
+msgid "Context menu manager not available"
+msgstr "컨텍스트 메뉴 관리자를 사용할 수 없습니다"
+
+#: case.py:115
+msgid "Conversion already in progress"
+msgstr "변환이 이미 진행 중입니다"
+
+#: case.py:132
+msgid "Converting"
+msgstr "변환 중"
+
+#: clipboardManager.py:44
 msgid "Copied 1 item name to clipboard"
-msgstr "항목 이름 1개를 클립보드에 복사함"
+msgstr "항목 1개의 이름을 클립보드에 복사했습니다"
 
-#: robocopyManager.py:185
-msgid "Copied source path to clipboard"
-msgstr "소스 경로를 클립보드에 복사함"
-
-#: clipboardManager.py:55
+#: clipboardManager.py:46
 msgid "Copied {count} item names to clipboard"
-msgstr "{count}개 항목 이름을 클립보드에 복사함"
+msgstr "{count}개 항목의 이름을 클립보드에 복사했습니다"
 
-#: __init__.py:429
+#: __init__.py:396
 msgid "Copied: {path}"
 msgstr "복사됨: {path}"
 
-#: robocopyManager.py:771
-msgid "Copy"
-msgstr "복사"
-
-#: contextMenu.py:27
+#: contextMenu.py:29
 msgid "Copy address bar"
 msgstr "주소 표시줄 복사"
 
-#: contextMenu.py:28
+#: contextMenu.py:30
 msgid "Copy content"
 msgstr "내용 복사"
 
-#: __init__.py:516
+#: __init__.py:483
 msgid "Copy content (single tap) or invert selection (double tap)"
 msgstr "내용 복사(한 번 탭) 또는 선택 반전(두 번 탭)"
 
-#: contextMenu.py:29
+#: contextMenu.py:31
 msgid "Copy selected file and folder names"
 msgstr "선택한 파일 및 폴더 이름 복사"
 
-#: __init__.py:471
+#: __init__.py:443
 msgid "Copy selected names (single tap) or copy address bar (double tap)"
 msgstr "선택한 이름 복사(한 번 탭) 또는 주소 표시줄 복사(두 번 탭)"
 
-#: __init__.py:431
-#: clipboardManager.py:57
-#: clipboardManager.py:169
-#: robocopyManager.py:187
+#: __init__.py:400
+#: clipboardManager.py:50
+#: clipboardManager.py:139
 msgid "Could not open clipboard"
-msgstr "클립보드를 열 수 없음"
+msgstr "클립보드를 열 수 없었습니다"
 
-#: contextMenu.py:30
-#: createFile.py:16
+#: contextMenu.py:24
+#: createFile.py:17
 msgid "Create File"
 msgstr "파일 만들기"
 
-#: folder_creation_dialog.py:14
+#: folder_creation_dialog.py:16
 msgid "Create Multiple Folders"
 msgstr "여러 폴더 만들기"
 
-#: contextMenu.py:43
+#: contextMenu.py:42
 msgid "Create Multiple Folders..."
 msgstr "여러 폴더 만들기..."
 
-#: folder_creation_dialog.py:42
+#: folder_creation_dialog.py:45
 msgid "Create main folder and then subfolders"
 msgstr "주 폴더를 만든 다음 하위 폴더 만들기"
 
-#: __init__.py:626
+#: __init__.py:651
 msgid "Create new folder and paste clipboard content into rename field"
 msgstr "새 폴더를 만들고 클립보드 내용을 이름 바꾸기 필드에 붙여넣기"
 
-#: createFile.py:237
-msgid "Current path is not a directory"
-msgstr "현재 경로가 디렉터리가 아님"
+#: folder_creation_dialog.py:212
+msgid "Created {count} of {total} folders..."
+msgstr "전체 {total}개 중 {count}개 폴더를 만들었습니다..."
 
-#: robocopyManager.py:817
-msgid "Destination already exists, overwriting..."
-msgstr "대상이 이미 존재함, 덮어쓰는 중..."
+#: folder_creation_dialog.py:199
+msgid "Creating folders in background..."
+msgstr "백그라운드에서 폴더를 만드는 중..."
 
-#: robocopyManager.py:205
-msgid "Destination folders list"
-msgstr "대상 폴더 목록"
-
-#: robocopyManager.py:203
-msgid "Destination folders:"
-msgstr "대상 폴더:"
-
-#: folder_creation_dialog.py:46
+#: folder_creation_dialog.py:49
 msgid "Edit individual folder names"
 msgstr "개별 폴더 이름 편집"
 
-#: robocopyManager.py:115
-msgid "Elapsed time: {} seconds"
-msgstr "경과 시간: {}초"
-
-#: xPlorerManager.py:40
-msgid "Empty Folder"
-msgstr "빈 폴더"
-
-#: robocopyManager.py:217
-msgid "Enable automatic synchronization"
-msgstr "자동 동기화 사용"
-
-#: folderInfo.py:78
+#: folderInfo.py:71
 msgid "Error calculating folder info"
-msgstr "폴더 정보 계산 중 오류"
+msgstr "폴더 정보를 계산하는 중 오류 발생"
 
-#: fileOperations.py:401
+#: fileOperations.py:248
 msgid "Error calculating size"
-msgstr "크기 계산 중 오류"
+msgstr "크기를 계산하는 중 오류 발생"
 
-#: compressionManager.py:173
+#: compressionManager.py:196
 msgid "Error compressing files"
-msgstr "파일 압축 중 오류"
+msgstr "파일 압축 중 오류 발생"
 
-#: clipboardManager.py:173
+#: clipboardManager.py:142
 msgid "Error copying file content"
-msgstr "파일 내용 복사 중 오류"
+msgstr "파일 내용 복사 중 오류 발생"
 
-#: clipboardManager.py:61
+#: clipboardManager.py:53
 msgid "Error copying names to clipboard"
-msgstr "이름을 클립보드에 복사하는 중 오류"
+msgstr "클립보드에 이름을 복사하는 중 오류 발생"
 
-#: txt2folder.py:116
+#: txt2folder.py:113
 msgid "Error creating base folder"
-msgstr "기본 폴더 생성 중 오류"
+msgstr "기본 폴더를 만드는 중 오류 발생"
 
-#: createFile.py:311
+#: createFile.py:289
 msgid "Error creating files"
-msgstr "파일 생성 중 오류"
+msgstr "파일을 만드는 중 오류 발생"
 
-#: folder_creation_dialog.py:219
-msgid "Error creating folder: {number}"
-msgstr "폴더 생성 중 오류: {number}"
-
-#: __init__.py:662
+#: __init__.py:693
 msgid "Error creating folders"
-msgstr "폴더 생성 중 오류"
+msgstr "폴더를 만드는 중 오류 발생"
 
-#: folder_creation_dialog.py:179
+#: folder_creation_dialog.py:190
 msgid "Error creating main folder"
-msgstr "주 폴더 생성 중 오류"
+msgstr "주 폴더를 만드는 중 오류 발생"
 
-#: folder_creation_dialog.py:201
-msgid "Error creating subfolder: {number}"
-msgstr "하위 폴더 생성 중 오류: {number}"
-
-#: __init__.py:690
+#: __init__.py:737
 msgid "Error during conversion"
-msgstr "변환 중 오류"
+msgstr "변환 중 오류 발생"
 
-#: robocopyManager.py:990
-msgid "Error during {}: {}"
-msgstr "{} 중 오류: {}"
-
-#: compressionManager.py:101
+#: compressionManager.py:117
 msgid "Error in compression process: {error}"
-msgstr "압축 프로세스 중 오류: {error}"
+msgstr "압축 프로세스 중 오류 발생: {error}"
 
-#: selectionManager.py:65
+#: selectionManager.py:71
 msgid "Error inverting selection"
-msgstr "선택 반전 중 오류"
+msgstr "선택 반전 중 오류 발생"
 
-#: createFile.py:262
+#: createFile.py:245
 msgid "Error opening create file dialog"
-msgstr "파일 만들기 대화 상자 여는 중 오류"
+msgstr "파일 만들기 대화 상자를 여는 중 오류 발생"
 
-#: fileOperations.py:488
+#: fileOperations.py:304
 msgid "Error opening rename dialog"
-msgstr "이름 바꾸기 대화 상자 여는 중 오류"
+msgstr "이름 바꾸기 대화 상자를 여는 중 오류 발생"
 
-#: __init__.py:642
+#: __init__.py:667
 msgid "Error opening settings"
-msgstr "설정 여는 중 오류"
+msgstr "설정을 여는 중 오류 발생"
 
-#: txt2folder.py:212
+#: txt2folder.py:203
 msgid "Error processing text file: {}"
-msgstr "텍스트 파일 처리 중 오류: {}"
+msgstr "텍스트 파일을 처리하는 중 오류 발생: {}"
 
 #: txt2folder.py:80
 msgid "Error reading RTF file"
-msgstr "RTF 파일 읽는 중 오류"
+msgstr "RTF 파일을 읽는 중 오류 발생"
 
-#: txt2folder.py:215
+#: txt2folder.py:207
 msgid "Error reading file encoding"
-msgstr "파일 인코딩 읽는 중 오류"
+msgstr "파일 인코딩을 읽는 중 오류 발생"
 
-#: fileOperations.py:453
-#: fileOperations.py:482
+#: fileOperations.py:274
+#: fileOperations.py:301
 msgid "Error renaming file"
-msgstr "파일 이름 바꾸는 중 오류"
+msgstr "파일 이름을 바꾸는 중 오류 발생"
 
-#: robocopyManager.py:784
-#: txt2folder.py:219
+#: txt2folder.py:212
 msgid "Error: {}"
 msgstr "오류: {}"
 
-#: robocopyManager.py:111
-msgid "Estimated time remaining: {}"
-msgstr "예상 남은 시간: {}"
-
-#: createFile.py:84
+#: createFile.py:72
 msgid "Extension:"
 msgstr "확장자:"
 
-#: case.py:115
-#: case.py:129
-#: case.py:150
-#: case.py:164
+#: case.py:127
 msgid "Failed to rename any folders"
-msgstr "어떤 폴더도 이름을 바꾸지 못함"
+msgstr "어떤 폴더도 이름을 바꾸지 못했습니다"
 
-#: createFile.py:163
+#: compressionManager.py:188
+msgid "Failed to start compression"
+msgstr "압축을 시작하지 못했습니다"
+
+#: createFile.py:138
 msgid "File count cannot exceed 10"
-msgstr "파일 개수는 10을 초과할 수 없음"
+msgstr "파일 수는 10개를 초과할 수 없습니다"
 
-#: createFile.py:160
+#: createFile.py:135
 msgid "File count must be at least 1"
-msgstr "파일 개수는 최소 1 이상이어야 함"
+msgstr "파일 수는 최소 1개여야 합니다"
 
-#: createFile.py:131
+#: createFile.py:112
 msgid "File name"
 msgstr "파일 이름"
 
-#: fileOperations.py:57
+#: fileOperations.py:59
 msgid "File name cannot be empty"
-msgstr "파일 이름은 비워둘 수 없음"
+msgstr "파일 이름은 비워둘 수 없습니다"
 
-#: fileOperations.py:470
+#: fileOperations.py:291
 msgid "File name not changed"
-msgstr "파일 이름이 변경되지 않음"
+msgstr "파일 이름이 변경되지 않았습니다"
 
-#: createFile.py:77
-#: createFile.py:132
+#: createFile.py:66
+#: createFile.py:113
 msgid "File name {index}:"
 msgstr "파일 이름 {index}:"
 
-#: createFile.py:75
+#: createFile.py:64
 msgid "File name:"
 msgstr "파일 이름:"
 
-#: fileOperations.py:479
-msgid "File renamed to {name}"
-msgstr "파일 이름이 {name} (으)로 바뀜"
+#: __init__.py:622
+msgid "File operations manager not available"
+msgstr "파일 작업 관리자를 사용할 수 없습니다"
 
-#: folder_creation_dialog.py:113
-#: folder_creation_dialog.py:158
+#: fileOperations.py:298
+msgid "File renamed to {name}"
+msgstr "파일 이름을 {name}(으)로 바꾸었습니다"
+
+#: folder_creation_dialog.py:115
+#: folder_creation_dialog.py:155
 msgid "Folder"
 msgstr "폴더"
 
-#: txt2folder.py:106
-#: txt2folder.py:182
+#: txt2folder.py:104
+#: txt2folder.py:174
 msgid "Folder '{}' already exists, creating '{}' instead"
-msgstr "폴더 '{}'이(가) 이미 존재하므로 대신 '{}'을(를) 생성함"
+msgstr "폴더 '{}'이(가) 이미 존재합니다. 대신 '{}'을(를) 만듭니다"
+
+#: __init__.py:677
+msgid "Folder creation dialog not available"
+msgstr "폴더 만들기 대화 상자를 사용할 수 없습니다"
+
+#: __init__.py:639
+msgid "Folder creator helper not available"
+msgstr "폴더 만들기 도우미를 사용할 수 없습니다"
 
 #: contextMenu.py:52
 msgid "Folder info"
 msgstr "폴더 정보"
 
-#: folder_creation_dialog.py:27
+#: folder_creation_dialog.py:30
 msgid "Folder title:"
 msgstr "폴더 제목:"
 
-#: contextMenu.py:50
+#: contextMenu.py:49
 msgid "Headline Case"
-msgstr "헤드라인 케이스"
+msgstr "헤드라인 대소문자"
 
-#: robocopyManager.py:434
-msgid "Immediate sync completed: {}/{} destinations"
-msgstr "즉시 동기화 완료: {}/{} 대상"
-
-#: robocopyManager.py:767
-msgid "Invalid destination"
-msgstr "잘못된 대상"
-
-#: folder_creation_dialog.py:169
+#: folder_creation_dialog.py:166
 msgid "Invalid number for folders"
-msgstr "폴더 수가 잘못됨"
+msgstr "폴더 수가 잘못되었습니다"
 
-#: robocopyManager.py:407
-#: robocopyManager.py:447
-msgid "Invalid time format"
-msgstr "잘못된 시간 형식"
-
-#: contextMenu.py:26
+#: contextMenu.py:28
 msgid "Invert selection"
 msgstr "선택 반전"
 
-#: selectionManager.py:60
-msgid "Inverted selection: {inverted} of {total} items selected"
-msgstr "선택 반전: 전체 {total}개 중 {inverted}개 선택됨"
-
-#: robocopyManager.py:868
-msgid "Large file detected, using compression for speed"
-msgstr "대용량 파일 감지됨, 속도를 위해 압축 사용"
-
-#: contextMenu.py:48
+#: contextMenu.py:47
 msgid "Lowercase"
 msgstr "소문자"
 
-#: folder_creation_dialog.py:166
+#: folder_creation_dialog.py:163
 msgid "Maximum 100 folders allowed"
-msgstr "최대 100개 폴더 허용"
+msgstr "최대 100개 폴더까지 허용됩니다"
 
-#: robocopyManager.py:62
-msgid "Minimize"
-msgstr "최소화"
-
-#: robocopyManager.py:145
-msgid "Mirror Backup Settings"
-msgstr "미러 백업 설정"
-
-#: robocopyManager.py:716
-msgid "Mirror backup configured successfully"
-msgstr "미러 백업이 성공적으로 구성됨"
-
-#: robocopyManager.py:718
-msgid "Mirror backup disabled"
-msgstr "미러 백업 비활성화됨"
-
-#: robocopyManager.py:771
-msgid "Move"
-msgstr "이동"
-
-#: robocopyManager.py:609
-msgid "Next scheduled backup for {}: {}"
-msgstr "{}에 대한 다음 예약 백업: {}"
-
-#: __init__.py:650
+#: __init__.py:681
 msgid "No Explorer folder detected"
-msgstr "탐색기 폴더가 감지되지 않음"
+msgstr "탐색기 폴더가 감지되지 않았습니다"
 
-#: fileOperations.py:300
-#: fileOperations.py:410
+#: fileOperations.py:173
+#: fileOperations.py:230
 msgid "No access to size data"
-msgstr "크기 데이터에 접근할 수 없음"
+msgstr "크기 데이터에 액세스할 수 없습니다"
 
-#: selectionManager.py:27
+#: selectionManager.py:36
 msgid "No active File Explorer window found"
-msgstr "활성 파일 탐색기 창을 찾을 수 없음"
+msgstr "활성 파일 탐색기 창을 찾을 수 없습니다"
 
-#: clipboardManager.py:156
+#: clipboardManager.py:127
 msgid "No content could be read from selected files"
-msgstr "선택한 파일에서 읽을 수 있는 내용이 없음"
+msgstr "선택한 파일에서 내용을 읽을 수 없었습니다"
 
-#: createFile.py:303
+#: createFile.py:282
 msgid "No files were created"
-msgstr "생성된 파일이 없음"
+msgstr "파일이 생성되지 않았습니다"
 
-#: case.py:106
-#: case.py:120
-#: case.py:141
-#: case.py:155
+#: case.py:142
+#: case.py:148
+#: case.py:157
+#: case.py:163
 msgid "No folders found"
-msgstr "폴더를 찾을 수 없음"
+msgstr "폴더를 찾을 수 없습니다"
 
-#: __init__.py:677
+#: __init__.py:703
+msgid "No folders selected"
+msgstr "선택한 폴더가 없습니다"
+
+#: __init__.py:718
 msgid "No folders selected or current folder not available"
-msgstr "선택한 폴더가 없거나 현재 폴더를 사용할 수 없음"
+msgstr "선택한 폴더가 없거나 현재 폴더를 사용할 수 없습니다"
 
-#: folder_creation_dialog.py:230
-#: txt2folder.py:155
-#: txt2folder.py:208
+#: folder_creation_dialog.py:229
+#: txt2folder.py:148
+#: txt2folder.py:198
 msgid "No folders were created"
-msgstr "생성된 폴더가 없음"
+msgstr "폴더가 생성되지 않았습니다"
 
 #: folderInfo.py:30
 msgid "No item selected"
-msgstr "선택한 항목 없음"
+msgstr "선택한 항목이 없습니다"
 
-#: selectionManager.py:40
+#: selectionManager.py:49
 msgid "No items in folder"
-msgstr "폴더에 항목이 없음"
+msgstr "폴더에 항목이 없습니다"
 
-#: clipboardManager.py:30
-#: clipboardManager.py:72
-#: compressionManager.py:132
-#: fileOperations.py:289
-#: fileOperations.py:433
+#: clipboardManager.py:27
+#: clipboardManager.py:62
+#: compressionManager.py:148
+#: fileOperations.py:164
+#: fileOperations.py:260
 msgid "No items selected"
-msgstr "선택한 항목 없음"
+msgstr "선택한 항목이 없습니다"
 
-#: robocopyManager.py:749
-msgid "No pending operation"
-msgstr "보류 중인 작업 없음"
-
-#: clipboardManager.py:93
+#: clipboardManager.py:79
 msgid "No text files selected"
-msgstr "선택한 텍스트 파일 없음"
+msgstr "선택한 텍스트 파일이 없습니다"
 
-#: txt2folder.py:91
-#: txt2folder.py:167
+#: txt2folder.py:90
+#: txt2folder.py:160
 msgid "No valid folder names found in the file"
-msgstr "파일에서 유효한 폴더 이름을 찾을 수 없음"
+msgstr "파일에서 유효한 폴더 이름을 찾을 수 없습니다"
 
-#: createFile.py:227
-#: robocopyManager.py:663
-#: robocopyManager.py:724
-#: robocopyManager.py:737
-#: robocopyManager.py:755
-#: selectionManager.py:21
-#: txt2folder.py:43
+#: folder_creation_dialog.py:184
+msgid "No valid folder names provided"
+msgstr "유효한 폴더 이름이 제공되지 않았습니다"
+
+#: createFile.py:198
+#: selectionManager.py:30
+#: txt2folder.py:40
 msgid "Not in File Explorer"
-msgstr "파일 탐색기에 없음"
+msgstr "파일 탐색기에 없습니다"
 
-#: createFile.py:27
+#: createFile.py:28
 msgid "Number of files to create:"
-msgstr "생성할 파일 수:"
+msgstr "만들 파일 수:"
 
-#: folder_creation_dialog.py:163
+#: folder_creation_dialog.py:160
 msgid "Number of folders must be at least 1"
-msgstr "폴더 수는 최소 1 이상이어야 함"
+msgstr "폴더 수는 최소 1개여야 합니다"
 
-#: folder_creation_dialog.py:35
+#: folder_creation_dialog.py:38
 msgid "Number of folders:"
 msgstr "폴더 수:"
 
-#: robocopyManager.py:241
-msgid "OK"
-msgstr "확인"
-
-#: __init__.py:586
+#: __init__.py:616
 msgid "Open xPlorer context menu"
-msgstr "xPlorer 상황에 맞는 메뉴 열기"
+msgstr "xPlorer 컨텍스트 메뉴 열기"
 
-#: txt2folder.py:55
+#: txt2folder.py:53
 msgid "Please select a .txt or .rtf file"
 msgstr ".txt 또는 .rtf 파일을 선택하세요"
 
-#: fileOperations.py:443
+#: fileOperations.py:267
 msgid "Please select a file, not a folder"
 msgstr "폴더가 아닌 파일을 선택하세요"
 
-#: robocopyManager.py:671
-msgid "Please select a folder"
-msgstr "폴더를 선택하세요"
-
-#: fileOperations.py:437
+#: fileOperations.py:263
 msgid "Please select only one file"
 msgstr "파일 하나만 선택하세요"
 
 #: folderInfo.py:35
-#: robocopyManager.py:667
 msgid "Please select only one folder"
 msgstr "폴더 하나만 선택하세요"
 
-#: txt2folder.py:48
+#: txt2folder.py:46
 msgid "Please select only one text file"
 msgstr "텍스트 파일 하나만 선택하세요"
 
-#: robocopyManager.py:46
-msgid "Preparing operation..."
-msgstr "작업 준비 중..."
+#: selectionManager.py:58
+msgid "Processing {count} items in background..."
+msgstr "백그라운드에서 {count}개 항목을 처리 중..."
 
-#: robocopyManager.py:103
-msgid "Processing: {}"
-msgstr "처리 중: {}"
-
-#: robocopyManager.py:105
-msgid "Progress: {}%"
-msgstr "진행률: {}%"
-
-#: robocopyManager.py:210
-msgid "Remove selected destination"
-msgstr "선택한 대상 제거"
-
-#: robocopyManager.py:198
-msgid "Remove selected source"
-msgstr "선택한 소스 제거"
-
-#: __init__.py:603
-#: contextMenu.py:31
+#: __init__.py:633
+#: contextMenu.py:32
 msgid "Rename selected file"
 msgstr "선택한 파일 이름 바꾸기"
 
-#: contextMenu.py:35
+#: __init__.py:460
+msgid "Required manager not available"
+msgstr "필요한 관리자를 사용할 수 없습니다"
+
+#: contextMenu.py:36
 msgid "Robocopy"
 msgstr "Robocopy"
 
-#: contextMenu.py:32
+#: __init__.py:540
+msgid "Robocopy manager not available"
+msgstr "Robocopy 관리자를 사용할 수 없습니다"
+
+#: __init__.py:563
+msgid "Robocopy: single tap copy, double tap paste, triple tap move"
+msgstr "Robocopy: 한 번 탭 복사, 두 번 탭 붙여넣기, 세 번 탭 이동"
+
+#: contextMenu.py:33
 msgid "Say size"
-msgstr "크기 말하기"
+msgstr "크기 읽기"
 
-#: __init__.py:561
+#: __init__.py:523
 msgid "Say size (single tap) or compress zip (double tap)"
-msgstr "크기 말하기(한 번 탭) 또는 zip 압축(두 번 탭)"
+msgstr "크기 읽기(한 번 탭) 또는 ZIP 압축(두 번 탭)"
 
-#: robocopyManager.py:648
-msgid "Scheduled backup completed: {}/{} destinations"
-msgstr "예약 백업 완료: {}/{} 대상"
-
-#: robocopyManager.py:623
-msgid "Scheduled mirror backup started for {}"
-msgstr "{}에 대한 예약 미러 백업 시작됨"
-
-#: robocopyManager.py:231
-msgid "Scheduled time:"
-msgstr "예약 시간:"
-
-#: robocopyManager.py:728
-#: robocopyManager.py:741
-msgid "Select one item only"
-msgstr "항목 하나만 선택하세요"
-
-#: txt2folder.py:60
+#: txt2folder.py:58
 msgid "Selected file does not exist"
-msgstr "선택한 파일이 존재하지 않음"
+msgstr "선택한 파일이 존재하지 않습니다"
 
 #: folderInfo.py:41
 msgid "Selected item is not a folder"
-msgstr "선택한 항목이 폴더가 아님"
+msgstr "선택한 항목이 폴더가 아닙니다"
 
-#: createFile.py:199
+#: selectionManager.py:93
+msgid "Selected {count} items"
+msgstr "{count}개 항목을 선택했습니다"
+
+#: selectionManager.py:96
+msgid "Selection inverted"
+msgstr "선택이 반전되었습니다"
+
+#: createFile.py:170
 msgid "Some files will use default names"
-msgstr "일부 파일은 기본 이름을 사용함"
+msgstr "일부 파일은 기본 이름을 사용합니다"
 
-#: robocopyManager.py:404
-#: robocopyManager.py:444
-msgid "Source and destination required"
-msgstr "소스와 대상이 필요함"
-
-#: robocopyManager.py:792
-msgid "Source does not exist"
-msgstr "소스가 존재하지 않음"
-
-#: robocopyManager.py:193
-msgid "Source folders (select to edit):"
-msgstr "소스 폴더(편집하려면 선택):"
-
-#: robocopyManager.py:195
-msgid "Source folders list"
-msgstr "소스 폴더 목록"
-
-#: robocopyManager.py:732
-msgid "Source for copy: {}"
-msgstr "복사 소스: {}"
-
-#: robocopyManager.py:745
-msgid "Source for move: {}"
-msgstr "이동 소스: {}"
-
-#: robocopyManager.py:121
-msgid "Speed: {}"
-msgstr "속도: {}"
-
-#: robocopyManager.py:240
-msgid "Start synchronization"
-msgstr "동기화 시작"
-
-#: robocopyManager.py:410
-msgid "Starting immediate mirror sync..."
-msgstr "즉시 미러 동기화 시작 중..."
-
-#: robocopyManager.py:774
-msgid "Starting {} operation in background..."
-msgstr "백그라운드에서 {} 작업 시작 중..."
-
-#: compressionManager.py:144
 #: compressionManager.py:161
 msgid "Starting..."
-msgstr "시작 중..."
+msgstr "시작하는 중..."
 
-#: case.py:162
+#: case.py:165
 msgid "Successfully converted {count} folders to headline case"
-msgstr "{count}개 폴더를 헤드라인 케이스로 성공적으로 변환함"
+msgstr "{count}개 폴더를 헤드라인 대소문자로 변환했습니다"
 
-#: case.py:127
+#: case.py:150
 msgid "Successfully converted {count} folders to lowercase"
-msgstr "{count}개 폴더를 소문자로 성공적으로 변환함"
+msgstr "{count}개 폴더를 소문자로 변환했습니다"
 
-#: case.py:148
+#: case.py:159
 msgid "Successfully converted {count} folders to title case"
-msgstr "{count}개 폴더를 타이틀 케이스로 성공적으로 변환함"
+msgstr "{count}개 폴더를 제목 대소문자로 변환했습니다"
 
-#: case.py:113
+#: case.py:144
 msgid "Successfully converted {count} folders to uppercase"
-msgstr "{count}개 폴더를 대문자로 성공적으로 변환함"
+msgstr "{count}개 폴더를 대문자로 변환했습니다"
 
-#: folder_creation_dialog.py:226
+#: folder_creation_dialog.py:225
 msgid "Successfully created 1 folder"
-msgstr "폴더 1개를 성공적으로 생성함"
+msgstr "폴더 1개를 만들었습니다"
 
-#: folder_creation_dialog.py:224
+#: folder_creation_dialog.py:223
 msgid "Successfully created main folder only"
-msgstr "주 폴더만 성공적으로 생성함"
+msgstr "주 폴더만 만들었습니다"
 
-#: folder_creation_dialog.py:228
-msgid "Successfully created {count} folders"
-msgstr "{count}개 폴더를 성공적으로 생성함"
+#: folder_creation_dialog.py:227
+msgid "Successfully created {count} of {total} folders"
+msgstr "전체 {total}개 중 {count}개 폴더를 만들었습니다"
 
-#: txt2folder.py:150
-#: txt2folder.py:203
+#: txt2folder.py:144
+#: txt2folder.py:194
 msgid "Successfully created {} folders in '{}'"
-msgstr "'{}'에 {}개 폴더를 성공적으로 생성함"
+msgstr "'{}'에 {}개 폴더를 만들었습니다"
 
-#: xPlorerManager.py:66
-msgid "Suppress announcement of '- File Explorer' in window titles"
-msgstr "창 제목에서 '- 파일 탐색기' 알림 억제"
-
-#: xPlorerManager.py:61
-msgid "Suppress announcement of DirectUIHWND class"
-msgstr "DirectUIHWND 클래스 알림 억제"
-
-#: robocopyManager.py:438
-msgid "Sync error occurred"
-msgstr "동기화 오류 발생"
-
-#: robocopyManager.py:220
-msgid "Synchronization interval:"
-msgstr "동기화 간격:"
-
-#: contextMenu.py:42
+#: contextMenu.py:41
 msgid "TXT to Folder"
 msgstr "TXT를 폴더로"
 
-#: contextMenu.py:49
+#: contextMenu.py:48
 msgid "Title Case"
-msgstr "타이틀 케이스"
+msgstr "제목 대소문자"
 
-#: clipboardManager.py:104
+#: clipboardManager.py:88
 msgid "Total file size is too large to copy content"
-msgstr "전체 파일 크기가 너무 커서 내용을 복사할 수 없음"
+msgstr "전체 파일 크기가 너무 커서 내용을 복사할 수 없습니다"
 
-#: robocopyManager.py:963
-msgid "Trying alternative copy method..."
-msgstr "대체 복사 방법 시도 중..."
+#: createFile.py:213
+msgid "Unable to get current directory after multiple attempts"
+msgstr "여러 번 시도했지만 현재 디렉터리를 가져올 수 없습니다"
 
-#: createFile.py:233
-msgid "Unable to get current directory"
-msgstr "현재 디렉터리를 가져올 수 없음"
-
-#: __init__.py:433
+#: __init__.py:402
 msgid "Unable to get current path"
-msgstr "현재 경로를 가져올 수 없음"
+msgstr "현재 경로를 가져올 수 없습니다"
 
-#: selectionManager.py:32
+#: selectionManager.py:41
 msgid "Unable to get folder view"
-msgstr "폴더 보기를 가져올 수 없음"
+msgstr "폴더 보기를 가져올 수 없습니다"
 
-#: contextMenu.py:47
+#: contextMenu.py:46
 msgid "Uppercase"
 msgstr "대문자"
 
-#: clipboardManager.py:124
+#: clipboardManager.py:104
 msgid "[Error processing RTF file]"
-msgstr "[RTF 파일 처리 오류]"
+msgstr "[RTF 파일 처리 중 오류]"
 
-#: clipboardManager.py:126
+#: clipboardManager.py:106
 msgid "[RTF content - striprtf module not available]"
 msgstr "[RTF 내용 - striprtf 모듈을 사용할 수 없음]"
 
-#: compressionManager.py:97
-msgid "compression failed: {error}"
-msgstr "압축 실패: {error}"
+#: compressionManager.py:114
+msgid "compression failed"
+msgstr "압축 실패"
 
-#: contextMenu.py:36
+#: contextMenu.py:37
 msgid "copy"
 msgstr "복사"
 
-#: contextMenu.py:40
-msgid "mirror Backup"
-msgstr "미러 백업"
-
-#: contextMenu.py:37
+#: contextMenu.py:38
 msgid "move"
 msgstr "이동"
 
-#: createFile.py:183
+#: createFile.py:156
 msgid "new_file"
 msgstr "새_파일"
 
-#: createFile.py:185
+#: createFile.py:158
 msgid "new_file_{index}"
 msgstr "새_파일_{index}"
 
-#: contextMenu.py:38
+#: contextMenu.py:39
 msgid "paste"
 msgstr "붙여넣기"
 
-#: __init__.py:143
-#: __init__.py:472
-#: __init__.py:517
-#: __init__.py:562
-#: __init__.py:587
-#: __init__.py:604
-#: __init__.py:627
-#: xPlorerManager.py:44
+#: __init__.py:110
+#: __init__.py:444
+#: __init__.py:484
+#: __init__.py:524
+#: __init__.py:564
+#: __init__.py:617
+#: __init__.py:634
+#: __init__.py:652
 msgid "xPlorer"
 msgstr "xPlorer"
 
-#: contextMenu.py:22
+#: contextMenu.py:51
 msgid "xPlorer Settings"
 msgstr "xPlorer 설정"
 
-#: createFile.py:307
+#: createFile.py:286
 msgid "{count} files created"
-msgstr "{count}개 파일 생성됨"
+msgstr "{count}개 파일을 만들었습니다"
 
-#: fileOperations.py:420
+#: fileOperations.py:237
 msgid "{count} items {size}"
 msgstr "{count}개 항목 {size}"
 
-#: folderInfo.py:66
+#: folderInfo.py:62
 msgid "{subfolders} subfolders and {files} files"
-msgstr "하위 폴더 {subfolders}개, 파일 {files}개"
-
-#: robocopyManager.py:950
-msgid "{} completed successfully in {:.1f} seconds"
-msgstr "{}이(가) {:.1f}초 만에 성공적으로 완료됨"
-
-#: robocopyManager.py:947
-msgid "{} completed successfully in {:.1f} seconds, average speed: {:.1f} MB/s"
-msgstr "{}이(가) {:.1f}초 만에 성공적으로 완료됨, 평균 속도: {:.1f} MB/s"
-
-#: robocopyManager.py:978
-msgid "{} completed successfully using alternative method"
-msgstr "대체 방법을 사용하여 {}이(가) 성공적으로 완료됨"
-
-#: robocopyManager.py:985
-msgid "{} completed with warnings (code: {})"
-msgstr "{}이(가) 경고와 함께 완료됨(코드: {})"
-
-#: robocopyManager.py:982
-msgid "{} failed with error: {}"
-msgstr "{}이(가) 오류와 함께 실패함: {}"
-
-#: robocopyManager.py:903
-msgid "{} in progress... {} seconds elapsed"
-msgstr "{} 진행 중... {}초 경과"
-
-#: robocopyManager.py:878
-msgid "{} started. You can continue working while it runs in background."
-msgstr "{}이(가) 시작되었습니다. 백그라운드에서 실행되는 동안 작업을 계속할 수 있습니다."
-
-#: robocopyManager.py:929
-msgid "{}: {}% complete, speed: {:.1f} MB/s"
-msgstr "{}: {}% 완료, 속도: {:.1f} MB/s"
+msgstr "{subfolders}개 하위 폴더 및 {files}개 파일"

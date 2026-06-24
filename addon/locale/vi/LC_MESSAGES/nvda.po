@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: xPlorer 2026.5.5\n"
+"Project-Id-Version: xPlorer 2026.7.0\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-04-27 15:57+0700\n"
+"POT-Creation-Date: 2026-06-24 13:09+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Vietnamese\n"
@@ -12,511 +12,401 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: DevOn Addon\n"
 
-#: folder_creation_dialog.py:60
+#: folder_creation_dialog.py:62
 msgid "&Apply"
 msgstr "&Áp dụng"
 
-#: folder_creation_dialog.py:61
+#: folder_creation_dialog.py:63
 msgid "&Cancel"
 msgstr "&Hủy"
 
-#: robocopyManager.py:223
-msgid "1 day"
-msgstr "1 ngày"
-
-#: createFile.py:305
+#: createFile.py:284
 msgid "1 file created"
 msgstr "Đã tạo 1 tập tin"
 
-#: robocopyManager.py:222
-msgid "1 hour"
-msgstr "1 giờ"
-
-#: robocopyManager.py:223
-msgid "1 month"
-msgstr "1 tháng"
-
-#: robocopyManager.py:223
-msgid "15 days"
-msgstr "15 ngày"
-
-#: robocopyManager.py:222
-msgid "15 minutes"
-msgstr "15 phút"
-
-#: robocopyManager.py:222
-msgid "30 minutes"
-msgstr "30 phút"
-
-#: robocopyManager.py:223
-msgid "7 days"
-msgstr "7 ngày"
-
-#: compressionManager.py:159
-msgid "7-Zip compression failed, trying built-in method..."
-msgstr "Nén 7-Zip thất bại, đang thử phương thức tích hợp..."
-
-#: fileOperations.py:474
+#: fileOperations.py:294
 msgid "A file with this name already exists"
 msgstr "Tập tin với tên này đã tồn tại"
 
-#: robocopyManager.py:209
-msgid "Add destination folder"
-msgstr "Thêm thư mục đích"
-
-#: xPlorerManager.py:56
-msgid "Announce 'Empty Folder' when entering an empty folder"
-msgstr "Thông báo 'Thư mục rỗng' khi vào thư mục rỗng"
-
-#: xPlorerManager.py:71
-msgid "Automatically paste clipboard content into rename field"
-msgstr "Tự động dán nội dung khay nhớ tạm vào trường đổi tên"
-
-#: xPlorerManager.py:51
-msgid "Automatically select the first item"
-msgstr "Tự động chọn mục đầu tiên"
-
-#: compressionManager.py:268
+#: compressionManager.py:288
 msgid "Built-in compression failed: {error}"
 msgstr "Nén tích hợp thất bại: {error}"
 
-#: robocopyManager.py:61
-#: robocopyManager.py:242
-msgid "Cancel"
-msgstr "Hủy"
-
-#: clipboardManager.py:77
+#: clipboardManager.py:66
 msgid "Cannot copy content of folders, please select files only"
-msgstr "Không thể sao chép nội dung thư mục, vui lòng chỉ chọn tập tin"
+msgstr "Không thể sao chép nội dung của thư mục, vui lòng chỉ chọn tập tin"
 
-#: createFile.py:290
+#: createFile.py:271
 msgid "Cannot find unique name for: {name}"
-msgstr "Không tìm thấy tên duy nhất cho: {name}"
+msgstr "Không thể tìm tên duy nhất cho: {name}"
 
-#: robocopyManager.py:761
-msgid "Cannot get destination"
-msgstr "Không thể lấy đích"
-
-#: __init__.py:635
+#: __init__.py:660
 msgid "Cannot open settings dialog"
 msgstr "Không thể mở hộp thoại cài đặt"
 
 #: txt2folder.py:69
 msgid "Cannot process RTF file: striprtf module not available"
-msgstr "Không thể xử lý tập tin RTF: mô-đun striprtf không khả dụng"
+msgstr "Không thể xử lý tập tin RTF: mô-đun striprtf không có sẵn"
 
-#: contextMenu.py:46
+#: contextMenu.py:45
 msgid "Case Converter for Folders"
-msgstr "Bộ chuyển đổi chữ hoa/thường cho thư mục"
+msgstr "Công cụ chuyển đổi kiểu chữ cho thư mục"
 
-#: robocopyManager.py:348
-msgid "Choose destination folder"
-msgstr "Chọn thư mục đích"
+#: __init__.py:699
+msgid "Case converter not available"
+msgstr "Công cụ chuyển đổi kiểu chữ không có sẵn"
 
-#: robocopyManager.py:239
-msgid "Clear all settings"
-msgstr "Xóa tất cả cài đặt"
+#: __init__.py:420
+msgid "Clipboard manager not available"
+msgstr "Trình quản lý bảng tạm không có sẵn"
 
-#: compressionManager.py:264
+#: compressionManager.py:284
 msgid "Completed"
-msgstr "Đã hoàn tất"
+msgstr "Đã hoàn thành"
 
-#: contextMenu.py:25
+#: contextMenu.py:27
 msgid "Compress zip"
 msgstr "Nén zip"
 
-#: compressionManager.py:144
-#: compressionManager.py:161
+#: compressionManager.py:160
+#: compressionManager.py:168
 msgid "Compressing files"
 msgstr "Đang nén tập tin"
 
-#: compressionManager.py:70
+#: compressionManager.py:75
 msgid "Compressing..."
 msgstr "Đang nén..."
 
-#: compressionManager.py:244
-#: compressionManager.py:258
+#: compressionManager.py:263
+#: compressionManager.py:277
 msgid "Compressing: {percent}%"
 msgstr "Đang nén: {percent}%"
 
-#: compressionManager.py:92
-#: compressionManager.py:262
+#: compressionManager.py:110
+#: compressionManager.py:282
 msgid "Compression cancelled"
 msgstr "Đã hủy nén"
 
-#: compressionManager.py:94
-#: compressionManager.py:265
+#: compressionManager.py:112
+#: compressionManager.py:285
 msgid "Compression completed {name}"
 msgstr "Đã nén xong {name}"
 
-#: clipboardManager.py:165
+#: __init__.py:500
+msgid "Compression manager not available"
+msgstr "Trình quản lý nén không có sẵn"
+
+#: compressionManager.py:86
+msgid "Compression timed out"
+msgstr "Quá thời gian nén"
+
+#: clipboardManager.py:133
 msgid "Content from 1 file copied to clipboard"
-msgstr "Nội dung từ 1 tập tin đã sao chép vào khay nhớ tạm"
+msgstr "Nội dung từ 1 tập tin đã được sao chép vào bảng tạm"
 
-#: clipboardManager.py:167
+#: clipboardManager.py:135
 msgid "Content from {count} files copied to clipboard"
-msgstr "Nội dung từ {count} tập tin đã sao chép vào khay nhớ tạm"
+msgstr "Nội dung từ {count} tập tin đã được sao chép vào bảng tạm"
 
-#: clipboardManager.py:53
+#: __init__.py:607
+#: __init__.py:673
+msgid "Context menu manager not available"
+msgstr "Trình quản lý menu ngữ cảnh không có sẵn"
+
+#: case.py:115
+msgid "Conversion already in progress"
+msgstr "Quá trình chuyển đổi đã diễn ra"
+
+#: case.py:132
+msgid "Converting"
+msgstr "Đang chuyển đổi"
+
+#: clipboardManager.py:44
 msgid "Copied 1 item name to clipboard"
-msgstr "Đã sao chép 1 tên mục vào khay nhớ tạm"
+msgstr "Đã sao chép tên 1 mục vào bảng tạm"
 
-#: robocopyManager.py:185
-msgid "Copied source path to clipboard"
-msgstr "Đã sao chép đường dẫn nguồn vào khay nhớ tạm"
-
-#: clipboardManager.py:55
+#: clipboardManager.py:46
 msgid "Copied {count} item names to clipboard"
-msgstr "Đã sao chép {count} tên mục vào khay nhớ tạm"
+msgstr "Đã sao chép tên {count} mục vào bảng tạm"
 
-#: __init__.py:429
+#: __init__.py:396
 msgid "Copied: {path}"
 msgstr "Đã sao chép: {path}"
 
-#: robocopyManager.py:771
-msgid "Copy"
-msgstr "Sao chép"
-
-#: contextMenu.py:27
+#: contextMenu.py:29
 msgid "Copy address bar"
 msgstr "Sao chép thanh địa chỉ"
 
-#: contextMenu.py:28
+#: contextMenu.py:30
 msgid "Copy content"
 msgstr "Sao chép nội dung"
 
-#: __init__.py:516
+#: __init__.py:483
 msgid "Copy content (single tap) or invert selection (double tap)"
 msgstr "Sao chép nội dung (chạm một lần) hoặc đảo ngược lựa chọn (chạm hai lần)"
 
-#: contextMenu.py:29
+#: contextMenu.py:31
 msgid "Copy selected file and folder names"
 msgstr "Sao chép tên tập tin và thư mục đã chọn"
 
-#: __init__.py:471
+#: __init__.py:443
 msgid "Copy selected names (single tap) or copy address bar (double tap)"
 msgstr "Sao chép tên đã chọn (chạm một lần) hoặc sao chép thanh địa chỉ (chạm hai lần)"
 
-#: __init__.py:431
-#: clipboardManager.py:57
-#: clipboardManager.py:169
-#: robocopyManager.py:187
+#: __init__.py:400
+#: clipboardManager.py:50
+#: clipboardManager.py:139
 msgid "Could not open clipboard"
-msgstr "Không thể mở khay nhớ tạm"
+msgstr "Không thể mở bảng tạm"
 
-#: contextMenu.py:30
-#: createFile.py:16
+#: contextMenu.py:24
+#: createFile.py:17
 msgid "Create File"
 msgstr "Tạo tập tin"
 
-#: folder_creation_dialog.py:14
+#: folder_creation_dialog.py:16
 msgid "Create Multiple Folders"
 msgstr "Tạo nhiều thư mục"
 
-#: contextMenu.py:43
+#: contextMenu.py:42
 msgid "Create Multiple Folders..."
 msgstr "Tạo nhiều thư mục..."
 
-#: folder_creation_dialog.py:42
+#: folder_creation_dialog.py:45
 msgid "Create main folder and then subfolders"
-msgstr "Tạo thư mục chính rồi đến thư mục con"
+msgstr "Tạo thư mục chính và sau đó là thư mục con"
 
-#: __init__.py:626
+#: __init__.py:651
 msgid "Create new folder and paste clipboard content into rename field"
-msgstr "Tạo thư mục mới và dán nội dung khay nhớ tạm vào trường đổi tên"
+msgstr "Tạo thư mục mới và dán nội dung bảng tạm vào trường đổi tên"
 
-#: createFile.py:237
-msgid "Current path is not a directory"
-msgstr "Đường dẫn hiện tại không phải là thư mục"
+#: folder_creation_dialog.py:212
+msgid "Created {count} of {total} folders..."
+msgstr "Đã tạo {count} trong số {total} thư mục..."
 
-#: robocopyManager.py:817
-msgid "Destination already exists, overwriting..."
-msgstr "Đích đã tồn tại, đang ghi đè..."
+#: folder_creation_dialog.py:199
+msgid "Creating folders in background..."
+msgstr "Đang tạo thư mục trong nền..."
 
-#: robocopyManager.py:205
-msgid "Destination folders list"
-msgstr "Danh sách thư mục đích"
-
-#: robocopyManager.py:203
-msgid "Destination folders:"
-msgstr "Thư mục đích:"
-
-#: folder_creation_dialog.py:46
+#: folder_creation_dialog.py:49
 msgid "Edit individual folder names"
 msgstr "Chỉnh sửa tên thư mục riêng lẻ"
 
-#: robocopyManager.py:115
-msgid "Elapsed time: {} seconds"
-msgstr "Thời gian đã trôi qua: {} giây"
-
-#: xPlorerManager.py:40
-msgid "Empty Folder"
-msgstr "Thư mục rỗng"
-
-#: robocopyManager.py:217
-msgid "Enable automatic synchronization"
-msgstr "Bật đồng bộ tự động"
-
-#: folderInfo.py:78
+#: folderInfo.py:71
 msgid "Error calculating folder info"
-msgstr "Lỗi khi tính toán thông tin thư mục"
+msgstr "Lỗi tính toán thông tin thư mục"
 
-#: fileOperations.py:401
+#: fileOperations.py:248
 msgid "Error calculating size"
-msgstr "Lỗi khi tính toán kích thước"
+msgstr "Lỗi tính toán kích thước"
 
-#: compressionManager.py:173
+#: compressionManager.py:196
 msgid "Error compressing files"
-msgstr "Lỗi khi nén tập tin"
+msgstr "Lỗi nén tập tin"
 
-#: clipboardManager.py:173
+#: clipboardManager.py:142
 msgid "Error copying file content"
-msgstr "Lỗi khi sao chép nội dung tập tin"
+msgstr "Lỗi sao chép nội dung tập tin"
 
-#: clipboardManager.py:61
+#: clipboardManager.py:53
 msgid "Error copying names to clipboard"
-msgstr "Lỗi khi sao chép tên vào khay nhớ tạm"
+msgstr "Lỗi sao chép tên vào bảng tạm"
 
-#: txt2folder.py:116
+#: txt2folder.py:113
 msgid "Error creating base folder"
-msgstr "Lỗi khi tạo thư mục cơ sở"
+msgstr "Lỗi tạo thư mục cơ sở"
 
-#: createFile.py:311
+#: createFile.py:289
 msgid "Error creating files"
-msgstr "Lỗi khi tạo tập tin"
+msgstr "Lỗi tạo tập tin"
 
-#: folder_creation_dialog.py:219
-msgid "Error creating folder: {number}"
-msgstr "Lỗi khi tạo thư mục: {number}"
-
-#: __init__.py:662
+#: __init__.py:693
 msgid "Error creating folders"
-msgstr "Lỗi khi tạo thư mục"
+msgstr "Lỗi tạo thư mục"
 
-#: folder_creation_dialog.py:179
+#: folder_creation_dialog.py:190
 msgid "Error creating main folder"
-msgstr "Lỗi khi tạo thư mục chính"
+msgstr "Lỗi tạo thư mục chính"
 
-#: folder_creation_dialog.py:201
-msgid "Error creating subfolder: {number}"
-msgstr "Lỗi khi tạo thư mục con: {number}"
-
-#: __init__.py:690
+#: __init__.py:737
 msgid "Error during conversion"
 msgstr "Lỗi trong quá trình chuyển đổi"
 
-#: robocopyManager.py:990
-msgid "Error during {}: {}"
-msgstr "Lỗi trong {}: {}"
-
-#: compressionManager.py:101
+#: compressionManager.py:117
 msgid "Error in compression process: {error}"
 msgstr "Lỗi trong quá trình nén: {error}"
 
-#: selectionManager.py:65
+#: selectionManager.py:71
 msgid "Error inverting selection"
-msgstr "Lỗi khi đảo ngược lựa chọn"
+msgstr "Lỗi đảo ngược lựa chọn"
 
-#: createFile.py:262
+#: createFile.py:245
 msgid "Error opening create file dialog"
-msgstr "Lỗi khi mở hộp thoại tạo tập tin"
+msgstr "Lỗi mở hộp thoại tạo tập tin"
 
-#: fileOperations.py:488
+#: fileOperations.py:304
 msgid "Error opening rename dialog"
-msgstr "Lỗi khi mở hộp thoại đổi tên"
+msgstr "Lỗi mở hộp thoại đổi tên"
 
-#: __init__.py:642
+#: __init__.py:667
 msgid "Error opening settings"
-msgstr "Lỗi khi mở cài đặt"
+msgstr "Lỗi mở cài đặt"
 
-#: txt2folder.py:212
+#: txt2folder.py:203
 msgid "Error processing text file: {}"
-msgstr "Lỗi khi xử lý tập tin văn bản: {}"
+msgstr "Lỗi xử lý tập tin văn bản: {}"
 
 #: txt2folder.py:80
 msgid "Error reading RTF file"
-msgstr "Lỗi khi đọc tập tin RTF"
+msgstr "Lỗi đọc tập tin RTF"
 
-#: txt2folder.py:215
+#: txt2folder.py:207
 msgid "Error reading file encoding"
-msgstr "Lỗi khi đọc mã hóa tập tin"
+msgstr "Lỗi đọc mã hóa tập tin"
 
-#: fileOperations.py:453
-#: fileOperations.py:482
+#: fileOperations.py:274
+#: fileOperations.py:301
 msgid "Error renaming file"
-msgstr "Lỗi khi đổi tên tập tin"
+msgstr "Lỗi đổi tên tập tin"
 
-#: robocopyManager.py:784
-#: txt2folder.py:219
+#: txt2folder.py:212
 msgid "Error: {}"
 msgstr "Lỗi: {}"
 
-#: robocopyManager.py:111
-msgid "Estimated time remaining: {}"
-msgstr "Thời gian ước tính còn lại: {}"
-
-#: createFile.py:84
+#: createFile.py:72
 msgid "Extension:"
 msgstr "Phần mở rộng:"
 
-#: case.py:115
-#: case.py:129
-#: case.py:150
-#: case.py:164
+#: case.py:127
 msgid "Failed to rename any folders"
 msgstr "Không thể đổi tên bất kỳ thư mục nào"
 
-#: createFile.py:163
+#: compressionManager.py:188
+msgid "Failed to start compression"
+msgstr "Không thể bắt đầu nén"
+
+#: createFile.py:138
 msgid "File count cannot exceed 10"
 msgstr "Số lượng tập tin không được vượt quá 10"
 
-#: createFile.py:160
+#: createFile.py:135
 msgid "File count must be at least 1"
 msgstr "Số lượng tập tin phải ít nhất là 1"
 
-#: createFile.py:131
+#: createFile.py:112
 msgid "File name"
 msgstr "Tên tập tin"
 
-#: fileOperations.py:57
+#: fileOperations.py:59
 msgid "File name cannot be empty"
 msgstr "Tên tập tin không được để trống"
 
-#: fileOperations.py:470
+#: fileOperations.py:291
 msgid "File name not changed"
-msgstr "Tên tập tin chưa được thay đổi"
+msgstr "Tên tập tin không thay đổi"
 
-#: createFile.py:77
-#: createFile.py:132
+#: createFile.py:66
+#: createFile.py:113
 msgid "File name {index}:"
 msgstr "Tên tập tin {index}:"
 
-#: createFile.py:75
+#: createFile.py:64
 msgid "File name:"
 msgstr "Tên tập tin:"
 
-#: fileOperations.py:479
+#: __init__.py:622
+msgid "File operations manager not available"
+msgstr "Trình quản lý thao tác tập tin không có sẵn"
+
+#: fileOperations.py:298
 msgid "File renamed to {name}"
 msgstr "Đã đổi tên tập tin thành {name}"
 
-#: folder_creation_dialog.py:113
-#: folder_creation_dialog.py:158
+#: folder_creation_dialog.py:115
+#: folder_creation_dialog.py:155
 msgid "Folder"
 msgstr "Thư mục"
 
-#: txt2folder.py:106
-#: txt2folder.py:182
+#: txt2folder.py:104
+#: txt2folder.py:174
 msgid "Folder '{}' already exists, creating '{}' instead"
 msgstr "Thư mục '{}' đã tồn tại, thay vào đó tạo '{}'"
+
+#: __init__.py:677
+msgid "Folder creation dialog not available"
+msgstr "Hộp thoại tạo thư mục không có sẵn"
+
+#: __init__.py:639
+msgid "Folder creator helper not available"
+msgstr "Trợ giúp tạo thư mục không có sẵn"
 
 #: contextMenu.py:52
 msgid "Folder info"
 msgstr "Thông tin thư mục"
 
-#: folder_creation_dialog.py:27
+#: folder_creation_dialog.py:30
 msgid "Folder title:"
 msgstr "Tiêu đề thư mục:"
 
-#: contextMenu.py:50
+#: contextMenu.py:49
 msgid "Headline Case"
-msgstr "Chữ hoa tiêu đề"
+msgstr "Kiểu chữ tiêu đề"
 
-#: robocopyManager.py:434
-msgid "Immediate sync completed: {}/{} destinations"
-msgstr "Đồng bộ ngay hoàn tất: {}/{} đích"
-
-#: robocopyManager.py:767
-msgid "Invalid destination"
-msgstr "Đích không hợp lệ"
-
-#: folder_creation_dialog.py:169
+#: folder_creation_dialog.py:166
 msgid "Invalid number for folders"
 msgstr "Số lượng thư mục không hợp lệ"
 
-#: robocopyManager.py:407
-#: robocopyManager.py:447
-msgid "Invalid time format"
-msgstr "Định dạng thời gian không hợp lệ"
-
-#: contextMenu.py:26
+#: contextMenu.py:28
 msgid "Invert selection"
 msgstr "Đảo ngược lựa chọn"
 
-#: selectionManager.py:60
-msgid "Inverted selection: {inverted} of {total} items selected"
-msgstr "Đã đảo ngược lựa chọn: đã chọn {inverted} trên tổng số {total} mục"
-
-#: robocopyManager.py:868
-msgid "Large file detected, using compression for speed"
-msgstr "Phát hiện tập tin lớn, đang dùng nén để tăng tốc"
-
-#: contextMenu.py:48
+#: contextMenu.py:47
 msgid "Lowercase"
 msgstr "Chữ thường"
 
-#: folder_creation_dialog.py:166
+#: folder_creation_dialog.py:163
 msgid "Maximum 100 folders allowed"
 msgstr "Cho phép tối đa 100 thư mục"
 
-#: robocopyManager.py:62
-msgid "Minimize"
-msgstr "Thu nhỏ"
-
-#: robocopyManager.py:145
-msgid "Mirror Backup Settings"
-msgstr "Cài đặt sao lưu nhân bản"
-
-#: robocopyManager.py:716
-msgid "Mirror backup configured successfully"
-msgstr "Đã cấu hình sao lưu nhân bản thành công"
-
-#: robocopyManager.py:718
-msgid "Mirror backup disabled"
-msgstr "Đã tắt sao lưu nhân bản"
-
-#: robocopyManager.py:771
-msgid "Move"
-msgstr "Di chuyển"
-
-#: robocopyManager.py:609
-msgid "Next scheduled backup for {}: {}"
-msgstr "Sao lưu theo lịch tiếp theo cho {}: {}"
-
-#: __init__.py:650
+#: __init__.py:681
 msgid "No Explorer folder detected"
 msgstr "Không phát hiện thư mục Explorer"
 
-#: fileOperations.py:300
-#: fileOperations.py:410
+#: fileOperations.py:173
+#: fileOperations.py:230
 msgid "No access to size data"
 msgstr "Không có quyền truy cập dữ liệu kích thước"
 
-#: selectionManager.py:27
+#: selectionManager.py:36
 msgid "No active File Explorer window found"
 msgstr "Không tìm thấy cửa sổ File Explorer đang hoạt động"
 
-#: clipboardManager.py:156
+#: clipboardManager.py:127
 msgid "No content could be read from selected files"
 msgstr "Không thể đọc nội dung từ các tập tin đã chọn"
 
-#: createFile.py:303
+#: createFile.py:282
 msgid "No files were created"
 msgstr "Không có tập tin nào được tạo"
 
-#: case.py:106
-#: case.py:120
-#: case.py:141
-#: case.py:155
+#: case.py:142
+#: case.py:148
+#: case.py:157
+#: case.py:163
 msgid "No folders found"
 msgstr "Không tìm thấy thư mục nào"
 
-#: __init__.py:677
-msgid "No folders selected or current folder not available"
-msgstr "Chưa chọn thư mục nào hoặc thư mục hiện tại không khả dụng"
+#: __init__.py:703
+msgid "No folders selected"
+msgstr "Chưa chọn thư mục nào"
 
-#: folder_creation_dialog.py:230
-#: txt2folder.py:155
-#: txt2folder.py:208
+#: __init__.py:718
+msgid "No folders selected or current folder not available"
+msgstr "Chưa chọn thư mục nào hoặc thư mục hiện tại không có sẵn"
+
+#: folder_creation_dialog.py:229
+#: txt2folder.py:148
+#: txt2folder.py:198
 msgid "No folders were created"
 msgstr "Không có thư mục nào được tạo"
 
@@ -524,370 +414,246 @@ msgstr "Không có thư mục nào được tạo"
 msgid "No item selected"
 msgstr "Chưa chọn mục nào"
 
-#: selectionManager.py:40
+#: selectionManager.py:49
 msgid "No items in folder"
 msgstr "Không có mục nào trong thư mục"
 
-#: clipboardManager.py:30
-#: clipboardManager.py:72
-#: compressionManager.py:132
-#: fileOperations.py:289
-#: fileOperations.py:433
+#: clipboardManager.py:27
+#: clipboardManager.py:62
+#: compressionManager.py:148
+#: fileOperations.py:164
+#: fileOperations.py:260
 msgid "No items selected"
 msgstr "Chưa chọn mục nào"
 
-#: robocopyManager.py:749
-msgid "No pending operation"
-msgstr "Không có thao tác đang chờ"
-
-#: clipboardManager.py:93
+#: clipboardManager.py:79
 msgid "No text files selected"
 msgstr "Chưa chọn tập tin văn bản nào"
 
-#: txt2folder.py:91
-#: txt2folder.py:167
+#: txt2folder.py:90
+#: txt2folder.py:160
 msgid "No valid folder names found in the file"
 msgstr "Không tìm thấy tên thư mục hợp lệ trong tập tin"
 
-#: createFile.py:227
-#: robocopyManager.py:663
-#: robocopyManager.py:724
-#: robocopyManager.py:737
-#: robocopyManager.py:755
-#: selectionManager.py:21
-#: txt2folder.py:43
+#: folder_creation_dialog.py:184
+msgid "No valid folder names provided"
+msgstr "Không cung cấp tên thư mục hợp lệ"
+
+#: createFile.py:198
+#: selectionManager.py:30
+#: txt2folder.py:40
 msgid "Not in File Explorer"
 msgstr "Không ở trong File Explorer"
 
-#: createFile.py:27
+#: createFile.py:28
 msgid "Number of files to create:"
 msgstr "Số lượng tập tin cần tạo:"
 
-#: folder_creation_dialog.py:163
+#: folder_creation_dialog.py:160
 msgid "Number of folders must be at least 1"
 msgstr "Số lượng thư mục phải ít nhất là 1"
 
-#: folder_creation_dialog.py:35
+#: folder_creation_dialog.py:38
 msgid "Number of folders:"
 msgstr "Số lượng thư mục:"
 
-#: robocopyManager.py:241
-msgid "OK"
-msgstr "Đồng ý"
-
-#: __init__.py:586
+#: __init__.py:616
 msgid "Open xPlorer context menu"
 msgstr "Mở menu ngữ cảnh xPlorer"
 
-#: txt2folder.py:55
+#: txt2folder.py:53
 msgid "Please select a .txt or .rtf file"
 msgstr "Vui lòng chọn tập tin .txt hoặc .rtf"
 
-#: fileOperations.py:443
+#: fileOperations.py:267
 msgid "Please select a file, not a folder"
-msgstr "Vui lòng chọn một tập tin, không phải thư mục"
+msgstr "Vui lòng chọn tập tin, không phải thư mục"
 
-#: robocopyManager.py:671
-msgid "Please select a folder"
-msgstr "Vui lòng chọn một thư mục"
-
-#: fileOperations.py:437
+#: fileOperations.py:263
 msgid "Please select only one file"
 msgstr "Vui lòng chỉ chọn một tập tin"
 
 #: folderInfo.py:35
-#: robocopyManager.py:667
 msgid "Please select only one folder"
 msgstr "Vui lòng chỉ chọn một thư mục"
 
-#: txt2folder.py:48
+#: txt2folder.py:46
 msgid "Please select only one text file"
 msgstr "Vui lòng chỉ chọn một tập tin văn bản"
 
-#: robocopyManager.py:46
-msgid "Preparing operation..."
-msgstr "Đang chuẩn bị thao tác..."
+#: selectionManager.py:58
+msgid "Processing {count} items in background..."
+msgstr "Đang xử lý {count} mục trong nền..."
 
-#: robocopyManager.py:103
-msgid "Processing: {}"
-msgstr "Đang xử lý: {}"
-
-#: robocopyManager.py:105
-msgid "Progress: {}%"
-msgstr "Tiến trình: {}%"
-
-#: robocopyManager.py:210
-msgid "Remove selected destination"
-msgstr "Xóa đích đã chọn"
-
-#: robocopyManager.py:198
-msgid "Remove selected source"
-msgstr "Xóa nguồn đã chọn"
-
-#: __init__.py:603
-#: contextMenu.py:31
+#: __init__.py:633
+#: contextMenu.py:32
 msgid "Rename selected file"
 msgstr "Đổi tên tập tin đã chọn"
 
-#: contextMenu.py:35
+#: __init__.py:460
+msgid "Required manager not available"
+msgstr "Trình quản lý cần thiết không có sẵn"
+
+#: contextMenu.py:36
 msgid "Robocopy"
 msgstr "Robocopy"
 
-#: contextMenu.py:32
+#: __init__.py:540
+msgid "Robocopy manager not available"
+msgstr "Trình quản lý Robocopy không có sẵn"
+
+#: __init__.py:563
+msgid "Robocopy: single tap copy, double tap paste, triple tap move"
+msgstr "Robocopy: chạm một lần để sao chép, chạm hai lần để dán, chạm ba lần để di chuyển"
+
+#: contextMenu.py:33
 msgid "Say size"
 msgstr "Đọc kích thước"
 
-#: __init__.py:561
+#: __init__.py:523
 msgid "Say size (single tap) or compress zip (double tap)"
 msgstr "Đọc kích thước (chạm một lần) hoặc nén zip (chạm hai lần)"
 
-#: robocopyManager.py:648
-msgid "Scheduled backup completed: {}/{} destinations"
-msgstr "Sao lưu theo lịch hoàn tất: {}/{} đích"
-
-#: robocopyManager.py:623
-msgid "Scheduled mirror backup started for {}"
-msgstr "Đã bắt đầu sao lưu nhân bản theo lịch cho {}"
-
-#: robocopyManager.py:231
-msgid "Scheduled time:"
-msgstr "Thời gian theo lịch:"
-
-#: robocopyManager.py:728
-#: robocopyManager.py:741
-msgid "Select one item only"
-msgstr "Chỉ chọn một mục"
-
-#: txt2folder.py:60
+#: txt2folder.py:58
 msgid "Selected file does not exist"
 msgstr "Tập tin đã chọn không tồn tại"
 
-#: folderInfo.py:41
+#: folderInfo.py:14
 msgid "Selected item is not a folder"
 msgstr "Mục đã chọn không phải là thư mục"
 
-#: createFile.py:199
+#: selectionManager.py:93
+msgid "Selected {count} items"
+msgstr "Đã chọn {count} mục"
+
+#: selectionManager.py:96
+msgid "Selection inverted"
+msgstr "Đã đảo ngược lựa chọn"
+
+#: createFile.py:170
 msgid "Some files will use default names"
 msgstr "Một số tập tin sẽ sử dụng tên mặc định"
 
-#: robocopyManager.py:404
-#: robocopyManager.py:444
-msgid "Source and destination required"
-msgstr "Yêu cầu nguồn và đích"
-
-#: robocopyManager.py:792
-msgid "Source does not exist"
-msgstr "Nguồn không tồn tại"
-
-#: robocopyManager.py:193
-msgid "Source folders (select to edit):"
-msgstr "Thư mục nguồn (chọn để chỉnh sửa):"
-
-#: robocopyManager.py:195
-msgid "Source folders list"
-msgstr "Danh sách thư mục nguồn"
-
-#: robocopyManager.py:732
-msgid "Source for copy: {}"
-msgstr "Nguồn để sao chép: {}"
-
-#: robocopyManager.py:745
-msgid "Source for move: {}"
-msgstr "Nguồn để di chuyển: {}"
-
-#: robocopyManager.py:121
-msgid "Speed: {}"
-msgstr "Tốc độ: {}"
-
-#: robocopyManager.py:240
-msgid "Start synchronization"
-msgstr "Bắt đầu đồng bộ"
-
-#: robocopyManager.py:410
-msgid "Starting immediate mirror sync..."
-msgstr "Đang bắt đầu đồng bộ nhân bản ngay..."
-
-#: robocopyManager.py:774
-msgid "Starting {} operation in background..."
-msgstr "Đang bắt đầu thao tác {} trong nền..."
-
-#: compressionManager.py:144
 #: compressionManager.py:161
 msgid "Starting..."
 msgstr "Đang bắt đầu..."
 
-#: case.py:162
+#: case.py:165
 msgid "Successfully converted {count} folders to headline case"
-msgstr "Đã chuyển đổi thành công {count} thư mục sang chữ hoa tiêu đề"
+msgstr "Đã chuyển đổi thành công {count} thư mục sang kiểu chữ tiêu đề"
 
-#: case.py:127
+#: case.py:150
 msgid "Successfully converted {count} folders to lowercase"
 msgstr "Đã chuyển đổi thành công {count} thư mục sang chữ thường"
 
-#: case.py:148
+#: case.py:159
 msgid "Successfully converted {count} folders to title case"
-msgstr "Đã chuyển đổi thành công {count} thư mục sang chữ hoa tiêu đề"
+msgstr "Đã chuyển đổi thành công {count} thư mục sang kiểu chữ tiêu đề"
 
-#: case.py:113
+#: case.py:144
 msgid "Successfully converted {count} folders to uppercase"
 msgstr "Đã chuyển đổi thành công {count} thư mục sang chữ hoa"
 
-#: folder_creation_dialog.py:226
+#: folder_creation_dialog.py:225
 msgid "Successfully created 1 folder"
 msgstr "Đã tạo thành công 1 thư mục"
 
-#: folder_creation_dialog.py:224
+#: folder_creation_dialog.py:223
 msgid "Successfully created main folder only"
-msgstr "Chỉ tạo thành công thư mục chính"
+msgstr "Đã tạo thành công chỉ thư mục chính"
 
-#: folder_creation_dialog.py:228
-msgid "Successfully created {count} folders"
-msgstr "Đã tạo thành công {count} thư mục"
+#: folder_creation_dialog.py:227
+msgid "Successfully created {count} of {total} folders"
+msgstr "Đã tạo thành công {count} trong số {total} thư mục"
 
-#: txt2folder.py:150
-#: txt2folder.py:203
+#: txt2folder.py:144
+#: txt2folder.py:194
 msgid "Successfully created {} folders in '{}'"
 msgstr "Đã tạo thành công {} thư mục trong '{}'"
 
-#: xPlorerManager.py:66
-msgid "Suppress announcement of '- File Explorer' in window titles"
-msgstr "Ngăn chặn thông báo '- File Explorer' trong tiêu đề cửa sổ"
-
-#: xPlorerManager.py:61
-msgid "Suppress announcement of DirectUIHWND class"
-msgstr "Ngăn chặn thông báo lớp DirectUIHWND"
-
-#: robocopyManager.py:438
-msgid "Sync error occurred"
-msgstr "Đã xảy ra lỗi đồng bộ"
-
-#: robocopyManager.py:220
-msgid "Synchronization interval:"
-msgstr "Khoảng đồng bộ:"
-
-#: contextMenu.py:42
+#: contextMenu.py:14
 msgid "TXT to Folder"
-msgstr "TXT sang thư mục"
+msgstr "TXT sang Thư mục"
 
-#: contextMenu.py:49
+#: contextMenu.py:48
 msgid "Title Case"
-msgstr "Chữ hoa tiêu đề"
+msgstr "Kiểu chữ tiêu đề"
 
-#: clipboardManager.py:104
+#: clipboardManager.py:88
 msgid "Total file size is too large to copy content"
 msgstr "Tổng kích thước tập tin quá lớn để sao chép nội dung"
 
-#: robocopyManager.py:963
-msgid "Trying alternative copy method..."
-msgstr "Đang thử phương pháp sao chép thay thế..."
+#: createFile.py:213
+msgid "Unable to get current directory after multiple attempts"
+msgstr "Không thể lấy thư mục hiện tại sau nhiều lần thử"
 
-#: createFile.py:233
-msgid "Unable to get current directory"
-msgstr "Không thể lấy thư mục hiện tại"
-
-#: __init__.py:433
+#: __init__.py:402
 msgid "Unable to get current path"
 msgstr "Không thể lấy đường dẫn hiện tại"
 
-#: selectionManager.py:32
+#: selectionManager.py:14
 msgid "Unable to get folder view"
 msgstr "Không thể lấy chế độ xem thư mục"
 
-#: contextMenu.py:47
+#: contextMenu.py:46
 msgid "Uppercase"
 msgstr "Chữ hoa"
 
-#: clipboardManager.py:124
+#: clipboardManager.py:104
 msgid "[Error processing RTF file]"
 msgstr "[Lỗi xử lý tập tin RTF]"
 
-#: clipboardManager.py:126
+#: clipboardManager.py:106
 msgid "[RTF content - striprtf module not available]"
-msgstr "[Nội dung RTF - mô-đun striprtf không khả dụng]"
+msgstr "[Nội dung RTF - mô-đun striprtf không có sẵn]"
 
-#: compressionManager.py:97
-msgid "compression failed: {error}"
-msgstr "nén thất bại: {error}"
+#: compressionManager.py:114
+msgid "compression failed"
+msgstr "nén thất bại"
 
-#: contextMenu.py:36
+#: contextMenu.py:37
 msgid "copy"
 msgstr "sao chép"
 
-#: contextMenu.py:40
-msgid "mirror Backup"
-msgstr "sao lưu nhân bản"
-
-#: contextMenu.py:37
+#: contextMenu.py:38
 msgid "move"
 msgstr "di chuyển"
 
-#: createFile.py:183
+#: createFile.py:156
 msgid "new_file"
 msgstr "tập_tin_mới"
 
-#: createFile.py:185
+#: createFile.py:158
 msgid "new_file_{index}"
 msgstr "tập_tin_mới_{index}"
 
-#: contextMenu.py:38
+#: contextMenu.py:39
 msgid "paste"
 msgstr "dán"
 
-#: __init__.py:143
-#: __init__.py:472
-#: __init__.py:517
-#: __init__.py:562
-#: __init__.py:587
-#: __init__.py:604
-#: __init__.py:627
-#: xPlorerManager.py:44
+#: __init__.py:110
+#: __init__.py:444
+#: __init__.py:484
+#: __init__.py:524
+#: __init__.py:564
+#: __init__.py:617
+#: __init__.py:634
+#: __init__.py:652
 msgid "xPlorer"
 msgstr "xPlorer"
 
-#: contextMenu.py:22
+#: contextMenu.py:51
 msgid "xPlorer Settings"
 msgstr "Cài đặt xPlorer"
 
-#: createFile.py:307
+#: createFile.py:286
 msgid "{count} files created"
-msgstr "đã tạo {count} tập tin"
+msgstr "Đã tạo {count} tập tin"
 
-#: fileOperations.py:420
+#: fileOperations.py:237
 msgid "{count} items {size}"
 msgstr "{count} mục {size}"
 
-#: folderInfo.py:66
+#: folderInfo.py:62
 msgid "{subfolders} subfolders and {files} files"
 msgstr "{subfolders} thư mục con và {files} tập tin"
-
-#: robocopyManager.py:950
-msgid "{} completed successfully in {:.1f} seconds"
-msgstr "{} hoàn tất thành công trong {:.1f} giây"
-
-#: robocopyManager.py:947
-msgid "{} completed successfully in {:.1f} seconds, average speed: {:.1f} MB/s"
-msgstr "{} hoàn tất thành công trong {:.1f} giây, tốc độ trung bình: {:.1f} MB/s"
-
-#: robocopyManager.py:978
-msgid "{} completed successfully using alternative method"
-msgstr "{} hoàn tất thành công bằng phương pháp thay thế"
-
-#: robocopyManager.py:985
-msgid "{} completed with warnings (code: {})"
-msgstr "{} hoàn tất với cảnh báo (mã: {})"
-
-#: robocopyManager.py:982
-msgid "{} failed with error: {}"
-msgstr "{} thất bại với lỗi: {}"
-
-#: robocopyManager.py:903
-msgid "{} in progress... {} seconds elapsed"
-msgstr "{} đang thực hiện... đã qua {} giây"
-
-#: robocopyManager.py:878
-msgid "{} started. You can continue working while it runs in background."
-msgstr "{} đã bắt đầu. Bạn có thể tiếp tục làm việc trong khi nó chạy ngầm."
-
-#: robocopyManager.py:929
-msgid "{}: {}% complete, speed: {:.1f} MB/s"
-msgstr "{}: hoàn tất {}%, tốc độ: {:.1f} MB/s"

@@ -22,6 +22,7 @@ import os
 import sys
 import time
 import urllib.parse
+import importlib
 
 import comtypes.client
 from comtypes import COMError
@@ -29,99 +30,64 @@ from comtypes import COMError
 addonHandler.initTranslation()
 log.debug("xPlorer: Initializing add-on")
 
+# ----------------------------------------------------------------------
+# Graceful import helper using importlib
+# ----------------------------------------------------------------------
+_imported_modules = {}
+
+def _safe_import_module(module_name, class_name=None):
+	"""Import a submodule or a class from it using relative import.
+	Returns the imported class/function if successful, else None.
+	"""
+	try:
+		# Use importlib.import_module by specifying package=__package__ to be relative.
+		mod = importlib.import_module('.' + module_name, package=__package__)
+		if class_name is None:
+			_imported_modules[module_name] = mod
+			log.debug(f"xPlorer: {module_name} imported")
+			return mod
+		else:
+			attr = getattr(mod, class_name)
+			_imported_modules[module_name] = attr
+			log.debug(f"xPlorer: {class_name} imported from {module_name}")
+			return attr
+	except Exception as e:
+		log.exception(f"Failed to import {module_name} (class: {class_name})")
+		_imported_modules[module_name] = None
+		return None
+
+# ----------------------------------------------------------------------
+# Core module – must succeed
+# ----------------------------------------------------------------------
 try:
 	from .xPlorerManager import xPlorerSettingsPanel, ExplorerManager, set_global_plugin
+	_imported_modules['xPlorerManager'] = True
 	log.debug("xPlorer: xPlorerManager imported")
 except Exception as e:
-	log.exception("Failed to import xPlorerManager")
+	log.exception("Failed to import xPlorerManager - add-on cannot load")
 	raise
 
-try:
-	from .fileOperations import FileOperations
-	log.debug("xPlorer: fileOperations imported")
-except Exception as e:
-	log.exception("Failed to import fileOperations")
-	raise
+# ----------------------------------------------------------------------
+# Optional modules – failure does not stop the add-on
+# ----------------------------------------------------------------------
+FileOperations = _safe_import_module('fileOperations', 'FileOperations')
+CompressionManager = _safe_import_module('compressionManager', 'CompressionManager')
+ClipboardManager = _safe_import_module('clipboardManager', 'ClipboardManager')
+SelectionManager = _safe_import_module('selectionManager', 'SelectionManager')
+RobocopyManager = _safe_import_module('robocopyManager', 'RobocopyManager')
+TxtToFolder = _safe_import_module('txt2folder', 'TxtToFolder')
+CreateFileManager = _safe_import_module('createFile', 'CreateFileManager')
+ContextMenuManager = _safe_import_module('contextMenu', 'ContextMenuManager')
+FolderInfoManager = _safe_import_module('folderInfo', 'FolderInfoManager')
+CaseConverter = _safe_import_module('case', 'CaseConverter')
+FolderCreationDialog = _safe_import_module('folder_creation_dialog', 'FolderCreationDialog')
+type_clipboard_into_rename_if_suitable = _safe_import_module('folder_creator', 'type_clipboard_into_rename_if_suitable')
 
-try:
-	from .compressionManager import CompressionManager
-	log.debug("xPlorer: compressionManager imported")
-except Exception as e:
-	log.exception("Failed to import compressionManager")
-	raise
+log.debug("xPlorer: All modules processed")
 
-try:
-	from .clipboardManager import ClipboardManager
-	log.debug("xPlorer: clipboardManager imported")
-except Exception as e:
-	log.exception("Failed to import clipboardManager")
-	raise
-
-try:
-	from .selectionManager import SelectionManager
-	log.debug("xPlorer: selectionManager imported")
-except Exception as e:
-	log.exception("Failed to import selectionManager")
-	raise
-
-try:
-	from .robocopyManager import RobocopyManager
-	log.debug("xPlorer: robocopyManager imported")
-except Exception as e:
-	log.exception("Failed to import robocopyManager")
-	raise
-
-try:
-	from .txt2folder import TxtToFolder
-	log.debug("xPlorer: txt2folder imported")
-except Exception as e:
-	log.exception("Failed to import txt2folder")
-	raise
-
-try:
-	from .createFile import CreateFileManager
-	log.debug("xPlorer: createFile imported")
-except Exception as e:
-	log.exception("Failed to import createFile")
-	raise
-
-try:
-	from .contextMenu import ContextMenuManager
-	log.debug("xPlorer: contextMenu imported")
-except Exception as e:
-	log.exception("Failed to import contextMenu")
-	raise
-
-try:
-	from .folderInfo import FolderInfoManager
-	log.debug("xPlorer: folderInfo imported")
-except Exception as e:
-	log.exception("Failed to import folderInfo")
-	raise
-
-try:
-	from .case import CaseConverter
-	log.debug("xPlorer: case imported")
-except Exception as e:
-	log.exception("Failed to import case")
-	raise
-
-try:
-	from .folder_creation_dialog import FolderCreationDialog
-	log.debug("xPlorer: folder_creation_dialog imported")
-except Exception as e:
-	log.exception("Failed to import folder_creation_dialog")
-	raise
-
-try:
-	from .folder_creator import type_clipboard_into_rename_if_suitable
-	log.debug("xPlorer: folder_creator imported")
-except Exception as e:
-	log.exception("Failed to import folder_creator")
-	raise
-
-log.debug("xPlorer: All modules imported successfully")
-
+# ----------------------------------------------------------------------
+# Multi-tap state
+# ----------------------------------------------------------------------
 _last_tap_time_compress = 0
 _tap_count_compress = 0
 _compress_timer = None
@@ -142,49 +108,52 @@ _double_tap_threshold = 0.5
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	scriptCategory = _("xPlorer")
-	
+
 	def __init__(self):
 		log.debug("xPlorer GlobalPlugin.__init__ starting")
 		try:
 			super().__init__()
+
 			self.objShellApp = comtypes.client.CreateObject("Shell.Application")
 			self.objFSO = comtypes.client.CreateObject("scripting.FileSystemObject")
-			
+
 			gui.settingsDialogs.NVDASettingsDialog.categoryClasses.append(xPlorerSettingsPanel)
-			
+
 			self.manager = ExplorerManager(self)
-			self.fileOps = FileOperations(self)
-			self.compression = CompressionManager(self)
-			self.clipboard = ClipboardManager(self)
-			self.selection = SelectionManager(self)
-			self.robocopy = RobocopyManager(self)
-			self.txt2folder = TxtToFolder(self)
-			self.createFileManager = CreateFileManager(self)
-			self.contextMenuManager = ContextMenuManager(self)
-			self.folderInfo = FolderInfoManager(self)
-			self.caseConverter = CaseConverter()
-			
+
+			# Create instances only if modules imported successfully
+			self.fileOps = FileOperations(self) if FileOperations else None
+			self.compression = CompressionManager(self) if CompressionManager else None
+			self.clipboard = ClipboardManager(self) if ClipboardManager else None
+			self.selection = SelectionManager(self) if SelectionManager else None
+			self.robocopy = RobocopyManager(self) if RobocopyManager else None
+			self.txt2folder = TxtToFolder(self) if TxtToFolder else None
+			self.createFileManager = CreateFileManager(self) if CreateFileManager else None
+			self.contextMenuManager = ContextMenuManager(self) if ContextMenuManager else None
+			self.folderInfo = FolderInfoManager(self) if FolderInfoManager else None
+			self.caseConverter = CaseConverter() if CaseConverter else None
+
 			self._last_window = None
 			self._last_window_hwnd = None
 			self._last_window_time = 0
 			self._last_path = None
-			
+
 			self._cached_explorer_hwnd = None
 			self._cached_explorer_time = 0
 			self._cached_explorer_path = None
 			self._cache_valid_duration = 0.8
-			
+
 			self._striprtf_available = None
 			tools_dir = os.path.join(os.path.dirname(__file__), "tools")
 			if os.path.exists(tools_dir) and tools_dir not in sys.path:
 				sys.path.insert(0, tools_dir)
-			
+
 			self._cached_selected_folder_paths = []
 			self._case_cache_valid = False
 			self._suppress_counter = 0
-			
+
 			set_global_plugin(self)
-			
+
 			log.debug("xPlorer GlobalPlugin initialized successfully")
 		except Exception as e:
 			log.exception("Error in xPlorer GlobalPlugin.__init__")
@@ -195,37 +164,35 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		try:
 			super().terminate()
 			gui.settingsDialogs.NVDASettingsDialog.categoryClasses.remove(xPlorerSettingsPanel)
-			self.fileOps.cleanup()
-			self.compression.cleanup()
-			self.selection.cleanup()
-			self.robocopy.cleanup()
-			self.createFileManager.cleanup()
-			self.folderInfo.cleanup()
-			self.manager.terminate()
+
+			for mgr in (self.fileOps, self.compression, self.selection,
+						self.robocopy, self.createFileManager, self.folderInfo):
+				if mgr and hasattr(mgr, 'cleanup'):
+					mgr.cleanup()
+
+			if self.manager:
+				self.manager.terminate()
+
 			self._cancelAllTimers()
 			self._cached_selected_folder_paths = []
 			self._case_cache_valid = False
 			self.objShellApp = None
 			self.objFSO = None
+
 			log.debug("xPlorer GlobalPlugin terminated successfully")
 		except Exception as e:
 			log.exception("Error in xPlorer GlobalPlugin.terminate")
 
 	def _cancelAllTimers(self):
 		global _compress_timer, _copy_timer, _invert_timer, _robocopy_timer
-		if _compress_timer:
-			_compress_timer.Stop()
-			_compress_timer = None
-		if _copy_timer:
-			_copy_timer.Stop()
-			_copy_timer = None
-		if _invert_timer:
-			_invert_timer.Stop()
-			_invert_timer = None
-		if _robocopy_timer:
-			_robocopy_timer.Stop()
-			_robocopy_timer = None
+		for timer in (_compress_timer, _copy_timer, _invert_timer, _robocopy_timer):
+			if timer:
+				timer.Stop()
+		_compress_timer = _copy_timer = _invert_timer = _robocopy_timer = None
 
+	# ------------------------------------------------------------------
+	# Helper methods (unchanged)
+	# ------------------------------------------------------------------
 	def _getStriprtfModule(self):
 		if self._striprtf_available is None:
 			try:
@@ -250,13 +217,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if self.manager._foregroundTransition:
 			log.debug("Foreground transition active, skipping path retrieval")
 			return None
-		
+
 		current_time = time.time()
-		if (self._cached_explorer_hwnd and self._cached_explorer_path and 
-			current_time - self._cached_explorer_time < self._cache_valid_duration):
+		if (self._cached_explorer_hwnd and self._cached_explorer_path and
+				current_time - self._cached_explorer_time < self._cache_valid_duration):
 			if os.path.isdir(self._cached_explorer_path):
 				return self._cached_explorer_path
-		
+
 		try:
 			fg = api.getForegroundObject()
 			if not fg or not fg.appModule or fg.appModule.appName != "explorer":
@@ -306,8 +273,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				self._cached_explorer_path = path_result
 				return path_result
 
-			if (self._cached_explorer_path and 
-				current_time - self._cached_explorer_time < 2.0):
+			if (self._cached_explorer_path and
+					current_time - self._cached_explorer_time < 2.0):
 				if os.path.isdir(self._cached_explorer_path):
 					return self._cached_explorer_path
 
@@ -315,7 +282,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			log.debug(f"COM error in _getCurrentPathFromExplorer: {e}")
 		except Exception as e:
 			log.error(f"Error in _getCurrentPathFromExplorer: {e}")
-		
+
 		return self._cached_explorer_path if self._cached_explorer_path else None
 
 	def _getActiveExplorerWindow(self):
@@ -324,20 +291,20 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			return None
 		try:
 			current_time = time.time()
-			if (self._last_window and self._last_window_hwnd and 
-				current_time - self._last_window_time < 1.0):
+			if (self._last_window and self._last_window_hwnd and
+					current_time - self._last_window_time < 1.0):
 				if winUser.isWindow(self._last_window_hwnd):
 					return self._last_window
-			
+
 			fg = api.getForegroundObject()
 			if not fg or not fg.appModule or fg.appModule.appName != "explorer":
 				return None
-			
+
 			target_hwnd = fg.windowHandle
 			shell = self.objShellApp
 			if not shell:
 				return None
-			
+
 			try:
 				for window in shell.Windows():
 					try:
@@ -352,7 +319,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 						continue
 			except COMError:
 				pass
-			
+
 			focus = api.getFocusObject()
 			if focus and focus.appModule and focus.appModule.appName == "explorer":
 				focus_hwnd = focus.windowHandle
@@ -444,7 +411,14 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		except Exception as e:
 			log.debug(f"Error sending original key: {e}")
 
+	# ------------------------------------------------------------------
+	# Script functions – all check availability of required managers
+	# ------------------------------------------------------------------
+
 	def script_copySelectedNamesOrAddressBar(self, gesture):
+		if not self.clipboard:
+			ui.message(_("Clipboard manager not available"))
+			return
 		focus = api.getFocusObject()
 		if not focus or focus.appModule.appName != "explorer":
 			self._handleNonExplorerGesture(gesture)
@@ -482,6 +456,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		_tap_count_copy = 0
 
 	def script_invertSelection_double_tap(self, gesture):
+		if not self.clipboard or not self.selection:
+			ui.message(_("Required manager not available"))
+			return
 		focus = api.getFocusObject()
 		if not focus or focus.appModule.appName != "explorer":
 			self._handleNonExplorerGesture(gesture)
@@ -519,6 +496,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		_tap_count_invert = 0
 
 	def script_compressZip_double_tap(self, gesture):
+		if not self.fileOps or not self.compression:
+			ui.message(_("Compression manager not available"))
+			return
 		focus = api.getFocusObject()
 		if not focus or focus.appModule.appName != "explorer":
 			self._handleNonExplorerGesture(gesture)
@@ -556,6 +536,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		_tap_count_compress = 0
 
 	def script_robocopyMultitap(self, gesture):
+		if not self.robocopy:
+			ui.message(_("Robocopy manager not available"))
+			return
 		focus = api.getFocusObject()
 		if not focus or focus.appModule.appName != "explorer":
 			self._handleNonExplorerGesture(gesture)
@@ -620,6 +603,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		return []
 
 	def script_openXPlorerContextMenu(self, gesture):
+		if not self.contextMenuManager:
+			ui.message(_("Context menu manager not available"))
+			return
 		focus = api.getFocusObject()
 		if not focus or focus.appModule.appName != "explorer":
 			self._handleNonExplorerGesture(gesture)
@@ -632,6 +618,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	script_openXPlorerContextMenu.gestures = ["kb(desktop):NVDA+shift+x"]
 
 	def _renameFile(self):
+		if not self.fileOps:
+			ui.message(_("File operations manager not available"))
+			return
 		self._executeWithSilence(self.fileOps.renameFile)
 
 	def script_renameFile(self, gesture):
@@ -646,6 +635,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	script_renameFile.gestures = ["kb(desktop):NVDA+shift+f2"]
 
 	def script_createFolderWithAutoPaste(self, gesture):
+		if not type_clipboard_into_rename_if_suitable:
+			ui.message(_("Folder creator helper not available"))
+			return
 		focus = api.getFocusObject()
 		if not focus or focus.appModule.appName != "explorer":
 			self._handleNonExplorerGesture(gesture)
@@ -675,9 +667,15 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			ui.message(_("Error opening settings"))
 
 	def _showContextMenu(self):
-		self.contextMenuManager.showContextMenu()
+		if self.contextMenuManager:
+			self.contextMenuManager.showContextMenu()
+		else:
+			ui.message(_("Context menu manager not available"))
 
 	def _createMultipleFolders(self):
+		if not FolderCreationDialog:
+			ui.message(_("Folder creation dialog not available"))
+			return
 		def do_create(path):
 			if not path:
 				ui.message(_("No Explorer folder detected"))
@@ -697,6 +695,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self._getCurrentPathDeferred(do_create, 200)
 
 	def _convertFolderNames(self, conversion_type):
+		if not self.caseConverter:
+			ui.message(_("Case converter not available"))
+			return
 		def do_convert(folder_paths):
 			if not folder_paths:
 				ui.message(_("No folders selected"))
@@ -704,22 +705,24 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				return
 			self._perform_conversion(conversion_type, folder_paths)
 			self._case_cache_valid = False
-		
+
 		cached_folders = self._get_cached_or_selected_folders()
 		if cached_folders:
 			do_convert(cached_folders)
 			return
-		
+
 		def get_path_callback(path):
 			if path and os.path.isdir(path):
 				do_convert([path])
 			else:
 				ui.message(_("No folders selected or current folder not available"))
 			self._case_cache_valid = False
-		
+
 		self._getCurrentPathDeferred(get_path_callback, 200)
 
 	def _perform_conversion(self, conversion_type, folders_to_convert):
+		if not self.caseConverter:
+			return
 		try:
 			if conversion_type == "uppercase":
 				self.caseConverter.convert_folder_to_uppercase(folders_to_convert)
@@ -733,6 +736,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			log.error(f"Error converting folder names: {e}")
 			ui.message(_("Error during conversion"))
 
+	# ------------------------------------------------------------------
+	# Event handlers
+	# ------------------------------------------------------------------
 	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
 		self.manager.chooseNVDAObjectOverlayClasses(obj, clsList)
 
