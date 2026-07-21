@@ -272,8 +272,10 @@ class CreateFileManager:
 							break
 				
 				try:
-					with open(file_path, 'w'):
-						pass
+					with open(file_path, 'w', encoding='utf-8') as f:
+						declaration = self._get_encoding_declaration(ext)
+						if declaration:
+							f.write(declaration + "\n")
 					created_count += 1
 				except Exception as e:
 					log.error(f"Error creating file {file_path}: {e}")
@@ -287,3 +289,21 @@ class CreateFileManager:
 		except Exception as e:
 			log.error(f"Error in create_files: {e}")
 			ui.message(_("Error creating files"))
+
+	def _get_encoding_declaration(self, extension):
+		"""
+		Returns a standard encoding hint line for the given extension.
+		A zero-width space (U+200B) is included to force editors like Notepad++
+		to detect UTF-8 without relying on a BOM.
+		"""
+		extension = extension.lower()
+		zwsp = "\u200b"  # invisible multi-byte character
+		if extension == ".py":
+			return f"# -*- coding: utf-8 -*-{zwsp}"
+		elif extension in (".html", ".htm"):
+			return f'<meta charset="UTF-8">{zwsp}'
+		elif extension == ".css":
+			return f'@charset "UTF-8";{zwsp}'
+		elif extension in (".xml", ".xaml", ".svg"):
+			return f'<?xml version="1.0" encoding="UTF-8"?>{zwsp}'
+		return None

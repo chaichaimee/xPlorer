@@ -29,6 +29,9 @@ def set_global_plugin(plugin):
 	global _global_plugin_instance
 	_global_plugin_instance = plugin
 
+# ----------------------------------------------------------------------
+# Overlay classes
+# ----------------------------------------------------------------------
 class LaconicFocusAncestor(NVDAObject):
 	isPresentableFocusAncestor = False
 	def _get_windowClassName(self):
@@ -46,6 +49,9 @@ class EmptyFolderStaticText(NVDAObject):
 			return "Empty Folder"
 		return super().name
 
+# ----------------------------------------------------------------------
+# Settings panel
+# ----------------------------------------------------------------------
 class xPlorerSettingsPanel(SettingsPanel):
 	title = "xPlorer"
 	def makeSettings(self, settingsSizer):
@@ -73,6 +79,9 @@ class xPlorerSettingsPanel(SettingsPanel):
 		if _global_plugin_instance and hasattr(_global_plugin_instance, 'manager'):
 			_global_plugin_instance.manager._update_speech_dict_for_title()
 
+# ----------------------------------------------------------------------
+# ExplorerManager
+# ----------------------------------------------------------------------
 class ExplorerManager:
 	def __init__(self, plugin):
 		log.debug("ExplorerManager.__init__")
@@ -370,6 +379,9 @@ class ExplorerManager:
 	def _clearForegroundTransition(self):
 		self._foregroundTransition = False
 		self._foreground_task = None
+		# Discard any stale path cache from a previous Explorer window.
+		if self.plugin:
+			self.plugin._invalidatePathCache()
 		log.debug("Foreground transition cleared, explorer operations resumed")
 
 	def event_UIA_elementSelected(self, obj, nextHandler):

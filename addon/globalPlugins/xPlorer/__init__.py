@@ -40,7 +40,6 @@ def _safe_import_module(module_name, class_name=None):
 	Returns the imported class/function if successful, else None.
 	"""
 	try:
-		# Use importlib.import_module by specifying package=__package__ to be relative.
 		mod = importlib.import_module('.' + module_name, package=__package__)
 		if class_name is None:
 			_imported_modules[module_name] = mod
@@ -190,6 +189,22 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				timer.Stop()
 		_compress_timer = _copy_timer = _invert_timer = _robocopy_timer = None
 
+	def _invalidatePathCache(self):
+		"""Clear cached explorer path so the next retrieval re-fetches from COM."""
+		self._cached_explorer_hwnd = None
+		self._cached_explorer_path = None
+		self._cached_explorer_time = 0
+
+	def _getCachedExplorerPath(self, target_hwnd):
+		# A cached path only ever belongs to the window it was captured from.
+		# Handing it out for a different hwnd is how switching windows makes
+		# the reported path silently jump back to whatever window was cached last.
+		if not self._cached_explorer_path:
+			return None
+		if target_hwnd is not None and self._cached_explorer_hwnd != target_hwnd:
+			return None
+		return self._cached_explorer_path
+
 	# ------------------------------------------------------------------
 	# Helper methods (unchanged)
 	# ------------------------------------------------------------------
@@ -219,23 +234,28 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			return None
 
 		current_time = time.time()
-		if (self._cached_explorer_hwnd and self._cached_explorer_path and
-				current_time - self._cached_explorer_time < self._cache_valid_duration):
-			if os.path.isdir(self._cached_explorer_path):
-				return self._cached_explorer_path
-
+		target_hwnd = None
 		try:
 			fg = api.getForegroundObject()
 			if not fg or not fg.appModule or fg.appModule.appName != "explorer":
-				return self._cached_explorer_path if self._cached_explorer_path else None
+				# Nothing Explorer-related is foreground right now; there is no
+				# hwnd to validate against, so fall back to whatever was last known.
+				return self._getCachedExplorerPath(None)
 
 			target_hwnd = fg.windowHandle
 			if not winUser.isWindow(target_hwnd):
-				return self._cached_explorer_path if self._cached_explorer_path else None
+				return self._getCachedExplorerPath(target_hwnd)
+
+			# Use cache only when the window handle matches and entry is still fresh.
+			if (self._cached_explorer_hwnd == target_hwnd
+					and self._cached_explorer_path
+					and current_time - self._cached_explorer_time < self._cache_valid_duration):
+				if os.path.isdir(self._cached_explorer_path):
+					return self._cached_explorer_path
 
 			shell = self.objShellApp
 			if not shell:
-				return self._cached_explorer_path if self._cached_explorer_path else None
+				return self._getCachedExplorerPath(target_hwnd)
 
 			path_result = None
 			try:
@@ -265,7 +285,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 						continue
 			except COMError as e:
 				log.debug(f"COM error enumerating windows: {e}")
-				return self._cached_explorer_path if self._cached_explorer_path else None
+				return self._getCachedExplorerPath(target_hwnd)
 
 			if path_result:
 				self._cached_explorer_hwnd = target_hwnd
@@ -273,17 +293,21 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				self._cached_explorer_path = path_result
 				return path_result
 
-			if (self._cached_explorer_path and
-					current_time - self._cached_explorer_time < 2.0):
-				if os.path.isdir(self._cached_explorer_path):
-					return self._cached_explorer_path
+			# Shell.Windows() sometimes fails to reflect a just-activated window for
+			# a brief moment (common right after Alt+Tab). Only trust the short-lived
+			# fallback if it still belongs to the window we are actually asking about.
+			cachedForThisWindow = self._getCachedExplorerPath(target_hwnd)
+			if (cachedForThisWindow
+					and current_time - self._cached_explorer_time < 2.0
+					and os.path.isdir(cachedForThisWindow)):
+				return cachedForThisWindow
 
 		except COMError as e:
 			log.debug(f"COM error in _getCurrentPathFromExplorer: {e}")
 		except Exception as e:
 			log.error(f"Error in _getCurrentPathFromExplorer: {e}")
 
-		return self._cached_explorer_path if self._cached_explorer_path else None
+		return self._getCachedExplorerPath(target_hwnd)
 
 	def _getActiveExplorerWindow(self):
 		if self.manager._foregroundTransition:
@@ -749,6 +773,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 					if obj.windowHandle != self._last_window_hwnd:
 						self._last_window = None
 						self._last_window_hwnd = None
+					if obj.windowHandle != self._cached_explorer_hwnd:
+						self._invalidatePathCache()
 			self.manager.event_gainFocus(obj, nextHandler)
 		except Exception as e:
 			log.error(f"event_gainFocus error: {e}")
@@ -760,6 +786,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def event_foreground(self, obj, nextHandler):
 		self._last_window = None
 		self._last_window_hwnd = None
+		self._invalidatePathCache()
 		self.manager.event_foreground(obj, nextHandler)
 
 	def event_UIA_elementSelected(self, obj, nextHandler):
@@ -767,3 +794,4 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def event_selection(self, obj, nextHandler):
 		self.manager.event_selection(obj, nextHandler)
+
