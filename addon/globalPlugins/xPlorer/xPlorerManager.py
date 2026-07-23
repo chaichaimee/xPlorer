@@ -110,6 +110,7 @@ class ExplorerManager:
 		self._last_sayFileExplorer_setting = None
 
 		self._speech_dict_task = None
+		self._homeview_focus_task = None   # store handle of scheduled set_focus
 
 		self._update_speech_dict_for_title()
 
@@ -213,9 +214,27 @@ class ExplorerManager:
 		except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError):
 			return False
 
+	# ------------------------------------------------------------------
+	# Detect if any foreign dialog or frame is currently open.
+	# Excludes NVDA's main window and xPlorer's own folder creation dialog.
+	# ------------------------------------------------------------------
+	def _isForeignDialogOpen(self):
+		for win in wx.GetTopLevelWindows():
+			if win.IsShown() and isinstance(win, (wx.Dialog, wx.Frame)):
+				if win is gui.mainFrame:
+					continue
+				if win.GetTitle() == "xPlorer - Create Multiple Folders":
+					continue
+				return True
+		return False
+
 	def terminate(self):
 		self._speech_dict_task = None
 		self._foreground_task = None
+		# Cancel any pending focus task
+		if self._homeview_focus_task:
+			self._homeview_focus_task.Stop()
+			self._homeview_focus_task = None
 
 		if self._temp_entry is not None:
 			try:
@@ -263,6 +282,7 @@ class ExplorerManager:
 			pass
 
 	def event_gainFocus(self, obj, nextHandler):
+		# No longer block the whole event; let other add-ons process normally
 		try:
 			if self._foregroundTransition or self.contextMenuActive or self.suppressAllAnnouncements:
 				nextHandler()
@@ -285,8 +305,6 @@ class ExplorerManager:
 				if not self._explorer_focused:
 					self._explorer_focused = True
 					self._update_speech_dict_for_title()
-				
-				self._perform_auto_select(obj)
 			else:
 				if self._explorer_focused:
 					self._explorer_focused = False
@@ -299,13 +317,29 @@ class ExplorerManager:
 			try:
 				if obj.role == Role.PANE and obj.firstChild and hasattr(obj.firstChild, "UIAAutomationId"):
 					if obj.firstChild.UIAAutomationId == "HomeListView":
+						# Cancel previous task if any
+						if self._homeview_focus_task:
+							self._homeview_focus_task.Stop()
+							self._homeview_focus_task = None
+
+						expected_hwnd = getattr(obj, "windowHandle", None)
+						pane_ref = obj
+
 						def set_focus():
+							if self._isForeignDialogOpen():
+								return
 							try:
-								if obj.firstChild and obj.firstChild.children and len(obj.firstChild.children) > 1:
-									obj.firstChild.children[1].setFocus()
+								fg = api.getForegroundObject()
+								if not fg or not fg.appModule or fg.appModule.appName != "explorer":
+									return
+								if expected_hwnd is not None and getattr(fg, "windowHandle", None) != expected_hwnd:
+									return
+								if pane_ref.firstChild and pane_ref.firstChild.children and len(pane_ref.firstChild.children) > 1:
+									pane_ref.firstChild.children[1].setFocus()
 							except Exception:
 								pass
-						core.callLater(200, set_focus)
+
+						self._homeview_focus_task = core.callLater(200, set_focus)
 			except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError):
 				pass
 
@@ -315,19 +349,11 @@ class ExplorerManager:
 		except Exception as e:
 			log.debug(f"event_gainFocus failed: {e}")
 
-	def _getFolderPath(self, listObj):
-		try:
-			parent = listObj
-			while parent and parent.role != Role.WINDOW:
-				parent = parent.parent
-			if parent and parent.role == Role.WINDOW:
-				return parent.name
-		except Exception:
-			pass
-		return None
-
 	def event_focusEntered(self, obj, nextHandler):
-		self._perform_auto_select(obj)
+		# Protect only auto-select; do not block the entire event
+		if obj.role == Role.LIST and isinstance(obj, UIA) and self._isExplorerList(obj):
+			if not self._isForeignDialogOpen():
+				self._perform_auto_select(obj)
 		try:
 			nextHandler()
 		except (ComTypesCOMError, CtypesCOMError) as e:
@@ -340,6 +366,14 @@ class ExplorerManager:
 		self._last_foreground_time = current_time
 
 		if obj and obj.appModule and obj.appModule.appName == "explorer":
+			# If a foreign dialog is open, immediately cancel any pending set_focus task
+			if self._isForeignDialogOpen():
+				if self._homeview_focus_task:
+					self._homeview_focus_task.Stop()
+					self._homeview_focus_task = None
+				log.debug("Foreign dialog detected, ignoring Explorer foreground event")
+				return
+
 			if not self._foregroundTransition:
 				self._foregroundTransition = True
 				self._cached_provider_desc.clear()
@@ -356,7 +390,6 @@ class ExplorerManager:
 				core.callLater(250, do_clear)
 				
 			self._update_speech_dict_for_title()
-			self._perform_auto_select(obj)
 		else:
 			if self._explorer_focused:
 				self._explorer_focused = False
@@ -379,7 +412,6 @@ class ExplorerManager:
 	def _clearForegroundTransition(self):
 		self._foregroundTransition = False
 		self._foreground_task = None
-		# Discard any stale path cache from a previous Explorer window.
 		if self.plugin:
 			self.plugin._invalidatePathCache()
 		log.debug("Foreground transition cleared, explorer operations resumed")

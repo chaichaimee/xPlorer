@@ -222,8 +222,16 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				self._striprtf_available = False
 		return self._striprtf_available
 
-	def _getCurrentPathDeferred(self, callback, delay=200):
-		core.callLater(delay, lambda: callback(self._getCurrentPathFromExplorer()))
+	def _getCurrentPathDeferred(self, callback, delay=200, retryCount=0):
+		"""Asynchronously get the current explorer path with retry during foreground transition."""
+		def do_get():
+			path = self._getCurrentPathFromExplorer()
+			if path is None and self.manager._foregroundTransition and retryCount < 5:
+				# Transition still active, retry after a short delay
+				core.callLater(100, lambda: self._getCurrentPathDeferred(callback, delay=0, retryCount=retryCount+1))
+			else:
+				callback(path)
+		core.callLater(delay, do_get)
 
 	def _getSelectedItemsDeferred(self, callback, delay=200):
 		core.callLater(delay, lambda: callback(self._getSelectedItems()))
@@ -238,15 +246,14 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		try:
 			fg = api.getForegroundObject()
 			if not fg or not fg.appModule or fg.appModule.appName != "explorer":
-				# Nothing Explorer-related is foreground right now; there is no
-				# hwnd to validate against, so fall back to whatever was last known.
-				return self._getCachedExplorerPath(None)
+				if self._cached_explorer_path and current_time - self._cached_explorer_time < 0.3:
+					return self._cached_explorer_path
+				return None
 
 			target_hwnd = fg.windowHandle
 			if not winUser.isWindow(target_hwnd):
 				return self._getCachedExplorerPath(target_hwnd)
 
-			# Use cache only when the window handle matches and entry is still fresh.
 			if (self._cached_explorer_hwnd == target_hwnd
 					and self._cached_explorer_path
 					and current_time - self._cached_explorer_time < self._cache_valid_duration):
@@ -293,9 +300,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				self._cached_explorer_path = path_result
 				return path_result
 
-			# Shell.Windows() sometimes fails to reflect a just-activated window for
-			# a brief moment (common right after Alt+Tab). Only trust the short-lived
-			# fallback if it still belongs to the window we are actually asking about.
 			cachedForThisWindow = self._getCachedExplorerPath(target_hwnd)
 			if (cachedForThisWindow
 					and current_time - self._cached_explorer_time < 2.0
@@ -794,4 +798,3 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def event_selection(self, obj, nextHandler):
 		self.manager.event_selection(obj, nextHandler)
-

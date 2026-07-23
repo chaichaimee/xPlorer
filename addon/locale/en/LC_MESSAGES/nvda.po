@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: xPlorer 2026.8.0\n"
+"Project-Id-Version: xPlorer 2026.7.8\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-07-22 06:26+0700\n"
+"POT-Creation-Date: 2026-07-23 14:43+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: English\n"
@@ -40,7 +40,7 @@ msgstr "Cannot copy content of folders, please select files only"
 msgid "Cannot find unique name for: {name}"
 msgstr "Cannot find unique name for: {name}"
 
-#: __init__.py:684
+#: __init__.py:688
 msgid "Cannot open settings dialog"
 msgstr "Cannot open settings dialog"
 
@@ -52,11 +52,11 @@ msgstr "Cannot process RTF file: striprtf module not available"
 msgid "Case Converter for Folders"
 msgstr "Case Converter for Folders"
 
-#: __init__.py:723
+#: __init__.py:727
 msgid "Case converter not available"
 msgstr "Case converter not available"
 
-#: __init__.py:444
+#: __init__.py:448
 msgid "Clipboard manager not available"
 msgstr "Clipboard manager not available"
 
@@ -92,7 +92,7 @@ msgstr "Compression cancelled"
 msgid "Compression completed {name}"
 msgstr "Compression completed {name}"
 
-#: __init__.py:524
+#: __init__.py:528
 msgid "Compression manager not available"
 msgstr "Compression manager not available"
 
@@ -108,8 +108,8 @@ msgstr "Content from 1 file copied to clipboard"
 msgid "Content from {count} files copied to clipboard"
 msgstr "Content from {count} files copied to clipboard"
 
-#: __init__.py:631
-#: __init__.py:697
+#: __init__.py:635
+#: __init__.py:701
 msgid "Context menu manager not available"
 msgstr "Context menu manager not available"
 
@@ -129,7 +129,7 @@ msgstr "Copied 1 item name to clipboard"
 msgid "Copied {count} item names to clipboard"
 msgstr "Copied {count} item names to clipboard"
 
-#: __init__.py:420
+#: __init__.py:424
 msgid "Copied: {path}"
 msgstr "Copied: {path}"
 
@@ -141,7 +141,7 @@ msgstr "Copy address bar"
 msgid "Copy content"
 msgstr "Copy content"
 
-#: __init__.py:507
+#: __init__.py:511
 msgid "Copy content (single tap) or invert selection (double tap)"
 msgstr "Copy content (single tap) or invert selection (double tap)"
 
@@ -149,11 +149,11 @@ msgstr "Copy content (single tap) or invert selection (double tap)"
 msgid "Copy selected file and folder names"
 msgstr "Copy selected file and folder names"
 
-#: __init__.py:467
+#: __init__.py:471
 msgid "Copy selected names (single tap) or copy address bar (double tap)"
 msgstr "Copy selected names (single tap) or copy address bar (double tap)"
 
-#: __init__.py:424
+#: __init__.py:428
 #: clipboardManager.py:50
 #: clipboardManager.py:139
 msgid "Could not open clipboard"
@@ -176,7 +176,7 @@ msgstr "Create Multiple Folders..."
 msgid "Create main folder and then subfolders"
 msgstr "Create main folder and then subfolders"
 
-#: __init__.py:675
+#: __init__.py:679
 msgid "Create new folder and paste clipboard content into rename field"
 msgstr "Create new folder and paste clipboard content into rename field"
 
@@ -220,7 +220,7 @@ msgstr "Error creating base folder"
 msgid "Error creating files"
 msgstr "Error creating files"
 
-#: __init__.py:717
+#: __init__.py:721
 msgid "Error creating folders"
 msgstr "Error creating folders"
 
@@ -228,7 +228,7 @@ msgstr "Error creating folders"
 msgid "Error creating main folder"
 msgstr "Error creating main folder"
 
-#: __init__.py:761
+#: __init__.py:765
 msgid "Error during conversion"
 msgstr "Error during conversion"
 
@@ -248,7 +248,7 @@ msgstr "Error opening create file dialog"
 msgid "Error opening rename dialog"
 msgstr "Error opening rename dialog"
 
-#: __init__.py:691
+#: __init__.py:695
 msgid "Error opening settings"
 msgstr "Error opening settings"
 
@@ -314,7 +314,7 @@ msgstr "File name {index}:"
 msgid "File name:"
 msgstr "File name:"
 
-#: __init__.py:646
+#: __init__.py:650
 msgid "File operations manager not available"
 msgstr "File operations manager not available"
 
@@ -332,11 +332,11 @@ msgstr "Folder"
 msgid "Folder '{}' already exists, creating '{}' instead"
 msgstr "Folder '{}' already exists, creating '{}' instead"
 
-#: __init__.py:701
+#: __init__.py:705
 msgid "Folder creation dialog not available"
 msgstr "Folder creation dialog not available"
 
-#: __init__.py:663
+#: __init__.py:667
 msgid "Folder creator helper not available"
 msgstr "Folder creator helper not available"
 
@@ -368,7 +368,7 @@ msgstr "Lowercase"
 msgid "Maximum 100 folders allowed"
 msgstr "Maximum 100 folders allowed"
 
-#: __init__.py:705
+#: __init__.py:709
 msgid "No Explorer folder detected"
 msgstr "No Explorer folder detected"
 
@@ -396,11 +396,11 @@ msgstr "No files were created"
 msgid "No folders found"
 msgstr "No folders found"
 
-#: __init__.py:727
+#: __init__.py:731
 msgid "No folders selected"
 msgstr "No folders selected"
 
-#: __init__.py:742
+#: __init__.py:746
 msgid "No folders selected or current folder not available"
 msgstr "No folders selected or current folder not available"
 
@@ -457,7 +457,7 @@ msgstr "Number of folders must be at least 1"
 msgid "Number of folders:"
 msgstr "Number of folders:"
 
-#: __init__.py:640
+#: __init__.py:644
 msgid "Open xPlorer context menu"
 msgstr "Open xPlorer context menu"
 
@@ -485,12 +485,12 @@ msgstr "Please select only one text file"
 msgid "Processing {count} items in background..."
 msgstr "Processing {count} items in background..."
 
-#: __init__.py:657
+#: __init__.py:661
 #: contextMenu.py:32
 msgid "Rename selected file"
 msgstr "Rename selected file"
 
-#: __init__.py:484
+#: __init__.py:488
 msgid "Required manager not available"
 msgstr "Required manager not available"
 
@@ -498,11 +498,11 @@ msgstr "Required manager not available"
 msgid "Robocopy"
 msgstr "Robocopy"
 
-#: __init__.py:564
+#: __init__.py:568
 msgid "Robocopy manager not available"
 msgstr "Robocopy manager not available"
 
-#: __init__.py:587
+#: __init__.py:591
 msgid "Robocopy: single tap copy, double tap paste, triple tap move"
 msgstr "Robocopy: single tap copy, double tap paste, triple tap move"
 
@@ -510,7 +510,7 @@ msgstr "Robocopy: single tap copy, double tap paste, triple tap move"
 msgid "Say size"
 msgstr "Say size"
 
-#: __init__.py:547
+#: __init__.py:551
 msgid "Say size (single tap) or compress zip (double tap)"
 msgstr "Say size (single tap) or compress zip (double tap)"
 
@@ -587,7 +587,7 @@ msgstr "Total file size is too large to copy content"
 msgid "Unable to get current directory after multiple attempts"
 msgstr "Unable to get current directory after multiple attempts"
 
-#: __init__.py:426
+#: __init__.py:430
 msgid "Unable to get current path"
 msgstr "Unable to get current path"
 
@@ -632,13 +632,13 @@ msgid "paste"
 msgstr "paste"
 
 #: __init__.py:109
-#: __init__.py:468
-#: __init__.py:508
-#: __init__.py:548
-#: __init__.py:588
-#: __init__.py:641
-#: __init__.py:658
-#: __init__.py:676
+#: __init__.py:472
+#: __init__.py:512
+#: __init__.py:552
+#: __init__.py:592
+#: __init__.py:645
+#: __init__.py:662
+#: __init__.py:680
 msgid "xPlorer"
 msgstr "xPlorer"
 
