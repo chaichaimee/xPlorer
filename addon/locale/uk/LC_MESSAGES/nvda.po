@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xPlorer 2026.8.5\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-08-03 06:13+0700\n"
+"POT-Creation-Date: 2026-08-03 14:18+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Ukrainian\n"
@@ -10,708 +10,734 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: DevOn Addon\n"
-
-#: robocopyManager.py:464
-msgid " and {n} more"
-msgstr " і ще {n}"
-
-#: folderTools.py:174
-msgid "&Apply"
-msgstr "&Застосувати"
-
-#: folderTools.py:175
-msgid "&Cancel"
-msgstr "&Скасувати"
-
-#: createFile.py:286
-msgid "1 file created"
-msgstr "1 файл створено"
-
-#: fileOperations.py:340
-msgid "A file with this name already exists"
-msgstr "Файл з таким іменем вже існує"
-
-#: compressionManager.py:288
-msgid "Built-in compression failed: {error}"
-msgstr "Вбудоване стиснення не вдалося: {error}"
-
-#: robocopyManager.py:323
-msgid "Calculating total size..."
-msgstr "Обчислення загального розміру..."
-
-#: clipboardManager.py:66
-msgid "Cannot copy content of folders, please select files only"
-msgstr "Неможливо скопіювати вміст тек, виберіть лише файли"
-
-#: createFile.py:271
-msgid "Cannot find unique name for: {name}"
-msgstr "Не вдається знайти унікальне ім'я для: {name}"
-
-#: __init__.py:888
-msgid "Cannot open settings dialog"
-msgstr "Не вдається відкрити діалог налаштувань"
-
-#: folderTools.py:570
-msgid "Cannot process RTF file: striprtf module not available"
-msgstr "Неможливо обробити RTF-файл: модуль striprtf недоступний"
-
-#: contextMenu.py:43
-msgid "Case Converter for Folders"
-msgstr "Конвертер регістру для тек"
-
-#: __init__.py:927
-msgid "Case converter not available"
-msgstr "Конвертер регістру недоступний"
-
-#: __init__.py:648
-msgid "Clipboard manager not available"
-msgstr "Менеджер буфера обміну недоступний"
-
-#: compressionManager.py:284
-msgid "Completed"
-msgstr "Завершено"
-
-#: contextMenu.py:26
-msgid "Compress zip"
-msgstr "Стиснути zip"
-
-#: compressionManager.py:160
-#: compressionManager.py:168
-msgid "Compressing files"
-msgstr "Стиснення файлів"
-
-#: compressionManager.py:75
-msgid "Compressing..."
-msgstr "Стиснення..."
-
-#: compressionManager.py:263
-#: compressionManager.py:277
-msgid "Compressing: {percent}%"
-msgstr "Стиснення: {percent}%"
-
-#: compressionManager.py:110
-#: compressionManager.py:282
-msgid "Compression cancelled"
-msgstr "Стиснення скасовано"
-
-#: compressionManager.py:112
-#: compressionManager.py:285
-msgid "Compression completed {name}"
-msgstr "Стиснення завершено {name}"
-
-#: __init__.py:728
-msgid "Compression manager not available"
-msgstr "Менеджер стиснення недоступний"
-
-#: compressionManager.py:86
-msgid "Compression timed out"
-msgstr "Час стиснення вичерпано"
-
-#: clipboardManager.py:133
-msgid "Content from 1 file copied to clipboard"
-msgstr "Вміст з 1 файлу скопійовано до буфера обміну"
-
-#: clipboardManager.py:135
-msgid "Content from {count} files copied to clipboard"
-msgstr "Вміст з {count} файлів скопійовано до буфера обміну"
-
-#: __init__.py:835
-#: __init__.py:901
-msgid "Context menu manager not available"
-msgstr "Менеджер контекстного меню недоступний"
-
-#: folderTools.py:937
-msgid "Conversion already in progress"
-msgstr "Перетворення вже виконується"
-
-#: folderTools.py:954
-msgid "Converting"
-msgstr "Перетворення"
-
-#: clipboardManager.py:44
-msgid "Copied 1 item name to clipboard"
-msgstr "Назву 1 елемента скопійовано до буфера обміну"
-
-#: clipboardManager.py:46
-msgid "Copied {count} item names to clipboard"
-msgstr "Назви {count} елементів скопійовано до буфера обміну"
-
-#: __init__.py:624
-msgid "Copied: {path}"
-msgstr "Скопійовано: {path}"
-
-#: contextMenu.py:28
-msgid "Copy address bar"
-msgstr "Копіювати адресний рядок"
-
-#: contextMenu.py:29
-msgid "Copy content"
-msgstr "Копіювати вміст"
-
-#: __init__.py:711
-msgid "Copy content (single tap) or invert selection (double tap)"
-msgstr "Копіювати вміст (одне натискання) або інвертувати вибір (подвійне натискання)"
-
-#: contextMenu.py:30
-msgid "Copy selected file and folder names"
-msgstr "Копіювати назви вибраних файлів і тек"
-
-#: __init__.py:671
-msgid "Copy selected names (single tap) or copy address bar (double tap)"
-msgstr "Копіювати вибрані назви (одне натискання) або копіювати адресний рядок (подвійне натискання)"
-
-#: __init__.py:628
-#: clipboardManager.py:50
-#: clipboardManager.py:139
-msgid "Could not open clipboard"
-msgstr "Не вдалося відкрити буфер обміну"
-
-#: contextMenu.py:23
-#: createFile.py:17
-msgid "Create File"
-msgstr "Створити файл"
-
-#: folderTools.py:128
-msgid "Create Multiple Folders"
-msgstr "Створити кілька тек"
-
-#: contextMenu.py:40
-msgid "Create Multiple Folders..."
-msgstr "Створити кілька тек..."
-
-#: folderTools.py:157
-msgid "Create main folder and then subfolders"
-msgstr "Створити головну теку, а потім підтеки"
-
-#: __init__.py:879
-msgid "Create new folder and paste clipboard content into rename field"
-msgstr "Створити нову теку та вставити вміст буфера обміну в поле перейменування"
-
-#: folderTools.py:324
-msgid "Created {count} of {total} folders..."
-msgstr "Створено {count} з {total} тек..."
-
-#: folderTools.py:311
-msgid "Creating folders in background..."
-msgstr "Створення тек у фоновому режимі..."
-
-#: folderTools.py:161
-msgid "Edit individual folder names"
-msgstr "Редагувати окремі назви тек"
-
-#: folderTools.py:120
-msgid "Error calculating folder info"
-msgstr "Помилка обчислення інформації про теку"
-
-#: fileOperations.py:294
-msgid "Error calculating size"
-msgstr "Помилка обчислення розміру"
-
-#: compressionManager.py:196
-msgid "Error compressing files"
-msgstr "Помилка стиснення файлів"
-
-#: clipboardManager.py:142
-msgid "Error copying file content"
-msgstr "Помилка копіювання вмісту файлу"
-
-#: clipboardManager.py:53
-msgid "Error copying names to clipboard"
-msgstr "Помилка копіювання назв до буфера обміну"
-
-#: folderTools.py:614
-msgid "Error creating base folder"
-msgstr "Помилка створення базової теки"
-
-#: createFile.py:291
-msgid "Error creating files"
-msgstr "Помилка створення файлів"
-
-#: __init__.py:921
-msgid "Error creating folders"
-msgstr "Помилка створення тек"
-
-#: folderTools.py:302
-msgid "Error creating main folder"
-msgstr "Помилка створення головної теки"
-
-#: __init__.py:965
-msgid "Error during conversion"
-msgstr "Помилка під час перетворення"
-
-#: compressionManager.py:117
-msgid "Error in compression process: {error}"
-msgstr "Помилка в процесі стиснення: {error}"
-
-#: folderTools.py:804
-msgid "Error inverting selection"
-msgstr "Помилка інвертування вибору"
-
-#: createFile.py:245
-msgid "Error opening create file dialog"
-msgstr "Помилка відкриття діалогу створення файлу"
-
-#: fileOperations.py:350
-msgid "Error opening rename dialog"
-msgstr "Помилка відкриття діалогу перейменування"
-
-#: __init__.py:895
-msgid "Error opening settings"
-msgstr "Помилка відкриття налаштувань"
-
-#: folderTools.py:704
-msgid "Error processing text file: {}"
-msgstr "Помилка обробки текстового файлу: {}"
-
-#: folderTools.py:581
-msgid "Error reading RTF file"
-msgstr "Помилка читання RTF-файлу"
-
-#: folderTools.py:708
-msgid "Error reading file encoding"
-msgstr "Помилка читання кодування файлу"
-
-#: fileOperations.py:320
-#: fileOperations.py:347
-msgid "Error renaming file"
-msgstr "Помилка перейменування файлу"
-
-#: folderTools.py:713
-msgid "Error: {}"
-msgstr "Помилка: {}"
-
-#: __init__.py:1002
-msgid "Explorer tree dumped to NVDA log"
-msgstr "Дерево Провідника вивантажено до журналу NVDA"
-
-#: createFile.py:72
-msgid "Extension:"
-msgstr "Розширення:"
-
-#: folderTools.py:949
-msgid "Failed to rename any folders"
-msgstr "Не вдалося перейменувати жодної теки"
-
-#: compressionManager.py:188
-msgid "Failed to start compression"
-msgstr "Не вдалося запустити стиснення"
-
-#: createFile.py:138
-msgid "File count cannot exceed 10"
-msgstr "Кількість файлів не може перевищувати 10"
-
-#: createFile.py:135
-msgid "File count must be at least 1"
-msgstr "Кількість файлів має бути не менше 1"
-
-#: createFile.py:112
-msgid "File name"
-msgstr "Назва файлу"
-
-#: fileOperations.py:59
-msgid "File name cannot be empty"
-msgstr "Назва файлу не може бути порожньою"
-
-#: fileOperations.py:337
-msgid "File name not changed"
-msgstr "Назву файлу не змінено"
-
-#: createFile.py:66
-#: createFile.py:113
-msgid "File name {index}:"
-msgstr "Назва файлу {index}:"
-
-#: createFile.py:64
-msgid "File name:"
-msgstr "Назва файлу:"
-
-#: __init__.py:850
-msgid "File operations manager not available"
-msgstr "Менеджер операцій з файлами недоступний"
-
-#: fileOperations.py:344
-msgid "File renamed to {name}"
-msgstr "Файл перейменовано на {name}"
-
-#: robocopyManager.py:448
-msgid "Finished {n} of {total}: {name}"
-msgstr "Завершено {n} з {total}: {name}"
-
-#: folderTools.py:227
-#: folderTools.py:267
-msgid "Folder"
-msgstr "Тека"
-
-#: folderTools.py:605
-#: folderTools.py:675
-msgid "Folder '{}' already exists, creating '{}' instead"
-msgstr "Тека '{}' вже існує, замість неї створюється '{}'"
-
-#: __init__.py:905
-msgid "Folder creation dialog not available"
-msgstr "Діалог створення теки недоступний"
-
-#: __init__.py:867
-msgid "Folder creator helper not available"
-msgstr "Помічник створення тек недоступний"
-
-#: contextMenu.py:131
-#: contextMenu.py:134
-#: contextMenu.py:155
-msgid "Folder info"
-msgstr "Інформація про теку"
-
-#: folderTools.py:142
-msgid "Folder title:"
-msgstr "Назва теки:"
-
-#: contextMenu.py:47
-msgid "Headline Case"
-msgstr "Заголовний регістр"
-
-#: folderTools.py:278
-msgid "Invalid number for folders"
-msgstr "Неправильна кількість для тек"
-
-#: contextMenu.py:27
-msgid "Invert selection"
-msgstr "Інвертувати вибір"
-
-#: contextMenu.py:45
-msgid "Lowercase"
-msgstr "Малі літери"
-
-#: folderTools.py:275
-msgid "Maximum 100 folders allowed"
-msgstr "Дозволено максимум 100 тек"
-
-#: __init__.py:909
-msgid "No Explorer folder detected"
-msgstr "Не виявлено жодної теки Провідника"
-
-#: fileOperations.py:219
-#: fileOperations.py:276
-msgid "No access to size data"
-msgstr "Немає доступу до даних про розмір"
-
-#: folderTools.py:769
-msgid "No active File Explorer window found"
-msgstr "Не знайдено активного вікна Файлового провідника"
-
-#: clipboardManager.py:127
-msgid "No content could be read from selected files"
-msgstr "Не вдалося прочитати вміст із вибраних файлів"
-
-#: createFile.py:284
-msgid "No files were created"
-msgstr "Не створено жодного файлу"
-
-#: folderTools.py:964
-#: folderTools.py:970
-#: folderTools.py:979
-#: folderTools.py:985
-msgid "No folders found"
-msgstr "Не знайдено жодної теки"
-
-#: __init__.py:931
-msgid "No folders selected"
-msgstr "Не вибрано жодної теки"
-
-#: __init__.py:946
-msgid "No folders selected or current folder not available"
-msgstr "Не вибрано жодної теки або поточна тека недоступна"
-
-#: folderTools.py:341
-#: folderTools.py:649
-#: folderTools.py:699
-msgid "No folders were created"
-msgstr "Не створено жодної теки"
-
-#: folderTools.py:81
-msgid "No item selected"
-msgstr "Не вибрано жодного елемента"
-
-#: folderTools.py:782
-msgid "No items in folder"
-msgstr "У теці немає елементів"
-
-#: clipboardManager.py:27
-#: clipboardManager.py:62
-#: compressionManager.py:148
-#: fileOperations.py:210
-#: fileOperations.py:306
-msgid "No items selected"
-msgstr "Не вибрано жодного елемента"
-
-#: clipboardManager.py:79
-msgid "No text files selected"
-msgstr "Не вибрано жодного текстового файлу"
-
-#: folderTools.py:591
-#: folderTools.py:661
-msgid "No valid folder names found in the file"
-msgstr "У файлі не знайдено дійсних назв тек"
-
-#: folderTools.py:296
-msgid "No valid folder names provided"
-msgstr "Не надано дійсних назв тек"
-
-#: __init__.py:976
-msgid "Not focused on File Explorer"
-msgstr "Не сфокусовано на Файловому провіднику"
-
-#: createFile.py:198
-#: folderTools.py:541
-#: folderTools.py:763
-msgid "Not in File Explorer"
-msgstr "Не у Файловому провіднику"
-
-#: createFile.py:28
-msgid "Number of files to create:"
-msgstr "Кількість файлів для створення:"
-
-#: folderTools.py:272
-msgid "Number of folders must be at least 1"
-msgstr "Кількість тек має бути не менше 1"
-
-#: folderTools.py:150
-msgid "Number of folders:"
-msgstr "Кількість тек:"
-
-#: __init__.py:844
-msgid "Open xPlorer context menu"
-msgstr "Відкрити контекстне меню xPlorer"
-
-#: folderTools.py:554
-msgid "Please select a .txt or .rtf file"
-msgstr "Виберіть файл .txt або .rtf"
-
-#: fileOperations.py:313
-msgid "Please select a file, not a folder"
-msgstr "Виберіть файл, а не теку"
-
-#: fileOperations.py:309
-msgid "Please select only one file"
-msgstr "Виберіть лише один файл"
-
-#: folderTools.py:547
-msgid "Please select only one text file"
-msgstr "Виберіть лише один текстовий файл"
-
-#: folderTools.py:791
-msgid "Processing {count} items in background..."
-msgstr "Обробка {count} елементів у фоновому режимі..."
-
-#: __init__.py:861
-#: contextMenu.py:31
-msgid "Rename selected file"
-msgstr "Перейменувати вибраний файл"
-
-#: __init__.py:688
-msgid "Required manager not available"
-msgstr "Необхідний менеджер недоступний"
-
-#: contextMenu.py:34
-msgid "Robocopy"
-msgstr "Robocopy"
-
-#: robocopyManager.py:457
-msgid "Robocopy cancelled"
-msgstr "Robocopy скасовано"
-
-#: robocopyManager.py:469
-msgid "Robocopy finished successfully. {n} item(s) copied"
-msgstr "Robocopy успішно завершено. Скопійовано {n} елемент(ів)"
-
-#: robocopyManager.py:465
-msgid "Robocopy finished. {ok} succeeded, {failed} failed: {items}"
-msgstr "Robocopy завершено. Успішно: {ok}, невдало: {failed}: {items}"
-
-#: __init__.py:768
-msgid "Robocopy manager not available"
-msgstr "Менеджер Robocopy недоступний"
-
-#: __init__.py:791
-msgid "Robocopy: single tap copy, double tap paste, triple tap move"
-msgstr "Robocopy: одне натискання – копіювати, подвійне – вставити, потрійне – перемістити"
-
-#: contextMenu.py:89
-#: contextMenu.py:100
-#: contextMenu.py:106
-#: contextMenu.py:111
-#: contextMenu.py:117
-msgid "Say size"
-msgstr "Оголосити розмір"
-
-#: __init__.py:751
-msgid "Say size (single tap) or compress zip (double tap)"
-msgstr "Оголосити розмір (одне натискання) або стиснути zip (подвійне натискання)"
-
-#: folderTools.py:559
-msgid "Selected file does not exist"
-msgstr "Вибраний файл не існує"
-
-#: folderTools.py:87
-msgid "Selected item is not a folder"
-msgstr "Вибраний елемент не є текою"
-
-#: folderTools.py:826
-msgid "Selected {count} items"
-msgstr "Вибрано {count} елементів"
-
-#: folderTools.py:829
-msgid "Selection inverted"
-msgstr "Вибір інвертовано"
-
-#: createFile.py:170
-msgid "Some files will use default names"
-msgstr "Деякі файли використовуватимуть типові назви"
-
-#: compressionManager.py:161
-msgid "Starting..."
-msgstr "Запуск..."
-
-#: folderTools.py:987
-msgid "Successfully converted {count} folders to headline case"
-msgstr "{count} тек успішно перетворено на заголовний регістр"
-
-#: folderTools.py:972
-msgid "Successfully converted {count} folders to lowercase"
-msgstr "{count} тек успішно перетворено на малі літери"
-
-#: folderTools.py:981
-msgid "Successfully converted {count} folders to title case"
-msgstr "{count} тек успішно перетворено на регістр назв"
-
-#: folderTools.py:966
-msgid "Successfully converted {count} folders to uppercase"
-msgstr "{count} тек успішно перетворено на ВЕЛИКІ ЛІТЕРИ"
-
-#: folderTools.py:337
-msgid "Successfully created 1 folder"
-msgstr "Успішно створено 1 теку"
-
-#: folderTools.py:335
-msgid "Successfully created main folder only"
-msgstr "Успішно створено лише головну теку"
-
-#: folderTools.py:339
-msgid "Successfully created {count} of {total} folders"
-msgstr "Успішно створено {count} з {total} тек"
-
-#: folderTools.py:645
-#: folderTools.py:695
-msgid "Successfully created {} folders in '{}'"
-msgstr "Успішно створено {} тек у '{}'"
-
-#: contextMenu.py:39
-msgid "TXT to Folder"
-msgstr "TXT у теку"
-
-#: contextMenu.py:46
-msgid "Title Case"
-msgstr "Регістр назв"
-
-#: clipboardManager.py:88
-msgid "Total file size is too large to copy content"
-msgstr "Загальний розмір файлів занадто великий для копіювання вмісту"
-
-#: createFile.py:213
-msgid "Unable to get current directory after multiple attempts"
-msgstr "Не вдалося отримати поточний каталог після кількох спроб"
-
-#: __init__.py:630
-msgid "Unable to get current path"
-msgstr "Не вдається отримати поточний шлях"
-
-#: folderTools.py:774
-msgid "Unable to get folder view"
-msgstr "Не вдається отримати перегляд теки"
-
-#: contextMenu.py:44
-msgid "Uppercase"
-msgstr "ВЕЛИКІ ЛІТЕРИ"
-
-#: clipboardManager.py:104
-msgid "[Error processing RTF file]"
-msgstr "[Помилка обробки RTF-файлу]"
-
-#: clipboardManager.py:106
-msgid "[RTF content - striprtf module not available]"
-msgstr "[Вміст RTF – модуль striprtf недоступний]"
-
-#: compressionManager.py:114
-msgid "compression failed"
-msgstr "стиснення не вдалося"
-
-#: contextMenu.py:35
-msgid "copy"
-msgstr "копіювати"
-
-#: robocopyManager.py:235
-msgid "estimating time remaining"
-msgstr "оцінка часу, що залишився"
-
-#: contextMenu.py:36
-msgid "move"
-msgstr "перемістити"
-
-#: createFile.py:156
-msgid "new_file"
-msgstr "новий_файл"
-
-#: createFile.py:158
-msgid "new_file_{index}"
-msgstr "новий_файл_{index}"
-
-#: contextMenu.py:37
-msgid "paste"
-msgstr "вставити"
-
-#: __init__.py:268
-#: __init__.py:672
-#: __init__.py:712
-#: __init__.py:752
-#: __init__.py:792
-#: __init__.py:845
-#: __init__.py:862
-#: __init__.py:880
+"X-Generator: Poedit 3.9\n"
+"X-Poedit-Basepath: ../../../globalPlugins\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: xPlorer/__init__.py:268 xPlorer/__init__.py:672 xPlorer/__init__.py:712
+#: xPlorer/__init__.py:752 xPlorer/__init__.py:792 xPlorer/__init__.py:845
+#: xPlorer/__init__.py:862 xPlorer/__init__.py:880
 msgid "xPlorer"
 msgstr "xPlorer"
 
-#: contextMenu.py:49
+#: xPlorer/__init__.py:624
+#, python-brace-format
+msgid "Copied: {path}"
+msgstr "Скопійовано: {path}"
+
+#: xPlorer/__init__.py:628 xPlorer/clipboardManager.py:50
+#: xPlorer/clipboardManager.py:139
+msgid "Could not open clipboard"
+msgstr "Не вдалося відкрити буфер обміну"
+
+#: xPlorer/__init__.py:630
+msgid "Unable to get current path"
+msgstr "Не вдається отримати поточний шлях"
+
+#: xPlorer/__init__.py:648
+msgid "Clipboard manager not available"
+msgstr "Менеджер буфера обміну недоступний"
+
+#: xPlorer/__init__.py:671
+msgid "Copy selected names (single tap) or copy address bar (double tap)"
+msgstr ""
+"Копіювати вибрані назви (одне натискання) або копіювати адресний рядок "
+"(подвійне натискання)"
+
+#: xPlorer/__init__.py:688
+msgid "Required manager not available"
+msgstr "Необхідний менеджер недоступний"
+
+#: xPlorer/__init__.py:711
+msgid "Copy content (single tap) or invert selection (double tap)"
+msgstr ""
+"Копіювати вміст (одне натискання) або інвертувати вибір (подвійне натискання)"
+
+#: xPlorer/__init__.py:728
+msgid "Compression manager not available"
+msgstr "Менеджер стиснення недоступний"
+
+#: xPlorer/__init__.py:751
+msgid "Say size (single tap) or compress zip (double tap)"
+msgstr ""
+"Оголосити розмір (одне натискання) або стиснути zip (подвійне натискання)"
+
+#: xPlorer/__init__.py:768
+msgid "Robocopy manager not available"
+msgstr "Менеджер Robocopy недоступний"
+
+#: xPlorer/__init__.py:791
+msgid "Robocopy: single tap copy, double tap paste, triple tap move"
+msgstr ""
+"Robocopy: одне натискання – копіювати, подвійне – вставити, потрійне – "
+"перемістити"
+
+#: xPlorer/__init__.py:835 xPlorer/__init__.py:901
+msgid "Context menu manager not available"
+msgstr "Менеджер контекстного меню недоступний"
+
+#: xPlorer/__init__.py:844
+msgid "Open xPlorer context menu"
+msgstr "Відкрити контекстне меню xPlorer"
+
+#: xPlorer/__init__.py:850
+msgid "File operations manager not available"
+msgstr "Менеджер операцій з файлами недоступний"
+
+#: xPlorer/__init__.py:861 xPlorer/contextMenu.py:31
+msgid "Rename selected file"
+msgstr "Перейменувати вибраний файл"
+
+#: xPlorer/__init__.py:867
+msgid "Folder creator helper not available"
+msgstr "Помічник створення тек недоступний"
+
+#: xPlorer/__init__.py:879
+msgid "Create new folder and paste clipboard content into rename field"
+msgstr ""
+"Створити нову теку та вставити вміст буфера обміну в поле перейменування"
+
+#: xPlorer/__init__.py:888
+msgid "Cannot open settings dialog"
+msgstr "Не вдається відкрити діалог налаштувань"
+
+#: xPlorer/__init__.py:895
+msgid "Error opening settings"
+msgstr "Помилка відкриття налаштувань"
+
+#: xPlorer/__init__.py:905
+msgid "Folder creation dialog not available"
+msgstr "Діалог створення теки недоступний"
+
+#: xPlorer/__init__.py:909
+msgid "No Explorer folder detected"
+msgstr "Не виявлено жодної теки Провідника"
+
+#: xPlorer/__init__.py:921
+msgid "Error creating folders"
+msgstr "Помилка створення тек"
+
+#: xPlorer/__init__.py:927
+msgid "Case converter not available"
+msgstr "Конвертер регістру недоступний"
+
+#: xPlorer/__init__.py:931
+msgid "No folders selected"
+msgstr "Не вибрано жодної теки"
+
+#: xPlorer/__init__.py:946
+msgid "No folders selected or current folder not available"
+msgstr "Не вибрано жодної теки або поточна тека недоступна"
+
+#: xPlorer/__init__.py:965
+msgid "Error during conversion"
+msgstr "Помилка під час перетворення"
+
+#: xPlorer/__init__.py:976
+msgid "Not focused on File Explorer"
+msgstr "Не сфокусовано на Файловому провіднику"
+
+#: xPlorer/__init__.py:1002
+msgid "Explorer tree dumped to NVDA log"
+msgstr "Дерево Провідника вивантажено до журналу NVDA"
+
+#: xPlorer/case.py:115 xPlorer/folderTools.py:972
+msgid "Conversion already in progress"
+msgstr "Перетворення вже виконується"
+
+#: xPlorer/case.py:127 xPlorer/folderTools.py:984
+msgid "Failed to rename any folders"
+msgstr "Не вдалося перейменувати жодної теки"
+
+#: xPlorer/case.py:132 xPlorer/folderTools.py:989
+msgid "Converting"
+msgstr "Перетворення"
+
+#: xPlorer/case.py:142 xPlorer/case.py:148 xPlorer/case.py:157
+#: xPlorer/case.py:163 xPlorer/folderTools.py:999 xPlorer/folderTools.py:1005
+#: xPlorer/folderTools.py:1014 xPlorer/folderTools.py:1020
+msgid "No folders found"
+msgstr "Не знайдено жодної теки"
+
+#: xPlorer/case.py:144 xPlorer/folderTools.py:1001
+#, python-brace-format
+msgid "Successfully converted {count} folders to uppercase"
+msgstr "{count} тек успішно перетворено на ВЕЛИКІ ЛІТЕРИ"
+
+#: xPlorer/case.py:150 xPlorer/folderTools.py:1007
+#, python-brace-format
+msgid "Successfully converted {count} folders to lowercase"
+msgstr "{count} тек успішно перетворено на малі літери"
+
+#: xPlorer/case.py:159 xPlorer/folderTools.py:1016
+#, python-brace-format
+msgid "Successfully converted {count} folders to title case"
+msgstr "{count} тек успішно перетворено на регістр назв"
+
+#: xPlorer/case.py:165 xPlorer/folderTools.py:1022
+#, python-brace-format
+msgid "Successfully converted {count} folders to headline case"
+msgstr "{count} тек успішно перетворено на заголовний регістр"
+
+#: xPlorer/clipboardManager.py:27 xPlorer/clipboardManager.py:62
+#: xPlorer/compressionManager.py:148 xPlorer/fileOperations.py:210
+#: xPlorer/fileOperations.py:306
+msgid "No items selected"
+msgstr "Не вибрано жодного елемента"
+
+#: xPlorer/clipboardManager.py:44
+msgid "Copied 1 item name to clipboard"
+msgstr "Назву 1 елемента скопійовано до буфера обміну"
+
+#: xPlorer/clipboardManager.py:46
+#, python-brace-format
+msgid "Copied {count} item names to clipboard"
+msgstr "Назви {count} елементів скопійовано до буфера обміну"
+
+#: xPlorer/clipboardManager.py:53
+msgid "Error copying names to clipboard"
+msgstr "Помилка копіювання назв до буфера обміну"
+
+#: xPlorer/clipboardManager.py:66
+msgid "Cannot copy content of folders, please select files only"
+msgstr "Неможливо скопіювати вміст тек, виберіть лише файли"
+
+#: xPlorer/clipboardManager.py:79
+msgid "No text files selected"
+msgstr "Не вибрано жодного текстового файлу"
+
+#: xPlorer/clipboardManager.py:88
+msgid "Total file size is too large to copy content"
+msgstr "Загальний розмір файлів занадто великий для копіювання вмісту"
+
+#: xPlorer/clipboardManager.py:104
+msgid "[Error processing RTF file]"
+msgstr "[Помилка обробки RTF-файлу]"
+
+#: xPlorer/clipboardManager.py:106
+msgid "[RTF content - striprtf module not available]"
+msgstr "[Вміст RTF – модуль striprtf недоступний]"
+
+#: xPlorer/clipboardManager.py:127
+msgid "No content could be read from selected files"
+msgstr "Не вдалося прочитати вміст із вибраних файлів"
+
+#: xPlorer/clipboardManager.py:133
+msgid "Content from 1 file copied to clipboard"
+msgstr "Вміст з 1 файлу скопійовано до буфера обміну"
+
+#: xPlorer/clipboardManager.py:135
+#, python-brace-format
+msgid "Content from {count} files copied to clipboard"
+msgstr "Вміст з {count} файлів скопійовано до буфера обміну"
+
+#: xPlorer/clipboardManager.py:142
+msgid "Error copying file content"
+msgstr "Помилка копіювання вмісту файлу"
+
+#: xPlorer/compressionManager.py:75
+msgid "Compressing..."
+msgstr "Стиснення..."
+
+#: xPlorer/compressionManager.py:86
+msgid "Compression timed out"
+msgstr "Час стиснення вичерпано"
+
+#: xPlorer/compressionManager.py:110 xPlorer/compressionManager.py:282
+msgid "Compression cancelled"
+msgstr "Стиснення скасовано"
+
+#: xPlorer/compressionManager.py:112 xPlorer/compressionManager.py:285
+#, python-brace-format
+msgid "Compression completed {name}"
+msgstr "Стиснення завершено {name}"
+
+#: xPlorer/compressionManager.py:114
+msgid "compression failed"
+msgstr "стиснення не вдалося"
+
+#: xPlorer/compressionManager.py:117
+#, python-brace-format
+msgid "Error in compression process: {error}"
+msgstr "Помилка в процесі стиснення: {error}"
+
+#: xPlorer/compressionManager.py:160 xPlorer/compressionManager.py:168
+msgid "Compressing files"
+msgstr "Стиснення файлів"
+
+#: xPlorer/compressionManager.py:161
+msgid "Starting..."
+msgstr "Запуск..."
+
+#: xPlorer/compressionManager.py:188
+msgid "Failed to start compression"
+msgstr "Не вдалося запустити стиснення"
+
+#: xPlorer/compressionManager.py:196
+msgid "Error compressing files"
+msgstr "Помилка стиснення файлів"
+
+#: xPlorer/compressionManager.py:263 xPlorer/compressionManager.py:277
+#, python-brace-format
+msgid "Compressing: {percent}%"
+msgstr "Стиснення: {percent}%"
+
+#: xPlorer/compressionManager.py:284
+msgid "Completed"
+msgstr "Завершено"
+
+#: xPlorer/compressionManager.py:288
+#, python-brace-format
+msgid "Built-in compression failed: {error}"
+msgstr "Вбудоване стиснення не вдалося: {error}"
+
+#: xPlorer/contextMenu.py:23 xPlorer/createFile.py:17
+msgid "Create File"
+msgstr "Створити файл"
+
+#: xPlorer/contextMenu.py:26
+msgid "Compress zip"
+msgstr "Стиснути zip"
+
+#: xPlorer/contextMenu.py:27
+msgid "Invert selection"
+msgstr "Інвертувати вибір"
+
+#: xPlorer/contextMenu.py:28
+msgid "Copy address bar"
+msgstr "Копіювати адресний рядок"
+
+#: xPlorer/contextMenu.py:29
+msgid "Copy content"
+msgstr "Копіювати вміст"
+
+#: xPlorer/contextMenu.py:30
+msgid "Copy selected file and folder names"
+msgstr "Копіювати назви вибраних файлів і тек"
+
+#: xPlorer/contextMenu.py:34
+msgid "Robocopy"
+msgstr "Robocopy"
+
+#: xPlorer/contextMenu.py:35
+msgid "copy"
+msgstr "копіювати"
+
+#: xPlorer/contextMenu.py:36
+msgid "move"
+msgstr "перемістити"
+
+#: xPlorer/contextMenu.py:37
+msgid "paste"
+msgstr "вставити"
+
+#: xPlorer/contextMenu.py:39
+msgid "TXT to Folder"
+msgstr "TXT у теку"
+
+#: xPlorer/contextMenu.py:40
+msgid "Create Multiple Folders..."
+msgstr "Створити кілька тек..."
+
+#: xPlorer/contextMenu.py:43
+msgid "Case Converter for Folders"
+msgstr "Конвертер регістру для тек"
+
+#: xPlorer/contextMenu.py:44
+msgid "Uppercase"
+msgstr "ВЕЛИКІ ЛІТЕРИ"
+
+#: xPlorer/contextMenu.py:45
+msgid "Lowercase"
+msgstr "Малі літери"
+
+#: xPlorer/contextMenu.py:46
+msgid "Title Case"
+msgstr "Регістр назв"
+
+#: xPlorer/contextMenu.py:47
+msgid "Headline Case"
+msgstr "Заголовний регістр"
+
+#: xPlorer/contextMenu.py:49
 msgid "xPlorer Settings"
 msgstr "Налаштування xPlorer"
 
-#: createFile.py:288
-msgid "{count} files created"
-msgstr "Створено {count} файлів"
+#: xPlorer/contextMenu.py:89 xPlorer/contextMenu.py:100
+#: xPlorer/contextMenu.py:106 xPlorer/contextMenu.py:111
+#: xPlorer/contextMenu.py:117
+msgid "Say size"
+msgstr "Оголосити розмір"
 
-#: fileOperations.py:283
-msgid "{count} items {size}"
-msgstr "{count} елементів {size}"
+#: xPlorer/contextMenu.py:133 xPlorer/contextMenu.py:136
+#: xPlorer/contextMenu.py:139 xPlorer/contextMenu.py:146
+msgid "Folder info"
+msgstr "Інформація про теку"
 
-#: robocopyManager.py:240
-msgid "{h}h {m}m remaining"
-msgstr "залишилося {h}год {m}хв"
-
-#: robocopyManager.py:242
-msgid "{m}m {s}s remaining"
-msgstr "залишилося {m}хв {s}с"
-
-#: robocopyManager.py:304
-msgid "{pct}% - item {idx}/{total}: {name}"
-msgstr "{pct}% - елемент {idx}/{total}: {name}"
-
-#: folderTools.py:111
-msgid "{subfolders} subfolders and {files} files"
-msgstr "{subfolders} підтек і {files} файлів"
-
-#: contextMenu.py:150
+#: xPlorer/contextMenu.py:141
+#, python-brace-format
 msgid "{subfolders} subfolders, {files} files"
 msgstr "{subfolders} підтек, {files} файлів"
 
-#: robocopyManager.py:243
+#: xPlorer/createFile.py:28
+msgid "Number of files to create:"
+msgstr "Кількість файлів для створення:"
+
+#: xPlorer/createFile.py:64
+msgid "File name:"
+msgstr "Назва файлу:"
+
+#: xPlorer/createFile.py:66 xPlorer/createFile.py:113
+#, python-brace-format
+msgid "File name {index}:"
+msgstr "Назва файлу {index}:"
+
+#: xPlorer/createFile.py:72
+msgid "Extension:"
+msgstr "Розширення:"
+
+#: xPlorer/createFile.py:112
+msgid "File name"
+msgstr "Назва файлу"
+
+#: xPlorer/createFile.py:135
+msgid "File count must be at least 1"
+msgstr "Кількість файлів має бути не менше 1"
+
+#: xPlorer/createFile.py:138
+msgid "File count cannot exceed 10"
+msgstr "Кількість файлів не може перевищувати 10"
+
+#: xPlorer/createFile.py:156
+msgid "new_file"
+msgstr "новий_файл"
+
+#: xPlorer/createFile.py:158
+#, python-brace-format
+msgid "new_file_{index}"
+msgstr "новий_файл_{index}"
+
+#: xPlorer/createFile.py:170
+msgid "Some files will use default names"
+msgstr "Деякі файли використовуватимуть типові назви"
+
+#: xPlorer/createFile.py:198 xPlorer/folderTools.py:576
+#: xPlorer/folderTools.py:798 xPlorer/selectionManager.py:30
+#: xPlorer/txt2folder.py:40
+msgid "Not in File Explorer"
+msgstr "Не у Файловому провіднику"
+
+#: xPlorer/createFile.py:213
+msgid "Unable to get current directory after multiple attempts"
+msgstr "Не вдалося отримати поточний каталог після кількох спроб"
+
+#: xPlorer/createFile.py:245
+msgid "Error opening create file dialog"
+msgstr "Помилка відкриття діалогу створення файлу"
+
+#: xPlorer/createFile.py:271
+#, python-brace-format
+msgid "Cannot find unique name for: {name}"
+msgstr "Не вдається знайти унікальне ім'я для: {name}"
+
+#: xPlorer/createFile.py:284
+msgid "No files were created"
+msgstr "Не створено жодного файлу"
+
+#: xPlorer/createFile.py:286
+msgid "1 file created"
+msgstr "1 файл створено"
+
+#: xPlorer/createFile.py:288
+#, python-brace-format
+msgid "{count} files created"
+msgstr "Створено {count} файлів"
+
+#: xPlorer/createFile.py:291
+msgid "Error creating files"
+msgstr "Помилка створення файлів"
+
+#: xPlorer/fileOperations.py:59
+msgid "File name cannot be empty"
+msgstr "Назва файлу не може бути порожньою"
+
+#: xPlorer/fileOperations.py:219 xPlorer/fileOperations.py:276
+msgid "No access to size data"
+msgstr "Немає доступу до даних про розмір"
+
+#: xPlorer/fileOperations.py:283
+#, python-brace-format
+msgid "{count} items {size}"
+msgstr "{count} елементів {size}"
+
+#: xPlorer/fileOperations.py:294
+msgid "Error calculating size"
+msgstr "Помилка обчислення розміру"
+
+#: xPlorer/fileOperations.py:309
+msgid "Please select only one file"
+msgstr "Виберіть лише один файл"
+
+#: xPlorer/fileOperations.py:313
+msgid "Please select a file, not a folder"
+msgstr "Виберіть файл, а не теку"
+
+#: xPlorer/fileOperations.py:320 xPlorer/fileOperations.py:347
+msgid "Error renaming file"
+msgstr "Помилка перейменування файлу"
+
+#: xPlorer/fileOperations.py:337
+msgid "File name not changed"
+msgstr "Назву файлу не змінено"
+
+#: xPlorer/fileOperations.py:340
+msgid "A file with this name already exists"
+msgstr "Файл з таким іменем вже існує"
+
+#: xPlorer/fileOperations.py:344
+#, python-brace-format
+msgid "File renamed to {name}"
+msgstr "Файл перейменовано на {name}"
+
+#: xPlorer/fileOperations.py:350
+msgid "Error opening rename dialog"
+msgstr "Помилка відкриття діалогу перейменування"
+
+#: xPlorer/folderInfo.py:30 xPlorer/folderTools.py:116
+msgid "No item selected"
+msgstr "Не вибрано жодного елемента"
+
+#: xPlorer/folderInfo.py:35
+msgid "Please select only one folder"
+msgstr "Будь ласка, виберіть лише одну папку"
+
+#: xPlorer/folderInfo.py:41 xPlorer/folderTools.py:122
+msgid "Selected item is not a folder"
+msgstr "Вибраний елемент не є текою"
+
+#: xPlorer/folderInfo.py:62 xPlorer/folderTools.py:146
+#, python-brace-format
+msgid "{subfolders} subfolders and {files} files"
+msgstr "{subfolders} підтек і {files} файлів"
+
+#: xPlorer/folderInfo.py:71 xPlorer/folderTools.py:155
+msgid "Error calculating folder info"
+msgstr "Помилка обчислення інформації про теку"
+
+#: xPlorer/folderTools.py:163 xPlorer/folder_creation_dialog.py:16
+msgid "Create Multiple Folders"
+msgstr "Створити кілька тек"
+
+#: xPlorer/folderTools.py:177 xPlorer/folder_creation_dialog.py:30
+msgid "Folder title:"
+msgstr "Назва теки:"
+
+#: xPlorer/folderTools.py:185 xPlorer/folder_creation_dialog.py:38
+msgid "Number of folders:"
+msgstr "Кількість тек:"
+
+#: xPlorer/folderTools.py:192 xPlorer/folder_creation_dialog.py:45
+msgid "Create main folder and then subfolders"
+msgstr "Створити головну теку, а потім підтеки"
+
+#: xPlorer/folderTools.py:196 xPlorer/folder_creation_dialog.py:49
+msgid "Edit individual folder names"
+msgstr "Редагувати окремі назви тек"
+
+#: xPlorer/folderTools.py:209 xPlorer/folder_creation_dialog.py:62
+msgid "&Apply"
+msgstr "&Застосувати"
+
+#: xPlorer/folderTools.py:210 xPlorer/folder_creation_dialog.py:63
+msgid "&Cancel"
+msgstr "&Скасувати"
+
+#: xPlorer/folderTools.py:262 xPlorer/folderTools.py:302
+#: xPlorer/folder_creation_dialog.py:115 xPlorer/folder_creation_dialog.py:155
+msgid "Folder"
+msgstr "Тека"
+
+#: xPlorer/folderTools.py:307 xPlorer/folder_creation_dialog.py:160
+msgid "Number of folders must be at least 1"
+msgstr "Кількість тек має бути не менше 1"
+
+#: xPlorer/folderTools.py:310 xPlorer/folder_creation_dialog.py:163
+msgid "Maximum 100 folders allowed"
+msgstr "Дозволено максимум 100 тек"
+
+#: xPlorer/folderTools.py:313 xPlorer/folder_creation_dialog.py:166
+msgid "Invalid number for folders"
+msgstr "Неправильна кількість для тек"
+
+#: xPlorer/folderTools.py:331 xPlorer/folder_creation_dialog.py:184
+msgid "No valid folder names provided"
+msgstr "Не надано дійсних назв тек"
+
+#: xPlorer/folderTools.py:337 xPlorer/folder_creation_dialog.py:190
+msgid "Error creating main folder"
+msgstr "Помилка створення головної теки"
+
+#: xPlorer/folderTools.py:346 xPlorer/folder_creation_dialog.py:199
+msgid "Creating folders in background..."
+msgstr "Створення тек у фоновому режимі..."
+
+#: xPlorer/folderTools.py:359 xPlorer/folder_creation_dialog.py:212
+#, python-brace-format
+msgid "Created {count} of {total} folders..."
+msgstr "Створено {count} з {total} тек..."
+
+#: xPlorer/folderTools.py:370 xPlorer/folder_creation_dialog.py:223
+msgid "Successfully created main folder only"
+msgstr "Успішно створено лише головну теку"
+
+#: xPlorer/folderTools.py:372 xPlorer/folder_creation_dialog.py:225
+msgid "Successfully created 1 folder"
+msgstr "Успішно створено 1 теку"
+
+#: xPlorer/folderTools.py:374 xPlorer/folder_creation_dialog.py:227
+#, python-brace-format
+msgid "Successfully created {count} of {total} folders"
+msgstr "Успішно створено {count} з {total} тек"
+
+#: xPlorer/folderTools.py:376 xPlorer/folderTools.py:684
+#: xPlorer/folderTools.py:734 xPlorer/folder_creation_dialog.py:229
+#: xPlorer/txt2folder.py:148 xPlorer/txt2folder.py:198
+msgid "No folders were created"
+msgstr "Не створено жодної теки"
+
+#: xPlorer/folderTools.py:582 xPlorer/txt2folder.py:46
+msgid "Please select only one text file"
+msgstr "Виберіть лише один текстовий файл"
+
+#: xPlorer/folderTools.py:589 xPlorer/txt2folder.py:53
+msgid "Please select a .txt or .rtf file"
+msgstr "Виберіть файл .txt або .rtf"
+
+#: xPlorer/folderTools.py:594 xPlorer/txt2folder.py:58
+msgid "Selected file does not exist"
+msgstr "Вибраний файл не існує"
+
+#: xPlorer/folderTools.py:605 xPlorer/txt2folder.py:69
+msgid "Cannot process RTF file: striprtf module not available"
+msgstr "Неможливо обробити RTF-файл: модуль striprtf недоступний"
+
+#: xPlorer/folderTools.py:616 xPlorer/txt2folder.py:80
+msgid "Error reading RTF file"
+msgstr "Помилка читання RTF-файлу"
+
+#: xPlorer/folderTools.py:626 xPlorer/folderTools.py:696
+#: xPlorer/txt2folder.py:90 xPlorer/txt2folder.py:160
+msgid "No valid folder names found in the file"
+msgstr "У файлі не знайдено дійсних назв тек"
+
+#: xPlorer/folderTools.py:640 xPlorer/folderTools.py:710
+#: xPlorer/txt2folder.py:104 xPlorer/txt2folder.py:174
+#, python-brace-format
+msgid "Folder '{}' already exists, creating '{}' instead"
+msgstr "Тека '{}' вже існує, замість неї створюється '{}'"
+
+#: xPlorer/folderTools.py:649 xPlorer/txt2folder.py:113
+msgid "Error creating base folder"
+msgstr "Помилка створення базової теки"
+
+#: xPlorer/folderTools.py:680 xPlorer/folderTools.py:730
+#: xPlorer/txt2folder.py:144 xPlorer/txt2folder.py:194
+#, python-brace-format
+msgid "Successfully created {} folders in '{}'"
+msgstr "Успішно створено {} тек у '{}'"
+
+#: xPlorer/folderTools.py:739 xPlorer/txt2folder.py:203
+#, python-brace-format
+msgid "Error processing text file: {}"
+msgstr "Помилка обробки текстового файлу: {}"
+
+#: xPlorer/folderTools.py:743 xPlorer/txt2folder.py:207
+msgid "Error reading file encoding"
+msgstr "Помилка читання кодування файлу"
+
+#: xPlorer/folderTools.py:748 xPlorer/txt2folder.py:212
+#, python-brace-format
+msgid "Error: {}"
+msgstr "Помилка: {}"
+
+#: xPlorer/folderTools.py:804 xPlorer/selectionManager.py:36
+msgid "No active File Explorer window found"
+msgstr "Не знайдено активного вікна Файлового провідника"
+
+#: xPlorer/folderTools.py:809 xPlorer/selectionManager.py:41
+msgid "Unable to get folder view"
+msgstr "Не вдається отримати перегляд теки"
+
+#: xPlorer/folderTools.py:817 xPlorer/selectionManager.py:49
+msgid "No items in folder"
+msgstr "У теці немає елементів"
+
+#: xPlorer/folderTools.py:826 xPlorer/selectionManager.py:58
+#, python-brace-format
+msgid "Processing {count} items in background..."
+msgstr "Обробка {count} елементів у фоновому режимі..."
+
+#: xPlorer/folderTools.py:839 xPlorer/selectionManager.py:71
+msgid "Error inverting selection"
+msgstr "Помилка інвертування вибору"
+
+#: xPlorer/folderTools.py:861 xPlorer/selectionManager.py:93
+#, python-brace-format
+msgid "Selected {count} items"
+msgstr "Вибрано {count} елементів"
+
+#: xPlorer/folderTools.py:864 xPlorer/selectionManager.py:96
+msgid "Selection inverted"
+msgstr "Вибір інвертовано"
+
+#: xPlorer/robocopyManager.py:235
+msgid "estimating time remaining"
+msgstr "оцінка часу, що залишився"
+
+#: xPlorer/robocopyManager.py:240
+#, python-brace-format
+msgid "{h}h {m}m remaining"
+msgstr "залишилося {h}год {m}хв"
+
+#: xPlorer/robocopyManager.py:242
+#, python-brace-format
+msgid "{m}m {s}s remaining"
+msgstr "залишилося {m}хв {s}с"
+
+#: xPlorer/robocopyManager.py:243
+#, python-brace-format
 msgid "{s}s remaining"
 msgstr "залишилося {s}с"
+
+#: xPlorer/robocopyManager.py:304
+#, python-brace-format
+msgid "{pct}% - item {idx}/{total}: {name}"
+msgstr "{pct}% - елемент {idx}/{total}: {name}"
+
+#: xPlorer/robocopyManager.py:323
+msgid "Calculating total size..."
+msgstr "Обчислення загального розміру..."
+
+#: xPlorer/robocopyManager.py:448
+#, python-brace-format
+msgid "Finished {n} of {total}: {name}"
+msgstr "Завершено {n} з {total}: {name}"
+
+#: xPlorer/robocopyManager.py:457
+msgid "Robocopy cancelled"
+msgstr "Robocopy скасовано"
+
+#: xPlorer/robocopyManager.py:464
+#, python-brace-format
+msgid " and {n} more"
+msgstr " і ще {n}"
+
+#: xPlorer/robocopyManager.py:465
+#, python-brace-format
+msgid "Robocopy finished. {ok} succeeded, {failed} failed: {items}"
+msgstr "Robocopy завершено. Успішно: {ok}, невдало: {failed}: {items}"
+
+#: xPlorer/robocopyManager.py:469
+#, python-brace-format
+msgid "Robocopy finished successfully. {n} item(s) copied"
+msgstr "Robocopy успішно завершено. Скопійовано {n} елемент(ів)"
