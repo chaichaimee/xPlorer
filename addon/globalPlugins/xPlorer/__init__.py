@@ -23,6 +23,7 @@ import sys
 import time
 import urllib.parse
 import importlib
+from collections import deque
 
 import comtypes.client
 from comtypes import COMError
@@ -72,15 +73,15 @@ except Exception as e:
 FileOperations = _safe_import_module('fileOperations', 'FileOperations')
 CompressionManager = _safe_import_module('compressionManager', 'CompressionManager')
 ClipboardManager = _safe_import_module('clipboardManager', 'ClipboardManager')
-SelectionManager = _safe_import_module('selectionManager', 'SelectionManager')
+SelectionManager = _safe_import_module('folderTools', 'SelectionManager')
 RobocopyManager = _safe_import_module('robocopyManager', 'RobocopyManager')
-TxtToFolder = _safe_import_module('txt2folder', 'TxtToFolder')
+TxtToFolder = _safe_import_module('folderTools', 'TxtToFolder')
 CreateFileManager = _safe_import_module('createFile', 'CreateFileManager')
 ContextMenuManager = _safe_import_module('contextMenu', 'ContextMenuManager')
-FolderInfoManager = _safe_import_module('folderInfo', 'FolderInfoManager')
-CaseConverter = _safe_import_module('case', 'CaseConverter')
-FolderCreationDialog = _safe_import_module('folder_creation_dialog', 'FolderCreationDialog')
-type_clipboard_into_rename_if_suitable = _safe_import_module('folder_creator', 'type_clipboard_into_rename_if_suitable')
+FolderInfoManager = _safe_import_module('folderTools', 'FolderInfoManager')
+CaseConverter = _safe_import_module('folderTools', 'CaseConverter')
+FolderCreationDialog = _safe_import_module('folderTools', 'FolderCreationDialog')
+type_clipboard_into_rename_if_suitable = _safe_import_module('folderTools', 'type_clipboard_into_rename_if_suitable')
 
 log.debug("xPlorer: All modules processed")
 
@@ -104,6 +105,164 @@ _tap_count_robocopy = 0
 _robocopy_timer = None
 
 _double_tap_threshold = 0.5
+
+# ----------------------------------------------------------------------
+# Active-tab breadcrumb resolver
+#
+# Windows tabbed Explorer (Windows 10 21H2+/Windows 11) registers one
+# Shell.Application COM window entry PER TAB, but every tab in the same
+# top-level window reports the SAME hwnd. Code that matches purely on
+# hwnd (as the previous version of this file did) cannot tell which tab
+# is actually visible, so it silently returns whichever tab's entry the
+# COM collection happens to enumerate first - in practice this is often
+# the first tab that was opened (frequently the "main" folder), which is
+# exactly the symptom reported: focus/paths snapping back to the main
+# folder when switching between tabs (e.g. into userConfig\addon\xPlorer).
+#
+# This resolver is only consulted when more than one Shell.Application
+# window shares the foreground hwnd (i.e. tabs are actually in play), so
+# it adds no overhead for users on single-tab/classic Explorer windows.
+#
+# The primary strategy makes no assumption about Windows build, UI
+# language, or class/automationId naming: only one control in a visible
+# Explorer tab exposes an accessible "value" that is itself an existing
+# directory path (the address/breadcrumb bar), so scanning for that value
+# is more portable across every user's machine than matching a specific
+# identifier. The class-name/automationId lookups only serve as a
+# fallback for unusual shells where that generic scan comes up empty.
+# ----------------------------------------------------------------------
+_KNOWN_BREADCRUMB_CLASS_NAMES = ("Breadcrumb Parent",)
+_KNOWN_ADDRESS_AUTOMATION_IDS = ("1001",)
+
+
+class ActiveTabPathResolver:
+	def __init__(self):
+		self._workingStrategyName = None
+
+	def resolveActivePath(self, foregroundObj):
+		"""Best-effort synchronous lookup, intended for the small UIA subtree
+		walk this needs - callers on the main thread should keep foregroundObj
+		shallow. Returns None if no strategy could confirm the active tab."""
+		strategies = (
+			("value_scan", self._resolveByValueScan),
+			("class_name", self._resolveByClassName),
+			("automation_id", self._resolveByAutomationId),
+		)
+		orderedStrategies = sorted(
+			strategies, key=lambda item: item[0] != self._workingStrategyName
+		)
+		for strategyName, strategyFn in orderedStrategies:
+			try:
+				resolvedPath = strategyFn(foregroundObj)
+				if resolvedPath:
+					self._workingStrategyName = strategyName
+					return resolvedPath
+			except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError) as e:
+				log.debug(f"xPlorer: breadcrumb strategy '{strategyName}' failed: {e}")
+		return None
+
+	def _resolveByValueScan(self, foregroundObj, maxNodes=60, maxDepth=6):
+		"""Walk the visible Explorer window's UI tree looking for any control
+		whose accessible value is itself an existing directory - this is, in
+		practice, the address/breadcrumb bar. Since only the ACTIVE tab's
+		content is present in the visible tree at all (inactive tabs are not
+		rendered), this naturally finds the right tab without needing to
+		know its exact class name or automationId ahead of time.
+
+		Breadth-first on purpose: the breadcrumb bar is always shallow
+		(a handful of levels down from the window), while the file LIST can
+		be arbitrarily large. A depth-first walk that dives into the first
+		child's subtree before trying siblings could burn its entire node
+		budget inside the file list without ever reaching the breadcrumb -
+		slow (each property read is a cross-process UIA call) and prone to
+		simply not finding the answer. BFS finds shallow controls first, and
+		list rows are skipped entirely below since they cannot contain it."""
+		if foregroundObj is None:
+			return None
+		visited = 0
+		queue = deque([(foregroundObj, 0)])
+		while queue:
+			current, depth = queue.popleft()
+			visited += 1
+			if visited > maxNodes:
+				break
+			if current is None:
+				continue
+			try:
+				value = getattr(current, "value", None)
+				if value and isinstance(value, str) and len(value) > 2 and os.path.isdir(value):
+					return os.path.normpath(value)
+			except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError):
+				pass
+			try:
+				if getattr(current, "role", None) == Role.LISTITEM:
+					continue
+			except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError):
+				pass
+			if depth >= maxDepth:
+				continue
+			try:
+				child = current.firstChild
+				while child is not None:
+					queue.append((child, depth + 1))
+					child = child.next
+			except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError):
+				pass
+		return None
+
+	def _resolveByClassName(self, foregroundObj):
+		breadcrumbObj = self._findDescendant(
+			foregroundObj,
+			lambda o: getattr(o, "windowClassName", None) in _KNOWN_BREADCRUMB_CLASS_NAMES,
+		)
+		return self._pathFromBreadcrumbSegments(breadcrumbObj)
+
+	def _resolveByAutomationId(self, foregroundObj):
+		breadcrumbObj = self._findDescendant(
+			foregroundObj,
+			lambda o: getattr(o, "UIAAutomationId", None) in _KNOWN_ADDRESS_AUTOMATION_IDS,
+		)
+		return self._pathFromBreadcrumbSegments(breadcrumbObj)
+
+	def _findDescendant(self, obj, matchFn, maxDepth=6):
+		if obj is None or maxDepth <= 0:
+			return None
+		try:
+			if matchFn(obj):
+				return obj
+			child = obj.firstChild
+			while child is not None:
+				found = self._findDescendant(child, matchFn, maxDepth - 1)
+				if found:
+					return found
+				child = child.next
+		except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError):
+			pass
+		return None
+
+	def _pathFromBreadcrumbSegments(self, breadcrumbObj):
+		if breadcrumbObj is None:
+			return None
+		try:
+			segmentNames = []
+			child = breadcrumbObj.firstChild
+			while child is not None:
+				segmentName = getattr(child, "name", None)
+				if segmentName:
+					segmentNames.append(segmentName)
+				child = child.next
+			if not segmentNames:
+				return None
+			candidatePath = segmentNames[0]
+			if not candidatePath.endswith("\\"):
+				candidatePath += "\\"
+			if len(segmentNames) > 1:
+				candidatePath = os.path.join(candidatePath, *segmentNames[1:])
+			candidatePath = os.path.normpath(candidatePath)
+			return candidatePath if os.path.isdir(candidatePath) else None
+		except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError):
+			return None
+
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	scriptCategory = _("xPlorer")
@@ -141,6 +300,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self._cached_explorer_time = 0
 			self._cached_explorer_path = None
 			self._cache_valid_duration = 0.8
+			self._tabPathResolver = ActiveTabPathResolver()
 
 			self._striprtf_available = None
 			tools_dir = os.path.join(os.path.dirname(__file__), "tools")
@@ -254,57 +414,68 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			if not winUser.isWindow(target_hwnd):
 				return self._getCachedExplorerPath(target_hwnd)
 
-			if (self._cached_explorer_hwnd == target_hwnd
-					and self._cached_explorer_path
-					and current_time - self._cached_explorer_time < self._cache_valid_duration):
-				if os.path.isdir(self._cached_explorer_path):
-					return self._cached_explorer_path
-
 			shell = self.objShellApp
 			if not shell:
 				return self._getCachedExplorerPath(target_hwnd)
 
-			path_result = None
+			# Collect every Shell.Application window entry that shares this
+			# hwnd. On a tabbed Explorer window there can be more than one -
+			# one per open tab - and only the breadcrumb bar of the actually
+			# visible tab can tell them apart. Trusting the cache or taking
+			# the first COM match (as before) is exactly what made the path
+			# "stick" to whichever tab was opened first after switching tabs.
+			matchingPaths = []
 			try:
 				for window in shell.Windows():
 					try:
 						if not window or window.hwnd != target_hwnd:
 							continue
-						if hasattr(window, "Document") and window.Document:
-							folder = window.Document.Folder
-							if folder and hasattr(folder, "Self"):
-								path = folder.Self.Path
-								if path and os.path.isdir(path):
-									path_result = os.path.normpath(path)
-									break
-						if hasattr(window, "LocationURL") and window.LocationURL:
-							url = window.LocationURL
-							if url.startswith("file:///"):
-								try:
-									path = urllib.parse.unquote(url[8:])
-								except Exception:
-									path = url[8:]
-								path = path.replace("/", "\\")
-								if os.path.isdir(path):
-									path_result = os.path.normpath(path)
-									break
+						windowPath = self._extractPathFromShellWindow(window)
+						if windowPath:
+							matchingPaths.append(windowPath)
 					except (COMError, AttributeError):
 						continue
 			except COMError as e:
 				log.debug(f"COM error enumerating windows: {e}")
 				return self._getCachedExplorerPath(target_hwnd)
 
-			if path_result:
+			if len(matchingPaths) == 1:
+				# Unambiguous: safe to use the short-lived cache here.
+				if (self._cached_explorer_hwnd == target_hwnd
+						and self._cached_explorer_path == matchingPaths[0]
+						and current_time - self._cached_explorer_time < self._cache_valid_duration):
+					return self._cached_explorer_path
 				self._cached_explorer_hwnd = target_hwnd
 				self._cached_explorer_time = current_time
-				self._cached_explorer_path = path_result
-				return path_result
+				self._cached_explorer_path = matchingPaths[0]
+				return matchingPaths[0]
 
-			cachedForThisWindow = self._getCachedExplorerPath(target_hwnd)
-			if (cachedForThisWindow
-					and current_time - self._cached_explorer_time < 2.0
-					and os.path.isdir(cachedForThisWindow)):
-				return cachedForThisWindow
+			if len(matchingPaths) > 1:
+				# Multiple tabs share this hwnd - the cache cannot be trusted
+				# at all here (it has no notion of "which tab"), so always
+				# re-resolve which one is actually visible via the breadcrumb.
+				# Exception: reuse a breadcrumb result from moments ago (e.g.
+				# _getActiveExplorerWindow calling straight back into this
+				# during the same event) instead of scanning the tree twice.
+				if (self._cached_explorer_hwnd == target_hwnd
+						and self._cached_explorer_path in matchingPaths
+						and current_time - self._cached_explorer_time < 0.25):
+					return self._cached_explorer_path
+				breadcrumbPath = self._tabPathResolver.resolveActivePath(fg)
+				if breadcrumbPath and breadcrumbPath in matchingPaths:
+					self._cached_explorer_hwnd = target_hwnd
+					self._cached_explorer_time = current_time
+					self._cached_explorer_path = breadcrumbPath
+					return breadcrumbPath
+				# Could not confirm which tab is active: return the cache only
+				# if it still matches one of the currently-open tabs, otherwise
+				# refuse to guess rather than reporting a possibly-wrong tab.
+				cachedForThisWindow = self._getCachedExplorerPath(target_hwnd)
+				if cachedForThisWindow in matchingPaths:
+					return cachedForThisWindow
+				log.debug("xPlorer: multiple tabs share this hwnd and the active one "
+						"could not be confirmed; refusing to guess a path")
+				return None
 
 		except COMError as e:
 			log.debug(f"COM error in _getCurrentPathFromExplorer: {e}")
@@ -313,17 +484,36 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 		return self._getCachedExplorerPath(target_hwnd)
 
+	def _extractPathFromShellWindow(self, window):
+		"""Read the folder path a single Shell.Application window object points
+		to, without assuming it is the active tab - callers decide that."""
+		try:
+			if hasattr(window, "Document") and window.Document:
+				folder = window.Document.Folder
+				if folder and hasattr(folder, "Self"):
+					path = folder.Self.Path
+					if path and os.path.isdir(path):
+						return os.path.normpath(path)
+			if hasattr(window, "LocationURL") and window.LocationURL:
+				url = window.LocationURL
+				if url.startswith("file:///"):
+					try:
+						path = urllib.parse.unquote(url[8:])
+					except Exception:
+						path = url[8:]
+					path = path.replace("/", "\\")
+					if os.path.isdir(path):
+						return os.path.normpath(path)
+		except (COMError, AttributeError):
+			pass
+		return None
+
 	def _getActiveExplorerWindow(self):
 		if self.manager._foregroundTransition:
 			log.debug("Foreground transition active, skipping window retrieval")
 			return None
 		try:
 			current_time = time.time()
-			if (self._last_window and self._last_window_hwnd and
-					current_time - self._last_window_time < 1.0):
-				if winUser.isWindow(self._last_window_hwnd):
-					return self._last_window
-
 			fg = api.getForegroundObject()
 			if not fg or not fg.appModule or fg.appModule.appName != "explorer":
 				return None
@@ -333,39 +523,49 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			if not shell:
 				return None
 
+			matchingWindows = []
 			try:
 				for window in shell.Windows():
 					try:
-						if not window or window.hwnd != target_hwnd:
-							continue
-						if hasattr(window, "Document") and window.Document:
-							self._last_window = window
-							self._last_window_hwnd = window.hwnd
-							self._last_window_time = current_time
-							return window
+						if window and window.hwnd == target_hwnd and hasattr(window, "Document") and window.Document:
+							matchingWindows.append(window)
 					except (COMError, AttributeError):
 						continue
 			except COMError:
 				pass
 
-			focus = api.getFocusObject()
-			if focus and focus.appModule and focus.appModule.appName == "explorer":
-				focus_hwnd = focus.windowHandle
-				try:
-					for window in shell.Windows():
-						try:
-							if not window or window.hwnd != focus_hwnd:
-								continue
-							if hasattr(window, "Document") and window.Document:
-								self._last_window = window
-								self._last_window_hwnd = window.hwnd
-								self._last_window_time = current_time
-								return window
-						except (COMError, AttributeError):
-							continue
-				except COMError:
-					pass
-			return None
+			if not matchingWindows:
+				return None
+
+			if len(matchingWindows) == 1:
+				# Unambiguous: the 1s cache is safe here since there is only
+				# ever one tab for this hwnd.
+				if (self._last_window and self._last_window_hwnd == target_hwnd and
+						current_time - self._last_window_time < 1.0 and
+						winUser.isWindow(self._last_window_hwnd)):
+					return self._last_window
+				chosenWindow = matchingWindows[0]
+			else:
+				# Multiple tabs share this hwnd - the 1s cache cannot be
+				# trusted (it has no notion of "which tab"), so always
+				# cross-check against the confirmed active path.
+				activePath = self._getCurrentPathFromExplorer()
+				chosenWindow = None
+				if activePath:
+					for window in matchingWindows:
+						windowPath = self._extractPathFromShellWindow(window)
+						if windowPath == activePath:
+							chosenWindow = window
+							break
+				if chosenWindow is None:
+					log.debug("xPlorer: multiple tabs share this hwnd and the active "
+							"one could not be confirmed; refusing to guess a window")
+					return None
+
+			self._last_window = chosenWindow
+			self._last_window_hwnd = target_hwnd
+			self._last_window_time = current_time
+			return chosenWindow
 		except Exception as e:
 			log.error(f"Error getting active Explorer window: {e}")
 			return None
@@ -671,7 +871,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self._handleNonExplorerGesture(gesture)
 			return
 		gesture.send()
-		from .config import loadConfig
+		from .folderTools import loadConfig
 		conf = loadConfig()
 		if conf.get("autoPasteClipboardToRename", True):
 			core.callLater(600, type_clipboard_into_rename_if_suitable)
@@ -764,6 +964,43 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			log.error(f"Error converting folder names: {e}")
 			ui.message(_("Error during conversion"))
 
+	def script_dumpExplorerTreeForDiagnostics(self, gesture):
+		"""Dump the focused Explorer window's automation tree to the NVDA log.
+		Use this when a user reports the active-tab detection is not working
+		on their machine: their Windows build/UI language may expose a
+		different breadcrumb class name/automationId than the ones this
+		add-on currently recognizes. Ask them to run this, then send the
+		relevant lines from the NVDA log (Tools > View Log)."""
+		fg = api.getForegroundObject()
+		if not fg or not fg.appModule or fg.appModule.appName != "explorer":
+			ui.message(_("Not focused on File Explorer"))
+			return
+
+		def dump(obj, depth, lines):
+			if obj is None or depth > 8:
+				return
+			try:
+				lines.append(
+					"{indent}role={role} class={cls} automationId={autoId} name={name!r}".format(
+						indent="  " * depth,
+						role=obj.role,
+						cls=getattr(obj, "windowClassName", None),
+						autoId=getattr(obj, "UIAAutomationId", None),
+						name=getattr(obj, "name", None),
+					)
+				)
+				child = obj.firstChild
+				while child is not None:
+					dump(child, depth + 1, lines)
+					child = child.next
+			except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError):
+				pass
+
+		treeLines = []
+		dump(fg, 0, treeLines)
+		log.info("xPlorer diagnostic tree dump:\n" + "\n".join(treeLines))
+		ui.message(_("Explorer tree dumped to NVDA log"))
+
 	# ------------------------------------------------------------------
 	# Event handlers
 	# ------------------------------------------------------------------
@@ -798,3 +1035,4 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def event_selection(self, obj, nextHandler):
 		self.manager.event_selection(obj, nextHandler)
+

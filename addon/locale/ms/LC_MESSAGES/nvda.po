@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: xPlorer 2026.7.0\n"
+"Project-Id-Version: xPlorer 2026.8.5\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-06-24 13:09+0700\n"
+"POT-Creation-Date: 2026-08-03 06:13+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Malay\n"
@@ -12,25 +12,33 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: DevOn Addon\n"
 
-#: folder_creation_dialog.py:62
+#: robocopyManager.py:464
+msgid " and {n} more"
+msgstr " dan {n} lagi"
+
+#: folderTools.py:174
 msgid "&Apply"
 msgstr "&Guna"
 
-#: folder_creation_dialog.py:63
+#: folderTools.py:175
 msgid "&Cancel"
 msgstr "&Batal"
 
-#: createFile.py:284
+#: createFile.py:286
 msgid "1 file created"
 msgstr "1 fail dicipta"
 
-#: fileOperations.py:294
+#: fileOperations.py:340
 msgid "A file with this name already exists"
 msgstr "Fail dengan nama ini sudah wujud"
 
 #: compressionManager.py:288
 msgid "Built-in compression failed: {error}"
 msgstr "Mampatan terbina dalam gagal: {error}"
+
+#: robocopyManager.py:323
+msgid "Calculating total size..."
+msgstr "Mengira saiz keseluruhan..."
 
 #: clipboardManager.py:66
 msgid "Cannot copy content of folders, please select files only"
@@ -40,23 +48,23 @@ msgstr "Tidak boleh menyalin kandungan folder, sila pilih fail sahaja"
 msgid "Cannot find unique name for: {name}"
 msgstr "Tidak dapat mencari nama unik untuk: {name}"
 
-#: __init__.py:660
+#: __init__.py:888
 msgid "Cannot open settings dialog"
 msgstr "Tidak dapat membuka dialog tetapan"
 
-#: txt2folder.py:69
+#: folderTools.py:570
 msgid "Cannot process RTF file: striprtf module not available"
 msgstr "Tidak dapat memproses fail RTF: modul striprtf tidak tersedia"
 
-#: contextMenu.py:45
+#: contextMenu.py:43
 msgid "Case Converter for Folders"
 msgstr "Penukar Huruf untuk Folder"
 
-#: __init__.py:699
+#: __init__.py:927
 msgid "Case converter not available"
 msgstr "Penukar huruf tidak tersedia"
 
-#: __init__.py:420
+#: __init__.py:648
 msgid "Clipboard manager not available"
 msgstr "Pengurus papan klip tidak tersedia"
 
@@ -64,7 +72,7 @@ msgstr "Pengurus papan klip tidak tersedia"
 msgid "Completed"
 msgstr "Selesai"
 
-#: contextMenu.py:27
+#: contextMenu.py:26
 msgid "Compress zip"
 msgstr "Mampat zip"
 
@@ -90,9 +98,9 @@ msgstr "Mampatan dibatalkan"
 #: compressionManager.py:112
 #: compressionManager.py:285
 msgid "Compression completed {name}"
-msgstr "Mampatan {name} selesai"
+msgstr "Mampatan selesai {name}"
 
-#: __init__.py:500
+#: __init__.py:728
 msgid "Compression manager not available"
 msgstr "Pengurus mampatan tidak tersedia"
 
@@ -108,16 +116,16 @@ msgstr "Kandungan daripada 1 fail disalin ke papan klip"
 msgid "Content from {count} files copied to clipboard"
 msgstr "Kandungan daripada {count} fail disalin ke papan klip"
 
-#: __init__.py:607
-#: __init__.py:673
+#: __init__.py:835
+#: __init__.py:901
 msgid "Context menu manager not available"
 msgstr "Pengurus menu konteks tidak tersedia"
 
-#: case.py:115
+#: folderTools.py:937
 msgid "Conversion already in progress"
 msgstr "Penukaran sedang dijalankan"
 
-#: case.py:132
+#: folderTools.py:954
 msgid "Converting"
 msgstr "Menukar"
 
@@ -129,74 +137,74 @@ msgstr "Nama 1 item disalin ke papan klip"
 msgid "Copied {count} item names to clipboard"
 msgstr "Nama {count} item disalin ke papan klip"
 
-#: __init__.py:396
+#: __init__.py:624
 msgid "Copied: {path}"
 msgstr "Disalin: {path}"
 
-#: contextMenu.py:29
+#: contextMenu.py:28
 msgid "Copy address bar"
 msgstr "Salin bar alamat"
 
-#: contextMenu.py:30
+#: contextMenu.py:29
 msgid "Copy content"
 msgstr "Salin kandungan"
 
-#: __init__.py:483
+#: __init__.py:711
 msgid "Copy content (single tap) or invert selection (double tap)"
-msgstr "Salin kandungan (satu ketukan) atau balik pilihan (dua ketukan)"
+msgstr "Salin kandungan (satu ketikan) atau songsang pilihan (dua ketikan)"
 
-#: contextMenu.py:31
+#: contextMenu.py:30
 msgid "Copy selected file and folder names"
 msgstr "Salin nama fail dan folder yang dipilih"
 
-#: __init__.py:443
+#: __init__.py:671
 msgid "Copy selected names (single tap) or copy address bar (double tap)"
-msgstr "Salin nama terpilih (satu ketukan) atau salin bar alamat (dua ketukan)"
+msgstr "Salin nama yang dipilih (satu ketikan) atau salin bar alamat (dua ketikan)"
 
-#: __init__.py:400
+#: __init__.py:628
 #: clipboardManager.py:50
 #: clipboardManager.py:139
 msgid "Could not open clipboard"
 msgstr "Tidak dapat membuka papan klip"
 
-#: contextMenu.py:24
+#: contextMenu.py:23
 #: createFile.py:17
 msgid "Create File"
 msgstr "Cipta Fail"
 
-#: folder_creation_dialog.py:16
+#: folderTools.py:128
 msgid "Create Multiple Folders"
 msgstr "Cipta Berbilang Folder"
 
-#: contextMenu.py:42
+#: contextMenu.py:40
 msgid "Create Multiple Folders..."
 msgstr "Cipta Berbilang Folder..."
 
-#: folder_creation_dialog.py:45
+#: folderTools.py:157
 msgid "Create main folder and then subfolders"
 msgstr "Cipta folder utama dan kemudian subfolder"
 
-#: __init__.py:651
+#: __init__.py:879
 msgid "Create new folder and paste clipboard content into rename field"
-msgstr "Cipta folder baru dan tampal kandungan papan klip ke medan tukar nama"
+msgstr "Cipta folder baharu dan tampal kandungan papan klip ke medan ubah nama"
 
-#: folder_creation_dialog.py:212
+#: folderTools.py:324
 msgid "Created {count} of {total} folders..."
 msgstr "{count} daripada {total} folder dicipta..."
 
-#: folder_creation_dialog.py:199
+#: folderTools.py:311
 msgid "Creating folders in background..."
 msgstr "Mencipta folder di latar belakang..."
 
-#: folder_creation_dialog.py:49
+#: folderTools.py:161
 msgid "Edit individual folder names"
 msgstr "Sunting nama folder individu"
 
-#: folderInfo.py:71
+#: folderTools.py:120
 msgid "Error calculating folder info"
 msgstr "Ralat mengira maklumat folder"
 
-#: fileOperations.py:248
+#: fileOperations.py:294
 msgid "Error calculating size"
 msgstr "Ralat mengira saiz"
 
@@ -212,23 +220,23 @@ msgstr "Ralat menyalin kandungan fail"
 msgid "Error copying names to clipboard"
 msgstr "Ralat menyalin nama ke papan klip"
 
-#: txt2folder.py:113
+#: folderTools.py:614
 msgid "Error creating base folder"
 msgstr "Ralat mencipta folder asas"
 
-#: createFile.py:289
+#: createFile.py:291
 msgid "Error creating files"
 msgstr "Ralat mencipta fail"
 
-#: __init__.py:693
+#: __init__.py:921
 msgid "Error creating folders"
 msgstr "Ralat mencipta folder"
 
-#: folder_creation_dialog.py:190
+#: folderTools.py:302
 msgid "Error creating main folder"
 msgstr "Ralat mencipta folder utama"
 
-#: __init__.py:737
+#: __init__.py:965
 msgid "Error during conversion"
 msgstr "Ralat semasa penukaran"
 
@@ -236,48 +244,52 @@ msgstr "Ralat semasa penukaran"
 msgid "Error in compression process: {error}"
 msgstr "Ralat dalam proses mampatan: {error}"
 
-#: selectionManager.py:71
+#: folderTools.py:804
 msgid "Error inverting selection"
-msgstr "Ralat membalik pilihan"
+msgstr "Ralat menyongsang pilihan"
 
 #: createFile.py:245
 msgid "Error opening create file dialog"
 msgstr "Ralat membuka dialog cipta fail"
 
-#: fileOperations.py:304
+#: fileOperations.py:350
 msgid "Error opening rename dialog"
-msgstr "Ralat membuka dialog tukar nama"
+msgstr "Ralat membuka dialog ubah nama"
 
-#: __init__.py:667
+#: __init__.py:895
 msgid "Error opening settings"
 msgstr "Ralat membuka tetapan"
 
-#: txt2folder.py:203
+#: folderTools.py:704
 msgid "Error processing text file: {}"
 msgstr "Ralat memproses fail teks: {}"
 
-#: txt2folder.py:80
+#: folderTools.py:581
 msgid "Error reading RTF file"
 msgstr "Ralat membaca fail RTF"
 
-#: txt2folder.py:207
+#: folderTools.py:708
 msgid "Error reading file encoding"
 msgstr "Ralat membaca pengekodan fail"
 
-#: fileOperations.py:274
-#: fileOperations.py:301
+#: fileOperations.py:320
+#: fileOperations.py:347
 msgid "Error renaming file"
-msgstr "Ralat menukar nama fail"
+msgstr "Ralat mengubah nama fail"
 
-#: txt2folder.py:212
+#: folderTools.py:713
 msgid "Error: {}"
 msgstr "Ralat: {}"
+
+#: __init__.py:1002
+msgid "Explorer tree dumped to NVDA log"
+msgstr "Pokok Explorer dibuang ke log NVDA"
 
 #: createFile.py:72
 msgid "Extension:"
 msgstr "Sambungan:"
 
-#: case.py:127
+#: folderTools.py:949
 msgid "Failed to rename any folders"
 msgstr "Gagal menukar nama mana-mana folder"
 
@@ -301,9 +313,9 @@ msgstr "Nama fail"
 msgid "File name cannot be empty"
 msgstr "Nama fail tidak boleh kosong"
 
-#: fileOperations.py:291
+#: fileOperations.py:337
 msgid "File name not changed"
-msgstr "Nama fail tidak diubah"
+msgstr "Nama fail tidak berubah"
 
 #: createFile.py:66
 #: createFile.py:113
@@ -314,70 +326,76 @@ msgstr "Nama fail {index}:"
 msgid "File name:"
 msgstr "Nama fail:"
 
-#: __init__.py:622
+#: __init__.py:850
 msgid "File operations manager not available"
 msgstr "Pengurus operasi fail tidak tersedia"
 
-#: fileOperations.py:298
+#: fileOperations.py:344
 msgid "File renamed to {name}"
-msgstr "Fail ditukar nama kepada {name}"
+msgstr "Fail dinamakan semula kepada {name}"
 
-#: folder_creation_dialog.py:115
-#: folder_creation_dialog.py:155
+#: robocopyManager.py:448
+msgid "Finished {n} of {total}: {name}"
+msgstr "Selesai {n} daripada {total}: {name}"
+
+#: folderTools.py:227
+#: folderTools.py:267
 msgid "Folder"
 msgstr "Folder"
 
-#: txt2folder.py:104
-#: txt2folder.py:174
+#: folderTools.py:605
+#: folderTools.py:675
 msgid "Folder '{}' already exists, creating '{}' instead"
-msgstr "Folder '{}' sudah wujud, mencipta '{}' sebaliknya"
+msgstr "Folder '{}' sudah wujud, mencipta '{}' sebagai ganti"
 
-#: __init__.py:677
+#: __init__.py:905
 msgid "Folder creation dialog not available"
 msgstr "Dialog cipta folder tidak tersedia"
 
-#: __init__.py:639
+#: __init__.py:867
 msgid "Folder creator helper not available"
 msgstr "Pembantu pencipta folder tidak tersedia"
 
-#: contextMenu.py:52
+#: contextMenu.py:131
+#: contextMenu.py:134
+#: contextMenu.py:155
 msgid "Folder info"
 msgstr "Maklumat folder"
 
-#: folder_creation_dialog.py:30
+#: folderTools.py:142
 msgid "Folder title:"
 msgstr "Tajuk folder:"
 
-#: contextMenu.py:49
+#: contextMenu.py:47
 msgid "Headline Case"
-msgstr "Huruf Tajuk Utama"
+msgstr "Huruf Besar Tajuk Berita"
 
-#: folder_creation_dialog.py:166
+#: folderTools.py:278
 msgid "Invalid number for folders"
 msgstr "Nombor tidak sah untuk folder"
 
-#: contextMenu.py:28
+#: contextMenu.py:27
 msgid "Invert selection"
-msgstr "Balik pilihan"
+msgstr "Songsang pilihan"
 
-#: contextMenu.py:47
+#: contextMenu.py:45
 msgid "Lowercase"
 msgstr "Huruf kecil"
 
-#: folder_creation_dialog.py:163
+#: folderTools.py:275
 msgid "Maximum 100 folders allowed"
 msgstr "Maksimum 100 folder dibenarkan"
 
-#: __init__.py:681
+#: __init__.py:909
 msgid "No Explorer folder detected"
 msgstr "Tiada folder Explorer dikesan"
 
-#: fileOperations.py:173
-#: fileOperations.py:230
+#: fileOperations.py:219
+#: fileOperations.py:276
 msgid "No access to size data"
 msgstr "Tiada akses kepada data saiz"
 
-#: selectionManager.py:36
+#: folderTools.py:769
 msgid "No active File Explorer window found"
 msgstr "Tiada tetingkap File Explorer aktif ditemui"
 
@@ -385,44 +403,44 @@ msgstr "Tiada tetingkap File Explorer aktif ditemui"
 msgid "No content could be read from selected files"
 msgstr "Tiada kandungan boleh dibaca daripada fail yang dipilih"
 
-#: createFile.py:282
+#: createFile.py:284
 msgid "No files were created"
 msgstr "Tiada fail dicipta"
 
-#: case.py:142
-#: case.py:148
-#: case.py:157
-#: case.py:163
+#: folderTools.py:964
+#: folderTools.py:970
+#: folderTools.py:979
+#: folderTools.py:985
 msgid "No folders found"
 msgstr "Tiada folder ditemui"
 
-#: __init__.py:703
+#: __init__.py:931
 msgid "No folders selected"
 msgstr "Tiada folder dipilih"
 
-#: __init__.py:718
+#: __init__.py:946
 msgid "No folders selected or current folder not available"
 msgstr "Tiada folder dipilih atau folder semasa tidak tersedia"
 
-#: folder_creation_dialog.py:229
-#: txt2folder.py:148
-#: txt2folder.py:198
+#: folderTools.py:341
+#: folderTools.py:649
+#: folderTools.py:699
 msgid "No folders were created"
 msgstr "Tiada folder dicipta"
 
-#: folderInfo.py:30
+#: folderTools.py:81
 msgid "No item selected"
 msgstr "Tiada item dipilih"
 
-#: selectionManager.py:49
+#: folderTools.py:782
 msgid "No items in folder"
 msgstr "Tiada item dalam folder"
 
 #: clipboardManager.py:27
 #: clipboardManager.py:62
 #: compressionManager.py:148
-#: fileOperations.py:164
-#: fileOperations.py:260
+#: fileOperations.py:210
+#: fileOperations.py:306
 msgid "No items selected"
 msgstr "Tiada item dipilih"
 
@@ -430,18 +448,22 @@ msgstr "Tiada item dipilih"
 msgid "No text files selected"
 msgstr "Tiada fail teks dipilih"
 
-#: txt2folder.py:90
-#: txt2folder.py:160
+#: folderTools.py:591
+#: folderTools.py:661
 msgid "No valid folder names found in the file"
-msgstr "Tiada nama folder sah ditemui dalam fail"
+msgstr "Tiada nama folder yang sah ditemui dalam fail"
 
-#: folder_creation_dialog.py:184
+#: folderTools.py:296
 msgid "No valid folder names provided"
-msgstr "Tiada nama folder sah diberikan"
+msgstr "Tiada nama folder yang sah diberikan"
+
+#: __init__.py:976
+msgid "Not focused on File Explorer"
+msgstr "Tidak fokus pada File Explorer"
 
 #: createFile.py:198
-#: selectionManager.py:30
-#: txt2folder.py:40
+#: folderTools.py:541
+#: folderTools.py:763
 msgid "Not in File Explorer"
 msgstr "Tiada dalam File Explorer"
 
@@ -449,86 +471,98 @@ msgstr "Tiada dalam File Explorer"
 msgid "Number of files to create:"
 msgstr "Bilangan fail untuk dicipta:"
 
-#: folder_creation_dialog.py:160
+#: folderTools.py:272
 msgid "Number of folders must be at least 1"
 msgstr "Bilangan folder mestilah sekurang-kurangnya 1"
 
-#: folder_creation_dialog.py:38
+#: folderTools.py:150
 msgid "Number of folders:"
 msgstr "Bilangan folder:"
 
-#: __init__.py:616
+#: __init__.py:844
 msgid "Open xPlorer context menu"
 msgstr "Buka menu konteks xPlorer"
 
-#: txt2folder.py:53
+#: folderTools.py:554
 msgid "Please select a .txt or .rtf file"
 msgstr "Sila pilih fail .txt atau .rtf"
 
-#: fileOperations.py:267
+#: fileOperations.py:313
 msgid "Please select a file, not a folder"
 msgstr "Sila pilih fail, bukan folder"
 
-#: fileOperations.py:263
+#: fileOperations.py:309
 msgid "Please select only one file"
 msgstr "Sila pilih hanya satu fail"
 
-#: folderInfo.py:35
-msgid "Please select only one folder"
-msgstr "Sila pilih hanya satu folder"
-
-#: txt2folder.py:46
+#: folderTools.py:547
 msgid "Please select only one text file"
 msgstr "Sila pilih hanya satu fail teks"
 
-#: selectionManager.py:58
+#: folderTools.py:791
 msgid "Processing {count} items in background..."
 msgstr "Memproses {count} item di latar belakang..."
 
-#: __init__.py:633
-#: contextMenu.py:32
+#: __init__.py:861
+#: contextMenu.py:31
 msgid "Rename selected file"
-msgstr "Tukar nama fail yang dipilih"
+msgstr "Ubah nama fail yang dipilih"
 
-#: __init__.py:460
+#: __init__.py:688
 msgid "Required manager not available"
 msgstr "Pengurus yang diperlukan tidak tersedia"
 
-#: contextMenu.py:36
+#: contextMenu.py:34
 msgid "Robocopy"
 msgstr "Robocopy"
 
-#: __init__.py:540
+#: robocopyManager.py:457
+msgid "Robocopy cancelled"
+msgstr "Robocopy dibatalkan"
+
+#: robocopyManager.py:469
+msgid "Robocopy finished successfully. {n} item(s) copied"
+msgstr "Robocopy selesai dengan jayanya. {n} item disalin"
+
+#: robocopyManager.py:465
+msgid "Robocopy finished. {ok} succeeded, {failed} failed: {items}"
+msgstr "Robocopy selesai. {ok} berjaya, {failed} gagal: {items}"
+
+#: __init__.py:768
 msgid "Robocopy manager not available"
 msgstr "Pengurus Robocopy tidak tersedia"
 
-#: __init__.py:563
+#: __init__.py:791
 msgid "Robocopy: single tap copy, double tap paste, triple tap move"
-msgstr "Robocopy: satu ketukan salin, dua ketukan tampal, tiga ketukan pindah"
+msgstr "Robocopy: satu ketikan salin, dua ketikan tampal, tiga ketikan alih"
 
-#: contextMenu.py:33
+#: contextMenu.py:89
+#: contextMenu.py:100
+#: contextMenu.py:106
+#: contextMenu.py:111
+#: contextMenu.py:117
 msgid "Say size"
 msgstr "Sebut saiz"
 
-#: __init__.py:523
+#: __init__.py:751
 msgid "Say size (single tap) or compress zip (double tap)"
-msgstr "Sebut saiz (satu ketukan) atau mampat zip (dua ketukan)"
+msgstr "Sebut saiz (satu ketikan) atau mampat zip (dua ketikan)"
 
-#: txt2folder.py:58
+#: folderTools.py:559
 msgid "Selected file does not exist"
 msgstr "Fail yang dipilih tidak wujud"
 
-#: folderInfo.py:41
+#: folderTools.py:87
 msgid "Selected item is not a folder"
 msgstr "Item yang dipilih bukan folder"
 
-#: selectionManager.py:93
+#: folderTools.py:826
 msgid "Selected {count} items"
 msgstr "{count} item dipilih"
 
-#: selectionManager.py:96
+#: folderTools.py:829
 msgid "Selection inverted"
-msgstr "Pilihan dibalikkan"
+msgstr "Pilihan disongsangkan"
 
 #: createFile.py:170
 msgid "Some files will use default names"
@@ -538,46 +572,46 @@ msgstr "Sesetengah fail akan menggunakan nama lalai"
 msgid "Starting..."
 msgstr "Bermula..."
 
-#: case.py:165
+#: folderTools.py:987
 msgid "Successfully converted {count} folders to headline case"
-msgstr "Berjaya menukar {count} folder kepada huruf tajuk utama"
+msgstr "Berjaya menukar {count} folder kepada huruf besar tajuk berita"
 
-#: case.py:150
+#: folderTools.py:972
 msgid "Successfully converted {count} folders to lowercase"
 msgstr "Berjaya menukar {count} folder kepada huruf kecil"
 
-#: case.py:159
+#: folderTools.py:981
 msgid "Successfully converted {count} folders to title case"
-msgstr "Berjaya menukar {count} folder kepada huruf tajuk"
+msgstr "Berjaya menukar {count} folder kepada huruf besar tajuk"
 
-#: case.py:144
+#: folderTools.py:966
 msgid "Successfully converted {count} folders to uppercase"
-msgstr "Berjaya menukar {count} folder kepada huruf besar"
+msgstr "Berjaya menukar {count} folder kepada HURUF BESAR"
 
-#: folder_creation_dialog.py:225
+#: folderTools.py:337
 msgid "Successfully created 1 folder"
 msgstr "Berjaya mencipta 1 folder"
 
-#: folder_creation_dialog.py:223
+#: folderTools.py:335
 msgid "Successfully created main folder only"
 msgstr "Berjaya mencipta hanya folder utama"
 
-#: folder_creation_dialog.py:227
+#: folderTools.py:339
 msgid "Successfully created {count} of {total} folders"
 msgstr "Berjaya mencipta {count} daripada {total} folder"
 
-#: txt2folder.py:144
-#: txt2folder.py:194
+#: folderTools.py:645
+#: folderTools.py:695
 msgid "Successfully created {} folders in '{}'"
 msgstr "Berjaya mencipta {} folder dalam '{}'"
 
-#: contextMenu.py:41
+#: contextMenu.py:39
 msgid "TXT to Folder"
 msgstr "TXT ke Folder"
 
-#: contextMenu.py:48
+#: contextMenu.py:46
 msgid "Title Case"
-msgstr "Huruf Tajuk"
+msgstr "Huruf Besar Tajuk"
 
 #: clipboardManager.py:88
 msgid "Total file size is too large to copy content"
@@ -587,17 +621,17 @@ msgstr "Saiz fail keseluruhan terlalu besar untuk menyalin kandungan"
 msgid "Unable to get current directory after multiple attempts"
 msgstr "Tidak dapat mendapatkan direktori semasa selepas beberapa percubaan"
 
-#: __init__.py:402
+#: __init__.py:630
 msgid "Unable to get current path"
 msgstr "Tidak dapat mendapatkan laluan semasa"
 
-#: selectionManager.py:41
+#: folderTools.py:774
 msgid "Unable to get folder view"
 msgstr "Tidak dapat mendapatkan paparan folder"
 
-#: contextMenu.py:46
+#: contextMenu.py:44
 msgid "Uppercase"
-msgstr "Huruf besar"
+msgstr "HURUF BESAR"
 
 #: clipboardManager.py:104
 msgid "[Error processing RTF file]"
@@ -611,13 +645,17 @@ msgstr "[Kandungan RTF - modul striprtf tidak tersedia]"
 msgid "compression failed"
 msgstr "mampatan gagal"
 
-#: contextMenu.py:37
+#: contextMenu.py:35
 msgid "copy"
 msgstr "salin"
 
-#: contextMenu.py:38
+#: robocopyManager.py:235
+msgid "estimating time remaining"
+msgstr "menganggarkan masa yang tinggal"
+
+#: contextMenu.py:36
 msgid "move"
-msgstr "pindah"
+msgstr "alih"
 
 #: createFile.py:156
 msgid "new_file"
@@ -627,33 +665,53 @@ msgstr "fail_baru"
 msgid "new_file_{index}"
 msgstr "fail_baru_{index}"
 
-#: contextMenu.py:39
+#: contextMenu.py:37
 msgid "paste"
 msgstr "tampal"
 
-#: __init__.py:110
-#: __init__.py:444
-#: __init__.py:484
-#: __init__.py:524
-#: __init__.py:564
-#: __init__.py:617
-#: __init__.py:634
-#: __init__.py:652
+#: __init__.py:268
+#: __init__.py:672
+#: __init__.py:712
+#: __init__.py:752
+#: __init__.py:792
+#: __init__.py:845
+#: __init__.py:862
+#: __init__.py:880
 msgid "xPlorer"
 msgstr "xPlorer"
 
-#: contextMenu.py:51
+#: contextMenu.py:49
 msgid "xPlorer Settings"
 msgstr "Tetapan xPlorer"
 
-#: createFile.py:286
+#: createFile.py:288
 msgid "{count} files created"
 msgstr "{count} fail dicipta"
 
-#: fileOperations.py:237
+#: fileOperations.py:283
 msgid "{count} items {size}"
 msgstr "{count} item {size}"
 
-#: folderInfo.py:62
+#: robocopyManager.py:240
+msgid "{h}h {m}m remaining"
+msgstr "{h}j {m}m lagi"
+
+#: robocopyManager.py:242
+msgid "{m}m {s}s remaining"
+msgstr "{m}m {s}s lagi"
+
+#: robocopyManager.py:304
+msgid "{pct}% - item {idx}/{total}: {name}"
+msgstr "{pct}% - item {idx}/{total}: {name}"
+
+#: folderTools.py:111
 msgid "{subfolders} subfolders and {files} files"
 msgstr "{subfolders} subfolder dan {files} fail"
+
+#: contextMenu.py:150
+msgid "{subfolders} subfolders, {files} files"
+msgstr "{subfolders} subfolder, {files} fail"
+
+#: robocopyManager.py:243
+msgid "{s}s remaining"
+msgstr "{s}s lagi"

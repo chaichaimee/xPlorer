@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: xPlorer 2026.7.0\n"
+"Project-Id-Version: xPlorer 2026.8.5\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-06-24 13:09+0700\n"
+"POT-Creation-Date: 2026-08-03 06:13+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Russian\n"
@@ -12,19 +12,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: DevOn Addon\n"
 
-#: folder_creation_dialog.py:62
+#: robocopyManager.py:464
+msgid " and {n} more"
+msgstr " и еще {n}"
+
+#: folderTools.py:174
 msgid "&Apply"
 msgstr "&Применить"
 
-#: folder_creation_dialog.py:63
+#: folderTools.py:175
 msgid "&Cancel"
 msgstr "&Отмена"
 
-#: createFile.py:284
+#: createFile.py:286
 msgid "1 file created"
 msgstr "1 файл создан"
 
-#: fileOperations.py:294
+#: fileOperations.py:340
 msgid "A file with this name already exists"
 msgstr "Файл с таким именем уже существует"
 
@@ -32,31 +36,35 @@ msgstr "Файл с таким именем уже существует"
 msgid "Built-in compression failed: {error}"
 msgstr "Встроенное сжатие не удалось: {error}"
 
+#: robocopyManager.py:323
+msgid "Calculating total size..."
+msgstr "Вычисление общего размера..."
+
 #: clipboardManager.py:66
 msgid "Cannot copy content of folders, please select files only"
-msgstr "Невозможно скопировать содержимое папок, выберите только файлы"
+msgstr "Нельзя копировать содержимое папок, выберите только файлы"
 
 #: createFile.py:271
 msgid "Cannot find unique name for: {name}"
 msgstr "Не удается найти уникальное имя для: {name}"
 
-#: __init__.py:660
+#: __init__.py:888
 msgid "Cannot open settings dialog"
 msgstr "Не удается открыть диалог настроек"
 
-#: txt2folder.py:69
+#: folderTools.py:570
 msgid "Cannot process RTF file: striprtf module not available"
 msgstr "Не удается обработать RTF-файл: модуль striprtf недоступен"
 
-#: contextMenu.py:45
+#: contextMenu.py:43
 msgid "Case Converter for Folders"
-msgstr "Преобразователь регистра для папок"
+msgstr "Конвертер регистра для папок"
 
-#: __init__.py:699
+#: __init__.py:927
 msgid "Case converter not available"
-msgstr "Преобразователь регистра недоступен"
+msgstr "Конвертер регистра недоступен"
 
-#: __init__.py:420
+#: __init__.py:648
 msgid "Clipboard manager not available"
 msgstr "Менеджер буфера обмена недоступен"
 
@@ -64,9 +72,9 @@ msgstr "Менеджер буфера обмена недоступен"
 msgid "Completed"
 msgstr "Завершено"
 
-#: contextMenu.py:27
+#: contextMenu.py:26
 msgid "Compress zip"
-msgstr "Сжать в zip"
+msgstr "Сжать zip"
 
 #: compressionManager.py:160
 #: compressionManager.py:168
@@ -92,7 +100,7 @@ msgstr "Сжатие отменено"
 msgid "Compression completed {name}"
 msgstr "Сжатие завершено {name}"
 
-#: __init__.py:500
+#: __init__.py:728
 msgid "Compression manager not available"
 msgstr "Менеджер сжатия недоступен"
 
@@ -102,101 +110,101 @@ msgstr "Время сжатия истекло"
 
 #: clipboardManager.py:133
 msgid "Content from 1 file copied to clipboard"
-msgstr "Содержимое из 1 файла скопировано в буфер обмена"
+msgstr "Содержимое 1 файла скопировано в буфер обмена"
 
 #: clipboardManager.py:135
 msgid "Content from {count} files copied to clipboard"
-msgstr "Содержимое из {count} файлов скопировано в буфер обмена"
+msgstr "Содержимое {count} файлов скопировано в буфер обмена"
 
-#: __init__.py:607
-#: __init__.py:673
+#: __init__.py:835
+#: __init__.py:901
 msgid "Context menu manager not available"
 msgstr "Менеджер контекстного меню недоступен"
 
-#: case.py:115
+#: folderTools.py:937
 msgid "Conversion already in progress"
 msgstr "Преобразование уже выполняется"
 
-#: case.py:132
+#: folderTools.py:954
 msgid "Converting"
 msgstr "Преобразование"
 
 #: clipboardManager.py:44
 msgid "Copied 1 item name to clipboard"
-msgstr "Имя 1 элемента скопировано в буфер обмена"
+msgstr "Название 1 элемента скопировано в буфер обмена"
 
 #: clipboardManager.py:46
 msgid "Copied {count} item names to clipboard"
-msgstr "Имена {count} элементов скопированы в буфер обмена"
+msgstr "Названия {count} элементов скопированы в буфер обмена"
 
-#: __init__.py:396
+#: __init__.py:624
 msgid "Copied: {path}"
 msgstr "Скопировано: {path}"
 
-#: contextMenu.py:29
+#: contextMenu.py:28
 msgid "Copy address bar"
 msgstr "Копировать адресную строку"
 
-#: contextMenu.py:30
+#: contextMenu.py:29
 msgid "Copy content"
 msgstr "Копировать содержимое"
 
-#: __init__.py:483
+#: __init__.py:711
 msgid "Copy content (single tap) or invert selection (double tap)"
-msgstr "Копировать содержимое (одинарное нажатие) или инвертировать выделение (двойное нажатие)"
+msgstr "Копировать содержимое (один тап) или инвертировать выделение (двойной тап)"
 
-#: contextMenu.py:31
+#: contextMenu.py:30
 msgid "Copy selected file and folder names"
 msgstr "Копировать имена выбранных файлов и папок"
 
-#: __init__.py:443
+#: __init__.py:671
 msgid "Copy selected names (single tap) or copy address bar (double tap)"
-msgstr "Копировать выбранные имена (одинарное нажатие) или копировать адресную строку (двойное нажатие)"
+msgstr "Копировать выбранные имена (один тап) или скопировать адресную строку (двойной тап)"
 
-#: __init__.py:400
+#: __init__.py:628
 #: clipboardManager.py:50
 #: clipboardManager.py:139
 msgid "Could not open clipboard"
 msgstr "Не удалось открыть буфер обмена"
 
-#: contextMenu.py:24
+#: contextMenu.py:23
 #: createFile.py:17
 msgid "Create File"
 msgstr "Создать файл"
 
-#: folder_creation_dialog.py:16
+#: folderTools.py:128
 msgid "Create Multiple Folders"
 msgstr "Создать несколько папок"
 
-#: contextMenu.py:42
+#: contextMenu.py:40
 msgid "Create Multiple Folders..."
 msgstr "Создать несколько папок..."
 
-#: folder_creation_dialog.py:45
+#: folderTools.py:157
 msgid "Create main folder and then subfolders"
-msgstr "Создать основную папку, а затем вложенные папки"
+msgstr "Создать главную папку, затем подпапки"
 
-#: __init__.py:651
+#: __init__.py:879
 msgid "Create new folder and paste clipboard content into rename field"
 msgstr "Создать новую папку и вставить содержимое буфера обмена в поле переименования"
 
-#: folder_creation_dialog.py:212
+#: folderTools.py:324
 msgid "Created {count} of {total} folders..."
 msgstr "Создано {count} из {total} папок..."
 
-#: folder_creation_dialog.py:199
+#: folderTools.py:311
 msgid "Creating folders in background..."
 msgstr "Создание папок в фоновом режиме..."
 
-#: folder_creation_dialog.py:49
+#: folderTools.py:161
 msgid "Edit individual folder names"
 msgstr "Редактировать отдельные имена папок"
 
-#: folderInfo.py:71
+#: folderTools.py:120
 msgid "Error calculating folder info"
 msgstr "Ошибка при вычислении информации о папке"
 
-#: fileOperations.py:248
+#: fileOperations.py:294
 msgid "Error calculating size"
 msgstr "Ошибка при вычислении размера"
 
@@ -212,23 +220,23 @@ msgstr "Ошибка при копировании содержимого фай
 msgid "Error copying names to clipboard"
 msgstr "Ошибка при копировании имен в буфер обмена"
 
-#: txt2folder.py:113
+#: folderTools.py:614
 msgid "Error creating base folder"
-msgstr "Ошибка при создании основной папки"
+msgstr "Ошибка при создании базовой папки"
 
-#: createFile.py:289
+#: createFile.py:291
 msgid "Error creating files"
 msgstr "Ошибка при создании файлов"
 
-#: __init__.py:693
+#: __init__.py:921
 msgid "Error creating folders"
 msgstr "Ошибка при создании папок"
 
-#: folder_creation_dialog.py:190
+#: folderTools.py:302
 msgid "Error creating main folder"
-msgstr "Ошибка при создании основной папки"
+msgstr "Ошибка при создании главной папки"
 
-#: __init__.py:737
+#: __init__.py:965
 msgid "Error during conversion"
 msgstr "Ошибка во время преобразования"
 
@@ -236,7 +244,7 @@ msgstr "Ошибка во время преобразования"
 msgid "Error in compression process: {error}"
 msgstr "Ошибка в процессе сжатия: {error}"
 
-#: selectionManager.py:71
+#: folderTools.py:804
 msgid "Error inverting selection"
 msgstr "Ошибка при инвертировании выделения"
 
@@ -244,40 +252,44 @@ msgstr "Ошибка при инвертировании выделения"
 msgid "Error opening create file dialog"
 msgstr "Ошибка при открытии диалога создания файла"
 
-#: fileOperations.py:304
+#: fileOperations.py:350
 msgid "Error opening rename dialog"
 msgstr "Ошибка при открытии диалога переименования"
 
-#: __init__.py:667
+#: __init__.py:895
 msgid "Error opening settings"
 msgstr "Ошибка при открытии настроек"
 
-#: txt2folder.py:203
+#: folderTools.py:704
 msgid "Error processing text file: {}"
 msgstr "Ошибка при обработке текстового файла: {}"
 
-#: txt2folder.py:80
+#: folderTools.py:581
 msgid "Error reading RTF file"
 msgstr "Ошибка при чтении RTF-файла"
 
-#: txt2folder.py:207
+#: folderTools.py:708
 msgid "Error reading file encoding"
 msgstr "Ошибка при чтении кодировки файла"
 
-#: fileOperations.py:274
-#: fileOperations.py:301
+#: fileOperations.py:320
+#: fileOperations.py:347
 msgid "Error renaming file"
 msgstr "Ошибка при переименовании файла"
 
-#: txt2folder.py:212
+#: folderTools.py:713
 msgid "Error: {}"
 msgstr "Ошибка: {}"
+
+#: __init__.py:1002
+msgid "Explorer tree dumped to NVDA log"
+msgstr "Дерево Проводника выгружено в журнал NVDA"
 
 #: createFile.py:72
 msgid "Extension:"
 msgstr "Расширение:"
 
-#: case.py:127
+#: folderTools.py:949
 msgid "Failed to rename any folders"
 msgstr "Не удалось переименовать ни одну папку"
 
@@ -301,7 +313,7 @@ msgstr "Имя файла"
 msgid "File name cannot be empty"
 msgstr "Имя файла не может быть пустым"
 
-#: fileOperations.py:291
+#: fileOperations.py:337
 msgid "File name not changed"
 msgstr "Имя файла не изменено"
 
@@ -314,115 +326,121 @@ msgstr "Имя файла {index}:"
 msgid "File name:"
 msgstr "Имя файла:"
 
-#: __init__.py:622
+#: __init__.py:850
 msgid "File operations manager not available"
-msgstr "Менеджер операций с файлами недоступен"
+msgstr "Менеджер файловых операций недоступен"
 
-#: fileOperations.py:298
+#: fileOperations.py:344
 msgid "File renamed to {name}"
 msgstr "Файл переименован в {name}"
 
-#: folder_creation_dialog.py:115
-#: folder_creation_dialog.py:155
+#: robocopyManager.py:448
+msgid "Finished {n} of {total}: {name}"
+msgstr "Завершено {n} из {total}: {name}"
+
+#: folderTools.py:227
+#: folderTools.py:267
 msgid "Folder"
 msgstr "Папка"
 
-#: txt2folder.py:104
-#: txt2folder.py:174
+#: folderTools.py:605
+#: folderTools.py:675
 msgid "Folder '{}' already exists, creating '{}' instead"
 msgstr "Папка '{}' уже существует, вместо нее создается '{}'"
 
-#: __init__.py:677
+#: __init__.py:905
 msgid "Folder creation dialog not available"
-msgstr "Диалог создания папок недоступен"
+msgstr "Диалог создания папки недоступен"
 
-#: __init__.py:639
+#: __init__.py:867
 msgid "Folder creator helper not available"
 msgstr "Помощник создания папок недоступен"
 
-#: contextMenu.py:52
+#: contextMenu.py:131
+#: contextMenu.py:134
+#: contextMenu.py:155
 msgid "Folder info"
 msgstr "Информация о папке"
 
-#: folder_creation_dialog.py:30
+#: folderTools.py:142
 msgid "Folder title:"
-msgstr "Заголовок папки:"
+msgstr "Название папки:"
 
-#: contextMenu.py:49
+#: contextMenu.py:47
 msgid "Headline Case"
 msgstr "Заглавный регистр"
 
-#: folder_creation_dialog.py:166
+#: folderTools.py:278
 msgid "Invalid number for folders"
-msgstr "Недопустимое количество папок"
+msgstr "Недопустимое количество для папок"
 
-#: contextMenu.py:28
+#: contextMenu.py:27
 msgid "Invert selection"
 msgstr "Инвертировать выделение"
 
-#: contextMenu.py:47
+#: contextMenu.py:45
 msgid "Lowercase"
-msgstr "Строчные буквы"
+msgstr "Строчные"
 
-#: folder_creation_dialog.py:163
+#: folderTools.py:275
 msgid "Maximum 100 folders allowed"
-msgstr "Максимально допустимо 100 папок"
+msgstr "Разрешено максимум 100 папок"
 
-#: __init__.py:681
+#: __init__.py:909
 msgid "No Explorer folder detected"
 msgstr "Папка Проводника не обнаружена"
 
-#: fileOperations.py:173
-#: fileOperations.py:230
+#: fileOperations.py:219
+#: fileOperations.py:276
 msgid "No access to size data"
 msgstr "Нет доступа к данным о размере"
 
-#: selectionManager.py:36
+#: folderTools.py:769
 msgid "No active File Explorer window found"
-msgstr "Активное окно Проводника не найдено"
+msgstr "Не найдено активное окно Проводника"
 
 #: clipboardManager.py:127
 msgid "No content could be read from selected files"
 msgstr "Не удалось прочитать содержимое выбранных файлов"
 
-#: createFile.py:282
+#: createFile.py:284
 msgid "No files were created"
-msgstr "Файлы не были созданы"
+msgstr "Не было создано ни одного файла"
 
-#: case.py:142
-#: case.py:148
-#: case.py:157
-#: case.py:163
+#: folderTools.py:964
+#: folderTools.py:970
+#: folderTools.py:979
+#: folderTools.py:985
 msgid "No folders found"
-msgstr "Папки не найдены"
+msgstr "Папок не найдено"
 
-#: __init__.py:703
+#: __init__.py:931
 msgid "No folders selected"
 msgstr "Папки не выбраны"
 
-#: __init__.py:718
+#: __init__.py:946
 msgid "No folders selected or current folder not available"
 msgstr "Папки не выбраны или текущая папка недоступна"
 
-#: folder_creation_dialog.py:229
-#: txt2folder.py:148
-#: txt2folder.py:198
+#: folderTools.py:341
+#: folderTools.py:649
+#: folderTools.py:699
 msgid "No folders were created"
-msgstr "Папки не были созданы"
+msgstr "Не было создано ни одной папки"
 
-#: folderInfo.py:30
+#: folderTools.py:81
 msgid "No item selected"
 msgstr "Элемент не выбран"
 
-#: selectionManager.py:49
+#: folderTools.py:782
 msgid "No items in folder"
 msgstr "В папке нет элементов"
 
 #: clipboardManager.py:27
 #: clipboardManager.py:62
 #: compressionManager.py:148
-#: fileOperations.py:164
-#: fileOperations.py:260
+#: fileOperations.py:210
+#: fileOperations.py:306
 msgid "No items selected"
 msgstr "Элементы не выбраны"
 
@@ -430,18 +448,22 @@ msgstr "Элементы не выбраны"
 msgid "No text files selected"
 msgstr "Текстовые файлы не выбраны"
 
-#: txt2folder.py:90
-#: txt2folder.py:160
+#: folderTools.py:591
+#: folderTools.py:661
 msgid "No valid folder names found in the file"
 msgstr "В файле не найдены допустимые имена папок"
 
-#: folder_creation_dialog.py:184
+#: folderTools.py:296
 msgid "No valid folder names provided"
 msgstr "Не указаны допустимые имена папок"
 
+#: __init__.py:976
+msgid "Not focused on File Explorer"
+msgstr "Фокус не на Проводнике"
+
 #: createFile.py:198
-#: selectionManager.py:30
-#: txt2folder.py:40
+#: folderTools.py:541
+#: folderTools.py:763
 msgid "Not in File Explorer"
 msgstr "Не в Проводнике"
 
@@ -449,84 +471,96 @@ msgstr "Не в Проводнике"
 msgid "Number of files to create:"
 msgstr "Количество создаваемых файлов:"
 
-#: folder_creation_dialog.py:160
+#: folderTools.py:272
 msgid "Number of folders must be at least 1"
 msgstr "Количество папок должно быть не менее 1"
 
-#: folder_creation_dialog.py:38
+#: folderTools.py:150
 msgid "Number of folders:"
 msgstr "Количество папок:"
 
-#: __init__.py:616
+#: __init__.py:844
 msgid "Open xPlorer context menu"
 msgstr "Открыть контекстное меню xPlorer"
 
-#: txt2folder.py:53
+#: folderTools.py:554
 msgid "Please select a .txt or .rtf file"
-msgstr "Пожалуйста, выберите файл .txt или .rtf"
+msgstr "Выберите файл .txt или .rtf"
 
-#: fileOperations.py:267
+#: fileOperations.py:313
 msgid "Please select a file, not a folder"
-msgstr "Пожалуйста, выберите файл, а не папку"
+msgstr "Выберите файл, а не папку"
 
-#: fileOperations.py:263
+#: fileOperations.py:309
 msgid "Please select only one file"
-msgstr "Пожалуйста, выберите только один файл"
+msgstr "Выберите только один файл"
 
-#: folderInfo.py:35
-msgid "Please select only one folder"
-msgstr "Пожалуйста, выберите только одну папку"
-
-#: txt2folder.py:46
+#: folderTools.py:547
 msgid "Please select only one text file"
-msgstr "Пожалуйста, выберите только один текстовый файл"
+msgstr "Выберите только один текстовый файл"
 
-#: selectionManager.py:58
+#: folderTools.py:791
 msgid "Processing {count} items in background..."
 msgstr "Обработка {count} элементов в фоновом режиме..."
 
-#: __init__.py:633
-#: contextMenu.py:32
+#: __init__.py:861
+#: contextMenu.py:31
 msgid "Rename selected file"
 msgstr "Переименовать выбранный файл"
 
-#: __init__.py:460
+#: __init__.py:688
 msgid "Required manager not available"
 msgstr "Требуемый менеджер недоступен"
 
-#: contextMenu.py:36
+#: contextMenu.py:34
 msgid "Robocopy"
 msgstr "Robocopy"
 
-#: __init__.py:540
+#: robocopyManager.py:457
+msgid "Robocopy cancelled"
+msgstr "Robocopy отменен"
+
+#: robocopyManager.py:469
+msgid "Robocopy finished successfully. {n} item(s) copied"
+msgstr "Robocopy успешно завершен. Скопировано {n} элементов"
+
+#: robocopyManager.py:465
+msgid "Robocopy finished. {ok} succeeded, {failed} failed: {items}"
+msgstr "Robocopy завершен. {ok} успешно, {failed} ошибок: {items}"
+
+#: __init__.py:768
 msgid "Robocopy manager not available"
 msgstr "Менеджер Robocopy недоступен"
 
-#: __init__.py:563
+#: __init__.py:791
 msgid "Robocopy: single tap copy, double tap paste, triple tap move"
-msgstr "Robocopy: одинарное нажатие — копировать, двойное — вставить, тройное — переместить"
+msgstr "Robocopy: один тап для копирования, двойной тап для вставки, тройной тап для перемещения"
 
-#: contextMenu.py:33
+#: contextMenu.py:89
+#: contextMenu.py:100
+#: contextMenu.py:106
+#: contextMenu.py:111
+#: contextMenu.py:117
 msgid "Say size"
-msgstr "Сообщить размер"
+msgstr "Озвучить размер"
 
-#: __init__.py:523
+#: __init__.py:751
 msgid "Say size (single tap) or compress zip (double tap)"
-msgstr "Сообщить размер (одинарное нажатие) или сжать в zip (двойное нажатие)"
+msgstr "Озвучить размер (один тап) или сжать zip (двойной тап)"
 
-#: txt2folder.py:58
+#: folderTools.py:559
 msgid "Selected file does not exist"
 msgstr "Выбранный файл не существует"
 
-#: folderInfo.py:14
+#: folderTools.py:87
 msgid "Selected item is not a folder"
 msgstr "Выбранный элемент не является папкой"
 
-#: selectionManager.py:93
+#: folderTools.py:826
 msgid "Selected {count} items"
 msgstr "Выбрано {count} элементов"
 
-#: selectionManager.py:96
+#: folderTools.py:829
 msgid "Selection inverted"
 msgstr "Выделение инвертировано"
 
@@ -538,44 +572,44 @@ msgstr "Некоторые файлы будут использовать име
 msgid "Starting..."
 msgstr "Запуск..."
 
-#: case.py:165
+#: folderTools.py:987
 msgid "Successfully converted {count} folders to headline case"
-msgstr "Успешно преобразовано {count} папок в заглавный регистр"
+msgstr "{count} папок успешно преобразованы в заглавный регистр"
 
-#: case.py:150
+#: folderTools.py:972
 msgid "Successfully converted {count} folders to lowercase"
-msgstr "Успешно преобразовано {count} папок в строчные буквы"
+msgstr "{count} папок успешно преобразованы в строчные"
 
-#: case.py:159
+#: folderTools.py:981
 msgid "Successfully converted {count} folders to title case"
-msgstr "Успешно преобразовано {count} папок в регистр заголовков"
+msgstr "{count} папок успешно преобразованы в регистр заголовков"
 
-#: case.py:144
+#: folderTools.py:966
 msgid "Successfully converted {count} folders to uppercase"
-msgstr "Успешно преобразовано {count} папок в прописные буквы"
+msgstr "{count} папок успешно преобразованы в ЗАГЛАВНЫЕ"
 
-#: folder_creation_dialog.py:225
+#: folderTools.py:337
 msgid "Successfully created 1 folder"
-msgstr "Успешно создана 1 папка"
+msgstr "1 папка успешно создана"
 
-#: folder_creation_dialog.py:223
+#: folderTools.py:335
 msgid "Successfully created main folder only"
-msgstr "Успешно создана только основная папка"
+msgstr "Успешно создана только главная папка"
 
-#: folder_creation_dialog.py:227
+#: folderTools.py:339
 msgid "Successfully created {count} of {total} folders"
 msgstr "Успешно создано {count} из {total} папок"
 
-#: txt2folder.py:144
-#: txt2folder.py:194
+#: folderTools.py:645
+#: folderTools.py:695
 msgid "Successfully created {} folders in '{}'"
 msgstr "Успешно создано {} папок в '{}'"
 
-#: contextMenu.py:14
+#: contextMenu.py:39
 msgid "TXT to Folder"
 msgstr "TXT в папку"
 
-#: contextMenu.py:48
+#: contextMenu.py:46
 msgid "Title Case"
 msgstr "Регистр заголовков"
 
@@ -585,37 +619,41 @@ msgstr "Общий размер файлов слишком велик для к
 
 #: createFile.py:213
 msgid "Unable to get current directory after multiple attempts"
-msgstr "Не удалось получить текущий каталог после нескольких попыток"
+msgstr "Не удается получить текущий каталог после нескольких попыток"
 
-#: __init__.py:402
+#: __init__.py:630
 msgid "Unable to get current path"
-msgstr "Не удалось получить текущий путь"
+msgstr "Не удается получить текущий путь"
 
-#: selectionManager.py:14
+#: folderTools.py:774
 msgid "Unable to get folder view"
-msgstr "Не удалось получить представление папки"
+msgstr "Не удается получить вид папки"
 
-#: contextMenu.py:46
+#: contextMenu.py:44
 msgid "Uppercase"
-msgstr "Прописные буквы"
+msgstr "ЗАГЛАВНЫЕ"
 
 #: clipboardManager.py:104
 msgid "[Error processing RTF file]"
-msgstr "[Ошибка обработки RTF-файла]"
+msgstr "[Ошибка при обработке RTF-файла]"
 
 #: clipboardManager.py:106
 msgid "[RTF content - striprtf module not available]"
-msgstr "[Содержимое RTF — модуль striprtf недоступен]"
+msgstr "[Содержимое RTF - модуль striprtf недоступен]"
 
 #: compressionManager.py:114
 msgid "compression failed"
 msgstr "сжатие не удалось"
 
-#: contextMenu.py:37
+#: contextMenu.py:35
 msgid "copy"
 msgstr "копировать"
 
-#: contextMenu.py:38
+#: robocopyManager.py:235
+msgid "estimating time remaining"
+msgstr "оценка оставшегося времени"
+
+#: contextMenu.py:36
 msgid "move"
 msgstr "переместить"
 
@@ -627,33 +665,53 @@ msgstr "новый_файл"
 msgid "new_file_{index}"
 msgstr "новый_файл_{index}"
 
-#: contextMenu.py:39
+#: contextMenu.py:37
 msgid "paste"
 msgstr "вставить"
 
-#: __init__.py:110
-#: __init__.py:444
-#: __init__.py:484
-#: __init__.py:524
-#: __init__.py:564
-#: __init__.py:617
-#: __init__.py:634
-#: __init__.py:652
+#: __init__.py:268
+#: __init__.py:672
+#: __init__.py:712
+#: __init__.py:752
+#: __init__.py:792
+#: __init__.py:845
+#: __init__.py:862
+#: __init__.py:880
 msgid "xPlorer"
 msgstr "xPlorer"
 
-#: contextMenu.py:51
+#: contextMenu.py:49
 msgid "xPlorer Settings"
 msgstr "Настройки xPlorer"
 
-#: createFile.py:286
+#: createFile.py:288
 msgid "{count} files created"
 msgstr "{count} файлов создано"
 
-#: fileOperations.py:237
+#: fileOperations.py:283
 msgid "{count} items {size}"
 msgstr "{count} элементов {size}"
 
-#: folderInfo.py:62
+#: robocopyManager.py:240
+msgid "{h}h {m}m remaining"
+msgstr "осталось {h}ч {m}м"
+
+#: robocopyManager.py:242
+msgid "{m}m {s}s remaining"
+msgstr "осталось {m}м {s}с"
+
+#: robocopyManager.py:304
+msgid "{pct}% - item {idx}/{total}: {name}"
+msgstr "{pct}% - элемент {idx}/{total}: {name}"
+
+#: folderTools.py:111
 msgid "{subfolders} subfolders and {files} files"
-msgstr "{subfolders} вложенных папок и {files} файлов"
+msgstr "{subfolders} подпапок и {files} файлов"
+
+#: contextMenu.py:150
+msgid "{subfolders} subfolders, {files} files"
+msgstr "{subfolders} подпапок, {files} файлов"
+
+#: robocopyManager.py:243
+msgid "{s}s remaining"
+msgstr "осталось {s}с"

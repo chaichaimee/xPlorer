@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: xPlorer 2026.7.0\n"
+"Project-Id-Version: xPlorer 2026.8.5\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-06-24 13:09+0700\n"
+"POT-Creation-Date: 2026-08-03 06:13+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Sinhala\n"
@@ -12,25 +12,33 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: DevOn Addon\n"
 
-#: folder_creation_dialog.py:62
+#: robocopyManager.py:464
+msgid " and {n} more"
+msgstr " සහ තවත් {n}"
+
+#: folderTools.py:174
 msgid "&Apply"
 msgstr "&යොදන්න"
 
-#: folder_creation_dialog.py:63
+#: folderTools.py:175
 msgid "&Cancel"
 msgstr "&අවලංගු කරන්න"
 
-#: createFile.py:284
+#: createFile.py:286
 msgid "1 file created"
-msgstr "ගොනු 1 ක් සාදන ලදී"
+msgstr "ගොනු 1ක් සාදන ලදී"
 
-#: fileOperations.py:294
+#: fileOperations.py:340
 msgid "A file with this name already exists"
 msgstr "මෙම නම සහිත ගොනුවක් දැනටමත් පවතී"
 
 #: compressionManager.py:288
 msgid "Built-in compression failed: {error}"
-msgstr "සාදන ලද සම්පීඩනය අසාර්ථක විය: {error}"
+msgstr "බිල්ට්-ඉන් සම්පීඩනය අසාර්ථක විය: {error}"
+
+#: robocopyManager.py:323
+msgid "Calculating total size..."
+msgstr "සම්පූර්ණ ප්‍රමාණය ගණනය කරමින්..."
 
 #: clipboardManager.py:66
 msgid "Cannot copy content of folders, please select files only"
@@ -38,35 +46,35 @@ msgstr "ෆෝල්ඩරවල අන්තර්ගතය පිටපත් 
 
 #: createFile.py:271
 msgid "Cannot find unique name for: {name}"
-msgstr "{name} සඳහා අද්විතීය නමක් සොයාගත නොහැක"
+msgstr "සඳහා අනන්‍ය නමක් සොයාගත නොහැක: {name}"
 
-#: __init__.py:660
+#: __init__.py:888
 msgid "Cannot open settings dialog"
 msgstr "සැකසුම් සංවාදය විවෘත කළ නොහැක"
 
-#: txt2folder.py:69
+#: folderTools.py:570
 msgid "Cannot process RTF file: striprtf module not available"
 msgstr "RTF ගොනුව සැකසිය නොහැක: striprtf මොඩියුලය ලබා ගත නොහැක"
 
-#: contextMenu.py:45
+#: contextMenu.py:43
 msgid "Case Converter for Folders"
-msgstr "ෆෝල්ඩර සඳහා අකුරු විශාලත්ව පරිවර්තකය"
+msgstr "ෆෝල්ඩර සඳහා කේස් පරිවර්තකය"
 
-#: __init__.py:699
+#: __init__.py:927
 msgid "Case converter not available"
-msgstr "අකුරු විශාලත්ව පරිවර්තකය ලබා ගත නොහැක"
+msgstr "කේස් පරිවර්තකය ලබා ගත නොහැක"
 
-#: __init__.py:420
+#: __init__.py:648
 msgid "Clipboard manager not available"
-msgstr "පසුරු පුවරු කළමනාකරු ලබා ගත නොහැක"
+msgstr "ක්ලිප්බෝඩ් කළමනාකරු ලබා ගත නොහැක"
 
 #: compressionManager.py:284
 msgid "Completed"
 msgstr "සම්පූර්ණයි"
 
-#: contextMenu.py:27
+#: contextMenu.py:26
 msgid "Compress zip"
-msgstr "zip ලෙස සම්පීඩනය කරන්න"
+msgstr "zip සම්පීඩනය කරන්න"
 
 #: compressionManager.py:160
 #: compressionManager.py:168
@@ -90,9 +98,9 @@ msgstr "සම්පීඩනය අවලංගු කරන ලදී"
 #: compressionManager.py:112
 #: compressionManager.py:285
 msgid "Compression completed {name}"
-msgstr "සම්පීඩනය සම්පූර්ණ කරන ලදී {name}"
+msgstr "සම්පීඩනය සම්පූර්ණයි {name}"
 
-#: __init__.py:500
+#: __init__.py:728
 msgid "Compression manager not available"
 msgstr "සම්පීඩන කළමනාකරු ලබා ගත නොහැක"
 
@@ -102,101 +110,101 @@ msgstr "සම්පීඩන කාලය ඉකුත් විය"
 
 #: clipboardManager.py:133
 msgid "Content from 1 file copied to clipboard"
-msgstr "ගොනු 1 ක අන්තර්ගතය පසුරු පුවරුවට පිටපත් කරන ලදී"
+msgstr "ගොනු 1ක අන්තර්ගතය ක්ලිප්බෝඩ් වෙත පිටපත් කරන ලදී"
 
 #: clipboardManager.py:135
 msgid "Content from {count} files copied to clipboard"
-msgstr "ගොනු {count} ක අන්තර්ගතය පසුරු පුවරුවට පිටපත් කරන ලදී"
+msgstr "ගොනු {count}ක අන්තර්ගතය ක්ලිප්බෝඩ් වෙත පිටපත් කරන ලදී"
 
-#: __init__.py:607
-#: __init__.py:673
+#: __init__.py:835
+#: __init__.py:901
 msgid "Context menu manager not available"
 msgstr "සන්දර්භ මෙනු කළමනාකරු ලබා ගත නොහැක"
 
-#: case.py:115
+#: folderTools.py:937
 msgid "Conversion already in progress"
-msgstr "පරිවර්තනය දැනටමත් සිදු වෙමින් පවතී"
+msgstr "පරිවර්තනය දැනටමත් සිදුවෙමින් පවතී"
 
-#: case.py:132
+#: folderTools.py:954
 msgid "Converting"
 msgstr "පරිවර්තනය කරමින්"
 
 #: clipboardManager.py:44
 msgid "Copied 1 item name to clipboard"
-msgstr "අයිතම 1 ක නම පසුරු පුවරුවට පිටපත් කරන ලදී"
+msgstr "අයිතම 1ක නම ක්ලිප්බෝඩ් වෙත පිටපත් කරන ලදී"
 
 #: clipboardManager.py:46
 msgid "Copied {count} item names to clipboard"
-msgstr "අයිතම {count} ක නම් පසුරු පුවරුවට පිටපත් කරන ලදී"
+msgstr "අයිතම {count}ක නම් ක්ලිප්බෝඩ් වෙත පිටපත් කරන ලදී"
 
-#: __init__.py:396
+#: __init__.py:624
 msgid "Copied: {path}"
 msgstr "පිටපත් කරන ලදී: {path}"
 
-#: contextMenu.py:29
+#: contextMenu.py:28
 msgid "Copy address bar"
 msgstr "ලිපින තීරුව පිටපත් කරන්න"
 
-#: contextMenu.py:30
+#: contextMenu.py:29
 msgid "Copy content"
 msgstr "අන්තර්ගතය පිටපත් කරන්න"
 
-#: __init__.py:483
+#: __init__.py:711
 msgid "Copy content (single tap) or invert selection (double tap)"
-msgstr "අන්තර්ගතය පිටපත් කරන්න (තනි එබීම) හෝ තේරීම ආපසු හරවන්න (ද්විත්ව එබීම)"
+msgstr "අන්තර්ගතය පිටපත් කරන්න (තනි තට්ටුව) හෝ තේරීම ප්‍රතිලෝම කරන්න (ද්විත්ව තට්ටුව)"
 
-#: contextMenu.py:31
+#: contextMenu.py:30
 msgid "Copy selected file and folder names"
 msgstr "තෝරාගත් ගොනු සහ ෆෝල්ඩර නම් පිටපත් කරන්න"
 
-#: __init__.py:443
+#: __init__.py:671
 msgid "Copy selected names (single tap) or copy address bar (double tap)"
-msgstr "තෝරාගත් නම් පිටපත් කරන්න (තනි එබීම) හෝ ලිපින තීරුව පිටපත් කරන්න (ද්විත්ව එබීම)"
+msgstr "තෝරාගත් නම් පිටපත් කරන්න (තනි තට්ටුව) හෝ ලිපින තීරුව පිටපත් කරන්න (ද්විත්ව තට්ටුව)"
 
-#: __init__.py:400
+#: __init__.py:628
 #: clipboardManager.py:50
 #: clipboardManager.py:139
 msgid "Could not open clipboard"
-msgstr "පසුරු පුවරුව විවෘත කළ නොහැකි විය"
+msgstr "ක්ලිප්බෝඩය විවෘත කළ නොහැකි විය"
 
-#: contextMenu.py:24
+#: contextMenu.py:23
 #: createFile.py:17
 msgid "Create File"
 msgstr "ගොනුව සාදන්න"
 
-#: folder_creation_dialog.py:16
+#: folderTools.py:128
 msgid "Create Multiple Folders"
-msgstr "ෆෝල්ඩර කිහිපයක් සාදන්න"
+msgstr "බහු ෆෝල්ඩර සාදන්න"
 
-#: contextMenu.py:42
+#: contextMenu.py:40
 msgid "Create Multiple Folders..."
-msgstr "ෆෝල්ඩර කිහිපයක් සාදන්න..."
+msgstr "බහු ෆෝල්ඩර සාදන්න..."
 
-#: folder_creation_dialog.py:45
+#: folderTools.py:157
 msgid "Create main folder and then subfolders"
-msgstr "ප්‍රධාන ෆෝල්ඩරය සාදා පසුව උප ෆෝල්ඩර සාදන්න"
+msgstr "ප්‍රධාන ෆෝල්ඩරය සාදා, පසුව උප ෆෝල්ඩර සාදන්න"
 
-#: __init__.py:651
+#: __init__.py:879
 msgid "Create new folder and paste clipboard content into rename field"
-msgstr "නව ෆෝල්ඩරයක් සාදා පසුරු පුවරු අන්තර්ගතය නැවත නම් කිරීමේ ක්ෂේත්‍රයට අලවන්න"
+msgstr "නව ෆෝල්ඩරයක් සාදා ක්ලිප්බෝඩ් අන්තර්ගතය නැවත නම් කිරීමේ ක්ෂේත්‍රයට අලවන්න"
 
-#: folder_creation_dialog.py:212
+#: folderTools.py:324
 msgid "Created {count} of {total} folders..."
-msgstr "ෆෝල්ඩර {total} න් {count} ක් සාදන ලදී..."
+msgstr "{total}න් {count} ෆෝල්ඩර සාදන ලදී..."
 
-#: folder_creation_dialog.py:199
+#: folderTools.py:311
 msgid "Creating folders in background..."
 msgstr "පසුබිමේ ෆෝල්ඩර සාදමින්..."
 
-#: folder_creation_dialog.py:49
+#: folderTools.py:161
 msgid "Edit individual folder names"
 msgstr "තනි ෆෝල්ඩර නම් සංස්කරණය කරන්න"
 
-#: folderInfo.py:71
+#: folderTools.py:120
 msgid "Error calculating folder info"
 msgstr "ෆෝල්ඩර තොරතුරු ගණනය කිරීමේ දෝෂය"
 
-#: fileOperations.py:248
+#: fileOperations.py:294
 msgid "Error calculating size"
 msgstr "ප්‍රමාණය ගණනය කිරීමේ දෝෂය"
 
@@ -210,25 +218,25 @@ msgstr "ගොනු අන්තර්ගතය පිටපත් කිරී
 
 #: clipboardManager.py:53
 msgid "Error copying names to clipboard"
-msgstr "නම් පසුරු පුවරුවට පිටපත් කිරීමේ දෝෂය"
+msgstr "ක්ලිප්බෝඩයට නම් පිටපත් කිරීමේ දෝෂය"
 
-#: txt2folder.py:113
+#: folderTools.py:614
 msgid "Error creating base folder"
-msgstr "පාදක ෆෝල්ඩරය සෑදීමේ දෝෂය"
+msgstr "මූලික ෆෝල්ඩරය සෑදීමේ දෝෂය"
 
-#: createFile.py:289
+#: createFile.py:291
 msgid "Error creating files"
 msgstr "ගොනු සෑදීමේ දෝෂය"
 
-#: __init__.py:693
+#: __init__.py:921
 msgid "Error creating folders"
 msgstr "ෆෝල්ඩර සෑදීමේ දෝෂය"
 
-#: folder_creation_dialog.py:190
+#: folderTools.py:302
 msgid "Error creating main folder"
 msgstr "ප්‍රධාන ෆෝල්ඩරය සෑදීමේ දෝෂය"
 
-#: __init__.py:737
+#: __init__.py:965
 msgid "Error during conversion"
 msgstr "පරිවර්තනය අතරතුර දෝෂය"
 
@@ -236,48 +244,52 @@ msgstr "පරිවර්තනය අතරතුර දෝෂය"
 msgid "Error in compression process: {error}"
 msgstr "සම්පීඩන ක්‍රියාවලියේ දෝෂය: {error}"
 
-#: selectionManager.py:71
+#: folderTools.py:804
 msgid "Error inverting selection"
-msgstr "තේරීම ආපසු හැරවීමේ දෝෂය"
+msgstr "තේරීම ප්‍රතිලෝම කිරීමේ දෝෂය"
 
 #: createFile.py:245
 msgid "Error opening create file dialog"
-msgstr "ගොනු සෑදීමේ සංවාදය විවෘත කිරීමේ දෝෂය"
+msgstr "ගොනුව සාදන්න සංවාදය විවෘත කිරීමේ දෝෂය"
 
-#: fileOperations.py:304
+#: fileOperations.py:350
 msgid "Error opening rename dialog"
-msgstr "නැවත නම් කිරීමේ සංවාදය විවෘත කිරීමේ දෝෂය"
+msgstr "නැවත නම් කරන්න සංවාදය විවෘත කිරීමේ දෝෂය"
 
-#: __init__.py:667
+#: __init__.py:895
 msgid "Error opening settings"
 msgstr "සැකසුම් විවෘත කිරීමේ දෝෂය"
 
-#: txt2folder.py:203
+#: folderTools.py:704
 msgid "Error processing text file: {}"
 msgstr "පෙළ ගොනුව සැකසීමේ දෝෂය: {}"
 
-#: txt2folder.py:80
+#: folderTools.py:581
 msgid "Error reading RTF file"
 msgstr "RTF ගොනුව කියවීමේ දෝෂය"
 
-#: txt2folder.py:207
+#: folderTools.py:708
 msgid "Error reading file encoding"
 msgstr "ගොනු කේතනය කියවීමේ දෝෂය"
 
-#: fileOperations.py:274
-#: fileOperations.py:301
+#: fileOperations.py:320
+#: fileOperations.py:347
 msgid "Error renaming file"
 msgstr "ගොනුව නැවත නම් කිරීමේ දෝෂය"
 
-#: txt2folder.py:212
+#: folderTools.py:713
 msgid "Error: {}"
 msgstr "දෝෂය: {}"
+
+#: __init__.py:1002
+msgid "Explorer tree dumped to NVDA log"
+msgstr "එක්ස්ප්ලෝරර් ගස NVDA ලොගයට දමන ලදී"
 
 #: createFile.py:72
 msgid "Extension:"
 msgstr "දිගුව:"
 
-#: case.py:127
+#: folderTools.py:949
 msgid "Failed to rename any folders"
 msgstr "කිසිදු ෆෝල්ඩරයක් නැවත නම් කිරීමට අසමත් විය"
 
@@ -301,7 +313,7 @@ msgstr "ගොනු නම"
 msgid "File name cannot be empty"
 msgstr "ගොනු නම හිස් විය නොහැක"
 
-#: fileOperations.py:291
+#: fileOperations.py:337
 msgid "File name not changed"
 msgstr "ගොනු නම වෙනස් කර නැත"
 
@@ -314,115 +326,121 @@ msgstr "ගොනු නම {index}:"
 msgid "File name:"
 msgstr "ගොනු නම:"
 
-#: __init__.py:622
+#: __init__.py:850
 msgid "File operations manager not available"
 msgstr "ගොනු මෙහෙයුම් කළමනාකරු ලබා ගත නොහැක"
 
-#: fileOperations.py:298
+#: fileOperations.py:344
 msgid "File renamed to {name}"
 msgstr "ගොනුව {name} ලෙස නැවත නම් කරන ලදී"
 
-#: folder_creation_dialog.py:115
-#: folder_creation_dialog.py:155
+#: robocopyManager.py:448
+msgid "Finished {n} of {total}: {name}"
+msgstr "{total}න් {n} සම්පූර්ණයි: {name}"
+
+#: folderTools.py:227
+#: folderTools.py:267
 msgid "Folder"
 msgstr "ෆෝල්ඩරය"
 
-#: txt2folder.py:104
-#: txt2folder.py:174
+#: folderTools.py:605
+#: folderTools.py:675
 msgid "Folder '{}' already exists, creating '{}' instead"
 msgstr "'{}' ෆෝල්ඩරය දැනටමත් පවතී, ඒ වෙනුවට '{}' සාදමින්"
 
-#: __init__.py:677
+#: __init__.py:905
 msgid "Folder creation dialog not available"
-msgstr "ෆෝල්ඩර සෑදීමේ සංවාදය ලබා ගත නොහැක"
+msgstr "ෆෝල්ඩරය සාදන්න සංවාදය ලබා ගත නොහැක"
 
-#: __init__.py:639
+#: __init__.py:867
 msgid "Folder creator helper not available"
-msgstr "ෆෝල්ඩර සාදන්නාගේ සහායකය ලබා ගත නොහැක"
+msgstr "ෆෝල්ඩර සාදන සහායකය ලබා ගත නොහැක"
 
-#: contextMenu.py:52
+#: contextMenu.py:131
+#: contextMenu.py:134
+#: contextMenu.py:155
 msgid "Folder info"
 msgstr "ෆෝල්ඩර තොරතුරු"
 
-#: folder_creation_dialog.py:30
+#: folderTools.py:142
 msgid "Folder title:"
 msgstr "ෆෝල්ඩර ශීර්ෂය:"
 
-#: contextMenu.py:49
-msgid "Headline Case"
-msgstr "ශීර්ෂ අකුරු විශාලත්වය"
-
-#: folder_creation_dialog.py:166
-msgid "Invalid number for folders"
-msgstr "ෆෝල්ඩර සඳහා වලංගු නොවන අංකය"
-
-#: contextMenu.py:28
-msgid "Invert selection"
-msgstr "තේරීම ආපසු හරවන්න"
-
 #: contextMenu.py:47
+msgid "Headline Case"
+msgstr "හෙඩ්ලයින් කේස්"
+
+#: folderTools.py:278
+msgid "Invalid number for folders"
+msgstr "ෆෝල්ඩර සඳහා වලංගු නොවන අංකයකි"
+
+#: contextMenu.py:27
+msgid "Invert selection"
+msgstr "තේරීම ප්‍රතිලෝම කරන්න"
+
+#: contextMenu.py:45
 msgid "Lowercase"
 msgstr "කුඩා අකුරු"
 
-#: folder_creation_dialog.py:163
+#: folderTools.py:275
 msgid "Maximum 100 folders allowed"
-msgstr "උපරිම ෆෝල්ඩර 100 ක් අවසර දෙනු ලැබේ"
+msgstr "උපරිම ෆෝල්ඩර 100කට අවසර ඇත"
 
-#: __init__.py:681
+#: __init__.py:909
 msgid "No Explorer folder detected"
-msgstr "Explorer ෆෝල්ඩරයක් හමු නොවීය"
+msgstr "එක්ස්ප්ලෝරර් ෆෝල්ඩරයක් හමු නොවීය"
 
-#: fileOperations.py:173
-#: fileOperations.py:230
+#: fileOperations.py:219
+#: fileOperations.py:276
 msgid "No access to size data"
 msgstr "ප්‍රමාණ දත්ත වෙත ප්‍රවේශයක් නැත"
 
-#: selectionManager.py:36
+#: folderTools.py:769
 msgid "No active File Explorer window found"
-msgstr "ක්‍රියාකාරී File Explorer කවුළුවක් හමු නොවීය"
+msgstr "සක්‍රිය File Explorer කවුළුවක් හමු නොවීය"
 
 #: clipboardManager.py:127
 msgid "No content could be read from selected files"
 msgstr "තෝරාගත් ගොනු වලින් අන්තර්ගතය කියවිය නොහැකි විය"
 
-#: createFile.py:282
+#: createFile.py:284
 msgid "No files were created"
 msgstr "ගොනු කිසිවක් සාදා නැත"
 
-#: case.py:142
-#: case.py:148
-#: case.py:157
-#: case.py:163
+#: folderTools.py:964
+#: folderTools.py:970
+#: folderTools.py:979
+#: folderTools.py:985
 msgid "No folders found"
 msgstr "ෆෝල්ඩර හමු නොවීය"
 
-#: __init__.py:703
+#: __init__.py:931
 msgid "No folders selected"
 msgstr "ෆෝල්ඩර තෝරාගෙන නැත"
 
-#: __init__.py:718
+#: __init__.py:946
 msgid "No folders selected or current folder not available"
 msgstr "ෆෝල්ඩර තෝරාගෙන නැත හෝ වත්මන් ෆෝල්ඩරය ලබා ගත නොහැක"
 
-#: folder_creation_dialog.py:229
-#: txt2folder.py:148
-#: txt2folder.py:198
+#: folderTools.py:341
+#: folderTools.py:649
+#: folderTools.py:699
 msgid "No folders were created"
 msgstr "ෆෝල්ඩර කිසිවක් සාදා නැත"
 
-#: folderInfo.py:30
+#: folderTools.py:81
 msgid "No item selected"
 msgstr "අයිතමයක් තෝරාගෙන නැත"
 
-#: selectionManager.py:49
+#: folderTools.py:782
 msgid "No items in folder"
 msgstr "ෆෝල්ඩරයේ අයිතම නැත"
 
 #: clipboardManager.py:27
 #: clipboardManager.py:62
 #: compressionManager.py:148
-#: fileOperations.py:164
-#: fileOperations.py:260
+#: fileOperations.py:210
+#: fileOperations.py:306
 msgid "No items selected"
 msgstr "අයිතම තෝරාගෙන නැත"
 
@@ -430,18 +448,22 @@ msgstr "අයිතම තෝරාගෙන නැත"
 msgid "No text files selected"
 msgstr "පෙළ ගොනු තෝරාගෙන නැත"
 
-#: txt2folder.py:90
-#: txt2folder.py:160
+#: folderTools.py:591
+#: folderTools.py:661
 msgid "No valid folder names found in the file"
 msgstr "ගොනුවේ වලංගු ෆෝල්ඩර නම් හමු නොවීය"
 
-#: folder_creation_dialog.py:184
+#: folderTools.py:296
 msgid "No valid folder names provided"
 msgstr "වලංගු ෆෝල්ඩර නම් සපයා නැත"
 
+#: __init__.py:976
+msgid "Not focused on File Explorer"
+msgstr "File Explorer මත අවධානය යොමු කර නැත"
+
 #: createFile.py:198
-#: selectionManager.py:30
-#: txt2folder.py:40
+#: folderTools.py:541
+#: folderTools.py:763
 msgid "Not in File Explorer"
 msgstr "File Explorer තුළ නැත"
 
@@ -449,86 +471,98 @@ msgstr "File Explorer තුළ නැත"
 msgid "Number of files to create:"
 msgstr "සෑදිය යුතු ගොනු ගණන:"
 
-#: folder_creation_dialog.py:160
+#: folderTools.py:272
 msgid "Number of folders must be at least 1"
 msgstr "ෆෝල්ඩර ගණන අවම වශයෙන් 1 විය යුතුය"
 
-#: folder_creation_dialog.py:38
+#: folderTools.py:150
 msgid "Number of folders:"
 msgstr "ෆෝල්ඩර ගණන:"
 
-#: __init__.py:616
+#: __init__.py:844
 msgid "Open xPlorer context menu"
 msgstr "xPlorer සන්දර්භ මෙනුව විවෘත කරන්න"
 
-#: txt2folder.py:53
+#: folderTools.py:554
 msgid "Please select a .txt or .rtf file"
 msgstr "කරුණාකර .txt හෝ .rtf ගොනුවක් තෝරන්න"
 
-#: fileOperations.py:267
+#: fileOperations.py:313
 msgid "Please select a file, not a folder"
-msgstr "කරුණාකර ෆෝල්ඩරයක් නොව ගොනුවක් තෝරන්න"
+msgstr "කරුණාකර ගොනුවක් තෝරන්න, ෆෝල්ඩරයක් නොවේ"
 
-#: fileOperations.py:263
+#: fileOperations.py:309
 msgid "Please select only one file"
 msgstr "කරුණාකර එක් ගොනුවක් පමණක් තෝරන්න"
 
-#: folderInfo.py:35
-msgid "Please select only one folder"
-msgstr "කරුණාකර එක් ෆෝල්ඩරයක් පමණක් තෝරන්න"
-
-#: txt2folder.py:46
+#: folderTools.py:547
 msgid "Please select only one text file"
 msgstr "කරුණාකර එක් පෙළ ගොනුවක් පමණක් තෝරන්න"
 
-#: selectionManager.py:58
+#: folderTools.py:791
 msgid "Processing {count} items in background..."
-msgstr "පසුබිමේ අයිතම {count} ක් සැකසමින්..."
+msgstr "පසුබිමේ අයිතම {count} සකසමින්..."
 
-#: __init__.py:633
-#: contextMenu.py:32
+#: __init__.py:861
+#: contextMenu.py:31
 msgid "Rename selected file"
 msgstr "තෝරාගත් ගොනුව නැවත නම් කරන්න"
 
-#: __init__.py:460
+#: __init__.py:688
 msgid "Required manager not available"
 msgstr "අවශ්‍ය කළමනාකරු ලබා ගත නොහැක"
 
-#: contextMenu.py:36
+#: contextMenu.py:34
 msgid "Robocopy"
 msgstr "Robocopy"
 
-#: __init__.py:540
+#: robocopyManager.py:457
+msgid "Robocopy cancelled"
+msgstr "Robocopy අවලංගු කරන ලදී"
+
+#: robocopyManager.py:469
+msgid "Robocopy finished successfully. {n} item(s) copied"
+msgstr "Robocopy සාර්ථකව නිම කරන ලදී. අයිතම {n} පිටපත් කරන ලදී"
+
+#: robocopyManager.py:465
+msgid "Robocopy finished. {ok} succeeded, {failed} failed: {items}"
+msgstr "Robocopy නිම කරන ලදී. {ok} සාර්ථකයි, {failed} අසාර්ථකයි: {items}"
+
+#: __init__.py:768
 msgid "Robocopy manager not available"
 msgstr "Robocopy කළමනාකරු ලබා ගත නොහැක"
 
-#: __init__.py:563
+#: __init__.py:791
 msgid "Robocopy: single tap copy, double tap paste, triple tap move"
-msgstr "Robocopy: තනි එබීම පිටපත් කිරීම, ද්විත්ව එබීම ඇලවීම, ත්‍රිත්ව එබීම ගෙනයාම"
+msgstr "Robocopy: තනි තට්ටුව පිටපත් කිරීම, ද්විත්ව තට්ටුව ඇලවීම, ත්‍රිත්ව තට්ටුව ගෙනයාම"
 
-#: contextMenu.py:33
+#: contextMenu.py:89
+#: contextMenu.py:100
+#: contextMenu.py:106
+#: contextMenu.py:111
+#: contextMenu.py:117
 msgid "Say size"
 msgstr "ප්‍රමාණය කියන්න"
 
-#: __init__.py:523
+#: __init__.py:751
 msgid "Say size (single tap) or compress zip (double tap)"
-msgstr "ප්‍රමාණය කියන්න (තනි එබීම) හෝ zip ලෙස සම්පීඩනය කරන්න (ද්විත්ව එබීම)"
+msgstr "ප්‍රමාණය කියන්න (තනි තට්ටුව) හෝ zip සම්පීඩනය කරන්න (ද්විත්ව තට්ටුව)"
 
-#: txt2folder.py:58
+#: folderTools.py:559
 msgid "Selected file does not exist"
 msgstr "තෝරාගත් ගොනුව නොපවතී"
 
-#: folderInfo.py:14
+#: folderTools.py:87
 msgid "Selected item is not a folder"
 msgstr "තෝරාගත් අයිතමය ෆෝල්ඩරයක් නොවේ"
 
-#: selectionManager.py:93
+#: folderTools.py:826
 msgid "Selected {count} items"
-msgstr "අයිතම {count} ක් තෝරාගෙන ඇත"
+msgstr "අයිතම {count} තෝරා ඇත"
 
-#: selectionManager.py:96
+#: folderTools.py:829
 msgid "Selection inverted"
-msgstr "තේරීම ආපසු හරවන ලදී"
+msgstr "තේරීම ප්‍රතිලෝම කරන ලදී"
 
 #: createFile.py:170
 msgid "Some files will use default names"
@@ -538,64 +572,64 @@ msgstr "සමහර ගොනු පෙරනිමි නම් භාවි�
 msgid "Starting..."
 msgstr "ආරම්භ කරමින්..."
 
-#: case.py:165
+#: folderTools.py:987
 msgid "Successfully converted {count} folders to headline case"
-msgstr "ෆෝල්ඩර {count} ක් ශීර්ෂ අකුරු විශාලත්වයට සාර්ථකව පරිවර්තනය කරන ලදී"
+msgstr "ෆෝල්ඩර {count} හෙඩ්ලයින් කේස් වෙත සාර්ථකව පරිවර්තනය කරන ලදී"
 
-#: case.py:150
+#: folderTools.py:972
 msgid "Successfully converted {count} folders to lowercase"
-msgstr "ෆෝල්ඩර {count} ක් කුඩා අකුරු වලට සාර්ථකව පරිවර්තනය කරන ලදී"
+msgstr "ෆෝල්ඩර {count} කුඩා අකුරු වෙත සාර්ථකව පරිවර්තනය කරන ලදී"
 
-#: case.py:159
+#: folderTools.py:981
 msgid "Successfully converted {count} folders to title case"
-msgstr "ෆෝල්ඩර {count} ක් ශීර්ෂ ප්‍රමිතියට සාර්ථකව පරිවර්තනය කරන ලදී"
+msgstr "ෆෝල්ඩර {count} ශීර්ෂ කේස් වෙත සාර්ථකව පරිවර්තනය කරන ලදී"
 
-#: case.py:144
+#: folderTools.py:966
 msgid "Successfully converted {count} folders to uppercase"
-msgstr "ෆෝල්ඩර {count} ක් විශාල අකුරු වලට සාර්ථකව පරිවර්තනය කරන ලදී"
+msgstr "ෆෝල්ඩර {count} විශාල අකුරු වෙත සාර්ථකව පරිවර්තනය කරන ලදී"
 
-#: folder_creation_dialog.py:225
+#: folderTools.py:337
 msgid "Successfully created 1 folder"
-msgstr "ෆෝල්ඩර 1 ක් සාර්ථකව සාදන ලදී"
+msgstr "ෆෝල්ඩර 1ක් සාර්ථකව සාදන ලදී"
 
-#: folder_creation_dialog.py:223
+#: folderTools.py:335
 msgid "Successfully created main folder only"
 msgstr "ප්‍රධාන ෆෝල්ඩරය පමණක් සාර්ථකව සාදන ලදී"
 
-#: folder_creation_dialog.py:227
+#: folderTools.py:339
 msgid "Successfully created {count} of {total} folders"
-msgstr "ෆෝල්ඩර {total} න් {count} ක් සාර්ථකව සාදන ලදී"
+msgstr "{total}න් {count} ෆෝල්ඩර සාර්ථකව සාදන ලදී"
 
-#: txt2folder.py:144
-#: txt2folder.py:194
+#: folderTools.py:645
+#: folderTools.py:695
 msgid "Successfully created {} folders in '{}'"
-msgstr "'{}' තුළ ෆෝල්ඩර {} ක් සාර්ථකව සාදන ලදී"
+msgstr "'{}' තුළ ෆෝල්ඩර {} සාර්ථකව සාදන ලදී"
 
-#: contextMenu.py:14
+#: contextMenu.py:39
 msgid "TXT to Folder"
 msgstr "TXT සිට ෆෝල්ඩරයට"
 
-#: contextMenu.py:48
+#: contextMenu.py:46
 msgid "Title Case"
-msgstr "ශීර්ෂ ප්‍රමිතිය"
+msgstr "ශීර්ෂ කේස්"
 
 #: clipboardManager.py:88
 msgid "Total file size is too large to copy content"
-msgstr "සම්පූර්ණ ගොනු ප්‍රමාණය අන්තර්ගතය පිටපත් කිරීමට විශාල වැඩිය"
+msgstr "සම්පූර්ණ ගොනු ප්‍රමාණය අන්තර්ගතය පිටපත් කිරීමට ඉතා විශාලයි"
 
 #: createFile.py:213
 msgid "Unable to get current directory after multiple attempts"
-msgstr "බහු උත්සාහයන්ගෙන් පසු වත්මන් නාමාවලිය ලබා ගැනීමට නොහැකි විය"
+msgstr "බහු උත්සාහයන්ගෙන් පසු වත්මන් ඩිරෙක්ටරිය ලබා ගැනීමට නොහැකි විය"
 
-#: __init__.py:402
+#: __init__.py:630
 msgid "Unable to get current path"
-msgstr "වත්මන් මාර්ගය ලබා ගැනීමට නොහැකි විය"
+msgstr "වත්මන් මාර්ගය ලබා ගැනීමට නොහැක"
 
-#: selectionManager.py:14
+#: folderTools.py:774
 msgid "Unable to get folder view"
-msgstr "ෆෝල්ඩර දර්ශනය ලබා ගැනීමට නොහැකි විය"
+msgstr "ෆෝල්ඩර දර්ශනය ලබා ගැනීමට නොහැක"
 
-#: contextMenu.py:46
+#: contextMenu.py:44
 msgid "Uppercase"
 msgstr "විශාල අකුරු"
 
@@ -611,11 +645,15 @@ msgstr "[RTF අන්තර්ගතය - striprtf මොඩියුලය ල
 msgid "compression failed"
 msgstr "සම්පීඩනය අසාර්ථක විය"
 
-#: contextMenu.py:37
+#: contextMenu.py:35
 msgid "copy"
 msgstr "පිටපත් කරන්න"
 
-#: contextMenu.py:38
+#: robocopyManager.py:235
+msgid "estimating time remaining"
+msgstr "ඉතිරි කාලය ගණනය කරමින්"
+
+#: contextMenu.py:36
 msgid "move"
 msgstr "ගෙනයන්න"
 
@@ -627,33 +665,53 @@ msgstr "නව_ගොනුව"
 msgid "new_file_{index}"
 msgstr "නව_ගොනුව_{index}"
 
-#: contextMenu.py:39
+#: contextMenu.py:37
 msgid "paste"
 msgstr "අලවන්න"
 
-#: __init__.py:110
-#: __init__.py:444
-#: __init__.py:484
-#: __init__.py:524
-#: __init__.py:564
-#: __init__.py:617
-#: __init__.py:634
-#: __init__.py:652
+#: __init__.py:268
+#: __init__.py:672
+#: __init__.py:712
+#: __init__.py:752
+#: __init__.py:792
+#: __init__.py:845
+#: __init__.py:862
+#: __init__.py:880
 msgid "xPlorer"
 msgstr "xPlorer"
 
-#: contextMenu.py:51
+#: contextMenu.py:49
 msgid "xPlorer Settings"
 msgstr "xPlorer සැකසුම්"
 
-#: createFile.py:286
+#: createFile.py:288
 msgid "{count} files created"
-msgstr "ගොනු {count} ක් සාදන ලදී"
+msgstr "ගොනු {count} සාදන ලදී"
 
-#: fileOperations.py:237
+#: fileOperations.py:283
 msgid "{count} items {size}"
 msgstr "අයිතම {count} {size}"
 
-#: folderInfo.py:62
+#: robocopyManager.py:240
+msgid "{h}h {m}m remaining"
+msgstr "{h}පැ {m}වි ඉතිරියි"
+
+#: robocopyManager.py:242
+msgid "{m}m {s}s remaining"
+msgstr "{m}වි {s}තත් ඉතිරියි"
+
+#: robocopyManager.py:304
+msgid "{pct}% - item {idx}/{total}: {name}"
+msgstr "{pct}% - අයිතමය {idx}/{total}: {name}"
+
+#: folderTools.py:111
 msgid "{subfolders} subfolders and {files} files"
 msgstr "උප ෆෝල්ඩර {subfolders} සහ ගොනු {files}"
+
+#: contextMenu.py:150
+msgid "{subfolders} subfolders, {files} files"
+msgstr "උප ෆෝල්ඩර {subfolders}, ගොනු {files}"
+
+#: robocopyManager.py:243
+msgid "{s}s remaining"
+msgstr "{s}තත් ඉතිරියි"

@@ -122,18 +122,64 @@ class FileOperations:
 		else:
 			return f"{size_in_bytes / (1024 * 1024 * 1024):.2f} GB"
 
+	FAST_SIZE_FILE_CAP = 9000
+
+	def _computeBoundedFolderSize(self, folder_paths, maxFiles=None):
+		"""Try to get an exact recursive size for the given folders, bailing
+		out (returning None) as soon as the file count exceeds maxFiles.
+		Byte size is irrelevant to how long this takes - stat() costs the
+		same for a 1KB file as a 1GB one - only the number of entries
+		scanned matters, so the cap is on file count."""
+		if maxFiles is None:
+			maxFiles = self.FAST_SIZE_FILE_CAP
+		total_size = 0
+		file_count = 0
+		pendingDirs = list(folder_paths)
+		while pendingDirs:
+			current_dir = pendingDirs.pop()
+			try:
+				with os.scandir(current_dir) as entries:
+					for entry in entries:
+						try:
+							if entry.is_dir(follow_symlinks=False):
+								pendingDirs.append(entry.path)
+							else:
+								total_size += entry.stat(follow_symlinks=False).st_size
+								file_count += 1
+								if file_count > maxFiles:
+									return None
+						except OSError:
+							continue
+			except OSError:
+				continue
+		return total_size
+
 	def _get_folder_size_accurate(self, folder_path):
 		total_size = 0
 		try:
-			for root, dirs, files in os.walk(folder_path):
+			pendingDirs = [folder_path]
+			while pendingDirs:
 				if not self._calculation_active:
 					return 0
-				for file_name in files:
-					file_path = os.path.join(root, file_name)
-					try:
-						total_size += os.path.getsize(file_path)
-					except (OSError, WindowsError, PermissionError):
-						pass
+				current_dir = pendingDirs.pop()
+				try:
+					with os.scandir(current_dir) as entries:
+						for entry in entries:
+							if not self._calculation_active:
+								return 0
+							try:
+								if entry.is_dir(follow_symlinks=False):
+									pendingDirs.append(entry.path)
+								else:
+									# DirEntry.stat() reuses the stat info the OS already
+									# returned while listing this directory, instead of a
+									# second syscall via os.path.getsize() per file - a real
+									# speedup on large trees and slow/network drives.
+									total_size += entry.stat(follow_symlinks=False).st_size
+							except OSError:
+								continue
+				except OSError:
+					continue
 			return total_size
 		except Exception as e:
 			log.error(f"Error calculating folder size for {folder_path}: {e}")
@@ -307,3 +353,4 @@ class FileOperations:
 				dialog.Destroy()
 			if gui.mainFrame:
 				gui.mainFrame.postPopup()
+

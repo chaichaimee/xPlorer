@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: xPlorer 2026.7.0\n"
+"Project-Id-Version: xPlorer 2026.8.5\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-06-24 13:09+0700\n"
+"POT-Creation-Date: 2026-08-03 06:13+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Burmese\n"
@@ -12,59 +12,67 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: DevOn Addon\n"
 
-#: folder_creation_dialog.py:62
+#: robocopyManager.py:464
+msgid " and {n} more"
+msgstr " နှင့် {n} ထပ်ရှိ"
+
+#: folderTools.py:174
 msgid "&Apply"
 msgstr "&အသုံးပြုမည်"
 
-#: folder_creation_dialog.py:63
+#: folderTools.py:175
 msgid "&Cancel"
-msgstr "&ပယ်ဖျက်မည်"
+msgstr "&ဖျက်မည်"
 
-#: createFile.py:284
+#: createFile.py:286
 msgid "1 file created"
 msgstr "ဖိုင် ၁ ခု ဖန်တီးပြီး"
 
-#: fileOperations.py:294
+#: fileOperations.py:340
 msgid "A file with this name already exists"
 msgstr "ဤအမည်ဖြင့် ဖိုင်တစ်ခု ရှိပြီးသား"
 
 #: compressionManager.py:288
 msgid "Built-in compression failed: {error}"
-msgstr "ပါဝင်သော ချုံ့မှု မအောင်မြင်: {error}"
+msgstr "ပါဝင်သော ချုံ့ခြင်း မအောင်မြင်: {error}"
+
+#: robocopyManager.py:323
+msgid "Calculating total size..."
+msgstr "စုစုပေါင်းအရွယ်အစား တွက်ချက်နေသည်..."
 
 #: clipboardManager.py:66
 msgid "Cannot copy content of folders, please select files only"
-msgstr "ဖိုဒါများ၏ အကြောင်းအရာကို ကူးယူ၍မရပါ၊ ဖိုင်များကိုသာ ရွေးပါ"
+msgstr "ဖိုဒါများ၏ အကြောင်းအရာကို ကူးယူ၍မရပါ၊ ဖိုင်များသာ ရွေးပါ"
 
 #: createFile.py:271
 msgid "Cannot find unique name for: {name}"
-msgstr "{name} အတွက် ထူးခြားသောအမည် ရှာမတွေ့ပါ"
+msgstr "အတွက် သီးသန့်အမည် ရှာမတွေ့: {name}"
 
-#: __init__.py:660
+#: __init__.py:888
 msgid "Cannot open settings dialog"
-msgstr "ဆက်တင်များ ဒိုင်ယာလော့ဂ် ဖွင့်၍မရပါ"
+msgstr "ဆက်တင်များ ဒိုင်ယာလော့ခ် ဖွင့်၍မရပါ"
 
-#: txt2folder.py:69
+#: folderTools.py:570
 msgid "Cannot process RTF file: striprtf module not available"
-msgstr "RTF ဖိုင် လုပ်ဆောင်၍မရပါ: striprtf module မရရှိ"
+msgstr "RTF ဖိုင် လုပ်ဆောင်၍မရပါ: striprtf module မရှိပါ"
 
-#: contextMenu.py:45
+#: contextMenu.py:43
 msgid "Case Converter for Folders"
 msgstr "ဖိုဒါများအတွက် စာလုံးအကြီးအသေးပြောင်းကိရိယာ"
 
-#: __init__.py:699
+#: __init__.py:927
 msgid "Case converter not available"
-msgstr "စာလုံးအကြီးအသေးပြောင်းကိရိယာ မရရှိ"
+msgstr "စာလုံးအကြီးအသေးပြောင်းကိရိယာ မရှိပါ"
 
-#: __init__.py:420
+#: __init__.py:648
 msgid "Clipboard manager not available"
-msgstr "ကလစ်ဘုတ် မန်နေဂျာ မရရှိ"
+msgstr "ကလစ်ဘုတ်မန်နေဂျာ မရှိပါ"
 
 #: compressionManager.py:284
 msgid "Completed"
-msgstr "ပြီးဆုံးပြီ"
+msgstr "ပြီးဆုံးပြီး"
 
-#: contextMenu.py:27
+#: contextMenu.py:26
 msgid "Compress zip"
 msgstr "zip ချုံ့မည်"
 
@@ -85,124 +93,124 @@ msgstr "ချုံ့နေသည်: {percent}%"
 #: compressionManager.py:110
 #: compressionManager.py:282
 msgid "Compression cancelled"
-msgstr "ချုံ့မှု ပယ်ဖျက်ပြီ"
+msgstr "ချုံ့ခြင်းကို ဖျက်သိမ်းပြီး"
 
 #: compressionManager.py:112
 #: compressionManager.py:285
 msgid "Compression completed {name}"
-msgstr "{name} ချုံ့မှု ပြီးဆုံးပြီ"
+msgstr "ချုံ့ခြင်း ပြီးဆုံးပြီး {name}"
 
-#: __init__.py:500
+#: __init__.py:728
 msgid "Compression manager not available"
-msgstr "ချုံ့မှု မန်နေဂျာ မရရှိ"
+msgstr "ချုံ့မှုမန်နေဂျာ မရှိပါ"
 
 #: compressionManager.py:86
 msgid "Compression timed out"
-msgstr "ချုံ့မှု အချိန်ကုန်သွားပြီ"
+msgstr "ချုံ့ခြင်း အချိန်ကုန်သွားသည်"
 
 #: clipboardManager.py:133
 msgid "Content from 1 file copied to clipboard"
-msgstr "ဖိုင် ၁ ခုမှ အကြောင်းအရာကို ကလစ်ဘုတ်သို့ ကူးယူပြီ"
+msgstr "ဖိုင် ၁ ခုမှ အကြောင်းအရာကို ကလစ်ဘုတ်သို့ ကူးယူပြီး"
 
 #: clipboardManager.py:135
 msgid "Content from {count} files copied to clipboard"
-msgstr "ဖိုင် {count} ခုမှ အကြောင်းအရာကို ကလစ်ဘုတ်သို့ ကူးယူပြီ"
+msgstr "ဖိုင် {count} ခုမှ အကြောင်းအရာကို ကလစ်ဘုတ်သို့ ကူးယူပြီး"
 
-#: __init__.py:607
-#: __init__.py:673
+#: __init__.py:835
+#: __init__.py:901
 msgid "Context menu manager not available"
-msgstr "ဆက်စပ်မီနူး မန်နေဂျာ မရရှိ"
+msgstr "ဆက်စပ်မီနူးမန်နေဂျာ မရှိပါ"
 
-#: case.py:115
+#: folderTools.py:937
 msgid "Conversion already in progress"
-msgstr "ပြောင်းလဲမှု လုပ်ဆောင်နေပြီးသား"
+msgstr "ပြောင်းလဲခြင်း လုပ်ဆောင်နေပြီးသား"
 
-#: case.py:132
+#: folderTools.py:954
 msgid "Converting"
 msgstr "ပြောင်းလဲနေသည်"
 
 #: clipboardManager.py:44
 msgid "Copied 1 item name to clipboard"
-msgstr "ပစ္စည်း ၁ ခု၏ အမည်ကို ကလစ်ဘုတ်သို့ ကူးယူပြီ"
+msgstr "ပစ္စည်း ၁ ခု၏ အမည်ကို ကလစ်ဘုတ်သို့ ကူးယူပြီး"
 
 #: clipboardManager.py:46
 msgid "Copied {count} item names to clipboard"
-msgstr "ပစ္စည်း {count} ခု၏ အမည်များကို ကလစ်ဘုတ်သို့ ကူးယူပြီ"
+msgstr "ပစ္စည်း {count} ခု၏ အမည်များကို ကလစ်ဘုတ်သို့ ကူးယူပြီး"
 
-#: __init__.py:396
+#: __init__.py:624
 msgid "Copied: {path}"
-msgstr "ကူးယူပြီ: {path}"
+msgstr "ကူးယူပြီး: {path}"
 
-#: contextMenu.py:29
+#: contextMenu.py:28
 msgid "Copy address bar"
 msgstr "လိပ်စာဘား ကူးယူမည်"
 
-#: contextMenu.py:30
+#: contextMenu.py:29
 msgid "Copy content"
 msgstr "အကြောင်းအရာ ကူးယူမည်"
 
-#: __init__.py:483
+#: __init__.py:711
 msgid "Copy content (single tap) or invert selection (double tap)"
 msgstr "အကြောင်းအရာ ကူးယူရန် (တစ်ချက်နှိပ်) သို့မဟုတ် ရွေးချယ်မှု ပြောင်းပြန်လုပ်ရန် (နှစ်ချက်နှိပ်)"
 
-#: contextMenu.py:31
+#: contextMenu.py:30
 msgid "Copy selected file and folder names"
-msgstr "ရွေးထားသော ဖိုင်နှင့် ဖိုဒါအမည်များကို ကူးယူမည်"
+msgstr "ရွေးထားသော ဖိုင်နှင့် ဖိုဒါအမည်များ ကူးယူမည်"
 
-#: __init__.py:443
+#: __init__.py:671
 msgid "Copy selected names (single tap) or copy address bar (double tap)"
-msgstr "ရွေးထားသောအမည်များ ကူးယူရန် (တစ်ချက်နှိပ်) သို့မဟုတ် လိပ်စာဘား ကူးယူရန် (နှစ်ချက်နှိပ်)"
+msgstr "ရွေးထားသောအမည်များကို ကူးယူရန် (တစ်ချက်နှိပ်) သို့မဟုတ် လိပ်စာဘားကို ကူးယူရန် (နှစ်ချက်နှိပ်)"
 
-#: __init__.py:400
+#: __init__.py:628
 #: clipboardManager.py:50
 #: clipboardManager.py:139
 msgid "Could not open clipboard"
-msgstr "ကလစ်ဘုတ် ဖွင့်၍မရပါ"
+msgstr "ကလစ်ဘုတ်ကို မဖွင့်နိုင်ပါ"
 
-#: contextMenu.py:24
+#: contextMenu.py:23
 #: createFile.py:17
 msgid "Create File"
-msgstr "ဖိုင် ဖန်တီးမည်"
+msgstr "ဖိုင်ဖန်တီးမည်"
 
-#: folder_creation_dialog.py:16
+#: folderTools.py:128
 msgid "Create Multiple Folders"
 msgstr "ဖိုဒါများစွာ ဖန်တီးမည်"
 
-#: contextMenu.py:42
+#: contextMenu.py:40
 msgid "Create Multiple Folders..."
 msgstr "ဖိုဒါများစွာ ဖန်တီးမည်..."
 
-#: folder_creation_dialog.py:45
+#: folderTools.py:157
 msgid "Create main folder and then subfolders"
-msgstr "ပင်မဖိုဒါ ဖန်တီးပြီးနောက် အတွင်းဖိုဒါများ ဖန်တီးမည်"
+msgstr "ပင်မဖိုဒါ ဖန်တီးပြီး အောက်ဖိုဒါများ ဖန်တီးမည်"
 
-#: __init__.py:651
+#: __init__.py:879
 msgid "Create new folder and paste clipboard content into rename field"
-msgstr "ဖိုဒါအသစ် ဖန်တီးပြီး ကလစ်ဘုတ်အကြောင်းအရာကို အမည်ပြောင်းကွက်လပ်တွင် ကူးထည့်မည်"
+msgstr "ဖိုဒါအသစ်ဖန်တီးပြီး ကလစ်ဘုတ်အကြောင်းအရာကို အမည်ပြောင်းကွက်လပ်တွင် ကူးထည့်မည်"
 
-#: folder_creation_dialog.py:212
+#: folderTools.py:324
 msgid "Created {count} of {total} folders..."
-msgstr "စုစုပေါင်း {total} ခုအနက် {count} ခု ဖန်တီးပြီ..."
+msgstr "{total} ခုအနက် {count} ခု ဖန်တီးပြီး..."
 
-#: folder_creation_dialog.py:199
+#: folderTools.py:311
 msgid "Creating folders in background..."
 msgstr "နောက်ခံတွင် ဖိုဒါများ ဖန်တီးနေသည်..."
 
-#: folder_creation_dialog.py:49
+#: folderTools.py:161
 msgid "Edit individual folder names"
-msgstr "ဖိုဒါအမည်များကို တစ်ခုချင်း တည်းဖြတ်မည်"
+msgstr "တစ်ခုချင်းစီ၏ ဖိုဒါအမည်များကို ပြင်ဆင်မည်"
 
-#: folderInfo.py:71
+#: folderTools.py:120
 msgid "Error calculating folder info"
 msgstr "ဖိုဒါအချက်အလက် တွက်ချက်ရာတွင် အမှား"
 
-#: fileOperations.py:248
+#: fileOperations.py:294
 msgid "Error calculating size"
 msgstr "အရွယ်အစား တွက်ချက်ရာတွင် အမှား"
 
 #: compressionManager.py:196
 msgid "Error compressing files"
-msgstr "ဖိုင်များချုံ့ရာတွင် အမှား"
+msgstr "ဖိုင်များကို ချုံ့ရာတွင် အမှား"
 
 #: clipboardManager.py:142
 msgid "Error copying file content"
@@ -210,80 +218,84 @@ msgstr "ဖိုင်အကြောင်းအရာ ကူးယူရာ�
 
 #: clipboardManager.py:53
 msgid "Error copying names to clipboard"
-msgstr "အမည်များကို ကလစ်ဘုတ်သို့ ကူးယူရာတွင် အမှား"
+msgstr "ကလစ်ဘုတ်သို့ အမည်များ ကူးယူရာတွင် အမှား"
 
-#: txt2folder.py:113
+#: folderTools.py:614
 msgid "Error creating base folder"
 msgstr "အခြေခံဖိုဒါ ဖန်တီးရာတွင် အမှား"
 
-#: createFile.py:289
+#: createFile.py:291
 msgid "Error creating files"
 msgstr "ဖိုင်များ ဖန်တီးရာတွင် အမှား"
 
-#: __init__.py:693
+#: __init__.py:921
 msgid "Error creating folders"
 msgstr "ဖိုဒါများ ဖန်တီးရာတွင် အမှား"
 
-#: folder_creation_dialog.py:190
+#: folderTools.py:302
 msgid "Error creating main folder"
 msgstr "ပင်မဖိုဒါ ဖန်တီးရာတွင် အမှား"
 
-#: __init__.py:737
+#: __init__.py:965
 msgid "Error during conversion"
-msgstr "ပြောင်းလဲစဉ်တွင် အမှား"
+msgstr "ပြောင်းလဲစဉ် အမှား"
 
 #: compressionManager.py:117
 msgid "Error in compression process: {error}"
-msgstr "ချုံ့မှုလုပ်ငန်းစဉ်တွင် အမှား: {error}"
+msgstr "ချုံ့ခြင်းလုပ်ငန်းစဉ်တွင် အမှား: {error}"
 
-#: selectionManager.py:71
+#: folderTools.py:804
 msgid "Error inverting selection"
 msgstr "ရွေးချယ်မှု ပြောင်းပြန်လုပ်ရာတွင် အမှား"
 
 #: createFile.py:245
 msgid "Error opening create file dialog"
-msgstr "ဖိုင်ဖန်တီးရန် ဒိုင်ယာလော့ဂ် ဖွင့်ရာတွင် အမှား"
+msgstr "ဖိုင်ဖန်တီးဒိုင်ယာလော့ခ် ဖွင့်ရာတွင် အမှား"
 
-#: fileOperations.py:304
+#: fileOperations.py:350
 msgid "Error opening rename dialog"
-msgstr "အမည်ပြောင်းရန် ဒိုင်ယာလော့ဂ် ဖွင့်ရာတွင် အမှား"
+msgstr "အမည်ပြောင်းဒိုင်ယာလော့ခ် ဖွင့်ရာတွင် အမှား"
 
-#: __init__.py:667
+#: __init__.py:895
 msgid "Error opening settings"
 msgstr "ဆက်တင်များ ဖွင့်ရာတွင် အမှား"
 
-#: txt2folder.py:203
+#: folderTools.py:704
 msgid "Error processing text file: {}"
 msgstr "စာသားဖိုင် လုပ်ဆောင်ရာတွင် အမှား: {}"
 
-#: txt2folder.py:80
+#: folderTools.py:581
 msgid "Error reading RTF file"
 msgstr "RTF ဖိုင် ဖတ်ရာတွင် အမှား"
 
-#: txt2folder.py:207
+#: folderTools.py:708
 msgid "Error reading file encoding"
 msgstr "ဖိုင် encoding ဖတ်ရာတွင် အမှား"
 
-#: fileOperations.py:274
-#: fileOperations.py:301
+#: fileOperations.py:320
+#: fileOperations.py:347
 msgid "Error renaming file"
 msgstr "ဖိုင် အမည်ပြောင်းရာတွင် အမှား"
 
-#: txt2folder.py:212
+#: folderTools.py:713
 msgid "Error: {}"
 msgstr "အမှား: {}"
+
+#: __init__.py:1002
+msgid "Explorer tree dumped to NVDA log"
+msgstr "Explorer tree ကို NVDA log သို့ စွန့်ထုတ်ပြီး"
 
 #: createFile.py:72
 msgid "Extension:"
 msgstr "တိုးချဲ့မှု:"
 
-#: case.py:127
+#: folderTools.py:949
 msgid "Failed to rename any folders"
-msgstr "မည်သည့်ဖိုဒါမှ အမည်မပြောင်းနိုင်ပါ"
+msgstr "မည်သည့်ဖိုဒါကိုမျှ အမည်မပြောင်းနိုင်ပါ"
 
 #: compressionManager.py:188
 msgid "Failed to start compression"
-msgstr "ချုံ့မှု စတင်ရန် မအောင်မြင်"
+msgstr "ချုံ့ခြင်းစတင်ရန် မအောင်မြင်"
 
 #: createFile.py:138
 msgid "File count cannot exceed 10"
@@ -299,9 +311,9 @@ msgstr "ဖိုင်အမည်"
 
 #: fileOperations.py:59
 msgid "File name cannot be empty"
-msgstr "ဖိုင်အမည် ဗလာမဖြစ်ရ"
+msgstr "ဖိုင်အမည်သည် ဗလာမဖြစ်ရ"
 
-#: fileOperations.py:291
+#: fileOperations.py:337
 msgid "File name not changed"
 msgstr "ဖိုင်အမည် မပြောင်းလဲပါ"
 
@@ -314,221 +326,243 @@ msgstr "ဖိုင်အမည် {index}:"
 msgid "File name:"
 msgstr "ဖိုင်အမည်:"
 
-#: __init__.py:622
+#: __init__.py:850
 msgid "File operations manager not available"
-msgstr "ဖိုင်လုပ်ဆောင်မှု မန်နေဂျာ မရရှိ"
+msgstr "ဖိုင်လုပ်ဆောင်ချက်မန်နေဂျာ မရှိပါ"
 
-#: fileOperations.py:298
+#: fileOperations.py:344
 msgid "File renamed to {name}"
-msgstr "ဖိုင်အမည်ကို {name} သို့ ပြောင်းပြီ"
+msgstr "ဖိုင်ကို {name} ဟု အမည်ပြောင်းပြီး"
 
-#: folder_creation_dialog.py:115
-#: folder_creation_dialog.py:155
+#: robocopyManager.py:448
+msgid "Finished {n} of {total}: {name}"
+msgstr "{total} ခုအနက် {n} ခု ပြီးဆုံးပြီး: {name}"
+
+#: folderTools.py:227
+#: folderTools.py:267
 msgid "Folder"
 msgstr "ဖိုဒါ"
 
-#: txt2folder.py:104
-#: txt2folder.py:174
+#: folderTools.py:605
+#: folderTools.py:675
 msgid "Folder '{}' already exists, creating '{}' instead"
-msgstr "ဖိုဒါ '{}' ရှိပြီးသား၊ '{}' ကို အစားထိုး ဖန်တီးနေသည်"
+msgstr "ဖိုဒါ '{}' ရှိပြီးသား၊ '{}' ကို အစားထိုးဖန်တီးနေသည်"
 
-#: __init__.py:677
+#: __init__.py:905
 msgid "Folder creation dialog not available"
-msgstr "ဖိုဒါဖန်တီးရန် ဒိုင်ယာလော့ဂ် မရရှိ"
+msgstr "ဖိုဒါဖန်တီးဒိုင်ယာလော့ခ် မရှိပါ"
 
-#: __init__.py:639
+#: __init__.py:867
 msgid "Folder creator helper not available"
-msgstr "ဖိုဒါဖန်တီးရန် အကူ မရရှိ"
+msgstr "ဖိုဒါဖန်တီးကူညီကိရိယာ မရှိပါ"
 
-#: contextMenu.py:52
+#: contextMenu.py:131
+#: contextMenu.py:134
+#: contextMenu.py:155
 msgid "Folder info"
 msgstr "ဖိုဒါအချက်အလက်"
 
-#: folder_creation_dialog.py:30
+#: folderTools.py:142
 msgid "Folder title:"
 msgstr "ဖိုဒါခေါင်းစဉ်:"
 
-#: contextMenu.py:49
-msgid "Headline Case"
-msgstr "ခေါင်းစဉ်စာလုံးအကြီးအသေး"
-
-#: folder_creation_dialog.py:166
-msgid "Invalid number for folders"
-msgstr "ဖိုဒါများအတွက် နံပါတ်မမှန်ကန်"
-
-#: contextMenu.py:28
-msgid "Invert selection"
-msgstr "ရွေးချယ်မှု ပြောင်းပြန်"
-
 #: contextMenu.py:47
+msgid "Headline Case"
+msgstr "ခေါင်းစီးစာလုံးအကြီး"
+
+#: folderTools.py:278
+msgid "Invalid number for folders"
+msgstr "ဖိုဒါများအတွက် မမှန်ကန်သော ဂဏန်း"
+
+#: contextMenu.py:27
+msgid "Invert selection"
+msgstr "ရွေးချယ်မှု ပြောင်းပြန်လုပ်မည်"
+
+#: contextMenu.py:45
 msgid "Lowercase"
 msgstr "စာလုံးအသေး"
 
-#: folder_creation_dialog.py:163
+#: folderTools.py:275
 msgid "Maximum 100 folders allowed"
 msgstr "အများဆုံး ဖိုဒါ ၁၀၀ ခွင့်ပြုသည်"
 
-#: __init__.py:681
+#: __init__.py:909
 msgid "No Explorer folder detected"
 msgstr "Explorer ဖိုဒါ မတွေ့ပါ"
 
-#: fileOperations.py:173
-#: fileOperations.py:230
+#: fileOperations.py:219
+#: fileOperations.py:276
 msgid "No access to size data"
-msgstr "အရွယ်အစားဒေတာသို့ ဝင်ရောက်ခွင့် မရှိ"
+msgstr "အရွယ်အစားဒေတာသို့ ဝင်ရောက်ခွင့်မရှိပါ"
 
-#: selectionManager.py:36
+#: folderTools.py:769
 msgid "No active File Explorer window found"
-msgstr "အသက်ဝင်နေသော File Explorer ဝင်းဒိုး မတွေ့ပါ"
+msgstr "အလုပ်လုပ်နေသော File Explorer ဝင်းဒိုး မတွေ့ပါ"
 
 #: clipboardManager.py:127
 msgid "No content could be read from selected files"
-msgstr "ရွေးထားသော ဖိုင်များမှ အကြောင်းအရာ ဖတ်၍မရပါ"
+msgstr "ရွေးထားသော ဖိုင်များမှ အကြောင်းအရာကို မဖတ်နိုင်ပါ"
 
-#: createFile.py:282
+#: createFile.py:284
 msgid "No files were created"
-msgstr "ဖိုင်များ မဖန်တီးရ"
+msgstr "မည်သည့်ဖိုင်မျှ မဖန်တီးပါ"
 
-#: case.py:142
-#: case.py:148
-#: case.py:157
-#: case.py:163
+#: folderTools.py:964
+#: folderTools.py:970
+#: folderTools.py:979
+#: folderTools.py:985
 msgid "No folders found"
-msgstr "ဖိုဒါများ မတွေ့ပါ"
+msgstr "ဖိုဒါ မတွေ့ပါ"
 
-#: __init__.py:703
+#: __init__.py:931
 msgid "No folders selected"
-msgstr "ဖိုဒါများ မရွေးထားပါ"
+msgstr "ဖိုဒါ မရွေးထားပါ"
 
-#: __init__.py:718
+#: __init__.py:946
 msgid "No folders selected or current folder not available"
-msgstr "ဖိုဒါများ မရွေးထားပါ သို့မဟုတ် လက်ရှိဖိုဒါ မရရှိ"
+msgstr "ဖိုဒါ မရွေးထားပါ သို့မဟုတ် လက်ရှိဖိုဒါ မရှိပါ"
 
-#: folder_creation_dialog.py:229
-#: txt2folder.py:148
-#: txt2folder.py:198
+#: folderTools.py:341
+#: folderTools.py:649
+#: folderTools.py:699
 msgid "No folders were created"
-msgstr "ဖိုဒါများ မဖန်တီးရ"
+msgstr "မည်သည့်ဖိုဒါမျှ မဖန်တီးပါ"
 
-#: folderInfo.py:30
+#: folderTools.py:81
 msgid "No item selected"
 msgstr "ပစ္စည်း မရွေးထားပါ"
 
-#: selectionManager.py:49
+#: folderTools.py:782
 msgid "No items in folder"
-msgstr "ဖိုဒါတွင် ပစ္စည်းများ မရှိပါ"
+msgstr "ဖိုဒါတွင် ပစ္စည်းမရှိပါ"
 
 #: clipboardManager.py:27
 #: clipboardManager.py:62
 #: compressionManager.py:148
-#: fileOperations.py:164
-#: fileOperations.py:260
+#: fileOperations.py:210
+#: fileOperations.py:306
 msgid "No items selected"
-msgstr "ပစ္စည်းများ မရွေးထားပါ"
+msgstr "ပစ္စည်း မရွေးထားပါ"
 
 #: clipboardManager.py:79
 msgid "No text files selected"
-msgstr "စာသားဖိုင်များ မရွေးထားပါ"
+msgstr "စာသားဖိုင် မရွေးထားပါ"
 
-#: txt2folder.py:90
-#: txt2folder.py:160
+#: folderTools.py:591
+#: folderTools.py:661
 msgid "No valid folder names found in the file"
 msgstr "ဖိုင်တွင် မှန်ကန်သော ဖိုဒါအမည်များ မတွေ့ပါ"
 
-#: folder_creation_dialog.py:184
+#: folderTools.py:296
 msgid "No valid folder names provided"
 msgstr "မှန်ကန်သော ဖိုဒါအမည်များ မပေးထားပါ"
 
+#: __init__.py:976
+msgid "Not focused on File Explorer"
+msgstr "File Explorer ပေါ်တွင် အာရုံမရောက်ပါ"
+
 #: createFile.py:198
-#: selectionManager.py:30
-#: txt2folder.py:40
+#: folderTools.py:541
+#: folderTools.py:763
 msgid "Not in File Explorer"
 msgstr "File Explorer တွင် မရှိပါ"
 
 #: createFile.py:28
 msgid "Number of files to create:"
-msgstr "ဖန်တီးမည့် ဖိုင်အရေအတွက်:"
+msgstr "ဖန်တီးရမည့် ဖိုင်အရေအတွက်:"
 
-#: folder_creation_dialog.py:160
+#: folderTools.py:272
 msgid "Number of folders must be at least 1"
 msgstr "ဖိုဒါအရေအတွက်သည် အနည်းဆုံး ၁ ဖြစ်ရမည်"
 
-#: folder_creation_dialog.py:38
+#: folderTools.py:150
 msgid "Number of folders:"
 msgstr "ဖိုဒါအရေအတွက်:"
 
-#: __init__.py:616
+#: __init__.py:844
 msgid "Open xPlorer context menu"
 msgstr "xPlorer ဆက်စပ်မီနူး ဖွင့်မည်"
 
-#: txt2folder.py:53
+#: folderTools.py:554
 msgid "Please select a .txt or .rtf file"
 msgstr ".txt သို့မဟုတ် .rtf ဖိုင်ကို ရွေးပါ"
 
-#: fileOperations.py:267
+#: fileOperations.py:313
 msgid "Please select a file, not a folder"
 msgstr "ဖိုင်ကို ရွေးပါ၊ ဖိုဒါမဟုတ်ပါ"
 
-#: fileOperations.py:263
+#: fileOperations.py:309
 msgid "Please select only one file"
 msgstr "ဖိုင်တစ်ခုသာ ရွေးပါ"
 
-#: folderInfo.py:35
-msgid "Please select only one folder"
-msgstr "ဖိုဒါတစ်ခုသာ ရွေးပါ"
-
-#: txt2folder.py:46
+#: folderTools.py:547
 msgid "Please select only one text file"
 msgstr "စာသားဖိုင်တစ်ခုသာ ရွေးပါ"
 
-#: selectionManager.py:58
+#: folderTools.py:791
 msgid "Processing {count} items in background..."
 msgstr "နောက်ခံတွင် ပစ္စည်း {count} ခု လုပ်ဆောင်နေသည်..."
 
-#: __init__.py:633
-#: contextMenu.py:32
+#: __init__.py:861
+#: contextMenu.py:31
 msgid "Rename selected file"
-msgstr "ရွေးထားသော ဖိုင် အမည်ပြောင်းမည်"
+msgstr "ရွေးထားသော ဖိုင်ကို အမည်ပြောင်းမည်"
 
-#: __init__.py:460
+#: __init__.py:688
 msgid "Required manager not available"
-msgstr "လိုအပ်သော မန်နေဂျာ မရရှိ"
+msgstr "လိုအပ်သော မန်နေဂျာ မရှိပါ"
 
-#: contextMenu.py:36
+#: contextMenu.py:34
 msgid "Robocopy"
 msgstr "Robocopy"
 
-#: __init__.py:540
+#: robocopyManager.py:457
+msgid "Robocopy cancelled"
+msgstr "Robocopy ကို ဖျက်သိမ်းပြီး"
+
+#: robocopyManager.py:469
+msgid "Robocopy finished successfully. {n} item(s) copied"
+msgstr "Robocopy အောင်မြင်စွာ ပြီးဆုံးပြီး။ ပစ္စည်း {n} ခု ကူးယူပြီး"
+
+#: robocopyManager.py:465
+msgid "Robocopy finished. {ok} succeeded, {failed} failed: {items}"
+msgstr "Robocopy ပြီးဆုံးပြီး။ {ok} အောင်မြင်၊ {failed} မအောင်ြင်: {items}"
+
+#: __init__.py:768
 msgid "Robocopy manager not available"
-msgstr "Robocopy မန်နေဂျာ မရရှိ"
+msgstr "Robocopy မန်နေဂျာ မရှိပါ"
 
-#: __init__.py:563
+#: __init__.py:791
 msgid "Robocopy: single tap copy, double tap paste, triple tap move"
-msgstr "Robocopy: တစ်ချက်နှိပ် ကူးယူ၊ နှစ်ချက်နှိပ် ကူးထည့်၊ သုံးချက်နှိပ် ရွှေ့"
+msgstr "Robocopy: တစ်ချက်နှိပ် ကူးယူရန်၊ နှစ်ချက်နှိပ် ကူးထည့်ရန်၊ သုံးချက်နှိပ် ရွှေ့ရန်"
 
-#: contextMenu.py:33
+#: contextMenu.py:89
+#: contextMenu.py:100
+#: contextMenu.py:106
+#: contextMenu.py:111
+#: contextMenu.py:117
 msgid "Say size"
 msgstr "အရွယ်အစား ပြောမည်"
 
-#: __init__.py:523
+#: __init__.py:751
 msgid "Say size (single tap) or compress zip (double tap)"
 msgstr "အရွယ်အစား ပြောရန် (တစ်ချက်နှိပ်) သို့မဟုတ် zip ချုံ့ရန် (နှစ်ချက်နှိပ်)"
 
-#: txt2folder.py:58
+#: folderTools.py:559
 msgid "Selected file does not exist"
 msgstr "ရွေးထားသော ဖိုင် မရှိပါ"
 
-#: folderInfo.py:41
+#: folderTools.py:87
 msgid "Selected item is not a folder"
 msgstr "ရွေးထားသော ပစ္စည်းသည် ဖိုဒါမဟုတ်ပါ"
 
-#: selectionManager.py:93
+#: folderTools.py:826
 msgid "Selected {count} items"
-msgstr "ပစ္စည်း {count} ခု ရွေးထားပါ"
+msgstr "{count} ပစ္စည်း ရွေးထားပြီး"
 
-#: selectionManager.py:96
+#: folderTools.py:829
 msgid "Selection inverted"
-msgstr "ရွေးချယ်မှု ပြောင်းပြန်ဖြစ်သွားပါပြီ"
+msgstr "ရွေးချယ်မှု ပြောင်းပြန်လုပ်ပြီး"
 
 #: createFile.py:170
 msgid "Some files will use default names"
@@ -538,64 +572,64 @@ msgstr "အချို့ဖိုင်များသည် ပုံသေ�
 msgid "Starting..."
 msgstr "စတင်နေသည်..."
 
-#: case.py:165
+#: folderTools.py:987
 msgid "Successfully converted {count} folders to headline case"
-msgstr "ဖိုဒါ {count} ခုကို ခေါင်းစဉ်စာလုံးအကြီးအသေးသို့ အောင်မြင်စွာ ပြောင်းပြီ"
+msgstr "{count} ဖိုဒါကို ခေါင်းစီးစာလုံးအကြီးသို့ အောင်မြင်စွာ ပြောင်းပြီး"
 
-#: case.py:150
+#: folderTools.py:972
 msgid "Successfully converted {count} folders to lowercase"
-msgstr "ဖိုဒါ {count} ခုကို စာလုံးအသေးသို့ အောင်မြင်စွာ ပြောင်းပြီ"
+msgstr "{count} ဖိုဒါကို စာလုံးအသေးသို့ အောင်မြင်စွာ ပြောင်းပြီး"
 
-#: case.py:159
+#: folderTools.py:981
 msgid "Successfully converted {count} folders to title case"
-msgstr "ဖိုဒါ {count} ခုကို ခေါင်းစဉ်စာလုံးအကြီးအသေးသို့ အောင်မြင်စွာ ပြောင်းပြီ"
+msgstr "{count} ဖိုဒါကို ခေါင်းစဉ်စာလုံးအကြီးသို့ အောင်မြင်စွာ ပြောင်းပြီး"
 
-#: case.py:144
+#: folderTools.py:966
 msgid "Successfully converted {count} folders to uppercase"
-msgstr "ဖိုဒါ {count} ခုကို စာလုံးအကြီးသို့ အောင်မြင်စွာ ပြောင်းပြီ"
+msgstr "{count} ဖိုဒါကို စာလုံးအကြီးသို့ အောင်မြင်စွာ ပြောင်းပြီး"
 
-#: folder_creation_dialog.py:225
+#: folderTools.py:337
 msgid "Successfully created 1 folder"
-msgstr "ဖိုဒါ ၁ ခုကို အောင်မြင်စွာ ဖန်တီးပြီ"
+msgstr "ဖိုဒါ ၁ ခုကို အောင်မြင်စွာ ဖန်တီးပြီး"
 
-#: folder_creation_dialog.py:223
+#: folderTools.py:335
 msgid "Successfully created main folder only"
-msgstr "ပင်မဖိုဒါတစ်ခုတည်းကို အောင်မြင်စွာ ဖန်တီးပြီ"
+msgstr "ပင်မဖိုဒါကိုသာ အောင်မြင်စွာ ဖန်တီးပြီး"
 
-#: folder_creation_dialog.py:227
+#: folderTools.py:339
 msgid "Successfully created {count} of {total} folders"
-msgstr "စုစုပေါင်း {total} ခုအနက် {count} ခုကို အောင်မြင်စွာ ဖန်တီးပြီ"
+msgstr "{total} ခုအနက် {count} ခုကို အောင်မြင်စွာ ဖန်တီးပြီး"
 
-#: txt2folder.py:144
-#: txt2folder.py:194
+#: folderTools.py:645
+#: folderTools.py:695
 msgid "Successfully created {} folders in '{}'"
-msgstr "'{}' တွင် ဖိုဒါ {} ခုကို အောင်မြင်စွာ ဖန်တီးပြီ"
+msgstr "'{}' တွင် {} ဖိုဒါကို အောင်မြင်စွာ ဖန်တီးပြီး"
 
-#: contextMenu.py:41
+#: contextMenu.py:39
 msgid "TXT to Folder"
 msgstr "TXT မှ ဖိုဒါသို့"
 
-#: contextMenu.py:48
+#: contextMenu.py:46
 msgid "Title Case"
-msgstr "ခေါင်းစဉ်စာလုံးအကြီးအသေး"
+msgstr "ခေါင်းစဉ်စာလုံးအကြီး"
 
 #: clipboardManager.py:88
 msgid "Total file size is too large to copy content"
-msgstr "စုစုပေါင်းဖိုင်အရွယ်အစားသည် အကြောင်းအရာကူးယူရန် ကြီးလွန်းသည်"
+msgstr "စုစုပေါင်းဖိုင်အရွယ်အစား ကြီးလွန်း၍ အကြောင်းအရာ ကူးယူ၍မရပါ"
 
 #: createFile.py:213
 msgid "Unable to get current directory after multiple attempts"
 msgstr "ကြိုးစားမှုများစွာပြီးနောက် လက်ရှိ directory ကို ရယူ၍မရပါ"
 
-#: __init__.py:402
+#: __init__.py:630
 msgid "Unable to get current path"
 msgstr "လက်ရှိ path ကို ရယူ၍မရပါ"
 
-#: selectionManager.py:41
+#: folderTools.py:774
 msgid "Unable to get folder view"
 msgstr "ဖိုဒါမြင်ကွင်းကို ရယူ၍မရပါ"
 
-#: contextMenu.py:46
+#: contextMenu.py:44
 msgid "Uppercase"
 msgstr "စာလုံးအကြီး"
 
@@ -605,55 +639,79 @@ msgstr "[RTF ဖိုင် လုပ်ဆောင်ရာတွင် အ�
 
 #: clipboardManager.py:106
 msgid "[RTF content - striprtf module not available]"
-msgstr "[RTF အကြောင်းအရာ - striprtf module မရရှိ]"
+msgstr "[RTF အကြောင်းအရာ - striprtf module မရှိပါ]"
 
 #: compressionManager.py:114
 msgid "compression failed"
-msgstr "ချုံ့မှု မအောင်မြင်"
+msgstr "ချုံ့ခြင်း မအောင်ြင်"
 
-#: contextMenu.py:37
+#: contextMenu.py:35
 msgid "copy"
-msgstr "ကူးယူ"
+msgstr "ကူးယူမည်"
 
-#: contextMenu.py:38
+#: robocopyManager.py:235
+msgid "estimating time remaining"
+msgstr "ကျန်အချိန် ခန့်မှန်းနေသည်"
+
+#: contextMenu.py:36
 msgid "move"
-msgstr "ရွှေ့"
+msgstr "ရွှေ့မည်"
 
 #: createFile.py:156
 msgid "new_file"
-msgstr "ဖိုင်အသစ်"
+msgstr "ဖိုင်_အသစ်"
 
 #: createFile.py:158
 msgid "new_file_{index}"
-msgstr "ဖိုင်အသစ်_{index}"
+msgstr "ဖိုင်_အသစ်_{index}"
 
-#: contextMenu.py:39
+#: contextMenu.py:37
 msgid "paste"
-msgstr "ကူးထည့်"
+msgstr "ကူးထည့်မည်"
 
-#: __init__.py:110
-#: __init__.py:444
-#: __init__.py:484
-#: __init__.py:524
-#: __init__.py:564
-#: __init__.py:617
-#: __init__.py:634
-#: __init__.py:652
+#: __init__.py:268
+#: __init__.py:672
+#: __init__.py:712
+#: __init__.py:752
+#: __init__.py:792
+#: __init__.py:845
+#: __init__.py:862
+#: __init__.py:880
 msgid "xPlorer"
 msgstr "xPlorer"
 
-#: contextMenu.py:51
+#: contextMenu.py:49
 msgid "xPlorer Settings"
 msgstr "xPlorer ဆက်တင်များ"
 
-#: createFile.py:286
+#: createFile.py:288
 msgid "{count} files created"
-msgstr "ဖိုင် {count} ခု ဖန်တီးပြီ"
+msgstr "ဖိုင် {count} ခု ဖန်တီးပြီး"
 
-#: fileOperations.py:237
+#: fileOperations.py:283
 msgid "{count} items {size}"
 msgstr "ပစ္စည်း {count} ခု {size}"
 
-#: folderInfo.py:62
+#: robocopyManager.py:240
+msgid "{h}h {m}m remaining"
+msgstr "{h}န {m}မ ကျန်"
+
+#: robocopyManager.py:242
+msgid "{m}m {s}s remaining"
+msgstr "{m}မ {s}စ ကျန်"
+
+#: robocopyManager.py:304
+msgid "{pct}% - item {idx}/{total}: {name}"
+msgstr "{pct}% - ပစ္စည်း {idx}/{total}: {name}"
+
+#: folderTools.py:111
 msgid "{subfolders} subfolders and {files} files"
-msgstr "အတွင်းဖိုဒါ {subfolders} ခုနှင့် ဖိုင် {files} ခု"
+msgstr "အောက်ဖိုဒါ {subfolders} ခု နှင့် ဖိုင် {files} ခု"
+
+#: contextMenu.py:150
+msgid "{subfolders} subfolders, {files} files"
+msgstr "အောက်ဖိုဒါ {subfolders} ခု၊ ဖိုင် {files} ခု"
+
+#: robocopyManager.py:243
+msgid "{s}s remaining"
+msgstr "{s}စ ကျန်"

@@ -1,4 +1,6 @@
 # xPlorerManager.py
+# Copyright (C) 2026 Chai Chaimee
+# Licensed under GNU General Public License. See COPYING.txt for details.
 
 import ui
 import api
@@ -11,7 +13,7 @@ import gui
 import wx
 import gui.guiHelper
 from gui.settingsDialogs import SettingsPanel
-from .config import loadConfig, saveConfig
+from .folderTools import loadConfig, saveConfig
 import core
 import speechDictHandler
 from speechDictHandler import SpeechDictEntry
@@ -77,6 +79,7 @@ class xPlorerSettingsPanel(SettingsPanel):
 		}
 		saveConfig(conf)
 		if _global_plugin_instance and hasattr(_global_plugin_instance, 'manager'):
+			_global_plugin_instance.manager._invalidateConfigCache()
 			_global_plugin_instance.manager._update_speech_dict_for_title()
 
 # ----------------------------------------------------------------------
@@ -112,10 +115,28 @@ class ExplorerManager:
 		self._speech_dict_task = None
 		self._homeview_focus_task = None   # store handle of scheduled set_focus
 
+		# getConfig() runs on essentially every object that gains focus in
+		# Explorer (chooseNVDAObjectOverlayClasses, _perform_auto_select),
+		# but loadConfig() is a disk read - on a slow/portable/removable
+		# drive that adds up fast. A short TTL cache avoids re-reading the
+		# same unchanged file dozens of times a second during normal
+		# navigation, without noticeably delaying a real settings change.
+		self._config_cache = None
+		self._config_cache_time = 0.0
+
 		self._update_speech_dict_for_title()
 
 	def getConfig(self):
-		return loadConfig()
+		now = time.time()
+		if self._config_cache is not None and now - self._config_cache_time < 1.0:
+			return self._config_cache
+		self._config_cache = loadConfig()
+		self._config_cache_time = now
+		return self._config_cache
+
+	def _invalidateConfigCache(self):
+		self._config_cache = None
+		self._config_cache_time = 0.0
 
 	def _update_speech_dict_for_title(self):
 		current_task = object()
@@ -214,6 +235,54 @@ class ExplorerManager:
 		except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError):
 			return False
 
+	def _cancelHomeViewFocusTask(self):
+		if self._homeview_focus_task:
+			self._homeview_focus_task.Stop()
+			self._homeview_focus_task = None
+
+	def _scheduleHomeViewFocus(self, paneObj):
+		"""Explorer's Home view sometimes needs a nudge into its second child
+		shortly after gaining focus. The correction is scheduled 200ms out,
+		so it must re-validate everything at fire time rather than trusting
+		what was true when it was scheduled."""
+		self._cancelHomeViewFocusTask()
+		expected_hwnd = getattr(paneObj, "windowHandle", None)
+		pane_ref = paneObj
+
+		def set_focus():
+			if self._isForeignDialogOpen():
+				return
+			try:
+				fg = api.getForegroundObject()
+				if not fg or not fg.appModule or fg.appModule.appName != "explorer":
+					return
+				if expected_hwnd is not None and getattr(fg, "windowHandle", None) != expected_hwnd:
+					return
+				# hwnd alone is not enough proof: on a tabbed Explorer window
+				# the hwnd stays identical across tabs, so a tab switch away
+				# from Home in the last 200ms would otherwise slip past the
+				# check above undetected. Re-check the LIVE focus target.
+				liveFocus = api.getFocusObject()
+				if not liveFocus or liveFocus.appModule is None or liveFocus.appModule.appName != "explorer":
+					return
+				stillOnHomeView = False
+				probe = liveFocus
+				for _ in range(4):
+					if probe is None:
+						break
+					if getattr(probe, "UIAAutomationId", None) == "HomeListView":
+						stillOnHomeView = True
+						break
+					probe = getattr(probe, "parent", None)
+				if not stillOnHomeView:
+					return
+				if pane_ref.firstChild and pane_ref.firstChild.children and len(pane_ref.firstChild.children) > 1:
+					pane_ref.firstChild.children[1].setFocus()
+			except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError):
+				pass
+
+		self._homeview_focus_task = core.callLater(200, set_focus)
+
 	# ------------------------------------------------------------------
 	# Detect if any foreign dialog or frame is currently open.
 	# Excludes NVDA's main window and xPlorer's own folder creation dialog.
@@ -231,10 +300,7 @@ class ExplorerManager:
 	def terminate(self):
 		self._speech_dict_task = None
 		self._foreground_task = None
-		# Cancel any pending focus task
-		if self._homeview_focus_task:
-			self._homeview_focus_task.Stop()
-			self._homeview_focus_task = None
+		self._cancelHomeViewFocusTask()
 
 		if self._temp_entry is not None:
 			try:
@@ -310,38 +376,31 @@ class ExplorerManager:
 					self._explorer_focused = False
 					self._update_speech_dict_for_title()
 
+			# NOTE: this check must run BEFORE _isValidExplorerContext below.
+			# The Home view's outer container reports Role.PANE, which
+			# _isValidExplorerContext (LIST/LISTITEM only) always rejects -
+			# previously this whole block sat after that check and could
+			# never execute at all.
+			if appName == "explorer":
+				try:
+					if (obj.role == Role.PANE and obj.firstChild
+							and hasattr(obj.firstChild, "UIAAutomationId")):
+						if obj.firstChild.UIAAutomationId == "HomeListView":
+							self._scheduleHomeViewFocus(obj)
+						else:
+							self._cancelHomeViewFocusTask()
+				except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError):
+					pass
+
 			if not self._isValidExplorerContext(obj):
 				nextHandler()
 				return
 
-			try:
-				if obj.role == Role.PANE and obj.firstChild and hasattr(obj.firstChild, "UIAAutomationId"):
-					if obj.firstChild.UIAAutomationId == "HomeListView":
-						# Cancel previous task if any
-						if self._homeview_focus_task:
-							self._homeview_focus_task.Stop()
-							self._homeview_focus_task = None
-
-						expected_hwnd = getattr(obj, "windowHandle", None)
-						pane_ref = obj
-
-						def set_focus():
-							if self._isForeignDialogOpen():
-								return
-							try:
-								fg = api.getForegroundObject()
-								if not fg or not fg.appModule or fg.appModule.appName != "explorer":
-									return
-								if expected_hwnd is not None and getattr(fg, "windowHandle", None) != expected_hwnd:
-									return
-								if pane_ref.firstChild and pane_ref.firstChild.children and len(pane_ref.firstChild.children) > 1:
-									pane_ref.firstChild.children[1].setFocus()
-							except Exception:
-								pass
-
-						self._homeview_focus_task = core.callLater(200, set_focus)
-			except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError):
-				pass
+			# A real file/list focus event (e.g. focus landing directly on a
+			# LIST/LISTITEM in a different tab, with no intervening PANE
+			# gainFocus) also means any pending Home-view correction from a
+			# moment ago is stale and must not fire later.
+			self._cancelHomeViewFocusTask()
 
 			nextHandler()
 		except (ComTypesCOMError, CtypesCOMError) as e:
@@ -368,9 +427,7 @@ class ExplorerManager:
 		if obj and obj.appModule and obj.appModule.appName == "explorer":
 			# If a foreign dialog is open, immediately cancel any pending set_focus task
 			if self._isForeignDialogOpen():
-				if self._homeview_focus_task:
-					self._homeview_focus_task.Stop()
-					self._homeview_focus_task = None
+				self._cancelHomeViewFocusTask()
 				log.debug("Foreign dialog detected, ignoring Explorer foreground event")
 				return
 

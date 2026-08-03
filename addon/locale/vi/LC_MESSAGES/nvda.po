@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: xPlorer 2026.7.0\n"
+"Project-Id-Version: xPlorer 2026.8.5\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-06-24 13:09+0700\n"
+"POT-Creation-Date: 2026-08-03 06:13+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Vietnamese\n"
@@ -12,648 +12,706 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: DevOn Addon\n"
 
-#: folder_creation_dialog.py:62
+#: robocopyManager.py:464
+msgid " and {n} more"
+msgstr " اور {n} مزید"
+
+#: folderTools.py:174
 msgid "&Apply"
-msgstr "&Áp dụng"
+msgstr "&لاگو کریں"
 
-#: folder_creation_dialog.py:63
+#: folderTools.py:175
 msgid "&Cancel"
-msgstr "&Hủy"
+msgstr "&منسوخ کریں"
 
-#: createFile.py:284
+#: createFile.py:286
 msgid "1 file created"
-msgstr "Đã tạo 1 tập tin"
+msgstr "1 فائل بن گئی"
 
-#: fileOperations.py:294
+#: fileOperations.py:340
 msgid "A file with this name already exists"
-msgstr "Tập tin với tên này đã tồn tại"
+msgstr "اس نام سے ایک فائل پہلے سے موجود ہے"
 
 #: compressionManager.py:288
 msgid "Built-in compression failed: {error}"
-msgstr "Nén tích hợp thất bại: {error}"
+msgstr "بلٹ ان کمپریشن ناکام: {error}"
+
+#: robocopyManager.py:323
+msgid "Calculating total size..."
+msgstr "کل حجم کا حساب لگ رہا ہے..."
 
 #: clipboardManager.py:66
 msgid "Cannot copy content of folders, please select files only"
-msgstr "Không thể sao chép nội dung của thư mục, vui lòng chỉ chọn tập tin"
+msgstr "فولڈرز کا مواد کاپی نہیں کیا جا سکتا، براہ کرم صرف فائلیں منتخب کریں"
 
 #: createFile.py:271
 msgid "Cannot find unique name for: {name}"
-msgstr "Không thể tìm tên duy nhất cho: {name}"
+msgstr "کے لیے منفرد نام نہیں مل سکا: {name}"
 
-#: __init__.py:660
+#: __init__.py:888
 msgid "Cannot open settings dialog"
-msgstr "Không thể mở hộp thoại cài đặt"
+msgstr "ترتیبات کا ڈائیلاگ نہیں کھل سکا"
 
-#: txt2folder.py:69
+#: folderTools.py:570
 msgid "Cannot process RTF file: striprtf module not available"
-msgstr "Không thể xử lý tập tin RTF: mô-đun striprtf không có sẵn"
+msgstr "RTF فائل پر کارروائی نہیں ہو سکی: striprtf ماڈیول دستیاب نہیں"
 
-#: contextMenu.py:45
+#: contextMenu.py:43
 msgid "Case Converter for Folders"
-msgstr "Công cụ chuyển đổi kiểu chữ cho thư mục"
+msgstr "فولڈرز کے لیے کیس کنورٹر"
 
-#: __init__.py:699
+#: __init__.py:927
 msgid "Case converter not available"
-msgstr "Công cụ chuyển đổi kiểu chữ không có sẵn"
+msgstr "کیس کنورٹر دستیاب نہیں"
 
-#: __init__.py:420
+#: __init__.py:648
 msgid "Clipboard manager not available"
-msgstr "Trình quản lý bảng tạm không có sẵn"
+msgstr "کلپ بورڈ مینیجر دستیاب نہیں"
 
 #: compressionManager.py:284
 msgid "Completed"
-msgstr "Đã hoàn thành"
+msgstr "مکمل"
 
-#: contextMenu.py:27
+#: contextMenu.py:26
 msgid "Compress zip"
-msgstr "Nén zip"
+msgstr "زیپ کمپریس کریں"
 
 #: compressionManager.py:160
 #: compressionManager.py:168
 msgid "Compressing files"
-msgstr "Đang nén tập tin"
+msgstr "فائلیں کمپریس ہو رہی ہیں"
 
 #: compressionManager.py:75
 msgid "Compressing..."
-msgstr "Đang nén..."
+msgstr "کمپریس ہو رہا ہے..."
 
 #: compressionManager.py:263
 #: compressionManager.py:277
 msgid "Compressing: {percent}%"
-msgstr "Đang nén: {percent}%"
+msgstr "کمپریس: {percent}%"
 
 #: compressionManager.py:110
 #: compressionManager.py:282
 msgid "Compression cancelled"
-msgstr "Đã hủy nén"
+msgstr "کمپریشن منسوخ"
 
 #: compressionManager.py:112
 #: compressionManager.py:285
 msgid "Compression completed {name}"
-msgstr "Đã nén xong {name}"
+msgstr "کمپریشن مکمل {name}"
 
-#: __init__.py:500
+#: __init__.py:728
 msgid "Compression manager not available"
-msgstr "Trình quản lý nén không có sẵn"
+msgstr "کمپریشن مینیجر دستیاب نہیں"
 
 #: compressionManager.py:86
 msgid "Compression timed out"
-msgstr "Quá thời gian nén"
+msgstr "کمپریشن کا وقت ختم"
 
 #: clipboardManager.py:133
 msgid "Content from 1 file copied to clipboard"
-msgstr "Nội dung từ 1 tập tin đã được sao chép vào bảng tạm"
+msgstr "1 فائل کا مواد کلپ بورڈ پر کاپی ہو گیا"
 
 #: clipboardManager.py:135
 msgid "Content from {count} files copied to clipboard"
-msgstr "Nội dung từ {count} tập tin đã được sao chép vào bảng tạm"
+msgstr "{count} فائلوں کا مواد کلپ بورڈ پر کاپی ہو گیا"
 
-#: __init__.py:607
-#: __init__.py:673
+#: __init__.py:835
+#: __init__.py:901
 msgid "Context menu manager not available"
-msgstr "Trình quản lý menu ngữ cảnh không có sẵn"
+msgstr "سیاق و سباق کا مینیجر دستیاب نہیں"
 
-#: case.py:115
+#: folderTools.py:937
 msgid "Conversion already in progress"
-msgstr "Quá trình chuyển đổi đã diễn ra"
+msgstr "تبدیلی پہلے سے جاری ہے"
 
-#: case.py:132
+#: folderTools.py:954
 msgid "Converting"
-msgstr "Đang chuyển đổi"
+msgstr "تبدیل ہو رہا ہے"
 
 #: clipboardManager.py:44
 msgid "Copied 1 item name to clipboard"
-msgstr "Đã sao chép tên 1 mục vào bảng tạm"
+msgstr "1 آئٹم کا نام کلپ بورڈ پر کاپی ہو گیا"
 
 #: clipboardManager.py:46
 msgid "Copied {count} item names to clipboard"
-msgstr "Đã sao chép tên {count} mục vào bảng tạm"
+msgstr "{count} آئٹمز کے نام کلپ بورڈ پر کاپی ہو گئے"
 
-#: __init__.py:396
+#: __init__.py:624
 msgid "Copied: {path}"
-msgstr "Đã sao chép: {path}"
+msgstr "کاپی ہوا: {path}"
+
+#: contextMenu.py:28
+msgid "Copy address bar"
+msgstr "ایڈریس بار کاپی کریں"
 
 #: contextMenu.py:29
-msgid "Copy address bar"
-msgstr "Sao chép thanh địa chỉ"
+msgid "Copy content"
+msgstr "مواد کاپی کریں"
+
+#: __init__.py:711
+msgid "Copy content (single tap) or invert selection (double tap)"
+msgstr "مواد کاپی کریں (ایک ٹیپ) یا انتخاب الٹا کریں (ڈبل ٹیپ)"
 
 #: contextMenu.py:30
-msgid "Copy content"
-msgstr "Sao chép nội dung"
-
-#: __init__.py:483
-msgid "Copy content (single tap) or invert selection (double tap)"
-msgstr "Sao chép nội dung (chạm một lần) hoặc đảo ngược lựa chọn (chạm hai lần)"
-
-#: contextMenu.py:31
 msgid "Copy selected file and folder names"
-msgstr "Sao chép tên tập tin và thư mục đã chọn"
+msgstr "منتخب فائل اور فولڈر کے نام کاپی کریں"
 
-#: __init__.py:443
+#: __init__.py:671
 msgid "Copy selected names (single tap) or copy address bar (double tap)"
-msgstr "Sao chép tên đã chọn (chạm một lần) hoặc sao chép thanh địa chỉ (chạm hai lần)"
+msgstr "منتخب نام کاپی کریں (ایک ٹیپ) یا ایڈریس بار کاپی کریں (ڈبل ٹیپ)"
 
-#: __init__.py:400
+#: __init__.py:628
 #: clipboardManager.py:50
 #: clipboardManager.py:139
 msgid "Could not open clipboard"
-msgstr "Không thể mở bảng tạm"
+msgstr "کلپ بورڈ نہیں کھل سکا"
 
-#: contextMenu.py:24
+#: contextMenu.py:23
 #: createFile.py:17
 msgid "Create File"
-msgstr "Tạo tập tin"
+msgstr "فائل بنائیں"
 
-#: folder_creation_dialog.py:16
+#: folderTools.py:128
 msgid "Create Multiple Folders"
-msgstr "Tạo nhiều thư mục"
+msgstr "متعدد فولڈرز بنائیں"
 
-#: contextMenu.py:42
+#: contextMenu.py:40
 msgid "Create Multiple Folders..."
-msgstr "Tạo nhiều thư mục..."
+msgstr "متعدد فولڈرز بنائیں..."
 
-#: folder_creation_dialog.py:45
+#: folderTools.py:157
 msgid "Create main folder and then subfolders"
-msgstr "Tạo thư mục chính và sau đó là thư mục con"
+msgstr "مرکزی فولڈر بنائیں اور پھر ذیلی فولڈرز"
 
-#: __init__.py:651
+#: __init__.py:879
 msgid "Create new folder and paste clipboard content into rename field"
-msgstr "Tạo thư mục mới và dán nội dung bảng tạm vào trường đổi tên"
+msgstr "نیا فولڈر بنائیں اور کلپ بورڈ کا مواد نام تبدیل کرنے والے فیلڈ میں چسپاں کریں"
 
-#: folder_creation_dialog.py:212
+#: folderTools.py:324
 msgid "Created {count} of {total} folders..."
-msgstr "Đã tạo {count} trong số {total} thư mục..."
+msgstr "{total} میں سے {count} فولڈرز بن گئے..."
 
-#: folder_creation_dialog.py:199
+#: folderTools.py:311
 msgid "Creating folders in background..."
-msgstr "Đang tạo thư mục trong nền..."
+msgstr "پس منظر میں فولڈرز بن رہے ہیں..."
 
-#: folder_creation_dialog.py:49
+#: folderTools.py:161
 msgid "Edit individual folder names"
-msgstr "Chỉnh sửa tên thư mục riêng lẻ"
+msgstr "انفرادی فولڈر کے نام ترمیم کریں"
 
-#: folderInfo.py:71
+#: folderTools.py:120
 msgid "Error calculating folder info"
-msgstr "Lỗi tính toán thông tin thư mục"
+msgstr "فولڈر کی معلومات کا حساب لگانے میں خرابی"
 
-#: fileOperations.py:248
+#: fileOperations.py:294
 msgid "Error calculating size"
-msgstr "Lỗi tính toán kích thước"
+msgstr "حجم کا حساب لگانے میں خرابی"
 
 #: compressionManager.py:196
 msgid "Error compressing files"
-msgstr "Lỗi nén tập tin"
+msgstr "فائلیں کمپریس کرنے میں خرابی"
 
 #: clipboardManager.py:142
 msgid "Error copying file content"
-msgstr "Lỗi sao chép nội dung tập tin"
+msgstr "فائل کا مواد کاپی کرنے میں خرابی"
 
 #: clipboardManager.py:53
 msgid "Error copying names to clipboard"
-msgstr "Lỗi sao chép tên vào bảng tạm"
+msgstr "کلپ بورڈ پر نام کاپی کرنے میں خرابی"
 
-#: txt2folder.py:113
+#: folderTools.py:614
 msgid "Error creating base folder"
-msgstr "Lỗi tạo thư mục cơ sở"
+msgstr "بنیادی فولڈر بنانے میں خرابی"
 
-#: createFile.py:289
+#: createFile.py:291
 msgid "Error creating files"
-msgstr "Lỗi tạo tập tin"
+msgstr "فائلیں بنانے میں خرابی"
 
-#: __init__.py:693
+#: __init__.py:921
 msgid "Error creating folders"
-msgstr "Lỗi tạo thư mục"
+msgstr "فولڈرز بنانے میں خرابی"
 
-#: folder_creation_dialog.py:190
+#: folderTools.py:302
 msgid "Error creating main folder"
-msgstr "Lỗi tạo thư mục chính"
+msgstr "مرکزی فولڈر بنانے میں خرابی"
 
-#: __init__.py:737
+#: __init__.py:965
 msgid "Error during conversion"
-msgstr "Lỗi trong quá trình chuyển đổi"
+msgstr "تبدیلی کے دوران خرابی"
 
 #: compressionManager.py:117
 msgid "Error in compression process: {error}"
-msgstr "Lỗi trong quá trình nén: {error}"
+msgstr "کمپریشن کے عمل میں خرابی: {error}"
 
-#: selectionManager.py:71
+#: folderTools.py:804
 msgid "Error inverting selection"
-msgstr "Lỗi đảo ngược lựa chọn"
+msgstr "انتخاب الٹا کرنے میں خرابی"
 
 #: createFile.py:245
 msgid "Error opening create file dialog"
-msgstr "Lỗi mở hộp thoại tạo tập tin"
+msgstr "فائل بنائیں ڈائیلاگ کھولنے میں خرابی"
 
-#: fileOperations.py:304
+#: fileOperations.py:350
 msgid "Error opening rename dialog"
-msgstr "Lỗi mở hộp thoại đổi tên"
+msgstr "نام تبدیل کریں ڈائیلاگ کھولنے میں خرابی"
 
-#: __init__.py:667
+#: __init__.py:895
 msgid "Error opening settings"
-msgstr "Lỗi mở cài đặt"
+msgstr "ترتیبات کھولنے میں خرابی"
 
-#: txt2folder.py:203
+#: folderTools.py:704
 msgid "Error processing text file: {}"
-msgstr "Lỗi xử lý tập tin văn bản: {}"
+msgstr "ٹیکسٹ فائل پر کارروائی کرنے میں خرابی: {}"
 
-#: txt2folder.py:80
+#: folderTools.py:581
 msgid "Error reading RTF file"
-msgstr "Lỗi đọc tập tin RTF"
+msgstr "RTF فائل پڑھنے میں خرابی"
 
-#: txt2folder.py:207
+#: folderTools.py:708
 msgid "Error reading file encoding"
-msgstr "Lỗi đọc mã hóa tập tin"
+msgstr "فائل انکوڈنگ پڑھنے میں خرابی"
 
-#: fileOperations.py:274
-#: fileOperations.py:301
+#: fileOperations.py:320
+#: fileOperations.py:347
 msgid "Error renaming file"
-msgstr "Lỗi đổi tên tập tin"
+msgstr "فائل کا نام تبدیل کرنے میں خرابی"
 
-#: txt2folder.py:212
+#: folderTools.py:713
 msgid "Error: {}"
-msgstr "Lỗi: {}"
+msgstr "خرابی: {}"
+
+#: __init__.py:1002
+msgid "Explorer tree dumped to NVDA log"
+msgstr "ایکسپلورر ٹری کو NVDA لاگ میں ڈمپ کیا گیا"
 
 #: createFile.py:72
 msgid "Extension:"
-msgstr "Phần mở rộng:"
+msgstr "ایکسٹینشن:"
 
-#: case.py:127
+#: folderTools.py:949
 msgid "Failed to rename any folders"
-msgstr "Không thể đổi tên bất kỳ thư mục nào"
+msgstr "کسی بھی فولڈر کا نام تبدیل کرنے میں ناکامی"
 
 #: compressionManager.py:188
 msgid "Failed to start compression"
-msgstr "Không thể bắt đầu nén"
+msgstr "کمپریشن شروع کرنے میں ناکامی"
 
 #: createFile.py:138
 msgid "File count cannot exceed 10"
-msgstr "Số lượng tập tin không được vượt quá 10"
+msgstr "فائلوں کی تعداد 10 سے زیادہ نہیں ہو سکتی"
 
 #: createFile.py:135
 msgid "File count must be at least 1"
-msgstr "Số lượng tập tin phải ít nhất là 1"
+msgstr "فائلوں کی تعداد کم از کم 1 ہونی چاہیے"
 
 #: createFile.py:112
 msgid "File name"
-msgstr "Tên tập tin"
+msgstr "فائل کا نام"
 
 #: fileOperations.py:59
 msgid "File name cannot be empty"
-msgstr "Tên tập tin không được để trống"
+msgstr "فائل کا نام خالی نہیں ہو سکتا"
 
-#: fileOperations.py:291
+#: fileOperations.py:337
 msgid "File name not changed"
-msgstr "Tên tập tin không thay đổi"
+msgstr "فائل کا نام تبدیل نہیں ہوا"
 
 #: createFile.py:66
 #: createFile.py:113
 msgid "File name {index}:"
-msgstr "Tên tập tin {index}:"
+msgstr "فائل کا نام {index}:"
 
 #: createFile.py:64
 msgid "File name:"
-msgstr "Tên tập tin:"
+msgstr "فائل کا نام:"
 
-#: __init__.py:622
+#: __init__.py:850
 msgid "File operations manager not available"
-msgstr "Trình quản lý thao tác tập tin không có sẵn"
+msgstr "فائل آپریشن مینیجر دستیاب نہیں"
 
-#: fileOperations.py:298
+#: fileOperations.py:344
 msgid "File renamed to {name}"
-msgstr "Đã đổi tên tập tin thành {name}"
+msgstr "فائل کا نام تبدیل کر کے {name} کر دیا گیا"
 
-#: folder_creation_dialog.py:115
-#: folder_creation_dialog.py:155
+#: robocopyManager.py:448
+msgid "Finished {n} of {total}: {name}"
+msgstr "{total} میں سے {n} مکمل: {name}"
+
+#: folderTools.py:227
+#: folderTools.py:267
 msgid "Folder"
-msgstr "Thư mục"
+msgstr "فولڈر"
 
-#: txt2folder.py:104
-#: txt2folder.py:174
+#: folderTools.py:605
+#: folderTools.py:675
 msgid "Folder '{}' already exists, creating '{}' instead"
-msgstr "Thư mục '{}' đã tồn tại, thay vào đó tạo '{}'"
+msgstr "فولڈر '{}' پہلے سے موجود ہے، اس کی بجائے '{}' بنایا جا رہا ہے"
 
-#: __init__.py:677
+#: __init__.py:905
 msgid "Folder creation dialog not available"
-msgstr "Hộp thoại tạo thư mục không có sẵn"
+msgstr "فولڈر بنائیں ڈائیلاگ دستیاب نہیں"
 
-#: __init__.py:639
+#: __init__.py:867
 msgid "Folder creator helper not available"
-msgstr "Trợ giúp tạo thư mục không có sẵn"
+msgstr "فولڈر بنانے کا معاون دستیاب نہیں"
 
-#: contextMenu.py:52
+#: contextMenu.py:131
+#: contextMenu.py:134
+#: contextMenu.py:155
 msgid "Folder info"
-msgstr "Thông tin thư mục"
+msgstr "فولڈر کی معلومات"
 
-#: folder_creation_dialog.py:30
+#: folderTools.py:142
 msgid "Folder title:"
-msgstr "Tiêu đề thư mục:"
-
-#: contextMenu.py:49
-msgid "Headline Case"
-msgstr "Kiểu chữ tiêu đề"
-
-#: folder_creation_dialog.py:166
-msgid "Invalid number for folders"
-msgstr "Số lượng thư mục không hợp lệ"
-
-#: contextMenu.py:28
-msgid "Invert selection"
-msgstr "Đảo ngược lựa chọn"
+msgstr "فولڈر کا عنوان:"
 
 #: contextMenu.py:47
+msgid "Headline Case"
+msgstr "ہیڈلائن کیس"
+
+#: folderTools.py:278
+msgid "Invalid number for folders"
+msgstr "فولڈرز کے لیے غلط نمبر"
+
+#: contextMenu.py:27
+msgid "Invert selection"
+msgstr "انتخاب الٹا کریں"
+
+#: contextMenu.py:45
 msgid "Lowercase"
-msgstr "Chữ thường"
+msgstr "چھوٹے حروف"
 
-#: folder_creation_dialog.py:163
+#: folderTools.py:275
 msgid "Maximum 100 folders allowed"
-msgstr "Cho phép tối đa 100 thư mục"
+msgstr "زیادہ سے زیادہ 100 فولڈرز کی اجازت ہے"
 
-#: __init__.py:681
+#: __init__.py:909
 msgid "No Explorer folder detected"
-msgstr "Không phát hiện thư mục Explorer"
+msgstr "کوئی ایکسپلورر فولڈر نہیں ملا"
 
-#: fileOperations.py:173
-#: fileOperations.py:230
+#: fileOperations.py:219
+#: fileOperations.py:276
 msgid "No access to size data"
-msgstr "Không có quyền truy cập dữ liệu kích thước"
+msgstr "سائز کے ڈیٹا تک رسائی نہیں"
 
-#: selectionManager.py:36
+#: folderTools.py:769
 msgid "No active File Explorer window found"
-msgstr "Không tìm thấy cửa sổ File Explorer đang hoạt động"
+msgstr "کوئی فعال فائل ایکسپلورر ونڈو نہیں ملی"
 
 #: clipboardManager.py:127
 msgid "No content could be read from selected files"
-msgstr "Không thể đọc nội dung từ các tập tin đã chọn"
+msgstr "منتخب فائلوں سے کوئی مواد نہیں پڑھا جا سکا"
 
-#: createFile.py:282
+#: createFile.py:284
 msgid "No files were created"
-msgstr "Không có tập tin nào được tạo"
+msgstr "کوئی فائل نہیں بنی"
 
-#: case.py:142
-#: case.py:148
-#: case.py:157
-#: case.py:163
+#: folderTools.py:964
+#: folderTools.py:970
+#: folderTools.py:979
+#: folderTools.py:985
 msgid "No folders found"
-msgstr "Không tìm thấy thư mục nào"
+msgstr "کوئی فولڈر نہیں ملا"
 
-#: __init__.py:703
+#: __init__.py:931
 msgid "No folders selected"
-msgstr "Chưa chọn thư mục nào"
+msgstr "کوئی فولڈر منتخب نہیں"
 
-#: __init__.py:718
+#: __init__.py:946
 msgid "No folders selected or current folder not available"
-msgstr "Chưa chọn thư mục nào hoặc thư mục hiện tại không có sẵn"
+msgstr "کوئی فولڈر منتخب نہیں یا موجودہ فولڈر دستیاب نہیں"
 
-#: folder_creation_dialog.py:229
-#: txt2folder.py:148
-#: txt2folder.py:198
+#: folderTools.py:341
+#: folderTools.py:649
+#: folderTools.py:699
 msgid "No folders were created"
-msgstr "Không có thư mục nào được tạo"
+msgstr "کوئی فولڈر نہیں بنایا گیا"
 
-#: folderInfo.py:30
+#: folderTools.py:81
 msgid "No item selected"
-msgstr "Chưa chọn mục nào"
+msgstr "کوئی آئٹم منتخب نہیں"
 
-#: selectionManager.py:49
+#: folderTools.py:782
 msgid "No items in folder"
-msgstr "Không có mục nào trong thư mục"
+msgstr "فولڈر میں کوئی آئٹم نہیں"
 
 #: clipboardManager.py:27
 #: clipboardManager.py:62
 #: compressionManager.py:148
-#: fileOperations.py:164
-#: fileOperations.py:260
+#: fileOperations.py:210
+#: fileOperations.py:306
 msgid "No items selected"
-msgstr "Chưa chọn mục nào"
+msgstr "کوئی آئٹم منتخب نہیں"
 
 #: clipboardManager.py:79
 msgid "No text files selected"
-msgstr "Chưa chọn tập tin văn bản nào"
+msgstr "کوئی ٹیکسٹ فائل منتخب نہیں"
 
-#: txt2folder.py:90
-#: txt2folder.py:160
+#: folderTools.py:591
+#: folderTools.py:661
 msgid "No valid folder names found in the file"
-msgstr "Không tìm thấy tên thư mục hợp lệ trong tập tin"
+msgstr "فائل میں کوئی درست فولڈر نام نہیں ملا"
 
-#: folder_creation_dialog.py:184
+#: folderTools.py:296
 msgid "No valid folder names provided"
-msgstr "Không cung cấp tên thư mục hợp lệ"
+msgstr "کوئی درست فولڈر نام فراہم نہیں کیا گیا"
+
+#: __init__.py:976
+msgid "Not focused on File Explorer"
+msgstr "فائل ایکسپلورر پر فوکس نہیں"
 
 #: createFile.py:198
-#: selectionManager.py:30
-#: txt2folder.py:40
+#: folderTools.py:541
+#: folderTools.py:763
 msgid "Not in File Explorer"
-msgstr "Không ở trong File Explorer"
+msgstr "فائل ایکسپلورر میں نہیں"
 
 #: createFile.py:28
 msgid "Number of files to create:"
-msgstr "Số lượng tập tin cần tạo:"
+msgstr "بنائی جانے والی فائلوں کی تعداد:"
 
-#: folder_creation_dialog.py:160
+#: folderTools.py:272
 msgid "Number of folders must be at least 1"
-msgstr "Số lượng thư mục phải ít nhất là 1"
+msgstr "فولڈرز کی تعداد کم از کم 1 ہونی چاہیے"
 
-#: folder_creation_dialog.py:38
+#: folderTools.py:150
 msgid "Number of folders:"
-msgstr "Số lượng thư mục:"
+msgstr "فولڈرز کی تعداد:"
 
-#: __init__.py:616
+#: __init__.py:844
 msgid "Open xPlorer context menu"
-msgstr "Mở menu ngữ cảnh xPlorer"
+msgstr "xPlorer سیاق و سباق کا مینو کھولیں"
 
-#: txt2folder.py:53
+#: folderTools.py:554
 msgid "Please select a .txt or .rtf file"
-msgstr "Vui lòng chọn tập tin .txt hoặc .rtf"
+msgstr "براہ کرم .txt یا .rtf فائل منتخب کریں"
 
-#: fileOperations.py:267
+#: fileOperations.py:313
 msgid "Please select a file, not a folder"
-msgstr "Vui lòng chọn tập tin, không phải thư mục"
+msgstr "براہ کرم فائل منتخب کریں، فولڈر نہیں"
 
-#: fileOperations.py:263
+#: fileOperations.py:309
 msgid "Please select only one file"
-msgstr "Vui lòng chỉ chọn một tập tin"
+msgstr "براہ کرم صرف ایک فائل منتخب کریں"
 
-#: folderInfo.py:35
-msgid "Please select only one folder"
-msgstr "Vui lòng chỉ chọn một thư mục"
-
-#: txt2folder.py:46
+#: folderTools.py:547
 msgid "Please select only one text file"
-msgstr "Vui lòng chỉ chọn một tập tin văn bản"
+msgstr "براہ کرم صرف ایک ٹیکسٹ فائل منتخب کریں"
 
-#: selectionManager.py:58
+#: folderTools.py:791
 msgid "Processing {count} items in background..."
-msgstr "Đang xử lý {count} mục trong nền..."
+msgstr "پس منظر میں {count} آئٹمز پر کارروائی ہو رہی ہے..."
 
-#: __init__.py:633
-#: contextMenu.py:32
+#: __init__.py:861
+#: contextMenu.py:31
 msgid "Rename selected file"
-msgstr "Đổi tên tập tin đã chọn"
+msgstr "منتخب فائل کا نام تبدیل کریں"
 
-#: __init__.py:460
+#: __init__.py:688
 msgid "Required manager not available"
-msgstr "Trình quản lý cần thiết không có sẵn"
+msgstr "مطلوبہ مینیجر دستیاب نہیں"
 
-#: contextMenu.py:36
+#: contextMenu.py:34
 msgid "Robocopy"
 msgstr "Robocopy"
 
-#: __init__.py:540
+#: robocopyManager.py:457
+msgid "Robocopy cancelled"
+msgstr "Robocopy منسوخ"
+
+#: robocopyManager.py:469
+msgid "Robocopy finished successfully. {n} item(s) copied"
+msgstr "Robocopy کامیابی سے مکمل ہوا۔ {n} آئٹمز کاپی ہوئے"
+
+#: robocopyManager.py:465
+msgid "Robocopy finished. {ok} succeeded, {failed} failed: {items}"
+msgstr "Robocopy مکمل ہوا۔ {ok} کامیاب، {failed} ناکام: {items}"
+
+#: __init__.py:768
 msgid "Robocopy manager not available"
-msgstr "Trình quản lý Robocopy không có sẵn"
+msgstr "Robocopy مینیجر دستیاب نہیں"
 
-#: __init__.py:563
+#: __init__.py:791
 msgid "Robocopy: single tap copy, double tap paste, triple tap move"
-msgstr "Robocopy: chạm một lần để sao chép, chạm hai lần để dán, chạm ba lần để di chuyển"
+msgstr "Robocopy: ایک ٹیپ کاپی، ڈبل ٹیپ پیسٹ، ٹرپل ٹیپ منتقل"
 
-#: contextMenu.py:33
+#: contextMenu.py:89
+#: contextMenu.py:100
+#: contextMenu.py:106
+#: contextMenu.py:111
+#: contextMenu.py:117
 msgid "Say size"
-msgstr "Đọc kích thước"
+msgstr "سائز بتائیں"
 
-#: __init__.py:523
+#: __init__.py:751
 msgid "Say size (single tap) or compress zip (double tap)"
-msgstr "Đọc kích thước (chạm một lần) hoặc nén zip (chạm hai lần)"
+msgstr "سائز بتائیں (ایک ٹیپ) یا زیپ کمپریس کریں (ڈبل ٹیپ)"
 
-#: txt2folder.py:58
+#: folderTools.py:559
 msgid "Selected file does not exist"
-msgstr "Tập tin đã chọn không tồn tại"
+msgstr "منتخب فائل موجود نہیں"
 
-#: folderInfo.py:14
+#: folderTools.py:87
 msgid "Selected item is not a folder"
-msgstr "Mục đã chọn không phải là thư mục"
+msgstr "منتخب آئٹم فولڈر نہیں ہے"
 
-#: selectionManager.py:93
+#: folderTools.py:826
 msgid "Selected {count} items"
-msgstr "Đã chọn {count} mục"
+msgstr "{count} آئٹمز منتخب"
 
-#: selectionManager.py:96
+#: folderTools.py:829
 msgid "Selection inverted"
-msgstr "Đã đảo ngược lựa chọn"
+msgstr "انتخاب الٹا"
 
 #: createFile.py:170
 msgid "Some files will use default names"
-msgstr "Một số tập tin sẽ sử dụng tên mặc định"
+msgstr "کچھ فائلیں ڈیفالٹ نام استعمال کریں گی"
 
 #: compressionManager.py:161
 msgid "Starting..."
-msgstr "Đang bắt đầu..."
+msgstr "شروع ہو رہا ہے..."
 
-#: case.py:165
+#: folderTools.py:987
 msgid "Successfully converted {count} folders to headline case"
-msgstr "Đã chuyển đổi thành công {count} thư mục sang kiểu chữ tiêu đề"
+msgstr "{count} فولڈرز کامیابی سے ہیڈلائن کیس میں تبدیل ہو گئے"
 
-#: case.py:150
+#: folderTools.py:972
 msgid "Successfully converted {count} folders to lowercase"
-msgstr "Đã chuyển đổi thành công {count} thư mục sang chữ thường"
+msgstr "{count} فولڈرز کامیابی سے چھوٹے حروف میں تبدیل ہو گئے"
 
-#: case.py:159
+#: folderTools.py:981
 msgid "Successfully converted {count} folders to title case"
-msgstr "Đã chuyển đổi thành công {count} thư mục sang kiểu chữ tiêu đề"
+msgstr "{count} فولڈرز کامیابی سے ٹائٹل کیس میں تبدیل ہو گئے"
 
-#: case.py:144
+#: folderTools.py:966
 msgid "Successfully converted {count} folders to uppercase"
-msgstr "Đã chuyển đổi thành công {count} thư mục sang chữ hoa"
+msgstr "{count} فولڈرز کامیابی سے بڑے حروف میں تبدیل ہو گئے"
 
-#: folder_creation_dialog.py:225
+#: folderTools.py:337
 msgid "Successfully created 1 folder"
-msgstr "Đã tạo thành công 1 thư mục"
+msgstr "1 فولڈر کامیابی سے بن گیا"
 
-#: folder_creation_dialog.py:223
+#: folderTools.py:335
 msgid "Successfully created main folder only"
-msgstr "Đã tạo thành công chỉ thư mục chính"
+msgstr "صرف مرکزی فولڈر کامیابی سے بن گیا"
 
-#: folder_creation_dialog.py:227
+#: folderTools.py:339
 msgid "Successfully created {count} of {total} folders"
-msgstr "Đã tạo thành công {count} trong số {total} thư mục"
+msgstr "{total} میں سے {count} فولڈرز کامیابی سے بن گئے"
 
-#: txt2folder.py:144
-#: txt2folder.py:194
+#: folderTools.py:645
+#: folderTools.py:695
 msgid "Successfully created {} folders in '{}'"
-msgstr "Đã tạo thành công {} thư mục trong '{}'"
+msgstr "'{}' میں {} فولڈرز کامیابی سے بن گئے"
 
-#: contextMenu.py:14
+#: contextMenu.py:39
 msgid "TXT to Folder"
-msgstr "TXT sang Thư mục"
+msgstr "TXT سے فولڈر"
 
-#: contextMenu.py:48
+#: contextMenu.py:46
 msgid "Title Case"
-msgstr "Kiểu chữ tiêu đề"
+msgstr "ٹائٹل کیس"
 
 #: clipboardManager.py:88
 msgid "Total file size is too large to copy content"
-msgstr "Tổng kích thước tập tin quá lớn để sao chép nội dung"
+msgstr "فائلوں کا کل حجم مواد کاپی کرنے کے لیے بہت بڑا ہے"
 
 #: createFile.py:213
 msgid "Unable to get current directory after multiple attempts"
-msgstr "Không thể lấy thư mục hiện tại sau nhiều lần thử"
+msgstr "متعدد کوششوں کے بعد موجودہ ڈائرکٹری حاصل نہیں ہو سکی"
 
-#: __init__.py:402
+#: __init__.py:630
 msgid "Unable to get current path"
-msgstr "Không thể lấy đường dẫn hiện tại"
+msgstr "موجودہ پاتھ حاصل نہیں ہو سکا"
 
-#: selectionManager.py:14
+#: folderTools.py:774
 msgid "Unable to get folder view"
-msgstr "Không thể lấy chế độ xem thư mục"
+msgstr "فولڈر کا منظر حاصل نہیں ہو سکا"
 
-#: contextMenu.py:46
+#: contextMenu.py:44
 msgid "Uppercase"
-msgstr "Chữ hoa"
+msgstr "بڑے حروف"
 
 #: clipboardManager.py:104
 msgid "[Error processing RTF file]"
-msgstr "[Lỗi xử lý tập tin RTF]"
+msgstr "[RTF فائل پر کارروائی میں خرابی]"
 
 #: clipboardManager.py:106
 msgid "[RTF content - striprtf module not available]"
-msgstr "[Nội dung RTF - mô-đun striprtf không có sẵn]"
+msgstr "[RTF مواد - striprtf ماڈیول دستیاب نہیں]"
 
 #: compressionManager.py:114
 msgid "compression failed"
-msgstr "nén thất bại"
+msgstr "کمپریشن ناکام"
 
-#: contextMenu.py:37
+#: contextMenu.py:35
 msgid "copy"
-msgstr "sao chép"
+msgstr "کاپی کریں"
 
-#: contextMenu.py:38
+#: robocopyManager.py:235
+msgid "estimating time remaining"
+msgstr "باقی وقت کا اندازہ لگ رہا ہے"
+
+#: contextMenu.py:36
 msgid "move"
-msgstr "di chuyển"
+msgstr "منتقل کریں"
 
 #: createFile.py:156
 msgid "new_file"
-msgstr "tập_tin_mới"
+msgstr "نئی_فائل"
 
 #: createFile.py:158
 msgid "new_file_{index}"
-msgstr "tập_tin_mới_{index}"
+msgstr "نئی_فائل_{index}"
 
-#: contextMenu.py:39
+#: contextMenu.py:37
 msgid "paste"
-msgstr "dán"
+msgstr "چسپاں کریں"
 
-#: __init__.py:110
-#: __init__.py:444
-#: __init__.py:484
-#: __init__.py:524
-#: __init__.py:564
-#: __init__.py:617
-#: __init__.py:634
-#: __init__.py:652
+#: __init__.py:268
+#: __init__.py:672
+#: __init__.py:712
+#: __init__.py:752
+#: __init__.py:792
+#: __init__.py:845
+#: __init__.py:862
+#: __init__.py:880
 msgid "xPlorer"
 msgstr "xPlorer"
 
-#: contextMenu.py:51
+#: contextMenu.py:49
 msgid "xPlorer Settings"
-msgstr "Cài đặt xPlorer"
+msgstr "xPlorer ترتیبات"
 
-#: createFile.py:286
+#: createFile.py:288
 msgid "{count} files created"
-msgstr "Đã tạo {count} tập tin"
+msgstr "{count} فائلیں بن گئیں"
 
-#: fileOperations.py:237
+#: fileOperations.py:283
 msgid "{count} items {size}"
-msgstr "{count} mục {size}"
+msgstr "{count} آئٹمز {size}"
 
-#: folderInfo.py:62
+#: robocopyManager.py:240
+msgid "{h}h {m}m remaining"
+msgstr "{h}گھنٹے {m}منٹ باقی"
+
+#: robocopyManager.py:242
+msgid "{m}m {s}s remaining"
+msgstr "{m}منٹ {s}سیکنڈ باقی"
+
+#: robocopyManager.py:304
+msgid "{pct}% - item {idx}/{total}: {name}"
+msgstr "{pct}% - آئٹم {idx}/{total}: {name}"
+
+#: folderTools.py:111
 msgid "{subfolders} subfolders and {files} files"
-msgstr "{subfolders} thư mục con và {files} tập tin"
+msgstr "{subfolders} ذیلی فولڈرز اور {files} فائلیں"
+
+#: contextMenu.py:150
+msgid "{subfolders} subfolders, {files} files"
+msgstr "{subfolders} ذیلی فولڈرز، {files} فائلیں"
+
+#: robocopyManager.py:243
+msgid "{s}s remaining"
+msgstr "{s}سیکنڈ باقی"

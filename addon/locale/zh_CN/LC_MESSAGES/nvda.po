@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: xPlorer 2026.7.0\n"
+"Project-Id-Version: xPlorer 2026.8.5\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-06-24 13:09+0700\n"
+"POT-Creation-Date: 2026-08-03 06:13+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Chinese (Simplified)\n"
@@ -12,19 +12,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: DevOn Addon\n"
 
-#: folder_creation_dialog.py:62
+#: robocopyManager.py:464
+msgid " and {n} more"
+msgstr " 及另外 {n} 个"
+
+#: folderTools.py:174
 msgid "&Apply"
 msgstr "应用(&A)"
 
-#: folder_creation_dialog.py:63
+#: folderTools.py:175
 msgid "&Cancel"
 msgstr "取消(&C)"
 
-#: createFile.py:284
+#: createFile.py:286
 msgid "1 file created"
 msgstr "已创建 1 个文件"
 
-#: fileOperations.py:294
+#: fileOperations.py:340
 msgid "A file with this name already exists"
 msgstr "已存在同名文件"
 
@@ -32,31 +36,35 @@ msgstr "已存在同名文件"
 msgid "Built-in compression failed: {error}"
 msgstr "内置压缩失败：{error}"
 
+#: robocopyManager.py:323
+msgid "Calculating total size..."
+msgstr "正在计算总大小..."
+
 #: clipboardManager.py:66
 msgid "Cannot copy content of folders, please select files only"
 msgstr "无法复制文件夹内容，请仅选择文件"
 
 #: createFile.py:271
 msgid "Cannot find unique name for: {name}"
-msgstr "无法为 {name} 找到唯一名称"
+msgstr "找不到唯一名称：{name}"
 
-#: __init__.py:660
+#: __init__.py:888
 msgid "Cannot open settings dialog"
 msgstr "无法打开设置对话框"
 
-#: txt2folder.py:69
+#: folderTools.py:570
 msgid "Cannot process RTF file: striprtf module not available"
 msgstr "无法处理 RTF 文件：striprtf 模块不可用"
 
-#: contextMenu.py:45
+#: contextMenu.py:43
 msgid "Case Converter for Folders"
 msgstr "文件夹大小写转换器"
 
-#: __init__.py:699
+#: __init__.py:927
 msgid "Case converter not available"
 msgstr "大小写转换器不可用"
 
-#: __init__.py:420
+#: __init__.py:648
 msgid "Clipboard manager not available"
 msgstr "剪贴板管理器不可用"
 
@@ -64,7 +72,7 @@ msgstr "剪贴板管理器不可用"
 msgid "Completed"
 msgstr "已完成"
 
-#: contextMenu.py:27
+#: contextMenu.py:26
 msgid "Compress zip"
 msgstr "压缩为 zip"
 
@@ -90,9 +98,9 @@ msgstr "压缩已取消"
 #: compressionManager.py:112
 #: compressionManager.py:285
 msgid "Compression completed {name}"
-msgstr "压缩完成 {name}"
+msgstr "压缩已完成 {name}"
 
-#: __init__.py:500
+#: __init__.py:728
 msgid "Compression manager not available"
 msgstr "压缩管理器不可用"
 
@@ -102,101 +110,101 @@ msgstr "压缩超时"
 
 #: clipboardManager.py:133
 msgid "Content from 1 file copied to clipboard"
-msgstr "已从 1 个文件复制内容到剪贴板"
+msgstr "已复制 1 个文件的内容到剪贴板"
 
 #: clipboardManager.py:135
 msgid "Content from {count} files copied to clipboard"
-msgstr "已从 {count} 个文件复制内容到剪贴板"
+msgstr "已复制 {count} 个文件的内容到剪贴板"
 
-#: __init__.py:607
-#: __init__.py:673
+#: __init__.py:835
+#: __init__.py:901
 msgid "Context menu manager not available"
 msgstr "上下文菜单管理器不可用"
 
-#: case.py:115
+#: folderTools.py:937
 msgid "Conversion already in progress"
-msgstr "转换正在进行中"
+msgstr "转换已在进行中"
 
-#: case.py:132
+#: folderTools.py:954
 msgid "Converting"
 msgstr "正在转换"
 
 #: clipboardManager.py:44
 msgid "Copied 1 item name to clipboard"
-msgstr "已复制 1 个项目名称到剪贴板"
+msgstr "已复制 1 个项目的名称到剪贴板"
 
 #: clipboardManager.py:46
 msgid "Copied {count} item names to clipboard"
-msgstr "已复制 {count} 个项目名称到剪贴板"
+msgstr "已复制 {count} 个项目的名称到剪贴板"
 
-#: __init__.py:396
+#: __init__.py:624
 msgid "Copied: {path}"
 msgstr "已复制：{path}"
 
-#: contextMenu.py:29
+#: contextMenu.py:28
 msgid "Copy address bar"
 msgstr "复制地址栏"
 
-#: contextMenu.py:30
+#: contextMenu.py:29
 msgid "Copy content"
 msgstr "复制内容"
 
-#: __init__.py:483
+#: __init__.py:711
 msgid "Copy content (single tap) or invert selection (double tap)"
-msgstr "复制内容（单击）或反转选择（双击）"
+msgstr "复制内容（单指点击）或反转选择（双指点击）"
 
-#: contextMenu.py:31
+#: contextMenu.py:30
 msgid "Copy selected file and folder names"
-msgstr "复制所选文件和文件夹名称"
+msgstr "复制选中的文件和文件夹名称"
 
-#: __init__.py:443
+#: __init__.py:671
 msgid "Copy selected names (single tap) or copy address bar (double tap)"
-msgstr "复制所选名称（单击）或复制地址栏（双击）"
+msgstr "复制选中的名称（单指点击）或复制地址栏（双指点击）"
 
-#: __init__.py:400
+#: __init__.py:628
 #: clipboardManager.py:50
 #: clipboardManager.py:139
 msgid "Could not open clipboard"
 msgstr "无法打开剪贴板"
 
-#: contextMenu.py:24
+#: contextMenu.py:23
 #: createFile.py:17
 msgid "Create File"
 msgstr "创建文件"
 
-#: folder_creation_dialog.py:16
+#: folderTools.py:128
 msgid "Create Multiple Folders"
 msgstr "创建多个文件夹"
 
-#: contextMenu.py:42
+#: contextMenu.py:40
 msgid "Create Multiple Folders..."
 msgstr "创建多个文件夹..."
 
-#: folder_creation_dialog.py:45
+#: folderTools.py:157
 msgid "Create main folder and then subfolders"
-msgstr "创建主文件夹，然后创建子文件夹"
+msgstr "先创建主文件夹，再创建子文件夹"
 
-#: __init__.py:651
+#: __init__.py:879
 msgid "Create new folder and paste clipboard content into rename field"
-msgstr "创建新文件夹并将剪贴板内容粘贴到重命名框中"
+msgstr "创建新文件夹并将剪贴板内容粘贴到重命名字段"
 
-#: folder_creation_dialog.py:212
+#: folderTools.py:324
 msgid "Created {count} of {total} folders..."
 msgstr "已创建 {total} 个文件夹中的 {count} 个..."
 
-#: folder_creation_dialog.py:199
+#: folderTools.py:311
 msgid "Creating folders in background..."
 msgstr "正在后台创建文件夹..."
 
-#: folder_creation_dialog.py:49
+#: folderTools.py:161
 msgid "Edit individual folder names"
 msgstr "编辑单个文件夹名称"
 
-#: folderInfo.py:71
+#: folderTools.py:120
 msgid "Error calculating folder info"
 msgstr "计算文件夹信息时出错"
 
-#: fileOperations.py:248
+#: fileOperations.py:294
 msgid "Error calculating size"
 msgstr "计算大小时出错"
 
@@ -212,23 +220,23 @@ msgstr "复制文件内容时出错"
 msgid "Error copying names to clipboard"
 msgstr "复制名称到剪贴板时出错"
 
-#: txt2folder.py:113
+#: folderTools.py:614
 msgid "Error creating base folder"
 msgstr "创建基础文件夹时出错"
 
-#: createFile.py:289
+#: createFile.py:291
 msgid "Error creating files"
 msgstr "创建文件时出错"
 
-#: __init__.py:693
+#: __init__.py:921
 msgid "Error creating folders"
 msgstr "创建文件夹时出错"
 
-#: folder_creation_dialog.py:190
+#: folderTools.py:302
 msgid "Error creating main folder"
 msgstr "创建主文件夹时出错"
 
-#: __init__.py:737
+#: __init__.py:965
 msgid "Error during conversion"
 msgstr "转换过程中出错"
 
@@ -236,7 +244,7 @@ msgstr "转换过程中出错"
 msgid "Error in compression process: {error}"
 msgstr "压缩过程中出错：{error}"
 
-#: selectionManager.py:71
+#: folderTools.py:804
 msgid "Error inverting selection"
 msgstr "反转选择时出错"
 
@@ -244,54 +252,58 @@ msgstr "反转选择时出错"
 msgid "Error opening create file dialog"
 msgstr "打开创建文件对话框时出错"
 
-#: fileOperations.py:304
+#: fileOperations.py:350
 msgid "Error opening rename dialog"
 msgstr "打开重命名对话框时出错"
 
-#: __init__.py:667
+#: __init__.py:895
 msgid "Error opening settings"
 msgstr "打开设置时出错"
 
-#: txt2folder.py:203
+#: folderTools.py:704
 msgid "Error processing text file: {}"
 msgstr "处理文本文件时出错：{}"
 
-#: txt2folder.py:80
+#: folderTools.py:581
 msgid "Error reading RTF file"
 msgstr "读取 RTF 文件时出错"
 
-#: txt2folder.py:207
+#: folderTools.py:708
 msgid "Error reading file encoding"
 msgstr "读取文件编码时出错"
 
-#: fileOperations.py:274
-#: fileOperations.py:301
+#: fileOperations.py:320
+#: fileOperations.py:347
 msgid "Error renaming file"
 msgstr "重命名文件时出错"
 
-#: txt2folder.py:212
+#: folderTools.py:713
 msgid "Error: {}"
 msgstr "错误：{}"
+
+#: __init__.py:1002
+msgid "Explorer tree dumped to NVDA log"
+msgstr "已将资源管理器树转储到 NVDA 日志"
 
 #: createFile.py:72
 msgid "Extension:"
 msgstr "扩展名："
 
-#: case.py:127
+#: folderTools.py:949
 msgid "Failed to rename any folders"
 msgstr "未能重命名任何文件夹"
 
 #: compressionManager.py:188
 msgid "Failed to start compression"
-msgstr "启动压缩失败"
+msgstr "无法启动压缩"
 
 #: createFile.py:138
 msgid "File count cannot exceed 10"
-msgstr "文件数量不能超过 10"
+msgstr "文件数不能超过 10"
 
 #: createFile.py:135
 msgid "File count must be at least 1"
-msgstr "文件数量至少为 1"
+msgstr "文件数至少为 1"
 
 #: createFile.py:112
 msgid "File name"
@@ -301,7 +313,7 @@ msgstr "文件名"
 msgid "File name cannot be empty"
 msgstr "文件名不能为空"
 
-#: fileOperations.py:291
+#: fileOperations.py:337
 msgid "File name not changed"
 msgstr "文件名未更改"
 
@@ -314,115 +326,121 @@ msgstr "文件名 {index}："
 msgid "File name:"
 msgstr "文件名："
 
-#: __init__.py:622
+#: __init__.py:850
 msgid "File operations manager not available"
 msgstr "文件操作管理器不可用"
 
-#: fileOperations.py:298
+#: fileOperations.py:344
 msgid "File renamed to {name}"
 msgstr "文件已重命名为 {name}"
 
-#: folder_creation_dialog.py:115
-#: folder_creation_dialog.py:155
+#: robocopyManager.py:448
+msgid "Finished {n} of {total}: {name}"
+msgstr "已完成 {total} 中的 {n} 个：{name}"
+
+#: folderTools.py:227
+#: folderTools.py:267
 msgid "Folder"
 msgstr "文件夹"
 
-#: txt2folder.py:104
-#: txt2folder.py:174
+#: folderTools.py:605
+#: folderTools.py:675
 msgid "Folder '{}' already exists, creating '{}' instead"
-msgstr "文件夹 '{}' 已存在，改为创建 '{}'"
+msgstr "文件夹“{}”已存在，改为创建“{}”"
 
-#: __init__.py:677
+#: __init__.py:905
 msgid "Folder creation dialog not available"
 msgstr "创建文件夹对话框不可用"
 
-#: __init__.py:639
+#: __init__.py:867
 msgid "Folder creator helper not available"
 msgstr "文件夹创建助手不可用"
 
-#: contextMenu.py:52
+#: contextMenu.py:131
+#: contextMenu.py:134
+#: contextMenu.py:155
 msgid "Folder info"
 msgstr "文件夹信息"
 
-#: folder_creation_dialog.py:30
+#: folderTools.py:142
 msgid "Folder title:"
 msgstr "文件夹标题："
 
-#: contextMenu.py:49
+#: contextMenu.py:47
 msgid "Headline Case"
-msgstr "标题大小写"
+msgstr "标题大写"
 
-#: folder_creation_dialog.py:166
+#: folderTools.py:278
 msgid "Invalid number for folders"
 msgstr "文件夹数量无效"
 
-#: contextMenu.py:28
+#: contextMenu.py:27
 msgid "Invert selection"
 msgstr "反转选择"
 
-#: contextMenu.py:47
+#: contextMenu.py:45
 msgid "Lowercase"
 msgstr "小写"
 
-#: folder_creation_dialog.py:163
+#: folderTools.py:275
 msgid "Maximum 100 folders allowed"
 msgstr "最多允许 100 个文件夹"
 
-#: __init__.py:681
+#: __init__.py:909
 msgid "No Explorer folder detected"
 msgstr "未检测到资源管理器文件夹"
 
-#: fileOperations.py:173
-#: fileOperations.py:230
+#: fileOperations.py:219
+#: fileOperations.py:276
 msgid "No access to size data"
 msgstr "无法访问大小数据"
 
-#: selectionManager.py:36
+#: folderTools.py:769
 msgid "No active File Explorer window found"
 msgstr "未找到活动的文件资源管理器窗口"
 
 #: clipboardManager.py:127
 msgid "No content could be read from selected files"
-msgstr "无法从所选文件中读取任何内容"
+msgstr "无法从所选文件中读取内容"
 
-#: createFile.py:282
+#: createFile.py:284
 msgid "No files were created"
 msgstr "未创建任何文件"
 
-#: case.py:142
-#: case.py:148
-#: case.py:157
-#: case.py:163
+#: folderTools.py:964
+#: folderTools.py:970
+#: folderTools.py:979
+#: folderTools.py:985
 msgid "No folders found"
 msgstr "未找到文件夹"
 
-#: __init__.py:703
+#: __init__.py:931
 msgid "No folders selected"
 msgstr "未选择文件夹"
 
-#: __init__.py:718
+#: __init__.py:946
 msgid "No folders selected or current folder not available"
 msgstr "未选择文件夹或当前文件夹不可用"
 
-#: folder_creation_dialog.py:229
-#: txt2folder.py:148
-#: txt2folder.py:198
+#: folderTools.py:341
+#: folderTools.py:649
+#: folderTools.py:699
 msgid "No folders were created"
 msgstr "未创建任何文件夹"
 
-#: folderInfo.py:30
+#: folderTools.py:81
 msgid "No item selected"
 msgstr "未选择项目"
 
-#: selectionManager.py:49
+#: folderTools.py:782
 msgid "No items in folder"
 msgstr "文件夹中没有项目"
 
 #: clipboardManager.py:27
 #: clipboardManager.py:62
 #: compressionManager.py:148
-#: fileOperations.py:164
-#: fileOperations.py:260
+#: fileOperations.py:210
+#: fileOperations.py:306
 msgid "No items selected"
 msgstr "未选择项目"
 
@@ -430,154 +448,170 @@ msgstr "未选择项目"
 msgid "No text files selected"
 msgstr "未选择文本文件"
 
-#: txt2folder.py:90
-#: txt2folder.py:160
+#: folderTools.py:591
+#: folderTools.py:661
 msgid "No valid folder names found in the file"
-msgstr "在文件中未找到有效的文件夹名称"
+msgstr "文件中未找到有效的文件夹名称"
 
-#: folder_creation_dialog.py:184
+#: folderTools.py:296
 msgid "No valid folder names provided"
 msgstr "未提供有效的文件夹名称"
 
+#: __init__.py:976
+msgid "Not focused on File Explorer"
+msgstr "未聚焦于文件资源管理器"
+
 #: createFile.py:198
-#: selectionManager.py:30
-#: txt2folder.py:40
+#: folderTools.py:541
+#: folderTools.py:763
 msgid "Not in File Explorer"
 msgstr "不在文件资源管理器中"
 
 #: createFile.py:28
 msgid "Number of files to create:"
-msgstr "要创建的文件数量："
+msgstr "要创建的文件数："
 
-#: folder_creation_dialog.py:160
+#: folderTools.py:272
 msgid "Number of folders must be at least 1"
-msgstr "文件夹数量必须至少为 1"
+msgstr "文件夹数量至少为 1"
 
-#: folder_creation_dialog.py:38
+#: folderTools.py:150
 msgid "Number of folders:"
 msgstr "文件夹数量："
 
-#: __init__.py:616
+#: __init__.py:844
 msgid "Open xPlorer context menu"
 msgstr "打开 xPlorer 上下文菜单"
 
-#: txt2folder.py:53
+#: folderTools.py:554
 msgid "Please select a .txt or .rtf file"
 msgstr "请选择 .txt 或 .rtf 文件"
 
-#: fileOperations.py:267
+#: fileOperations.py:313
 msgid "Please select a file, not a folder"
-msgstr "请选择一个文件，而不是文件夹"
+msgstr "请选择文件，而不是文件夹"
 
-#: fileOperations.py:263
+#: fileOperations.py:309
 msgid "Please select only one file"
 msgstr "请仅选择一个文件"
 
-#: folderInfo.py:35
-msgid "Please select only one folder"
-msgstr "请仅选择一个文件夹"
-
-#: txt2folder.py:46
+#: folderTools.py:547
 msgid "Please select only one text file"
 msgstr "请仅选择一个文本文件"
 
-#: selectionManager.py:58
+#: folderTools.py:791
 msgid "Processing {count} items in background..."
 msgstr "正在后台处理 {count} 个项目..."
 
-#: __init__.py:633
-#: contextMenu.py:32
+#: __init__.py:861
+#: contextMenu.py:31
 msgid "Rename selected file"
 msgstr "重命名所选文件"
 
-#: __init__.py:460
+#: __init__.py:688
 msgid "Required manager not available"
 msgstr "所需管理器不可用"
 
-#: contextMenu.py:36
+#: contextMenu.py:34
 msgid "Robocopy"
 msgstr "Robocopy"
 
-#: __init__.py:540
+#: robocopyManager.py:457
+msgid "Robocopy cancelled"
+msgstr "Robocopy 已取消"
+
+#: robocopyManager.py:469
+msgid "Robocopy finished successfully. {n} item(s) copied"
+msgstr "Robocopy 已成功完成。已复制 {n} 个项目"
+
+#: robocopyManager.py:465
+msgid "Robocopy finished. {ok} succeeded, {failed} failed: {items}"
+msgstr "Robocopy 已完成。成功 {ok} 个，失败 {failed} 个：{items}"
+
+#: __init__.py:768
 msgid "Robocopy manager not available"
 msgstr "Robocopy 管理器不可用"
 
-#: __init__.py:563
+#: __init__.py:791
 msgid "Robocopy: single tap copy, double tap paste, triple tap move"
-msgstr "Robocopy：单击复制，双击粘贴，三击移动"
+msgstr "Robocopy：单指点击复制，双指点击粘贴，三指点击移动"
 
-#: contextMenu.py:33
+#: contextMenu.py:89
+#: contextMenu.py:100
+#: contextMenu.py:106
+#: contextMenu.py:111
+#: contextMenu.py:117
 msgid "Say size"
 msgstr "朗读大小"
 
-#: __init__.py:523
+#: __init__.py:751
 msgid "Say size (single tap) or compress zip (double tap)"
-msgstr "朗读大小（单击）或压缩为 zip（双击）"
+msgstr "朗读大小（单指点击）或压缩为 zip（双指点击）"
 
-#: txt2folder.py:58
+#: folderTools.py:559
 msgid "Selected file does not exist"
 msgstr "所选文件不存在"
 
-#: folderInfo.py:14
+#: folderTools.py:87
 msgid "Selected item is not a folder"
 msgstr "所选项目不是文件夹"
 
-#: selectionManager.py:93
+#: folderTools.py:826
 msgid "Selected {count} items"
 msgstr "已选择 {count} 个项目"
 
-#: selectionManager.py:96
+#: folderTools.py:829
 msgid "Selection inverted"
 msgstr "选择已反转"
 
 #: createFile.py:170
 msgid "Some files will use default names"
-msgstr "某些文件将使用默认名称"
+msgstr "部分文件将使用默认名称"
 
 #: compressionManager.py:161
 msgid "Starting..."
 msgstr "正在启动..."
 
-#: case.py:165
+#: folderTools.py:987
 msgid "Successfully converted {count} folders to headline case"
-msgstr "成功将 {count} 个文件夹转换为标题大小写"
+msgstr "已成功将 {count} 个文件夹转换为标题大写"
 
-#: case.py:150
+#: folderTools.py:972
 msgid "Successfully converted {count} folders to lowercase"
-msgstr "成功将 {count} 个文件夹转换为小写"
+msgstr "已成功将 {count} 个文件夹转换为小写"
 
-#: case.py:159
+#: folderTools.py:981
 msgid "Successfully converted {count} folders to title case"
-msgstr "成功将 {count} 个文件夹转换为词首大写"
+msgstr "已成功将 {count} 个文件夹转换为首字母大写"
 
-#: case.py:144
+#: folderTools.py:966
 msgid "Successfully converted {count} folders to uppercase"
-msgstr "成功将 {count} 个文件夹转换为大写"
+msgstr "已成功将 {count} 个文件夹转换为大写"
 
-#: folder_creation_dialog.py:225
+#: folderTools.py:337
 msgid "Successfully created 1 folder"
-msgstr "成功创建 1 个文件夹"
+msgstr "已成功创建 1 个文件夹"
 
-#: folder_creation_dialog.py:223
+#: folderTools.py:335
 msgid "Successfully created main folder only"
 msgstr "仅成功创建主文件夹"
 
-#: folder_creation_dialog.py:227
+#: folderTools.py:339
 msgid "Successfully created {count} of {total} folders"
-msgstr "成功创建了 {total} 个文件夹中的 {count} 个"
+msgstr "已成功创建 {total} 个文件夹中的 {count} 个"
 
-#: txt2folder.py:144
-#: txt2folder.py:194
+#: folderTools.py:645
+#: folderTools.py:695
 msgid "Successfully created {} folders in '{}'"
-msgstr "在 '{}' 中成功创建了 {} 个文件夹"
+msgstr "已在“{}”中成功创建 {} 个文件夹"
 
-#: contextMenu.py:14
+#: contextMenu.py:39
 msgid "TXT to Folder"
-msgstr "TXT 转文件夹"
+msgstr "TXT 到文件夹"
 
-#: contextMenu.py:48
+#: contextMenu.py:46
 msgid "Title Case"
-msgstr "词首大写"
+msgstr "首字母大写"
 
 #: clipboardManager.py:88
 msgid "Total file size is too large to copy content"
@@ -585,23 +619,23 @@ msgstr "文件总大小过大，无法复制内容"
 
 #: createFile.py:213
 msgid "Unable to get current directory after multiple attempts"
-msgstr "多次尝试后无法获取当前目录"
+msgstr "多次尝试后仍无法获取当前目录"
 
-#: __init__.py:402
+#: __init__.py:630
 msgid "Unable to get current path"
 msgstr "无法获取当前路径"
 
-#: selectionManager.py:14
+#: folderTools.py:774
 msgid "Unable to get folder view"
 msgstr "无法获取文件夹视图"
 
-#: contextMenu.py:46
+#: contextMenu.py:44
 msgid "Uppercase"
 msgstr "大写"
 
 #: clipboardManager.py:104
 msgid "[Error processing RTF file]"
-msgstr "[处理 RTF 文件时出错]"
+msgstr "[处理 RTF 文件出错]"
 
 #: clipboardManager.py:106
 msgid "[RTF content - striprtf module not available]"
@@ -611,11 +645,15 @@ msgstr "[RTF 内容 - striprtf 模块不可用]"
 msgid "compression failed"
 msgstr "压缩失败"
 
-#: contextMenu.py:37
+#: contextMenu.py:35
 msgid "copy"
 msgstr "复制"
 
-#: contextMenu.py:38
+#: robocopyManager.py:235
+msgid "estimating time remaining"
+msgstr "正在估算剩余时间"
+
+#: contextMenu.py:36
 msgid "move"
 msgstr "移动"
 
@@ -627,33 +665,53 @@ msgstr "新文件"
 msgid "new_file_{index}"
 msgstr "新文件_{index}"
 
-#: contextMenu.py:39
+#: contextMenu.py:37
 msgid "paste"
 msgstr "粘贴"
 
-#: __init__.py:110
-#: __init__.py:444
-#: __init__.py:484
-#: __init__.py:524
-#: __init__.py:564
-#: __init__.py:617
-#: __init__.py:634
-#: __init__.py:652
+#: __init__.py:268
+#: __init__.py:672
+#: __init__.py:712
+#: __init__.py:752
+#: __init__.py:792
+#: __init__.py:845
+#: __init__.py:862
+#: __init__.py:880
 msgid "xPlorer"
 msgstr "xPlorer"
 
-#: contextMenu.py:51
+#: contextMenu.py:49
 msgid "xPlorer Settings"
 msgstr "xPlorer 设置"
 
-#: createFile.py:286
+#: createFile.py:288
 msgid "{count} files created"
 msgstr "已创建 {count} 个文件"
 
-#: fileOperations.py:237
+#: fileOperations.py:283
 msgid "{count} items {size}"
 msgstr "{count} 个项目 {size}"
 
-#: folderInfo.py:62
+#: robocopyManager.py:240
+msgid "{h}h {m}m remaining"
+msgstr "剩余 {h}小时 {m}分钟"
+
+#: robocopyManager.py:242
+msgid "{m}m {s}s remaining"
+msgstr "剩余 {m}分钟 {s}秒"
+
+#: robocopyManager.py:304
+msgid "{pct}% - item {idx}/{total}: {name}"
+msgstr "{pct}% - 项目 {idx}/{total}：{name}"
+
+#: folderTools.py:111
 msgid "{subfolders} subfolders and {files} files"
 msgstr "{subfolders} 个子文件夹和 {files} 个文件"
+
+#: contextMenu.py:150
+msgid "{subfolders} subfolders, {files} files"
+msgstr "{subfolders} 个子文件夹，{files} 个文件"
+
+#: robocopyManager.py:243
+msgid "{s}s remaining"
+msgstr "剩余 {s}秒"

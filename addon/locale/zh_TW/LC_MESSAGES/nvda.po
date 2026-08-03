@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: xPlorer 2026.7.0\n"
+"Project-Id-Version: xPlorer 2026.8.5\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-06-24 13:09+0700\n"
+"POT-Creation-Date: 2026-08-03 06:13+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Chinese (Traditional)\n"
@@ -12,25 +12,33 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: DevOn Addon\n"
 
-#: folder_creation_dialog.py:62
+#: robocopyManager.py:464
+msgid " and {n} more"
+msgstr " 及另外 {n} 個"
+
+#: folderTools.py:174
 msgid "&Apply"
 msgstr "套用(&A)"
 
-#: folder_creation_dialog.py:63
+#: folderTools.py:175
 msgid "&Cancel"
 msgstr "取消(&C)"
 
-#: createFile.py:284
+#: createFile.py:286
 msgid "1 file created"
 msgstr "已建立 1 個檔案"
 
-#: fileOperations.py:294
+#: fileOperations.py:340
 msgid "A file with this name already exists"
-msgstr "已存在相同名稱的檔案"
+msgstr "已有同名的檔案"
 
 #: compressionManager.py:288
 msgid "Built-in compression failed: {error}"
 msgstr "內建壓縮失敗：{error}"
+
+#: robocopyManager.py:323
+msgid "Calculating total size..."
+msgstr "正在計算總大小..."
 
 #: clipboardManager.py:66
 msgid "Cannot copy content of folders, please select files only"
@@ -38,25 +46,25 @@ msgstr "無法複製資料夾內容，請僅選取檔案"
 
 #: createFile.py:271
 msgid "Cannot find unique name for: {name}"
-msgstr "無法為 {name} 找到唯一名稱"
+msgstr "找不到唯一名稱：{name}"
 
-#: __init__.py:660
+#: __init__.py:888
 msgid "Cannot open settings dialog"
 msgstr "無法開啟設定對話方塊"
 
-#: txt2folder.py:69
+#: folderTools.py:570
 msgid "Cannot process RTF file: striprtf module not available"
 msgstr "無法處理 RTF 檔案：striprtf 模組無法使用"
 
-#: contextMenu.py:45
+#: contextMenu.py:43
 msgid "Case Converter for Folders"
 msgstr "資料夾大小寫轉換器"
 
-#: __init__.py:699
+#: __init__.py:927
 msgid "Case converter not available"
 msgstr "大小寫轉換器無法使用"
 
-#: __init__.py:420
+#: __init__.py:648
 msgid "Clipboard manager not available"
 msgstr "剪貼簿管理員無法使用"
 
@@ -64,7 +72,7 @@ msgstr "剪貼簿管理員無法使用"
 msgid "Completed"
 msgstr "已完成"
 
-#: contextMenu.py:27
+#: contextMenu.py:26
 msgid "Compress zip"
 msgstr "壓縮為 zip"
 
@@ -85,14 +93,14 @@ msgstr "正在壓縮：{percent}%"
 #: compressionManager.py:110
 #: compressionManager.py:282
 msgid "Compression cancelled"
-msgstr "已取消壓縮"
+msgstr "壓縮已取消"
 
 #: compressionManager.py:112
 #: compressionManager.py:285
 msgid "Compression completed {name}"
-msgstr "壓縮完成 {name}"
+msgstr "壓縮已完成 {name}"
 
-#: __init__.py:500
+#: __init__.py:728
 msgid "Compression manager not available"
 msgstr "壓縮管理員無法使用"
 
@@ -102,101 +110,101 @@ msgstr "壓縮逾時"
 
 #: clipboardManager.py:133
 msgid "Content from 1 file copied to clipboard"
-msgstr "已從 1 個檔案複製內容到剪貼簿"
+msgstr "已複製 1 個檔案的內容到剪貼簿"
 
 #: clipboardManager.py:135
 msgid "Content from {count} files copied to clipboard"
-msgstr "已從 {count} 個檔案複製內容到剪貼簿"
+msgstr "已複製 {count} 個檔案的內容到剪貼簿"
 
-#: __init__.py:607
-#: __init__.py:673
+#: __init__.py:835
+#: __init__.py:901
 msgid "Context menu manager not available"
 msgstr "操作功能表管理員無法使用"
 
-#: case.py:115
+#: folderTools.py:937
 msgid "Conversion already in progress"
-msgstr "轉換正在進行中"
+msgstr "轉換已在進行中"
 
-#: case.py:132
+#: folderTools.py:954
 msgid "Converting"
 msgstr "正在轉換"
 
 #: clipboardManager.py:44
 msgid "Copied 1 item name to clipboard"
-msgstr "已複製 1 個項目名稱到剪貼簿"
+msgstr "已複製 1 個項目的名稱到剪貼簿"
 
 #: clipboardManager.py:46
 msgid "Copied {count} item names to clipboard"
-msgstr "已複製 {count} 個項目名稱到剪貼簿"
+msgstr "已複製 {count} 個項目的名稱到剪貼簿"
 
-#: __init__.py:396
+#: __init__.py:624
 msgid "Copied: {path}"
 msgstr "已複製：{path}"
 
-#: contextMenu.py:29
+#: contextMenu.py:28
 msgid "Copy address bar"
 msgstr "複製網址列"
 
-#: contextMenu.py:30
+#: contextMenu.py:29
 msgid "Copy content"
 msgstr "複製內容"
 
-#: __init__.py:483
+#: __init__.py:711
 msgid "Copy content (single tap) or invert selection (double tap)"
-msgstr "複製內容（單擊）或反轉選取（雙擊）"
+msgstr "複製內容（單指點擊）或反向選取（雙指點擊）"
 
-#: contextMenu.py:31
+#: contextMenu.py:30
 msgid "Copy selected file and folder names"
 msgstr "複製選取的檔案和資料夾名稱"
 
-#: __init__.py:443
+#: __init__.py:671
 msgid "Copy selected names (single tap) or copy address bar (double tap)"
-msgstr "複製選取的名稱（單擊）或複製網址列（雙擊）"
+msgstr "複製選取的名稱（單指點擊）或複製網址列（雙指點擊）"
 
-#: __init__.py:400
+#: __init__.py:628
 #: clipboardManager.py:50
 #: clipboardManager.py:139
 msgid "Could not open clipboard"
 msgstr "無法開啟剪貼簿"
 
-#: contextMenu.py:24
+#: contextMenu.py:23
 #: createFile.py:17
 msgid "Create File"
 msgstr "建立檔案"
 
-#: folder_creation_dialog.py:16
+#: folderTools.py:128
 msgid "Create Multiple Folders"
 msgstr "建立多個資料夾"
 
-#: contextMenu.py:42
+#: contextMenu.py:40
 msgid "Create Multiple Folders..."
 msgstr "建立多個資料夾..."
 
-#: folder_creation_dialog.py:45
+#: folderTools.py:157
 msgid "Create main folder and then subfolders"
-msgstr "建立主資料夾，然後建立子資料夾"
+msgstr "先建立主資料夾，再建立子資料夾"
 
-#: __init__.py:651
+#: __init__.py:879
 msgid "Create new folder and paste clipboard content into rename field"
 msgstr "建立新資料夾並將剪貼簿內容貼到重新命名欄位"
 
-#: folder_creation_dialog.py:212
+#: folderTools.py:324
 msgid "Created {count} of {total} folders..."
 msgstr "已建立 {total} 個資料夾中的 {count} 個..."
 
-#: folder_creation_dialog.py:199
+#: folderTools.py:311
 msgid "Creating folders in background..."
 msgstr "正在背景建立資料夾..."
 
-#: folder_creation_dialog.py:49
+#: folderTools.py:161
 msgid "Edit individual folder names"
 msgstr "編輯個別資料夾名稱"
 
-#: folderInfo.py:71
+#: folderTools.py:120
 msgid "Error calculating folder info"
 msgstr "計算資料夾資訊時發生錯誤"
 
-#: fileOperations.py:248
+#: fileOperations.py:294
 msgid "Error calculating size"
 msgstr "計算大小時發生錯誤"
 
@@ -212,23 +220,23 @@ msgstr "複製檔案內容時發生錯誤"
 msgid "Error copying names to clipboard"
 msgstr "複製名稱到剪貼簿時發生錯誤"
 
-#: txt2folder.py:113
+#: folderTools.py:614
 msgid "Error creating base folder"
 msgstr "建立基底資料夾時發生錯誤"
 
-#: createFile.py:289
+#: createFile.py:291
 msgid "Error creating files"
 msgstr "建立檔案時發生錯誤"
 
-#: __init__.py:693
+#: __init__.py:921
 msgid "Error creating folders"
 msgstr "建立資料夾時發生錯誤"
 
-#: folder_creation_dialog.py:190
+#: folderTools.py:302
 msgid "Error creating main folder"
 msgstr "建立主資料夾時發生錯誤"
 
-#: __init__.py:737
+#: __init__.py:965
 msgid "Error during conversion"
 msgstr "轉換過程中發生錯誤"
 
@@ -236,62 +244,66 @@ msgstr "轉換過程中發生錯誤"
 msgid "Error in compression process: {error}"
 msgstr "壓縮過程中發生錯誤：{error}"
 
-#: selectionManager.py:71
+#: folderTools.py:804
 msgid "Error inverting selection"
-msgstr "反轉選取時發生錯誤"
+msgstr "反向選取時發生錯誤"
 
 #: createFile.py:245
 msgid "Error opening create file dialog"
 msgstr "開啟建立檔案對話方塊時發生錯誤"
 
-#: fileOperations.py:304
+#: fileOperations.py:350
 msgid "Error opening rename dialog"
 msgstr "開啟重新命名對話方塊時發生錯誤"
 
-#: __init__.py:667
+#: __init__.py:895
 msgid "Error opening settings"
 msgstr "開啟設定時發生錯誤"
 
-#: txt2folder.py:203
+#: folderTools.py:704
 msgid "Error processing text file: {}"
-msgstr "處理文字檔案時發生錯誤：{}"
+msgstr "處理文字檔時發生錯誤：{}"
 
-#: txt2folder.py:80
+#: folderTools.py:581
 msgid "Error reading RTF file"
 msgstr "讀取 RTF 檔案時發生錯誤"
 
-#: txt2folder.py:207
+#: folderTools.py:708
 msgid "Error reading file encoding"
 msgstr "讀取檔案編碼時發生錯誤"
 
-#: fileOperations.py:274
-#: fileOperations.py:301
+#: fileOperations.py:320
+#: fileOperations.py:347
 msgid "Error renaming file"
 msgstr "重新命名檔案時發生錯誤"
 
-#: txt2folder.py:212
+#: folderTools.py:713
 msgid "Error: {}"
 msgstr "錯誤：{}"
+
+#: __init__.py:1002
+msgid "Explorer tree dumped to NVDA log"
+msgstr "已將檔案總管樹狀結構傾印到 NVDA 記錄"
 
 #: createFile.py:72
 msgid "Extension:"
 msgstr "副檔名："
 
-#: case.py:127
+#: folderTools.py:949
 msgid "Failed to rename any folders"
 msgstr "無法重新命名任何資料夾"
 
 #: compressionManager.py:188
 msgid "Failed to start compression"
-msgstr "啟動壓縮失敗"
+msgstr "無法啟動壓縮"
 
 #: createFile.py:138
 msgid "File count cannot exceed 10"
-msgstr "檔案數量不能超過 10"
+msgstr "檔案數不得超過 10"
 
 #: createFile.py:135
 msgid "File count must be at least 1"
-msgstr "檔案數量至少為 1"
+msgstr "檔案數至少為 1"
 
 #: createFile.py:112
 msgid "File name"
@@ -299,9 +311,9 @@ msgstr "檔案名稱"
 
 #: fileOperations.py:59
 msgid "File name cannot be empty"
-msgstr "檔案名稱不能為空白"
+msgstr "檔案名稱不能空白"
 
-#: fileOperations.py:291
+#: fileOperations.py:337
 msgid "File name not changed"
 msgstr "檔案名稱未變更"
 
@@ -314,270 +326,292 @@ msgstr "檔案名稱 {index}："
 msgid "File name:"
 msgstr "檔案名稱："
 
-#: __init__.py:622
+#: __init__.py:850
 msgid "File operations manager not available"
 msgstr "檔案作業管理員無法使用"
 
-#: fileOperations.py:298
+#: fileOperations.py:344
 msgid "File renamed to {name}"
 msgstr "檔案已重新命名為 {name}"
 
-#: folder_creation_dialog.py:115
-#: folder_creation_dialog.py:155
+#: robocopyManager.py:448
+msgid "Finished {n} of {total}: {name}"
+msgstr "已完成 {total} 中的 {n} 個：{name}"
+
+#: folderTools.py:227
+#: folderTools.py:267
 msgid "Folder"
 msgstr "資料夾"
 
-#: txt2folder.py:104
-#: txt2folder.py:174
+#: folderTools.py:605
+#: folderTools.py:675
 msgid "Folder '{}' already exists, creating '{}' instead"
-msgstr "資料夾 '{}' 已存在，改為建立 '{}'"
+msgstr "資料夾「{}」已存在，改為建立「{}」"
 
-#: __init__.py:677
+#: __init__.py:905
 msgid "Folder creation dialog not available"
 msgstr "建立資料夾對話方塊無法使用"
 
-#: __init__.py:639
+#: __init__.py:867
 msgid "Folder creator helper not available"
-msgstr "資料夾建立幫手無法使用"
+msgstr "資料夾建立小幫手無法使用"
 
-#: contextMenu.py:52
+#: contextMenu.py:131
+#: contextMenu.py:134
+#: contextMenu.py:155
 msgid "Folder info"
 msgstr "資料夾資訊"
 
-#: folder_creation_dialog.py:30
+#: folderTools.py:142
 msgid "Folder title:"
 msgstr "資料夾標題："
 
-#: contextMenu.py:49
+#: contextMenu.py:47
 msgid "Headline Case"
-msgstr "標題大小寫"
+msgstr "標題大寫"
 
-#: folder_creation_dialog.py:166
+#: folderTools.py:278
 msgid "Invalid number for folders"
 msgstr "資料夾數量無效"
 
-#: contextMenu.py:28
+#: contextMenu.py:27
 msgid "Invert selection"
-msgstr "反轉選取"
+msgstr "反向選取"
 
-#: contextMenu.py:47
+#: contextMenu.py:45
 msgid "Lowercase"
 msgstr "小寫"
 
-#: folder_creation_dialog.py:163
+#: folderTools.py:275
 msgid "Maximum 100 folders allowed"
 msgstr "最多允許 100 個資料夾"
 
-#: __init__.py:681
+#: __init__.py:909
 msgid "No Explorer folder detected"
 msgstr "未偵測到檔案總管資料夾"
 
-#: fileOperations.py:173
-#: fileOperations.py:230
+#: fileOperations.py:219
+#: fileOperations.py:276
 msgid "No access to size data"
 msgstr "無法存取大小資料"
 
-#: selectionManager.py:36
+#: folderTools.py:769
 msgid "No active File Explorer window found"
-msgstr "找不到使用中的檔案總管視窗"
+msgstr "找不到作用中的檔案總管視窗"
 
 #: clipboardManager.py:127
 msgid "No content could be read from selected files"
-msgstr "無法從選取的檔案中讀取任何內容"
+msgstr "無法從選取的檔案讀取任何內容"
 
-#: createFile.py:282
+#: createFile.py:284
 msgid "No files were created"
 msgstr "未建立任何檔案"
 
-#: case.py:142
-#: case.py:148
-#: case.py:157
-#: case.py:163
+#: folderTools.py:964
+#: folderTools.py:970
+#: folderTools.py:979
+#: folderTools.py:985
 msgid "No folders found"
 msgstr "找不到資料夾"
 
-#: __init__.py:703
+#: __init__.py:931
 msgid "No folders selected"
 msgstr "未選取資料夾"
 
-#: __init__.py:718
+#: __init__.py:946
 msgid "No folders selected or current folder not available"
 msgstr "未選取資料夾或目前資料夾無法使用"
 
-#: folder_creation_dialog.py:229
-#: txt2folder.py:148
-#: txt2folder.py:198
+#: folderTools.py:341
+#: folderTools.py:649
+#: folderTools.py:699
 msgid "No folders were created"
 msgstr "未建立任何資料夾"
 
-#: folderInfo.py:30
+#: folderTools.py:81
 msgid "No item selected"
 msgstr "未選取項目"
 
-#: selectionManager.py:49
+#: folderTools.py:782
 msgid "No items in folder"
 msgstr "資料夾中沒有項目"
 
 #: clipboardManager.py:27
 #: clipboardManager.py:62
 #: compressionManager.py:148
-#: fileOperations.py:164
-#: fileOperations.py:260
+#: fileOperations.py:210
+#: fileOperations.py:306
 msgid "No items selected"
 msgstr "未選取項目"
 
 #: clipboardManager.py:79
 msgid "No text files selected"
-msgstr "未選取文字檔案"
+msgstr "未選取文字檔"
 
-#: txt2folder.py:90
-#: txt2folder.py:160
+#: folderTools.py:591
+#: folderTools.py:661
 msgid "No valid folder names found in the file"
-msgstr "在檔案中找不到有效的資料夾名稱"
+msgstr "檔案中找不到有效的資料夾名稱"
 
-#: folder_creation_dialog.py:184
+#: folderTools.py:296
 msgid "No valid folder names provided"
 msgstr "未提供有效的資料夾名稱"
 
+#: __init__.py:976
+msgid "Not focused on File Explorer"
+msgstr "未聚焦於檔案總管"
+
 #: createFile.py:198
-#: selectionManager.py:30
-#: txt2folder.py:40
+#: folderTools.py:541
+#: folderTools.py:763
 msgid "Not in File Explorer"
 msgstr "不在檔案總管中"
 
 #: createFile.py:28
 msgid "Number of files to create:"
-msgstr "要建立的檔案數量："
+msgstr "要建立的檔案數："
 
-#: folder_creation_dialog.py:160
+#: folderTools.py:272
 msgid "Number of folders must be at least 1"
 msgstr "資料夾數量至少為 1"
 
-#: folder_creation_dialog.py:38
+#: folderTools.py:150
 msgid "Number of folders:"
 msgstr "資料夾數量："
 
-#: __init__.py:616
+#: __init__.py:844
 msgid "Open xPlorer context menu"
 msgstr "開啟 xPlorer 操作功能表"
 
-#: txt2folder.py:53
+#: folderTools.py:554
 msgid "Please select a .txt or .rtf file"
 msgstr "請選取 .txt 或 .rtf 檔案"
 
-#: fileOperations.py:267
+#: fileOperations.py:313
 msgid "Please select a file, not a folder"
 msgstr "請選取檔案，而不是資料夾"
 
-#: fileOperations.py:263
+#: fileOperations.py:309
 msgid "Please select only one file"
 msgstr "請僅選取一個檔案"
 
-#: folderInfo.py:35
-msgid "Please select only one folder"
-msgstr "請僅選取一個資料夾"
-
-#: txt2folder.py:46
+#: folderTools.py:547
 msgid "Please select only one text file"
-msgstr "請僅選取一個文字檔案"
+msgstr "請僅選取一個文字檔"
 
-#: selectionManager.py:58
+#: folderTools.py:791
 msgid "Processing {count} items in background..."
 msgstr "正在背景處理 {count} 個項目..."
 
-#: __init__.py:633
-#: contextMenu.py:32
+#: __init__.py:861
+#: contextMenu.py:31
 msgid "Rename selected file"
 msgstr "重新命名選取的檔案"
 
-#: __init__.py:460
+#: __init__.py:688
 msgid "Required manager not available"
-msgstr "所需的管理員無法使用"
+msgstr "必要的管理員無法使用"
 
-#: contextMenu.py:36
+#: contextMenu.py:34
 msgid "Robocopy"
 msgstr "Robocopy"
 
-#: __init__.py:540
+#: robocopyManager.py:457
+msgid "Robocopy cancelled"
+msgstr "Robocopy 已取消"
+
+#: robocopyManager.py:469
+msgid "Robocopy finished successfully. {n} item(s) copied"
+msgstr "Robocopy 已成功完成。已複製 {n} 個項目"
+
+#: robocopyManager.py:465
+msgid "Robocopy finished. {ok} succeeded, {failed} failed: {items}"
+msgstr "Robocopy 已完成。成功 {ok} 個，失敗 {failed} 個：{items}"
+
+#: __init__.py:768
 msgid "Robocopy manager not available"
 msgstr "Robocopy 管理員無法使用"
 
-#: __init__.py:563
+#: __init__.py:791
 msgid "Robocopy: single tap copy, double tap paste, triple tap move"
-msgstr "Robocopy：單擊複製，雙擊貼上，三擊移動"
+msgstr "Robocopy：單指點擊複製，雙指點擊貼上，三指點擊移動"
 
-#: contextMenu.py:33
+#: contextMenu.py:89
+#: contextMenu.py:100
+#: contextMenu.py:106
+#: contextMenu.py:111
+#: contextMenu.py:117
 msgid "Say size"
 msgstr "朗讀大小"
 
-#: __init__.py:523
+#: __init__.py:751
 msgid "Say size (single tap) or compress zip (double tap)"
-msgstr "朗讀大小（單擊）或壓縮為 zip（雙擊）"
+msgstr "朗讀大小（單指點擊）或壓縮為 zip（雙指點擊）"
 
-#: txt2folder.py:58
+#: folderTools.py:559
 msgid "Selected file does not exist"
 msgstr "選取的檔案不存在"
 
-#: folderInfo.py:14
+#: folderTools.py:87
 msgid "Selected item is not a folder"
 msgstr "選取的項目不是資料夾"
 
-#: selectionManager.py:93
+#: folderTools.py:826
 msgid "Selected {count} items"
 msgstr "已選取 {count} 個項目"
 
-#: selectionManager.py:96
+#: folderTools.py:829
 msgid "Selection inverted"
-msgstr "已反轉選取"
+msgstr "已反向選取"
 
 #: createFile.py:170
 msgid "Some files will use default names"
-msgstr "某些檔案將使用預設名稱"
+msgstr "部分檔案將使用預設名稱"
 
 #: compressionManager.py:161
 msgid "Starting..."
 msgstr "正在啟動..."
 
-#: case.py:165
+#: folderTools.py:987
 msgid "Successfully converted {count} folders to headline case"
-msgstr "成功將 {count} 個資料夾轉換為標題大小寫"
+msgstr "已成功將 {count} 個資料夾轉換為標題大寫"
 
-#: case.py:150
+#: folderTools.py:972
 msgid "Successfully converted {count} folders to lowercase"
-msgstr "成功將 {count} 個資料夾轉換為小寫"
+msgstr "已成功將 {count} 個資料夾轉換為小寫"
 
-#: case.py:159
+#: folderTools.py:981
 msgid "Successfully converted {count} folders to title case"
-msgstr "成功將 {count} 個資料夾轉換為詞首大寫"
+msgstr "已成功將 {count} 個資料夾轉換為首字母大寫"
 
-#: case.py:144
+#: folderTools.py:966
 msgid "Successfully converted {count} folders to uppercase"
-msgstr "成功將 {count} 個資料夾轉換為大寫"
+msgstr "已成功將 {count} 個資料夾轉換為大寫"
 
-#: folder_creation_dialog.py:225
+#: folderTools.py:337
 msgid "Successfully created 1 folder"
-msgstr "成功建立 1 個資料夾"
+msgstr "已成功建立 1 個資料夾"
 
-#: folder_creation_dialog.py:223
+#: folderTools.py:335
 msgid "Successfully created main folder only"
 msgstr "僅成功建立主資料夾"
 
-#: folder_creation_dialog.py:227
+#: folderTools.py:339
 msgid "Successfully created {count} of {total} folders"
-msgstr "成功建立了 {total} 個資料夾中的 {count} 個"
+msgstr "已成功建立 {total} 個資料夾中的 {count} 個"
 
-#: txt2folder.py:144
-#: txt2folder.py:194
+#: folderTools.py:645
+#: folderTools.py:695
 msgid "Successfully created {} folders in '{}'"
-msgstr "在 '{}' 中成功建立了 {} 個資料夾"
+msgstr "已在「{}」中成功建立 {} 個資料夾"
 
-#: contextMenu.py:14
+#: contextMenu.py:39
 msgid "TXT to Folder"
-msgstr "TXT 轉資料夾"
+msgstr "TXT 到資料夾"
 
-#: contextMenu.py:48
+#: contextMenu.py:46
 msgid "Title Case"
-msgstr "詞首大寫"
+msgstr "首字母大寫"
 
 #: clipboardManager.py:88
 msgid "Total file size is too large to copy content"
@@ -585,17 +619,17 @@ msgstr "檔案總大小過大，無法複製內容"
 
 #: createFile.py:213
 msgid "Unable to get current directory after multiple attempts"
-msgstr "多次嘗試後無法取得目前目錄"
+msgstr "多次嘗試後仍無法取得目前目錄"
 
-#: __init__.py:402
+#: __init__.py:630
 msgid "Unable to get current path"
 msgstr "無法取得目前路徑"
 
-#: selectionManager.py:14
+#: folderTools.py:774
 msgid "Unable to get folder view"
 msgstr "無法取得資料夾檢視"
 
-#: contextMenu.py:46
+#: contextMenu.py:44
 msgid "Uppercase"
 msgstr "大寫"
 
@@ -611,11 +645,15 @@ msgstr "[RTF 內容 - striprtf 模組無法使用]"
 msgid "compression failed"
 msgstr "壓縮失敗"
 
-#: contextMenu.py:37
+#: contextMenu.py:35
 msgid "copy"
 msgstr "複製"
 
-#: contextMenu.py:38
+#: robocopyManager.py:235
+msgid "estimating time remaining"
+msgstr "正在估計剩餘時間"
+
+#: contextMenu.py:36
 msgid "move"
 msgstr "移動"
 
@@ -627,33 +665,53 @@ msgstr "新檔案"
 msgid "new_file_{index}"
 msgstr "新檔案_{index}"
 
-#: contextMenu.py:39
+#: contextMenu.py:37
 msgid "paste"
 msgstr "貼上"
 
-#: __init__.py:110
-#: __init__.py:444
-#: __init__.py:484
-#: __init__.py:524
-#: __init__.py:564
-#: __init__.py:617
-#: __init__.py:634
-#: __init__.py:652
+#: __init__.py:268
+#: __init__.py:672
+#: __init__.py:712
+#: __init__.py:752
+#: __init__.py:792
+#: __init__.py:845
+#: __init__.py:862
+#: __init__.py:880
 msgid "xPlorer"
 msgstr "xPlorer"
 
-#: contextMenu.py:51
+#: contextMenu.py:49
 msgid "xPlorer Settings"
 msgstr "xPlorer 設定"
 
-#: createFile.py:286
+#: createFile.py:288
 msgid "{count} files created"
 msgstr "已建立 {count} 個檔案"
 
-#: fileOperations.py:237
+#: fileOperations.py:283
 msgid "{count} items {size}"
 msgstr "{count} 個項目 {size}"
 
-#: folderInfo.py:62
+#: robocopyManager.py:240
+msgid "{h}h {m}m remaining"
+msgstr "剩餘 {h}小時 {m}分鐘"
+
+#: robocopyManager.py:242
+msgid "{m}m {s}s remaining"
+msgstr "剩餘 {m}分鐘 {s}秒"
+
+#: robocopyManager.py:304
+msgid "{pct}% - item {idx}/{total}: {name}"
+msgstr "{pct}% - 項目 {idx}/{total}：{name}"
+
+#: folderTools.py:111
 msgid "{subfolders} subfolders and {files} files"
 msgstr "{subfolders} 個子資料夾和 {files} 個檔案"
+
+#: contextMenu.py:150
+msgid "{subfolders} subfolders, {files} files"
+msgstr "{subfolders} 個子資料夾，{files} 個檔案"
+
+#: robocopyManager.py:243
+msgid "{s}s remaining"
+msgstr "剩餘 {s}秒"

@@ -15,16 +15,19 @@ import ctypes
 import addonHandler
 import core
 import tones
-import comtypes.client
-from urllib.parse import unquote
+from comtypes import COMError
 from logHandler import log
 
 addonHandler.initTranslation()
 
 DRIVE_REMOVABLE = 2
-STALL_HEARTBEAT_SECONDS = 8
 QUEUE_POLL_TIMEOUT = 0.3
-UI_UPDATE_MIN_INTERVAL = 0.15
+# How often the (relatively expensive) destination-size walk is refreshed.
+# Kept coarse on purpose: re-measuring a growing destination tree too often
+# adds real I/O load on exactly the slow drives this is meant to help.
+PROGRESS_MEASURE_INTERVAL_SECONDS = 1.0
+# How often the progress dialog itself is allowed to repaint/re-announce.
+PROGRESS_UI_MIN_INTERVAL_SECONDS = 1.0
 ROBOCOPY_FILES_SUMMARY_RE = re.compile(r"^\s*Files\s*:\s*(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)", re.MULTILINE)
 
 
@@ -79,24 +82,21 @@ class RobocopyManager:
 		paths = []
 		current_folder = None
 		try:
-			shell = comtypes.client.CreateObject("Shell.Application")
-			fg_hwnd = api.getForegroundObject().windowHandle
-			for window in shell.Windows():
-				try:
-					if window.hwnd == fg_hwnd:
-						if get_selection:
-							selection = window.Document.SelectedItems()
-							for i in range(selection.Count):
-								paths.append(selection.Item(i).Path)
-						try:
-							current_folder = window.Document.Folder.Self.Path
-						except Exception:
-							url = window.LocationURL
-							if url.startswith("file:///"):
-								current_folder = unquote(url[8:].replace("/", "\\"))
-						break
-				except Exception:
-					continue
+			# Reuse the plugin's tab-aware resolution instead of spinning up a
+			# separate Shell.Application and re-doing an unvalidated hwnd match:
+			# that duplicate logic could not tell tabs apart on a Windows 11
+			# tabbed Explorer window and would silently return whichever tab's
+			# COM entry it happened to enumerate first.
+			current_folder = self.plugin._getCurrentPathFromExplorer()
+			if get_selection:
+				window = self.plugin._getActiveExplorerWindow()
+				if window is not None:
+					try:
+						selection = window.Document.SelectedItems()
+						for i in range(selection.Count):
+							paths.append(selection.Item(i).Path)
+					except (COMError, AttributeError) as e:
+						log.debug(f"Robocopy: could not read selection: {e}")
 		except Exception as e:
 			log.debug(f"Robocopy COM Error: {e}")
 		return paths if get_selection else current_folder
@@ -157,7 +157,7 @@ class RobocopyManager:
 			log.debug(f"Robocopy: drive type check failed: {e}")
 			return False
 
-	def _buildRobocopyCommand(self, source, dest, isDir, isMove, useMultiThread):
+	def _buildRobocopyCommand(self, source, dest, isDir, isMove, useMultiThread, isSlowDrive):
 		if isDir:
 			sourceName = os.path.basename(source)
 			targetDest = os.path.join(dest, sourceName)
@@ -166,8 +166,15 @@ class RobocopyManager:
 			sourceDir = os.path.dirname(source)
 			sourceName = os.path.basename(source)
 			cmd = ["robocopy", sourceDir, dest, sourceName]
-		# /J: unbuffered I/O, avoids cache-related stalls and corruption on slow removable media
-		cmd += ["/R:5", "/W:5", "/J", "/V", "/NP"]
+		# /J: unbuffered I/O, avoids cache-related stalls and corruption on slow removable media.
+		# Old/slow drives get many SHORT retries (/R high, /W low) instead of the default few
+		# long waits: their failures are usually brief controller hiccups rather than the kind
+		# of outage a long wait helps with. This is what previously let large multi-file
+		# transfers on old USB sticks give up (or take far longer than needed) before finishing.
+		if isSlowDrive:
+			cmd += ["/R:10", "/W:2", "/J", "/V", "/NP"]
+		else:
+			cmd += ["/R:5", "/W:5", "/J", "/V", "/NP"]
 		if isDir:
 			cmd.append("/XJ")
 		if useMultiThread:
@@ -175,6 +182,76 @@ class RobocopyManager:
 		if isMove:
 			cmd.append("/MOVE")
 		return cmd
+
+	def _computeTransferSizes(self, sources):
+		"""Metadata-only pass (file sizes only, no content read) to get a real
+		total byte count up front, per source. Progress is then reported as
+		bytes-copied/bytes-total instead of one tick per top-level selected
+		item, which previously meant a single large folder or file sat at 0%
+		for the entire copy and only jumped once it finished."""
+		perSourceBytes = []
+		totalBytes = 0
+		for source in sources:
+			sourceBytes = 0
+			try:
+				if os.path.isdir(source):
+					for root, dirs, files in os.walk(source):
+						for fileName in files:
+							try:
+								sourceBytes += os.path.getsize(os.path.join(root, fileName))
+							except OSError:
+								continue
+				else:
+					sourceBytes = os.path.getsize(source)
+			except OSError:
+				pass
+			perSourceBytes.append(sourceBytes)
+			totalBytes += sourceBytes
+		return perSourceBytes, totalBytes
+
+	def _measurePathBytes(self, path):
+		"""Bounded size check of what has been written to a single
+		destination so far - called on a throttle (PROGRESS_MEASURE_INTERVAL)
+		so repeatedly walking a growing destination tree doesn't itself add
+		meaningful I/O load on the slow drive we're trying to protect."""
+		total = 0
+		try:
+			if os.path.isdir(path):
+				for root, dirs, files in os.walk(path):
+					for fileName in files:
+						try:
+							total += os.path.getsize(os.path.join(root, fileName))
+						except OSError:
+							continue
+			elif os.path.isfile(path):
+				total = os.path.getsize(path)
+		except OSError:
+			pass
+		return total
+
+	@staticmethod
+	def _formatETA(seconds):
+		if seconds is None or seconds == float("inf") or seconds <= 0:
+			return _("estimating time remaining")
+		seconds = int(seconds)
+		hours, rem = divmod(seconds, 3600)
+		minutes, secs = divmod(rem, 60)
+		if hours:
+			return _("{h}h {m}m remaining").format(h=hours, m=minutes)
+		if minutes:
+			return _("{m}m {s}s remaining").format(m=minutes, s=secs)
+		return _("{s}s remaining").format(s=secs)
+
+	@staticmethod
+	def _formatSpeed(bytesPerSecond):
+		if bytesPerSecond <= 0:
+			return ""
+		value = bytesPerSecond
+		for unit in ("B/s", "KB/s", "MB/s", "GB/s"):
+			if value < 1024:
+				return f"{value:.1f} {unit}"
+			value /= 1024
+		return f"{value:.1f} TB/s"
 
 	def _startStdoutReader(self, process):
 		# Reading stdout line-by-line in the main transfer loop blocks whenever robocopy
@@ -208,6 +285,30 @@ class RobocopyManager:
 		# Total, Copied, Skipped, Mismatch, FAILED, Extras
 		return int(match.group(5))
 
+	def _reportProgress(self, dlg, target_dest, bytesCompletedBeforeCurrent, totalBytes,
+			startTime, itemIndex, totalItems, source_name, measureCache):
+		now = time.monotonic()
+		if now - measureCache["time"] >= PROGRESS_MEASURE_INTERVAL_SECONDS:
+			measureCache["bytes"] = self._measurePathBytes(target_dest)
+			measureCache["time"] = now
+		copiedSoFar = bytesCompletedBeforeCurrent + measureCache["bytes"]
+		percentage = int((copiedSoFar / totalBytes) * 100) if totalBytes else 0
+		# Never claim 100% until the item has actually finished - the exact
+		# final byte count on disk can lag the reported percentage slightly.
+		percentage = max(0, min(percentage, 99))
+		elapsed = now - startTime
+		speed = copiedSoFar / elapsed if elapsed > 0 else 0
+		remainingBytes = max(totalBytes - copiedSoFar, 0)
+		eta = remainingBytes / speed if speed > 0 else None
+		speedText = self._formatSpeed(speed)
+		statusText = _("{pct}% - item {idx}/{total}: {name}").format(
+			pct=percentage, idx=itemIndex, total=totalItems, name=source_name
+		)
+		if speedText:
+			statusText += f" - {speedText}"
+		statusText += f" - {self._formatETA(eta)}"
+		wx.CallAfter(dlg.update_progress, percentage, statusText)
+
 	def _run_transfer(self, sources, dest, is_move):
 		dlg = None
 
@@ -218,11 +319,18 @@ class RobocopyManager:
 		wx.CallAfter(create_dlg)
 		time.sleep(0.3)
 
-		useMultiThread = not self._isRemovableDrive(dest)
-		totalFiles = len(sources)
+		if dlg:
+			wx.CallAfter(dlg.update_progress, 0, _("Calculating total size..."))
+		perSourceBytes, totalBytes = self._computeTransferSizes(sources)
+
+		isSlowDrive = self._isRemovableDrive(dest)
+		useMultiThread = not isSlowDrive
+		totalItems = len(sources)
 		failedItems = []
 		succeededCount = 0
 		wasCancelled = False
+		startTime = time.monotonic()
+		bytesCompletedBeforeCurrent = 0
 
 		for idx, source in enumerate(sources):
 			if dlg and dlg.is_cancelled:
@@ -231,84 +339,113 @@ class RobocopyManager:
 			source_name = os.path.basename(source)
 			is_dir = os.path.isdir(source)
 			target_dest = os.path.join(dest, source_name)
-			cmd = self._buildRobocopyCommand(source, dest, is_dir, is_move, useMultiThread)
 
-			try:
-				startupinfo = subprocess.STARTUPINFO()
-				startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
-				self.active_process = subprocess.Popen(
-					cmd,
-					stdout=subprocess.PIPE,
-					stderr=subprocess.STDOUT,
-					startupinfo=startupinfo,
-					creationflags=subprocess.CREATE_NO_WINDOW
-				)
+			# Try once with the drive's normal threading mode; if that attempt
+			# fails outright, retry the SAME source single-threaded with the
+			# more patient slow-drive retry timing before giving up entirely.
+			# This also protects against drives Windows misreports as fixed
+			# (e.g. through a generic USB card-reader enclosure) but which are
+			# actually old and slow: robocopy's own /MT overload is what most
+			# often caused an otherwise-good copy to fail partway through.
+			attemptPlan = [(useMultiThread, isSlowDrive)]
+			if useMultiThread:
+				attemptPlan.append((False, True))
 
-				outputQueue, readerThread = self._startStdoutReader(self.active_process)
-				summaryLines = []
-				lastActivityTime = time.monotonic()
-				lastUiUpdateTime = 0.0
+			succeededThisSource = False
+			measureCache = {"bytes": 0, "time": 0.0}
 
-				while True:
-					if dlg and dlg.is_cancelled:
-						wasCancelled = True
-						self.active_process.terminate()
-						break
-					try:
-						line = outputQueue.get(timeout=QUEUE_POLL_TIMEOUT)
-					except queue.Empty:
-						if self.active_process.poll() is not None:
-							break
-						if time.monotonic() - lastActivityTime >= STALL_HEARTBEAT_SECONDS:
-							lastActivityTime = time.monotonic()
-							wx.CallAfter(dlg.update_progress, int((idx / totalFiles) * 100), f"Still copying: {source_name}")
-						continue
-					if line is None:
-						break
-					lastActivityTime = time.monotonic()
-					summaryLines.append(line)
-					now = time.monotonic()
-					if now - lastUiUpdateTime >= UI_UPDATE_MIN_INTERVAL:
-						lastUiUpdateTime = now
-						wx.CallAfter(dlg.update_progress, int((idx + 1) / totalFiles * 100), f"Copying: {source_name}")
-
-				readerThread.join(timeout=2)
-				try:
-					self.active_process.wait(timeout=10)
-				except subprocess.TimeoutExpired:
-					self.active_process.kill()
-					self.active_process.wait(timeout=5)
-				exit_code = self.active_process.returncode
-
-				if wasCancelled:
+			for attemptMultiThread, attemptSlowTuning in attemptPlan:
+				if succeededThisSource or wasCancelled:
 					break
+				cmd = self._buildRobocopyCommand(source, dest, is_dir, is_move, attemptMultiThread, attemptSlowTuning)
 
-				if exit_code is not None and exit_code >= 8:
-					log.error(f"Robocopy error for {source_name} (exit code: {exit_code})")
-					failedItems.append(source_name)
+				try:
+					startupinfo = subprocess.STARTUPINFO()
+					startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+					self.active_process = subprocess.Popen(
+						cmd,
+						stdout=subprocess.PIPE,
+						stderr=subprocess.STDOUT,
+						startupinfo=startupinfo,
+						creationflags=subprocess.CREATE_NO_WINDOW
+					)
+
+					outputQueue, readerThread = self._startStdoutReader(self.active_process)
+					summaryLines = []
+					lastUiUpdateTime = 0.0
+
+					while True:
+						if dlg and dlg.is_cancelled:
+							wasCancelled = True
+							self.active_process.terminate()
+							break
+						try:
+							line = outputQueue.get(timeout=QUEUE_POLL_TIMEOUT)
+						except queue.Empty:
+							if self.active_process.poll() is not None:
+								break
+							now = time.monotonic()
+							if dlg and now - lastUiUpdateTime >= PROGRESS_UI_MIN_INTERVAL_SECONDS:
+								lastUiUpdateTime = now
+								self._reportProgress(dlg, target_dest, bytesCompletedBeforeCurrent,
+										totalBytes, startTime, idx + 1, totalItems, source_name, measureCache)
+							continue
+						if line is None:
+							break
+						summaryLines.append(line)
+						now = time.monotonic()
+						if dlg and now - lastUiUpdateTime >= PROGRESS_UI_MIN_INTERVAL_SECONDS:
+							lastUiUpdateTime = now
+							self._reportProgress(dlg, target_dest, bytesCompletedBeforeCurrent,
+									totalBytes, startTime, idx + 1, totalItems, source_name, measureCache)
+
+					readerThread.join(timeout=2)
+					try:
+						self.active_process.wait(timeout=10)
+					except subprocess.TimeoutExpired:
+						self.active_process.kill()
+						self.active_process.wait(timeout=5)
+					exit_code = self.active_process.returncode
+
+					if wasCancelled:
+						break
+
+					if exit_code is not None and exit_code >= 8:
+						log.error(f"Robocopy error for {source_name} (exit code: {exit_code})")
+						continue
+
+					if exit_code is None:
+						log.warning(f"Robocopy for {source_name} finished but exit code is None")
+
+					failedInSummary = self._parseFailedCount(summaryLines)
+					if failedInSummary > 0:
+						log.error(f"Robocopy reported {failedInSummary} failed file(s) for {source_name}")
+						continue
+
+					if not is_dir and not self._verify_file_copy(source, target_dest):
+						log.error(f"Verification failed for {source_name}")
+						continue
+
+					log.debug(f"Robocopy success for {source_name} (exit code: {exit_code})")
+					succeededThisSource = True
+
+				except (OSError, subprocess.SubprocessError) as e:
+					log.exception(f"Robocopy error for {source_name}: {e}")
 					continue
 
-				if exit_code is None:
-					log.warning(f"Robocopy for {source_name} finished but exit code is None")
+			if wasCancelled:
+				break
 
-				failedInSummary = self._parseFailedCount(summaryLines)
-				if failedInSummary > 0:
-					log.error(f"Robocopy reported {failedInSummary} failed file(s) for {source_name}")
-					failedItems.append(source_name)
-					continue
-
-				if not is_dir and not self._verify_file_copy(source, target_dest):
-					log.error(f"Verification failed for {source_name}")
-					failedItems.append(source_name)
-					continue
-
-				log.debug(f"Robocopy success for {source_name} (exit code: {exit_code})")
+			if succeededThisSource:
 				succeededCount += 1
-
-			except (OSError, subprocess.SubprocessError) as e:
-				log.exception(f"Robocopy error for {source_name}: {e}")
+			else:
 				failedItems.append(source_name)
-				continue
+
+			bytesCompletedBeforeCurrent += perSourceBytes[idx]
+			if dlg:
+				overallPercentage = int((bytesCompletedBeforeCurrent / totalBytes) * 100) if totalBytes else 0
+				wx.CallAfter(dlg.update_progress, min(overallPercentage, 100),
+						_("Finished {n} of {total}: {name}").format(n=idx + 1, total=totalItems, name=source_name))
 
 		def cleanup_dlg():
 			if dlg:
@@ -317,18 +454,19 @@ class RobocopyManager:
 
 		if wasCancelled:
 			tones.beep(200, 150)
-			core.callLater(0, ui.message, "Robocopy cancelled")
+			core.callLater(0, ui.message, _("Robocopy cancelled"))
 			return
 
 		if failedItems:
 			tones.beep(200, 300)
 			shownItems = ", ".join(failedItems[:5])
 			if len(failedItems) > 5:
-				shownItems += f" and {len(failedItems) - 5} more"
-			core.callLater(0, ui.message, f"Robocopy finished. {succeededCount} succeeded, {len(failedItems)} failed: {shownItems}")
+				shownItems += _(" and {n} more").format(n=len(failedItems) - 5)
+			core.callLater(0, ui.message, _("Robocopy finished. {ok} succeeded, {failed} failed: {items}").format(
+					ok=succeededCount, failed=len(failedItems), items=shownItems))
 		else:
 			tones.beep(1760, 300)
-			core.callLater(0, ui.message, f"Robocopy finished successfully. {succeededCount} item(s) copied")
+			core.callLater(0, ui.message, _("Robocopy finished successfully. {n} item(s) copied").format(n=succeededCount))
 
 	def _verify_file_copy(self, source_path, dest_path):
 		try:
@@ -350,3 +488,5 @@ class RobocopyManager:
 				self.active_process.terminate()
 			except OSError:
 				pass
+
+

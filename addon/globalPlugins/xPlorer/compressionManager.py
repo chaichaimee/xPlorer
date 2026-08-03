@@ -286,3 +286,4 @@ class CompressionManager:
 		except Exception as e:
 			log.error(f"Built-in compression failed: {e}")
 			callback(False, _("Built-in compression failed: {error}").format(error=str(e)))
+

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: xPlorer 2026.7.0\n"
+"Project-Id-Version: xPlorer 2026.8.5\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-06-24 13:09+0700\n"
+"POT-Creation-Date: 2026-08-03 06:13+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Slovak\n"
@@ -12,19 +12,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: DevOn Addon\n"
 
-#: folder_creation_dialog.py:62
+#: robocopyManager.py:464
+msgid " and {n} more"
+msgstr " a {n} ďalších"
+
+#: folderTools.py:174
 msgid "&Apply"
 msgstr "&Použiť"
 
-#: folder_creation_dialog.py:63
+#: folderTools.py:175
 msgid "&Cancel"
 msgstr "&Zrušiť"
 
-#: createFile.py:284
+#: createFile.py:286
 msgid "1 file created"
-msgstr "Vytvorený 1 súbor"
+msgstr "1 súbor vytvorený"
 
-#: fileOperations.py:294
+#: fileOperations.py:340
 msgid "A file with this name already exists"
 msgstr "Súbor s týmto názvom už existuje"
 
@@ -32,55 +36,59 @@ msgstr "Súbor s týmto názvom už existuje"
 msgid "Built-in compression failed: {error}"
 msgstr "Vstavaná kompresia zlyhala: {error}"
 
+#: robocopyManager.py:323
+msgid "Calculating total size..."
+msgstr "Výpočet celkovej veľkosti..."
+
 #: clipboardManager.py:66
 msgid "Cannot copy content of folders, please select files only"
-msgstr "Nemožno kopírovať obsah priečinkov, vyberte iba súbory"
+msgstr "Nie je možné kopírovať obsah priečinkov, vyberte iba súbory"
 
 #: createFile.py:271
 msgid "Cannot find unique name for: {name}"
 msgstr "Nepodarilo sa nájsť jedinečný názov pre: {name}"
 
-#: __init__.py:660
+#: __init__.py:888
 msgid "Cannot open settings dialog"
-msgstr "Nepodarilo sa otvoriť dialóg nastavení"
+msgstr "Nie je možné otvoriť dialógové okno nastavení"
 
-#: txt2folder.py:69
+#: folderTools.py:570
 msgid "Cannot process RTF file: striprtf module not available"
-msgstr "Nepodarilo sa spracovať RTF súbor: modul striprtf nie je dostupný"
+msgstr "Nie je možné spracovať RTF súbor: modul striprtf nie je k dispozícii"
 
-#: contextMenu.py:45
+#: contextMenu.py:43
 msgid "Case Converter for Folders"
-msgstr "Prevodník veľkosti písmen pre priečinky"
+msgstr "Konvertor veľkosti písmen pre priečinky"
 
-#: __init__.py:699
+#: __init__.py:927
 msgid "Case converter not available"
-msgstr "Prevodník veľkosti písmen nie je dostupný"
+msgstr "Konvertor veľkosti písmen nie je k dispozícii"
 
-#: __init__.py:420
+#: __init__.py:648
 msgid "Clipboard manager not available"
-msgstr "Správca schránky nie je dostupný"
+msgstr "Správca schránky nie je k dispozícii"
 
 #: compressionManager.py:284
 msgid "Completed"
 msgstr "Dokončené"
 
-#: contextMenu.py:27
+#: contextMenu.py:26
 msgid "Compress zip"
-msgstr "Komprimovať do zip"
+msgstr "Komprimovať zip"
 
 #: compressionManager.py:160
 #: compressionManager.py:168
 msgid "Compressing files"
-msgstr "Komprimovanie súborov"
+msgstr "Kompresia súborov"
 
 #: compressionManager.py:75
 msgid "Compressing..."
-msgstr "Komprimovanie..."
+msgstr "Kompresia..."
 
 #: compressionManager.py:263
 #: compressionManager.py:277
 msgid "Compressing: {percent}%"
-msgstr "Komprimovanie: {percent}%"
+msgstr "Kompresia: {percent}%"
 
 #: compressionManager.py:110
 #: compressionManager.py:282
@@ -92,13 +100,13 @@ msgstr "Kompresia zrušená"
 msgid "Compression completed {name}"
 msgstr "Kompresia dokončená {name}"
 
-#: __init__.py:500
+#: __init__.py:728
 msgid "Compression manager not available"
-msgstr "Správca kompresie nie je dostupný"
+msgstr "Správca kompresie nie je k dispozícii"
 
 #: compressionManager.py:86
 msgid "Compression timed out"
-msgstr "Časový limit kompresie vypršal"
+msgstr "Vypršal časový limit kompresie"
 
 #: clipboardManager.py:133
 msgid "Content from 1 file copied to clipboard"
@@ -108,18 +116,18 @@ msgstr "Obsah z 1 súboru skopírovaný do schránky"
 msgid "Content from {count} files copied to clipboard"
 msgstr "Obsah z {count} súborov skopírovaný do schránky"
 
-#: __init__.py:607
-#: __init__.py:673
+#: __init__.py:835
+#: __init__.py:901
 msgid "Context menu manager not available"
-msgstr "Správca kontextového menu nie je dostupný"
+msgstr "Správca kontextového menu nie je k dispozícii"
 
-#: case.py:115
+#: folderTools.py:937
 msgid "Conversion already in progress"
-msgstr "Prevod už prebieha"
+msgstr "Konverzia už prebieha"
 
-#: case.py:132
+#: folderTools.py:954
 msgid "Converting"
-msgstr "Prevod"
+msgstr "Konverzia"
 
 #: clipboardManager.py:44
 msgid "Copied 1 item name to clipboard"
@@ -129,80 +137,80 @@ msgstr "Názov 1 položky skopírovaný do schránky"
 msgid "Copied {count} item names to clipboard"
 msgstr "Názvy {count} položiek skopírované do schránky"
 
-#: __init__.py:396
+#: __init__.py:624
 msgid "Copied: {path}"
 msgstr "Skopírované: {path}"
 
-#: contextMenu.py:29
+#: contextMenu.py:28
 msgid "Copy address bar"
 msgstr "Kopírovať adresný riadok"
 
-#: contextMenu.py:30
+#: contextMenu.py:29
 msgid "Copy content"
 msgstr "Kopírovať obsah"
 
-#: __init__.py:483
+#: __init__.py:711
 msgid "Copy content (single tap) or invert selection (double tap)"
 msgstr "Kopírovať obsah (jedno klepnutie) alebo invertovať výber (dvojité klepnutie)"
 
-#: contextMenu.py:31
+#: contextMenu.py:30
 msgid "Copy selected file and folder names"
 msgstr "Kopírovať názvy vybraných súborov a priečinkov"
 
-#: __init__.py:443
+#: __init__.py:671
 msgid "Copy selected names (single tap) or copy address bar (double tap)"
 msgstr "Kopírovať vybrané názvy (jedno klepnutie) alebo kopírovať adresný riadok (dvojité klepnutie)"
 
-#: __init__.py:400
+#: __init__.py:628
 #: clipboardManager.py:50
 #: clipboardManager.py:139
 msgid "Could not open clipboard"
 msgstr "Nepodarilo sa otvoriť schránku"
 
-#: contextMenu.py:24
+#: contextMenu.py:23
 #: createFile.py:17
 msgid "Create File"
 msgstr "Vytvoriť súbor"
 
-#: folder_creation_dialog.py:16
+#: folderTools.py:128
 msgid "Create Multiple Folders"
 msgstr "Vytvoriť viacero priečinkov"
 
-#: contextMenu.py:42
+#: contextMenu.py:40
 msgid "Create Multiple Folders..."
 msgstr "Vytvoriť viacero priečinkov..."
 
-#: folder_creation_dialog.py:45
+#: folderTools.py:157
 msgid "Create main folder and then subfolders"
 msgstr "Vytvoriť hlavný priečinok a potom podpriečinky"
 
-#: __init__.py:651
+#: __init__.py:879
 msgid "Create new folder and paste clipboard content into rename field"
-msgstr "Vytvoriť nový priečinok a vložiť obsah schránky do poľa pre premenovanie"
+msgstr "Vytvoriť nový priečinok a vložiť obsah schránky do poľa na premenovanie"
 
-#: folder_creation_dialog.py:212
+#: folderTools.py:324
 msgid "Created {count} of {total} folders..."
 msgstr "Vytvorených {count} z {total} priečinkov..."
 
-#: folder_creation_dialog.py:199
+#: folderTools.py:311
 msgid "Creating folders in background..."
 msgstr "Vytváranie priečinkov na pozadí..."
 
-#: folder_creation_dialog.py:49
+#: folderTools.py:161
 msgid "Edit individual folder names"
 msgstr "Upraviť jednotlivé názvy priečinkov"
 
-#: folderInfo.py:71
+#: folderTools.py:120
 msgid "Error calculating folder info"
 msgstr "Chyba pri výpočte informácií o priečinku"
 
-#: fileOperations.py:248
+#: fileOperations.py:294
 msgid "Error calculating size"
 msgstr "Chyba pri výpočte veľkosti"
 
 #: compressionManager.py:196
 msgid "Error compressing files"
-msgstr "Chyba pri komprimovaní súborov"
+msgstr "Chyba pri kompresii súborov"
 
 #: clipboardManager.py:142
 msgid "Error copying file content"
@@ -212,72 +220,76 @@ msgstr "Chyba pri kopírovaní obsahu súboru"
 msgid "Error copying names to clipboard"
 msgstr "Chyba pri kopírovaní názvov do schránky"
 
-#: txt2folder.py:113
+#: folderTools.py:614
 msgid "Error creating base folder"
 msgstr "Chyba pri vytváraní základného priečinka"
 
-#: createFile.py:289
+#: createFile.py:291
 msgid "Error creating files"
 msgstr "Chyba pri vytváraní súborov"
 
-#: __init__.py:693
+#: __init__.py:921
 msgid "Error creating folders"
 msgstr "Chyba pri vytváraní priečinkov"
 
-#: folder_creation_dialog.py:190
+#: folderTools.py:302
 msgid "Error creating main folder"
 msgstr "Chyba pri vytváraní hlavného priečinka"
 
-#: __init__.py:737
+#: __init__.py:965
 msgid "Error during conversion"
-msgstr "Chyba počas prevodu"
+msgstr "Chyba počas konverzie"
 
 #: compressionManager.py:117
 msgid "Error in compression process: {error}"
 msgstr "Chyba v procese kompresie: {error}"
 
-#: selectionManager.py:71
+#: folderTools.py:804
 msgid "Error inverting selection"
 msgstr "Chyba pri invertovaní výberu"
 
 #: createFile.py:245
 msgid "Error opening create file dialog"
-msgstr "Chyba pri otváraní dialógu na vytvorenie súboru"
+msgstr "Chyba pri otváraní dialógového okna na vytvorenie súboru"
 
-#: fileOperations.py:304
+#: fileOperations.py:350
 msgid "Error opening rename dialog"
-msgstr "Chyba pri otváraní dialógu premenovania"
+msgstr "Chyba pri otváraní dialógového okna na premenovanie"
 
-#: __init__.py:667
+#: __init__.py:895
 msgid "Error opening settings"
 msgstr "Chyba pri otváraní nastavení"
 
-#: txt2folder.py:203
+#: folderTools.py:704
 msgid "Error processing text file: {}"
 msgstr "Chyba pri spracovaní textového súboru: {}"
 
-#: txt2folder.py:80
+#: folderTools.py:581
 msgid "Error reading RTF file"
 msgstr "Chyba pri čítaní RTF súboru"
 
-#: txt2folder.py:207
+#: folderTools.py:708
 msgid "Error reading file encoding"
 msgstr "Chyba pri čítaní kódovania súboru"
 
-#: fileOperations.py:274
-#: fileOperations.py:301
+#: fileOperations.py:320
+#: fileOperations.py:347
 msgid "Error renaming file"
 msgstr "Chyba pri premenovaní súboru"
 
-#: txt2folder.py:212
+#: folderTools.py:713
 msgid "Error: {}"
 msgstr "Chyba: {}"
+
+#: __init__.py:1002
+msgid "Explorer tree dumped to NVDA log"
+msgstr "Strom Prieskumníka vypísaný do denníka NVDA"
 
 #: createFile.py:72
 msgid "Extension:"
 msgstr "Prípona:"
 
-#: case.py:127
+#: folderTools.py:949
 msgid "Failed to rename any folders"
 msgstr "Nepodarilo sa premenovať žiadne priečinky"
 
@@ -287,7 +299,7 @@ msgstr "Nepodarilo sa spustiť kompresiu"
 
 #: createFile.py:138
 msgid "File count cannot exceed 10"
-msgstr "Počet súborov nemôže presiahnuť 10"
+msgstr "Počet súborov nesmie presiahnuť 10"
 
 #: createFile.py:135
 msgid "File count must be at least 1"
@@ -301,9 +313,9 @@ msgstr "Názov súboru"
 msgid "File name cannot be empty"
 msgstr "Názov súboru nemôže byť prázdny"
 
-#: fileOperations.py:291
+#: fileOperations.py:337
 msgid "File name not changed"
-msgstr "Názov súboru nezmenený"
+msgstr "Názov súboru sa nezmenil"
 
 #: createFile.py:66
 #: createFile.py:113
@@ -314,219 +326,241 @@ msgstr "Názov súboru {index}:"
 msgid "File name:"
 msgstr "Názov súboru:"
 
-#: __init__.py:622
+#: __init__.py:850
 msgid "File operations manager not available"
-msgstr "Správca operácií so súbormi nie je dostupný"
+msgstr "Správca operácií so súbormi nie je k dispozícii"
 
-#: fileOperations.py:298
+#: fileOperations.py:344
 msgid "File renamed to {name}"
 msgstr "Súbor premenovaný na {name}"
 
-#: folder_creation_dialog.py:115
-#: folder_creation_dialog.py:155
+#: robocopyManager.py:448
+msgid "Finished {n} of {total}: {name}"
+msgstr "Dokončených {n} z {total}: {name}"
+
+#: folderTools.py:227
+#: folderTools.py:267
 msgid "Folder"
 msgstr "Priečinok"
 
-#: txt2folder.py:104
-#: txt2folder.py:174
+#: folderTools.py:605
+#: folderTools.py:675
 msgid "Folder '{}' already exists, creating '{}' instead"
 msgstr "Priečinok '{}' už existuje, namiesto neho sa vytvára '{}'"
 
-#: __init__.py:677
+#: __init__.py:905
 msgid "Folder creation dialog not available"
-msgstr "Dialóg na vytvorenie priečinka nie je dostupný"
+msgstr "Dialógové okno na vytvorenie priečinka nie je k dispozícii"
 
-#: __init__.py:639
+#: __init__.py:867
 msgid "Folder creator helper not available"
-msgstr "Pomocník na vytváranie priečinkov nie je dostupný"
+msgstr "Pomocník na vytváranie priečinkov nie je k dispozícii"
 
-#: contextMenu.py:52
+#: contextMenu.py:131
+#: contextMenu.py:134
+#: contextMenu.py:155
 msgid "Folder info"
 msgstr "Informácie o priečinku"
 
-#: folder_creation_dialog.py:30
+#: folderTools.py:142
 msgid "Folder title:"
 msgstr "Názov priečinka:"
 
-#: contextMenu.py:49
+#: contextMenu.py:47
 msgid "Headline Case"
-msgstr "Veľkosť písmen nadpisov"
+msgstr "Veľké písmená nadpisov"
 
-#: folder_creation_dialog.py:166
+#: folderTools.py:278
 msgid "Invalid number for folders"
-msgstr "Neplatný počet priečinkov"
+msgstr "Neplatný počet pre priečinky"
 
-#: contextMenu.py:28
+#: contextMenu.py:27
 msgid "Invert selection"
 msgstr "Invertovať výber"
 
-#: contextMenu.py:47
+#: contextMenu.py:45
 msgid "Lowercase"
 msgstr "Malé písmená"
 
-#: folder_creation_dialog.py:163
+#: folderTools.py:275
 msgid "Maximum 100 folders allowed"
-msgstr "Maximálne 100 priečinkov"
+msgstr "Maximálne 100 priečinkov povolených"
 
-#: __init__.py:681
+#: __init__.py:909
 msgid "No Explorer folder detected"
 msgstr "Nebol zistený žiadny priečinok Prieskumníka"
 
-#: fileOperations.py:173
-#: fileOperations.py:230
+#: fileOperations.py:219
+#: fileOperations.py:276
 msgid "No access to size data"
 msgstr "Žiadny prístup k údajom o veľkosti"
 
-#: selectionManager.py:36
+#: folderTools.py:769
 msgid "No active File Explorer window found"
 msgstr "Nenašlo sa žiadne aktívne okno Prieskumníka súborov"
 
 #: clipboardManager.py:127
 msgid "No content could be read from selected files"
-msgstr "Z vybraných súborov nebolo možné prečítať žiadny obsah"
+msgstr "Z vybraných súborov sa nepodarilo načítať žiadny obsah"
 
-#: createFile.py:282
+#: createFile.py:284
 msgid "No files were created"
 msgstr "Neboli vytvorené žiadne súbory"
 
-#: case.py:142
-#: case.py:148
-#: case.py:157
-#: case.py:163
+#: folderTools.py:964
+#: folderTools.py:970
+#: folderTools.py:979
+#: folderTools.py:985
 msgid "No folders found"
 msgstr "Nenašli sa žiadne priečinky"
 
-#: __init__.py:703
+#: __init__.py:931
 msgid "No folders selected"
-msgstr "Nie sú vybrané žiadne priečinky"
+msgstr "Neboli vybrané žiadne priečinky"
 
-#: __init__.py:718
+#: __init__.py:946
 msgid "No folders selected or current folder not available"
-msgstr "Nie sú vybrané žiadne priečinky alebo aktuálny priečinok nie je dostupný"
+msgstr "Neboli vybrané žiadne priečinky alebo aktuálny priečinok nie je k dispozícii"
 
-#: folder_creation_dialog.py:229
-#: txt2folder.py:148
-#: txt2folder.py:198
+#: folderTools.py:341
+#: folderTools.py:649
+#: folderTools.py:699
 msgid "No folders were created"
 msgstr "Neboli vytvorené žiadne priečinky"
 
-#: folderInfo.py:30
+#: folderTools.py:81
 msgid "No item selected"
-msgstr "Nie je vybraná žiadna položka"
+msgstr "Nebola vybraná žiadna položka"
 
-#: selectionManager.py:49
+#: folderTools.py:782
 msgid "No items in folder"
 msgstr "V priečinku nie sú žiadne položky"
 
 #: clipboardManager.py:27
 #: clipboardManager.py:62
 #: compressionManager.py:148
-#: fileOperations.py:164
-#: fileOperations.py:260
+#: fileOperations.py:210
+#: fileOperations.py:306
 msgid "No items selected"
-msgstr "Nie sú vybrané žiadne položky"
+msgstr "Neboli vybrané žiadne položky"
 
 #: clipboardManager.py:79
 msgid "No text files selected"
-msgstr "Nie sú vybrané žiadne textové súbory"
+msgstr "Neboli vybrané žiadne textové súbory"
 
-#: txt2folder.py:90
-#: txt2folder.py:160
+#: folderTools.py:591
+#: folderTools.py:661
 msgid "No valid folder names found in the file"
 msgstr "V súbore sa nenašli žiadne platné názvy priečinkov"
 
-#: folder_creation_dialog.py:184
+#: folderTools.py:296
 msgid "No valid folder names provided"
 msgstr "Neboli poskytnuté žiadne platné názvy priečinkov"
 
+#: __init__.py:976
+msgid "Not focused on File Explorer"
+msgstr "Nie je zameraný na Prieskumníka súborov"
+
 #: createFile.py:198
-#: selectionManager.py:30
-#: txt2folder.py:40
+#: folderTools.py:541
+#: folderTools.py:763
 msgid "Not in File Explorer"
-msgstr "Nie v Prieskumníkovi súborov"
+msgstr "Nie je v Prieskumníkovi súborov"
 
 #: createFile.py:28
 msgid "Number of files to create:"
 msgstr "Počet súborov na vytvorenie:"
 
-#: folder_creation_dialog.py:160
+#: folderTools.py:272
 msgid "Number of folders must be at least 1"
 msgstr "Počet priečinkov musí byť aspoň 1"
 
-#: folder_creation_dialog.py:38
+#: folderTools.py:150
 msgid "Number of folders:"
 msgstr "Počet priečinkov:"
 
-#: __init__.py:616
+#: __init__.py:844
 msgid "Open xPlorer context menu"
 msgstr "Otvoriť kontextové menu xPlorer"
 
-#: txt2folder.py:53
+#: folderTools.py:554
 msgid "Please select a .txt or .rtf file"
 msgstr "Vyberte súbor .txt alebo .rtf"
 
-#: fileOperations.py:267
+#: fileOperations.py:313
 msgid "Please select a file, not a folder"
 msgstr "Vyberte súbor, nie priečinok"
 
-#: fileOperations.py:263
+#: fileOperations.py:309
 msgid "Please select only one file"
 msgstr "Vyberte iba jeden súbor"
 
-#: folderInfo.py:35
-msgid "Please select only one folder"
-msgstr "Vyberte iba jeden priečinok"
-
-#: txt2folder.py:46
+#: folderTools.py:547
 msgid "Please select only one text file"
 msgstr "Vyberte iba jeden textový súbor"
 
-#: selectionManager.py:58
+#: folderTools.py:791
 msgid "Processing {count} items in background..."
 msgstr "Spracúvanie {count} položiek na pozadí..."
 
-#: __init__.py:633
-#: contextMenu.py:32
+#: __init__.py:861
+#: contextMenu.py:31
 msgid "Rename selected file"
 msgstr "Premenovať vybraný súbor"
 
-#: __init__.py:460
+#: __init__.py:688
 msgid "Required manager not available"
-msgstr "Požadovaný správca nie je dostupný"
+msgstr "Požadovaný správca nie je k dispozícii"
 
-#: contextMenu.py:36
+#: contextMenu.py:34
 msgid "Robocopy"
 msgstr "Robocopy"
 
-#: __init__.py:540
-msgid "Robocopy manager not available"
-msgstr "Správca Robocopy nie je dostupný"
+#: robocopyManager.py:457
+msgid "Robocopy cancelled"
+msgstr "Robocopy zrušený"
 
-#: __init__.py:563
+#: robocopyManager.py:469
+msgid "Robocopy finished successfully. {n} item(s) copied"
+msgstr "Robocopy úspešne dokončený. Skopírovaných {n} položiek"
+
+#: robocopyManager.py:465
+msgid "Robocopy finished. {ok} succeeded, {failed} failed: {items}"
+msgstr "Robocopy dokončený. {ok} úspešných, {failed} zlyhalo: {items}"
+
+#: __init__.py:768
+msgid "Robocopy manager not available"
+msgstr "Správca Robocopy nie je k dispozícii"
+
+#: __init__.py:791
 msgid "Robocopy: single tap copy, double tap paste, triple tap move"
 msgstr "Robocopy: jedno klepnutie kopírovať, dvojité klepnutie vložiť, trojité klepnutie presunúť"
 
-#: contextMenu.py:33
+#: contextMenu.py:89
+#: contextMenu.py:100
+#: contextMenu.py:106
+#: contextMenu.py:111
+#: contextMenu.py:117
 msgid "Say size"
 msgstr "Povedať veľkosť"
 
-#: __init__.py:523
+#: __init__.py:751
 msgid "Say size (single tap) or compress zip (double tap)"
-msgstr "Povedať veľkosť (jedno klepnutie) alebo komprimovať do zip (dvojité klepnutie)"
+msgstr "Povedať veľkosť (jedno klepnutie) alebo komprimovať zip (dvojité klepnutie)"
 
-#: txt2folder.py:58
+#: folderTools.py:559
 msgid "Selected file does not exist"
 msgstr "Vybraný súbor neexistuje"
 
-#: folderInfo.py:14
+#: folderTools.py:87
 msgid "Selected item is not a folder"
 msgstr "Vybraná položka nie je priečinok"
 
-#: selectionManager.py:93
+#: folderTools.py:826
 msgid "Selected {count} items"
 msgstr "Vybraných {count} položiek"
 
-#: selectionManager.py:96
+#: folderTools.py:829
 msgid "Selection inverted"
 msgstr "Výber invertovaný"
 
@@ -538,66 +572,66 @@ msgstr "Niektoré súbory budú používať predvolené názvy"
 msgid "Starting..."
 msgstr "Spúšťanie..."
 
-#: case.py:165
+#: folderTools.py:987
 msgid "Successfully converted {count} folders to headline case"
-msgstr "Úspešne prevedených {count} priečinkov na veľkosť písmen nadpisov"
+msgstr "Úspešne prevedených {count} priečinkov na veľké písmená nadpisov"
 
-#: case.py:150
+#: folderTools.py:972
 msgid "Successfully converted {count} folders to lowercase"
 msgstr "Úspešne prevedených {count} priečinkov na malé písmená"
 
-#: case.py:159
+#: folderTools.py:981
 msgid "Successfully converted {count} folders to title case"
-msgstr "Úspešne prevedených {count} priečinkov na veľkosť písmen názvov"
-
-#: case.py:144
-msgid "Successfully converted {count} folders to uppercase"
 msgstr "Úspešne prevedených {count} priečinkov na veľké písmená"
 
-#: folder_creation_dialog.py:225
+#: folderTools.py:966
+msgid "Successfully converted {count} folders to uppercase"
+msgstr "Úspešne prevedených {count} priečinkov na VEĽKÉ PÍSMENÁ"
+
+#: folderTools.py:337
 msgid "Successfully created 1 folder"
 msgstr "Úspešne vytvorený 1 priečinok"
 
-#: folder_creation_dialog.py:223
+#: folderTools.py:335
 msgid "Successfully created main folder only"
 msgstr "Úspešne vytvorený iba hlavný priečinok"
 
-#: folder_creation_dialog.py:227
+#: folderTools.py:339
 msgid "Successfully created {count} of {total} folders"
 msgstr "Úspešne vytvorených {count} z {total} priečinkov"
 
-#: txt2folder.py:144
-#: txt2folder.py:194
+#: folderTools.py:645
+#: folderTools.py:695
 msgid "Successfully created {} folders in '{}'"
 msgstr "Úspešne vytvorených {} priečinkov v '{}'"
 
-#: contextMenu.py:14
+#: contextMenu.py:39
 msgid "TXT to Folder"
 msgstr "TXT do priečinka"
 
-#: contextMenu.py:48
+#: contextMenu.py:46
 msgid "Title Case"
-msgstr "Veľkosť písmen názvov"
+msgstr "Veľké písmená"
 
 #: clipboardManager.py:88
 msgid "Total file size is too large to copy content"
-msgstr "Celková veľkosť súboru je príliš veľká na kopírovanie obsahu"
+msgstr "Celková veľkosť súborov je príliš veľká na kopírovanie obsahu"
 
 #: createFile.py:213
 msgid "Unable to get current directory after multiple attempts"
 msgstr "Po niekoľkých pokusoch sa nepodarilo získať aktuálny adresár"
 
-#: __init__.py:402
+#: __init__.py:630
 msgid "Unable to get current path"
 msgstr "Nepodarilo sa získať aktuálnu cestu"
 
-#: selectionManager.py:14
+#: folderTools.py:774
 msgid "Unable to get folder view"
 msgstr "Nepodarilo sa získať zobrazenie priečinka"
 
-#: contextMenu.py:46
+#: contextMenu.py:44
 msgid "Uppercase"
-msgstr "Veľké písmená"
+msgstr "VEĽKÉ PÍSMENÁ"
 
 #: clipboardManager.py:104
 msgid "[Error processing RTF file]"
@@ -605,17 +639,21 @@ msgstr "[Chyba pri spracovaní RTF súboru]"
 
 #: clipboardManager.py:106
 msgid "[RTF content - striprtf module not available]"
-msgstr "[Obsah RTF - modul striprtf nie je dostupný]"
+msgstr "[Obsah RTF - modul striprtf nie je k dispozícii]"
 
 #: compressionManager.py:114
 msgid "compression failed"
 msgstr "kompresia zlyhala"
 
-#: contextMenu.py:37
+#: contextMenu.py:35
 msgid "copy"
 msgstr "kopírovať"
 
-#: contextMenu.py:38
+#: robocopyManager.py:235
+msgid "estimating time remaining"
+msgstr "odhad zostávajúceho času"
+
+#: contextMenu.py:36
 msgid "move"
 msgstr "presunúť"
 
@@ -627,33 +665,53 @@ msgstr "nový_súbor"
 msgid "new_file_{index}"
 msgstr "nový_súbor_{index}"
 
-#: contextMenu.py:39
+#: contextMenu.py:37
 msgid "paste"
 msgstr "vložiť"
 
-#: __init__.py:110
-#: __init__.py:444
-#: __init__.py:484
-#: __init__.py:524
-#: __init__.py:564
-#: __init__.py:617
-#: __init__.py:634
-#: __init__.py:652
+#: __init__.py:268
+#: __init__.py:672
+#: __init__.py:712
+#: __init__.py:752
+#: __init__.py:792
+#: __init__.py:845
+#: __init__.py:862
+#: __init__.py:880
 msgid "xPlorer"
 msgstr "xPlorer"
 
-#: contextMenu.py:51
+#: contextMenu.py:49
 msgid "xPlorer Settings"
 msgstr "Nastavenia xPlorer"
 
-#: createFile.py:286
+#: createFile.py:288
 msgid "{count} files created"
-msgstr "Vytvorených {count} súborov"
+msgstr "{count} súborov vytvorených"
 
-#: fileOperations.py:237
+#: fileOperations.py:283
 msgid "{count} items {size}"
 msgstr "{count} položiek {size}"
 
-#: folderInfo.py:62
+#: robocopyManager.py:240
+msgid "{h}h {m}m remaining"
+msgstr "zostáva {h}h {m}m"
+
+#: robocopyManager.py:242
+msgid "{m}m {s}s remaining"
+msgstr "zostáva {m}m {s}s"
+
+#: robocopyManager.py:304
+msgid "{pct}% - item {idx}/{total}: {name}"
+msgstr "{pct}% - položka {idx}/{total}: {name}"
+
+#: folderTools.py:111
 msgid "{subfolders} subfolders and {files} files"
 msgstr "{subfolders} podpriečinkov a {files} súborov"
+
+#: contextMenu.py:150
+msgid "{subfolders} subfolders, {files} files"
+msgstr "{subfolders} podpriečinkov, {files} súborov"
+
+#: robocopyManager.py:243
+msgid "{s}s remaining"
+msgstr "zostáva {s}s"

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: xPlorer 2026.7.0\n"
+"Project-Id-Version: xPlorer 2026.8.5\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-06-24 13:09+0700\n"
+"POT-Creation-Date: 2026-08-03 06:13+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Tamil\n"
@@ -12,61 +12,69 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: DevOn Addon\n"
 
-#: folder_creation_dialog.py:62
+#: robocopyManager.py:464
+msgid " and {n} more"
+msgstr " மேலும் {n}"
+
+#: folderTools.py:174
 msgid "&Apply"
 msgstr "&பயன்படுத்து"
 
-#: folder_creation_dialog.py:63
+#: folderTools.py:175
 msgid "&Cancel"
 msgstr "&ரத்துசெய்"
 
-#: createFile.py:284
+#: createFile.py:286
 msgid "1 file created"
 msgstr "1 கோப்பு உருவாக்கப்பட்டது"
 
-#: fileOperations.py:294
+#: fileOperations.py:340
 msgid "A file with this name already exists"
-msgstr "இந்த பெயரில் ஒரு கோப்பு ஏற்கனவே உள்ளது"
+msgstr "இந்தப் பெயருடன் ஒரு கோப்பு ஏற்கனவே உள்ளது"
 
 #: compressionManager.py:288
 msgid "Built-in compression failed: {error}"
-msgstr "உள்ளமைக்கப்பட்ட சுருக்கம் தோல்வியடைந்தது: {error}"
+msgstr "உள்ளமை சுருக்கம் தோல்வியடைந்தது: {error}"
+
+#: robocopyManager.py:323
+msgid "Calculating total size..."
+msgstr "மொத்த அளவைக் கணக்கிடுகிறது..."
 
 #: clipboardManager.py:66
 msgid "Cannot copy content of folders, please select files only"
-msgstr "கோப்புறைகளின் உள்ளடக்கத்தை நகலெடுக்க முடியாது, தயவுசெய்து கோப்புகளை மட்டும் தேர்ந்தெடுக்கவும்"
+msgstr "கோப்புறைகளின் உள்ளடக்கத்தை நகலெடுக்க முடியாது, கோப்புகளை மட்டும் தேர்ந்தெடுக்கவும்"
 
 #: createFile.py:271
 msgid "Cannot find unique name for: {name}"
-msgstr "{name} க்கான தனித்துவமான பெயரைக் கண்டுபிடிக்க முடியவில்லை"
+msgstr "இதற்கான தனிப்பட்ட பெயரைக் கண்டுபிடிக்க முடியவில்லை: {name}"
 
-#: __init__.py:660
+#: __init__.py:888
 msgid "Cannot open settings dialog"
 msgstr "அமைப்புகள் உரையாடலைத் திறக்க முடியவில்லை"
 
-#: txt2folder.py:69
+#: folderTools.py:570
 msgid "Cannot process RTF file: striprtf module not available"
-msgstr "RTF கோப்பைச் செயலாக்க முடியவில்லை: striprtf தொகுதி கிடைக்கவில்லை"
+msgstr "RTF கோப்பை செயலாக்க முடியவில்லை: striprtf தொகுதி கிடைக்கவில்லை"
 
-#: contextMenu.py:45
+#: contextMenu.py:43
 msgid "Case Converter for Folders"
 msgstr "கோப்புறைகளுக்கான எழுத்து மாற்றி"
 
-#: __init__.py:699
+#: __init__.py:927
 msgid "Case converter not available"
 msgstr "எழுத்து மாற்றி கிடைக்கவில்லை"
 
-#: __init__.py:420
+#: __init__.py:648
 msgid "Clipboard manager not available"
-msgstr "கிளிப்போர்டு மேலாளர் கிடைக்கவில்லை"
+msgstr "கிளிபோர்டு மேலாளர் கிடைக்கவில்லை"
 
 #: compressionManager.py:284
 msgid "Completed"
 msgstr "முடிந்தது"
 
-#: contextMenu.py:27
+#: contextMenu.py:26
 msgid "Compress zip"
-msgstr "zip ஆக சுருக்கு"
+msgstr "zip ஐ சுருக்கு"
 
 #: compressionManager.py:160
 #: compressionManager.py:168
@@ -90,113 +98,113 @@ msgstr "சுருக்கம் ரத்து செய்யப்பட�
 #: compressionManager.py:112
 #: compressionManager.py:285
 msgid "Compression completed {name}"
-msgstr "சுருக்கம் நிறைவுற்றது {name}"
+msgstr "சுருக்கம் முடிந்தது {name}"
 
-#: __init__.py:500
+#: __init__.py:728
 msgid "Compression manager not available"
 msgstr "சுருக்க மேலாளர் கிடைக்கவில்லை"
 
 #: compressionManager.py:86
 msgid "Compression timed out"
-msgstr "சுருக்க நேரம் கடந்துவிட்டது"
+msgstr "சுருக்க நேரம் முடிந்துவிட்டது"
 
 #: clipboardManager.py:133
 msgid "Content from 1 file copied to clipboard"
-msgstr "1 கோப்பிலிருந்தான உள்ளடக்கம் கிளிப்போர்டுக்கு நகலெடுக்கப்பட்டது"
+msgstr "1 கோப்பின் உள்ளடக்கம் கிளிபோர்டுக்கு நகலெடுக்கப்பட்டது"
 
 #: clipboardManager.py:135
 msgid "Content from {count} files copied to clipboard"
-msgstr "{count} கோப்புகளிலிருந்தான உள்ளடக்கம் கிளிப்போர்டுக்கு நகலெடுக்கப்பட்டது"
+msgstr "{count} கோப்புகளின் உள்ளடக்கம் கிளிபோர்டுக்கு நகலெடுக்கப்பட்டது"
 
-#: __init__.py:607
-#: __init__.py:673
+#: __init__.py:835
+#: __init__.py:901
 msgid "Context menu manager not available"
 msgstr "சூழல் மெனு மேலாளர் கிடைக்கவில்லை"
 
-#: case.py:115
+#: folderTools.py:937
 msgid "Conversion already in progress"
-msgstr "மாற்றம் ஏற்கனவே நடைபெற்றுக்கொண்டிருக்கிறது"
+msgstr "மாற்றம் ஏற்கனவே நடந்துகொண்டிருக்கிறது"
 
-#: case.py:132
+#: folderTools.py:954
 msgid "Converting"
 msgstr "மாற்றுகிறது"
 
 #: clipboardManager.py:44
 msgid "Copied 1 item name to clipboard"
-msgstr "1 உருப்படியின் பெயர் கிளிப்போர்டுக்கு நகலெடுக்கப்பட்டது"
+msgstr "1 உருப்படியின் பெயர் கிளிபோர்டுக்கு நகலெடுக்கப்பட்டது"
 
 #: clipboardManager.py:46
 msgid "Copied {count} item names to clipboard"
-msgstr "{count} உருப்படிகளின் பெயர்கள் கிளிப்போர்டுக்கு நகலெடுக்கப்பட்டன"
+msgstr "{count} உருப்படிகளின் பெயர்கள் கிளிபோர்டுக்கு நகலெடுக்கப்பட்டன"
 
-#: __init__.py:396
+#: __init__.py:624
 msgid "Copied: {path}"
 msgstr "நகலெடுக்கப்பட்டது: {path}"
 
-#: contextMenu.py:29
+#: contextMenu.py:28
 msgid "Copy address bar"
-msgstr "முகவரிப் பட்டியை நகலெடு"
+msgstr "முகவரிப் பட்டையை நகலெடு"
 
-#: contextMenu.py:30
+#: contextMenu.py:29
 msgid "Copy content"
 msgstr "உள்ளடக்கத்தை நகலெடு"
 
-#: __init__.py:483
+#: __init__.py:711
 msgid "Copy content (single tap) or invert selection (double tap)"
-msgstr "உள்ளடக்கத்தை நகலெடு (ஒற்றைத் தட்டல்) அல்லது தேர்வைத் தலைகீழாக்கு (இரட்டைத் தட்டல்)"
+msgstr "உள்ளடக்கத்தை நகலெடுக்க (ஒற்றைத் தட்டு) அல்லது தேர்வை தலைகீழாக்க (இரட்டைத் தட்டு)"
 
-#: contextMenu.py:31
+#: contextMenu.py:30
 msgid "Copy selected file and folder names"
 msgstr "தேர்ந்தெடுக்கப்பட்ட கோப்பு மற்றும் கோப்புறை பெயர்களை நகலெடு"
 
-#: __init__.py:443
+#: __init__.py:671
 msgid "Copy selected names (single tap) or copy address bar (double tap)"
-msgstr "தேர்ந்தெடுக்கப்பட்ட பெயர்களை நகலெடு (ஒற்றைத் தட்டல்) அல்லது முகவரிப் பட்டியை நகலெடு (இரட்டைத் தட்டல்)"
+msgstr "தேர்ந்தெடுக்கப்பட்ட பெயர்களை நகலெடுக்க (ஒற்றைத் தட்டு) அல்லது முகவரிப் பட்டையை நகலெடுக்க (இரட்டைத் தட்டு)"
 
-#: __init__.py:400
+#: __init__.py:628
 #: clipboardManager.py:50
 #: clipboardManager.py:139
 msgid "Could not open clipboard"
-msgstr "கிளிப்போர்டைத் திறக்க முடியவில்லை"
+msgstr "கிளிபோர்டை திறக்க முடியவில்லை"
 
-#: contextMenu.py:24
+#: contextMenu.py:23
 #: createFile.py:17
 msgid "Create File"
-msgstr "கோப்பை உருவாக்கு"
+msgstr "கோப்பு உருவாக்கு"
 
-#: folder_creation_dialog.py:16
+#: folderTools.py:128
 msgid "Create Multiple Folders"
 msgstr "பல கோப்புறைகளை உருவாக்கு"
 
-#: contextMenu.py:42
+#: contextMenu.py:40
 msgid "Create Multiple Folders..."
 msgstr "பல கோப்புறைகளை உருவாக்கு..."
 
-#: folder_creation_dialog.py:45
+#: folderTools.py:157
 msgid "Create main folder and then subfolders"
-msgstr "முதன்மை கோப்புறையை உருவாக்கி, பின்னர் துணை கோப்புறைகளை உருவாக்கு"
+msgstr "பிரதான கோப்புறையை உருவாக்கி, பின்னர் துணை கோப்புறைகளை உருவாக்கவும்"
 
-#: __init__.py:651
+#: __init__.py:879
 msgid "Create new folder and paste clipboard content into rename field"
-msgstr "புதிய கோப்புறையை உருவாக்கி, கிளிப்போர்டு உள்ளடக்கத்தை மறுபெயரிடு புலத்தில் ஒட்டு"
+msgstr "புதிய கோப்புறையை உருவாக்கி, கிளிபோர்டு உள்ளடக்கத்தை மறுபெயரிடு புலத்தில் ஒட்டவும்"
 
-#: folder_creation_dialog.py:212
+#: folderTools.py:324
 msgid "Created {count} of {total} folders..."
-msgstr "{total} கோப்புறைகளில் {count} உருவாக்கப்பட்டன..."
+msgstr "{total} இல் {count} கோப்புறைகள் உருவாக்கப்பட்டன..."
 
-#: folder_creation_dialog.py:199
+#: folderTools.py:311
 msgid "Creating folders in background..."
 msgstr "பின்னணியில் கோப்புறைகளை உருவாக்குகிறது..."
 
-#: folder_creation_dialog.py:49
+#: folderTools.py:161
 msgid "Edit individual folder names"
-msgstr "தனிப்பட்ட கோப்புறை பெயர்களைத் தொகு"
+msgstr "தனிப்பட்ட கோப்புறை பெயர்களைத் திருத்து"
 
-#: folderInfo.py:71
+#: folderTools.py:120
 msgid "Error calculating folder info"
 msgstr "கோப்புறை தகவலைக் கணக்கிடுவதில் பிழை"
 
-#: fileOperations.py:248
+#: fileOperations.py:294
 msgid "Error calculating size"
 msgstr "அளவைக் கணக்கிடுவதில் பிழை"
 
@@ -210,25 +218,25 @@ msgstr "கோப்பு உள்ளடக்கத்தை நகலெட�
 
 #: clipboardManager.py:53
 msgid "Error copying names to clipboard"
-msgstr "பெயர்களை கிளிப்போர்டுக்கு நகலெடுப்பதில் பிழை"
+msgstr "கிளிபோர்டுக்கு பெயர்களை நகலெடுப்பதில் பிழை"
 
-#: txt2folder.py:113
+#: folderTools.py:614
 msgid "Error creating base folder"
 msgstr "அடிப்படை கோப்புறையை உருவாக்குவதில் பிழை"
 
-#: createFile.py:289
+#: createFile.py:291
 msgid "Error creating files"
 msgstr "கோப்புகளை உருவாக்குவதில் பிழை"
 
-#: __init__.py:693
+#: __init__.py:921
 msgid "Error creating folders"
 msgstr "கோப்புறைகளை உருவாக்குவதில் பிழை"
 
-#: folder_creation_dialog.py:190
+#: folderTools.py:302
 msgid "Error creating main folder"
-msgstr "முதன்மை கோப்புறையை உருவாக்குவதில் பிழை"
+msgstr "பிரதான கோப்புறையை உருவாக்குவதில் பிழை"
 
-#: __init__.py:737
+#: __init__.py:965
 msgid "Error during conversion"
 msgstr "மாற்றத்தின் போது பிழை"
 
@@ -236,48 +244,52 @@ msgstr "மாற்றத்தின் போது பிழை"
 msgid "Error in compression process: {error}"
 msgstr "சுருக்க செயல்பாட்டில் பிழை: {error}"
 
-#: selectionManager.py:71
+#: folderTools.py:804
 msgid "Error inverting selection"
-msgstr "தேர்வைத் தலைகீழாக்குவதில் பிழை"
+msgstr "தேர்வை தலைகீழாக்குவதில் பிழை"
 
 #: createFile.py:245
 msgid "Error opening create file dialog"
 msgstr "கோப்பு உருவாக்கு உரையாடலைத் திறப்பதில் பிழை"
 
-#: fileOperations.py:304
+#: fileOperations.py:350
 msgid "Error opening rename dialog"
 msgstr "மறுபெயரிடு உரையாடலைத் திறப்பதில் பிழை"
 
-#: __init__.py:667
+#: __init__.py:895
 msgid "Error opening settings"
 msgstr "அமைப்புகளைத் திறப்பதில் பிழை"
 
-#: txt2folder.py:203
+#: folderTools.py:704
 msgid "Error processing text file: {}"
-msgstr "உரை கோப்பைச் செயலாக்குவதில் பிழை: {}"
+msgstr "உரைக் கோப்பை செயலாக்குவதில் பிழை: {}"
 
-#: txt2folder.py:80
+#: folderTools.py:581
 msgid "Error reading RTF file"
 msgstr "RTF கோப்பைப் படிப்பதில் பிழை"
 
-#: txt2folder.py:207
+#: folderTools.py:708
 msgid "Error reading file encoding"
 msgstr "கோப்பு குறியாக்கத்தைப் படிப்பதில் பிழை"
 
-#: fileOperations.py:274
-#: fileOperations.py:301
+#: fileOperations.py:320
+#: fileOperations.py:347
 msgid "Error renaming file"
 msgstr "கோப்பை மறுபெயரிடுவதில் பிழை"
 
-#: txt2folder.py:212
+#: folderTools.py:713
 msgid "Error: {}"
 msgstr "பிழை: {}"
+
+#: __init__.py:1002
+msgid "Explorer tree dumped to NVDA log"
+msgstr "எக்ஸ்புளோரர் மரம் NVDA பதிவில் போடப்பட்டது"
 
 #: createFile.py:72
 msgid "Extension:"
 msgstr "நீட்டிப்பு:"
 
-#: case.py:127
+#: folderTools.py:949
 msgid "Failed to rename any folders"
 msgstr "எந்த கோப்புறைகளையும் மறுபெயரிட முடியவில்லை"
 
@@ -287,11 +299,11 @@ msgstr "சுருக்கத்தைத் தொடங்க முடி�
 
 #: createFile.py:138
 msgid "File count cannot exceed 10"
-msgstr "கோப்பு எண்ணிக்கை 10 ஐத் தாண்டக்கூடாது"
+msgstr "கோப்புகளின் எண்ணிக்கை 10 ஐ தாண்டக்கூடாது"
 
 #: createFile.py:135
 msgid "File count must be at least 1"
-msgstr "கோப்பு எண்ணிக்கை குறைந்தது 1 ஆக இருக்க வேண்டும்"
+msgstr "கோப்புகளின் எண்ணிக்கை குறைந்தது 1 ஆக இருக்க வேண்டும்"
 
 #: createFile.py:112
 msgid "File name"
@@ -301,7 +313,7 @@ msgstr "கோப்பு பெயர்"
 msgid "File name cannot be empty"
 msgstr "கோப்பு பெயர் காலியாக இருக்கக்கூடாது"
 
-#: fileOperations.py:291
+#: fileOperations.py:337
 msgid "File name not changed"
 msgstr "கோப்பு பெயர் மாற்றப்படவில்லை"
 
@@ -314,115 +326,121 @@ msgstr "கோப்பு பெயர் {index}:"
 msgid "File name:"
 msgstr "கோப்பு பெயர்:"
 
-#: __init__.py:622
+#: __init__.py:850
 msgid "File operations manager not available"
-msgstr "கோப்பு செயல்பாடு மேலாளர் கிடைக்கவில்லை"
+msgstr "கோப்பு செயல்பாடுகள் மேலாளர் கிடைக்கவில்லை"
 
-#: fileOperations.py:298
+#: fileOperations.py:344
 msgid "File renamed to {name}"
 msgstr "கோப்பு {name} என மறுபெயரிடப்பட்டது"
 
-#: folder_creation_dialog.py:115
-#: folder_creation_dialog.py:155
+#: robocopyManager.py:448
+msgid "Finished {n} of {total}: {name}"
+msgstr "{total} இல் {n} முடிந்தது: {name}"
+
+#: folderTools.py:227
+#: folderTools.py:267
 msgid "Folder"
 msgstr "கோப்புறை"
 
-#: txt2folder.py:104
-#: txt2folder.py:174
+#: folderTools.py:605
+#: folderTools.py:675
 msgid "Folder '{}' already exists, creating '{}' instead"
 msgstr "'{}' கோப்புறை ஏற்கனவே உள்ளது, அதற்கு பதிலாக '{}' உருவாக்கப்படுகிறது"
 
-#: __init__.py:677
+#: __init__.py:905
 msgid "Folder creation dialog not available"
 msgstr "கோப்புறை உருவாக்கு உரையாடல் கிடைக்கவில்லை"
 
-#: __init__.py:639
+#: __init__.py:867
 msgid "Folder creator helper not available"
 msgstr "கோப்புறை உருவாக்கி உதவியாளர் கிடைக்கவில்லை"
 
-#: contextMenu.py:52
+#: contextMenu.py:131
+#: contextMenu.py:134
+#: contextMenu.py:155
 msgid "Folder info"
 msgstr "கோப்புறை தகவல்"
 
-#: folder_creation_dialog.py:30
+#: folderTools.py:142
 msgid "Folder title:"
 msgstr "கோப்புறை தலைப்பு:"
 
-#: contextMenu.py:49
+#: contextMenu.py:47
 msgid "Headline Case"
 msgstr "தலைப்பு எழுத்து"
 
-#: folder_creation_dialog.py:166
+#: folderTools.py:278
 msgid "Invalid number for folders"
-msgstr "கோப்புறைகளுக்கான தவறான எண்"
+msgstr "கோப்புறைகளுக்கு தவறான எண்"
 
-#: contextMenu.py:28
+#: contextMenu.py:27
 msgid "Invert selection"
-msgstr "தேர்வைத் தலைகீழாக்கு"
+msgstr "தேர்வை தலைகீழாக்கு"
 
-#: contextMenu.py:47
+#: contextMenu.py:45
 msgid "Lowercase"
 msgstr "சிறிய எழுத்துகள்"
 
-#: folder_creation_dialog.py:163
+#: folderTools.py:275
 msgid "Maximum 100 folders allowed"
 msgstr "அதிகபட்சம் 100 கோப்புறைகள் அனுமதிக்கப்படும்"
 
-#: __init__.py:681
+#: __init__.py:909
 msgid "No Explorer folder detected"
-msgstr "Explorer கோப்புறை எதுவும் கண்டறியப்படவில்லை"
+msgstr "எக்ஸ்புளோரர் கோப்புறை எதுவும் கண்டறியப்படவில்லை"
 
-#: fileOperations.py:173
-#: fileOperations.py:230
+#: fileOperations.py:219
+#: fileOperations.py:276
 msgid "No access to size data"
-msgstr "அளவு தரவுகளுக்கான அணுகல் இல்லை"
+msgstr "அளவு தரவுகளுக்கு அணுகல் இல்லை"
 
-#: selectionManager.py:36
+#: folderTools.py:769
 msgid "No active File Explorer window found"
-msgstr "செயலில் உள்ள File Explorer சாளரம் எதுவும் காணப்படவில்லை"
+msgstr "செயலில் உள்ள கோப்பு எக்ஸ்புளோரர் சாளரம் எதுவும் கண்டுபிடிக்கப்படவில்லை"
 
 #: clipboardManager.py:127
 msgid "No content could be read from selected files"
-msgstr "தேர்ந்தெடுக்கப்பட்ட கோப்புகளிலிருந்து உள்ளடக்கம் எதுவும் படிக்க முடியவில்லை"
+msgstr "தேர்ந்தெடுக்கப்பட்ட கோப்புகளில் இருந்து உள்ளடக்கம் எதுவும் படிக்க முடியவில்லை"
 
-#: createFile.py:282
+#: createFile.py:284
 msgid "No files were created"
 msgstr "கோப்புகள் எதுவும் உருவாக்கப்படவில்லை"
 
-#: case.py:142
-#: case.py:148
-#: case.py:157
-#: case.py:163
+#: folderTools.py:964
+#: folderTools.py:970
+#: folderTools.py:979
+#: folderTools.py:985
 msgid "No folders found"
-msgstr "கோப்புறைகள் எதுவும் காணப்படவில்லை"
+msgstr "கோப்புறைகள் எதுவும் கண்டுபிடிக்கப்படவில்லை"
 
-#: __init__.py:703
+#: __init__.py:931
 msgid "No folders selected"
 msgstr "கோப்புறைகள் எதுவும் தேர்ந்தெடுக்கப்படவில்லை"
 
-#: __init__.py:718
+#: __init__.py:946
 msgid "No folders selected or current folder not available"
 msgstr "கோப்புறைகள் எதுவும் தேர்ந்தெடுக்கப்படவில்லை அல்லது தற்போதைய கோப்புறை கிடைக்கவில்லை"
 
-#: folder_creation_dialog.py:229
-#: txt2folder.py:148
-#: txt2folder.py:198
+#: folderTools.py:341
+#: folderTools.py:649
+#: folderTools.py:699
 msgid "No folders were created"
 msgstr "கோப்புறைகள் எதுவும் உருவாக்கப்படவில்லை"
 
-#: folderInfo.py:30
+#: folderTools.py:81
 msgid "No item selected"
 msgstr "உருப்படி எதுவும் தேர்ந்தெடுக்கப்படவில்லை"
 
-#: selectionManager.py:49
+#: folderTools.py:782
 msgid "No items in folder"
 msgstr "கோப்புறையில் உருப்படிகள் இல்லை"
 
 #: clipboardManager.py:27
 #: clipboardManager.py:62
 #: compressionManager.py:148
-#: fileOperations.py:164
-#: fileOperations.py:260
+#: fileOperations.py:210
+#: fileOperations.py:306
 msgid "No items selected"
 msgstr "உருப்படிகள் எதுவும் தேர்ந்தெடுக்கப்படவில்லை"
 
@@ -430,103 +448,119 @@ msgstr "உருப்படிகள் எதுவும் தேர்ந�
 msgid "No text files selected"
 msgstr "உரை கோப்புகள் எதுவும் தேர்ந்தெடுக்கப்படவில்லை"
 
-#: txt2folder.py:90
-#: txt2folder.py:160
+#: folderTools.py:591
+#: folderTools.py:661
 msgid "No valid folder names found in the file"
-msgstr "கோப்பில் செல்லுபடியாகும் கோப்புறை பெயர்கள் எதுவும் காணப்படவில்லை"
+msgstr "கோப்பில் செல்லுபடியாகும் கோப்புறை பெயர்கள் எதுவும் கண்டுபிடிக்கப்படவில்லை"
 
-#: folder_creation_dialog.py:184
+#: folderTools.py:296
 msgid "No valid folder names provided"
 msgstr "செல்லுபடியாகும் கோப்புறை பெயர்கள் எதுவும் வழங்கப்படவில்லை"
 
+#: __init__.py:976
+msgid "Not focused on File Explorer"
+msgstr "கோப்பு எக்ஸ்புளோரரில் கவனம் செலுத்தப்படவில்லை"
+
 #: createFile.py:198
-#: selectionManager.py:30
-#: txt2folder.py:40
+#: folderTools.py:541
+#: folderTools.py:763
 msgid "Not in File Explorer"
-msgstr "File Explorer இல் இல்லை"
+msgstr "கோப்பு எக்ஸ்புளோரரில் இல்லை"
 
 #: createFile.py:28
 msgid "Number of files to create:"
 msgstr "உருவாக்க வேண்டிய கோப்புகளின் எண்ணிக்கை:"
 
-#: folder_creation_dialog.py:160
+#: folderTools.py:272
 msgid "Number of folders must be at least 1"
 msgstr "கோப்புறைகளின் எண்ணிக்கை குறைந்தது 1 ஆக இருக்க வேண்டும்"
 
-#: folder_creation_dialog.py:38
+#: folderTools.py:150
 msgid "Number of folders:"
 msgstr "கோப்புறைகளின் எண்ணிக்கை:"
 
-#: __init__.py:616
+#: __init__.py:844
 msgid "Open xPlorer context menu"
 msgstr "xPlorer சூழல் மெனுவைத் திற"
 
-#: txt2folder.py:53
+#: folderTools.py:554
 msgid "Please select a .txt or .rtf file"
-msgstr "தயவுசெய்து .txt அல்லது .rtf கோப்பைத் தேர்ந்தெடுக்கவும்"
+msgstr ".txt அல்லது .rtf கோப்பைத் தேர்ந்தெடுக்கவும்"
 
-#: fileOperations.py:267
+#: fileOperations.py:313
 msgid "Please select a file, not a folder"
-msgstr "தயவுசெய்து ஒரு கோப்பைத் தேர்ந்தெடுக்கவும், கோப்புறையை அல்ல"
+msgstr "கோப்பைத் தேர்ந்தெடுக்கவும், கோப்புறையை அல்ல"
 
-#: fileOperations.py:263
+#: fileOperations.py:309
 msgid "Please select only one file"
-msgstr "தயவுசெய்து ஒரே ஒரு கோப்பை மட்டும் தேர்ந்தெடுக்கவும்"
+msgstr "ஒரு கோப்பை மட்டும் தேர்ந்தெடுக்கவும்"
 
-#: folderInfo.py:35
-msgid "Please select only one folder"
-msgstr "தயவுசெய்து ஒரே ஒரு கோப்புறையை மட்டும் தேர்ந்தெடுக்கவும்"
-
-#: txt2folder.py:46
+#: folderTools.py:547
 msgid "Please select only one text file"
-msgstr "தயவுசெய்து ஒரே ஒரு உரை கோப்பை மட்டும் தேர்ந்தெடுக்கவும்"
+msgstr "ஒரு உரைக் கோப்பை மட்டும் தேர்ந்தெடுக்கவும்"
 
-#: selectionManager.py:58
+#: folderTools.py:791
 msgid "Processing {count} items in background..."
-msgstr "பின்னணியில் {count} உருப்படிகளைச் செயலாக்குகிறது..."
+msgstr "பின்னணியில் {count} உருப்படிகளை செயலாக்குகிறது..."
 
-#: __init__.py:633
-#: contextMenu.py:32
+#: __init__.py:861
+#: contextMenu.py:31
 msgid "Rename selected file"
 msgstr "தேர்ந்தெடுக்கப்பட்ட கோப்பை மறுபெயரிடு"
 
-#: __init__.py:460
+#: __init__.py:688
 msgid "Required manager not available"
 msgstr "தேவையான மேலாளர் கிடைக்கவில்லை"
 
-#: contextMenu.py:36
+#: contextMenu.py:34
 msgid "Robocopy"
 msgstr "Robocopy"
 
-#: __init__.py:540
+#: robocopyManager.py:457
+msgid "Robocopy cancelled"
+msgstr "Robocopy ரத்து செய்யப்பட்டது"
+
+#: robocopyManager.py:469
+msgid "Robocopy finished successfully. {n} item(s) copied"
+msgstr "Robocopy வெற்றிகரமாக முடிந்தது. {n} உருப்படி(கள்) நகலெடுக்கப்பட்டன"
+
+#: robocopyManager.py:465
+msgid "Robocopy finished. {ok} succeeded, {failed} failed: {items}"
+msgstr "Robocopy முடிந்தது. {ok} வெற்றி, {failed} தோல்வி: {items}"
+
+#: __init__.py:768
 msgid "Robocopy manager not available"
 msgstr "Robocopy மேலாளர் கிடைக்கவில்லை"
 
-#: __init__.py:563
+#: __init__.py:791
 msgid "Robocopy: single tap copy, double tap paste, triple tap move"
-msgstr "Robocopy: ஒற்றைத் தட்டல் நகலெடு, இரட்டைத் தட்டல் ஒட்டு, மூன்று தட்டல் நகர்த்து"
+msgstr "Robocopy: ஒற்றைத் தட்டு நகல், இரட்டைத் தட்டு ஒட்டு, மூன்று தட்டு நகர்த்து"
 
-#: contextMenu.py:33
+#: contextMenu.py:89
+#: contextMenu.py:100
+#: contextMenu.py:106
+#: contextMenu.py:111
+#: contextMenu.py:117
 msgid "Say size"
 msgstr "அளவைக் கூறு"
 
-#: __init__.py:523
+#: __init__.py:751
 msgid "Say size (single tap) or compress zip (double tap)"
-msgstr "அளவைக் கூறு (ஒற்றைத் தட்டல்) அல்லது zip ஆக சுருக்கு (இரட்டைத் தட்டல்)"
+msgstr "அளவைக் கூறு (ஒற்றைத் தட்டு) அல்லது zip ஐ சுருக்கு (இரட்டைத் தட்டு)"
 
-#: txt2folder.py:58
+#: folderTools.py:559
 msgid "Selected file does not exist"
 msgstr "தேர்ந்தெடுக்கப்பட்ட கோப்பு இல்லை"
 
-#: folderInfo.py:14
+#: folderTools.py:87
 msgid "Selected item is not a folder"
-msgstr "தேர்ந்தெடுக்கப்பட்ட உருப்படி ஒரு கோப்புறை இல்லை"
+msgstr "தேர்ந்தெடுக்கப்பட்ட உருப்படி ஒரு கோப்புறை அல்ல"
 
-#: selectionManager.py:93
+#: folderTools.py:826
 msgid "Selected {count} items"
 msgstr "{count} உருப்படிகள் தேர்ந்தெடுக்கப்பட்டன"
 
-#: selectionManager.py:96
+#: folderTools.py:829
 msgid "Selection inverted"
 msgstr "தேர்வு தலைகீழாக்கப்பட்டது"
 
@@ -538,70 +572,70 @@ msgstr "சில கோப்புகள் இயல்புநிலை ப
 msgid "Starting..."
 msgstr "தொடங்குகிறது..."
 
-#: case.py:165
+#: folderTools.py:987
 msgid "Successfully converted {count} folders to headline case"
-msgstr "{count} கோப்புறைகள் தலைப்பு எழுத்தாக வெற்றிகரமாக மாற்றப்பட்டன"
+msgstr "{count} கோப்புறைகள் தலைப்பு எழுத்துக்கு வெற்றிகரமாக மாற்றப்பட்டன"
 
-#: case.py:150
+#: folderTools.py:972
 msgid "Successfully converted {count} folders to lowercase"
-msgstr "{count} கோப்புறைகள் சிறிய எழுத்துகளாக வெற்றிகரமாக மாற்றப்பட்டன"
+msgstr "{count} கோப்புறைகள் சிறிய எழுத்துகளுக்கு வெற்றிகரமாக மாற்றப்பட்டன"
 
-#: case.py:159
+#: folderTools.py:981
 msgid "Successfully converted {count} folders to title case"
-msgstr "{count} கோப்புறைகள் தலைப்பு எழுத்து வடிவமாக வெற்றிகரமாக மாற்றப்பட்டன"
+msgstr "{count} கோப்புறைகள் தலைப்பு எழுத்துக்கு வெற்றிகரமாக மாற்றப்பட்டன"
 
-#: case.py:144
+#: folderTools.py:966
 msgid "Successfully converted {count} folders to uppercase"
-msgstr "{count} கோப்புறைகள் பெரிய எழுத்துகளாக வெற்றிகரமாக மாற்றப்பட்டன"
+msgstr "{count} கோப்புறைகள் பெரிய எழுத்துகளுக்கு வெற்றிகரமாக மாற்றப்பட்டன"
 
-#: folder_creation_dialog.py:225
+#: folderTools.py:337
 msgid "Successfully created 1 folder"
 msgstr "1 கோப்புறை வெற்றிகரமாக உருவாக்கப்பட்டது"
 
-#: folder_creation_dialog.py:223
+#: folderTools.py:335
 msgid "Successfully created main folder only"
-msgstr "முதன்மை கோப்புறை மட்டும் வெற்றிகரமாக உருவாக்கப்பட்டது"
+msgstr "பிரதான கோப்புறை மட்டும் வெற்றிகரமாக உருவாக்கப்பட்டது"
 
-#: folder_creation_dialog.py:227
+#: folderTools.py:339
 msgid "Successfully created {count} of {total} folders"
-msgstr "{total} கோப்புறைகளில் {count} வெற்றிகரமாக உருவாக்கப்பட்டன"
+msgstr "{total} இல் {count} கோப்புறைகள் வெற்றிகரமாக உருவாக்கப்பட்டன"
 
-#: txt2folder.py:144
-#: txt2folder.py:194
+#: folderTools.py:645
+#: folderTools.py:695
 msgid "Successfully created {} folders in '{}'"
 msgstr "'{}' இல் {} கோப்புறைகள் வெற்றிகரமாக உருவாக்கப்பட்டன"
 
-#: contextMenu.py:14
+#: contextMenu.py:39
 msgid "TXT to Folder"
-msgstr "TXT முதல் கோப்புறை"
+msgstr "TXT ஐ கோப்புறையாக"
 
-#: contextMenu.py:48
+#: contextMenu.py:46
 msgid "Title Case"
-msgstr "தலைப்பு எழுத்து வடிவம்"
+msgstr "தலைப்பு எழுத்து"
 
 #: clipboardManager.py:88
 msgid "Total file size is too large to copy content"
-msgstr "மொத்த கோப்பு அளவு உள்ளடக்கத்தை நகலெடுக்க மிகப்பெரியது"
+msgstr "மொத்த கோப்பு அளவு உள்ளடக்கத்தை நகலெடுக்க மிகவும் பெரியது"
 
 #: createFile.py:213
 msgid "Unable to get current directory after multiple attempts"
-msgstr "பல முயற்சிகளுக்குப் பிறகும் தற்போதைய அடைவைப் பெற முடியவில்லை"
+msgstr "பல முயற்சிகளுக்குப் பிறகும் தற்போதைய கோப்பகத்தைப் பெற முடியவில்லை"
 
-#: __init__.py:402
+#: __init__.py:630
 msgid "Unable to get current path"
 msgstr "தற்போதைய பாதையைப் பெற முடியவில்லை"
 
-#: selectionManager.py:14
+#: folderTools.py:774
 msgid "Unable to get folder view"
 msgstr "கோப்புறை காட்சியைப் பெற முடியவில்லை"
 
-#: contextMenu.py:46
+#: contextMenu.py:44
 msgid "Uppercase"
 msgstr "பெரிய எழுத்துகள்"
 
 #: clipboardManager.py:104
 msgid "[Error processing RTF file]"
-msgstr "[RTF கோப்பைச் செயலாக்குவதில் பிழை]"
+msgstr "[RTF கோப்பை செயலாக்குவதில் பிழை]"
 
 #: clipboardManager.py:106
 msgid "[RTF content - striprtf module not available]"
@@ -611,11 +645,15 @@ msgstr "[RTF உள்ளடக்கம் - striprtf தொகுதி கி
 msgid "compression failed"
 msgstr "சுருக்கம் தோல்வியடைந்தது"
 
-#: contextMenu.py:37
+#: contextMenu.py:35
 msgid "copy"
 msgstr "நகலெடு"
 
-#: contextMenu.py:38
+#: robocopyManager.py:235
+msgid "estimating time remaining"
+msgstr "மீதமுள்ள நேரத்தை மதிப்பிடுகிறது"
+
+#: contextMenu.py:36
 msgid "move"
 msgstr "நகர்த்து"
 
@@ -627,33 +665,53 @@ msgstr "புதிய_கோப்பு"
 msgid "new_file_{index}"
 msgstr "புதிய_கோப்பு_{index}"
 
-#: contextMenu.py:39
+#: contextMenu.py:37
 msgid "paste"
 msgstr "ஒட்டு"
 
-#: __init__.py:110
-#: __init__.py:444
-#: __init__.py:484
-#: __init__.py:524
-#: __init__.py:564
-#: __init__.py:617
-#: __init__.py:634
-#: __init__.py:652
+#: __init__.py:268
+#: __init__.py:672
+#: __init__.py:712
+#: __init__.py:752
+#: __init__.py:792
+#: __init__.py:845
+#: __init__.py:862
+#: __init__.py:880
 msgid "xPlorer"
 msgstr "xPlorer"
 
-#: contextMenu.py:51
+#: contextMenu.py:49
 msgid "xPlorer Settings"
 msgstr "xPlorer அமைப்புகள்"
 
-#: createFile.py:286
+#: createFile.py:288
 msgid "{count} files created"
 msgstr "{count} கோப்புகள் உருவாக்கப்பட்டன"
 
-#: fileOperations.py:237
+#: fileOperations.py:283
 msgid "{count} items {size}"
 msgstr "{count} உருப்படிகள் {size}"
 
-#: folderInfo.py:62
+#: robocopyManager.py:240
+msgid "{h}h {m}m remaining"
+msgstr "{h}ம {m}நி மீதம்"
+
+#: robocopyManager.py:242
+msgid "{m}m {s}s remaining"
+msgstr "{m}நி {s}வி மீதம்"
+
+#: robocopyManager.py:304
+msgid "{pct}% - item {idx}/{total}: {name}"
+msgstr "{pct}% - உருப்படி {idx}/{total}: {name}"
+
+#: folderTools.py:111
 msgid "{subfolders} subfolders and {files} files"
 msgstr "{subfolders} துணை கோப்புறைகள் மற்றும் {files} கோப்புகள்"
+
+#: contextMenu.py:150
+msgid "{subfolders} subfolders, {files} files"
+msgstr "{subfolders} துணை கோப்புறைகள், {files} கோப்புகள்"
+
+#: robocopyManager.py:243
+msgid "{s}s remaining"
+msgstr "{s}வி மீதம்"

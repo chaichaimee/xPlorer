@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: xPlorer 2026.7.0\n"
+"Project-Id-Version: xPlorer 2026.8.5\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-06-24 13:09+0700\n"
+"POT-Creation-Date: 2026-08-03 06:13+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Turkish\n"
@@ -12,25 +12,33 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: DevOn Addon\n"
 
-#: folder_creation_dialog.py:62
+#: robocopyManager.py:464
+msgid " and {n} more"
+msgstr " ve {n} daha"
+
+#: folderTools.py:174
 msgid "&Apply"
 msgstr "&Uygula"
 
-#: folder_creation_dialog.py:63
+#: folderTools.py:175
 msgid "&Cancel"
 msgstr "&İptal"
 
-#: createFile.py:284
+#: createFile.py:286
 msgid "1 file created"
 msgstr "1 dosya oluşturuldu"
 
-#: fileOperations.py:294
+#: fileOperations.py:340
 msgid "A file with this name already exists"
-msgstr "Bu ada sahip bir dosya zaten var"
+msgstr "Bu ada sahip bir dosya zaten mevcut"
 
 #: compressionManager.py:288
 msgid "Built-in compression failed: {error}"
 msgstr "Yerleşik sıkıştırma başarısız oldu: {error}"
+
+#: robocopyManager.py:323
+msgid "Calculating total size..."
+msgstr "Toplam boyut hesaplanıyor..."
 
 #: clipboardManager.py:66
 msgid "Cannot copy content of folders, please select files only"
@@ -38,25 +46,25 @@ msgstr "Klasörlerin içeriği kopyalanamaz, lütfen yalnızca dosyaları seçin
 
 #: createFile.py:271
 msgid "Cannot find unique name for: {name}"
-msgstr "{name} için benzersiz bir ad bulunamıyor"
+msgstr "İçin benzersiz bir ad bulunamıyor: {name}"
 
-#: __init__.py:660
+#: __init__.py:888
 msgid "Cannot open settings dialog"
 msgstr "Ayarlar iletişim kutusu açılamıyor"
 
-#: txt2folder.py:69
+#: folderTools.py:570
 msgid "Cannot process RTF file: striprtf module not available"
 msgstr "RTF dosyası işlenemiyor: striprtf modülü mevcut değil"
 
-#: contextMenu.py:45
+#: contextMenu.py:43
 msgid "Case Converter for Folders"
 msgstr "Klasörler için Büyük/Küçük Harf Dönüştürücü"
 
-#: __init__.py:699
+#: __init__.py:927
 msgid "Case converter not available"
 msgstr "Büyük/küçük harf dönüştürücü mevcut değil"
 
-#: __init__.py:420
+#: __init__.py:648
 msgid "Clipboard manager not available"
 msgstr "Pano yöneticisi mevcut değil"
 
@@ -64,9 +72,9 @@ msgstr "Pano yöneticisi mevcut değil"
 msgid "Completed"
 msgstr "Tamamlandı"
 
-#: contextMenu.py:27
+#: contextMenu.py:26
 msgid "Compress zip"
-msgstr "Zip olarak sıkıştır"
+msgstr "Zip sıkıştır"
 
 #: compressionManager.py:160
 #: compressionManager.py:168
@@ -92,7 +100,7 @@ msgstr "Sıkıştırma iptal edildi"
 msgid "Compression completed {name}"
 msgstr "Sıkıştırma tamamlandı {name}"
 
-#: __init__.py:500
+#: __init__.py:728
 msgid "Compression manager not available"
 msgstr "Sıkıştırma yöneticisi mevcut değil"
 
@@ -102,101 +110,101 @@ msgstr "Sıkıştırma zaman aşımına uğradı"
 
 #: clipboardManager.py:133
 msgid "Content from 1 file copied to clipboard"
-msgstr "1 dosyadan içerik panoya kopyalandı"
+msgstr "1 dosyanın içeriği panoya kopyalandı"
 
 #: clipboardManager.py:135
 msgid "Content from {count} files copied to clipboard"
-msgstr "{count} dosyadan içerik panoya kopyalandı"
+msgstr "{count} dosyanın içeriği panoya kopyalandı"
 
-#: __init__.py:607
-#: __init__.py:673
+#: __init__.py:835
+#: __init__.py:901
 msgid "Context menu manager not available"
 msgstr "Bağlam menüsü yöneticisi mevcut değil"
 
-#: case.py:115
+#: folderTools.py:937
 msgid "Conversion already in progress"
 msgstr "Dönüştürme zaten devam ediyor"
 
-#: case.py:132
+#: folderTools.py:954
 msgid "Converting"
 msgstr "Dönüştürülüyor"
 
 #: clipboardManager.py:44
 msgid "Copied 1 item name to clipboard"
-msgstr "1 öğe adı panoya kopyalandı"
+msgstr "1 öğenin adı panoya kopyalandı"
 
 #: clipboardManager.py:46
 msgid "Copied {count} item names to clipboard"
-msgstr "{count} öğe adı panoya kopyalandı"
+msgstr "{count} öğenin adı panoya kopyalandı"
 
-#: __init__.py:396
+#: __init__.py:624
 msgid "Copied: {path}"
 msgstr "Kopyalandı: {path}"
 
-#: contextMenu.py:29
+#: contextMenu.py:28
 msgid "Copy address bar"
 msgstr "Adres çubuğunu kopyala"
 
-#: contextMenu.py:30
+#: contextMenu.py:29
 msgid "Copy content"
 msgstr "İçeriği kopyala"
 
-#: __init__.py:483
+#: __init__.py:711
 msgid "Copy content (single tap) or invert selection (double tap)"
-msgstr "İçeriği kopyala (tek dokunma) veya seçimi ters çevir (çift dokunma)"
+msgstr "İçeriği kopyalayın (tek dokunuş) veya seçimi ters çevirin (çift dokunuş)"
 
-#: contextMenu.py:31
+#: contextMenu.py:30
 msgid "Copy selected file and folder names"
 msgstr "Seçili dosya ve klasör adlarını kopyala"
 
-#: __init__.py:443
+#: __init__.py:671
 msgid "Copy selected names (single tap) or copy address bar (double tap)"
-msgstr "Seçili adları kopyala (tek dokunma) veya adres çubuğunu kopyala (çift dokunma)"
+msgstr "Seçili adları kopyalayın (tek dokunuş) veya adres çubuğunu kopyalayın (çift dokunuş)"
 
-#: __init__.py:400
+#: __init__.py:628
 #: clipboardManager.py:50
 #: clipboardManager.py:139
 msgid "Could not open clipboard"
 msgstr "Pano açılamadı"
 
-#: contextMenu.py:24
+#: contextMenu.py:23
 #: createFile.py:17
 msgid "Create File"
 msgstr "Dosya Oluştur"
 
-#: folder_creation_dialog.py:16
+#: folderTools.py:128
 msgid "Create Multiple Folders"
-msgstr "Birden Fazla Klasör Oluştur"
+msgstr "Birden Çok Klasör Oluştur"
 
-#: contextMenu.py:42
+#: contextMenu.py:40
 msgid "Create Multiple Folders..."
-msgstr "Birden Fazla Klasör Oluştur..."
+msgstr "Birden Çok Klasör Oluştur..."
 
-#: folder_creation_dialog.py:45
+#: folderTools.py:157
 msgid "Create main folder and then subfolders"
-msgstr "Ana klasörü ve ardından alt klasörleri oluştur"
+msgstr "Ana klasörü ve ardından alt klasörleri oluşturun"
 
-#: __init__.py:651
+#: __init__.py:879
 msgid "Create new folder and paste clipboard content into rename field"
-msgstr "Yeni klasör oluştur ve pano içeriğini yeniden adlandırma alanına yapıştır"
+msgstr "Yeni klasör oluşturun ve pano içeriğini yeniden adlandırma alanına yapıştırın"
 
-#: folder_creation_dialog.py:212
+#: folderTools.py:324
 msgid "Created {count} of {total} folders..."
-msgstr "{total} klasörden {count}'i oluşturuldu..."
+msgstr "{total} klasörden {count} oluşturuldu..."
 
-#: folder_creation_dialog.py:199
+#: folderTools.py:311
 msgid "Creating folders in background..."
 msgstr "Arka planda klasörler oluşturuluyor..."
 
-#: folder_creation_dialog.py:49
+#: folderTools.py:161
 msgid "Edit individual folder names"
 msgstr "Bireysel klasör adlarını düzenle"
 
-#: folderInfo.py:71
+#: folderTools.py:120
 msgid "Error calculating folder info"
-msgstr "Klasör bilgisi hesaplanırken hata"
+msgstr "Klasör bilgileri hesaplanırken hata"
 
-#: fileOperations.py:248
+#: fileOperations.py:294
 msgid "Error calculating size"
 msgstr "Boyut hesaplanırken hata"
 
@@ -212,23 +220,23 @@ msgstr "Dosya içeriği kopyalanırken hata"
 msgid "Error copying names to clipboard"
 msgstr "Adlar panoya kopyalanırken hata"
 
-#: txt2folder.py:113
+#: folderTools.py:614
 msgid "Error creating base folder"
 msgstr "Temel klasör oluşturulurken hata"
 
-#: createFile.py:289
+#: createFile.py:291
 msgid "Error creating files"
 msgstr "Dosyalar oluşturulurken hata"
 
-#: __init__.py:693
+#: __init__.py:921
 msgid "Error creating folders"
 msgstr "Klasörler oluşturulurken hata"
 
-#: folder_creation_dialog.py:190
+#: folderTools.py:302
 msgid "Error creating main folder"
 msgstr "Ana klasör oluşturulurken hata"
 
-#: __init__.py:737
+#: __init__.py:965
 msgid "Error during conversion"
 msgstr "Dönüştürme sırasında hata"
 
@@ -236,7 +244,7 @@ msgstr "Dönüştürme sırasında hata"
 msgid "Error in compression process: {error}"
 msgstr "Sıkıştırma işleminde hata: {error}"
 
-#: selectionManager.py:71
+#: folderTools.py:804
 msgid "Error inverting selection"
 msgstr "Seçim ters çevrilirken hata"
 
@@ -244,40 +252,44 @@ msgstr "Seçim ters çevrilirken hata"
 msgid "Error opening create file dialog"
 msgstr "Dosya oluştur iletişim kutusu açılırken hata"
 
-#: fileOperations.py:304
+#: fileOperations.py:350
 msgid "Error opening rename dialog"
-msgstr "Yeniden adlandır iletişim kutusu açılırken hata"
+msgstr "Yeniden adlandırma iletişim kutusu açılırken hata"
 
-#: __init__.py:667
+#: __init__.py:895
 msgid "Error opening settings"
 msgstr "Ayarlar açılırken hata"
 
-#: txt2folder.py:203
+#: folderTools.py:704
 msgid "Error processing text file: {}"
 msgstr "Metin dosyası işlenirken hata: {}"
 
-#: txt2folder.py:80
+#: folderTools.py:581
 msgid "Error reading RTF file"
 msgstr "RTF dosyası okunurken hata"
 
-#: txt2folder.py:207
+#: folderTools.py:708
 msgid "Error reading file encoding"
 msgstr "Dosya kodlaması okunurken hata"
 
-#: fileOperations.py:274
-#: fileOperations.py:301
+#: fileOperations.py:320
+#: fileOperations.py:347
 msgid "Error renaming file"
 msgstr "Dosya yeniden adlandırılırken hata"
 
-#: txt2folder.py:212
+#: folderTools.py:713
 msgid "Error: {}"
 msgstr "Hata: {}"
+
+#: __init__.py:1002
+msgid "Explorer tree dumped to NVDA log"
+msgstr "Gezgin ağacı NVDA günlüğüne döküldü"
 
 #: createFile.py:72
 msgid "Extension:"
 msgstr "Uzantı:"
 
-#: case.py:127
+#: folderTools.py:949
 msgid "Failed to rename any folders"
 msgstr "Hiçbir klasör yeniden adlandırılamadı"
 
@@ -301,7 +313,7 @@ msgstr "Dosya adı"
 msgid "File name cannot be empty"
 msgstr "Dosya adı boş olamaz"
 
-#: fileOperations.py:291
+#: fileOperations.py:337
 msgid "File name not changed"
 msgstr "Dosya adı değiştirilmedi"
 
@@ -314,346 +326,194 @@ msgstr "Dosya adı {index}:"
 msgid "File name:"
 msgstr "Dosya adı:"
 
-#: __init__.py:622
+#: __init__.py:850
 msgid "File operations manager not available"
 msgstr "Dosya işlemleri yöneticisi mevcut değil"
 
-#: fileOperations.py:298
+#: fileOperations.py:344
 msgid "File renamed to {name}"
 msgstr "Dosya {name} olarak yeniden adlandırıldı"
 
-#: folder_creation_dialog.py:115
-#: folder_creation_dialog.py:155
+#: robocopyManager.py:448
+msgid "Finished {n} of {total}: {name}"
+msgstr "{total} üzerinden {n} tamamlandı: {name}"
+
+#: folderTools.py:227
+#: folderTools.py:267
 msgid "Folder"
 msgstr "Klasör"
 
-#: txt2folder.py:104
-#: txt2folder.py:174
+#: folderTools.py:605
+#: folderTools.py:675
 msgid "Folder '{}' already exists, creating '{}' instead"
-msgstr "'{}' klasörü zaten var, bunun yerine '{}' oluşturuluyor"
+msgstr "'{}' klasörü zaten mevcut, bunun yerine '{}' oluşturuluyor"
 
-#: __init__.py:677
+#: __init__.py:905
 msgid "Folder creation dialog not available"
-msgstr "Klasör oluştur iletişim kutusu mevcut değil"
+msgstr "Klasör oluşturma iletişim kutusu mevcut değil"
 
-#: __init__.py:639
+#: __init__.py:867
 msgid "Folder creator helper not available"
-msgstr "Klasör oluşturucu yardımcısı mevcut değil"
+msgstr "Klasör oluşturma yardımcısı mevcut değil"
 
-#: contextMenu.py:52
+#: contextMenu.py:131
+#: contextMenu.py:134
+#: contextMenu.py:155
 msgid "Folder info"
 msgstr "Klasör bilgisi"
 
-#: folder_creation_dialog.py:30
+#: folderTools.py:142
 msgid "Folder title:"
 msgstr "Klasör başlığı:"
 
-#: contextMenu.py:49
+#: contextMenu.py:47
 msgid "Headline Case"
-msgstr "Başlık Büyük Harf"
+msgstr "Başlık Büyük Harfi"
 
-#: folder_creation_dialog.py:166
+#: folderTools.py:278
 msgid "Invalid number for folders"
 msgstr "Klasörler için geçersiz sayı"
 
-#: contextMenu.py:28
+#: contextMenu.py:27
 msgid "Invert selection"
 msgstr "Seçimi ters çevir"
 
-#: contextMenu.py:47
+#: contextMenu.py:45
 msgid "Lowercase"
 msgstr "Küçük harf"
 
-#: folder_creation_dialog.py:163
+#: folderTools.py:275
 msgid "Maximum 100 folders allowed"
 msgstr "En fazla 100 klasöre izin verilir"
 
-#: __init__.py:681
+#: __init__.py:909
 msgid "No Explorer folder detected"
-msgstr "Explorer klasörü algılanamadı"
+msgstr "Hiçbir Gezgin klasörü algılanmadı"
 
-#: fileOperations.py:173
-#: fileOperations.py:230
+#: fileOperations.py:219
+#: fileOperations.py:276
 msgid "No access to size data"
 msgstr "Boyut verilerine erişim yok"
 
-#: selectionManager.py:36
+#: folderTools.py:769
 msgid "No active File Explorer window found"
-msgstr "Etkin File Explorer penceresi bulunamadı"
+msgstr "Etkin Dosya Gezgini penceresi bulunamadı"
 
 #: clipboardManager.py:127
 msgid "No content could be read from selected files"
-msgstr "Seçili dosyalardan hiçbir içerik okunamadı"
+msgstr "Seçili dosyalardan içerik okunamadı"
 
-#: createFile.py:282
+#: createFile.py:284
 msgid "No files were created"
 msgstr "Hiçbir dosya oluşturulmadı"
 
-#: case.py:142
-#: case.py:148
-#: case.py:157
-#: case.py:163
+#: folderTools.py:964
+#: folderTools.py:970
+#: folderTools.py:979
+#: folderTools.py:985
 msgid "No folders found"
 msgstr "Klasör bulunamadı"
 
-#: __init__.py:703
+#: __init__.py:931
 msgid "No folders selected"
-msgstr "Klasör seçilmedi"
+msgstr "Hiçbir klasör seçilmedi"
 
-#: __init__.py:718
+#: __init__.py:946
 msgid "No folders selected or current folder not available"
-msgstr "Klasör seçilmedi veya geçerli klasör mevcut değil"
+msgstr "Hiçbir klasör seçilmedi veya geçerli klasör mevcut değil"
 
-#: folder_creation_dialog.py:229
-#: txt2folder.py:148
-#: txt2folder.py:198
+#: folderTools.py:341
+#: folderTools.py:649
+#: folderTools.py:699
 msgid "No folders were created"
 msgstr "Hiçbir klasör oluşturulmadı"
 
-#: folderInfo.py:30
+#: folderTools.py:81
 msgid "No item selected"
-msgstr "Öğe seçilmedi"
+msgstr "Hiçbir öğe seçilmedi"
 
-#: selectionManager.py:49
+#: folderTools.py:782
 msgid "No items in folder"
 msgstr "Klasörde öğe yok"
 
 #: clipboardManager.py:27
 #: clipboardManager.py:62
 #: compressionManager.py:148
-#: fileOperations.py:164
-#: fileOperations.py:260
+#: fileOperations.py:210
+#: fileOperations.py:306
 msgid "No items selected"
-msgstr "Öğe seçilmedi"
+msgstr "Hiçbir öğe seçilmedi"
 
 #: clipboardManager.py:79
 msgid "No text files selected"
-msgstr "Metin dosyası seçilmedi"
+msgstr "Hiçbir metin dosyası seçilmedi"
 
-#: txt2folder.py:90
-#: txt2folder.py:160
+#: folderTools.py:591
+#: folderTools.py:661
 msgid "No valid folder names found in the file"
 msgstr "Dosyada geçerli klasör adı bulunamadı"
 
-#: folder_creation_dialog.py:184
+#: folderTools.py:296
 msgid "No valid folder names provided"
 msgstr "Geçerli klasör adı sağlanmadı"
 
+#: __init__.py:976
+msgid "Not focused on File Explorer"
+msgstr "Dosya Gezgini'ne odaklanılmamış"
+
 #: createFile.py:198
-#: selectionManager.py:30
-#: txt2folder.py:40
+#: folderTools.py:541
+#: folderTools.py:763
 msgid "Not in File Explorer"
-msgstr "File Explorer'da değil"
+msgstr "Dosya Gezgini'nde değil"
 
 #: createFile.py:28
 msgid "Number of files to create:"
 msgstr "Oluşturulacak dosya sayısı:"
 
-#: folder_creation_dialog.py:160
+#: folderTools.py:272
 msgid "Number of folders must be at least 1"
 msgstr "Klasör sayısı en az 1 olmalıdır"
 
-#: folder_creation_dialog.py:38
+#: folderTools.py:150
 msgid "Number of folders:"
 msgstr "Klasör sayısı:"
 
-#: __init__.py:616
+#: __init__.py:844
 msgid "Open xPlorer context menu"
 msgstr "xPlorer bağlam menüsünü aç"
 
-#: txt2folder.py:53
+#: folderTools.py:554
 msgid "Please select a .txt or .rtf file"
 msgstr "Lütfen bir .txt veya .rtf dosyası seçin"
 
-#: fileOperations.py:267
+#: fileOperations.py:313
 msgid "Please select a file, not a folder"
 msgstr "Lütfen bir dosya seçin, klasör değil"
 
-#: fileOperations.py:263
+#: fileOperations.py:309
 msgid "Please select only one file"
 msgstr "Lütfen yalnızca bir dosya seçin"
 
-#: folderInfo.py:35
-msgid "Please select only one folder"
-msgstr "Lütfen yalnızca bir klasör seçin"
-
-#: txt2folder.py:46
+#: folderTools.py:547
 msgid "Please select only one text file"
 msgstr "Lütfen yalnızca bir metin dosyası seçin"
 
-#: selectionManager.py:58
+#: folderTools.py:791
 msgid "Processing {count} items in background..."
 msgstr "Arka planda {count} öğe işleniyor..."
 
-#: __init__.py:633
-#: contextMenu.py:32
+#: __init__.py:861
+#: contextMenu.py:31
 msgid "Rename selected file"
 msgstr "Seçili dosyayı yeniden adlandır"
 
-#: __init__.py:460
+#: __init__.py:688
 msgid "Required manager not available"
 msgstr "Gerekli yönetici mevcut değil"
 
-#: contextMenu.py:36
+#: contextMenu.py:34
 msgid "Robocopy"
 msgstr "Robocopy"
 
-#: __init__.py:540
-msgid "Robocopy manager not available"
-msgstr "Robocopy yöneticisi mevcut değil"
-
-#: __init__.py:563
-msgid "Robocopy: single tap copy, double tap paste, triple tap move"
-msgstr "Robocopy: tek dokunma kopyala, çift dokunma yapıştır, üç dokunma taşı"
-
-#: contextMenu.py:33
-msgid "Say size"
-msgstr "Boyutu söyle"
-
-#: __init__.py:523
-msgid "Say size (single tap) or compress zip (double tap)"
-msgstr "Boyutu söyle (tek dokunma) veya zip olarak sıkıştır (çift dokunma)"
-
-#: txt2folder.py:58
-msgid "Selected file does not exist"
-msgstr "Seçili dosya mevcut değil"
-
-#: folderInfo.py:14
-msgid "Selected item is not a folder"
-msgstr "Seçili öğe bir klasör değil"
-
-#: selectionManager.py:93
-msgid "Selected {count} items"
-msgstr "{count} öğe seçildi"
-
-#: selectionManager.py:96
-msgid "Selection inverted"
-msgstr "Seçim ters çevrildi"
-
-#: createFile.py:170
-msgid "Some files will use default names"
-msgstr "Bazı dosyalar varsayılan adları kullanacak"
-
-#: compressionManager.py:161
-msgid "Starting..."
-msgstr "Başlatılıyor..."
-
-#: case.py:165
-msgid "Successfully converted {count} folders to headline case"
-msgstr "{count} klasör başarıyla başlık büyük harfe dönüştürüldü"
-
-#: case.py:150
-msgid "Successfully converted {count} folders to lowercase"
-msgstr "{count} klasör başarıyla küçük harfe dönüştürüldü"
-
-#: case.py:159
-msgid "Successfully converted {count} folders to title case"
-msgstr "{count} klasör başarıyla başlık durumuna dönüştürüldü"
-
-#: case.py:144
-msgid "Successfully converted {count} folders to uppercase"
-msgstr "{count} klasör başarıyla büyük harfe dönüştürüldü"
-
-#: folder_creation_dialog.py:225
-msgid "Successfully created 1 folder"
-msgstr "1 klasör başarıyla oluşturuldu"
-
-#: folder_creation_dialog.py:223
-msgid "Successfully created main folder only"
-msgstr "Yalnızca ana klasör başarıyla oluşturuldu"
-
-#: folder_creation_dialog.py:227
-msgid "Successfully created {count} of {total} folders"
-msgstr "{total} klasörden {count}'i başarıyla oluşturuldu"
-
-#: txt2folder.py:144
-#: txt2folder.py:194
-msgid "Successfully created {} folders in '{}'"
-msgstr "'{}' içinde {} klasör başarıyla oluşturuldu"
-
-#: contextMenu.py:14
-msgid "TXT to Folder"
-msgstr "TXT'den Klasöre"
-
-#: contextMenu.py:48
-msgid "Title Case"
-msgstr "Başlık Durumu"
-
-#: clipboardManager.py:88
-msgid "Total file size is too large to copy content"
-msgstr "Toplam dosya boyutu içeriği kopyalamak için çok büyük"
-
-#: createFile.py:213
-msgid "Unable to get current directory after multiple attempts"
-msgstr "Birden fazla denemeden sonra geçerli dizin alınamadı"
-
-#: __init__.py:402
-msgid "Unable to get current path"
-msgstr "Geçerli yol alınamadı"
-
-#: selectionManager.py:14
-msgid "Unable to get folder view"
-msgstr "Klasör görünümü alınamadı"
-
-#: contextMenu.py:46
-msgid "Uppercase"
-msgstr "Büyük harf"
-
-#: clipboardManager.py:104
-msgid "[Error processing RTF file]"
-msgstr "[RTF dosyası işlenirken hata]"
-
-#: clipboardManager.py:106
-msgid "[RTF content - striprtf module not available]"
-msgstr "[RTF içeriği - striprtf modülü mevcut değil]"
-
-#: compressionManager.py:114
-msgid "compression failed"
-msgstr "sıkıştırma başarısız oldu"
-
-#: contextMenu.py:37
-msgid "copy"
-msgstr "kopyala"
-
-#: contextMenu.py:38
-msgid "move"
-msgstr "taşı"
-
-#: createFile.py:156
-msgid "new_file"
-msgstr "yeni_dosya"
-
-#: createFile.py:158
-msgid "new_file_{index}"
-msgstr "yeni_dosya_{index}"
-
-#: contextMenu.py:39
-msgid "paste"
-msgstr "yapıştır"
-
-#: __init__.py:110
-#: __init__.py:444
-#: __init__.py:484
-#: __init__.py:524
-#: __init__.py:564
-#: __init__.py:617
-#: __init__.py:634
-#: __init__.py:652
-msgid "xPlorer"
-msgstr "xPlorer"
-
-#: contextMenu.py:51
-msgid "xPlorer Settings"
-msgstr "xPlorer Ayarları"
-
-#: createFile.py:286
-msgid "{count} files created"
-msgstr "{count} dosya oluşturuldu"
-
-#: fileOperations.py:237
-msgid "{count} items {size}"
-msgstr "{count} öğe {size}"
-
-#: folderInfo.py:62
-msgid "{subfolders} subfolders and {files} files"
-msgstr "{subfolders} alt klasör ve {files} dosya"
+#: rob

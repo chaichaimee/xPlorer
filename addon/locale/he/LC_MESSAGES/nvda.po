@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: xPlorer 2026.7.0\n"
+"Project-Id-Version: xPlorer 2026.8.5\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-06-24 13:09+0700\n"
+"POT-Creation-Date: 2026-08-03 06:13+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Hebrew\n"
@@ -12,25 +12,33 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: DevOn Addon\n"
 
-#: folder_creation_dialog.py:62
+#: robocopyManager.py:464
+msgid " and {n} more"
+msgstr " ועוד {n}"
+
+#: folderTools.py:174
 msgid "&Apply"
 msgstr "&החל"
 
-#: folder_creation_dialog.py:63
+#: folderTools.py:175
 msgid "&Cancel"
 msgstr "&ביטול"
 
-#: createFile.py:284
+#: createFile.py:286
 msgid "1 file created"
 msgstr "קובץ 1 נוצר"
 
-#: fileOperations.py:294
+#: fileOperations.py:340
 msgid "A file with this name already exists"
-msgstr "קובץ בשם זה כבר קיים"
+msgstr "קובץ עם שם זה כבר קיים"
 
 #: compressionManager.py:288
 msgid "Built-in compression failed: {error}"
 msgstr "הדחיסה המובנית נכשלה: {error}"
+
+#: robocopyManager.py:323
+msgid "Calculating total size..."
+msgstr "מחשב גודל כולל..."
 
 #: clipboardManager.py:66
 msgid "Cannot copy content of folders, please select files only"
@@ -40,23 +48,23 @@ msgstr "לא ניתן להעתיק תוכן של תיקיות, אנא בחר ר�
 msgid "Cannot find unique name for: {name}"
 msgstr "לא נמצא שם ייחודי עבור: {name}"
 
-#: __init__.py:660
+#: __init__.py:888
 msgid "Cannot open settings dialog"
 msgstr "לא ניתן לפתוח את דו-שיח ההגדרות"
 
-#: txt2folder.py:69
+#: folderTools.py:570
 msgid "Cannot process RTF file: striprtf module not available"
-msgstr "לא ניתן לעבד קובץ RTF: מודול striprtf אינו זמין"
+msgstr "לא ניתן לעבד קובץ RTF: המודול striprtf אינו זמין"
 
-#: contextMenu.py:45
+#: contextMenu.py:43
 msgid "Case Converter for Folders"
 msgstr "ממיר רישיות לתיקיות"
 
-#: __init__.py:699
+#: __init__.py:927
 msgid "Case converter not available"
 msgstr "ממיר הרישיות אינו זמין"
 
-#: __init__.py:420
+#: __init__.py:648
 msgid "Clipboard manager not available"
 msgstr "מנהל הלוח אינו זמין"
 
@@ -64,7 +72,7 @@ msgstr "מנהל הלוח אינו זמין"
 msgid "Completed"
 msgstr "הושלם"
 
-#: contextMenu.py:27
+#: contextMenu.py:26
 msgid "Compress zip"
 msgstr "דחיסת zip"
 
@@ -90,15 +98,15 @@ msgstr "הדחיסה בוטלה"
 #: compressionManager.py:112
 #: compressionManager.py:285
 msgid "Compression completed {name}"
-msgstr "דחיסת {name} הושלמה"
+msgstr "הדחיסה הושלמה {name}"
 
-#: __init__.py:500
+#: __init__.py:728
 msgid "Compression manager not available"
 msgstr "מנהל הדחיסה אינו זמין"
 
 #: compressionManager.py:86
 msgid "Compression timed out"
-msgstr "זמן הדחיסה תם"
+msgstr "זמן הדחיסה פג"
 
 #: clipboardManager.py:133
 msgid "Content from 1 file copied to clipboard"
@@ -108,16 +116,16 @@ msgstr "תוכן מקובץ 1 הועתק ללוח"
 msgid "Content from {count} files copied to clipboard"
 msgstr "תוכן מ-{count} קבצים הועתק ללוח"
 
-#: __init__.py:607
-#: __init__.py:673
+#: __init__.py:835
+#: __init__.py:901
 msgid "Context menu manager not available"
 msgstr "מנהל תפריט ההקשר אינו זמין"
 
-#: case.py:115
+#: folderTools.py:937
 msgid "Conversion already in progress"
-msgstr "ההמרה כבר מתבצעת"
+msgstr "המרה כבר מתבצעת"
 
-#: case.py:132
+#: folderTools.py:954
 msgid "Converting"
 msgstr "ממיר"
 
@@ -129,74 +137,74 @@ msgstr "שם פריט 1 הועתק ללוח"
 msgid "Copied {count} item names to clipboard"
 msgstr "שמות {count} פריטים הועתקו ללוח"
 
-#: __init__.py:396
+#: __init__.py:624
 msgid "Copied: {path}"
 msgstr "הועתק: {path}"
 
-#: contextMenu.py:29
+#: contextMenu.py:28
 msgid "Copy address bar"
-msgstr "העתק שורת כתובת"
+msgstr "העתק שורת הכתובת"
 
-#: contextMenu.py:30
+#: contextMenu.py:29
 msgid "Copy content"
 msgstr "העתק תוכן"
 
-#: __init__.py:483
+#: __init__.py:711
 msgid "Copy content (single tap) or invert selection (double tap)"
-msgstr "העתק תוכן (הקשה אחת) או הפוך בחירה (שתי הקשות)"
+msgstr "העתק תוכן (הקשה אחת) או הפוך בחירה (הקשה כפולה)"
 
-#: contextMenu.py:31
+#: contextMenu.py:30
 msgid "Copy selected file and folder names"
-msgstr "העתק שמות קבצים ותיקיות שנבחרו"
+msgstr "העתק שמות קבצים ותיקיות נבחרים"
 
-#: __init__.py:443
+#: __init__.py:671
 msgid "Copy selected names (single tap) or copy address bar (double tap)"
-msgstr "העתק שמות נבחרים (הקשה אחת) או העתק שורת כתובת (שתי הקשות)"
+msgstr "העתק שמות נבחרים (הקשה אחת) או העתק שורת כתובת (הקשה כפולה)"
 
-#: __init__.py:400
+#: __init__.py:628
 #: clipboardManager.py:50
 #: clipboardManager.py:139
 msgid "Could not open clipboard"
 msgstr "לא ניתן היה לפתוח את הלוח"
 
-#: contextMenu.py:24
+#: contextMenu.py:23
 #: createFile.py:17
 msgid "Create File"
 msgstr "צור קובץ"
 
-#: folder_creation_dialog.py:16
+#: folderTools.py:128
 msgid "Create Multiple Folders"
 msgstr "צור תיקיות מרובות"
 
-#: contextMenu.py:42
+#: contextMenu.py:40
 msgid "Create Multiple Folders..."
 msgstr "צור תיקיות מרובות..."
 
-#: folder_creation_dialog.py:45
+#: folderTools.py:157
 msgid "Create main folder and then subfolders"
-msgstr "צור תיקייה ראשית ולאחר מכן תיקיות משנה"
+msgstr "צור תיקיה ראשית ולאחר מכן תיקיות משנה"
 
-#: __init__.py:651
+#: __init__.py:879
 msgid "Create new folder and paste clipboard content into rename field"
-msgstr "צור תיקייה חדשה והדבק תוכן לוח בשדה שינוי השם"
+msgstr "צור תיקיה חדשה והדבק תוכן הלוח בשדה שינוי השם"
 
-#: folder_creation_dialog.py:212
+#: folderTools.py:324
 msgid "Created {count} of {total} folders..."
 msgstr "נוצרו {count} מתוך {total} תיקיות..."
 
-#: folder_creation_dialog.py:199
+#: folderTools.py:311
 msgid "Creating folders in background..."
 msgstr "יוצר תיקיות ברקע..."
 
-#: folder_creation_dialog.py:49
+#: folderTools.py:161
 msgid "Edit individual folder names"
 msgstr "ערוך שמות תיקיות בודדות"
 
-#: folderInfo.py:71
+#: folderTools.py:120
 msgid "Error calculating folder info"
-msgstr "שגיאה בחישוב מידע התיקייה"
+msgstr "שגיאה בחישוב פרטי התיקיה"
 
-#: fileOperations.py:248
+#: fileOperations.py:294
 msgid "Error calculating size"
 msgstr "שגיאה בחישוב הגודל"
 
@@ -206,29 +214,29 @@ msgstr "שגיאה בדחיסת קבצים"
 
 #: clipboardManager.py:142
 msgid "Error copying file content"
-msgstr "שגיאה בהעתקת תוכן קובץ"
+msgstr "שגיאה בהעתקת תוכן הקובץ"
 
 #: clipboardManager.py:53
 msgid "Error copying names to clipboard"
 msgstr "שגיאה בהעתקת שמות ללוח"
 
-#: txt2folder.py:113
+#: folderTools.py:614
 msgid "Error creating base folder"
-msgstr "שגיאה ביצירת תיקיית בסיס"
+msgstr "שגיאה ביצירת תיקיית הבסיס"
 
-#: createFile.py:289
+#: createFile.py:291
 msgid "Error creating files"
 msgstr "שגיאה ביצירת קבצים"
 
-#: __init__.py:693
+#: __init__.py:921
 msgid "Error creating folders"
 msgstr "שגיאה ביצירת תיקיות"
 
-#: folder_creation_dialog.py:190
+#: folderTools.py:302
 msgid "Error creating main folder"
-msgstr "שגיאה ביצירת התיקייה הראשית"
+msgstr "שגיאה ביצירת התיקיה הראשית"
 
-#: __init__.py:737
+#: __init__.py:965
 msgid "Error during conversion"
 msgstr "שגיאה במהלך ההמרה"
 
@@ -236,7 +244,7 @@ msgstr "שגיאה במהלך ההמרה"
 msgid "Error in compression process: {error}"
 msgstr "שגיאה בתהליך הדחיסה: {error}"
 
-#: selectionManager.py:71
+#: folderTools.py:804
 msgid "Error inverting selection"
 msgstr "שגיאה בהיפוך הבחירה"
 
@@ -244,42 +252,46 @@ msgstr "שגיאה בהיפוך הבחירה"
 msgid "Error opening create file dialog"
 msgstr "שגיאה בפתיחת דו-שיח יצירת קובץ"
 
-#: fileOperations.py:304
+#: fileOperations.py:350
 msgid "Error opening rename dialog"
 msgstr "שגיאה בפתיחת דו-שיח שינוי שם"
 
-#: __init__.py:667
+#: __init__.py:895
 msgid "Error opening settings"
 msgstr "שגיאה בפתיחת ההגדרות"
 
-#: txt2folder.py:203
+#: folderTools.py:704
 msgid "Error processing text file: {}"
 msgstr "שגיאה בעיבוד קובץ טקסט: {}"
 
-#: txt2folder.py:80
+#: folderTools.py:581
 msgid "Error reading RTF file"
 msgstr "שגיאה בקריאת קובץ RTF"
 
-#: txt2folder.py:207
+#: folderTools.py:708
 msgid "Error reading file encoding"
 msgstr "שגיאה בקריאת קידוד הקובץ"
 
-#: fileOperations.py:274
-#: fileOperations.py:301
+#: fileOperations.py:320
+#: fileOperations.py:347
 msgid "Error renaming file"
-msgstr "שגיאה בשינוי שם קובץ"
+msgstr "שגיאה בשינוי שם הקובץ"
 
-#: txt2folder.py:212
+#: folderTools.py:713
 msgid "Error: {}"
 msgstr "שגיאה: {}"
+
+#: __init__.py:1002
+msgid "Explorer tree dumped to NVDA log"
+msgstr "עץ הסייר הועתק ליומן NVDA"
 
 #: createFile.py:72
 msgid "Extension:"
 msgstr "סיומת:"
 
-#: case.py:127
+#: folderTools.py:949
 msgid "Failed to rename any folders"
-msgstr "לא הצליח לשנות שם של אף תיקייה"
+msgstr "לא הצליח לשנות שם של אף תיקיה"
 
 #: compressionManager.py:188
 msgid "Failed to start compression"
@@ -299,11 +311,11 @@ msgstr "שם קובץ"
 
 #: fileOperations.py:59
 msgid "File name cannot be empty"
-msgstr "שם קובץ לא יכול להיות ריק"
+msgstr "שם הקובץ לא יכול להיות ריק"
 
-#: fileOperations.py:291
+#: fileOperations.py:337
 msgid "File name not changed"
-msgstr "שם הקובץ לא שונה"
+msgstr "שם הקובץ לא השתנה"
 
 #: createFile.py:66
 #: createFile.py:113
@@ -314,115 +326,121 @@ msgstr "שם קובץ {index}:"
 msgid "File name:"
 msgstr "שם קובץ:"
 
-#: __init__.py:622
+#: __init__.py:850
 msgid "File operations manager not available"
 msgstr "מנהל פעולות קבצים אינו זמין"
 
-#: fileOperations.py:298
+#: fileOperations.py:344
 msgid "File renamed to {name}"
-msgstr "שם הקובץ שונה ל-{name}"
+msgstr "הקובץ שונה שם ל-{name}"
 
-#: folder_creation_dialog.py:115
-#: folder_creation_dialog.py:155
+#: robocopyManager.py:448
+msgid "Finished {n} of {total}: {name}"
+msgstr "הושלם {n} מתוך {total}: {name}"
+
+#: folderTools.py:227
+#: folderTools.py:267
 msgid "Folder"
-msgstr "תיקייה"
+msgstr "תיקיה"
 
-#: txt2folder.py:104
-#: txt2folder.py:174
+#: folderTools.py:605
+#: folderTools.py:675
 msgid "Folder '{}' already exists, creating '{}' instead"
-msgstr "התיקייה '{}' כבר קיימת, יוצר במקום '{}'"
+msgstr "התיקיה '{}' כבר קיימת, יוצר '{}' במקום"
 
-#: __init__.py:677
+#: __init__.py:905
 msgid "Folder creation dialog not available"
-msgstr "דו-שיח יצירת תיקיות אינו זמין"
+msgstr "דו-שיח יצירת תיקיה אינו זמין"
 
-#: __init__.py:639
+#: __init__.py:867
 msgid "Folder creator helper not available"
-msgstr "עוזר יצירת תיקיות אינו זמין"
+msgstr "עוזר יצירת התיקיות אינו זמין"
 
-#: contextMenu.py:52
+#: contextMenu.py:131
+#: contextMenu.py:134
+#: contextMenu.py:155
 msgid "Folder info"
-msgstr "מידע על תיקייה"
+msgstr "פרטי תיקיה"
 
-#: folder_creation_dialog.py:30
+#: folderTools.py:142
 msgid "Folder title:"
-msgstr "כותרת תיקייה:"
+msgstr "כותרת תיקיה:"
 
-#: contextMenu.py:49
+#: contextMenu.py:47
 msgid "Headline Case"
-msgstr "רישיות כותרת ראשית"
+msgstr "אותיות כותרת"
 
-#: folder_creation_dialog.py:166
+#: folderTools.py:278
 msgid "Invalid number for folders"
 msgstr "מספר לא חוקי לתיקיות"
 
-#: contextMenu.py:28
+#: contextMenu.py:27
 msgid "Invert selection"
 msgstr "הפוך בחירה"
 
-#: contextMenu.py:47
+#: contextMenu.py:45
 msgid "Lowercase"
 msgstr "אותיות קטנות"
 
-#: folder_creation_dialog.py:163
+#: folderTools.py:275
 msgid "Maximum 100 folders allowed"
 msgstr "מקסימום 100 תיקיות מותרות"
 
-#: __init__.py:681
+#: __init__.py:909
 msgid "No Explorer folder detected"
-msgstr "לא זוהתה תיקיית Explorer"
+msgstr "לא זוהתה תיקיית סייר"
 
-#: fileOperations.py:173
-#: fileOperations.py:230
+#: fileOperations.py:219
+#: fileOperations.py:276
 msgid "No access to size data"
-msgstr "אין גישה לנתוני גודל"
+msgstr "אין גישה לנתוני הגודל"
 
-#: selectionManager.py:36
+#: folderTools.py:769
 msgid "No active File Explorer window found"
-msgstr "לא נמצא חלון פעיל של סייר הקבצים"
+msgstr "לא נמצא חלון סייר קבצים פעיל"
 
 #: clipboardManager.py:127
 msgid "No content could be read from selected files"
-msgstr "לא ניתן היה לקרוא תוכן מהקבצים שנבחרו"
+msgstr "לא ניתן היה לקרוא תוכן מהקבצים הנבחרים"
 
-#: createFile.py:282
+#: createFile.py:284
 msgid "No files were created"
 msgstr "לא נוצרו קבצים"
 
-#: case.py:142
-#: case.py:148
-#: case.py:157
-#: case.py:163
+#: folderTools.py:964
+#: folderTools.py:970
+#: folderTools.py:979
+#: folderTools.py:985
 msgid "No folders found"
 msgstr "לא נמצאו תיקיות"
 
-#: __init__.py:703
+#: __init__.py:931
 msgid "No folders selected"
 msgstr "לא נבחרו תיקיות"
 
-#: __init__.py:718
+#: __init__.py:946
 msgid "No folders selected or current folder not available"
-msgstr "לא נבחרו תיקיות או שהתיקייה הנוכחית אינה זמינה"
+msgstr "לא נבחרו תיקיות או שהתיקיה הנוכחית אינה זמינה"
 
-#: folder_creation_dialog.py:229
-#: txt2folder.py:148
-#: txt2folder.py:198
+#: folderTools.py:341
+#: folderTools.py:649
+#: folderTools.py:699
 msgid "No folders were created"
 msgstr "לא נוצרו תיקיות"
 
-#: folderInfo.py:30
+#: folderTools.py:81
 msgid "No item selected"
 msgstr "לא נבחר פריט"
 
-#: selectionManager.py:49
+#: folderTools.py:782
 msgid "No items in folder"
-msgstr "אין פריטים בתיקייה"
+msgstr "אין פריטים בתיקיה"
 
 #: clipboardManager.py:27
 #: clipboardManager.py:62
 #: compressionManager.py:148
-#: fileOperations.py:164
-#: fileOperations.py:260
+#: fileOperations.py:210
+#: fileOperations.py:306
 msgid "No items selected"
 msgstr "לא נבחרו פריטים"
 
@@ -430,18 +448,22 @@ msgstr "לא נבחרו פריטים"
 msgid "No text files selected"
 msgstr "לא נבחרו קבצי טקסט"
 
-#: txt2folder.py:90
-#: txt2folder.py:160
+#: folderTools.py:591
+#: folderTools.py:661
 msgid "No valid folder names found in the file"
 msgstr "לא נמצאו שמות תיקיות חוקיים בקובץ"
 
-#: folder_creation_dialog.py:184
+#: folderTools.py:296
 msgid "No valid folder names provided"
 msgstr "לא סופקו שמות תיקיות חוקיים"
 
+#: __init__.py:976
+msgid "Not focused on File Explorer"
+msgstr "לא ממוקד בסייר הקבצים"
+
 #: createFile.py:198
-#: selectionManager.py:30
-#: txt2folder.py:40
+#: folderTools.py:541
+#: folderTools.py:763
 msgid "Not in File Explorer"
 msgstr "לא בסייר הקבצים"
 
@@ -449,84 +471,96 @@ msgstr "לא בסייר הקבצים"
 msgid "Number of files to create:"
 msgstr "מספר קבצים ליצירה:"
 
-#: folder_creation_dialog.py:160
+#: folderTools.py:272
 msgid "Number of folders must be at least 1"
 msgstr "מספר התיקיות חייב להיות לפחות 1"
 
-#: folder_creation_dialog.py:38
+#: folderTools.py:150
 msgid "Number of folders:"
 msgstr "מספר תיקיות:"
 
-#: __init__.py:616
+#: __init__.py:844
 msgid "Open xPlorer context menu"
 msgstr "פתח תפריט הקשר של xPlorer"
 
-#: txt2folder.py:53
+#: folderTools.py:554
 msgid "Please select a .txt or .rtf file"
 msgstr "אנא בחר קובץ .txt או .rtf"
 
-#: fileOperations.py:267
+#: fileOperations.py:313
 msgid "Please select a file, not a folder"
-msgstr "אנא בחר קובץ, לא תיקייה"
+msgstr "אנא בחר קובץ, לא תיקיה"
 
-#: fileOperations.py:263
+#: fileOperations.py:309
 msgid "Please select only one file"
 msgstr "אנא בחר רק קובץ אחד"
 
-#: folderInfo.py:35
-msgid "Please select only one folder"
-msgstr "אנא בחר רק תיקייה אחת"
-
-#: txt2folder.py:46
+#: folderTools.py:547
 msgid "Please select only one text file"
 msgstr "אנא בחר רק קובץ טקסט אחד"
 
-#: selectionManager.py:58
+#: folderTools.py:791
 msgid "Processing {count} items in background..."
 msgstr "מעבד {count} פריטים ברקע..."
 
-#: __init__.py:633
-#: contextMenu.py:32
+#: __init__.py:861
+#: contextMenu.py:31
 msgid "Rename selected file"
-msgstr "שנה שם לקובץ שנבחר"
+msgstr "שנה שם לקובץ הנבחר"
 
-#: __init__.py:460
+#: __init__.py:688
 msgid "Required manager not available"
 msgstr "המנהל הנדרש אינו זמין"
 
-#: contextMenu.py:36
+#: contextMenu.py:34
 msgid "Robocopy"
 msgstr "Robocopy"
 
-#: __init__.py:540
+#: robocopyManager.py:457
+msgid "Robocopy cancelled"
+msgstr "Robocopy בוטל"
+
+#: robocopyManager.py:469
+msgid "Robocopy finished successfully. {n} item(s) copied"
+msgstr "Robocopy הושלם בהצלחה. {n} פריטים הועתקו"
+
+#: robocopyManager.py:465
+msgid "Robocopy finished. {ok} succeeded, {failed} failed: {items}"
+msgstr "Robocopy הושלם. {ok} הצליחו, {failed} נכשלו: {items}"
+
+#: __init__.py:768
 msgid "Robocopy manager not available"
 msgstr "מנהל Robocopy אינו זמין"
 
-#: __init__.py:563
+#: __init__.py:791
 msgid "Robocopy: single tap copy, double tap paste, triple tap move"
-msgstr "Robocopy: הקשה אחת העתק, שתי הקשות הדבק, שלוש הקשות העבר"
+msgstr "Robocopy: הקשה אחת להעתקה, הקשה כפולה להדבקה, הקשה משולשת להעברה"
 
-#: contextMenu.py:33
+#: contextMenu.py:89
+#: contextMenu.py:100
+#: contextMenu.py:106
+#: contextMenu.py:111
+#: contextMenu.py:117
 msgid "Say size"
 msgstr "אמור גודל"
 
-#: __init__.py:523
+#: __init__.py:751
 msgid "Say size (single tap) or compress zip (double tap)"
-msgstr "אמור גודל (הקשה אחת) או דחיסת zip (שתי הקשות)"
+msgstr "אמור גודל (הקשה אחת) או דחוס zip (הקשה כפולה)"
 
-#: txt2folder.py:58
+#: folderTools.py:559
 msgid "Selected file does not exist"
-msgstr "הקובץ שנבחר אינו קיים"
+msgstr "הקובץ הנבחר אינו קיים"
 
-#: folderInfo.py:41
+#: folderTools.py:87
 msgid "Selected item is not a folder"
-msgstr "הפריט שנבחר אינו תיקייה"
+msgstr "הפריט הנבחר אינו תיקיה"
 
-#: selectionManager.py:93
+#: folderTools.py:826
 msgid "Selected {count} items"
 msgstr "נבחרו {count} פריטים"
 
-#: selectionManager.py:96
+#: folderTools.py:829
 msgid "Selection inverted"
 msgstr "הבחירה הופכה"
 
@@ -538,46 +572,46 @@ msgstr "חלק מהקבצים ישתמשו בשמות ברירת מחדל"
 msgid "Starting..."
 msgstr "מתחיל..."
 
-#: case.py:165
+#: folderTools.py:987
 msgid "Successfully converted {count} folders to headline case"
-msgstr "{count} תיקיות הומרו בהצלחה לרישיות כותרת ראשית"
+msgstr "{count} תיקיות הומרו בהצלחה לאותיות כותרת"
 
-#: case.py:150
+#: folderTools.py:972
 msgid "Successfully converted {count} folders to lowercase"
 msgstr "{count} תיקיות הומרו בהצלחה לאותיות קטנות"
 
-#: case.py:159
+#: folderTools.py:981
 msgid "Successfully converted {count} folders to title case"
-msgstr "{count} תיקיות הומרו בהצלחה לרישיות כותרת"
+msgstr "{count} תיקיות הומרו בהצלחה לאותיות כותרת"
 
-#: case.py:144
+#: folderTools.py:966
 msgid "Successfully converted {count} folders to uppercase"
 msgstr "{count} תיקיות הומרו בהצלחה לאותיות גדולות"
 
-#: folder_creation_dialog.py:225
+#: folderTools.py:337
 msgid "Successfully created 1 folder"
-msgstr "תיקייה 1 נוצרה בהצלחה"
+msgstr "תיקיה 1 נוצרה בהצלחה"
 
-#: folder_creation_dialog.py:223
+#: folderTools.py:335
 msgid "Successfully created main folder only"
-msgstr "רק התיקייה הראשית נוצרה בהצלחה"
+msgstr "רק התיקיה הראשית נוצרה בהצלחה"
 
-#: folder_creation_dialog.py:227
+#: folderTools.py:339
 msgid "Successfully created {count} of {total} folders"
 msgstr "{count} מתוך {total} תיקיות נוצרו בהצלחה"
 
-#: txt2folder.py:144
-#: txt2folder.py:194
+#: folderTools.py:645
+#: folderTools.py:695
 msgid "Successfully created {} folders in '{}'"
 msgstr "{} תיקיות נוצרו בהצלחה בתוך '{}'"
 
-#: contextMenu.py:41
+#: contextMenu.py:39
 msgid "TXT to Folder"
-msgstr "TXT לתיקייה"
+msgstr "TXT לתיקיה"
 
-#: contextMenu.py:48
+#: contextMenu.py:46
 msgid "Title Case"
-msgstr "רישיות כותרת"
+msgstr "אותיות כותרת"
 
 #: clipboardManager.py:88
 msgid "Total file size is too large to copy content"
@@ -585,17 +619,17 @@ msgstr "גודל הקובץ הכולל גדול מדי להעתקת תוכן"
 
 #: createFile.py:213
 msgid "Unable to get current directory after multiple attempts"
-msgstr "לא ניתן היה לקבל את הספרייה הנוכחית לאחר מספר ניסיונות"
+msgstr "לא ניתן לקבל את הספרייה הנוכחית לאחר מספר ניסיונות"
 
-#: __init__.py:402
+#: __init__.py:630
 msgid "Unable to get current path"
-msgstr "לא ניתן היה לקבל את הנתיב הנוכחי"
+msgstr "לא ניתן לקבל את הנתיב הנוכחי"
 
-#: selectionManager.py:41
+#: folderTools.py:774
 msgid "Unable to get folder view"
-msgstr "לא ניתן היה לקבל את תצוגת התיקייה"
+msgstr "לא ניתן לקבל את תצוגת התיקיה"
 
-#: contextMenu.py:46
+#: contextMenu.py:44
 msgid "Uppercase"
 msgstr "אותיות גדולות"
 
@@ -605,17 +639,21 @@ msgstr "[שגיאה בעיבוד קובץ RTF]"
 
 #: clipboardManager.py:106
 msgid "[RTF content - striprtf module not available]"
-msgstr "[תוכן RTF - מודול striprtf אינו זמין]"
+msgstr "[תוכן RTF - המודול striprtf אינו זמין]"
 
 #: compressionManager.py:114
 msgid "compression failed"
 msgstr "הדחיסה נכשלה"
 
-#: contextMenu.py:37
+#: contextMenu.py:35
 msgid "copy"
 msgstr "העתק"
 
-#: contextMenu.py:38
+#: robocopyManager.py:235
+msgid "estimating time remaining"
+msgstr "מעריך זמן שנותר"
+
+#: contextMenu.py:36
 msgid "move"
 msgstr "העבר"
 
@@ -627,33 +665,53 @@ msgstr "קובץ_חדש"
 msgid "new_file_{index}"
 msgstr "קובץ_חדש_{index}"
 
-#: contextMenu.py:39
+#: contextMenu.py:37
 msgid "paste"
 msgstr "הדבק"
 
-#: __init__.py:110
-#: __init__.py:444
-#: __init__.py:484
-#: __init__.py:524
-#: __init__.py:564
-#: __init__.py:617
-#: __init__.py:634
-#: __init__.py:652
+#: __init__.py:268
+#: __init__.py:672
+#: __init__.py:712
+#: __init__.py:752
+#: __init__.py:792
+#: __init__.py:845
+#: __init__.py:862
+#: __init__.py:880
 msgid "xPlorer"
 msgstr "xPlorer"
 
-#: contextMenu.py:51
+#: contextMenu.py:49
 msgid "xPlorer Settings"
 msgstr "הגדרות xPlorer"
 
-#: createFile.py:286
+#: createFile.py:288
 msgid "{count} files created"
 msgstr "{count} קבצים נוצרו"
 
-#: fileOperations.py:237
+#: fileOperations.py:283
 msgid "{count} items {size}"
 msgstr "{count} פריטים {size}"
 
-#: folderInfo.py:62
+#: robocopyManager.py:240
+msgid "{h}h {m}m remaining"
+msgstr "נותרו {h}ש {m}ד"
+
+#: robocopyManager.py:242
+msgid "{m}m {s}s remaining"
+msgstr "נותרו {m}ד {s}ש"
+
+#: robocopyManager.py:304
+msgid "{pct}% - item {idx}/{total}: {name}"
+msgstr "{pct}% - פריט {idx}/{total}: {name}"
+
+#: folderTools.py:111
 msgid "{subfolders} subfolders and {files} files"
 msgstr "{subfolders} תיקיות משנה ו-{files} קבצים"
+
+#: contextMenu.py:150
+msgid "{subfolders} subfolders, {files} files"
+msgstr "{subfolders} תיקיות משנה, {files} קבצים"
+
+#: robocopyManager.py:243
+msgid "{s}s remaining"
+msgstr "נותרו {s}ש"

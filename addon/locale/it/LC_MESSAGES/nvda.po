@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: xPlorer 2026.7.0\n"
+"Project-Id-Version: xPlorer 2026.8.5\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-06-24 13:09+0700\n"
+"POT-Creation-Date: 2026-08-03 06:13+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Italian\n"
@@ -12,19 +12,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: DevOn Addon\n"
 
-#: folder_creation_dialog.py:62
+#: robocopyManager.py:464
+msgid " and {n} more"
+msgstr " e {n} altri"
+
+#: folderTools.py:174
 msgid "&Apply"
 msgstr "&Applica"
 
-#: folder_creation_dialog.py:63
+#: folderTools.py:175
 msgid "&Cancel"
 msgstr "&Annulla"
 
-#: createFile.py:284
+#: createFile.py:286
 msgid "1 file created"
 msgstr "1 file creato"
 
-#: fileOperations.py:294
+#: fileOperations.py:340
 msgid "A file with this name already exists"
 msgstr "Un file con questo nome esiste già"
 
@@ -32,31 +36,35 @@ msgstr "Un file con questo nome esiste già"
 msgid "Built-in compression failed: {error}"
 msgstr "Compressione integrata fallita: {error}"
 
+#: robocopyManager.py:323
+msgid "Calculating total size..."
+msgstr "Calcolo della dimensione totale..."
+
 #: clipboardManager.py:66
 msgid "Cannot copy content of folders, please select files only"
-msgstr "Impossibile copiare il contenuto delle cartelle, selezionare solo file"
+msgstr "Impossibile copiare il contenuto delle cartelle, seleziona solo file"
 
 #: createFile.py:271
 msgid "Cannot find unique name for: {name}"
 msgstr "Impossibile trovare un nome univoco per: {name}"
 
-#: __init__.py:660
+#: __init__.py:888
 msgid "Cannot open settings dialog"
 msgstr "Impossibile aprire la finestra delle impostazioni"
 
-#: txt2folder.py:69
+#: folderTools.py:570
 msgid "Cannot process RTF file: striprtf module not available"
 msgstr "Impossibile elaborare il file RTF: modulo striprtf non disponibile"
 
-#: contextMenu.py:45
+#: contextMenu.py:43
 msgid "Case Converter for Folders"
 msgstr "Convertitore maiuscole/minuscole per cartelle"
 
-#: __init__.py:699
+#: __init__.py:927
 msgid "Case converter not available"
 msgstr "Convertitore maiuscole/minuscole non disponibile"
 
-#: __init__.py:420
+#: __init__.py:648
 msgid "Clipboard manager not available"
 msgstr "Gestore degli appunti non disponibile"
 
@@ -64,18 +72,18 @@ msgstr "Gestore degli appunti non disponibile"
 msgid "Completed"
 msgstr "Completato"
 
-#: contextMenu.py:27
+#: contextMenu.py:26
 msgid "Compress zip"
-msgstr "Comprimi in zip"
+msgstr "Comprimi zip"
 
 #: compressionManager.py:160
 #: compressionManager.py:168
 msgid "Compressing files"
-msgstr "Compressione file in corso"
+msgstr "Compressione file"
 
 #: compressionManager.py:75
 msgid "Compressing..."
-msgstr "Compressione in corso..."
+msgstr "Compressione..."
 
 #: compressionManager.py:263
 #: compressionManager.py:277
@@ -90,15 +98,15 @@ msgstr "Compressione annullata"
 #: compressionManager.py:112
 #: compressionManager.py:285
 msgid "Compression completed {name}"
-msgstr "Compressione di {name} completata"
+msgstr "Compressione completata {name}"
 
-#: __init__.py:500
+#: __init__.py:728
 msgid "Compression manager not available"
 msgstr "Gestore della compressione non disponibile"
 
 #: compressionManager.py:86
 msgid "Compression timed out"
-msgstr "Tempo di compressione scaduto"
+msgstr "Tempo scaduto per la compressione"
 
 #: clipboardManager.py:133
 msgid "Content from 1 file copied to clipboard"
@@ -108,16 +116,16 @@ msgstr "Contenuto di 1 file copiato negli appunti"
 msgid "Content from {count} files copied to clipboard"
 msgstr "Contenuto di {count} file copiato negli appunti"
 
-#: __init__.py:607
-#: __init__.py:673
+#: __init__.py:835
+#: __init__.py:901
 msgid "Context menu manager not available"
 msgstr "Gestore del menu contestuale non disponibile"
 
-#: case.py:115
+#: folderTools.py:937
 msgid "Conversion already in progress"
 msgstr "Conversione già in corso"
 
-#: case.py:132
+#: folderTools.py:954
 msgid "Converting"
 msgstr "Conversione in corso"
 
@@ -129,106 +137,106 @@ msgstr "Nome di 1 elemento copiato negli appunti"
 msgid "Copied {count} item names to clipboard"
 msgstr "Nomi di {count} elementi copiati negli appunti"
 
-#: __init__.py:396
+#: __init__.py:624
 msgid "Copied: {path}"
 msgstr "Copiato: {path}"
 
-#: contextMenu.py:29
+#: contextMenu.py:28
 msgid "Copy address bar"
 msgstr "Copia barra degli indirizzi"
 
-#: contextMenu.py:30
+#: contextMenu.py:29
 msgid "Copy content"
 msgstr "Copia contenuto"
 
-#: __init__.py:483
+#: __init__.py:711
 msgid "Copy content (single tap) or invert selection (double tap)"
-msgstr "Copia contenuto (un tocco) o inverti selezione (due tocchi)"
+msgstr "Copia contenuto (un tocco) o inverti selezione (doppio tocco)"
 
-#: contextMenu.py:31
+#: contextMenu.py:30
 msgid "Copy selected file and folder names"
 msgstr "Copia nomi di file e cartelle selezionati"
 
-#: __init__.py:443
+#: __init__.py:671
 msgid "Copy selected names (single tap) or copy address bar (double tap)"
-msgstr "Copia nomi selezionati (un tocco) o copia barra degli indirizzi (due tocchi)"
+msgstr "Copia nomi selezionati (un tocco) o copia barra degli indirizzi (doppio tocco)"
 
-#: __init__.py:400
+#: __init__.py:628
 #: clipboardManager.py:50
 #: clipboardManager.py:139
 msgid "Could not open clipboard"
 msgstr "Impossibile aprire gli appunti"
 
-#: contextMenu.py:24
+#: contextMenu.py:23
 #: createFile.py:17
 msgid "Create File"
 msgstr "Crea file"
 
-#: folder_creation_dialog.py:16
+#: folderTools.py:128
 msgid "Create Multiple Folders"
 msgstr "Crea più cartelle"
 
-#: contextMenu.py:42
+#: contextMenu.py:40
 msgid "Create Multiple Folders..."
 msgstr "Crea più cartelle..."
 
-#: folder_creation_dialog.py:45
+#: folderTools.py:157
 msgid "Create main folder and then subfolders"
 msgstr "Crea cartella principale e poi sottocartelle"
 
-#: __init__.py:651
+#: __init__.py:879
 msgid "Create new folder and paste clipboard content into rename field"
 msgstr "Crea nuova cartella e incolla il contenuto degli appunti nel campo di rinomina"
 
-#: folder_creation_dialog.py:212
+#: folderTools.py:324
 msgid "Created {count} of {total} folders..."
-msgstr "Create {count} di {total} cartelle..."
+msgstr "Creati {count} di {total} cartelle..."
 
-#: folder_creation_dialog.py:199
+#: folderTools.py:311
 msgid "Creating folders in background..."
 msgstr "Creazione cartelle in background..."
 
-#: folder_creation_dialog.py:49
+#: folderTools.py:161
 msgid "Edit individual folder names"
-msgstr "Modifica nomi delle singole cartelle"
+msgstr "Modifica nomi singole cartelle"
 
-#: folderInfo.py:71
+#: folderTools.py:120
 msgid "Error calculating folder info"
 msgstr "Errore nel calcolo delle informazioni della cartella"
 
-#: fileOperations.py:248
+#: fileOperations.py:294
 msgid "Error calculating size"
-msgstr "Errore nel calcolo delle dimensioni"
+msgstr "Errore nel calcolo della dimensione"
 
 #: compressionManager.py:196
 msgid "Error compressing files"
-msgstr "Errore durante la compressione dei file"
+msgstr "Errore nella compressione dei file"
 
 #: clipboardManager.py:142
 msgid "Error copying file content"
-msgstr "Errore durante la copia del contenuto del file"
+msgstr "Errore nella copia del contenuto del file"
 
 #: clipboardManager.py:53
 msgid "Error copying names to clipboard"
-msgstr "Errore durante la copia dei nomi negli appunti"
+msgstr "Errore nella copia dei nomi negli appunti"
 
-#: txt2folder.py:113
+#: folderTools.py:614
 msgid "Error creating base folder"
-msgstr "Errore durante la creazione della cartella base"
+msgstr "Errore nella creazione della cartella base"
 
-#: createFile.py:289
+#: createFile.py:291
 msgid "Error creating files"
-msgstr "Errore durante la creazione dei file"
+msgstr "Errore nella creazione dei file"
 
-#: __init__.py:693
+#: __init__.py:921
 msgid "Error creating folders"
-msgstr "Errore durante la creazione delle cartelle"
+msgstr "Errore nella creazione delle cartelle"
 
-#: folder_creation_dialog.py:190
+#: folderTools.py:302
 msgid "Error creating main folder"
-msgstr "Errore durante la creazione della cartella principale"
+msgstr "Errore nella creazione della cartella principale"
 
-#: __init__.py:737
+#: __init__.py:965
 msgid "Error during conversion"
 msgstr "Errore durante la conversione"
 
@@ -236,48 +244,52 @@ msgstr "Errore durante la conversione"
 msgid "Error in compression process: {error}"
 msgstr "Errore nel processo di compressione: {error}"
 
-#: selectionManager.py:71
+#: folderTools.py:804
 msgid "Error inverting selection"
-msgstr "Errore durante l'inversione della selezione"
+msgstr "Errore nell'inversione della selezione"
 
 #: createFile.py:245
 msgid "Error opening create file dialog"
-msgstr "Errore durante l'apertura della finestra di creazione file"
+msgstr "Errore nell'apertura della finestra di creazione file"
 
-#: fileOperations.py:304
+#: fileOperations.py:350
 msgid "Error opening rename dialog"
-msgstr "Errore durante l'apertura della finestra di rinomina"
+msgstr "Errore nell'apertura della finestra di rinomina"
 
-#: __init__.py:667
+#: __init__.py:895
 msgid "Error opening settings"
-msgstr "Errore durante l'apertura delle impostazioni"
+msgstr "Errore nell'apertura delle impostazioni"
 
-#: txt2folder.py:203
+#: folderTools.py:704
 msgid "Error processing text file: {}"
-msgstr "Errore durante l'elaborazione del file di testo: {}"
+msgstr "Errore nell'elaborazione del file di testo: {}"
 
-#: txt2folder.py:80
+#: folderTools.py:581
 msgid "Error reading RTF file"
-msgstr "Errore durante la lettura del file RTF"
+msgstr "Errore nella lettura del file RTF"
 
-#: txt2folder.py:207
+#: folderTools.py:708
 msgid "Error reading file encoding"
-msgstr "Errore durante la lettura della codifica del file"
+msgstr "Errore nella lettura della codifica del file"
 
-#: fileOperations.py:274
-#: fileOperations.py:301
+#: fileOperations.py:320
+#: fileOperations.py:347
 msgid "Error renaming file"
-msgstr "Errore durante la rinomina del file"
+msgstr "Errore nella rinomina del file"
 
-#: txt2folder.py:212
+#: folderTools.py:713
 msgid "Error: {}"
 msgstr "Errore: {}"
+
+#: __init__.py:1002
+msgid "Explorer tree dumped to NVDA log"
+msgstr "Albero di Esplora risorse esportato nel registro NVDA"
 
 #: createFile.py:72
 msgid "Extension:"
 msgstr "Estensione:"
 
-#: case.py:127
+#: folderTools.py:949
 msgid "Failed to rename any folders"
 msgstr "Impossibile rinominare alcuna cartella"
 
@@ -299,11 +311,11 @@ msgstr "Nome file"
 
 #: fileOperations.py:59
 msgid "File name cannot be empty"
-msgstr "Il nome file non può essere vuoto"
+msgstr "Il nome del file non può essere vuoto"
 
-#: fileOperations.py:291
+#: fileOperations.py:337
 msgid "File name not changed"
-msgstr "Nome file non modificato"
+msgstr "Nome del file non modificato"
 
 #: createFile.py:66
 #: createFile.py:113
@@ -314,70 +326,76 @@ msgstr "Nome file {index}:"
 msgid "File name:"
 msgstr "Nome file:"
 
-#: __init__.py:622
+#: __init__.py:850
 msgid "File operations manager not available"
 msgstr "Gestore delle operazioni sui file non disponibile"
 
-#: fileOperations.py:298
+#: fileOperations.py:344
 msgid "File renamed to {name}"
 msgstr "File rinominato in {name}"
 
-#: folder_creation_dialog.py:115
-#: folder_creation_dialog.py:155
+#: robocopyManager.py:448
+msgid "Finished {n} of {total}: {name}"
+msgstr "Completati {n} di {total}: {name}"
+
+#: folderTools.py:227
+#: folderTools.py:267
 msgid "Folder"
 msgstr "Cartella"
 
-#: txt2folder.py:104
-#: txt2folder.py:174
+#: folderTools.py:605
+#: folderTools.py:675
 msgid "Folder '{}' already exists, creating '{}' instead"
 msgstr "La cartella '{}' esiste già, creazione di '{}' al suo posto"
 
-#: __init__.py:677
+#: __init__.py:905
 msgid "Folder creation dialog not available"
-msgstr "Finestra di creazione cartelle non disponibile"
+msgstr "Finestra di creazione cartella non disponibile"
 
-#: __init__.py:639
+#: __init__.py:867
 msgid "Folder creator helper not available"
-msgstr "Assistente alla creazione di cartelle non disponibile"
+msgstr "Assistente creazione cartelle non disponibile"
 
-#: contextMenu.py:52
+#: contextMenu.py:131
+#: contextMenu.py:134
+#: contextMenu.py:155
 msgid "Folder info"
-msgstr "Informazioni cartella"
+msgstr "Info cartella"
 
-#: folder_creation_dialog.py:30
+#: folderTools.py:142
 msgid "Folder title:"
 msgstr "Titolo cartella:"
 
-#: contextMenu.py:49
+#: contextMenu.py:47
 msgid "Headline Case"
-msgstr "Maiuscole del titolo"
+msgstr "Maiuscole per titoli"
 
-#: folder_creation_dialog.py:166
+#: folderTools.py:278
 msgid "Invalid number for folders"
 msgstr "Numero non valido per le cartelle"
 
-#: contextMenu.py:28
+#: contextMenu.py:27
 msgid "Invert selection"
 msgstr "Inverti selezione"
 
-#: contextMenu.py:47
+#: contextMenu.py:45
 msgid "Lowercase"
-msgstr "Maiuscole/minuscole"
+msgstr "Maiuscole"
 
-#: folder_creation_dialog.py:163
+#: folderTools.py:275
 msgid "Maximum 100 folders allowed"
 msgstr "Massimo 100 cartelle consentite"
 
-#: __init__.py:681
+#: __init__.py:909
 msgid "No Explorer folder detected"
 msgstr "Nessuna cartella di Esplora risorse rilevata"
 
-#: fileOperations.py:173
-#: fileOperations.py:230
+#: fileOperations.py:219
+#: fileOperations.py:276
 msgid "No access to size data"
-msgstr "Nessun accesso ai dati delle dimensioni"
+msgstr "Nessun accesso ai dati di dimensione"
 
-#: selectionManager.py:36
+#: folderTools.py:769
 msgid "No active File Explorer window found"
 msgstr "Nessuna finestra attiva di Esplora file trovata"
 
@@ -385,44 +403,44 @@ msgstr "Nessuna finestra attiva di Esplora file trovata"
 msgid "No content could be read from selected files"
 msgstr "Nessun contenuto leggibile dai file selezionati"
 
-#: createFile.py:282
+#: createFile.py:284
 msgid "No files were created"
 msgstr "Nessun file creato"
 
-#: case.py:142
-#: case.py:148
-#: case.py:157
-#: case.py:163
+#: folderTools.py:964
+#: folderTools.py:970
+#: folderTools.py:979
+#: folderTools.py:985
 msgid "No folders found"
 msgstr "Nessuna cartella trovata"
 
-#: __init__.py:703
+#: __init__.py:931
 msgid "No folders selected"
 msgstr "Nessuna cartella selezionata"
 
-#: __init__.py:718
+#: __init__.py:946
 msgid "No folders selected or current folder not available"
 msgstr "Nessuna cartella selezionata o cartella corrente non disponibile"
 
-#: folder_creation_dialog.py:229
-#: txt2folder.py:148
-#: txt2folder.py:198
+#: folderTools.py:341
+#: folderTools.py:649
+#: folderTools.py:699
 msgid "No folders were created"
 msgstr "Nessuna cartella creata"
 
-#: folderInfo.py:30
+#: folderTools.py:81
 msgid "No item selected"
 msgstr "Nessun elemento selezionato"
 
-#: selectionManager.py:49
+#: folderTools.py:782
 msgid "No items in folder"
 msgstr "Nessun elemento nella cartella"
 
 #: clipboardManager.py:27
 #: clipboardManager.py:62
 #: compressionManager.py:148
-#: fileOperations.py:164
-#: fileOperations.py:260
+#: fileOperations.py:210
+#: fileOperations.py:306
 msgid "No items selected"
 msgstr "Nessun elemento selezionato"
 
@@ -430,18 +448,22 @@ msgstr "Nessun elemento selezionato"
 msgid "No text files selected"
 msgstr "Nessun file di testo selezionato"
 
-#: txt2folder.py:90
-#: txt2folder.py:160
+#: folderTools.py:591
+#: folderTools.py:661
 msgid "No valid folder names found in the file"
 msgstr "Nessun nome di cartella valido trovato nel file"
 
-#: folder_creation_dialog.py:184
+#: folderTools.py:296
 msgid "No valid folder names provided"
 msgstr "Nessun nome di cartella valido fornito"
 
+#: __init__.py:976
+msgid "Not focused on File Explorer"
+msgstr "Non focalizzato su Esplora file"
+
 #: createFile.py:198
-#: selectionManager.py:30
-#: txt2folder.py:40
+#: folderTools.py:541
+#: folderTools.py:763
 msgid "Not in File Explorer"
 msgstr "Non in Esplora file"
 
@@ -449,135 +471,147 @@ msgstr "Non in Esplora file"
 msgid "Number of files to create:"
 msgstr "Numero di file da creare:"
 
-#: folder_creation_dialog.py:160
+#: folderTools.py:272
 msgid "Number of folders must be at least 1"
 msgstr "Il numero di cartelle deve essere almeno 1"
 
-#: folder_creation_dialog.py:38
+#: folderTools.py:150
 msgid "Number of folders:"
 msgstr "Numero di cartelle:"
 
-#: __init__.py:616
+#: __init__.py:844
 msgid "Open xPlorer context menu"
-msgstr "Apri menu contestuale xPlorer"
+msgstr "Apri menu contestuale di xPlorer"
 
-#: txt2folder.py:53
+#: folderTools.py:554
 msgid "Please select a .txt or .rtf file"
-msgstr "Seleziona un file .txt o .rtf"
+msgstr "Selezionare un file .txt o .rtf"
 
-#: fileOperations.py:267
+#: fileOperations.py:313
 msgid "Please select a file, not a folder"
-msgstr "Seleziona un file, non una cartella"
+msgstr "Selezionare un file, non una cartella"
 
-#: fileOperations.py:263
+#: fileOperations.py:309
 msgid "Please select only one file"
-msgstr "Seleziona un solo file"
+msgstr "Selezionare un solo file"
 
-#: folderInfo.py:35
-msgid "Please select only one folder"
-msgstr "Seleziona una sola cartella"
-
-#: txt2folder.py:46
+#: folderTools.py:547
 msgid "Please select only one text file"
-msgstr "Seleziona un solo file di testo"
+msgstr "Selezionare un solo file di testo"
 
-#: selectionManager.py:58
+#: folderTools.py:791
 msgid "Processing {count} items in background..."
 msgstr "Elaborazione di {count} elementi in background..."
 
-#: __init__.py:633
-#: contextMenu.py:32
+#: __init__.py:861
+#: contextMenu.py:31
 msgid "Rename selected file"
 msgstr "Rinomina file selezionato"
 
-#: __init__.py:460
+#: __init__.py:688
 msgid "Required manager not available"
 msgstr "Gestore richiesto non disponibile"
 
-#: contextMenu.py:36
+#: contextMenu.py:34
 msgid "Robocopy"
 msgstr "Robocopy"
 
-#: __init__.py:540
+#: robocopyManager.py:457
+msgid "Robocopy cancelled"
+msgstr "Robocopy annullato"
+
+#: robocopyManager.py:469
+msgid "Robocopy finished successfully. {n} item(s) copied"
+msgstr "Robocopy completato con successo. {n} elementi copiati"
+
+#: robocopyManager.py:465
+msgid "Robocopy finished. {ok} succeeded, {failed} failed: {items}"
+msgstr "Robocopy completato. {ok} riusciti, {failed} falliti: {items}"
+
+#: __init__.py:768
 msgid "Robocopy manager not available"
-msgstr "Gestore Robocopy non disponibile"
+msgstr "Gestore di Robocopy non disponibile"
 
-#: __init__.py:563
+#: __init__.py:791
 msgid "Robocopy: single tap copy, double tap paste, triple tap move"
-msgstr "Robocopy: un tocco copia, due tocchi incolla, tre tocchi sposta"
+msgstr "Robocopy: un tocco per copiare, doppio tocco per incollare, triplo tocco per spostare"
 
-#: contextMenu.py:33
+#: contextMenu.py:89
+#: contextMenu.py:100
+#: contextMenu.py:106
+#: contextMenu.py:111
+#: contextMenu.py:117
 msgid "Say size"
-msgstr "Annuncia dimensione"
+msgstr "Pronuncia dimensione"
 
-#: __init__.py:523
+#: __init__.py:751
 msgid "Say size (single tap) or compress zip (double tap)"
-msgstr "Annuncia dimensione (un tocco) o comprimi in zip (due tocchi)"
+msgstr "Pronuncia dimensione (un tocco) o comprimi zip (doppio tocco)"
 
-#: txt2folder.py:58
+#: folderTools.py:559
 msgid "Selected file does not exist"
 msgstr "Il file selezionato non esiste"
 
-#: folderInfo.py:41
+#: folderTools.py:87
 msgid "Selected item is not a folder"
 msgstr "L'elemento selezionato non è una cartella"
 
-#: selectionManager.py:93
+#: folderTools.py:826
 msgid "Selected {count} items"
 msgstr "{count} elementi selezionati"
 
-#: selectionManager.py:96
+#: folderTools.py:829
 msgid "Selection inverted"
 msgstr "Selezione invertita"
 
 #: createFile.py:170
 msgid "Some files will use default names"
-msgstr "Alcuni file utilizzeranno nomi predefiniti"
+msgstr "Alcuni file utilizzeranno i nomi predefiniti"
 
 #: compressionManager.py:161
 msgid "Starting..."
-msgstr "Avvio in corso..."
+msgstr "Avvio..."
 
-#: case.py:165
+#: folderTools.py:987
 msgid "Successfully converted {count} folders to headline case"
-msgstr "{count} cartelle convertite con successo in maiuscole del titolo"
+msgstr "{count} cartelle convertite correttamente in maiuscole per titoli"
 
-#: case.py:150
+#: folderTools.py:972
 msgid "Successfully converted {count} folders to lowercase"
-msgstr "{count} cartelle convertite con successo in minuscole"
+msgstr "{count} cartelle convertite correttamente in minuscolo"
 
-#: case.py:159
+#: folderTools.py:981
 msgid "Successfully converted {count} folders to title case"
-msgstr "{count} cartelle convertite con successo in maiuscole/minuscole del titolo"
+msgstr "{count} cartelle convertite correttamente in maiuscole per titoli"
 
-#: case.py:144
+#: folderTools.py:966
 msgid "Successfully converted {count} folders to uppercase"
-msgstr "{count} cartelle convertite con successo in maiuscole"
+msgstr "{count} cartelle convertite correttamente in MAIUSCOLO"
 
-#: folder_creation_dialog.py:225
+#: folderTools.py:337
 msgid "Successfully created 1 folder"
-msgstr "1 cartella creata con successo"
+msgstr "1 cartella creata correttamente"
 
-#: folder_creation_dialog.py:223
+#: folderTools.py:335
 msgid "Successfully created main folder only"
-msgstr "Solo la cartella principale creata con successo"
+msgstr "Creata correttamente solo la cartella principale"
 
-#: folder_creation_dialog.py:227
+#: folderTools.py:339
 msgid "Successfully created {count} of {total} folders"
-msgstr "{count} di {total} cartelle create con successo"
+msgstr "{count} di {total} cartelle create correttamente"
 
-#: txt2folder.py:144
-#: txt2folder.py:194
+#: folderTools.py:645
+#: folderTools.py:695
 msgid "Successfully created {} folders in '{}'"
-msgstr "{} cartelle create con successo in '{}'"
+msgstr "{} cartelle create correttamente in '{}'"
 
-#: contextMenu.py:41
+#: contextMenu.py:39
 msgid "TXT to Folder"
 msgstr "TXT in cartella"
 
-#: contextMenu.py:48
+#: contextMenu.py:46
 msgid "Title Case"
-msgstr "Maiuscole/minuscole del titolo"
+msgstr "Maiuscole per titoli"
 
 #: clipboardManager.py:88
 msgid "Total file size is too large to copy content"
@@ -587,21 +621,21 @@ msgstr "La dimensione totale dei file è troppo grande per copiare il contenuto"
 msgid "Unable to get current directory after multiple attempts"
 msgstr "Impossibile ottenere la directory corrente dopo diversi tentativi"
 
-#: __init__.py:402
+#: __init__.py:630
 msgid "Unable to get current path"
 msgstr "Impossibile ottenere il percorso corrente"
 
-#: selectionManager.py:41
+#: folderTools.py:774
 msgid "Unable to get folder view"
-msgstr "Impossibile ottenere la visualizzazione della cartella"
+msgstr "Impossibile ottenere la visualizzazione cartella"
 
-#: contextMenu.py:46
+#: contextMenu.py:44
 msgid "Uppercase"
-msgstr "Maiuscole"
+msgstr "MAIUSCOLO"
 
 #: clipboardManager.py:104
 msgid "[Error processing RTF file]"
-msgstr "[Errore durante l'elaborazione del file RTF]"
+msgstr "[Errore nell'elaborazione del file RTF]"
 
 #: clipboardManager.py:106
 msgid "[RTF content - striprtf module not available]"
@@ -611,11 +645,15 @@ msgstr "[Contenuto RTF - modulo striprtf non disponibile]"
 msgid "compression failed"
 msgstr "compressione fallita"
 
-#: contextMenu.py:37
+#: contextMenu.py:35
 msgid "copy"
 msgstr "copia"
 
-#: contextMenu.py:38
+#: robocopyManager.py:235
+msgid "estimating time remaining"
+msgstr "stima del tempo rimanente"
+
+#: contextMenu.py:36
 msgid "move"
 msgstr "sposta"
 
@@ -627,33 +665,53 @@ msgstr "nuovo_file"
 msgid "new_file_{index}"
 msgstr "nuovo_file_{index}"
 
-#: contextMenu.py:39
+#: contextMenu.py:37
 msgid "paste"
 msgstr "incolla"
 
-#: __init__.py:110
-#: __init__.py:444
-#: __init__.py:484
-#: __init__.py:524
-#: __init__.py:564
-#: __init__.py:617
-#: __init__.py:634
-#: __init__.py:652
+#: __init__.py:268
+#: __init__.py:672
+#: __init__.py:712
+#: __init__.py:752
+#: __init__.py:792
+#: __init__.py:845
+#: __init__.py:862
+#: __init__.py:880
 msgid "xPlorer"
 msgstr "xPlorer"
 
-#: contextMenu.py:51
+#: contextMenu.py:49
 msgid "xPlorer Settings"
 msgstr "Impostazioni xPlorer"
 
-#: createFile.py:286
+#: createFile.py:288
 msgid "{count} files created"
 msgstr "{count} file creati"
 
-#: fileOperations.py:237
+#: fileOperations.py:283
 msgid "{count} items {size}"
 msgstr "{count} elementi {size}"
 
-#: folderInfo.py:62
+#: robocopyManager.py:240
+msgid "{h}h {m}m remaining"
+msgstr "{h}h {m}m rimanenti"
+
+#: robocopyManager.py:242
+msgid "{m}m {s}s remaining"
+msgstr "{m}m {s}s rimanenti"
+
+#: robocopyManager.py:304
+msgid "{pct}% - item {idx}/{total}: {name}"
+msgstr "{pct}% - elemento {idx}/{total}: {name}"
+
+#: folderTools.py:111
 msgid "{subfolders} subfolders and {files} files"
 msgstr "{subfolders} sottocartelle e {files} file"
+
+#: contextMenu.py:150
+msgid "{subfolders} subfolders, {files} files"
+msgstr "{subfolders} sottocartelle, {files} file"
+
+#: robocopyManager.py:243
+msgid "{s}s remaining"
+msgstr "{s}s rimanenti"

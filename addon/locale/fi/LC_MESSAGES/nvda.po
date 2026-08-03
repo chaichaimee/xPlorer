@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: xPlorer 2026.7.0\n"
+"Project-Id-Version: xPlorer 2026.8.5\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-06-24 13:09+0700\n"
+"POT-Creation-Date: 2026-08-03 06:13+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Finnish\n"
@@ -12,19 +12,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: DevOn Addon\n"
 
-#: folder_creation_dialog.py:62
+#: robocopyManager.py:464
+msgid " and {n} more"
+msgstr " ja {n} muuta"
+
+#: folderTools.py:174
 msgid "&Apply"
 msgstr "&Käytä"
 
-#: folder_creation_dialog.py:63
+#: folderTools.py:175
 msgid "&Cancel"
 msgstr "&Peruuta"
 
-#: createFile.py:284
+#: createFile.py:286
 msgid "1 file created"
 msgstr "1 tiedosto luotu"
 
-#: fileOperations.py:294
+#: fileOperations.py:340
 msgid "A file with this name already exists"
 msgstr "Tällä nimellä oleva tiedosto on jo olemassa"
 
@@ -32,31 +36,35 @@ msgstr "Tällä nimellä oleva tiedosto on jo olemassa"
 msgid "Built-in compression failed: {error}"
 msgstr "Sisäänrakennettu pakkaus epäonnistui: {error}"
 
+#: robocopyManager.py:323
+msgid "Calculating total size..."
+msgstr "Lasketaan kokonaiskokoa..."
+
 #: clipboardManager.py:66
 msgid "Cannot copy content of folders, please select files only"
 msgstr "Kansioiden sisältöä ei voi kopioida, valitse vain tiedostoja"
 
 #: createFile.py:271
 msgid "Cannot find unique name for: {name}"
-msgstr "Yksilöllistä nimeä ei löydy kohteelle: {name}"
+msgstr "Ei löydy yksilöllistä nimeä kohteelle: {name}"
 
-#: __init__.py:660
+#: __init__.py:888
 msgid "Cannot open settings dialog"
 msgstr "Asetusvalintaikkunaa ei voi avata"
 
-#: txt2folder.py:69
+#: folderTools.py:570
 msgid "Cannot process RTF file: striprtf module not available"
 msgstr "RTF-tiedostoa ei voi käsitellä: striprtf-moduuli ei ole käytettävissä"
 
-#: contextMenu.py:45
+#: contextMenu.py:43
 msgid "Case Converter for Folders"
-msgstr "Kansioiden kirjainkoon muunnin"
+msgstr "Kirjainkoon muunnin kansioille"
 
-#: __init__.py:699
+#: __init__.py:927
 msgid "Case converter not available"
 msgstr "Kirjainkoon muunnin ei ole käytettävissä"
 
-#: __init__.py:420
+#: __init__.py:648
 msgid "Clipboard manager not available"
 msgstr "Leikepöydän hallinta ei ole käytettävissä"
 
@@ -64,9 +72,9 @@ msgstr "Leikepöydän hallinta ei ole käytettävissä"
 msgid "Completed"
 msgstr "Valmis"
 
-#: contextMenu.py:27
+#: contextMenu.py:26
 msgid "Compress zip"
-msgstr "Pura zip-tiedostoksi"
+msgstr "Pakkaus zip"
 
 #: compressionManager.py:160
 #: compressionManager.py:168
@@ -85,20 +93,20 @@ msgstr "Pakataan: {percent}%"
 #: compressionManager.py:110
 #: compressionManager.py:282
 msgid "Compression cancelled"
-msgstr "Pakkaus peruutettu"
+msgstr "Pakkaus peruttu"
 
 #: compressionManager.py:112
 #: compressionManager.py:285
 msgid "Compression completed {name}"
-msgstr "Kohteen {name} pakkaus valmis"
+msgstr "Pakkaus valmis {name}"
 
-#: __init__.py:500
+#: __init__.py:728
 msgid "Compression manager not available"
-msgstr "Pakkauksen hallinta ei ole käytettävissä"
+msgstr "Pakkaustenhallinta ei ole käytettävissä"
 
 #: compressionManager.py:86
 msgid "Compression timed out"
-msgstr "Pakkauksen aikaraja ylittyi"
+msgstr "Pakkausaika ylittyi"
 
 #: clipboardManager.py:133
 msgid "Content from 1 file copied to clipboard"
@@ -108,16 +116,16 @@ msgstr "1 tiedoston sisältö kopioitu leikepöydälle"
 msgid "Content from {count} files copied to clipboard"
 msgstr "{count} tiedoston sisältö kopioitu leikepöydälle"
 
-#: __init__.py:607
-#: __init__.py:673
+#: __init__.py:835
+#: __init__.py:901
 msgid "Context menu manager not available"
 msgstr "Pikavalikon hallinta ei ole käytettävissä"
 
-#: case.py:115
+#: folderTools.py:937
 msgid "Conversion already in progress"
 msgstr "Muunnos on jo käynnissä"
 
-#: case.py:132
+#: folderTools.py:954
 msgid "Converting"
 msgstr "Muunnetaan"
 
@@ -127,76 +135,76 @@ msgstr "1 kohteen nimi kopioitu leikepöydälle"
 
 #: clipboardManager.py:46
 msgid "Copied {count} item names to clipboard"
-msgstr "{count} kohteen nimeä kopioitu leikepöydälle"
+msgstr "{count} kohteen nimet kopioitu leikepöydälle"
 
-#: __init__.py:396
+#: __init__.py:624
 msgid "Copied: {path}"
 msgstr "Kopioitu: {path}"
 
-#: contextMenu.py:29
+#: contextMenu.py:28
 msgid "Copy address bar"
 msgstr "Kopioi osoiterivi"
 
-#: contextMenu.py:30
+#: contextMenu.py:29
 msgid "Copy content"
 msgstr "Kopioi sisältö"
 
-#: __init__.py:483
+#: __init__.py:711
 msgid "Copy content (single tap) or invert selection (double tap)"
 msgstr "Kopioi sisältö (yksi napautus) tai käännä valinta (kaksi napautusta)"
 
-#: contextMenu.py:31
+#: contextMenu.py:30
 msgid "Copy selected file and folder names"
 msgstr "Kopioi valittujen tiedostojen ja kansioiden nimet"
 
-#: __init__.py:443
+#: __init__.py:671
 msgid "Copy selected names (single tap) or copy address bar (double tap)"
 msgstr "Kopioi valitut nimet (yksi napautus) tai kopioi osoiterivi (kaksi napautusta)"
 
-#: __init__.py:400
+#: __init__.py:628
 #: clipboardManager.py:50
 #: clipboardManager.py:139
 msgid "Could not open clipboard"
 msgstr "Leikepöytää ei voitu avata"
 
-#: contextMenu.py:24
+#: contextMenu.py:23
 #: createFile.py:17
 msgid "Create File"
 msgstr "Luo tiedosto"
 
-#: folder_creation_dialog.py:16
+#: folderTools.py:128
 msgid "Create Multiple Folders"
 msgstr "Luo useita kansioita"
 
-#: contextMenu.py:42
+#: contextMenu.py:40
 msgid "Create Multiple Folders..."
 msgstr "Luo useita kansioita..."
 
-#: folder_creation_dialog.py:45
+#: folderTools.py:157
 msgid "Create main folder and then subfolders"
 msgstr "Luo pääkansio ja sitten alikansiot"
 
-#: __init__.py:651
+#: __init__.py:879
 msgid "Create new folder and paste clipboard content into rename field"
 msgstr "Luo uusi kansio ja liitä leikepöydän sisältö uudelleennimeämiskenttään"
 
-#: folder_creation_dialog.py:212
+#: folderTools.py:324
 msgid "Created {count} of {total} folders..."
 msgstr "Luotu {count}/{total} kansiota..."
 
-#: folder_creation_dialog.py:199
+#: folderTools.py:311
 msgid "Creating folders in background..."
 msgstr "Luodaan kansioita taustalla..."
 
-#: folder_creation_dialog.py:49
+#: folderTools.py:161
 msgid "Edit individual folder names"
 msgstr "Muokkaa yksittäisiä kansioiden nimiä"
 
-#: folderInfo.py:71
+#: folderTools.py:120
 msgid "Error calculating folder info"
 msgstr "Virhe laskettaessa kansiotietoja"
 
-#: fileOperations.py:248
+#: fileOperations.py:294
 msgid "Error calculating size"
 msgstr "Virhe laskettaessa kokoa"
 
@@ -212,23 +220,23 @@ msgstr "Virhe kopioitaessa tiedoston sisältöä"
 msgid "Error copying names to clipboard"
 msgstr "Virhe kopioitaessa nimiä leikepöydälle"
 
-#: txt2folder.py:113
+#: folderTools.py:614
 msgid "Error creating base folder"
 msgstr "Virhe luotaessa peruskansiota"
 
-#: createFile.py:289
+#: createFile.py:291
 msgid "Error creating files"
 msgstr "Virhe luotaessa tiedostoja"
 
-#: __init__.py:693
+#: __init__.py:921
 msgid "Error creating folders"
 msgstr "Virhe luotaessa kansioita"
 
-#: folder_creation_dialog.py:190
+#: folderTools.py:302
 msgid "Error creating main folder"
 msgstr "Virhe luotaessa pääkansiota"
 
-#: __init__.py:737
+#: __init__.py:965
 msgid "Error during conversion"
 msgstr "Virhe muunnoksen aikana"
 
@@ -236,7 +244,7 @@ msgstr "Virhe muunnoksen aikana"
 msgid "Error in compression process: {error}"
 msgstr "Virhe pakkausprosessissa: {error}"
 
-#: selectionManager.py:71
+#: folderTools.py:804
 msgid "Error inverting selection"
 msgstr "Virhe käännettäessä valintaa"
 
@@ -244,54 +252,58 @@ msgstr "Virhe käännettäessä valintaa"
 msgid "Error opening create file dialog"
 msgstr "Virhe avattaessa tiedoston luontivalintaikkunaa"
 
-#: fileOperations.py:304
+#: fileOperations.py:350
 msgid "Error opening rename dialog"
 msgstr "Virhe avattaessa uudelleennimeämisvalintaikkunaa"
 
-#: __init__.py:667
+#: __init__.py:895
 msgid "Error opening settings"
 msgstr "Virhe avattaessa asetuksia"
 
-#: txt2folder.py:203
+#: folderTools.py:704
 msgid "Error processing text file: {}"
 msgstr "Virhe käsiteltäessä tekstitiedostoa: {}"
 
-#: txt2folder.py:80
+#: folderTools.py:581
 msgid "Error reading RTF file"
 msgstr "Virhe luettaessa RTF-tiedostoa"
 
-#: txt2folder.py:207
+#: folderTools.py:708
 msgid "Error reading file encoding"
 msgstr "Virhe luettaessa tiedoston merkistökoodausta"
 
-#: fileOperations.py:274
-#: fileOperations.py:301
+#: fileOperations.py:320
+#: fileOperations.py:347
 msgid "Error renaming file"
-msgstr "Virhe uudelleennimeettäessä tiedostoa"
+msgstr "Virhe nimettäessä tiedostoa uudelleen"
 
-#: txt2folder.py:212
+#: folderTools.py:713
 msgid "Error: {}"
 msgstr "Virhe: {}"
 
+#: __init__.py:1002
+msgid "Explorer tree dumped to NVDA log"
+msgstr "Explorer-puu tulostettu NVDA-lokiin"
+
 #: createFile.py:72
 msgid "Extension:"
-msgstr "Tiedostopääte:"
+msgstr "Pääte:"
 
-#: case.py:127
+#: folderTools.py:949
 msgid "Failed to rename any folders"
-msgstr "Yhtään kansiota ei nimetty uudelleen"
+msgstr "Yhtään kansiota ei voitu nimetä uudelleen"
 
 #: compressionManager.py:188
 msgid "Failed to start compression"
-msgstr "Pakkauksen käynnistäminen epäonnistui"
+msgstr "Pakkausta ei voitu aloittaa"
 
 #: createFile.py:138
 msgid "File count cannot exceed 10"
-msgstr "Tiedostojen määrä ei voi ylittää 10:tä"
+msgstr "Tiedostomäärä ei voi ylittää 10:tä"
 
 #: createFile.py:135
 msgid "File count must be at least 1"
-msgstr "Tiedostojen määrän on oltava vähintään 1"
+msgstr "Tiedostomäärän on oltava vähintään 1"
 
 #: createFile.py:112
 msgid "File name"
@@ -301,7 +313,7 @@ msgstr "Tiedostonimi"
 msgid "File name cannot be empty"
 msgstr "Tiedostonimi ei voi olla tyhjä"
 
-#: fileOperations.py:291
+#: fileOperations.py:337
 msgid "File name not changed"
 msgstr "Tiedostonimeä ei muutettu"
 
@@ -314,115 +326,121 @@ msgstr "Tiedostonimi {index}:"
 msgid "File name:"
 msgstr "Tiedostonimi:"
 
-#: __init__.py:622
+#: __init__.py:850
 msgid "File operations manager not available"
 msgstr "Tiedostotoimintojen hallinta ei ole käytettävissä"
 
-#: fileOperations.py:298
+#: fileOperations.py:344
 msgid "File renamed to {name}"
 msgstr "Tiedosto nimettiin uudelleen nimelle {name}"
 
-#: folder_creation_dialog.py:115
-#: folder_creation_dialog.py:155
+#: robocopyManager.py:448
+msgid "Finished {n} of {total}: {name}"
+msgstr "Valmis {n}/{total}: {name}"
+
+#: folderTools.py:227
+#: folderTools.py:267
 msgid "Folder"
 msgstr "Kansio"
 
-#: txt2folder.py:104
-#: txt2folder.py:174
+#: folderTools.py:605
+#: folderTools.py:675
 msgid "Folder '{}' already exists, creating '{}' instead"
 msgstr "Kansio '{}' on jo olemassa, luodaan sen sijaan '{}'"
 
-#: __init__.py:677
+#: __init__.py:905
 msgid "Folder creation dialog not available"
 msgstr "Kansion luontivalintaikkuna ei ole käytettävissä"
 
-#: __init__.py:639
+#: __init__.py:867
 msgid "Folder creator helper not available"
-msgstr "Kansion luonti -apu ei ole käytettävissä"
+msgstr "Kansion luontiavustin ei ole käytettävissä"
 
-#: contextMenu.py:52
+#: contextMenu.py:131
+#: contextMenu.py:134
+#: contextMenu.py:155
 msgid "Folder info"
-msgstr "Kansion tiedot"
+msgstr "Kansiotiedot"
 
-#: folder_creation_dialog.py:30
+#: folderTools.py:142
 msgid "Folder title:"
 msgstr "Kansion otsikko:"
 
-#: contextMenu.py:49
+#: contextMenu.py:47
 msgid "Headline Case"
 msgstr "Otsikkokirjainkoko"
 
-#: folder_creation_dialog.py:166
+#: folderTools.py:278
 msgid "Invalid number for folders"
-msgstr "Virheellinen määrä kansioita"
+msgstr "Virheellinen määrä kansioille"
 
-#: contextMenu.py:28
+#: contextMenu.py:27
 msgid "Invert selection"
 msgstr "Käännä valinta"
 
-#: contextMenu.py:47
+#: contextMenu.py:45
 msgid "Lowercase"
 msgstr "Pienet kirjaimet"
 
-#: folder_creation_dialog.py:163
+#: folderTools.py:275
 msgid "Maximum 100 folders allowed"
 msgstr "Enintään 100 kansiota sallittu"
 
-#: __init__.py:681
+#: __init__.py:909
 msgid "No Explorer folder detected"
-msgstr "Ei havaittu Resurssienhallinnan kansiota"
+msgstr "Ei Explorer-kansiota havaittu"
 
-#: fileOperations.py:173
-#: fileOperations.py:230
+#: fileOperations.py:219
+#: fileOperations.py:276
 msgid "No access to size data"
 msgstr "Ei pääsyä kokotietoihin"
 
-#: selectionManager.py:36
+#: folderTools.py:769
 msgid "No active File Explorer window found"
-msgstr "Ei löytynyt aktiivista Resurssienhallinnan ikkunaa"
+msgstr "Ei aktiivista File Explorer -ikkunaa löytynyt"
 
 #: clipboardManager.py:127
 msgid "No content could be read from selected files"
 msgstr "Valituista tiedostoista ei voitu lukea sisältöä"
 
-#: createFile.py:282
+#: createFile.py:284
 msgid "No files were created"
-msgstr "Tiedostoja ei luotu"
+msgstr "Yhtään tiedostoa ei luotu"
 
-#: case.py:142
-#: case.py:148
-#: case.py:157
-#: case.py:163
+#: folderTools.py:964
+#: folderTools.py:970
+#: folderTools.py:979
+#: folderTools.py:985
 msgid "No folders found"
 msgstr "Kansioita ei löytynyt"
 
-#: __init__.py:703
+#: __init__.py:931
 msgid "No folders selected"
 msgstr "Kansioita ei valittu"
 
-#: __init__.py:718
+#: __init__.py:946
 msgid "No folders selected or current folder not available"
 msgstr "Kansioita ei valittu tai nykyinen kansio ei ole käytettävissä"
 
-#: folder_creation_dialog.py:229
-#: txt2folder.py:148
-#: txt2folder.py:198
+#: folderTools.py:341
+#: folderTools.py:649
+#: folderTools.py:699
 msgid "No folders were created"
 msgstr "Kansioita ei luotu"
 
-#: folderInfo.py:30
+#: folderTools.py:81
 msgid "No item selected"
 msgstr "Kohdetta ei valittu"
 
-#: selectionManager.py:49
+#: folderTools.py:782
 msgid "No items in folder"
 msgstr "Kansiossa ei ole kohteita"
 
 #: clipboardManager.py:27
 #: clipboardManager.py:62
 #: compressionManager.py:148
-#: fileOperations.py:164
-#: fileOperations.py:260
+#: fileOperations.py:210
+#: fileOperations.py:306
 msgid "No items selected"
 msgstr "Kohteita ei valittu"
 
@@ -430,154 +448,170 @@ msgstr "Kohteita ei valittu"
 msgid "No text files selected"
 msgstr "Tekstitiedostoja ei valittu"
 
-#: txt2folder.py:90
-#: txt2folder.py:160
+#: folderTools.py:591
+#: folderTools.py:661
 msgid "No valid folder names found in the file"
 msgstr "Tiedostosta ei löytynyt kelvollisia kansioiden nimiä"
 
-#: folder_creation_dialog.py:184
+#: folderTools.py:296
 msgid "No valid folder names provided"
 msgstr "Kelvollisia kansioiden nimiä ei annettu"
 
+#: __init__.py:976
+msgid "Not focused on File Explorer"
+msgstr "Ei kohdistettu File Exploreriin"
+
 #: createFile.py:198
-#: selectionManager.py:30
-#: txt2folder.py:40
+#: folderTools.py:541
+#: folderTools.py:763
 msgid "Not in File Explorer"
-msgstr "Ei Resurssienhallinnassa"
+msgstr "Ei File Explorerissa"
 
 #: createFile.py:28
 msgid "Number of files to create:"
 msgstr "Luotavien tiedostojen määrä:"
 
-#: folder_creation_dialog.py:160
+#: folderTools.py:272
 msgid "Number of folders must be at least 1"
 msgstr "Kansioiden määrän on oltava vähintään 1"
 
-#: folder_creation_dialog.py:38
+#: folderTools.py:150
 msgid "Number of folders:"
 msgstr "Kansioiden määrä:"
 
-#: __init__.py:616
+#: __init__.py:844
 msgid "Open xPlorer context menu"
 msgstr "Avaa xPlorer-pikavalikko"
 
-#: txt2folder.py:53
+#: folderTools.py:554
 msgid "Please select a .txt or .rtf file"
 msgstr "Valitse .txt- tai .rtf-tiedosto"
 
-#: fileOperations.py:267
+#: fileOperations.py:313
 msgid "Please select a file, not a folder"
-msgstr "Valitse tiedosto, älä kansiota"
+msgstr "Valitse tiedosto, ei kansiota"
 
-#: fileOperations.py:263
+#: fileOperations.py:309
 msgid "Please select only one file"
 msgstr "Valitse vain yksi tiedosto"
 
-#: folderInfo.py:35
-msgid "Please select only one folder"
-msgstr "Valitse vain yksi kansio"
-
-#: txt2folder.py:46
+#: folderTools.py:547
 msgid "Please select only one text file"
 msgstr "Valitse vain yksi tekstitiedosto"
 
-#: selectionManager.py:58
+#: folderTools.py:791
 msgid "Processing {count} items in background..."
 msgstr "Käsitellään {count} kohdetta taustalla..."
 
-#: __init__.py:633
-#: contextMenu.py:32
+#: __init__.py:861
+#: contextMenu.py:31
 msgid "Rename selected file"
 msgstr "Nimeä valittu tiedosto uudelleen"
 
-#: __init__.py:460
+#: __init__.py:688
 msgid "Required manager not available"
-msgstr "Tarvittava hallinta ei ole käytettävissä"
+msgstr "Vaadittu hallinta ei ole käytettävissä"
 
-#: contextMenu.py:36
+#: contextMenu.py:34
 msgid "Robocopy"
 msgstr "Robocopy"
 
-#: __init__.py:540
+#: robocopyManager.py:457
+msgid "Robocopy cancelled"
+msgstr "Robocopy peruttu"
+
+#: robocopyManager.py:469
+msgid "Robocopy finished successfully. {n} item(s) copied"
+msgstr "Robocopy valmis. {n} kohdetta kopioitu"
+
+#: robocopyManager.py:465
+msgid "Robocopy finished. {ok} succeeded, {failed} failed: {items}"
+msgstr "Robocopy valmis. {ok} onnistui, {failed} epäonnistui: {items}"
+
+#: __init__.py:768
 msgid "Robocopy manager not available"
 msgstr "Robocopy-hallinta ei ole käytettävissä"
 
-#: __init__.py:563
+#: __init__.py:791
 msgid "Robocopy: single tap copy, double tap paste, triple tap move"
 msgstr "Robocopy: yksi napautus kopioi, kaksi napautusta liittää, kolme napautusta siirtää"
 
-#: contextMenu.py:33
+#: contextMenu.py:89
+#: contextMenu.py:100
+#: contextMenu.py:106
+#: contextMenu.py:111
+#: contextMenu.py:117
 msgid "Say size"
 msgstr "Sano koko"
 
-#: __init__.py:523
+#: __init__.py:751
 msgid "Say size (single tap) or compress zip (double tap)"
 msgstr "Sano koko (yksi napautus) tai pakkaa zip (kaksi napautusta)"
 
-#: txt2folder.py:58
+#: folderTools.py:559
 msgid "Selected file does not exist"
 msgstr "Valittua tiedostoa ei ole olemassa"
 
-#: folderInfo.py:41
+#: folderTools.py:87
 msgid "Selected item is not a folder"
 msgstr "Valittu kohde ei ole kansio"
 
-#: selectionManager.py:93
+#: folderTools.py:826
 msgid "Selected {count} items"
-msgstr "{count} kohdetta valittu"
+msgstr "Valittu {count} kohdetta"
 
-#: selectionManager.py:96
+#: folderTools.py:829
 msgid "Selection inverted"
 msgstr "Valinta käännetty"
 
 #: createFile.py:170
 msgid "Some files will use default names"
-msgstr "Jotkut tiedostot käyttävät oletusnimiä"
+msgstr "Jotkin tiedostot käyttävät oletusnimiä"
 
 #: compressionManager.py:161
 msgid "Starting..."
 msgstr "Käynnistetään..."
 
-#: case.py:165
+#: folderTools.py:987
 msgid "Successfully converted {count} folders to headline case"
-msgstr "{count} kansiota muunnettiin otsikkokirjainkokoon"
+msgstr "Muunnettiin {count} kansiota otsikkokirjainkokoon"
 
-#: case.py:150
+#: folderTools.py:972
 msgid "Successfully converted {count} folders to lowercase"
-msgstr "{count} kansiota muunnettiin pieniksi kirjaimiksi"
+msgstr "Muunnettiin {count} kansiota pieniksi kirjaimiksi"
 
-#: case.py:159
+#: folderTools.py:981
 msgid "Successfully converted {count} folders to title case"
-msgstr "{count} kansiota muunnettiin nimikkokirjainkokoon"
+msgstr "Muunnettiin {count} kansiota otsikkokirjainkokoon"
 
-#: case.py:144
+#: folderTools.py:966
 msgid "Successfully converted {count} folders to uppercase"
-msgstr "{count} kansiota muunnettiin isoiksi kirjaimiksi"
+msgstr "Muunnettiin {count} kansiota ISOIKSI KIRJAIMIKSI"
 
-#: folder_creation_dialog.py:225
+#: folderTools.py:337
 msgid "Successfully created 1 folder"
-msgstr "1 kansio luotu onnistuneesti"
+msgstr "1 kansio luotiin onnistuneesti"
 
-#: folder_creation_dialog.py:223
+#: folderTools.py:335
 msgid "Successfully created main folder only"
 msgstr "Vain pääkansio luotiin onnistuneesti"
 
-#: folder_creation_dialog.py:227
+#: folderTools.py:339
 msgid "Successfully created {count} of {total} folders"
-msgstr "{count}/{total} kansiota luotu onnistuneesti"
+msgstr "{count}/{total} kansiota luotiin onnistuneesti"
 
-#: txt2folder.py:144
-#: txt2folder.py:194
+#: folderTools.py:645
+#: folderTools.py:695
 msgid "Successfully created {} folders in '{}'"
-msgstr "{} kansiota luotu onnistuneesti kansioon '{}'"
+msgstr "Luotiin {} kansiota kohteeseen '{}'"
 
-#: contextMenu.py:41
+#: contextMenu.py:39
 msgid "TXT to Folder"
-msgstr "TXT kansioon"
+msgstr "TXT kansioksi"
 
-#: contextMenu.py:48
+#: contextMenu.py:46
 msgid "Title Case"
-msgstr "Nimikkokirjainkoko"
+msgstr "Otsikkokirjainkoko"
 
 #: clipboardManager.py:88
 msgid "Total file size is too large to copy content"
@@ -587,17 +621,17 @@ msgstr "Tiedostojen kokonaiskoko on liian suuri sisällön kopioimiseksi"
 msgid "Unable to get current directory after multiple attempts"
 msgstr "Nykyistä hakemistoa ei voitu hakea useiden yritysten jälkeen"
 
-#: __init__.py:402
+#: __init__.py:630
 msgid "Unable to get current path"
 msgstr "Nykyistä polkua ei voitu hakea"
 
-#: selectionManager.py:41
+#: folderTools.py:774
 msgid "Unable to get folder view"
 msgstr "Kansionäkymää ei voitu hakea"
 
-#: contextMenu.py:46
+#: contextMenu.py:44
 msgid "Uppercase"
-msgstr "Isot kirjaimet"
+msgstr "ISOT KIRJAIMET"
 
 #: clipboardManager.py:104
 msgid "[Error processing RTF file]"
@@ -611,11 +645,15 @@ msgstr "[RTF-sisältö - striprtf-moduuli ei ole käytettävissä]"
 msgid "compression failed"
 msgstr "pakkaus epäonnistui"
 
-#: contextMenu.py:37
+#: contextMenu.py:35
 msgid "copy"
 msgstr "kopioi"
 
-#: contextMenu.py:38
+#: robocopyManager.py:235
+msgid "estimating time remaining"
+msgstr "arvioidaan jäljellä olevaa aikaa"
+
+#: contextMenu.py:36
 msgid "move"
 msgstr "siirrä"
 
@@ -627,33 +665,53 @@ msgstr "uusi_tiedosto"
 msgid "new_file_{index}"
 msgstr "uusi_tiedosto_{index}"
 
-#: contextMenu.py:39
+#: contextMenu.py:37
 msgid "paste"
 msgstr "liitä"
 
-#: __init__.py:110
-#: __init__.py:444
-#: __init__.py:484
-#: __init__.py:524
-#: __init__.py:564
-#: __init__.py:617
-#: __init__.py:634
-#: __init__.py:652
+#: __init__.py:268
+#: __init__.py:672
+#: __init__.py:712
+#: __init__.py:752
+#: __init__.py:792
+#: __init__.py:845
+#: __init__.py:862
+#: __init__.py:880
 msgid "xPlorer"
 msgstr "xPlorer"
 
-#: contextMenu.py:51
+#: contextMenu.py:49
 msgid "xPlorer Settings"
 msgstr "xPlorer-asetukset"
 
-#: createFile.py:286
+#: createFile.py:288
 msgid "{count} files created"
 msgstr "{count} tiedostoa luotu"
 
-#: fileOperations.py:237
+#: fileOperations.py:283
 msgid "{count} items {size}"
 msgstr "{count} kohdetta {size}"
 
-#: folderInfo.py:62
+#: robocopyManager.py:240
+msgid "{h}h {m}m remaining"
+msgstr "{h}t {m}m jäljellä"
+
+#: robocopyManager.py:242
+msgid "{m}m {s}s remaining"
+msgstr "{m}m {s}s jäljellä"
+
+#: robocopyManager.py:304
+msgid "{pct}% - item {idx}/{total}: {name}"
+msgstr "{pct}% - kohde {idx}/{total}: {name}"
+
+#: folderTools.py:111
 msgid "{subfolders} subfolders and {files} files"
 msgstr "{subfolders} alikansiota ja {files} tiedostoa"
+
+#: contextMenu.py:150
+msgid "{subfolders} subfolders, {files} files"
+msgstr "{subfolders} alikansiota, {files} tiedostoa"
+
+#: robocopyManager.py:243
+msgid "{s}s remaining"
+msgstr "{s}s jäljellä"

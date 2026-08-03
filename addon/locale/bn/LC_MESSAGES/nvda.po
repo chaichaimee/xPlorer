@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: xPlorer 2026.7.0\n"
+"Project-Id-Version: xPlorer 2026.8.5\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-06-24 13:09+0700\n"
+"POT-Creation-Date: 2026-08-03 06:13+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Bengali\n"
@@ -12,19 +12,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: DevOn Addon\n"
 
-#: folder_creation_dialog.py:62
+#: robocopyManager.py:464
+msgid " and {n} more"
+msgstr " এবং আরও {n}টি"
+
+#: folderTools.py:174
 msgid "&Apply"
 msgstr "&প্রয়োগ করুন"
 
-#: folder_creation_dialog.py:63
+#: folderTools.py:175
 msgid "&Cancel"
 msgstr "&বাতিল করুন"
 
-#: createFile.py:284
+#: createFile.py:286
 msgid "1 file created"
-msgstr "১টি ফাইল তৈরি হয়েছে"
+msgstr "1টি ফাইল তৈরি হয়েছে"
 
-#: fileOperations.py:294
+#: fileOperations.py:340
 msgid "A file with this name already exists"
 msgstr "এই নামে একটি ফাইল ইতিমধ্যে বিদ্যমান"
 
@@ -32,31 +36,35 @@ msgstr "এই নামে একটি ফাইল ইতিমধ্যে �
 msgid "Built-in compression failed: {error}"
 msgstr "বিল্ট-ইন কম্প্রেশন ব্যর্থ হয়েছে: {error}"
 
+#: robocopyManager.py:323
+msgid "Calculating total size..."
+msgstr "মোট আকার গণনা করা হচ্ছে..."
+
 #: clipboardManager.py:66
 msgid "Cannot copy content of folders, please select files only"
-msgstr "ফোল্ডারের বিষয়বস্তু কপি করা যায় না, শুধুমাত্র ফাইল নির্বাচন করুন"
+msgstr "ফোল্ডারগুলির বিষয়বস্তু কপি করা যায় না, শুধুমাত্র ফাইল নির্বাচন করুন"
 
 #: createFile.py:271
 msgid "Cannot find unique name for: {name}"
-msgstr "{name} এর জন্য অনন্য নাম খুঁজে পাওয়া যায়নি"
+msgstr "এর জন্য অনন্য নাম খুঁজে পাওয়া যাচ্ছে না: {name}"
 
-#: __init__.py:660
+#: __init__.py:888
 msgid "Cannot open settings dialog"
-msgstr "সেটিংস ডায়ালগ খোলা যায়নি"
+msgstr "সেটিংস ডায়ালগ খোলা যাচ্ছে না"
 
-#: txt2folder.py:69
+#: folderTools.py:570
 msgid "Cannot process RTF file: striprtf module not available"
-msgstr "RTF ফাইল প্রক্রিয়া করা যায়নি: striprtf মডিউল উপলব্ধ নয়"
+msgstr "RTF ফাইল প্রক্রিয়া করা যাচ্ছে না: striprtf মডিউল উপলব্ধ নয়"
 
-#: contextMenu.py:45
+#: contextMenu.py:43
 msgid "Case Converter for Folders"
-msgstr "ফোল্ডারের জন্য কেস কনভার্টার"
+msgstr "ফোল্ডারগুলির জন্য কেস কনভার্টার"
 
-#: __init__.py:699
+#: __init__.py:927
 msgid "Case converter not available"
 msgstr "কেস কনভার্টার উপলব্ধ নয়"
 
-#: __init__.py:420
+#: __init__.py:648
 msgid "Clipboard manager not available"
 msgstr "ক্লিপবোর্ড ম্যানেজার উপলব্ধ নয়"
 
@@ -64,9 +72,9 @@ msgstr "ক্লিপবোর্ড ম্যানেজার উপলব�
 msgid "Completed"
 msgstr "সম্পূর্ণ হয়েছে"
 
-#: contextMenu.py:27
+#: contextMenu.py:26
 msgid "Compress zip"
-msgstr "জিপে কম্প্রেস করুন"
+msgstr "zip কম্প্রেস করুন"
 
 #: compressionManager.py:160
 #: compressionManager.py:168
@@ -80,7 +88,7 @@ msgstr "কম্প্রেস করা হচ্ছে..."
 #: compressionManager.py:263
 #: compressionManager.py:277
 msgid "Compressing: {percent}%"
-msgstr "কম্প্রেস করা হচ্ছে: {percent}%"
+msgstr "কম্প্রেস করা: {percent}%"
 
 #: compressionManager.py:110
 #: compressionManager.py:282
@@ -90,113 +98,113 @@ msgstr "কম্প্রেশন বাতিল করা হয়েছে
 #: compressionManager.py:112
 #: compressionManager.py:285
 msgid "Compression completed {name}"
-msgstr "{name} এর কম্প্রেশন সম্পূর্ণ হয়েছে"
+msgstr "কম্প্রেশন সম্পূর্ণ হয়েছে {name}"
 
-#: __init__.py:500
+#: __init__.py:728
 msgid "Compression manager not available"
 msgstr "কম্প্রেশন ম্যানেজার উপলব্ধ নয়"
 
 #: compressionManager.py:86
 msgid "Compression timed out"
-msgstr "কম্প্রেশনের সময়সীমা শেষ হয়েছে"
+msgstr "কম্প্রেশনের সময় শেষ হয়েছে"
 
 #: clipboardManager.py:133
 msgid "Content from 1 file copied to clipboard"
-msgstr "১টি ফাইল থেকে বিষয়বস্তু ক্লিপবোর্ডে কপি করা হয়েছে"
+msgstr "1টি ফাইলের বিষয়বস্তু ক্লিপবোর্ডে কপি করা হয়েছে"
 
 #: clipboardManager.py:135
 msgid "Content from {count} files copied to clipboard"
-msgstr "{count}টি ফাইল থেকে বিষয়বস্তু ক্লিপবোর্ডে কপি করা হয়েছে"
+msgstr "{count}টি ফাইলের বিষয়বস্তু ক্লিপবোর্ডে কপি করা হয়েছে"
 
-#: __init__.py:607
-#: __init__.py:673
+#: __init__.py:835
+#: __init__.py:901
 msgid "Context menu manager not available"
 msgstr "কনটেক্সট মেনু ম্যানেজার উপলব্ধ নয়"
 
-#: case.py:115
+#: folderTools.py:937
 msgid "Conversion already in progress"
 msgstr "রূপান্তর ইতিমধ্যে চলছে"
 
-#: case.py:132
+#: folderTools.py:954
 msgid "Converting"
 msgstr "রূপান্তর করা হচ্ছে"
 
 #: clipboardManager.py:44
 msgid "Copied 1 item name to clipboard"
-msgstr "১টি আইটেমের নাম ক্লিপবোর্ডে কপি করা হয়েছে"
+msgstr "1টি আইটেমের নাম ক্লিপবোর্ডে কপি করা হয়েছে"
 
 #: clipboardManager.py:46
 msgid "Copied {count} item names to clipboard"
 msgstr "{count}টি আইটেমের নাম ক্লিপবোর্ডে কপি করা হয়েছে"
 
-#: __init__.py:396
+#: __init__.py:624
 msgid "Copied: {path}"
 msgstr "কপি করা হয়েছে: {path}"
 
-#: contextMenu.py:29
+#: contextMenu.py:28
 msgid "Copy address bar"
 msgstr "অ্যাড্রেস বার কপি করুন"
 
-#: contextMenu.py:30
+#: contextMenu.py:29
 msgid "Copy content"
 msgstr "বিষয়বস্তু কপি করুন"
 
-#: __init__.py:483
+#: __init__.py:711
 msgid "Copy content (single tap) or invert selection (double tap)"
-msgstr "বিষয়বস্তু কপি করুন (একটি ট্যাপ) বা নির্বাচন উল্টান (দুইটি ট্যাপ)"
+msgstr "বিষয়বস্তু কপি করুন (একটি ট্যাপ) বা নির্বাচন বিপরীত করুন (দুইটি ট্যাপ)"
 
-#: contextMenu.py:31
+#: contextMenu.py:30
 msgid "Copy selected file and folder names"
 msgstr "নির্বাচিত ফাইল এবং ফোল্ডারের নাম কপি করুন"
 
-#: __init__.py:443
+#: __init__.py:671
 msgid "Copy selected names (single tap) or copy address bar (double tap)"
-msgstr "নির্বাচিত নাম কপি করুন (একটি ট্যাপ) বা অ্যাড্রেস বার কপি করুন (দুইটি ট্যাপ)"
+msgstr "নির্বাচিত নামগুলি কপি করুন (একটি ট্যাপ) বা অ্যাড্রেস বার কপি করুন (দুইটি ট্যাপ)"
 
-#: __init__.py:400
+#: __init__.py:628
 #: clipboardManager.py:50
 #: clipboardManager.py:139
 msgid "Could not open clipboard"
 msgstr "ক্লিপবোর্ড খোলা যায়নি"
 
-#: contextMenu.py:24
+#: contextMenu.py:23
 #: createFile.py:17
 msgid "Create File"
 msgstr "ফাইল তৈরি করুন"
 
-#: folder_creation_dialog.py:16
+#: folderTools.py:128
 msgid "Create Multiple Folders"
 msgstr "একাধিক ফোল্ডার তৈরি করুন"
 
-#: contextMenu.py:42
+#: contextMenu.py:40
 msgid "Create Multiple Folders..."
 msgstr "একাধিক ফোল্ডার তৈরি করুন..."
 
-#: folder_creation_dialog.py:45
+#: folderTools.py:157
 msgid "Create main folder and then subfolders"
-msgstr "প্রধান ফোল্ডার তৈরি করুন এবং তারপর সাবফোল্ডার তৈরি করুন"
+msgstr "মূল ফোল্ডার তৈরি করুন এবং তারপর সাবফোল্ডার তৈরি করুন"
 
-#: __init__.py:651
+#: __init__.py:879
 msgid "Create new folder and paste clipboard content into rename field"
 msgstr "নতুন ফোল্ডার তৈরি করুন এবং ক্লিপবোর্ডের বিষয়বস্তু পুনঃনামকরণ ফিল্ডে পেস্ট করুন"
 
-#: folder_creation_dialog.py:212
+#: folderTools.py:324
 msgid "Created {count} of {total} folders..."
 msgstr "{total}টির মধ্যে {count}টি ফোল্ডার তৈরি করা হয়েছে..."
 
-#: folder_creation_dialog.py:199
+#: folderTools.py:311
 msgid "Creating folders in background..."
 msgstr "পটভূমিতে ফোল্ডার তৈরি করা হচ্ছে..."
 
-#: folder_creation_dialog.py:49
+#: folderTools.py:161
 msgid "Edit individual folder names"
 msgstr "পৃথক ফোল্ডারের নাম সম্পাদনা করুন"
 
-#: folderInfo.py:71
+#: folderTools.py:120
 msgid "Error calculating folder info"
 msgstr "ফোল্ডারের তথ্য গণনা করতে ত্রুটি"
 
-#: fileOperations.py:248
+#: fileOperations.py:294
 msgid "Error calculating size"
 msgstr "আকার গণনা করতে ত্রুটি"
 
@@ -212,23 +220,23 @@ msgstr "ফাইলের বিষয়বস্তু কপি করতে
 msgid "Error copying names to clipboard"
 msgstr "ক্লিপবোর্ডে নাম কপি করতে ত্রুটি"
 
-#: txt2folder.py:113
+#: folderTools.py:614
 msgid "Error creating base folder"
-msgstr "মূল ফোল্ডার তৈরি করতে ত্রুটি"
+msgstr "বেস ফোল্ডার তৈরি করতে ত্রুটি"
 
-#: createFile.py:289
+#: createFile.py:291
 msgid "Error creating files"
 msgstr "ফাইল তৈরি করতে ত্রুটি"
 
-#: __init__.py:693
+#: __init__.py:921
 msgid "Error creating folders"
 msgstr "ফোল্ডার তৈরি করতে ত্রুটি"
 
-#: folder_creation_dialog.py:190
+#: folderTools.py:302
 msgid "Error creating main folder"
-msgstr "প্রধান ফোল্ডার তৈরি করতে ত্রুটি"
+msgstr "মূল ফোল্ডার তৈরি করতে ত্রুটি"
 
-#: __init__.py:737
+#: __init__.py:965
 msgid "Error during conversion"
 msgstr "রূপান্তরের সময় ত্রুটি"
 
@@ -236,62 +244,66 @@ msgstr "রূপান্তরের সময় ত্রুটি"
 msgid "Error in compression process: {error}"
 msgstr "কম্প্রেশন প্রক্রিয়ায় ত্রুটি: {error}"
 
-#: selectionManager.py:71
+#: folderTools.py:804
 msgid "Error inverting selection"
-msgstr "নির্বাচন উল্টাতে ত্রুটি"
+msgstr "নির্বাচন বিপরীত করতে ত্রুটি"
 
 #: createFile.py:245
 msgid "Error opening create file dialog"
 msgstr "ফাইল তৈরি ডায়ালগ খুলতে ত্রুটি"
 
-#: fileOperations.py:304
+#: fileOperations.py:350
 msgid "Error opening rename dialog"
 msgstr "পুনঃনামকরণ ডায়ালগ খুলতে ত্রুটি"
 
-#: __init__.py:667
+#: __init__.py:895
 msgid "Error opening settings"
 msgstr "সেটিংস খুলতে ত্রুটি"
 
-#: txt2folder.py:203
+#: folderTools.py:704
 msgid "Error processing text file: {}"
 msgstr "টেক্সট ফাইল প্রক্রিয়া করতে ত্রুটি: {}"
 
-#: txt2folder.py:80
+#: folderTools.py:581
 msgid "Error reading RTF file"
 msgstr "RTF ফাইল পড়তে ত্রুটি"
 
-#: txt2folder.py:207
+#: folderTools.py:708
 msgid "Error reading file encoding"
 msgstr "ফাইল এনকোডিং পড়তে ত্রুটি"
 
-#: fileOperations.py:274
-#: fileOperations.py:301
+#: fileOperations.py:320
+#: fileOperations.py:347
 msgid "Error renaming file"
 msgstr "ফাইল পুনঃনামকরণ করতে ত্রুটি"
 
-#: txt2folder.py:212
+#: folderTools.py:713
 msgid "Error: {}"
 msgstr "ত্রুটি: {}"
+
+#: __init__.py:1002
+msgid "Explorer tree dumped to NVDA log"
+msgstr "এক্সপ্লোরার ট্রি NVDA লগে ডাম্প করা হয়েছে"
 
 #: createFile.py:72
 msgid "Extension:"
 msgstr "এক্সটেনশন:"
 
-#: case.py:127
+#: folderTools.py:949
 msgid "Failed to rename any folders"
-msgstr "কোনো ফোল্ডার পুনঃনামকরণ করা যায়নি"
+msgstr "কোনও ফোল্ডার পুনঃনামকরণ করতে ব্যর্থ হয়েছে"
 
 #: compressionManager.py:188
 msgid "Failed to start compression"
-msgstr "কম্প্রেশন শুরু করা যায়নি"
+msgstr "কম্প্রেশন শুরু করতে ব্যর্থ হয়েছে"
 
 #: createFile.py:138
 msgid "File count cannot exceed 10"
-msgstr "ফাইলের সংখ্যা ১০-এর বেশি হতে পারে না"
+msgstr "ফাইলের সংখ্যা 10-এর বেশি হতে পারে না"
 
 #: createFile.py:135
 msgid "File count must be at least 1"
-msgstr "ফাইলের সংখ্যা কমপক্ষে ১ হতে হবে"
+msgstr "ফাইলের সংখ্যা কমপক্ষে 1 হতে হবে"
 
 #: createFile.py:112
 msgid "File name"
@@ -299,9 +311,9 @@ msgstr "ফাইলের নাম"
 
 #: fileOperations.py:59
 msgid "File name cannot be empty"
-msgstr "ফাইলের নাম খালি রাখা যাবে না"
+msgstr "ফাইলের নাম খালি হতে পারে না"
 
-#: fileOperations.py:291
+#: fileOperations.py:337
 msgid "File name not changed"
 msgstr "ফাইলের নাম পরিবর্তন করা হয়নি"
 
@@ -314,134 +326,144 @@ msgstr "ফাইলের নাম {index}:"
 msgid "File name:"
 msgstr "ফাইলের নাম:"
 
-#: __init__.py:622
+#: __init__.py:850
 msgid "File operations manager not available"
 msgstr "ফাইল অপারেশন ম্যানেজার উপলব্ধ নয়"
 
-#: fileOperations.py:298
+#: fileOperations.py:344
 msgid "File renamed to {name}"
 msgstr "ফাইলের নাম পরিবর্তন করে {name} করা হয়েছে"
 
-#: folder_creation_dialog.py:115
-#: folder_creation_dialog.py:155
+#: robocopyManager.py:448
+msgid "Finished {n} of {total}: {name}"
+msgstr "{total}টির মধ্যে {n}টি সম্পন্ন হয়েছে: {name}"
+
+#: folderTools.py:227
+#: folderTools.py:267
 msgid "Folder"
 msgstr "ফোল্ডার"
 
-#: txt2folder.py:104
-#: txt2folder.py:174
+#: folderTools.py:605
+#: folderTools.py:675
 msgid "Folder '{}' already exists, creating '{}' instead"
-msgstr "'{}' ফোল্ডার ইতিমধ্যে বিদ্যমান, পরিবর্তে '{}' তৈরি করা হচ্ছে"
+msgstr "ফোল্ডার '{}' ইতিমধ্যে বিদ্যমান, পরিবর্তে '{}' তৈরি করা হচ্ছে"
 
-#: __init__.py:677
+#: __init__.py:905
 msgid "Folder creation dialog not available"
 msgstr "ফোল্ডার তৈরি ডায়ালগ উপলব্ধ নয়"
 
-#: __init__.py:639
+#: __init__.py:867
 msgid "Folder creator helper not available"
 msgstr "ফোল্ডার ক্রিয়েটর হেল্পার উপলব্ধ নয়"
 
-#: contextMenu.py:52
+#: contextMenu.py:131
+#: contextMenu.py:134
+#: contextMenu.py:155
 msgid "Folder info"
 msgstr "ফোল্ডারের তথ্য"
 
-#: folder_creation_dialog.py:30
+#: folderTools.py:142
 msgid "Folder title:"
 msgstr "ফোল্ডারের শিরোনাম:"
 
-#: contextMenu.py:49
+#: contextMenu.py:47
 msgid "Headline Case"
 msgstr "হেডলাইন কেস"
 
-#: folder_creation_dialog.py:166
+#: folderTools.py:278
 msgid "Invalid number for folders"
-msgstr "ফোল্ডারের জন্য সংখ্যাটি অবৈধ"
+msgstr "ফোল্ডারের জন্য অবৈধ সংখ্যা"
 
-#: contextMenu.py:28
+#: contextMenu.py:27
 msgid "Invert selection"
-msgstr "নির্বাচন উল্টান"
+msgstr "নির্বাচন বিপরীত করুন"
 
-#: contextMenu.py:47
+#: contextMenu.py:45
 msgid "Lowercase"
 msgstr "ছোট হাতের অক্ষর"
 
-#: folder_creation_dialog.py:163
+#: folderTools.py:275
 msgid "Maximum 100 folders allowed"
-msgstr "সর্বোচ্চ ১০০টি ফোল্ডার অনুমোদিত"
+msgstr "সর্বোচ্চ 100টি ফোল্ডার অনুমোদিত"
 
-#: __init__.py:681
+#: __init__.py:909
 msgid "No Explorer folder detected"
-msgstr "কোনো এক্সপ্লোরার ফোল্ডার সনাক্ত করা যায়নি"
+msgstr "কোনও এক্সপ্লোরার ফোল্ডার সনাক্ত করা যায়নি"
 
-#: fileOperations.py:173
-#: fileOperations.py:230
+#: fileOperations.py:219
+#: fileOperations.py:276
 msgid "No access to size data"
-msgstr "আকারের তথ্যে প্রবেশাধিকার নেই"
+msgstr "আকারের ডেটাতে প্রবেশাধিকার নেই"
 
-#: selectionManager.py:36
+#: folderTools.py:769
 msgid "No active File Explorer window found"
-msgstr "কোনো সক্রিয় ফাইল এক্সপ্লোরার উইন্ডো পাওয়া যায়নি"
+msgstr "কোনও সক্রিয় ফাইল এক্সপ্লোরার উইন্ডো পাওয়া যায়নি"
 
 #: clipboardManager.py:127
 msgid "No content could be read from selected files"
-msgstr "নির্বাচিত ফাইল থেকে কোনো বিষয়বস্তু পড়া যায়নি"
+msgstr "নির্বাচিত ফাইলগুলি থেকে কোনও বিষয়বস্তু পড়া যায়নি"
 
-#: createFile.py:282
+#: createFile.py:284
 msgid "No files were created"
-msgstr "কোনো ফাইল তৈরি করা হয়নি"
+msgstr "কোনও ফাইল তৈরি করা হয়নি"
 
-#: case.py:142
-#: case.py:148
-#: case.py:157
-#: case.py:163
+#: folderTools.py:964
+#: folderTools.py:970
+#: folderTools.py:979
+#: folderTools.py:985
 msgid "No folders found"
-msgstr "কোনো ফোল্ডার পাওয়া যায়নি"
+msgstr "কোনও ফোল্ডার পাওয়া যায়নি"
 
-#: __init__.py:703
+#: __init__.py:931
 msgid "No folders selected"
-msgstr "কোনো ফোল্ডার নির্বাচন করা হয়নি"
+msgstr "কোনও ফোল্ডার নির্বাচন করা হয়নি"
 
-#: __init__.py:718
+#: __init__.py:946
 msgid "No folders selected or current folder not available"
-msgstr "কোনো ফোল্ডার নির্বাচন করা হয়নি বা বর্তমান ফোল্ডার উপলব্ধ নয়"
+msgstr "কোনও ফোল্ডার নির্বাচন করা হয়নি বা বর্তমান ফোল্ডার উপলব্ধ নয়"
 
-#: folder_creation_dialog.py:229
-#: txt2folder.py:148
-#: txt2folder.py:198
+#: folderTools.py:341
+#: folderTools.py:649
+#: folderTools.py:699
 msgid "No folders were created"
-msgstr "কোনো ফোল্ডার তৈরি করা হয়নি"
+msgstr "কোনও ফোল্ডার তৈরি করা হয়নি"
 
-#: folderInfo.py:30
+#: folderTools.py:81
 msgid "No item selected"
-msgstr "কোনো আইটেম নির্বাচন করা হয়নি"
+msgstr "কোনও আইটেম নির্বাচন করা হয়নি"
 
-#: selectionManager.py:49
+#: folderTools.py:782
 msgid "No items in folder"
-msgstr "ফোল্ডারে কোনো আইটেম নেই"
+msgstr "ফোল্ডারে কোনও আইটেম নেই"
 
 #: clipboardManager.py:27
 #: clipboardManager.py:62
 #: compressionManager.py:148
-#: fileOperations.py:164
-#: fileOperations.py:260
+#: fileOperations.py:210
+#: fileOperations.py:306
 msgid "No items selected"
-msgstr "কোনো আইটেম নির্বাচন করা হয়নি"
+msgstr "কোনও আইটেম নির্বাচন করা হয়নি"
 
 #: clipboardManager.py:79
 msgid "No text files selected"
-msgstr "কোনো টেক্সট ফাইল নির্বাচন করা হয়নি"
+msgstr "কোনও টেক্সট ফাইল নির্বাচন করা হয়নি"
 
-#: txt2folder.py:90
-#: txt2folder.py:160
+#: folderTools.py:591
+#: folderTools.py:661
 msgid "No valid folder names found in the file"
-msgstr "ফাইলে কোনো বৈধ ফোল্ডারের নাম পাওয়া যায়নি"
+msgstr "ফাইলে কোনও বৈধ ফোল্ডারের নাম পাওয়া যায়নি"
 
-#: folder_creation_dialog.py:184
+#: folderTools.py:296
 msgid "No valid folder names provided"
-msgstr "কোনো বৈধ ফোল্ডারের নাম প্রদান করা হয়নি"
+msgstr "কোনও বৈধ ফোল্ডারের নাম প্রদান করা হয়নি"
+
+#: __init__.py:976
+msgid "Not focused on File Explorer"
+msgstr "ফাইল এক্সপ্লোরারে ফোকাস করা নেই"
 
 #: createFile.py:198
-#: selectionManager.py:30
-#: txt2folder.py:40
+#: folderTools.py:541
+#: folderTools.py:763
 msgid "Not in File Explorer"
 msgstr "ফাইল এক্সপ্লোরারে নেই"
 
@@ -449,86 +471,98 @@ msgstr "ফাইল এক্সপ্লোরারে নেই"
 msgid "Number of files to create:"
 msgstr "তৈরি করতে হবে এমন ফাইলের সংখ্যা:"
 
-#: folder_creation_dialog.py:160
+#: folderTools.py:272
 msgid "Number of folders must be at least 1"
-msgstr "ফোল্ডারের সংখ্যা কমপক্ষে ১ হতে হবে"
+msgstr "ফোল্ডারের সংখ্যা কমপক্ষে 1 হতে হবে"
 
-#: folder_creation_dialog.py:38
+#: folderTools.py:150
 msgid "Number of folders:"
 msgstr "ফোল্ডারের সংখ্যা:"
 
-#: __init__.py:616
+#: __init__.py:844
 msgid "Open xPlorer context menu"
 msgstr "xPlorer কনটেক্সট মেনু খুলুন"
 
-#: txt2folder.py:53
+#: folderTools.py:554
 msgid "Please select a .txt or .rtf file"
-msgstr "অনুগ্রহ করে একটি .txt বা .rtf ফাইল নির্বাচন করুন"
+msgstr "একটি .txt বা .rtf ফাইল নির্বাচন করুন"
 
-#: fileOperations.py:267
+#: fileOperations.py:313
 msgid "Please select a file, not a folder"
-msgstr "অনুগ্রহ করে একটি ফাইল নির্বাচন করুন, ফোল্ডার নয়"
+msgstr "একটি ফাইল নির্বাচন করুন, ফোল্ডার নয়"
 
-#: fileOperations.py:263
+#: fileOperations.py:309
 msgid "Please select only one file"
-msgstr "অনুগ্রহ করে শুধুমাত্র একটি ফাইল নির্বাচন করুন"
+msgstr "শুধুমাত্র একটি ফাইল নির্বাচন করুন"
 
-#: folderInfo.py:35
-msgid "Please select only one folder"
-msgstr "অনুগ্রহ করে শুধুমাত্র একটি ফোল্ডার নির্বাচন করুন"
-
-#: txt2folder.py:46
+#: folderTools.py:547
 msgid "Please select only one text file"
-msgstr "অনুগ্রহ করে শুধুমাত্র একটি টেক্সট ফাইল নির্বাচন করুন"
+msgstr "শুধুমাত্র একটি টেক্সট ফাইল নির্বাচন করুন"
 
-#: selectionManager.py:58
+#: folderTools.py:791
 msgid "Processing {count} items in background..."
 msgstr "পটভূমিতে {count}টি আইটেম প্রক্রিয়া করা হচ্ছে..."
 
-#: __init__.py:633
-#: contextMenu.py:32
+#: __init__.py:861
+#: contextMenu.py:31
 msgid "Rename selected file"
 msgstr "নির্বাচিত ফাইল পুনঃনামকরণ করুন"
 
-#: __init__.py:460
+#: __init__.py:688
 msgid "Required manager not available"
 msgstr "প্রয়োজনীয় ম্যানেজার উপলব্ধ নয়"
 
-#: contextMenu.py:36
+#: contextMenu.py:34
 msgid "Robocopy"
 msgstr "Robocopy"
 
-#: __init__.py:540
+#: robocopyManager.py:457
+msgid "Robocopy cancelled"
+msgstr "Robocopy বাতিল করা হয়েছে"
+
+#: robocopyManager.py:469
+msgid "Robocopy finished successfully. {n} item(s) copied"
+msgstr "Robocopy সফলভাবে শেষ হয়েছে। {n}টি আইটেম কপি করা হয়েছে"
+
+#: robocopyManager.py:465
+msgid "Robocopy finished. {ok} succeeded, {failed} failed: {items}"
+msgstr "Robocopy শেষ হয়েছে। {ok} সফল হয়েছে, {failed} ব্যর্থ হয়েছে: {items}"
+
+#: __init__.py:768
 msgid "Robocopy manager not available"
 msgstr "Robocopy ম্যানেজার উপলব্ধ নয়"
 
-#: __init__.py:563
+#: __init__.py:791
 msgid "Robocopy: single tap copy, double tap paste, triple tap move"
-msgstr "Robocopy: একটি ট্যাপে কপি, দুইটি ট্যাপে পেস্ট, তিনটি ট্যাপে মুভ"
+msgstr "Robocopy: একটি ট্যাপে কপি, দুইটি ট্যাপে পেস্ট, তিনটি ট্যাপে সরান"
 
-#: contextMenu.py:33
+#: contextMenu.py:89
+#: contextMenu.py:100
+#: contextMenu.py:106
+#: contextMenu.py:111
+#: contextMenu.py:117
 msgid "Say size"
 msgstr "আকার বলুন"
 
-#: __init__.py:523
+#: __init__.py:751
 msgid "Say size (single tap) or compress zip (double tap)"
-msgstr "আকার বলুন (একটি ট্যাপ) বা জিপে কম্প্রেস করুন (দুইটি ট্যাপ)"
+msgstr "আকার বলুন (একটি ট্যাপ) বা zip কম্প্রেস করুন (দুইটি ট্যাপ)"
 
-#: txt2folder.py:58
+#: folderTools.py:559
 msgid "Selected file does not exist"
 msgstr "নির্বাচিত ফাইলটি বিদ্যমান নেই"
 
-#: folderInfo.py:41
+#: folderTools.py:87
 msgid "Selected item is not a folder"
 msgstr "নির্বাচিত আইটেমটি একটি ফোল্ডার নয়"
 
-#: selectionManager.py:93
+#: folderTools.py:826
 msgid "Selected {count} items"
 msgstr "{count}টি আইটেম নির্বাচন করা হয়েছে"
 
-#: selectionManager.py:96
+#: folderTools.py:829
 msgid "Selection inverted"
-msgstr "নির্বাচন উল্টানো হয়েছে"
+msgstr "নির্বাচন বিপরীত করা হয়েছে"
 
 #: createFile.py:170
 msgid "Some files will use default names"
@@ -538,64 +572,64 @@ msgstr "কিছু ফাইল ডিফল্ট নাম ব্যবহ�
 msgid "Starting..."
 msgstr "শুরু করা হচ্ছে..."
 
-#: case.py:165
+#: folderTools.py:987
 msgid "Successfully converted {count} folders to headline case"
 msgstr "{count}টি ফোল্ডার সফলভাবে হেডলাইন কেসে রূপান্তরিত হয়েছে"
 
-#: case.py:150
+#: folderTools.py:972
 msgid "Successfully converted {count} folders to lowercase"
 msgstr "{count}টি ফোল্ডার সফলভাবে ছোট হাতের অক্ষরে রূপান্তরিত হয়েছে"
 
-#: case.py:159
+#: folderTools.py:981
 msgid "Successfully converted {count} folders to title case"
 msgstr "{count}টি ফোল্ডার সফলভাবে টাইটেল কেসে রূপান্তরিত হয়েছে"
 
-#: case.py:144
+#: folderTools.py:966
 msgid "Successfully converted {count} folders to uppercase"
 msgstr "{count}টি ফোল্ডার সফলভাবে বড় হাতের অক্ষরে রূপান্তরিত হয়েছে"
 
-#: folder_creation_dialog.py:225
+#: folderTools.py:337
 msgid "Successfully created 1 folder"
-msgstr "১টি ফোল্ডার সফলভাবে তৈরি হয়েছে"
+msgstr "সফলভাবে 1টি ফোল্ডার তৈরি হয়েছে"
 
-#: folder_creation_dialog.py:223
+#: folderTools.py:335
 msgid "Successfully created main folder only"
-msgstr "শুধুমাত্র প্রধান ফোল্ডার সফলভাবে তৈরি হয়েছে"
+msgstr "শুধুমাত্র মূল ফোল্ডার সফলভাবে তৈরি হয়েছে"
 
-#: folder_creation_dialog.py:227
+#: folderTools.py:339
 msgid "Successfully created {count} of {total} folders"
 msgstr "{total}টির মধ্যে {count}টি ফোল্ডার সফলভাবে তৈরি হয়েছে"
 
-#: txt2folder.py:144
-#: txt2folder.py:194
+#: folderTools.py:645
+#: folderTools.py:695
 msgid "Successfully created {} folders in '{}'"
-msgstr "'{}'-এ {}টি ফোল্ডার সফলভাবে তৈরি হয়েছে"
+msgstr "'{}'-তে {}টি ফোল্ডার সফলভাবে তৈরি হয়েছে"
 
-#: contextMenu.py:41
+#: contextMenu.py:39
 msgid "TXT to Folder"
 msgstr "TXT থেকে ফোল্ডার"
 
-#: contextMenu.py:48
+#: contextMenu.py:46
 msgid "Title Case"
 msgstr "টাইটেল কেস"
 
 #: clipboardManager.py:88
 msgid "Total file size is too large to copy content"
-msgstr "মোট ফাইলের আকার বিষয়বস্তু কপি করার জন্য খুব বড়"
+msgstr "বিষয়বস্তু কপি করার জন্য মোট ফাইলের আকার খুব বড়"
 
 #: createFile.py:213
 msgid "Unable to get current directory after multiple attempts"
-msgstr "একাধিক চেষ্টার পর বর্তমান ডিরেক্টরি পাওয়া যায়নি"
+msgstr "একাধিক চেষ্টার পর বর্তমান ডিরেক্টরি পাওয়া যাচ্ছে না"
 
-#: __init__.py:402
+#: __init__.py:630
 msgid "Unable to get current path"
-msgstr "বর্তমান পাথ পাওয়া যায়নি"
+msgstr "বর্তমান পাথ পাওয়া যাচ্ছে না"
 
-#: selectionManager.py:41
+#: folderTools.py:774
 msgid "Unable to get folder view"
-msgstr "ফোল্ডার ভিউ পাওয়া যায়নি"
+msgstr "ফোল্ডার ভিউ পাওয়া যাচ্ছে না"
 
-#: contextMenu.py:46
+#: contextMenu.py:44
 msgid "Uppercase"
 msgstr "বড় হাতের অক্ষর"
 
@@ -611,13 +645,17 @@ msgstr "[RTF বিষয়বস্তু - striprtf মডিউল উপল
 msgid "compression failed"
 msgstr "কম্প্রেশন ব্যর্থ হয়েছে"
 
-#: contextMenu.py:37
+#: contextMenu.py:35
 msgid "copy"
 msgstr "কপি"
 
-#: contextMenu.py:38
+#: robocopyManager.py:235
+msgid "estimating time remaining"
+msgstr "অবশিষ্ট সময় অনুমান করা হচ্ছে"
+
+#: contextMenu.py:36
 msgid "move"
-msgstr "মুভ"
+msgstr "সরান"
 
 #: createFile.py:156
 msgid "new_file"
@@ -627,33 +665,53 @@ msgstr "নতুন_ফাইল"
 msgid "new_file_{index}"
 msgstr "নতুন_ফাইল_{index}"
 
-#: contextMenu.py:39
+#: contextMenu.py:37
 msgid "paste"
 msgstr "পেস্ট"
 
-#: __init__.py:110
-#: __init__.py:444
-#: __init__.py:484
-#: __init__.py:524
-#: __init__.py:564
-#: __init__.py:617
-#: __init__.py:634
-#: __init__.py:652
+#: __init__.py:268
+#: __init__.py:672
+#: __init__.py:712
+#: __init__.py:752
+#: __init__.py:792
+#: __init__.py:845
+#: __init__.py:862
+#: __init__.py:880
 msgid "xPlorer"
 msgstr "xPlorer"
 
-#: contextMenu.py:51
+#: contextMenu.py:49
 msgid "xPlorer Settings"
 msgstr "xPlorer সেটিংস"
 
-#: createFile.py:286
+#: createFile.py:288
 msgid "{count} files created"
 msgstr "{count}টি ফাইল তৈরি হয়েছে"
 
-#: fileOperations.py:237
+#: fileOperations.py:283
 msgid "{count} items {size}"
 msgstr "{count}টি আইটেম {size}"
 
-#: folderInfo.py:62
+#: robocopyManager.py:240
+msgid "{h}h {m}m remaining"
+msgstr "{h}ঘ {m}মি বাকি"
+
+#: robocopyManager.py:242
+msgid "{m}m {s}s remaining"
+msgstr "{m}মি {s}সে বাকি"
+
+#: robocopyManager.py:304
+msgid "{pct}% - item {idx}/{total}: {name}"
+msgstr "{pct}% - আইটেম {idx}/{total}: {name}"
+
+#: folderTools.py:111
 msgid "{subfolders} subfolders and {files} files"
 msgstr "{subfolders}টি সাবফোল্ডার এবং {files}টি ফাইল"
+
+#: contextMenu.py:150
+msgid "{subfolders} subfolders, {files} files"
+msgstr "{subfolders}টি সাবফোল্ডার, {files}টি ফাইল"
+
+#: robocopyManager.py:243
+msgid "{s}s remaining"
+msgstr "{s}সে বাকি"

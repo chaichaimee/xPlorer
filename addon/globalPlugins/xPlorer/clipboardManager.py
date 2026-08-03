@@ -140,3 +140,4 @@ class ClipboardManager:
 		except Exception as e:
 			log.error(f"Error in copyFileContent: {e}")
 			ui.message(_("Error copying file content"))
+
