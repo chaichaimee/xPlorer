@@ -21,6 +21,8 @@ import winUser
 import os
 import sys
 import time
+import ctypes
+import ctypes.wintypes
 import urllib.parse
 import importlib
 from collections import deque
@@ -139,10 +141,16 @@ class ActiveTabPathResolver:
 	def __init__(self):
 		self._workingStrategyName = None
 
-	def resolveActivePath(self, foregroundObj):
+	def resolveActivePath(self, foregroundObj, thorough=False):
 		"""Best-effort synchronous lookup, intended for the small UIA subtree
 		walk this needs - callers on the main thread should keep foregroundObj
-		shallow. Returns None if no strategy could confirm the active tab."""
+		shallow. Returns None if no strategy could confirm the active tab.
+
+		thorough=True widens the value-scan budget for the rare case where
+		the normal shallow scan comes up empty (e.g. a UI transition right
+		after alt+tab has momentarily deepened where the breadcrumb sits in
+		the tree). Callers should only opt into this as a last resort before
+		giving up, since it costs more UIA round-trips."""
 		strategies = (
 			("value_scan", self._resolveByValueScan),
 			("class_name", self._resolveByClassName),
@@ -153,7 +161,10 @@ class ActiveTabPathResolver:
 		)
 		for strategyName, strategyFn in orderedStrategies:
 			try:
-				resolvedPath = strategyFn(foregroundObj)
+				if thorough and strategyName == "value_scan":
+					resolvedPath = strategyFn(foregroundObj, maxNodes=150, maxDepth=10)
+				else:
+					resolvedPath = strategyFn(foregroundObj)
 				if resolvedPath:
 					self._workingStrategyName = strategyName
 					return resolvedPath
@@ -262,6 +273,47 @@ class ActiveTabPathResolver:
 			return candidatePath if os.path.isdir(candidatePath) else None
 		except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError):
 			return None
+
+
+# ----------------------------------------------------------------------
+# Explorer responsiveness probe (freeze prevention)
+#
+# shell.Windows() and every property read on a Shell.Application window
+# object (Document.Folder, LocationURL, ...) are marshaled through the
+# message queue of the Explorer window that owns them. If that window is
+# still busy - for example right after opening a folder with a lot of
+# items, or a folder on a slow network path - the window's queue is not
+# being pumped, and the COM call blocks on NVDA's main thread until
+# Explorer catches up. That is the multi-second freeze reported when
+# opening folders: nothing is wrong with the COM code itself, it is just
+# waiting for a message queue that is not being serviced yet.
+#
+# SendMessageTimeoutW with SMTO_ABORTIFHUNG gives a cheap, bounded way to
+# check whether that queue is currently being pumped BEFORE making the
+# expensive COM call, so xPlorer can fall back to the last known path
+# instead of hanging the main thread until Explorer becomes responsive.
+# ----------------------------------------------------------------------
+_WM_NULL = 0x0000
+_SMTO_ABORTIFHUNG = 0x0002
+_SMTO_BLOCK = 0x0001
+
+
+def _isExplorerWindowResponsive(hwnd, timeoutMs=150):
+	"""Best-effort, bounded (<= timeoutMs) check of whether hwnd's message
+	queue is currently being pumped. Returns True if we cannot determine
+	this (e.g. the API call itself fails) so a probe failure never blocks
+	legitimate path lookups - it only ever skips them when Explorer is
+	confirmed to be busy."""
+	try:
+		result = ctypes.wintypes.DWORD()
+		sent = ctypes.windll.user32.SendMessageTimeoutW(
+			hwnd, _WM_NULL, 0, 0,
+			_SMTO_ABORTIFHUNG | _SMTO_BLOCK, timeoutMs, ctypes.byref(result)
+		)
+		return bool(sent)
+	except (AttributeError, OSError, ValueError) as e:
+		log.debug(f"xPlorer: responsiveness probe failed, assuming responsive: {e}")
+		return True
 
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
@@ -414,6 +466,15 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			if not winUser.isWindow(target_hwnd):
 				return self._getCachedExplorerPath(target_hwnd)
 
+			# Explorer is momentarily busy (e.g. it just finished loading a
+			# heavy folder) and not pumping messages - a COM call right now
+			# would block the main thread until it catches up. Use the
+			# cached path this cycle instead of freezing NVDA; the next
+			# focus/foreground event will retry once Explorer is free again.
+			if not _isExplorerWindowResponsive(target_hwnd):
+				log.debug("xPlorer: Explorer window busy, using cached path to avoid blocking")
+				return self._getCachedExplorerPath(target_hwnd)
+
 			shell = self.objShellApp
 			if not shell:
 				return self._getCachedExplorerPath(target_hwnd)
@@ -467,12 +528,23 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 					self._cached_explorer_time = current_time
 					self._cached_explorer_path = breadcrumbPath
 					return breadcrumbPath
-				# Could not confirm which tab is active: return the cache only
-				# if it still matches one of the currently-open tabs, otherwise
-				# refuse to guess rather than reporting a possibly-wrong tab.
-				cachedForThisWindow = self._getCachedExplorerPath(target_hwnd)
-				if cachedForThisWindow in matchingPaths:
-					return cachedForThisWindow
+				# One more, wider attempt before giving up: a UI transition
+				# (e.g. right after alt+tab) can momentarily leave the normal
+				# shallow scan without a hit even though the breadcrumb bar
+				# is present a little deeper in the tree.
+				breadcrumbPath = self._tabPathResolver.resolveActivePath(fg, thorough=True)
+				if breadcrumbPath and breadcrumbPath in matchingPaths:
+					self._cached_explorer_hwnd = target_hwnd
+					self._cached_explorer_time = current_time
+					self._cached_explorer_path = breadcrumbPath
+					return breadcrumbPath
+				# Could not confirm which tab is active. Falling back to
+				# "the cache if it happens to match one of the open tabs" is
+				# NOT safe here: matching one of the tabs doesn't mean it's
+				# the ACTIVE one, and in practice this reliably re-reported
+				# whichever tab (typically the main folder) had been visited
+				# previously - that is the "bounces back to the main folder"
+				# symptom. Refuse to guess instead of risking a wrong answer.
 				log.debug("xPlorer: multiple tabs share this hwnd and the active one "
 						"could not be confirmed; refusing to guess a path")
 				return None
@@ -519,6 +591,16 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				return None
 
 			target_hwnd = fg.windowHandle
+			if not winUser.isWindow(target_hwnd):
+				return None
+
+			# Same freeze-prevention probe as _getCurrentPathFromExplorer:
+			# skip the COM enumeration entirely while Explorer's message
+			# queue is busy rather than blocking on it.
+			if not _isExplorerWindowResponsive(target_hwnd):
+				log.debug("xPlorer: Explorer window busy, skipping window retrieval to avoid blocking")
+				return None
+
 			shell = self.objShellApp
 			if not shell:
 				return None
@@ -1035,4 +1117,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def event_selection(self, obj, nextHandler):
 		self.manager.event_selection(obj, nextHandler)
+
+
 
