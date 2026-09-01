@@ -3,6 +3,7 @@
 import ui
 import api
 import os
+import threading
 import wx
 from logHandler import log
 import addonHandler
@@ -21,72 +22,85 @@ class ClipboardManager:
 		focus = api.getFocusObject()
 		if not focus or focus.appModule.appName != "explorer":
 			return
-		try:
-			selectedItems, _ignore = self.plugin._getSelectedItems()
-			if not selectedItems:
-				ui.message(_("No items selected"))
-				return
-			folders = []
-			files = []
-			for name, path in selectedItems:
-				if os.path.isdir(path):
-					folders.append(name)
-				else:
-					files.append(name)
-			folders.sort()
-			files.sort()
-			sortedNames = folders + files
-			namesText = "\n".join(sortedNames)
-			if wx.TheClipboard.Open():
-				try:
-					wx.TheClipboard.SetData(wx.TextDataObject(namesText))
-					if len(selectedItems) == 1:
-						ui.message(_("Copied 1 item name to clipboard"))
+
+		def handleSelection(selectedItems, _hwnd):
+			try:
+				if not selectedItems:
+					ui.message(_("No items selected"))
+					return
+				folders = []
+				files = []
+				for name, path in selectedItems:
+					if os.path.isdir(path):
+						folders.append(name)
 					else:
-						ui.message(_("Copied {count} item names to clipboard").format(count=len(selectedItems)))
-				finally:
-					wx.TheClipboard.Close()
-			else:
-				ui.message(_("Could not open clipboard"))
-		except Exception as e:
-			log.error(f"Error in copySelectedNames: {e}")
-			ui.message(_("Error copying names to clipboard"))
+						files.append(name)
+				folders.sort()
+				files.sort()
+				sortedNames = folders + files
+				namesText = "\n".join(sortedNames)
+				if wx.TheClipboard.Open():
+					try:
+						wx.TheClipboard.SetData(wx.TextDataObject(namesText))
+						if len(selectedItems) == 1:
+							ui.message(_("Copied 1 item name to clipboard"))
+						else:
+							ui.message(_("Copied {count} item names to clipboard").format(count=len(selectedItems)))
+					finally:
+						wx.TheClipboard.Close()
+				else:
+					ui.message(_("Could not open clipboard"))
+			except Exception as e:
+				log.error(f"Error in copySelectedNames: {e}")
+				ui.message(_("Error copying names to clipboard"))
+
+		self.plugin._getSelectedItemsAsync(handleSelection)
 
 	def copyFileContent(self):
 		focus = api.getFocusObject()
 		if not focus or focus.appModule.appName != "explorer":
 			return
-		try:
-			selectedItems, _ignore = self.plugin._getSelectedItems()
-			if not selectedItems:
-				ui.message(_("No items selected"))
-				return
-			for name, path in selectedItems:
-				if os.path.isdir(path):
-					ui.message(_("Cannot copy content of folders, please select files only"))
+
+		def handleSelection(selectedItems, _hwnd):
+			try:
+				if not selectedItems:
+					ui.message(_("No items selected"))
 					return
-			textExtensions = ['.txt', '.py', '.js', '.html', '.css', '.xml', '.json', 
-							'.csv', '.md', '.ini', '.conf', '.cfg', '.java', '.cpp', 
-							'.c', '.h', '.php', '.rb', '.pl', '.sh', '.bat', '.ps1', '.rtf']
-			textFiles = []
-			for name, path in selectedItems:
-				fileExt = os.path.splitext(path)[1].lower()
-				if fileExt in textExtensions:
-					textFiles.append(path)
-				else:
-					log.debug(f"Skipping non-text file: {name}")
-			if not textFiles:
-				ui.message(_("No text files selected"))
-				return
-			totalSize = 0
-			for filePath in textFiles:
-				try:
-					totalSize += os.path.getsize(filePath)
-				except:
-					pass
-			if totalSize > 15 * 1024 * 1024:
-				ui.message(_("Total file size is too large to copy content"))
-				return
+				for name, path in selectedItems:
+					if os.path.isdir(path):
+						ui.message(_("Cannot copy content of folders, please select files only"))
+						return
+				textExtensions = ['.txt', '.py', '.js', '.html', '.css', '.xml', '.json',
+								'.csv', '.md', '.ini', '.conf', '.cfg', '.java', '.cpp',
+								'.c', '.h', '.php', '.rb', '.pl', '.sh', '.bat', '.ps1', '.rtf']
+				textFiles = []
+				for name, path in selectedItems:
+					fileExt = os.path.splitext(path)[1].lower()
+					if fileExt in textExtensions:
+						textFiles.append(path)
+					else:
+						log.debug(f"Skipping non-text file: {name}")
+				if not textFiles:
+					ui.message(_("No text files selected"))
+					return
+				totalSize = 0
+				for filePath in textFiles:
+					try:
+						totalSize += os.path.getsize(filePath)
+					except (OSError, ValueError):
+						pass
+				if totalSize > 15 * 1024 * 1024:
+					ui.message(_("Total file size is too large to copy content"))
+					return
+				threading.Thread(target=self._readAndCopyFileContent, args=(textFiles,), daemon=True).start()
+			except Exception as e:
+				log.error(f"Error in copyFileContent: {e}")
+				ui.message(_("Error copying file content"))
+
+		self.plugin._getSelectedItemsAsync(handleSelection)
+
+	def _readAndCopyFileContent(self, textFiles):
+		try:
 			combinedContent = ""
 			filesProcessed = 0
 			for filePath in textFiles:
@@ -119,25 +133,29 @@ class ClipboardManager:
 							combinedContent += "\n\n"
 						combinedContent += content
 						filesProcessed += 1
-					except:
+					except (OSError, UnicodeError):
 						log.error(f"Failed to read file: {filePath}")
 				except Exception as e:
 					log.error(f"Error reading file {filePath}: {e}")
-			if not combinedContent.strip():
-				ui.message(_("No content could be read from selected files"))
-				return
-			if wx.TheClipboard.Open():
-				try:
-					wx.TheClipboard.SetData(wx.TextDataObject(combinedContent))
-					if filesProcessed == 1:
-						ui.message(_("Content from 1 file copied to clipboard"))
-					else:
-						ui.message(_("Content from {count} files copied to clipboard").format(count=filesProcessed))
-				finally:
-					wx.TheClipboard.Close()
-			else:
-				ui.message(_("Could not open clipboard"))
+
+			def finish():
+				if not combinedContent.strip():
+					ui.message(_("No content could be read from selected files"))
+					return
+				if wx.TheClipboard.Open():
+					try:
+						wx.TheClipboard.SetData(wx.TextDataObject(combinedContent))
+						if filesProcessed == 1:
+							ui.message(_("Content from 1 file copied to clipboard"))
+						else:
+							ui.message(_("Content from {count} files copied to clipboard").format(count=filesProcessed))
+					finally:
+						wx.TheClipboard.Close()
+				else:
+					ui.message(_("Could not open clipboard"))
+
+			wx.CallAfter(finish)
 		except Exception as e:
 			log.error(f"Error in copyFileContent: {e}")
-			ui.message(_("Error copying file content"))
+			wx.CallAfter(ui.message, _("Error copying file content"))
 

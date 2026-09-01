@@ -78,13 +78,14 @@ class FileOperations:
 		self._calculation_active = False
 		self._stop_beep_event = threading.Event()
 		self._size_thread = None
+		self._sizeCalcGeneration = 0
 
 	def cleanup(self):
 		self._stop_calculation()
 		if self.rename_dialog:
 			try:
 				self.rename_dialog.Destroy()
-			except:
+			except (RuntimeError, AttributeError):
 				pass
 
 	def _stop_calculation(self):
@@ -204,120 +205,224 @@ class FileOperations:
 		focus = api.getFocusObject()
 		if not focus or focus.appModule.appName != "explorer":
 			return
-			
-		selected_items, _ignore = self.plugin._getSelectedItems()
-		if not selected_items:
-			ui.message(_("No items selected"))
-			return
-		
-		inaccessible_items = []
-		for name, path in selected_items:
-			if not self._check_access_permission(path):
-				inaccessible_items.append(name)
-		
-		if inaccessible_items and len(inaccessible_items) == len(selected_items):
-			ui.message(_("No access to size data"))
-			return
-		
-		self._stop_calculation()
-		self._calculation_active = True
-		self._start_beeping()
-		
-		def calculate_size():
-			try:
-				total_size = 0
-				accessible_item_count = 0
-				is_drive = False
-				
-				for name, path in selected_items:
-					if not self._calculation_active:
-						break
-					if name in inaccessible_items:
-						continue
-						
-					accessible_item_count += 1
-					
-					if os.path.isfile(path):
-						try:
-							file_size = os.path.getsize(path)
-							total_size += file_size
-						except Exception as e:
-							log.error(f"Error getting file size for {name}: {e}")
-							
-					elif os.path.isdir(path):
-						try:
-							drive_letter = os.path.splitdrive(path)[0]
-							if drive_letter and len(drive_letter) == 2 and drive_letter[1] == ':':
-								if path == drive_letter + "\\":
-									is_drive = True
-									import ctypes
-									free_bytes = ctypes.c_ulonglong(0)
-									total_bytes = ctypes.c_ulonglong(0)
-									if ctypes.windll.kernel32.GetDiskFreeSpaceExW(
-										ctypes.c_wchar_p(path), None,
-										ctypes.byref(total_bytes),
-										ctypes.byref(free_bytes)
-									):
-										used_size = total_bytes.value - free_bytes.value
-										total_size += used_size
-									continue
-							
-							folder_size = self._get_folder_size_accurate(path)
-							total_size += folder_size
-						except Exception as e:
-							log.error(f"Error getting folder size for {name}: {e}")
-				
-				self._stop_beeping()
-				self._calculation_active = False
-				
-				formatted_size = self._format_size(total_size)
-				
-				if accessible_item_count == 0:
-					display_message = _("No access to size data")
-				elif accessible_item_count == 1:
-					if is_drive:
-						display_message = formatted_size
+
+		def handleSelection(selected_items, _hwnd):
+			if not selected_items:
+				ui.message(_("No items selected"))
+				return
+
+			inaccessible_items = []
+			for name, path in selected_items:
+				if not self._check_access_permission(path):
+					inaccessible_items.append(name)
+
+			if inaccessible_items and len(inaccessible_items) == len(selected_items):
+				ui.message(_("No access to size data"))
+				return
+
+			# Signal any still-running calculation from a previous
+			# invocation (e.g. a slow folder-size walk left over from
+			# another tab) to stop without blocking the main thread waiting
+			# for it to actually exit - the generation check below is what
+			# makes it safe to let it keep running harmlessly in the
+			# background instead of joining it here.
+			self._calculation_active = False
+			self._stop_beeping()
+			self._sizeCalcGeneration += 1
+			myGeneration = self._sizeCalcGeneration
+			self._calculation_active = True
+			self._start_beeping()
+
+			def calculate_size():
+				try:
+					total_size = 0
+					accessible_item_count = 0
+					is_drive = False
+
+					for name, path in selected_items:
+						if not self._calculation_active or myGeneration != self._sizeCalcGeneration:
+							break
+						if name in inaccessible_items:
+							continue
+
+						accessible_item_count += 1
+
+						if os.path.isfile(path):
+							try:
+								file_size = os.path.getsize(path)
+								total_size += file_size
+							except Exception as e:
+								log.error(f"Error getting file size for {name}: {e}")
+
+						elif os.path.isdir(path):
+							try:
+								drive_letter = os.path.splitdrive(path)[0]
+								if drive_letter and len(drive_letter) == 2 and drive_letter[1] == ':':
+									if path == drive_letter + "\\":
+										is_drive = True
+										import ctypes
+										free_bytes = ctypes.c_ulonglong(0)
+										total_bytes = ctypes.c_ulonglong(0)
+										if ctypes.windll.kernel32.GetDiskFreeSpaceExW(
+											ctypes.c_wchar_p(path), None,
+											ctypes.byref(total_bytes),
+											ctypes.byref(free_bytes)
+										):
+											used_size = total_bytes.value - free_bytes.value
+											total_size += used_size
+										continue
+
+								folder_size = self._get_folder_size_accurate(path)
+								total_size += folder_size
+							except Exception as e:
+								log.error(f"Error getting folder size for {name}: {e}")
+
+					if myGeneration != self._sizeCalcGeneration:
+						# Superseded by a newer say-size request (e.g. the
+						# user switched tabs/windows and asked again before
+						# this one finished) - discard silently instead of
+						# speaking a size for whatever used to be selected.
+						return
+
+					self._stop_beeping()
+					self._calculation_active = False
+
+					formatted_size = self._format_size(total_size)
+
+					if accessible_item_count == 0:
+						display_message = _("No access to size data")
+					elif accessible_item_count == 1:
+						if is_drive:
+							display_message = formatted_size
+						else:
+							display_message = formatted_size
 					else:
-						display_message = formatted_size
-				else:
-					display_message = _("{count} items {size}").format(
-						count=accessible_item_count, 
-						size=formatted_size
-					)
-				
-				core.callLater(0, ui.message, display_message)
-				
-			except Exception as e:
-				log.error(f"Error in size calculation thread: {e}")
-				self._stop_beeping()
-				self._calculation_active = False
-				core.callLater(0, ui.message, _("Error calculating size"))
-		
-		self._size_thread = threading.Thread(target=calculate_size, daemon=True)
-		self._size_thread.start()
+						display_message = _("{count} items {size}").format(
+							count=accessible_item_count,
+							size=formatted_size
+						)
+
+					core.callLater(0, ui.message, display_message)
+
+				except Exception as e:
+					log.error(f"Error in size calculation thread: {e}")
+					if myGeneration == self._sizeCalcGeneration:
+						self._stop_beeping()
+						self._calculation_active = False
+						core.callLater(0, ui.message, _("Error calculating size"))
+
+			self._size_thread = threading.Thread(target=calculate_size, daemon=True)
+			self._size_thread.start()
+
+		self.plugin._getSelectedItemsAsync(handleSelection)
 
 	def renameFile(self):
 		focus = api.getFocusObject()
 		if not focus or focus.appModule.appName != "explorer":
 			return
-		try:
-			selectedItems, _ignore = self.plugin._getSelectedItems()
-			if not selectedItems:
-				ui.message(_("No items selected"))
-				return
-			if len(selectedItems) > 1:
-				ui.message(_("Please select only one file"))
-				return
-			file_path = selectedItems[0][1]
-			if not os.path.isfile(file_path):
-				ui.message(_("Please select a file, not a folder"))
-				return
-			file_name = os.path.basename(file_path)
-			dir_name = os.path.dirname(file_path)
-			wx.CallAfter(self._show_rename_dialog, file_name, dir_name, file_path)
-		except Exception as e:
-			log.error(f"Error in renameFile: {e}")
-			ui.message(_("Error renaming file"))
+
+		def handleSelection(selectedItems, _hwnd):
+			try:
+				if not selectedItems:
+					ui.message(_("No items selected"))
+					return
+				if len(selectedItems) > 1:
+					ui.message(_("Please select only one file"))
+					return
+				file_path = selectedItems[0][1]
+				if not os.path.isfile(file_path):
+					ui.message(_("Please select a file, not a folder"))
+					return
+				file_name = os.path.basename(file_path)
+				dir_name = os.path.dirname(file_path)
+				wx.CallAfter(self._show_rename_dialog, file_name, dir_name, file_path)
+			except Exception as e:
+				log.error(f"Error in renameFile: {e}")
+				ui.message(_("Error renaming file"))
+
+		self.plugin._getSelectedItemsAsync(handleSelection)
+
+	def autoPasteRenameFromClipboard(self):
+		focus = api.getFocusObject()
+		if not focus or focus.appModule.appName != "explorer":
+			return
+
+		def handleSelection(selectedItems, _hwnd):
+			try:
+				if not selectedItems:
+					ui.message(_("No items selected"))
+					return
+				if len(selectedItems) > 1:
+					ui.message(_("Please select only one item"))
+					return
+				file_path = selectedItems[0][1]
+				is_folder = os.path.isdir(file_path)
+				if not is_folder and not os.path.isfile(file_path):
+					ui.message(_("Selected item no longer exists"))
+					return
+
+				clipboard_text = None
+				try:
+					if wx.TheClipboard.Open():
+						try:
+							data = wx.TextDataObject()
+							if wx.TheClipboard.GetData(data):
+								clipboard_text = data.GetText().strip()
+						finally:
+							wx.TheClipboard.Close()
+				except Exception as e:
+					log.error(f"Error reading clipboard for auto paste rename: {e}")
+
+				if not clipboard_text:
+					ui.message(_("Clipboard is empty"))
+					return
+
+				invalid_chars = '<>:"/\\|?*'
+				if '\n' in clipboard_text or '\r' in clipboard_text or any(c in clipboard_text for c in invalid_chars):
+					ui.message(_("Clipboard text is not a valid name"))
+					return
+
+				original_dir = os.path.dirname(file_path)
+				original_name = os.path.basename(file_path)
+
+				if is_folder:
+					# Folders don't have a meaningful "extension" to
+					# preserve - use the clipboard text as the new folder
+					# name as-is.
+					new_name = clipboard_text
+				else:
+					original_ext = os.path.splitext(original_name)[1]
+					# If the clipboard text already looks like "name.ext",
+					# use it verbatim (extension included). Otherwise treat
+					# it as just a new name and keep the selected file's
+					# own extension, per the requested behavior.
+					_clipboard_base, clipboard_ext = os.path.splitext(clipboard_text)
+					new_name = clipboard_text if clipboard_ext else clipboard_text + original_ext
+
+				new_path = os.path.join(original_dir, new_name)
+
+				if os.path.normcase(new_path) == os.path.normcase(file_path):
+					ui.message(_("New name is the same as the current name"))
+					return
+
+				if os.path.exists(new_path):
+					ui.message(_("An item named {name} already exists").format(name=new_name))
+					return
+
+				try:
+					os.rename(file_path, new_path)
+					ui.message(_("Renamed to {name}").format(name=new_name))
+					operationHistory = getattr(self.plugin, "operationHistory", None)
+					if operationHistory:
+						operationHistory.addEntry(_("Renamed {old} to {new}").format(old=original_name, new=new_name))
+				except OSError as e:
+					log.error(f"Error renaming file via clipboard auto-paste: {e}")
+					ui.message(_("Error renaming file"))
+			except Exception as e:
+				log.error(f"Error in autoPasteRenameFromClipboard: {e}")
+				ui.message(_("Error renaming file"))
+
+		self.plugin._getSelectedItemsAsync(handleSelection)
 
 	def _show_rename_dialog(self, file_name, dir_name, file_path):
 		dialog = None
@@ -342,6 +447,10 @@ class FileOperations:
 				try:
 					os.rename(file_path, new_path)
 					ui.message(_("File renamed to {name}").format(name=dialog.new_name))
+					batchRename = getattr(self.plugin, "batchRename", None)
+					if batchRename:
+						batchRename.saveUndoMapping([{"original": file_path, "renamed": new_path}])
+						batchRename.logOperation(_("Renamed 1 file"))
 				except Exception as e:
 					log.error(f"Error renaming file: {e}")
 					ui.message(_("Error renaming file"))

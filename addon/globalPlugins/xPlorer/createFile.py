@@ -189,7 +189,7 @@ class CreateFileManager:
 		if self.create_file_dialog:
 			try:
 				self.create_file_dialog.Destroy()
-			except:
+			except (RuntimeError, AttributeError):
 				pass
 				
 	def create_file(self):
@@ -198,28 +198,32 @@ class CreateFileManager:
 			ui.message(_("Not in File Explorer"))
 			log.debug("create_file: Not in Explorer")
 			return
-		
-		current_path = self.plugin._getCurrentPath()
-		log.debug(f"create_file: initial path = {current_path}")
-		if current_path and os.path.isdir(current_path):
-			wx.CallAfter(self._show_create_file_dialog, current_path)
-		else:
-			self._retry_attempts = 0
-			core.callLater(300, self._retry_get_path)
-		
+
+		def handlePath(current_path):
+			log.debug(f"create_file: initial path = {current_path}")
+			if current_path and os.path.isdir(current_path):
+				wx.CallAfter(self._show_create_file_dialog, current_path)
+			else:
+				self._retry_attempts = 0
+				core.callLater(300, self._retry_get_path)
+
+		self.plugin._getCurrentPathAsync(handlePath)
+
 	def _retry_get_path(self):
 		self._retry_attempts += 1
 		if self._retry_attempts > 3:
 			ui.message(_("Unable to get current directory after multiple attempts"))
 			log.debug("create_file: path retry exhausted")
 			return
-		
-		current_path = self.plugin._getCurrentPath()
-		log.debug(f"create_file: retry {self._retry_attempts}, path = {current_path}")
-		if current_path and os.path.isdir(current_path):
-			wx.CallAfter(self._show_create_file_dialog, current_path)
-		else:
-			core.callLater(300, self._retry_get_path)
+
+		def handlePath(current_path):
+			log.debug(f"create_file: retry {self._retry_attempts}, path = {current_path}")
+			if current_path and os.path.isdir(current_path):
+				wx.CallAfter(self._show_create_file_dialog, current_path)
+			else:
+				core.callLater(300, self._retry_get_path)
+
+		self.plugin._getCurrentPathAsync(handlePath)
 		
 	def _show_create_file_dialog(self, current_path):
 		try:
@@ -246,7 +250,7 @@ class CreateFileManager:
 			if self.create_file_dialog:
 				try:
 					self.create_file_dialog.Destroy()
-				except:
+				except (RuntimeError, AttributeError):
 					pass
 				self.create_file_dialog = None
 		finally:
@@ -286,6 +290,11 @@ class CreateFileManager:
 				ui.message(_("1 file created"))
 			else:
 				ui.message(_("{count} files created").format(count=created_count))
+			if created_count:
+				operationHistory = getattr(self.plugin, "operationHistory", None)
+				if operationHistory:
+					operationHistory.addEntry(_("Created {count} file(s) in {path}").format(
+							count=created_count, path=directory))
 		except Exception as e:
 			log.error(f"Error in create_files: {e}")
 			ui.message(_("Error creating files"))

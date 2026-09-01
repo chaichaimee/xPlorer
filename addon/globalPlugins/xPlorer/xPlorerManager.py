@@ -1,9 +1,9 @@
 # xPlorerManager.py
-# Copyright (C) 2026 Chai Chaimee
-# Licensed under GNU General Public License. See COPYING.txt for details.
 
 import ui
 import api
+import ctypes
+import ctypes.wintypes
 from NVDAObjects import NVDAObject
 from NVDAObjects.UIA import UIA
 from controlTypes import Role, State
@@ -25,15 +25,30 @@ from _ctypes import COMError as CtypesCOMError
 addonHandler.initTranslation()
 log.debug("xPlorerManager module loaded")
 
+_WM_NULL = 0x0000
+_SMTO_ABORTIFHUNG = 0x0002
+_SMTO_BLOCK = 0x0001
+
+def _isExplorerWindowResponsive(hwnd, timeoutMs=100):
+	try:
+		result = ctypes.wintypes.DWORD()
+		sent = ctypes.windll.user32.SendMessageTimeoutW(
+			hwnd, _WM_NULL, 0, 0,
+			_SMTO_ABORTIFHUNG | _SMTO_BLOCK, timeoutMs, ctypes.byref(result)
+		)
+		return bool(sent)
+	except (AttributeError, OSError, ValueError) as e:
+		log.debug(f"xPlorer: responsiveness probe failed, assuming responsive: {e}")
+		return True
+
+
 _global_plugin_instance = None
 
 def set_global_plugin(plugin):
 	global _global_plugin_instance
 	_global_plugin_instance = plugin
 
-# ----------------------------------------------------------------------
-# Overlay classes
-# ----------------------------------------------------------------------
+
 class LaconicFocusAncestor(NVDAObject):
 	isPresentableFocusAncestor = False
 	def _get_windowClassName(self):
@@ -51,9 +66,7 @@ class EmptyFolderStaticText(NVDAObject):
 			return "Empty Folder"
 		return super().name
 
-# ----------------------------------------------------------------------
-# Settings panel
-# ----------------------------------------------------------------------
+
 class xPlorerSettingsPanel(SettingsPanel):
 	title = "xPlorer"
 	def makeSettings(self, settingsSizer):
@@ -69,22 +82,54 @@ class xPlorerSettingsPanel(SettingsPanel):
 		self.sayFileExplorer.SetValue(conf["sayFileExplorer"])
 		self.autoPasteClipboardToRename = sHelper.addItem(wx.CheckBox(self, label="Automatically paste clipboard content into rename field"))
 		self.autoPasteClipboardToRename.SetValue(conf.get("autoPasteClipboardToRename", True))
+
+		self.showUncompressDialog = sHelper.addItem(wx.CheckBox(self, label="Show uncompress dialog"))
+		self.showUncompressDialog.SetValue(conf.get("showUncompressDialog", True))
+		self.showUncompressDialog.Bind(wx.EVT_CHECKBOX, self._onShowUncompressDialogChanged)
+
+		self.uncompressDefaultActionLabel = wx.StaticText(self, label="When the dialog is hidden, extract using:")
+		sHelper.addItem(self.uncompressDefaultActionLabel)
+		self.uncompressDefaultActionChoices = [
+			("extract_to", "Extract to a subfolder named after the archive"),
+			("extract_here", "Extract here"),
+		]
+		self.uncompressDefaultAction = sHelper.addItem(wx.Choice(
+			self, choices=[label for _key, label in self.uncompressDefaultActionChoices]
+		))
+		storedAction = conf.get("uncompressDefaultAction", "extract_to")
+		actionKeys = [key for key, _label in self.uncompressDefaultActionChoices]
+		selectionIndex = actionKeys.index(storedAction) if storedAction in actionKeys else 0
+		self.uncompressDefaultAction.SetSelection(selectionIndex)
+
+		self._updateUncompressDefaultActionVisibility()
+
+	def _onShowUncompressDialogChanged(self, event):
+		self._updateUncompressDefaultActionVisibility()
+		event.Skip()
+
+	def _updateUncompressDefaultActionVisibility(self):
+		showDefaultActionControl = not self.showUncompressDialog.GetValue()
+		self.uncompressDefaultActionLabel.Show(showDefaultActionControl)
+		self.uncompressDefaultAction.Show(showDefaultActionControl)
+		self.Layout()
+
 	def onSave(self):
+		actionKeys = [key for key, _label in self.uncompressDefaultActionChoices]
 		conf = {
 			"autoSelectFirstItem": self.autoSelectFirstItem.GetValue(),
 			"announceEmptyFolder": self.announceEmptyFolder.GetValue(),
 			"suppressDirectUIAnnounce": self.suppressDirectUIAnnounce.GetValue(),
 			"sayFileExplorer": self.sayFileExplorer.GetValue(),
 			"autoPasteClipboardToRename": self.autoPasteClipboardToRename.GetValue(),
+			"showUncompressDialog": self.showUncompressDialog.GetValue(),
+			"uncompressDefaultAction": actionKeys[self.uncompressDefaultAction.GetSelection()],
 		}
 		saveConfig(conf)
 		if _global_plugin_instance and hasattr(_global_plugin_instance, 'manager'):
 			_global_plugin_instance.manager._invalidateConfigCache()
 			_global_plugin_instance.manager._update_speech_dict_for_title()
 
-# ----------------------------------------------------------------------
-# ExplorerManager
-# ----------------------------------------------------------------------
+
 class ExplorerManager:
 	def __init__(self, plugin):
 		log.debug("ExplorerManager.__init__")
@@ -101,26 +146,20 @@ class ExplorerManager:
 
 		self._last_processed_key = None
 		self._last_processed_time = 0
-		self._debounce_interval = 0.05
+		self._debounce_interval = 0.1
 
 		self._cached_provider_desc = {}
-		self._cache_timeout = 0.5
-		self._max_cache_size = 20
+		self._cache_timeout = 0.4
+		self._max_cache_size = 15
 
 		self._foregroundTransition = False
 		self._foreground_task = None
 		self._last_foreground_time = 0
 		self._last_sayFileExplorer_setting = None
+		self._foregroundGeneration = 0
 
 		self._speech_dict_task = None
-		self._homeview_focus_task = None   # store handle of scheduled set_focus
 
-		# getConfig() runs on essentially every object that gains focus in
-		# Explorer (chooseNVDAObjectOverlayClasses, _perform_auto_select),
-		# but loadConfig() is a disk read - on a slow/portable/removable
-		# drive that adds up fast. A short TTL cache avoids re-reading the
-		# same unchanged file dozens of times a second during normal
-		# navigation, without noticeably delaying a real settings change.
 		self._config_cache = None
 		self._config_cache_time = 0.0
 
@@ -159,14 +198,12 @@ class ExplorerManager:
 				)
 				speechDictHandler.dictionaries["temp"].append(entry)
 				self._temp_entry = entry
-				log.debug("Added speech dict entry to suppress '- File Explorer'")
 			elif not should_suppress and self._temp_entry is not None:
 				try:
 					speechDictHandler.dictionaries["temp"].remove(self._temp_entry)
 				except ValueError:
 					pass
 				self._temp_entry = None
-				log.debug("Removed speech dict entry for '- File Explorer'")
 			self._last_sayFileExplorer_setting = should_suppress
 
 		core.callLater(100, do_update)
@@ -177,7 +214,7 @@ class ExplorerManager:
 		current_time = time.time()
 		try:
 			obj_key = (obj.windowHandle, obj.role, id(obj))
-		except Exception:
+		except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError):
 			obj_key = id(obj)
 		if self._last_processed_key == obj_key:
 			if current_time - self._last_processed_time < self._debounce_interval:
@@ -235,58 +272,36 @@ class ExplorerManager:
 		except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError):
 			return False
 
-	def _cancelHomeViewFocusTask(self):
-		if self._homeview_focus_task:
-			self._homeview_focus_task.Stop()
-			self._homeview_focus_task = None
-
-	def _scheduleHomeViewFocus(self, paneObj):
-		"""Explorer's Home view sometimes needs a nudge into its second child
-		shortly after gaining focus. The correction is scheduled 200ms out,
-		so it must re-validate everything at fire time rather than trusting
-		what was true when it was scheduled."""
-		self._cancelHomeViewFocusTask()
-		expected_hwnd = getattr(paneObj, "windowHandle", None)
-		pane_ref = paneObj
-
-		def set_focus():
-			if self._isForeignDialogOpen():
+	def _validateHomeViewSelection(self, paneObj):
+		# Previously this scheduled a core.callLater(150, ...) that, once
+		# it fired, called setFocus() on a hardcoded
+		# pane_ref.firstChild.children[1]. Both halves of that were the
+		# root cause of focus "bouncing" back into the Home view: the
+		# 150ms delay raced against the user's own next keypress (e.g.
+		# pressing Enter then immediately downArrow landed the forced
+		# focus call after the user had already moved into a subfolder),
+		# and the hardcoded child index pointed at the wrong element the
+		# moment Explorer's Home view layout shifted by even one item -
+		# which Windows then resolves by throwing focus back to the
+		# window's root. Explorer's own UIA events already put focus on
+		# the correct element without any help; this is now a passive,
+		# synchronous, same-call-stack check with no timer and no forced
+		# setFocus(), used only to confirm - for logging/diagnostic
+		# purposes - that the Home view already carries a real selection
+		# rather than to alter it.
+		try:
+			homeListView = getattr(paneObj, "firstChild", None)
+			if homeListView is None:
 				return
-			try:
-				fg = api.getForegroundObject()
-				if not fg or not fg.appModule or fg.appModule.appName != "explorer":
-					return
-				if expected_hwnd is not None and getattr(fg, "windowHandle", None) != expected_hwnd:
-					return
-				# hwnd alone is not enough proof: on a tabbed Explorer window
-				# the hwnd stays identical across tabs, so a tab switch away
-				# from Home in the last 200ms would otherwise slip past the
-				# check above undetected. Re-check the LIVE focus target.
-				liveFocus = api.getFocusObject()
-				if not liveFocus or liveFocus.appModule is None or liveFocus.appModule.appName != "explorer":
-					return
-				stillOnHomeView = False
-				probe = liveFocus
-				for _ in range(4):
-					if probe is None:
-						break
-					if getattr(probe, "UIAAutomationId", None) == "HomeListView":
-						stillOnHomeView = True
-						break
-					probe = getattr(probe, "parent", None)
-				if not stillOnHomeView:
-					return
-				if pane_ref.firstChild and pane_ref.firstChild.children and len(pane_ref.firstChild.children) > 1:
-					pane_ref.firstChild.children[1].setFocus()
-			except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError):
-				pass
+			selectionPattern = getattr(homeListView, "UIASelectionPattern", None)
+			if selectionPattern is None:
+				return
+			currentSelection = selectionPattern.GetCurrentSelection()
+			if currentSelection is None or currentSelection.Length == 0:
+				log.debug("xPlorer: Home view gained focus with no natural selection yet")
+		except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError) as e:
+			log.debug(f"xPlorer: Home view selection check failed: {e}")
 
-		self._homeview_focus_task = core.callLater(200, set_focus)
-
-	# ------------------------------------------------------------------
-	# Detect if any foreign dialog or frame is currently open.
-	# Excludes NVDA's main window and xPlorer's own folder creation dialog.
-	# ------------------------------------------------------------------
 	def _isForeignDialogOpen(self):
 		for win in wx.GetTopLevelWindows():
 			if win.IsShown() and isinstance(win, (wx.Dialog, wx.Frame)):
@@ -300,7 +315,7 @@ class ExplorerManager:
 	def terminate(self):
 		self._speech_dict_task = None
 		self._foreground_task = None
-		self._cancelHomeViewFocusTask()
+		self._explorer_focused = False
 
 		if self._temp_entry is not None:
 			try:
@@ -329,90 +344,92 @@ class ExplorerManager:
 			return
 
 		try:
-			if not obj or not obj.appModule or obj.appModule.appName != "explorer":
-				return
-			
 			if obj.role == Role.LIST and isinstance(obj, UIA) and self._isExplorerList(obj):
 				focus_item = obj.objectWithFocus()
 				if focus_item is not None and focus_item.role == Role.LISTITEM:
 					if hasattr(focus_item, 'UIASelectionItemPattern') and focus_item.UIASelectionItemPattern is not None:
 						focus_item.UIASelectionItemPattern.Select()
-						
-			elif obj.role == Role.LISTITEM and isinstance(obj, UIA):
-				parent = obj.parent
-				if parent and parent.role == Role.LIST and self._isExplorerList(parent):
-					if hasattr(obj, 'UIASelectionItemPattern') and obj.UIASelectionItemPattern is not None:
-						obj.UIASelectionItemPattern.Select()
-						
 		except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError):
 			pass
 
 	def event_gainFocus(self, obj, nextHandler):
-		# No longer block the whole event; let other add-ons process normally
+		if not getattr(self, "_explorer_focused", False):
+			return nextHandler()
+
+		nextHandlerFired = False
+		def callNextHandlerOnce():
+			nonlocal nextHandlerFired
+			if nextHandlerFired:
+				return
+			nextHandlerFired = True
+			nextHandler()
+
 		try:
 			if self._foregroundTransition or self.contextMenuActive or self.suppressAllAnnouncements:
-				nextHandler()
-				return
-			if obj is None or obj.appModule is None:
-				nextHandler()
-				return
+				return callNextHandlerOnce()
+				
+			if obj is None:
+				return callNextHandlerOnce()
+
+			targetHwnd = getattr(obj, "windowHandle", None)
+			if targetHwnd and not _isExplorerWindowResponsive(targetHwnd):
+				return callNextHandlerOnce()
+
 			if eventHandler.isPendingEvents("gainFocus"):
-				nextHandler()
-				return
+				return callNextHandlerOnce()
+				
 			if not self._should_process_event(obj):
-				nextHandler()
-				return
+				return callNextHandlerOnce()
+				
 			if not self._is_valid_uia_object(obj):
-				nextHandler()
-				return
+				return callNextHandlerOnce()
 
-			appName = obj.appModule.appName
-			if appName == "explorer":
-				if not self._explorer_focused:
-					self._explorer_focused = True
-					self._update_speech_dict_for_title()
-			else:
-				if self._explorer_focused:
-					self._explorer_focused = False
-					self._update_speech_dict_for_title()
+			try:
+				isHomeViewPane = (
+					obj.role == Role.PANE and obj.firstChild
+					and hasattr(obj.firstChild, "UIAAutomationId")
+					and obj.firstChild.UIAAutomationId == "HomeListView"
+				)
+			except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError):
+				isHomeViewPane = False
 
-			# NOTE: this check must run BEFORE _isValidExplorerContext below.
-			# The Home view's outer container reports Role.PANE, which
-			# _isValidExplorerContext (LIST/LISTITEM only) always rejects -
-			# previously this whole block sat after that check and could
-			# never execute at all.
-			if appName == "explorer":
-				try:
-					if (obj.role == Role.PANE and obj.firstChild
-							and hasattr(obj.firstChild, "UIAAutomationId")):
-						if obj.firstChild.UIAAutomationId == "HomeListView":
-							self._scheduleHomeViewFocus(obj)
-						else:
-							self._cancelHomeViewFocusTask()
-				except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError):
-					pass
+			if isHomeViewPane:
+				self._validateHomeViewSelection(obj)
 
 			if not self._isValidExplorerContext(obj):
-				nextHandler()
-				return
+				return callNextHandlerOnce()
 
-			# A real file/list focus event (e.g. focus landing directly on a
-			# LIST/LISTITEM in a different tab, with no intervening PANE
-			# gainFocus) also means any pending Home-view correction from a
-			# moment ago is stale and must not fire later.
-			self._cancelHomeViewFocusTask()
-
-			nextHandler()
+			callNextHandlerOnce()
+			
 		except (ComTypesCOMError, CtypesCOMError) as e:
 			log.debug(f"COMError suppressed in event_gainFocus: {e}")
+			callNextHandlerOnce()
 		except Exception as e:
 			log.debug(f"event_gainFocus failed: {e}")
+			callNextHandlerOnce()
 
 	def event_focusEntered(self, obj, nextHandler):
-		# Protect only auto-select; do not block the entire event
-		if obj.role == Role.LIST and isinstance(obj, UIA) and self._isExplorerList(obj):
-			if not self._isForeignDialogOpen():
-				self._perform_auto_select(obj)
+		if not getattr(self, "_explorer_focused", False):
+			try:
+				return nextHandler()
+			except (ComTypesCOMError, CtypesCOMError) as e:
+				log.debug(f"xPlorer: nextHandler failed in event_focusEntered: {e}")
+				return
+
+		try:
+			# Select the first/focused item synchronously, in the same event
+			# instead of deferring with core.callLater. A deferred call left
+			# a race window where Explorer's own follow-up gainFocus event
+			# for that same list (the natural landing on its first item)
+			# could arrive before the callback fired, tripping safety
+			# guards and silently no-op'ing the whole feature. Acting
+			# immediately, inline, removes that window entirely.
+			if obj.role == Role.LIST and isinstance(obj, UIA) and self._isExplorerList(obj):
+				if not self._isForeignDialogOpen():
+					self._perform_auto_select(obj)
+		except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError):
+			pass
+
 		try:
 			nextHandler()
 		except (ComTypesCOMError, CtypesCOMError) as e:
@@ -423,40 +440,48 @@ class ExplorerManager:
 	def event_foreground(self, obj, nextHandler):
 		current_time = time.time()
 		self._last_foreground_time = current_time
+		# Any foreground switch invalidates deferred tasks scheduled for a
+		# previous window - guards against a recycled HWND being reused by
+		# a brand-new window inside the delay window of a pending callback.
+		self._foregroundGeneration += 1
 
-		if obj and obj.appModule and obj.appModule.appName == "explorer":
-			# If a foreign dialog is open, immediately cancel any pending set_focus task
+		self._explorer_focused = False
+		try:
+			if obj and getattr(obj, "appModule", None) and obj.appModule.appName == "explorer":
+				self._explorer_focused = True
+		except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError):
+			pass
+
+		if self._explorer_focused:
+			log.debug(f"xPlorer TRACE: foreground explorer window hwnd={getattr(obj, 'windowHandle', None)}")
+
 			if self._isForeignDialogOpen():
-				self._cancelHomeViewFocusTask()
 				log.debug("Foreign dialog detected, ignoring Explorer foreground event")
-				return
-
-			if not self._foregroundTransition:
-				self._foregroundTransition = True
-				self._cached_provider_desc.clear()
-				log.debug("Foreground transition detected, delaying explorer operations")
-				
-				current_task = object()
-				self._foreground_task = current_task
-				
-				def do_clear():
-					if self._foreground_task is not current_task:
-						return
-					self._clearForegroundTransition()
+			else:
+				if not self._foregroundTransition:
+					self._foregroundTransition = True
+					self._cached_provider_desc.clear()
+					log.debug("Foreground transition detected, delaying explorer operations")
 					
-				core.callLater(250, do_clear)
-				
+					current_task = object()
+					self._foreground_task = current_task
+					
+					def do_clear():
+						if self._foreground_task is not current_task:
+							return
+						self._clearForegroundTransition()
+						
+					core.callLater(200, do_clear)
+					
 			self._update_speech_dict_for_title()
 		else:
-			if self._explorer_focused:
-				self._explorer_focused = False
-				self._update_speech_dict_for_title()
+			self._update_speech_dict_for_title()
 
 		if self.suppressAllAnnouncements:
 			try:
 				nextHandler()
-			except Exception:
-				pass
+			except (ComTypesCOMError, CtypesCOMError) as e:
+				log.debug(f"xPlorer: nextHandler failed in event_foreground (suppressed): {e}")
 			return
 
 		try:
@@ -471,20 +496,4 @@ class ExplorerManager:
 		self._foreground_task = None
 		if self.plugin:
 			self.plugin._invalidatePathCache()
-		log.debug("Foreground transition cleared, explorer operations resumed")
-
-	def event_UIA_elementSelected(self, obj, nextHandler):
-		try:
-			nextHandler()
-		except (ComTypesCOMError, CtypesCOMError) as e:
-			log.debug(f"COMError suppressed in event_UIA_elementSelected: {e}")
-		except Exception as e:
-			log.debug(f"Error in event_UIA_elementSelected: {e}")
-
-	def event_selection(self, obj, nextHandler):
-		try:
-			nextHandler()
-		except (ComTypesCOMError, CtypesCOMError) as e:
-			log.debug(f"COMError suppressed in event_selection: {e}")
-		except Exception as e:
-			log.debug(f"Error in event_selection: {e}")
+			self.plugin._recordRecentLocationDeferred()

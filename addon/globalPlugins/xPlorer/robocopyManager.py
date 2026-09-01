@@ -1,7 +1,6 @@
 # robocopyManager.py
 
 import ui
-import api
 import os
 import wx
 import gui
@@ -15,7 +14,6 @@ import ctypes
 import addonHandler
 import core
 import tones
-from comtypes import COMError
 from logHandler import log
 
 addonHandler.initTranslation()
@@ -77,62 +75,83 @@ class RobocopyManager:
 		self.source_items = []
 		self.operation_type = "copy"
 		self.active_process = None
+		# self.active_process is written from the copy worker thread and
+		# read/terminated from cleanup(), which can run on a different
+		# thread (e.g. plugin.terminate() during an add-on reload while a
+		# copy is still in flight). Without this lock, cleanup() could
+		# terminate a stale Popen reference or race the worker thread's
+		# own reassignment of it between subprocess attempts.
+		self._processLock = threading.Lock()
 
-	def _get_explorer_data_via_com(self, get_selection=True):
-		paths = []
-		current_folder = None
-		try:
-			# Reuse the plugin's tab-aware resolution instead of spinning up a
-			# separate Shell.Application and re-doing an unvalidated hwnd match:
-			# that duplicate logic could not tell tabs apart on a Windows 11
-			# tabbed Explorer window and would silently return whichever tab's
-			# COM entry it happened to enumerate first.
-			current_folder = self.plugin._getCurrentPathFromExplorer()
-			if get_selection:
-				window = self.plugin._getActiveExplorerWindow()
-				if window is not None:
-					try:
-						selection = window.Document.SelectedItems()
-						for i in range(selection.Count):
-							paths.append(selection.Item(i).Path)
-					except (COMError, AttributeError) as e:
-						log.debug(f"Robocopy: could not read selection: {e}")
-		except Exception as e:
-			log.debug(f"Robocopy COM Error: {e}")
-		return paths if get_selection else current_folder
+	def _setActiveProcess(self, process):
+		with self._processLock:
+			self.active_process = process
+
+	def _getActiveProcess(self):
+		with self._processLock:
+			return self.active_process
+
+	def _get_explorer_data_via_com_async(self, get_selection, callback):
+		# Reuse the plugin's tab-aware resolution instead of spinning up a
+		# separate Shell.Application and re-doing an unvalidated hwnd match:
+		# that duplicate logic could not tell tabs apart on a Windows 11
+		# tabbed Explorer window and would silently return whichever tab's
+		# COM entry it happened to enumerate first.
+		def afterPath(current_folder):
+			if not get_selection:
+				callback(current_folder, [])
+				return
+
+			def afterSelection(selectedItems, _hwnd):
+				paths = [path for _name, path in selectedItems] if selectedItems else []
+				callback(current_folder, paths)
+
+			self.plugin._getSelectedItemsAsync(afterSelection)
+
+		self.plugin._getCurrentPathFromExplorerAsync(afterPath)
 
 	def copy(self):
-		paths = self._get_explorer_data_via_com(get_selection=True)
-		if not paths:
-			tones.beep(200, 150)
-			ui.message("No items selected")
-			return
-		self.source_items = paths
-		self.operation_type = "copy"
-		tones.beep(440, 150)
-		ui.message(f"Robocopy: {len(paths)} items ready")
+		def handle(_current_folder, paths):
+			if not paths:
+				tones.beep(200, 150)
+				ui.message("No items selected")
+				return
+			self.source_items = paths
+			self.operation_type = "copy"
+			tones.beep(440, 150)
+			ui.message(f"Robocopy: {len(paths)} items ready")
+		self._get_explorer_data_via_com_async(True, handle)
 
 	def move(self):
-		paths = self._get_explorer_data_via_com(get_selection=True)
-		if not paths:
-			tones.beep(200, 150)
-			ui.message("No items selected")
-			return
-		self.source_items = paths
-		self.operation_type = "move"
-		tones.beep(440, 150)
-		ui.message(f"Robocopy: {len(paths)} items ready to move")
+		def handle(_current_folder, paths):
+			if not paths:
+				tones.beep(200, 150)
+				ui.message("No items selected")
+				return
+			self.source_items = paths
+			self.operation_type = "move"
+			tones.beep(440, 150)
+			ui.message(f"Robocopy: {len(paths)} items ready to move")
+		self._get_explorer_data_via_com_async(True, handle)
 
 	def paste(self):
 		if not self.source_items:
 			tones.beep(200, 150)
 			ui.message("Nothing to paste")
 			return
-		dest_path = self._get_explorer_data_via_com(get_selection=False)
-		if not dest_path:
-			dest_path = getattr(self.plugin.manager, "lastExplorerPath", None)
-		if not dest_path:
-			dest_path = self.plugin._getCurrentPath()
+
+		def handle(current_folder, _paths):
+			dest_path = current_folder
+			if not dest_path:
+				dest_path = getattr(self.plugin.manager, "lastExplorerPath", None)
+			if not dest_path:
+				self.plugin._getCurrentPathFromExplorerAsync(self._finishPaste)
+				return
+			self._finishPaste(dest_path)
+
+		self._get_explorer_data_via_com_async(False, handle)
+
+	def _finishPaste(self, dest_path):
 		if not dest_path or not os.path.exists(dest_path):
 			tones.beep(200, 150)
 			ui.message("Destination not found")
@@ -362,27 +381,28 @@ class RobocopyManager:
 				try:
 					startupinfo = subprocess.STARTUPINFO()
 					startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
-					self.active_process = subprocess.Popen(
+					process = subprocess.Popen(
 						cmd,
 						stdout=subprocess.PIPE,
 						stderr=subprocess.STDOUT,
 						startupinfo=startupinfo,
 						creationflags=subprocess.CREATE_NO_WINDOW
 					)
+					self._setActiveProcess(process)
 
-					outputQueue, readerThread = self._startStdoutReader(self.active_process)
+					outputQueue, readerThread = self._startStdoutReader(process)
 					summaryLines = []
 					lastUiUpdateTime = 0.0
 
 					while True:
 						if dlg and dlg.is_cancelled:
 							wasCancelled = True
-							self.active_process.terminate()
+							process.terminate()
 							break
 						try:
 							line = outputQueue.get(timeout=QUEUE_POLL_TIMEOUT)
 						except queue.Empty:
-							if self.active_process.poll() is not None:
+							if process.poll() is not None:
 								break
 							now = time.monotonic()
 							if dlg and now - lastUiUpdateTime >= PROGRESS_UI_MIN_INTERVAL_SECONDS:
@@ -401,11 +421,11 @@ class RobocopyManager:
 
 					readerThread.join(timeout=2)
 					try:
-						self.active_process.wait(timeout=10)
+						process.wait(timeout=10)
 					except subprocess.TimeoutExpired:
-						self.active_process.kill()
-						self.active_process.wait(timeout=5)
-					exit_code = self.active_process.returncode
+						process.kill()
+						process.wait(timeout=5)
+					exit_code = process.returncode
 
 					if wasCancelled:
 						break
@@ -457,6 +477,9 @@ class RobocopyManager:
 			core.callLater(0, ui.message, _("Robocopy cancelled"))
 			return
 
+		operationHistory = getattr(self.plugin, "operationHistory", None)
+		actionWord = _("Moved") if is_move else _("Copied")
+
 		if failedItems:
 			tones.beep(200, 300)
 			shownItems = ", ".join(failedItems[:5])
@@ -464,9 +487,15 @@ class RobocopyManager:
 				shownItems += _(" and {n} more").format(n=len(failedItems) - 5)
 			core.callLater(0, ui.message, _("Robocopy finished. {ok} succeeded, {failed} failed: {items}").format(
 					ok=succeededCount, failed=len(failedItems), items=shownItems))
+			if operationHistory and succeededCount:
+				operationHistory.addEntry(_("{action} {n} item(s) to {dest} ({failed} failed)").format(
+						action=actionWord, n=succeededCount, dest=dest, failed=len(failedItems)))
 		else:
 			tones.beep(1760, 300)
 			core.callLater(0, ui.message, _("Robocopy finished successfully. {n} item(s) copied").format(n=succeededCount))
+			if operationHistory and succeededCount:
+				operationHistory.addEntry(_("{action} {n} item(s) to {dest}").format(
+						action=actionWord, n=succeededCount, dest=dest))
 
 	def _verify_file_copy(self, source_path, dest_path):
 		try:
@@ -483,10 +512,10 @@ class RobocopyManager:
 			return False
 
 	def cleanup(self):
-		if self.active_process and self.active_process.poll() is None:
+		process = self._getActiveProcess()
+		if process and process.poll() is None:
 			try:
-				self.active_process.terminate()
+				process.terminate()
 			except OSError:
 				pass
-
 
