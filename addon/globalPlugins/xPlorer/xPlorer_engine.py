@@ -1,3 +1,4 @@
+# xPlorer_engine.py
 
 import globalPluginHandler
 import ui
@@ -521,7 +522,15 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 					callback(breadcrumbPath)
 					return
 
-			self._resolvePathViaShellWindowsAsync(target_hwnd, current_time, callback)
+			focusedItemNameHint = None
+			try:
+				focusObj = api.getFocusObject()
+				if focusObj:
+					focusedItemNameHint = getattr(focusObj, "name", None)
+			except Exception as e:
+				log.debug(f"xPlorer: could not resolve focused item name hint for path disambiguation: {e}")
+
+			self._resolvePathViaShellWindowsAsync(target_hwnd, current_time, callback, focusedItemNameHint)
 
 		except COMError as e:
 			log.debug(f"xPlorer: _getCurrentPathFromExplorerAsync COM error: {e}")
@@ -530,7 +539,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			log.debug(f"xPlorer: _getCurrentPathFromExplorerAsync unexpected error: {e}")
 			callback(self._getCachedExplorerPath(target_hwnd))
 
-	def _resolvePathViaShellWindowsAsync(self, target_hwnd, current_time, callback):
+	def _resolvePathViaShellWindowsAsync(self, target_hwnd, current_time, callback, focusedItemNameHint=None):
 		if not self._pathResolveLock.acquire(blocking=False):
 			log.debug("xPlorer: path resolution already in progress, using cached path instead of stacking a new COM call")
 			callback(self._getCachedExplorerPath(target_hwnd))
@@ -546,16 +555,55 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				pass
 			try:
 				localShell = comtypes.client.CreateObject("Shell.Application")
+				candidates = []
 				for window in localShell.Windows():
 					try:
-						if not window or window.hwnd != comMatchHwnd:
-							continue
-						windowPath = self._extractPathFromShellWindow(window)
-						if windowPath:
-							candidatePath = windowPath
-						break
+						if window and window.hwnd == comMatchHwnd:
+							candidates.append(window)
 					except (COMError, AttributeError):
 						continue
+
+				# Shell.Application.Windows() returns one entry per TAB, not
+				# one per top-level window - a multi-tab Explorer window has
+				# several entries that all share the same hwnd. Matching on
+				# hwnd alone and taking the first hit (as this used to)
+				# grabs whichever entry happens to come first in COM's
+				# enumeration order, not the actually active tab. This is
+				# the same class of bug already root-caused for
+				# _getSelectedItemsAsync (see the comment there), just
+				# reached from the path-resolution fallback instead - it
+				# surfaced as a cross-addon symptom where another add-on
+				# reading the current folder path via this method got a
+				# stale path from the previously-active tab after switching
+				# with control+tab, even though copy/paste of the actual
+				# selection worked correctly.
+				chosenWindow = None
+				if len(candidates) == 1:
+					chosenWindow = candidates[0]
+				elif len(candidates) > 1:
+					if focusedItemNameHint:
+						for candidate in candidates:
+							try:
+								document = getattr(candidate, "document", None)
+								if not document or not hasattr(document, "SelectedItems"):
+									continue
+								items = document.SelectedItems()
+								matched = False
+								for i in range(items.Count):
+									if items.Item(i).Name == focusedItemNameHint:
+										matched = True
+										break
+								if matched:
+									chosenWindow = candidate
+									break
+							except (COMError, AttributeError):
+								continue
+					if chosenWindow is None:
+						log.debug("xPlorer: multiple tabs share this window and none matched the focused item name hint, using the first candidate")
+						chosenWindow = candidates[0]
+
+				if chosenWindow is not None:
+					candidatePath = self._extractPathFromShellWindow(chosenWindow)
 			except COMError as e:
 				log.debug(f"xPlorer: background shell enumeration COM error: {e}")
 			except Exception as e:
@@ -1377,3 +1425,4 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self._last_window_hwnd = None
 		self._invalidatePathCache()
 		self.manager.event_foreground(obj, nextHandler)
+

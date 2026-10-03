@@ -27,6 +27,11 @@ PROGRESS_MEASURE_INTERVAL_SECONDS = 1.0
 # How often the progress dialog itself is allowed to repaint/re-announce.
 PROGRESS_UI_MIN_INTERVAL_SECONDS = 1.0
 ROBOCOPY_FILES_SUMMARY_RE = re.compile(r"^\s*Files\s*:\s*(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)", re.MULTILINE)
+# Cap on how many failed item names get listed verbatim in the post-transfer
+# messageBox. This is a display-size safeguard for an extreme selection, not
+# a speech/UI output length cap (Section 5.11 does not apply to a wx dialog
+# a user navigates line-by-line rather than a string handed to the synth).
+MAX_FAILED_ITEMS_DIALOG_ENTRIES = 200
 
 
 class ProgressDialog(wx.Dialog):
@@ -467,12 +472,12 @@ class RobocopyManager:
 				wx.CallAfter(dlg.update_progress, min(overallPercentage, 100),
 						_("Finished {n} of {total}: {name}").format(n=idx + 1, total=totalItems, name=source_name))
 
-		def cleanup_dlg():
+		def _closeDialog():
 			if dlg:
 				dlg.Destroy()
-		wx.CallAfter(cleanup_dlg)
 
 		if wasCancelled:
+			wx.CallAfter(_closeDialog)
 			tones.beep(200, 150)
 			core.callLater(0, ui.message, _("Robocopy cancelled"))
 			return
@@ -481,21 +486,48 @@ class RobocopyManager:
 		actionWord = _("Moved") if is_move else _("Copied")
 
 		if failedItems:
+			# The full per-item list goes to a navigable messageBox rather
+			# than being packed into the spoken message: a spoken count is
+			# enough for the immediate announcement, and cramming dozens of
+			# file names into ui.message would be both unbounded (5.11) and
+			# unusable for a blind user trying to identify which items need
+			# attention.
+			wx.CallAfter(_closeDialog)
 			tones.beep(200, 300)
-			shownItems = ", ".join(failedItems[:5])
-			if len(failedItems) > 5:
-				shownItems += _(" and {n} more").format(n=len(failedItems) - 5)
-			core.callLater(0, ui.message, _("Robocopy finished. {ok} succeeded, {failed} failed: {items}").format(
-					ok=succeededCount, failed=len(failedItems), items=shownItems))
+			core.callLater(0, ui.message, _("Robocopy finished. {ok} succeeded, {failed} failed").format(
+					ok=succeededCount, failed=len(failedItems)))
+			self._showFailedItemsDialog(failedItems)
 			if operationHistory and succeededCount:
 				operationHistory.addEntry(_("{action} {n} item(s) to {dest} ({failed} failed)").format(
 						action=actionWord, n=succeededCount, dest=dest, failed=len(failedItems)))
 		else:
+			# Let the progress dialog itself reflect completion before it
+			# closes, instead of vanishing straight from the last "Finished
+			# n of total" status the moment the loop ends.
+			if dlg:
+				wx.CallAfter(dlg.update_progress, 100, _("Complete"))
+			core.callLater(400, _closeDialog)
 			tones.beep(1760, 300)
-			core.callLater(0, ui.message, _("Robocopy finished successfully. {n} item(s) copied").format(n=succeededCount))
+			core.callLater(0, ui.message, _("Robocopy complete. {n} item(s) copied").format(n=succeededCount))
 			if operationHistory and succeededCount:
 				operationHistory.addEntry(_("{action} {n} item(s) to {dest}").format(
 						action=actionWord, n=succeededCount, dest=dest))
+
+	def _showFailedItemsDialog(self, failedItems):
+		# gui.messageBox's static text is read by NVDA line-by-line via the
+		# normal review/object-navigation up/down arrows, which is what
+		# gives a blind user actual scrolling access to a list that may run
+		# longer than a single spoken announcement could reasonably cover.
+		displayItems = failedItems[:MAX_FAILED_ITEMS_DIALOG_ENTRIES]
+		listText = "\n".join(displayItems)
+		if len(failedItems) > MAX_FAILED_ITEMS_DIALOG_ENTRIES:
+			listText += "\n" + _("...and {n} more").format(n=len(failedItems) - MAX_FAILED_ITEMS_DIALOG_ENTRIES)
+		message = _("The following {n} item(s) could not be copied:\n\n{items}").format(
+				n=len(failedItems), items=listText)
+
+		def _showBox():
+			gui.messageBox(message, _("Robocopy: Items That Could Not Be Copied"), wx.OK | wx.ICON_WARNING, gui.mainFrame)
+		wx.CallAfter(_showBox)
 
 	def _verify_file_copy(self, source_path, dest_path):
 		try:

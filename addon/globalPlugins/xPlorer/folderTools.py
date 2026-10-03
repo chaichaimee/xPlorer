@@ -46,6 +46,7 @@ DEFAULT_CONFIG = {
 	"suppressDirectUIAnnounce": True,
 	"sayFileExplorer": True,
 	"autoPasteClipboardToRename": True,
+	"forbiddenCharReplacement": "-",
 	"showUncompressDialog": True,
 	"uncompressDefaultAction": "extract_to",
 	"searchLastMode": "normal",
@@ -442,16 +443,23 @@ class FolderCreationDialog(wx.Dialog):
 
 # ---- from folder_creator.py ----
 
-def clean_clipboard_text(text):
+def clean_clipboard_text(text, replacementChar="-"):
 	if not text:
 		return ""
 	invalid_chars = '<>:"/\\|?*'
 	cleaned_text = text
 	for char in invalid_chars:
-		cleaned_text = cleaned_text.replace(char, '_')
+		cleaned_text = cleaned_text.replace(char, replacementChar)
 	cleaned_text = ''.join(char for char in cleaned_text if ord(char) >= 32 or char in ['\n', '\r', '\t'])
 	cleaned_text = cleaned_text.strip('. ')
-	cleaned_text = re.sub(r'_+', '_', cleaned_text)
+	if replacementChar:
+		cleaned_text = re.sub(re.escape(replacementChar) + r'+', replacementChar, cleaned_text)
+	else:
+		# "none" mode removes forbidden characters outright, which can
+		# leave behind a run of spaces where the character used to sit
+		# (e.g. "box : black" -> "box  black") - collapse those down to
+		# a single space so the result reads as "box black".
+		cleaned_text = re.sub(r' {2,}', ' ', cleaned_text)
 	return cleaned_text
 
 def is_suitable_clipboard_text(text):
@@ -481,7 +489,10 @@ def type_clipboard_into_rename_if_suitable():
 	except Exception:
 		return
 
-	cleaned_text = clean_clipboard_text(clipboard_text) if clipboard_text else None
+	replacementSetting = loadConfig().get("forbiddenCharReplacement", "-")
+	replacementChar = "" if replacementSetting == "none" else replacementSetting
+
+	cleaned_text = clean_clipboard_text(clipboard_text, replacementChar) if clipboard_text else None
 	if not cleaned_text or not is_suitable_clipboard_text(cleaned_text):
 		log.debug("Clipboard text not suitable for auto-paste")
 		return
@@ -1926,6 +1937,8 @@ class CaseConverter:
 			ui.message(_("No folders found"))
 			return
 		self._run_conversion_streaming(paths, self._to_headline_case, _("Successfully converted {count} folders to headline case"))
+
+
 
 
 

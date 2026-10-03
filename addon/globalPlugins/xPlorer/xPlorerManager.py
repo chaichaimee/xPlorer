@@ -80,8 +80,28 @@ class xPlorerSettingsPanel(SettingsPanel):
 		self.suppressDirectUIAnnounce.SetValue(conf["suppressDirectUIAnnounce"])
 		self.sayFileExplorer = sHelper.addItem(wx.CheckBox(self, label="Suppress announcement of '- File Explorer' in window titles"))
 		self.sayFileExplorer.SetValue(conf["sayFileExplorer"])
+		self.suppressTaskSwitchingAnnounce = sHelper.addItem(wx.CheckBox(self, label="Suppress announcement of 'Task Switching'"))
+		self.suppressTaskSwitchingAnnounce.SetValue(conf.get("suppressTaskSwitchingAnnounce", True))
 		self.autoPasteClipboardToRename = sHelper.addItem(wx.CheckBox(self, label="Automatically paste clipboard content into rename field"))
 		self.autoPasteClipboardToRename.SetValue(conf.get("autoPasteClipboardToRename", True))
+		self.autoPasteClipboardToRename.Bind(wx.EVT_CHECKBOX, self._onAutoPasteClipboardToRenameChanged)
+
+		self.forbiddenCharReplacementLabel = wx.StaticText(self, label="Replace forbidden characters in the pasted name with:")
+		sHelper.addItem(self.forbiddenCharReplacementLabel)
+		self.forbiddenCharReplacementChoices = [
+			("-", "Hyphen (-)"),
+			("_", "Underscore (_)"),
+			("none", "Remove them (no replacement)"),
+		]
+		self.forbiddenCharReplacement = sHelper.addItem(wx.Choice(
+			self, choices=[label for _key, label in self.forbiddenCharReplacementChoices]
+		))
+		storedReplacement = conf.get("forbiddenCharReplacement", "-")
+		replacementKeys = [key for key, _label in self.forbiddenCharReplacementChoices]
+		replacementIndex = replacementKeys.index(storedReplacement) if storedReplacement in replacementKeys else 0
+		self.forbiddenCharReplacement.SetSelection(replacementIndex)
+
+		self._updateForbiddenCharReplacementVisibility()
 
 		self.showUncompressDialog = sHelper.addItem(wx.CheckBox(self, label="Show uncompress dialog"))
 		self.showUncompressDialog.SetValue(conf.get("showUncompressDialog", True))
@@ -103,6 +123,16 @@ class xPlorerSettingsPanel(SettingsPanel):
 
 		self._updateUncompressDefaultActionVisibility()
 
+	def _onAutoPasteClipboardToRenameChanged(self, event):
+		self._updateForbiddenCharReplacementVisibility()
+		event.Skip()
+
+	def _updateForbiddenCharReplacementVisibility(self):
+		showControl = self.autoPasteClipboardToRename.GetValue()
+		self.forbiddenCharReplacementLabel.Show(showControl)
+		self.forbiddenCharReplacement.Show(showControl)
+		self.Layout()
+
 	def _onShowUncompressDialogChanged(self, event):
 		self._updateUncompressDefaultActionVisibility()
 		event.Skip()
@@ -115,12 +145,15 @@ class xPlorerSettingsPanel(SettingsPanel):
 
 	def onSave(self):
 		actionKeys = [key for key, _label in self.uncompressDefaultActionChoices]
+		replacementKeys = [key for key, _label in self.forbiddenCharReplacementChoices]
 		conf = {
 			"autoSelectFirstItem": self.autoSelectFirstItem.GetValue(),
 			"announceEmptyFolder": self.announceEmptyFolder.GetValue(),
 			"suppressDirectUIAnnounce": self.suppressDirectUIAnnounce.GetValue(),
 			"sayFileExplorer": self.sayFileExplorer.GetValue(),
+			"suppressTaskSwitchingAnnounce": self.suppressTaskSwitchingAnnounce.GetValue(),
 			"autoPasteClipboardToRename": self.autoPasteClipboardToRename.GetValue(),
+			"forbiddenCharReplacement": replacementKeys[self.forbiddenCharReplacement.GetSelection()],
 			"showUncompressDialog": self.showUncompressDialog.GetValue(),
 			"uncompressDefaultAction": actionKeys[self.uncompressDefaultAction.GetSelection()],
 		}
@@ -142,6 +175,7 @@ class ExplorerManager:
 		self.suppressAllAnnouncements = False
 
 		self._temp_entry = None
+		self._taskSwitchingTempEntry = None
 		self._explorer_focused = False
 
 		self._last_processed_key = None
@@ -177,6 +211,25 @@ class ExplorerManager:
 		self._config_cache = None
 		self._config_cache_time = 0.0
 
+	def _syncTempSpeechDictEntry(self, attrName, shouldSuppress, pattern, comment):
+		currentEntry = getattr(self, attrName)
+		if shouldSuppress and currentEntry is None:
+			entry = SpeechDictEntry(
+				pattern=pattern,
+				replacement="",
+				caseSensitive=True,
+				type=0,
+				comment=comment
+			)
+			speechDictHandler.dictionaries["temp"].append(entry)
+			setattr(self, attrName, entry)
+		elif not shouldSuppress and currentEntry is not None:
+			try:
+				speechDictHandler.dictionaries["temp"].remove(currentEntry)
+			except ValueError:
+				pass
+			setattr(self, attrName, None)
+
 	def _update_speech_dict_for_title(self):
 		current_task = object()
 		self._speech_dict_task = current_task
@@ -187,24 +240,24 @@ class ExplorerManager:
 			self._speech_dict_task = None
 
 			conf = self.getConfig()
+
 			should_suppress = conf.get("sayFileExplorer", True)
-			if should_suppress and self._temp_entry is None:
-				entry = SpeechDictEntry(
-					pattern="- File Explorer",
-					replacement="",
-					caseSensitive=True,
-					type=0,
-					comment="xPlorer: suppress '- File Explorer'"
-				)
-				speechDictHandler.dictionaries["temp"].append(entry)
-				self._temp_entry = entry
-			elif not should_suppress and self._temp_entry is not None:
-				try:
-					speechDictHandler.dictionaries["temp"].remove(self._temp_entry)
-				except ValueError:
-					pass
-				self._temp_entry = None
+			self._syncTempSpeechDictEntry(
+				"_temp_entry", should_suppress,
+				"- File Explorer", "xPlorer: suppress '- File Explorer'"
+			)
 			self._last_sayFileExplorer_setting = should_suppress
+
+			# Restores the "Task Switching" suppression that xPlorer used to
+			# provide as a side effect of a since-fixed event_foreground bug
+			# (see xPlorerManager fix history). Implemented explicitly here,
+			# via the same temp speech-dictionary mechanism as the line
+			# above, rather than relying on that bug again.
+			should_suppress_task_switching = conf.get("suppressTaskSwitchingAnnounce", True)
+			self._syncTempSpeechDictEntry(
+				"_taskSwitchingTempEntry", should_suppress_task_switching,
+				"Task Switching", "xPlorer: suppress 'Task Switching' announcement"
+			)
 
 		core.callLater(100, do_update)
 
@@ -317,12 +370,8 @@ class ExplorerManager:
 		self._foreground_task = None
 		self._explorer_focused = False
 
-		if self._temp_entry is not None:
-			try:
-				speechDictHandler.dictionaries["temp"].remove(self._temp_entry)
-			except ValueError:
-				pass
-			self._temp_entry = None
+		self._syncTempSpeechDictEntry("_temp_entry", False, "- File Explorer", "")
+		self._syncTempSpeechDictEntry("_taskSwitchingTempEntry", False, "Task Switching", "")
 		self._cached_provider_desc.clear()
 
 	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
@@ -447,7 +496,23 @@ class ExplorerManager:
 
 		self._explorer_focused = False
 		try:
-			if obj and getattr(obj, "appModule", None) and obj.appModule.appName == "explorer":
+			# Windows 11 hosts the Alt+Tab task-switching UI as a window
+			# whose appModule also reports "explorer" (confirmed via
+			# log.txt: NVDA's own foreground-resolution warning named hwnd
+			# 198220 as windowClassName "XamlExplorerHostIslandWindow"
+			# during a plain Alt+Tab between Explorer and a browser).
+			# Without this exclusion, every Alt+Tab through the switcher
+			# was treated as a real Explorer-focus transition, clearing
+			# caches and scheduling a deferred task for a window that was
+			# never an actual folder view - the root cause of the
+			# constant, needless "Task Switching" processing and the
+			# associated lag reported in log.txt.
+			if (
+				obj
+				and getattr(obj, "appModule", None)
+				and obj.appModule.appName == "explorer"
+				and getattr(obj, "windowClassName", None) != "XamlExplorerHostIslandWindow"
+			):
 				self._explorer_focused = True
 		except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError):
 			pass

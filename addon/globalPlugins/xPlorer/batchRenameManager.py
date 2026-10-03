@@ -5,6 +5,7 @@ import os
 import re
 import json
 import datetime
+import threading
 import gui
 import gui.guiHelper
 import ui
@@ -17,6 +18,19 @@ from .folderTools import CONFIG_DIR
 addonHandler.initTranslation()
 
 UNDO_RENAME_FILE = os.path.join(CONFIG_DIR, "batch_rename_undo.json")
+
+
+def _collectFilesRecursively(rootPath):
+	"""Walk rootPath and return every regular file found within it, including
+	files inside any subfolders. Pure filesystem logic with no NVDA API
+	calls, kept separate from the dialog/manager classes so it can be
+	exercised directly with pytest outside NVDA."""
+	collectedFiles = []
+	for currentDir, subDirNames, fileNames in os.walk(rootPath):
+		subDirNames.sort()
+		for fileName in sorted(fileNames):
+			collectedFiles.append(os.path.join(currentDir, fileName))
+	return collectedFiles
 
 
 class BatchRenameDialog(wx.Dialog):
@@ -251,8 +265,10 @@ class BatchRenameManager:
 	def __init__(self, plugin):
 		self.plugin = plugin
 		self.dialog = None
+		self._isActive = True
 
 	def cleanup(self):
+		self._isActive = False
 		if self.dialog:
 			try:
 				self.dialog.Destroy()
@@ -262,29 +278,50 @@ class BatchRenameManager:
 
 	def show_dialog(self, retryCount=0):
 		def handleSelection(selected_items, _hwnd):
-			paths = [path for _name, path in selected_items if os.path.isfile(path)] if selected_items else []
+			selectedFolders = [path for _name, path in selected_items if os.path.isdir(path)] if selected_items else []
+			selectedFiles = [path for _name, path in selected_items if os.path.isfile(path)] if selected_items else []
 
-			if paths:
-				self._finalizeShowDialog(paths, retryCount)
+			if selectedFolders:
+				# A folder is part of the selection: scan it (and any
+				# subfolders within it) for files, in addition to any
+				# individually selected files.
+				self._collectFromFoldersInBackground(selectedFolders, selectedFiles, retryCount)
+				return
+
+			if selectedFiles:
+				self._finalizeShowDialog(selectedFiles, retryCount)
 				return
 
 			def afterPath(currentPath):
-				resolvedPaths = []
-				if currentPath and os.path.isdir(currentPath):
-					try:
-						resolvedPaths = [
-							os.path.join(currentPath, entryName)
-							for entryName in os.listdir(currentPath)
-							if os.path.isfile(os.path.join(currentPath, entryName))
-						]
-					except OSError as e:
-						log.error(f"Error listing current folder for batch rename: {e}")
-						resolvedPaths = []
-				self._finalizeShowDialog(resolvedPaths, retryCount)
+				if not currentPath or not os.path.isdir(currentPath):
+					self._finalizeShowDialog([], retryCount)
+					return
+				# Nothing usable was selected: fall back to everything in
+				# the folder currently open in Explorer, scanning its
+				# subfolders too rather than only the top level.
+				self._collectFromFoldersInBackground([currentPath], [], retryCount)
 
 			self.plugin._getCurrentPathFromExplorerAsync(afterPath)
 
 		self.plugin._getSelectedItemsAsync(handleSelection)
+
+	def _collectFromFoldersInBackground(self, folderPaths, extraFiles, retryCount):
+		# A recursive folder scan can be slow on a large tree or a network
+		# share, so it must never run synchronously on the main thread
+		# (NVDABuilderSkill 5.1). The scan itself touches only the
+		# filesystem, never NVDA/COM APIs, so it's safe on a plain
+		# background thread; the result is marshaled back via wx.CallAfter.
+		def worker():
+			collectedPaths = list(extraFiles)
+			for folderPath in folderPaths:
+				try:
+					collectedPaths.extend(_collectFilesRecursively(folderPath))
+				except OSError as e:
+					log.error(f"Error scanning folder for batch rename: {e}")
+			if self._isActive:
+				wx.CallAfter(self._finalizeShowDialog, collectedPaths, retryCount)
+
+		threading.Thread(target=worker, daemon=True).start()
 
 	def _finalizeShowDialog(self, paths, retryCount):
 		if not paths:
@@ -385,4 +422,3 @@ class BatchRenameManager:
 				os.remove(UNDO_RENAME_FILE)
 			except OSError as e:
 				log.debug(f"xPlorer: could not remove undo mapping file after full undo: {e}")
-
