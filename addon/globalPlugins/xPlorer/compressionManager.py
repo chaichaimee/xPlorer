@@ -7,7 +7,8 @@ import wx
 import gui
 import subprocess
 import zipfile
-from threading import Thread
+from threading import Thread, Event
+from .isoReader import extractIso, IsoReadError
 import tones
 from logHandler import log
 import addonHandler
@@ -301,7 +302,15 @@ class CompressionManager:
 			callback(False, _("Built-in compression failed: {error}").format(error=str(e)))
 
 	def _isArchiveFile(self, path):
-		return os.path.splitext(path)[1].lower() in ARCHIVE_EXTENSIONS
+		if os.path.splitext(path)[1].lower() in ARCHIVE_EXTENSIONS:
+			return True
+		return self._hasZipSignature(path)
+
+	def _hasZipSignature(self, path):
+		try:
+			return zipfile.is_zipfile(path)
+		except OSError:
+			return False
 
 	def unzipSelected(self):
 		focus = api.getFocusObject()
@@ -326,7 +335,7 @@ class CompressionManager:
 			ui.message(_("Please select a compressed file"))
 			return
 		if len(archive_paths) > 1:
-			ui.message(_("Please select only one compressed file"))
+			self._extractManyInBackground(archive_paths)
 			return
 
 		archive_path = archive_paths[0]
@@ -368,47 +377,140 @@ class CompressionManager:
 
 		wx.CallAfter(show_extraction_choice)
 
+	def _waitWithBeeps(self, process):
+		while True:
+			try:
+				process.communicate(timeout=2)
+				return
+			except subprocess.TimeoutExpired:
+				wx.CallAfter(tones.beep, 600, 60)
+
+	def _extractIsoBuiltIn(self, isoPath, targetDir, announce=True):
+		finished = Event()
+
+		def beeper():
+			while not finished.wait(2):
+				wx.CallAfter(tones.beep, 600, 60)
+
+		Thread(target=beeper, daemon=True).start()
+		try:
+			extractIso(isoPath, targetDir, lambda: False)
+			return True
+		except (IsoReadError, OSError) as e:
+			log.error(f"Built-in ISO extraction failed: {e}")
+			self._say(announce, _("Extraction failed: {error}").format(error=str(e)))
+			return False
+		finally:
+			finished.set()
+
+	def _say(self, announce, text):
+		if announce:
+			wx.CallAfter(ui.message, text)
+
+	def _extractOne(self, archive_path, target_dir, announce=True):
+		try:
+			os.makedirs(target_dir, exist_ok=True)
+			extension = os.path.splitext(archive_path)[1].lower()
+			sevenZipPath = self._find7zip()
+			if sevenZipPath:
+				cmd = [sevenZipPath, "x", archive_path, f"-o{target_dir}", "-y"]
+				if extension == ".nvda-addon" or extension not in ARCHIVE_EXTENSIONS:
+					cmd.insert(2, "-tzip")
+				try:
+					process = subprocess.Popen(
+						cmd, stdin=subprocess.DEVNULL, stdout=subprocess.PIPE,
+						stderr=subprocess.STDOUT, universal_newlines=True,
+						creationflags=subprocess.CREATE_NO_WINDOW
+					)
+					if extension == ".iso":
+						self._waitWithBeeps(process)
+					else:
+						process.communicate(timeout=120)
+				except subprocess.TimeoutExpired:
+					process.kill()
+					process.communicate()
+					self._say(announce, _("Extraction timed out"))
+					return False
+				if process.returncode != 0:
+					if not (extension == ".iso" and self._extractIsoBuiltIn(archive_path, target_dir, announce)):
+						if extension != ".iso":
+							self._say(announce, _("Extraction failed"))
+						return False
+			elif extension == ".iso":
+				if not self._extractIsoBuiltIn(archive_path, target_dir, announce):
+					return False
+			elif extension in (".zip", ".nvda-addon") or zipfile.is_zipfile(archive_path):
+				with zipfile.ZipFile(archive_path, 'r') as zf:
+					zf.extractall(target_dir)
+			else:
+				self._say(announce, _("7-Zip is required to extract this file type"))
+				return False
+			if announce:
+				wx.CallAfter(ui.message, _("Extraction completed to {path}").format(path=target_dir))
+				wx.CallAfter(tones.beep, 1000, 200)
+			operationHistory = getattr(self.plugin, "operationHistory", None)
+			if operationHistory:
+				operationHistory.addEntry(_("Extracted {name} to {path}").format(
+						name=os.path.basename(archive_path), path=target_dir))
+			return True
+		except Exception as e:
+			log.error(f"Extraction failed: {e}")
+			self._say(announce, _("Extraction failed: {error}").format(error=str(e)))
+			return False
+
 	def _extractArchiveInBackground(self, archive_path, target_dir):
 		def worker():
-			try:
-				os.makedirs(target_dir, exist_ok=True)
-				extension = os.path.splitext(archive_path)[1].lower()
-				sevenZipPath = self._find7zip()
-				if sevenZipPath:
-					cmd = [sevenZipPath, "x", archive_path, f"-o{target_dir}", "-y"]
-					if extension == ".nvda-addon":
-						cmd.insert(2, "-tzip")
-					try:
-						process = subprocess.Popen(
-							cmd, stdin=subprocess.DEVNULL, stdout=subprocess.PIPE,
-							stderr=subprocess.STDOUT, universal_newlines=True,
-							creationflags=subprocess.CREATE_NO_WINDOW
-						)
-						process.communicate(timeout=120)
-					except subprocess.TimeoutExpired:
-						process.kill()
-						process.communicate()
-						wx.CallAfter(ui.message, _("Extraction timed out"))
-						return
-					if process.returncode != 0:
-						wx.CallAfter(ui.message, _("Extraction failed"))
-						return
-				elif extension in (".zip", ".nvda-addon"):
-					with zipfile.ZipFile(archive_path, 'r') as zf:
-						zf.extractall(target_dir)
-				else:
-					wx.CallAfter(ui.message, _("7-Zip is required to extract this file type"))
-					return
-				wx.CallAfter(ui.message, _("Extraction completed to {path}").format(path=target_dir))
-				tones.beep(1000, 200)
-				operationHistory = getattr(self.plugin, "operationHistory", None)
-				if operationHistory:
-					operationHistory.addEntry(_("Extracted {name} to {path}").format(
-							name=os.path.basename(archive_path), path=target_dir))
-			except Exception as e:
-				log.error(f"Extraction failed: {e}")
-				wx.CallAfter(ui.message, _("Extraction failed: {error}").format(error=str(e)))
+			self._extractOne(archive_path, target_dir)
 		self.unzipThread = Thread(target=worker, daemon=True)
 		self.unzipThread.start()
 		ui.message(_("Extracting..."))
 
+	def _uniqueBatchFolder(self, baseName, usedFolders):
+		candidate = baseName
+		number = 1
+		while candidate.casefold() in usedFolders:
+			number += 1
+			candidate = f"{baseName} ({number})"
+		usedFolders.add(candidate.casefold())
+		return candidate
+
+	def _extractManyInBackground(self, archivePaths):
+		if self.unzipThread and self.unzipThread.is_alive():
+			ui.message(_("Extraction is already running"))
+			return
+
+		def worker():
+			usedFolders = {}
+			succeeded = 0
+			failedNames = []
+			for archivePath in archivePaths:
+				parentDir = os.path.dirname(archivePath)
+				folderName = self._uniqueBatchFolder(
+					os.path.splitext(os.path.basename(archivePath))[0],
+					usedFolders.setdefault(parentDir.casefold(), set())
+				)
+				targetDir = os.path.join(parentDir, folderName + "\\")
+				if self._extractOne(archivePath, targetDir, announce=False):
+					succeeded += 1
+				else:
+					failedNames.append(os.path.basename(archivePath))
+					try:
+						os.rmdir(targetDir)
+					except OSError:
+						pass
+				wx.CallAfter(tones.beep, 700, 60)
+			total = len(archivePaths)
+			if not failedNames:
+				message = _("Extraction completed: {count} files, each in its own folder").format(count=total)
+			else:
+				shown = ", ".join(failedNames[:3])
+				if len(failedNames) > 3:
+					shown += _(" and {count} more").format(count=len(failedNames) - 3)
+				message = _("Extracted {done} of {total}. Failed: {names}").format(
+					done=succeeded, total=total, names=shown)
+			wx.CallAfter(ui.message, message)
+			wx.CallAfter(tones.beep, 1000 if not failedNames else 300, 200)
+
+		self.unzipThread = Thread(target=worker, daemon=True)
+		self.unzipThread.start()
+		ui.message(_("Extracting {count} files...").format(count=len(archivePaths)))

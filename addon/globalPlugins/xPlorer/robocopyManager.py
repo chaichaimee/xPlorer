@@ -478,7 +478,7 @@ class RobocopyManager:
 
 		if wasCancelled:
 			wx.CallAfter(_closeDialog)
-			tones.beep(200, 150)
+			wx.CallAfter(tones.beep, 200, 150)
 			core.callLater(0, ui.message, _("Robocopy cancelled"))
 			return
 
@@ -493,7 +493,7 @@ class RobocopyManager:
 			# unusable for a blind user trying to identify which items need
 			# attention.
 			wx.CallAfter(_closeDialog)
-			tones.beep(200, 300)
+			wx.CallAfter(tones.beep, 200, 300)
 			core.callLater(0, ui.message, _("Robocopy finished. {ok} succeeded, {failed} failed").format(
 					ok=succeededCount, failed=len(failedItems)))
 			self._showFailedItemsDialog(failedItems)
@@ -507,7 +507,7 @@ class RobocopyManager:
 			if dlg:
 				wx.CallAfter(dlg.update_progress, 100, _("Complete"))
 			core.callLater(400, _closeDialog)
-			tones.beep(1760, 300)
+			wx.CallAfter(tones.beep, 1760, 300)
 			core.callLater(0, ui.message, _("Robocopy complete. {n} item(s) copied").format(n=succeededCount))
 			if operationHistory and succeededCount:
 				operationHistory.addEntry(_("{action} {n} item(s) to {dest}").format(

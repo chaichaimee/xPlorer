@@ -2,13 +2,15 @@
 
 import ui
 import api
+import speech
 import ctypes
 import ctypes.wintypes
 from NVDAObjects import NVDAObject
 from NVDAObjects.UIA import UIA
-from controlTypes import Role, State
+from controlTypes import Role, State, OutputReason
 import addonHandler
 from logHandler import log
+import config
 import gui
 import wx
 import gui.guiHelper
@@ -18,7 +20,9 @@ import core
 import speechDictHandler
 from speechDictHandler import SpeechDictEntry
 import time
+import logging
 import eventHandler
+import UIAHandler
 from comtypes import COMError as ComTypesCOMError
 from _ctypes import COMError as CtypesCOMError
 
@@ -49,6 +53,32 @@ def set_global_plugin(plugin):
 	_global_plugin_instance = plugin
 
 
+
+_user32Private = ctypes.WinDLL("user32")
+_user32Private.FindWindowExW.argtypes = [ctypes.wintypes.HWND, ctypes.wintypes.HWND, ctypes.wintypes.LPCWSTR, ctypes.wintypes.LPCWSTR]
+_user32Private.FindWindowExW.restype = ctypes.wintypes.HWND
+_user32Private.GetClassNameW.argtypes = [ctypes.wintypes.HWND, ctypes.wintypes.LPWSTR, ctypes.c_int]
+_user32Private.IsWindowVisible.argtypes = [ctypes.wintypes.HWND]
+_enumChildProc = ctypes.WINFUNCTYPE(ctypes.c_int, ctypes.wintypes.HWND, ctypes.wintypes.LPARAM)
+_user32Private.EnumChildWindows.argtypes = [ctypes.wintypes.HWND, _enumChildProc, ctypes.wintypes.LPARAM]
+
+
+def _findItemsViewHwnd(frameHwnd):
+	found = []
+	classBuffer = ctypes.create_unicode_buffer(64)
+
+	def onChild(childHwnd, lParam):
+		_user32Private.GetClassNameW(childHwnd, classBuffer, 64)
+		if classBuffer.value == "SHELLDLL_DefView" and _user32Private.IsWindowVisible(childHwnd):
+			itemsViewHwnd = _user32Private.FindWindowExW(childHwnd, None, "DirectUIHWND", None)
+			if itemsViewHwnd:
+				found.append(itemsViewHwnd)
+				return 0
+		return 1
+
+	_user32Private.EnumChildWindows(frameHwnd, _enumChildProc(onChild), 0)
+	return found[0] if found else None
+
 class LaconicFocusAncestor(NVDAObject):
 	isPresentableFocusAncestor = False
 	def _get_windowClassName(self):
@@ -60,11 +90,56 @@ class LaconicFocusAncestor(NVDAObject):
 		return super().windowClassName
 
 class EmptyFolderStaticText(NVDAObject):
-	def _get_name(self):
+	__gestures = {
+		"kb:uparrow": "repeatEmptyFolder",
+		"kb:downarrow": "repeatEmptyFolder",
+	}
+
+	def _isHookEnabled(self):
+		rawName = super().name
 		conf = loadConfig()
-		if conf.get("announceEmptyFolder", True):
+		if rawName == "Working on it...":
+			return conf.get("hookWorkingOnIt", True)
+		return conf.get("announceEmptyFolder", True)
+
+	def _get_name(self):
+		if self._isHookEnabled():
 			return "Empty Folder"
 		return super().name
+
+	def script_repeatEmptyFolder(self, gesture):
+		if not self._isHookEnabled():
+			gesture.send()
+			return
+		log.debug("xPlorer TRACE: empty folder arrow key announce")
+		speech.cancelSpeech()
+		ui.message("Empty Folder")
+
+
+class SingleItemArrowOverlay(NVDAObject):
+	__gestures = {
+		"kb:uparrow": "arrowOnPossibleSoleItem",
+		"kb:downarrow": "arrowOnPossibleSoleItem",
+	}
+
+	def script_arrowOnPossibleSoleItem(self, gesture):
+		gesture.send()
+		manager = getattr(_global_plugin_instance, "manager", None)
+		if manager is not None:
+			manager.scheduleSoleItemAnnounce(self)
+
+
+class FolderEntryOverlay(NVDAObject):
+	__gestures = {
+		"kb:enter": "enterFolderArmSelect",
+		"kb:numpadenter": "enterFolderArmSelect",
+	}
+
+	def script_enterFolderArmSelect(self, gesture):
+		manager = getattr(_global_plugin_instance, "manager", None)
+		if manager is not None:
+			manager.armLandingSelect()
+		gesture.send()
 
 
 class xPlorerSettingsPanel(SettingsPanel):
@@ -78,6 +153,40 @@ class xPlorerSettingsPanel(SettingsPanel):
 		self.announceEmptyFolder.SetValue(conf["announceEmptyFolder"])
 		self.suppressDirectUIAnnounce = sHelper.addItem(wx.CheckBox(self, label="Suppress announcement of DirectUIHWND class"))
 		self.suppressDirectUIAnnounce.SetValue(conf["suppressDirectUIAnnounce"])
+		self.announceSingleItem = sHelper.addItem(wx.CheckBox(self, label="Announce and select the item when it is the only one in a folder"))
+		self.announceSingleItem.SetValue(conf.get("announceSingleItem", True))
+		self.hookWorkingOnIt = sHelper.addItem(wx.CheckBox(self, label="Announce Empty Folder instead of Working on it in an empty folder"))
+		self.hookWorkingOnIt.SetValue(conf.get("hookWorkingOnIt", True))
+		self.showItemSize = sHelper.addItem(wx.CheckBox(self, label="Announce the size of files and folders when moving through the list"))
+		self.showItemSize.SetValue(conf.get("showItemSize", False))
+		self.itemSizeScopeChoices = [
+			("files", "File only"),
+			("folders", "Folder only"),
+			("all", "All files and folders"),
+		]
+		self.itemSizeScopeLabel = wx.StaticText(self, label="Announce the size of:")
+		sHelper.addItem(self.itemSizeScopeLabel)
+		self.itemSizeScope = sHelper.addItem(wx.Choice(
+			self, choices=[label for _key, label in self.itemSizeScopeChoices]
+		))
+		scopeKeys = [key for key, _label in self.itemSizeScopeChoices]
+		storedScope = conf.get("itemSizeScope", "all")
+		self.itemSizeScope.SetSelection(scopeKeys.index(storedScope) if storedScope in scopeKeys else scopeKeys.index("all"))
+		self.showItemSize.Bind(wx.EVT_CHECKBOX, self._onShowItemSizeToggled)
+		self._onShowItemSizeToggled(None)
+		self.reportItemPosition = None
+		self._initialPositionSetting = None
+		try:
+			self._initialPositionSetting = bool(config.conf["presentation"]["reportObjectPositionInformation"])
+		except KeyError:
+			log.debug("xPlorer: NVDA object position setting not found, item position option hidden")
+		if self._initialPositionSetting is not None:
+			self.reportItemPosition = sHelper.addItem(wx.CheckBox(
+				self, label="Announce item position, same as the NVDA Object Presentation setting"
+			))
+			self.reportItemPosition.SetValue(self._initialPositionSetting)
+		self.recoverExplorerFocus = sHelper.addItem(wx.CheckBox(self, label="Move focus into the file list when Explorer is activated with focus stuck on the window frame"))
+		self.recoverExplorerFocus.SetValue(conf.get("recoverExplorerFocus", True))
 		self.sayFileExplorer = sHelper.addItem(wx.CheckBox(self, label="Suppress announcement of '- File Explorer' in window titles"))
 		self.sayFileExplorer.SetValue(conf["sayFileExplorer"])
 		self.suppressTaskSwitchingAnnounce = sHelper.addItem(wx.CheckBox(self, label="Suppress announcement of 'Task Switching'"))
@@ -143,21 +252,36 @@ class xPlorerSettingsPanel(SettingsPanel):
 		self.uncompressDefaultAction.Show(showDefaultActionControl)
 		self.Layout()
 
+	def _onShowItemSizeToggled(self, event):
+		sizeEnabled = self.showItemSize.GetValue()
+		self.itemSizeScopeLabel.Enable(sizeEnabled)
+		self.itemSizeScope.Enable(sizeEnabled)
+
 	def onSave(self):
 		actionKeys = [key for key, _label in self.uncompressDefaultActionChoices]
 		replacementKeys = [key for key, _label in self.forbiddenCharReplacementChoices]
-		conf = {
+		conf = loadConfig()
+		conf.update({
 			"autoSelectFirstItem": self.autoSelectFirstItem.GetValue(),
 			"announceEmptyFolder": self.announceEmptyFolder.GetValue(),
 			"suppressDirectUIAnnounce": self.suppressDirectUIAnnounce.GetValue(),
+			"announceSingleItem": self.announceSingleItem.GetValue(),
+			"recoverExplorerFocus": self.recoverExplorerFocus.GetValue(),
+			"hookWorkingOnIt": self.hookWorkingOnIt.GetValue(),
+			"showItemSize": self.showItemSize.GetValue(),
+			"itemSizeScope": self.itemSizeScopeChoices[self.itemSizeScope.GetSelection()][0],
 			"sayFileExplorer": self.sayFileExplorer.GetValue(),
 			"suppressTaskSwitchingAnnounce": self.suppressTaskSwitchingAnnounce.GetValue(),
 			"autoPasteClipboardToRename": self.autoPasteClipboardToRename.GetValue(),
 			"forbiddenCharReplacement": replacementKeys[self.forbiddenCharReplacement.GetSelection()],
 			"showUncompressDialog": self.showUncompressDialog.GetValue(),
 			"uncompressDefaultAction": actionKeys[self.uncompressDefaultAction.GetSelection()],
-		}
+		})
 		saveConfig(conf)
+		if self.reportItemPosition is not None:
+			wantPosition = self.reportItemPosition.GetValue()
+			if wantPosition != self._initialPositionSetting:
+				config.conf["presentation"]["reportObjectPositionInformation"] = wantPosition
 		if _global_plugin_instance and hasattr(_global_plugin_instance, 'manager'):
 			_global_plugin_instance.manager._invalidateConfigCache()
 			_global_plugin_instance.manager._update_speech_dict_for_title()
@@ -193,6 +317,9 @@ class ExplorerManager:
 		self._foregroundGeneration = 0
 
 		self._speech_dict_task = None
+		self._focusSnapshotTask = None
+		self._lastItemFocusTime = 0.0
+		self._landingSelectUntil = 0.0
 
 		self._config_cache = None
 		self._config_cache_time = 0.0
@@ -369,10 +496,14 @@ class ExplorerManager:
 		self._speech_dict_task = None
 		self._foreground_task = None
 		self._explorer_focused = False
+		if self._focusSnapshotTask:
+			self._focusSnapshotTask.Stop()
+			self._focusSnapshotTask = None
 
 		self._syncTempSpeechDictEntry("_temp_entry", False, "- File Explorer", "")
 		self._syncTempSpeechDictEntry("_taskSwitchingTempEntry", False, "Task Switching", "")
 		self._cached_provider_desc.clear()
+		self._landingSelectUntil = 0.0
 
 	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
 		if not obj or not obj.appModule:
@@ -381,8 +512,91 @@ class ExplorerManager:
 		if obj.appModule.appName == "explorer":
 			if conf.get("suppressDirectUIAnnounce", True) and obj.role in (Role.LIST, Role.TOOLBAR):
 				clsList.insert(0, LaconicFocusAncestor)
-			elif obj.role == Role.STATICTEXT and obj.name == "This folder is empty.":
+			elif obj.role == Role.STATICTEXT and obj.name in ("This folder is empty.", "Working on it..."):
 				clsList.insert(0, EmptyFolderStaticText)
+				log.debug(f"xPlorer TRACE: empty folder text overlay applied, name={obj.name!r}")
+			if obj.role == Role.LISTITEM and isinstance(obj, UIA) and conf.get("announceSingleItem", True):
+				clsList.insert(0, SingleItemArrowOverlay)
+			if obj.role == Role.LISTITEM and isinstance(obj, UIA) and conf.get("autoSelectFirstItem", True):
+				clsList.insert(0, FolderEntryOverlay)
+
+	def _beginSizeContext(self, obj):
+		try:
+			if obj is None or obj.role != Role.LISTITEM or not isinstance(obj, UIA):
+				return None
+			if not loadConfig().get("showItemSize", False):
+				return None
+			fileOps = getattr(self.plugin, "fileOps", None)
+			sizeAnnouncer = getattr(fileOps, "itemSizes", None)
+			if sizeAnnouncer is None or not self._isFileItem(obj):
+				return None
+			sizeAnnouncer.beginFocus(obj.name, loadConfig().get("itemSizeScope", "all"))
+			return sizeAnnouncer
+		except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError) as e:
+			log.debug(f"xPlorer: item size context skipped: {e}")
+			return None
+
+	def scheduleSoleItemAnnounce(self, item):
+		if self.suppressAllAnnouncements or self._foregroundTransition or self.contextMenuActive:
+			return
+		pressedAt = time.time()
+
+		def announceIfSole():
+			# Explorer raises no focus event when an arrow key has nowhere to
+			# go, which is always the case for a lone item. If a focus event
+			# did arrive after the keypress, NVDA already spoke the item and
+			# speaking it again here would only duplicate it.
+			if self._lastItemFocusTime >= pressedAt:
+				return
+			try:
+				if not self._isFileItem(item):
+					return
+				positionInfo = item.positionInfo
+				if not positionInfo or positionInfo.get("similarItemsInGroup") != 1:
+					return
+				selectionPattern = getattr(item, "UIASelectionItemPattern", None)
+				if selectionPattern is not None and not selectionPattern.CurrentIsSelected:
+					selectionPattern.Select()
+				speech.cancelSpeech()
+				sizeAnnouncer = self._beginSizeContext(item)
+				try:
+					speech.speakObject(item, reason=OutputReason.FOCUS)
+				finally:
+					if sizeAnnouncer:
+						sizeAnnouncer.endFocus()
+			except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError) as e:
+				log.debug(f"xPlorer: sole item announce skipped: {e}")
+
+		core.callLater(120, announceIfSole)
+
+	def armLandingSelect(self):
+		# Enter on an item opens a folder inside the same list control, so
+		# Explorer raises no focusEntered for it and only moves focus onto
+		# the landing item without selecting it. The next list item that
+		# receives focus within this window is the landing item.
+		if not self.getConfig().get("autoSelectFirstItem", True):
+			return
+		self._landingSelectUntil = time.time() + 4.0
+
+	def _selectLandingItem(self, obj):
+		if not self._landingSelectUntil:
+			return
+		if time.time() > self._landingSelectUntil:
+			self._landingSelectUntil = 0.0
+			return
+		if obj.role != Role.LISTITEM or not isinstance(obj, UIA):
+			return
+		self._landingSelectUntil = 0.0
+		if not self.getConfig().get("autoSelectFirstItem", True):
+			return
+		try:
+			selectionPattern = getattr(obj, "UIASelectionItemPattern", None)
+			if selectionPattern is None or selectionPattern.CurrentIsSelected:
+				return
+			selectionPattern.Select()
+			log.debug(f"xPlorer: selected landing item after folder entry, name={obj.name!r}")
+		except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError) as e:
+			log.debug(f"xPlorer: landing item select skipped: {e}")
 
 	def _perform_auto_select(self, obj):
 		conf = self.getConfig()
@@ -405,6 +619,22 @@ class ExplorerManager:
 		if not getattr(self, "_explorer_focused", False):
 			return nextHandler()
 
+		try:
+			if obj is not None and obj.role == Role.LISTITEM:
+				self._lastItemFocusTime = time.time()
+		except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError):
+			pass
+
+		sizeAnnouncer = None
+		if not (self._foregroundTransition or self.contextMenuActive or self.suppressAllAnnouncements):
+			sizeAnnouncer = self._beginSizeContext(obj)
+		try:
+			self._dispatchGainFocus(obj, nextHandler)
+		finally:
+			if sizeAnnouncer:
+				sizeAnnouncer.endFocus()
+
+	def _dispatchGainFocus(self, obj, nextHandler):
 		nextHandlerFired = False
 		def callNextHandlerOnce():
 			nonlocal nextHandlerFired
@@ -448,6 +678,7 @@ class ExplorerManager:
 			if not self._isValidExplorerContext(obj):
 				return callNextHandlerOnce()
 
+			self._selectLandingItem(obj)
 			callNextHandlerOnce()
 			
 		except (ComTypesCOMError, CtypesCOMError) as e:
@@ -493,6 +724,7 @@ class ExplorerManager:
 		# previous window - guards against a recycled HWND being reused by
 		# a brand-new window inside the delay window of a pending callback.
 		self._foregroundGeneration += 1
+		self._landingSelectUntil = 0.0
 
 		self._explorer_focused = False
 		try:
@@ -523,6 +755,12 @@ class ExplorerManager:
 			if self._isForeignDialogOpen():
 				log.debug("Foreign dialog detected, ignoring Explorer foreground event")
 			else:
+				if self._focusSnapshotTask:
+					self._focusSnapshotTask.Stop()
+				snapshotGeneration = self._foregroundGeneration
+				self._focusSnapshotTask = core.callLater(
+					800, self._checkFocusAfterForeground, snapshotGeneration
+				)
 				if not self._foregroundTransition:
 					self._foregroundTransition = True
 					self._cached_provider_desc.clear()
@@ -555,6 +793,47 @@ class ExplorerManager:
 			log.debug(f"COMError suppressed in event_foreground: {e}")
 		except Exception as e:
 			log.debug(f"Error in event_foreground: {e}")
+
+	def _checkFocusAfterForeground(self, generation):
+		self._focusSnapshotTask = None
+		if generation != self._foregroundGeneration:
+			return
+		try:
+			focusObj = api.getFocusObject()
+			foregroundHwnd = ctypes.windll.user32.GetForegroundWindow()
+			focusHwnd = getattr(focusObj, "windowHandle", None)
+			focusClass = focusObj.windowClassName
+			responsive = _isExplorerWindowResponsive(foregroundHwnd) if foregroundHwnd else None
+			if log.isEnabledFor(logging.DEBUG):
+				log.debug(
+					f"xPlorer TRACE: focus snapshot foregroundHwnd={foregroundHwnd} focusHwnd={focusHwnd} "
+					f"focusRole={focusObj.role} focusClass={focusClass} "
+					f"windowResponsive={responsive} explorerFocused={self._explorer_focused}"
+				)
+			focusStuckOnFrame = bool(focusHwnd) and focusHwnd == foregroundHwnd and focusClass == "CabinetWClass"
+			if not (focusStuckOnFrame and responsive and self._explorer_focused):
+				return
+			if self.contextMenuActive or self.suppressAllAnnouncements or self._isForeignDialogOpen():
+				return
+			if not loadConfig().get("recoverExplorerFocus", True):
+				return
+			self._recoverExplorerFocus(foregroundHwnd)
+		except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError, OSError) as e:
+			log.debug(f"xPlorer TRACE: focus check failed: {e}")
+
+	def _recoverExplorerFocus(self, frameHwnd):
+		itemsViewHwnd = _findItemsViewHwnd(frameHwnd)
+		if not itemsViewHwnd:
+			log.debug("xPlorer: focus stuck on Explorer frame, but no items view window was found")
+			return
+		uiaHandler = UIAHandler.handler
+		if uiaHandler is None:
+			return
+		try:
+			uiaHandler.clientObject.ElementFromHandle(itemsViewHwnd).SetFocus()
+			log.debug(f"xPlorer: moved focus from Explorer frame {frameHwnd} to items view {itemsViewHwnd}")
+		except (ComTypesCOMError, CtypesCOMError, AttributeError) as e:
+			log.debug(f"xPlorer: could not move focus to items view {itemsViewHwnd}: {e}")
 
 	def _clearForegroundTransition(self):
 		self._foregroundTransition = False

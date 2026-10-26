@@ -429,15 +429,20 @@ class ContextMenuManager:
 			menu_data.append({'label': _("TXT to Folder"), 'enabled': True,
 				'action': lambda: core.callLater(800, self.plugin._executeWithSilence, self.plugin.txt2folder.convert_txt_to_folder)})
 
-		# Create Multiple Folders...
-		if inExplorer:
-			menu_data.append({'label': _("Create Multiple Folders..."), 'enabled': True,
-				'action': lambda: core.callLater(0, self.plugin._executeWithSilence, self.plugin._createMultipleFolders)})
-
 		# Flat View
 		if inExplorer:
 			menu_data.append({'label': _("Flat View"), 'enabled': True,
 				'action': lambda: core.callLater(0, self.plugin._executeWithSilence, self.plugin.flatView.show_dialog)})
+
+		# Folder to ISO
+		if inExplorer:
+			menu_data.append({'label': _("Folder to ISO"), 'enabled': True,
+				'action': lambda: core.callLater(0, self.plugin._executeWithSilence, self.plugin.fileOps.convertFolderToIso)})
+
+		# Create Multiple Folders...
+		if inExplorer:
+			menu_data.append({'label': _("Create Multiple Folders..."), 'enabled': True,
+				'action': lambda: core.callLater(0, self.plugin._executeWithSilence, self.plugin._createMultipleFolders)})
 
 		# Compress
 		if inExplorer:
@@ -497,9 +502,10 @@ class ContextMenuManager:
 		workspace_submenu = self._buildWorkspaceSubmenu()
 		menu_data.append({'label': _("Workspace Manager"), 'enabled': True, 'submenu': workspace_submenu})
 
-		# xPlorer Settings - a plain settings dialog, no Explorer needed.
-		menu_data.append({'label': _("xPlorer Settings"), 'enabled': True,
-			'action': lambda: core.callLater(0, self.plugin._executeWithSilence, self.plugin._openSettings)})
+		# Size list of the folder open in Explorer - needs a live Explorer window.
+		if inExplorer:
+			menu_data.append({'label': _("Current folder size list"), 'enabled': True,
+				'action': lambda: core.callLater(0, self.plugin._executeWithSilence, self.plugin.fileOps.showFolderSizeList)})
 
 		# Recent Locations - browsing/navigating to saved paths, doesn't
 		# need a live Explorer selection.
@@ -509,6 +515,10 @@ class ContextMenuManager:
 		# Operation History - a plain log viewer, no Explorer needed.
 		menu_data.append({'label': _("Operation History"), 'enabled': True,
 			'action': lambda: core.callLater(0, self.plugin._executeWithSilence, self.plugin.operationHistory.show_dialog)})
+
+		# xPlorer Settings - a plain settings dialog, no Explorer needed.
+		menu_data.append({'label': _("xPlorer Settings"), 'enabled': True,
+			'action': lambda: core.callLater(0, self.plugin._executeWithSilence, self.plugin._openSettings)})
 
 		target_name = None
 		target_path = None

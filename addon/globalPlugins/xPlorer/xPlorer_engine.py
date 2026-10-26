@@ -29,6 +29,7 @@ from collections import deque
 
 import comtypes.client
 from comtypes import COMError
+from . import update
 
 addonHandler.initTranslation()
 log.debug("xPlorer: Initializing add-on")
@@ -73,6 +74,9 @@ FolderInfoManager = _safe_import_module('folderTools', 'FolderInfoManager')
 CaseConverter = _safe_import_module('folderTools', 'CaseConverter')
 FolderCreationDialog = _safe_import_module('folderTools', 'FolderCreationDialog')
 type_clipboard_into_rename_if_suitable = _safe_import_module('folderTools', 'type_clipboard_into_rename_if_suitable')
+get_auto_paste_text = _safe_import_module('folderTools', 'get_auto_paste_text')
+arm_auto_paste_speech_gate = _safe_import_module('folderTools', 'arm_auto_paste_speech_gate')
+disarm_auto_paste_speech_gate = _safe_import_module('folderTools', 'disarm_auto_paste_speech_gate')
 BatchRenameManager = _safe_import_module('batchRenameManager', 'BatchRenameManager')
 FlatViewManager = _safe_import_module('flatViewManager', 'FlatViewManager')
 SyncCompareManager = _safe_import_module('syncCompareManager', 'SyncCompareManager')
@@ -379,11 +383,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 			set_global_plugin(self)
 			log.debug("xPlorer GlobalPlugin initialized successfully")
+			update.start()
 		except Exception as e:
 			log.exception("Error in xPlorer GlobalPlugin.__init__")
 			raise
 
 	def terminate(self):
+		update.stop()
 		log.debug("xPlorer GlobalPlugin.terminate starting")
 		try:
 			super().terminate()
@@ -400,6 +406,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			if self.manager:
 				self.manager.terminate()
 
+			if disarm_auto_paste_speech_gate:
+				disarm_auto_paste_speech_gate()
 			self._cancelAllTimers()
 			if self._multiSelectActive:
 				self._exitMultiSelectLayer(silent=True, reason="addon_terminating")
@@ -950,9 +958,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if not focus or focus.appModule.appName != "explorer":
 			self._handleNonExplorerGesture(gesture)
 			return
-		self._compressTapState.registerTap(self._processCompressTap, triggerAtCount=3)
+		self._compressTapState.registerTap(self._processCompressTap, triggerAtCount=4)
 
-	script_compressZip_double_tap.__doc__ = _("Say size (single tap), compress zip (double tap), or unzip (triple tap)")
+	script_compressZip_double_tap.__doc__ = _("Say size (single tap), compress zip (double tap), unzip (triple tap), or folder to ISO (quadruple tap)")
 	script_compressZip_double_tap.category = _("xPlorer")
 	script_compressZip_double_tap.gestures = ["kb(desktop):NVDA+shift+z"]
 
@@ -962,8 +970,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self._executeWithSilence(self.fileOps.saySize)
 		elif tapCount == 2:
 			core.callLater(50, self._executeWithSilence, self.compression.compressZip)
-		elif tapCount >= 3:
+		elif tapCount == 3:
 			core.callLater(50, self._executeWithSilence, self.compression.unzipSelected)
+		elif tapCount >= 4:
+			core.callLater(50, self._executeWithSilence, self.fileOps.convertFolderToIso)
 
 	def script_robocopyMultitap(self, gesture):
 		if not self.robocopy:
@@ -1013,10 +1023,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if inExplorer:
 			self._cache_selected_folders_for_case()
 		self._contextMenuTapState.registerTap(
-			lambda: self._processContextMenuTap(inExplorer, gesture), triggerAtCount=2
+			lambda: self._processContextMenuTap(inExplorer, gesture), triggerAtCount=3
 		)
 
-	script_openXPlorerContextMenu.__doc__ = _("Open xPlorer context menu (single tap) or Recent Locations (double tap)")
+	script_openXPlorerContextMenu.__doc__ = _("Open xPlorer context menu (single tap), Recent Locations (double tap), or Current folder size list (triple tap)")
 	script_openXPlorerContextMenu.category = _("xPlorer")
 	script_openXPlorerContextMenu.gestures = ["kb(desktop):NVDA+shift+x"]
 
@@ -1031,11 +1041,19 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			# Explorer-only since it fundamentally needs a current
 			# Explorer folder to act on.
 			self._showContextMenu()
-		elif tapCount >= 2:
+		elif tapCount == 2:
 			if not inExplorer:
 				self._handleNonExplorerGesture(gesture)
 				return
 			self._showRecentLocationsMenu()
+		elif tapCount >= 3:
+			if not inExplorer:
+				self._handleNonExplorerGesture(gesture)
+				return
+			if not self.fileOps:
+				ui.message(_("File operations manager not available"))
+				return
+			self._executeWithSilence(self.fileOps.showFolderSizeList)
 
 	def _renameFile(self):
 		if not self.fileOps:
@@ -1248,7 +1266,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		from .folderTools import loadConfig
 		conf = loadConfig()
 		if conf.get("autoPasteClipboardToRename", True):
-			core.callLater(600, type_clipboard_into_rename_if_suitable)
+			preparedText = get_auto_paste_text() if get_auto_paste_text else None
+			if preparedText and arm_auto_paste_speech_gate:
+				arm_auto_paste_speech_gate(preparedText, 1800)
+			core.callLater(600, type_clipboard_into_rename_if_suitable, preparedText)
 
 	script_createFolderWithAutoPaste.__doc__ = _("Create new folder and paste clipboard content into rename field")
 	script_createFolderWithAutoPaste.category = _("xPlorer")
@@ -1297,8 +1318,12 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 					dlg = FolderCreationDialog(gui.mainFrame, path)
 					dlg.Raise()
 					dlg.SetFocus()
-					if dlg.ShowModal() == wx.ID_OK:
-						dlg.process_input()
+					gui.mainFrame.prePopup()
+					try:
+						if dlg.ShowModal() == wx.ID_OK:
+							dlg.process_input()
+					finally:
+						gui.mainFrame.postPopup()
 					dlg.Destroy()
 				except Exception as e:
 					ui.message(_("Error creating folders"))

@@ -7,6 +7,7 @@ import threading
 import wx
 from logHandler import log
 import addonHandler
+from .documentReaders import DocumentReadError, isDocumentFile, readDocumentText, rtfBytesToText
 
 addonHandler.initTranslation()
 
@@ -76,7 +77,8 @@ class ClipboardManager:
 				textFiles = []
 				for name, path in selectedItems:
 					fileExt = os.path.splitext(path)[1].lower()
-					if fileExt in textExtensions:
+					isReadableDocument = isDocumentFile(path) and not os.path.basename(path).startswith("~$")
+					if fileExt in textExtensions or isReadableDocument:
 						textFiles.append(path)
 					else:
 						log.debug(f"Skipping non-text file: {name}")
@@ -99,56 +101,52 @@ class ClipboardManager:
 
 		self.plugin._getSelectedItemsAsync(handleSelection)
 
+	def _readSingleFile(self, filePath):
+		fileExt = os.path.splitext(filePath)[1].lower()
+		try:
+			if fileExt == '.rtf':
+				with open(filePath, 'rb') as f:
+					return rtfBytesToText(f.read())
+			if isDocumentFile(filePath):
+				return readDocumentText(filePath)
+			try:
+				with open(filePath, 'r', encoding='utf-8') as f:
+					return f.read()
+			except UnicodeDecodeError:
+				with open(filePath, 'r', encoding='latin-1') as f:
+					return f.read()
+		except DocumentReadError as e:
+			log.warning(f"Could not convert {filePath}: {e}")
+		except (OSError, UnicodeError) as e:
+			log.error(f"Failed to read file {filePath}: {e}")
+		return None
+
 	def _readAndCopyFileContent(self, textFiles):
 		try:
 			combinedContent = ""
 			filesProcessed = 0
+			failedCount = 0
 			for filePath in textFiles:
-				try:
-					fileExt = os.path.splitext(filePath)[1].lower()
-					if fileExt == '.rtf':
-						rtf_to_text = self._getStriprtfModule()
-						if rtf_to_text:
-							try:
-								with open(filePath, 'r', encoding='utf-8', errors='ignore') as f:
-									rtf_content = f.read()
-								content = rtf_to_text(rtf_content)
-							except Exception as e:
-								log.error(f"Error processing RTF file {filePath}: {e}")
-								content = _("[Error processing RTF file]")
-						else:
-							content = _("[RTF content - striprtf module not available]")
-					else:
-						with open(filePath, 'r', encoding='utf-8') as f:
-							content = f.read()
-					if filesProcessed > 0:
-						combinedContent += "\n\n"
-					combinedContent += content
-					filesProcessed += 1
-				except UnicodeDecodeError:
-					try:
-						with open(filePath, 'r', encoding='latin-1') as f:
-							content = f.read()
-						if filesProcessed > 0:
-							combinedContent += "\n\n"
-						combinedContent += content
-						filesProcessed += 1
-					except (OSError, UnicodeError):
-						log.error(f"Failed to read file: {filePath}")
-				except Exception as e:
-					log.error(f"Error reading file {filePath}: {e}")
+				content = self._readSingleFile(filePath)
+				if content is None:
+					failedCount += 1
+					continue
+				if filesProcessed > 0:
+					combinedContent += "\n\n"
+				combinedContent += content
+				filesProcessed += 1
 
 			def finish():
+				if failedCount:
+					ui.message(_("{count} files could not be read").format(count=failedCount))
 				if not combinedContent.strip():
 					ui.message(_("No content could be read from selected files"))
 					return
 				if wx.TheClipboard.Open():
 					try:
 						wx.TheClipboard.SetData(wx.TextDataObject(combinedContent))
-						if filesProcessed == 1:
-							ui.message(_("Content from 1 file copied to clipboard"))
-						else:
-							ui.message(_("Content from {count} files copied to clipboard").format(count=filesProcessed))
+						lineCount = len(combinedContent.splitlines())
+						ui.message(_("Copy {lines} Lines from {files} files").format(lines=lineCount, files=filesProcessed))
 					finally:
 						wx.TheClipboard.Close()
 				else:
@@ -158,4 +156,3 @@ class ClipboardManager:
 		except Exception as e:
 			log.error(f"Error in copyFileContent: {e}")
 			wx.CallAfter(ui.message, _("Error copying file content"))
-

@@ -1,215 +1,284 @@
-<div align="center">
-
-![NVDA Logo](https://www.nvaccess.org/files/nvda/documentation/userGuide/images/nvda.ico)
-
 # xPlorer
 
-Your keyboard-only command center for File Explorer - copy, rename, compress, sync, and organize files without ever touching the mouse.
+Faster, friendlier File Explorer for NVDA users: multi-tap hotkeys, a keyboard menu, file basket, workspaces, batch rename, Robocopy, archives, ISO creation and more.
 
-**author:** chai chaimee  
-**url:** https://github.com/chaichaimee/xPlorer
+**Author:** chai chaimee  
+**URL:** https://github.com/chaichaimee/xPlorer
 
-</div>
 
 ## Introduction
 
-xPlorer is a huge productivity toolkit for Windows File Explorer, built specifically for efficient, accessible use with NVDA. Instead of digging through Explorer's ribbon and right-click menus, almost everything xPlorer offers is reachable with a handful of NVDA hotkeys - many of which do three different things depending on how many times you tap them in quick succession.
+xPlorer adds a set of tools to Windows File Explorer that are built for keyboard and screen reader use. Most commands live on a few easy keys. Each key does something different when you tap it once, twice, three times or, for one key, four times. The same commands are also in a menu you can open from the keyboard.
 
-With xPlorer you can: instantly hear the size of a selection or a whole folder tree; rename one file or hundreds at once with patterns and counters; gather files from many different folders into a virtual "basket" and then copy, move, zip, or mirror them all in one go; compare two folders and copy over only what's missing or different; find and clean up duplicate files; convert folder names to a different case in bulk; turn a plain text file into a stack of folders; browse an entire folder tree as one flat, filterable list; compress and extract archives; copy or move huge amounts of data reliably with Robocopy, complete with speed and time-remaining feedback; save and reopen whole "workspaces" of folders at once; and keep a running history of everything xPlorer has done, so you can always check what happened.
+Every dialog is a plain list, text box or button, so NVDA reads it normally. Long jobs such as compressing, copying or building an ISO are announced when they start and finish, and use tones to show progress.
 
-A large, accessible context menu (opened with a single hotkey) ties all of these tools together in one place, alongside a full xPlorer Settings panel for fine-tuning how Explorer behaves and speaks with NVDA.
+xPlorer also tidies up what NVDA says in File Explorer. You can have NVDA select the first item when you enter a folder, say "Empty Folder" for an empty folder, stay quiet about "DirectUIHWND", "- File Explorer" and "Task Switching", and speak the size of each file or folder as you move through the list.
 
-### Hot Keys
 
-> **NVDA+Shift+C**  
-> Single Tap: Copy the selected file and folder names to the clipboard  
-> Double Tap: Copy the text content of the selected file(s)  
-> Triple Tap: Copy the current folder's address bar path
+## Hot Keys
 
-> **NVDA+Shift+V**  
-> Single Tap: Select all other items that share the focused item's file extension  
-> Double Tap: Invert the current selection  
-> Triple Tap: Toggle Multi-select mode on or off (non-contiguous selection with the keyboard)
+Press the key once, twice, three times or four times in quick succession. You have half a second between taps (0.3 seconds for the xPlorer menu key). All keys can be changed in NVDA's Input Gestures dialog, under the xPlorer category.
 
-> **NVDA+Shift+A**  
-> Single Tap: Open the Select by Search dialog  
-> Double Tap: Open Flat View  
-> Triple Tap: Open the Batch Rename Tool
+**NVDA+Shift+C**
 
-> **NVDA+Shift+Z**  
-> Single Tap: Announce the total size of the current selection  
-> Double Tap: Compress the selection into a zip file  
-> Triple Tap: Extract (unzip) the selected archive
+- Single Tap : Copy the names of the selected files and folders to the clipboard
+- Double Tap : Copy the text content of the selected file(s)
+- Triple Tap : Copy the path shown in the current folder's address bar
 
-> **NVDA+Shift+R**  
-> Single Tap: Robocopy - mark the selection to copy  
-> Double Tap: Robocopy - paste into the current folder  
-> Triple Tap: Robocopy - mark the selection to move
+**NVDA+Shift+V**
 
-> **NVDA+Shift+X**  
-> Single Tap: Open the main xPlorer context menu  
-> Double Tap: Open the Recent Locations menu
+- Single Tap : Select every other item that has the same file extension as the focused item
+- Double Tap : Invert the current selection
+- Triple Tap : Turn Multi-select on or off (non-contiguous selection with the keyboard)
 
-> **NVDA+Shift+F2**  
-> Single Tap: Rename the selected file  
-> Double Tap: Rename the selected file or folder using the current clipboard text  
-> Triple Tap: Undo the last batch rename operation
+**NVDA+Shift+A**
 
-> **NVDA+Shift+N**  
-> Single Tap: Add the selected item(s) to the File Basket  
-> Double Tap: Open the File Basket window  
-> Triple Tap: Clear the File Basket
+- Single Tap : Open the Select by Search dialog
+- Double Tap : Open Flat View
+- Triple Tap : Open the Batch Rename tool
 
-> **NVDA+Shift+M**  
-> Single Tap: Open the Workspace menu  
-> Double Tap: Add the selected folder to a new workspace, or save the current folder as a workspace  
-> Triple Tap: Open the Workspace editor (rename, pin, reorder, or delete saved workspaces)
+**NVDA+Shift+Z**
 
-> **Control+Shift+N**  
-> Single Tap: Create a new folder in the current location, then automatically paste the current clipboard text into the rename field
+- Single Tap : Say the total size of the selection
+- Double Tap : Compress the selection into a zip file
+- Triple Tap : Extract the selected archive(s)
+- Four Taps : Convert the selected folder into an ISO disc image
+
+**NVDA+Shift+R**
+
+- Single Tap : Robocopy - mark the selection to copy
+- Double Tap : Robocopy - paste into the current folder
+- Triple Tap : Robocopy - mark the selection to move
+
+**NVDA+Shift+X**
+
+- Single Tap : Open the xPlorer menu
+- Double Tap : Open the Recent Locations list
+- Triple Tap : Open the Current folder size list
+
+**NVDA+Shift+F2**
+
+- Single Tap : Rename the selected file
+- Double Tap : Rename the selected item using the text on the clipboard
+- Triple Tap : Undo the last batch rename
+
+**NVDA+Shift+N**
+
+- Single Tap : Add the selected items to the File Basket
+- Double Tap : Open the File Basket
+- Triple Tap : Clear the File Basket
+
+**NVDA+Shift+M**
+
+- Single Tap : Open the Workspace menu
+- Double Tap : Add the selected folder to a new workspace, or save the current folder as a workspace
+- Triple Tap : Open the Workspace editor (load, edit, pin, reorder or delete saved workspaces)
+
+**Ctrl+Shift+N** : Create a new folder in File Explorer and paste the text on the clipboard into its name field
+
+Outside File Explorer most of these keys are passed on to Windows unchanged, so they never get in your way. NVDA+Shift+A needs File Explorer and tells you when it cannot run. The xPlorer menu (single tap) and the Workspace keys work anywhere; outside File Explorer the menu shows only the commands that do not need an Explorer window.
+
 
 ## Features
 
-### Clipboard Operations (NVDA+Shift+C)
 
-This one hotkey covers three related clipboard actions depending on how many times you press it within about half a second:
+### The xPlorer Menu
 
-1. **Single tap** copies the names of every selected file and folder to the clipboard as plain text, folders listed first, then files, both alphabetically.
-2. **Double tap** copies the actual text content of the selected file(s) - it only works with recognized text-based file types (.txt, .py, .js, .html, .csv, .md, and similar), and refuses if a folder is selected.
-3. **Triple tap** copies the path currently shown in Explorer's address bar, regardless of what is selected.
+Press **NVDA+Shift+X** once. The menu is a single list. Use Up and Down to move, Right Arrow or Enter to open a submenu, Left Arrow or Escape to go back, and Enter to run a command. A command that cannot run is read as "unavailable". The menu is built fresh every time.
 
-### Selection Tools (NVDA+Shift+V and the Selection submenu)
+- **Create File**, **File Basket**, **Batch Rename Tool**, **Undo Last Rename**
+- **Folder Sync & Compare** : Mark Left Folder, Run Compare
+- **Duplicate Finder**, **Flat View**, **Folder to ISO**, **TXT to Folder**, **Create Multiple Folders**
+- **Case Converter for Folders** : Uppercase, Lowercase, Title Case, Headline Case
+- **Compress** : Compress zip, unCompress zip
+- **Selection** : Select by Extension, Invert selection, Multi-select, Select by Search
+- **Clipboard Operations** : Copy address bar, Copy content, Copy selected file and folder names
+- **Rename selected file**
+- **Robocopy** : copy, move, paste
+- **Workspace Manager**, **Current folder size list**, **Recent Locations**, **Operation History**, **xPlorer Settings**
+- **Properties**, **Say size**, and, when a folder is selected, **Folder info**
 
-1. **Single tap** - Select by Extension: looks at whichever file currently has focus, and selects every other item in the folder that shares the same file extension.
-2. **Double tap** - Invert Selection: everything currently selected becomes unselected, and everything unselected becomes selected.
-3. **Triple tap** - Multi-select mode: instead of NVDA intercepting your key presses, xPlorer genuinely holds the Ctrl key down at the operating system level. This means your own Arrow keys, Space, Enter, Ctrl+C, and Ctrl+X all behave exactly as if you were physically holding Ctrl while using Explorer's native selection - nothing is re-implemented or guessed. Pressing Delete or Shift+Delete while the layer is active is handled specially so it deletes normally instead of being seen as Ctrl+Delete. Pressing any other key, or leaving Explorer, automatically switches Multi-select mode off, and a five-minute safety timer will also turn it off automatically if you forget.
+**Say size** and **Folder info** show their answer in the menu item itself. As soon as you arrow onto them the text changes to the size, for example "12.40 MB", or to the contents, for example "5 subfolders, 20 files". **Properties** opens a read-only list with the name, location, size, the created, modified and accessed dates, and, for a folder, the number of files and folders inside. For a drive it shows the drive letter, file system, free, used and total space.
 
-**Select by Search** (also reachable from the context menu's Selection submenu) opens a dialog where you can select items in the current folder by:
+Outside File Explorer the menu shows only File Basket, Undo Last Rename, Workspace Manager, Recent Locations, Operation History and xPlorer Settings.
 
-- **Normal search**: a plain, case-insensitive substring match.
-- **Regex**: a full regular expression.
-- **Wildcard**: patterns like `*.txt` or `report_*.docx`; you can separate several patterns with commas or spaces to match any of them.
-- An optional **"Include subfolders"** checkbox extends the search recursively - a top-level folder is selected if a match is found anywhere inside it.
-- As you type, a live results list updates automatically (after a short pause, so it doesn't lag while typing), showing exactly which items currently match.
-- From the results list you can press Enter to open an item, Ctrl+C or Ctrl+X to copy or cut it, Ctrl+Space to pick individual items, or open a context menu (right-click or the Menu key) for Copy, Cut, Open to path, or Delete (which sends the item to the Recycle Bin, not a permanent delete).
 
-### Say Size and Compress/Uncompress (NVDA+Shift+Z)
+### Copying Names, Text and Paths
 
-1. **Single tap** - Say size: calculates and announces the total size of everything currently selected. Folders are measured recursively, and a whole drive is measured using the drive's actual free/used space rather than walking every file. A periodic beep plays while a large calculation is still running.
-2. **Double tap** - Compress zip: compresses the selection into a .zip file in the same folder, showing a progress dialog with percentage and beeping tones. If 7-Zip is installed, xPlorer uses it for speed; otherwise it falls back to Python's built-in zip support.
-3. **Triple tap** - unCompress: extracts a selected archive (.zip, .rar, .7z, .tar, .gz, .iso, .nvda-addon, and more, when 7-Zip is available). Depending on your xPlorer Settings, you'll either be asked to choose between extracting into a new subfolder named after the archive or extracting directly into the current folder, or xPlorer will apply your preferred default automatically without asking.
+- **Single tap** copies the names of the selected files and folders, folders first and then files, each sorted by name, and says how many were copied.
+- **Double tap** copies the text inside the selected files. It works with plain text and code files (txt, py, js, html, css, xml, json, csv, md, ini, conf, cfg, java, cpp, c, h, php, rb, pl, sh, bat, ps1), with RTF files and with Word documents (doc and docx). Several files are joined with a blank line between them. NVDA says how many lines from how many files were copied. Folders cannot be copied this way, and the selection must not be larger than 15 MB in total.
+- **Triple tap** copies the path of the folder that is open in the address bar.
 
-### Robocopy (NVDA+Shift+R and the Robocopy submenu)
 
-1. **Single tap** - Copy: marks the current selection to be copied.
-2. **Double tap** - Paste: performs the transfer into whichever folder you are currently viewing in Explorer.
-3. **Triple tap** - Move: marks the current selection to be moved instead of copied.
+### Selection Tools
 
-Transfers run through Windows' Robocopy utility in the background, with a progress dialog showing percentage complete, transfer speed, and an estimated time remaining. xPlorer automatically detects older or removable drives (like USB flash drives) and switches to gentler, more patient retry settings for them instead of the faster multi-threaded mode used for internal drives, and each file copy is verified afterward by comparing file sizes.
+- **Select by extension** (single tap of NVDA+Shift+V): put the focus on one file first. Every file with the same extension in the folder is selected.
+- **Invert selection** (double tap): selected items become unselected and the other way round. Big folders are handled in the background.
+- **Multi-select** (triple tap): lets you pick items that are not next to each other. A tone tells you it has started, and another tone tells you it has ended. While it is on, Up, Down, Home, End, Space and Enter work like they do while holding Ctrl, so you can move with the arrows and press Space to add or remove an item. Press Delete or Shift+Delete and Multi-select ends, then the delete goes ahead as normal. Any other key ends it too, and it switches itself off after five minutes. Triple tap again to turn it off yourself.
 
-### Open xPlorer Context Menu / Recent Locations (NVDA+Shift+X)
 
-1. **Single tap** opens the full xPlorer context menu - a single accessible list containing every tool below, organized with submenus where appropriate. Menu items that need a live Explorer selection (like Properties or Rename) are hidden automatically when you open the menu outside of Explorer.
-2. **Double tap** opens Recent Locations directly (see below).
+### Select by Search
 
-### Recent Locations
+Press NVDA+Shift+A once, or choose Select by Search from the menu. Type what you are looking for and the list of matching items updates as you type, and NVDA says how many there are.
 
-xPlorer quietly keeps track of the last 100 unique folders you've visited in Explorer. Opening this menu lets you jump straight back to any of them. Right-clicking (or pressing the Menu key on) an entry lets you Pin or Unpin it so it survives the "Clear all" action and the 100-item limit, clear every unpinned entry at once, and switch between showing paths normally or with their folder segments reversed (handy for very long paths in the narrow menu).
+- **Include subfolders** searches every level below the current folder, the way Flat View does. In that case the top-level items that contain a match are selected.
+- **Search mode** is Normal search (the text appears in the name), Regex (a regular expression) or Wildcard (for example `*.txt` or `report_*.docx`; separate several patterns with a comma or a space). A bad regular expression is shown in the list instead of failing.
+- Press OK and the matching items are selected in File Explorer.
+- In the match list, press Enter to open the item, Ctrl+C or Ctrl+X to copy or cut, and Ctrl+Space to pick or unpick items. The context menu (Applications key or Shift+F10) has Copy, Cut, Open to path and Delete. Delete sends the items to the Recycle Bin after you confirm.
 
-### Rename Selected File / Undo (NVDA+Shift+F2)
+Your last mode, search text and subfolder choice are remembered.
 
-1. **Single tap** opens a small dialog with separate name and extension fields for the single selected file.
-2. **Double tap** renames the selected file or folder using whatever text is currently on the clipboard - for files, if the clipboard text doesn't already include an extension, the file's original extension is kept automatically. Clipboard text containing line breaks or characters that aren't valid in a file name is rejected with a message.
-3. **Triple tap** undoes the most recent Batch Rename Tool operation, restoring every renamed file to its original name.
-
-### Create Folder with Auto-Paste (Control+Shift+N)
-
-This works alongside Explorer's own "New Folder" shortcut: xPlorer creates the folder as normal, then - if enabled in xPlorer Settings - automatically types the current clipboard text into the folder's rename field for you, saving you from typing (or pasting) the name by hand. Several different low-level methods are tried in sequence to make sure the paste succeeds reliably.
-
-### File Basket (NVDA+Shift+N)
-
-The File Basket is a virtual staging area: nothing is actually copied or moved on disk until you tell it to. You can gather files and folders from several different locations across multiple Explorer windows into one basket, then act on the whole collection at once.
-
-1. **Single tap** adds the current selection to the basket.
-2. **Double tap** opens the File Basket window, listing every item currently gathered.
-3. **Triple tap** empties the basket.
-
-From the File Basket window you can remove individual items, clear everything, and run one of four bulk actions on the whole basket: **Copy**, **Move**, **Zip** (saved as a single archive you choose the name and location for), or **Mirror Copy** (copies items to the destination, replacing anything already there with the same name). The basket persists even if you restart NVDA, until you clear it.
-
-### Workspace Manager (NVDA+Shift+M)
-
-A workspace is simply a named group of folder paths you use together often.
-
-1. **Single tap** opens the Workspace menu, listing every saved workspace plus an option to save the current selection as a new one.
-2. **Double tap** either adds whichever folder(s) you currently have selected in Explorer to a new workspace, or, if nothing is selected, opens the Save Workspace dialog directly.
-3. **Triple tap** opens the full Workspace editor, where you can rename, delete, pin to the top, and reorder your saved workspaces.
-
-Loading a workspace opens every one of its folders, each in its own Explorer window. Loading the same workspace a second time closes exactly the windows xPlorer itself opened for it, acting as a convenient toggle, without ever touching a window it didn't open.
-
-### Batch Rename Tool
-
-Opened via NVDA+Shift+A (triple tap) or from the context menu, this tool renames many files at once using either of two modes:
-
-- **Find and replace**: replace one piece of text with another across all selected file names, optionally treating the search text as a regular expression.
-- **Tag pattern**: build a new name from a template such as **[N]_[C].[E]**, where **[N]** is the original name, **[C]** is an incrementing counter (with a starting value you choose), **[D]** is the file's last-modified date, and **[E]** is its extension.
-
-A live preview list shows exactly what every file will be renamed to before you confirm, and duplicate resulting names are automatically numbered to avoid clashes. The whole operation can be undone afterward with the Undo Last Rename option (also available via NVDA+Shift+F2, triple tap).
-
-### Duplicate Finder
-
-Scans the selected folder (or the current folder if nothing is selected) recursively for duplicate files. Files are first grouped by exact size, then compared using a hash of the start of their content, so only genuine duplicates are grouped together. Results are shown as a list of duplicate groups; selecting a group shows every copy along with its modification date, and you can resolve a group with one click by choosing to keep the newest copy, the oldest copy, or specifically the copy that lives in the folder you originally scanned - everything else in that group is sent safely to the Recycle Bin, not permanently deleted.
-
-### Folder Sync and Compare
-
-A two-step, read-only comparison tool, reached from the context menu's Folder Sync & Compare submenu:
-
-1. **Mark Left Folder** remembers the folder you're currently viewing as the "left" side of the comparison.
-2. Navigate to a second folder and choose **Run Compare**, which becomes the "right" side.
-
-xPlorer then walks both folder trees and reports every file that exists only on the left, only on the right, or exists on both but differs in size or modification date. Nothing is changed automatically - you can select any "left only" or "different" entry and use the Copy Selected to Right button to bring that specific file across when you decide it's needed.
-
-### Case Converter for Folders
-
-Found in the context menu's Case Converter for Folders submenu, this recursively renames the selected folder(s) and every subfolder inside them to one of four cases: **Uppercase**, **Lowercase**, **Title Case** (every word capitalized), or **Headline Case** (capitalizes major words while keeping small connecting words like "a", "the", "and", or "of" lowercase, except at the very start or end of the name).
-
-### TXT to Folder
-
-Select a single .txt or .rtf file and choose TXT to Folder from the context menu. xPlorer reads the file line by line and creates one new subfolder for every non-empty line, using that line's text as the folder's name (invalid characters are automatically cleaned up, and reserved Windows names like CON or PRN are adjusted). All of the new subfolders are created together inside one new folder named after the original text file.
-
-### Create Multiple Folders
-
-Opens a dialog where you specify a folder title and how many folders to create (up to 100). By default the folders are named "Title1", "Title2", and so on, but you can tick a checkbox to type a completely custom name for each one individually. There's also an option to create one main folder first and place all the numbered folders inside it as subfolders, rather than creating them all side by side in the current location. Folders are created in the background so the dialog stays responsive even for a large batch.
 
 ### Flat View
 
-Reached via NVDA+Shift+A (double tap) or from the context menu, Flat View scans the entire folder tree under your current Explorer folder and lists every file it finds in one single, flat, filterable list - regardless of how deeply nested it is - showing each file's name, its relative subfolder, and its size. As you type into the filter box, the list narrows down live. Activating an entry opens the file directly, and there's also a button to jump straight to that file's actual location in Explorer.
+Flat View lists every file in the current folder and all of its subfolders in one list, with the columns Name, Folder and Size. Type in the filter box to narrow the list. NVDA announces how many matches there are. Press Enter on a file to open it, or choose **Open Containing Folder** to show it in File Explorer. Very large trees are cut off at 50,000 files, and NVDA tells you when that happens.
 
-### Create File
 
-Opens a dialog for creating one or more new, empty files at once (up to 10) in the current folder, each with its own name and extension. If you leave a name blank, xPlorer fills in a sensible default like "new_file" automatically.
+### Batch Rename Tool
 
-### Properties, Say Size, and Folder Info (context menu)
+Open it with NVDA+Shift+A pressed three times, or from the menu. It works on the files you selected. If you selected folders, every file inside them, including subfolders, is added. If nothing is selected, all the files in the current folder and its subfolders are used.
 
-The **Properties** entry shows a read-only, fully reviewable panel with details about the selected item: its name, location, size, and created/modified/accessed dates (shown in friendly relative terms like "today" or "yesterday" when appropriate). For folders, the size and content counts are calculated in the background and filled in once ready. Selecting a whole drive instead shows drive-specific details: its volume name, file system type, and free, used, and total capacity.
+- **Rename mode** : Find and replace, or Tag pattern.
+- **Find and replace** : type the text to find and the text to replace it with. Tick **Use regular expressions** to use a pattern. Only the file name changes; the extension is kept.
+- **Tag pattern** : build the new name from tags. `[N]` is the original name, `[E]` is the extension, `[C]` is a counter, and `[D]` is the date the file was last changed (year-month-day). Set the **Counter start value**. For example `[N]_[C].[E]`. If your pattern has no extension, the original one is added back.
+- **Preview** : the list of new names updates as you type. If two files would get the same name, a number is added to make them different.
+- Press **Apply** to rename. A file is skipped if its new name already exists, and NVDA reads the first three problems. Nothing is ever overwritten.
+- **Undo Last Rename** is a button in the dialog. It is also on the menu and on NVDA+Shift+F2 pressed three times, and it works even after the dialog has closed. Files that are missing, or whose old name is now taken, are reported and left alone.
 
-**Say size** (also available directly through NVDA+Shift+Z, single tap) announces the total size of your current selection. **Folder info** appears only when a folder is selected, and announces the total number of subfolders and files contained within it, calculated recursively.
+
+### Renaming a File
+
+- **Single tap** of NVDA+Shift+F2 opens a small rename box for the selected file.
+- **Double tap** renames the selected file or folder at once with the text on the clipboard. The text must be a single line without characters that Windows does not allow, otherwise NVDA says it is not a valid name. If the text has no extension, a file keeps its own extension. If the new name is taken, nothing is changed and NVDA tells you.
+- **Ctrl+Shift+N** creates a new folder in File Explorer and puts the clipboard text in its name box when it can be used as a name. Characters Windows does not allow are replaced the way you choose in the settings (a hyphen, an underscore, or removed). This can be turned off in the settings.
+
+
+### Say Size and Folder Info
+
+NVDA+Shift+Z once says the total size of everything you selected, for example "3 items 1.25 GB". Folders are counted with everything inside them. Beeps play while a large folder is being measured. **Folder info** from the menu says how many subfolders and files the selected folder has.
+
+
+### Item Sizes While You Browse
+
+Turn on **Announce the size of files and folders when moving through the list** in the settings and NVDA adds the size after each name as you arrow through File Explorer. You can limit this to files only, folders only, or both. File sizes are spoken at once. Folder sizes are worked out in the background, so a folder's size may be spoken a moment after its name, and remembered for the next visit. Folders that are too large to measure quickly are left out.
+
+
+### Current Folder Size List
+
+Triple tap NVDA+Shift+X, or choose it from the menu. You get a list of everything in the folder with its size, for example "Pictures, folder, 2.31 GB". A summary line says how many folders and files there are and their total size. Open the context menu on the list for **Settings**, **Include subfolder contents in folder sizes** and **Rescan**. In Settings you choose whether the name or the size comes first, the sort order (name A to Z or Z to A, size largest or smallest first), whether to show folders and files, only folders or only files, and whether folders are listed before files. Counting the contents of subfolders is slower. Your choices are remembered.
+
+
+### Compress and Extract
+
+- **Compress** (double tap NVDA+Shift+Z): the selection is packed into a zip file. A single item makes a zip with its own name next to it. Several items make a zip named after the folder they are in. If the name is taken, a number is added. A progress window with a Cancel button appears, and tones play until it is done. xPlorer uses 7-Zip when it is installed, and its own zip writer when it is not.
+- **Extract** (triple tap): one archive opens a choice between extracting to a folder named after the archive, or extracting here. You can turn that question off in the settings and always use one way. If you select several archives, each one is extracted into its own folder.
+- Supported archives are zip, rar, 7z, tar, gz, bz2, xz, tgz, iso, cab, wim and nvda-addon. Zip, nvda-addon and ISO files can be extracted without 7-Zip. The other kinds need 7-Zip, and NVDA tells you if it is missing.
+
+
+### Folder to ISO
+
+Select one folder and tap NVDA+Shift+Z four times, or choose Folder to ISO from the menu. xPlorer writes an ISO disc image named after the folder, in the same place as the folder. If the name is taken, a number is added. It needs no other program.
+
+- The image can be read by Windows and other systems. A folder with a file larger than 4 GB is written in the UDF format instead, and NVDA says "UDF format" when it is finished.
+- Symbolic links and junction points are skipped, and NVDA says how many items were skipped.
+- xPlorer checks there is enough free space first. Tones play while it works. A progress window with a Cancel button appears for large folders (256 MB or more).
+- When it is finished, NVDA says the name and size of the ISO. A cancelled or failed job leaves no half-written file.
+
+
+### Robocopy
+
+Robocopy is the fast copy tool built into Windows. xPlorer puts it on three taps.
+
+1. Select files or folders and tap NVDA+Shift+R once to mark them for **copy**, or three times to mark them for **move**. NVDA says how many items are ready.
+2. Go to the destination folder, in the same window or another one, and tap NVDA+Shift+R twice to **paste**.
+3. A progress window shows the percentage, which item is being copied, and the time remaining. Press Cancel to stop.
+
+The percentage follows the bytes actually copied, so a single big file moves along too. USB flash drives get gentler settings with more patient retries. If a copy fails, xPlorer tries once more with slower settings. At the end NVDA says how many items succeeded and how many failed. If anything could not be copied, a warning window lists those items. A move removes the originals only after they have been copied. The list of marked items is cleared when the paste starts.
+
+
+### File Basket
+
+The File Basket collects files and folders from different places so you can deal with them together. What is in the basket is kept when NVDA restarts.
+
+- **Single tap** of NVDA+Shift+N adds the selected items and says what was added. Items that are already there are not added twice.
+- **Double tap** opens the basket. **Triple tap** empties it and says what was cleared. From the menu, File Basket adds the selection and opens the basket in one step.
+- In the basket window choose an **Action** : Copy, Move, Zip or Mirror Copy. Choose the destination folder with **Browse**, then press **Execute**. For Zip you choose the name of the zip file.
+- **Mirror Copy** replaces anything that has the same name in the destination with a fresh copy.
+- **Remove Selected** (or the Delete key) takes one item out. **Clear Basket** removes them all.
+- NVDA says how many items succeeded and failed when it is done.
+
+
+### Workspaces
+
+A workspace is a named group of folders that you open together, each in its own File Explorer window. It is good for a project that always needs the same few places.
+
+- **Open the menu** with NVDA+Shift+M once. Choose a workspace to load it. Folders that are already open are brought to the front instead of opened twice. NVDA says how many it opened and how many were already open. Choose the same workspace again and the windows it opened are closed.
+- **Save one** by tapping NVDA+Shift+M twice. If you have a folder selected it starts a new workspace with that folder. Repeat on other folders to add them. Otherwise the Save Workspace window opens with the current folder in it. In that window type a name, add folders with **Add Folder...**, or paste or type paths one per line, then press Save.
+- **Edit them** with NVDA+Shift+M three times. The list offers Load, Edit and Delete. Open the context menu on a workspace for Pin to Top, Move Up, Move Down, Delete and Clear All Workspaces. Pinned workspaces stay at the top of the list.
+
+
+### Recent Locations
+
+xPlorer remembers the folders you visit, up to 100. Tap NVDA+Shift+X twice, or choose Recent Locations from the menu, and press Enter on one to open it. Open the context menu (Applications key or Shift+F10) for **Pin** or **Unpin**, **Clear all (except pinned)**, and a choice between **Normal display** and **Reversed display**, which reads the folder names from the innermost folder outwards. Pinned places are never dropped when the list is full. Folders that no longer exist are not listed.
+
+
+### Folder Sync & Compare
+
+1. Open the folder you want as the **left** side and choose **Mark Left Folder (Sync Compare)** from the menu.
+2. Open the other folder and choose **Run Compare (Sync Compare)**.
+3. A list shows only the differences, by path inside the folders: Only in left, Only in right, or Different (size/date).
+4. Select an item and press **Copy Selected to Right** to copy it from the left folder to the right one. Missing subfolders are created. Files that exist only on the right side cannot be copied this way.
+
+Files are compared by size and by date and time of change. Subfolders are included. Nothing is deleted or changed unless you press the copy button.
+
+
+### Duplicate Finder
+
+Select a folder, or just open one, and choose Duplicate Finder from the menu. xPlorer scans it and everything inside it for files that are the same.
+
+- Two files count as the same when they have the same size and the same first 64 KB of content. Empty files are ignored. Check the files before you delete if exactness matters to you.
+- The window has a list of **Duplicate groups**, each shown as "2 copies, 1.5 MB each", with the biggest waste first, and a list of the files in the selected group.
+- Press **Keep Newest**, **Keep Oldest** or **Keep File in This Folder** to keep one file and move all the other copies of that group to the Recycle Bin. Keep File in This Folder keeps the copy that sits directly in the folder you scanned.
+
+
+### Creating Files and Folders
+
+- **Create File** : choose how many files to create (1 to 10) and give each a name and an extension (txt by default). A number is added if a name is already used. The files are empty, apart from a one-line encoding header in py, html, css, xml, xaml and svg files.
+- **Create Multiple Folders** : type a title and a number of folders (1 to 100) to make folders named like Title1, Title2 and so on. Tick **Edit individual folder names** to type each name yourself. Tick **Create main folder and then subfolders** to make the title folder first and put the others inside it.
+- **TXT to Folder** : select one txt or rtf file. Every non-empty line becomes a folder, inside a new folder named after the file.
+
+
+### Case Converter for Folders
+
+Choose Uppercase, Lowercase, Title Case or Headline Case on the menu. The selected folders and every subfolder inside them are renamed. Files are not touched. Headline Case keeps small words such as "and", "of" and "the" in lower case, except at the start and end. A folder is skipped if the new name already exists. NVDA says how many folders were converted.
+
 
 ### Operation History
 
-xPlorer keeps a running, timestamped log of what it has done for you - renames, copies, moves, extractions, and more - up to the most recent 200 entries. Open it from the context menu to review recent activity, or clear the whole history at any time.
+xPlorer keeps a list of what it has done: renames and undone renames, zip files, extractions, ISO files, Robocopy jobs, File Basket actions, created files and removed duplicates. It holds the last 200, most recent first. Open it from the menu. The **Clear History** button empties it.
 
-### xPlorer Settings
 
-A dedicated panel inside NVDA's own Settings dialog lets you fine-tune how xPlorer behaves:
+### Settings
 
-- **Automatically select the first item**: when a file list gains focus, the first (or already-focused) item is automatically selected for you, matching Explorer's usual mouse behavior.
-- **Announce "Empty Folder"**: controls whether NVDA speaks a clear "Empty Folder" message when you enter a folder with nothing in it.
-- **Suppress announcement of DirectUIHWND class**: quiets a normally-unhelpful internal window class name that Explorer sometimes reports.
-- **Suppress announcement of "- File Explorer" in window titles**: trims that suffix from spoken window titles for a cleaner announcement.
-- **Automatically paste clipboard content into rename field**: controls the Control+Shift+N auto-paste behavior described above.
-- **Show uncompress dialog**: when off, extracting an archive skips the "where should this go" prompt and always uses your chosen default action (extract to a named subfolder, or extract directly into the current folder) automatically.
+Open NVDA's Settings and choose the xPlorer category, or choose xPlorer Settings on the menu.
 
-> **Note:** Several tools that scan large folder trees (Say size, Folder info, Duplicate Finder) use a bounded, "good enough" scan that stops early on extremely large trees to keep NVDA responsive, rather than freezing while counting hundreds of thousands of files.
+- Automatically select the first item (when you enter a folder).
+- Announce "Empty Folder" when entering an empty folder, and instead of "Working on it".
+- Suppress the announcement of DirectUIHWND, of "- File Explorer" in window titles, and of "Task Switching".
+- Announce and select the item when it is the only one in a folder.
+- Announce the size of files and folders when moving through the list, with a choice of File only, Folder only or All files and folders.
+- Announce the item position, linked to NVDA's own Object Presentation setting.
+- Move the focus into the file list when File Explorer is activated with the focus stuck on the window frame.
+- Automatically paste clipboard content into the rename field, and what to replace forbidden characters with: a hyphen, an underscore, or nothing.
+- Show the uncompress dialog, and what to do when it is hidden: extract to a subfolder named after the archive, or extract here.
+
+The settings are kept in the NVDA configuration folder in use, under ChaiChaimee\xPlorer. Lists such as workspaces, recent locations, the basket and the history are saved there too.
+
+
+### Automatic Updates
+
+When installed from a downloaded file (not from the Add-on Store), xPlorer looks on GitHub once a day for a newer release, a short time after NVDA starts. If there is one you are asked **Update now** or **Later**. If you choose to update, the file is downloaded and handed to NVDA's own add-on installer. If the download fails, the releases page opens in your browser.
+
 
 ## Support Me
 
@@ -217,10 +286,8 @@ If this tool has made your life easier, consider fueling the next update with a 
 
 [![Support me](https://img.shields.io/badge/Donate-Support%20Me-blue?style=for-the-badge&logo=stripe)](https://buy.stripe.com/dRm9AU1xQ3Ds22N6VK1VK01)
 
-Your support means the world. Let's build something great together
+Your support means the world. Let's build something great together.
 
-<div align="center">
+---
 
-&copy; 2026 Chai Chaimee NVDA Add-on Released under GNU GPL
-
-</div>
+&copy; 2026 Chai Chaimee. NVDA add-on released under the GNU GPL.

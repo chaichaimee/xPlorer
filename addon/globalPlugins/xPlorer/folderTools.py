@@ -25,6 +25,7 @@ import comtypes.client
 from comtypes import COMError
 import globalVars
 import struct
+from speech.extensions import filter_speechSequence
 
 addonHandler.initTranslation()
 
@@ -476,7 +477,64 @@ def is_suitable_clipboard_text(text):
 		return False
 	return True
 
-def type_clipboard_into_rename_if_suitable():
+_autoPasteGate = {"active": False, "text": "", "spoken": False, "pasted": False, "timer": None, "registered": False}
+
+
+def _autoPasteSpeechFilter(speechSequence):
+	if not _autoPasteGate["active"]:
+		return speechSequence
+	if not _autoPasteGate["spoken"]:
+		allowedText = _autoPasteGate["text"].strip().casefold()
+		for item in speechSequence:
+			if isinstance(item, str) and item.strip().casefold() == allowedText:
+				_autoPasteGate["spoken"] = True
+				return speechSequence
+	return []
+
+
+def disarm_auto_paste_speech_gate():
+	timer = _autoPasteGate["timer"]
+	_autoPasteGate["timer"] = None
+	_autoPasteGate["active"] = False
+	if timer:
+		try:
+			timer.Stop()
+		except (RuntimeError, AttributeError):
+			pass
+	if _autoPasteGate["registered"]:
+		filter_speechSequence.unregister(_autoPasteSpeechFilter)
+		_autoPasteGate["registered"] = False
+
+
+def _expireAutoPasteGate():
+	mustSpeak = _autoPasteGate["pasted"] and not _autoPasteGate["spoken"]
+	text = _autoPasteGate["text"]
+	disarm_auto_paste_speech_gate()
+	if mustSpeak and text:
+		ui.message(text)
+
+
+def arm_auto_paste_speech_gate(pastedText, durationMs):
+	disarm_auto_paste_speech_gate()
+	_autoPasteGate.update(active=True, text=pastedText, spoken=False, pasted=False)
+	filter_speechSequence.register(_autoPasteSpeechFilter)
+	_autoPasteGate["registered"] = True
+	_autoPasteGate["timer"] = core.callLater(durationMs, _expireAutoPasteGate)
+
+
+def _speakPastedText():
+	if not _autoPasteGate["active"] or _autoPasteGate["spoken"]:
+		return
+	if _autoPasteGate["text"]:
+		ui.message(_autoPasteGate["text"])
+
+
+def _markAutoPasted():
+	_autoPasteGate["pasted"] = True
+	core.callLater(120, _speakPastedText)
+
+
+def get_auto_paste_text():
 	clipboard_text = None
 	try:
 		if wx.TheClipboard.Open():
@@ -487,13 +545,20 @@ def type_clipboard_into_rename_if_suitable():
 			finally:
 				wx.TheClipboard.Close()
 	except Exception:
-		return
+		return None
 
 	replacementSetting = loadConfig().get("forbiddenCharReplacement", "-")
 	replacementChar = "" if replacementSetting == "none" else replacementSetting
 
 	cleaned_text = clean_clipboard_text(clipboard_text, replacementChar) if clipboard_text else None
 	if not cleaned_text or not is_suitable_clipboard_text(cleaned_text):
+		return None
+	return cleaned_text
+
+
+def type_clipboard_into_rename_if_suitable(preparedText=None):
+	cleaned_text = preparedText or get_auto_paste_text()
+	if not cleaned_text:
 		log.debug("Clipboard text not suitable for auto-paste")
 		return
 
@@ -513,6 +578,7 @@ def type_clipboard_into_rename_if_suitable():
 			ctypes.windll.user32.SendMessageW(focused_hwnd, EM_SETSEL, 0, -1)
 			core.callLater(30, lambda: ctypes.windll.user32.SendMessageW(focused_hwnd, EM_REPLACESEL, 0, cleaned_text))
 			core.callLater(100, lambda: ctypes.windll.user32.SendMessageW(focused_hwnd, WM_SETTEXT, 0, cleaned_text))
+			_markAutoPasted()
 			log.debug("Auto-paste via EM_REPLACESEL succeeded")
 			return
 
@@ -532,16 +598,24 @@ def type_clipboard_into_rename_if_suitable():
 			VK_V = 0x56
 			KEYEVENTF_KEYUP = 0x0002
 
+			def _releaseKeys():
+				ctypes.windll.user32.keybd_event(VK_V, 0, KEYEVENTF_KEYUP, 0)
+				ctypes.windll.user32.keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, 0)
+
+			def _pressV():
+				try:
+					ctypes.windll.user32.keybd_event(VK_V, 0, 0, 0)
+					core.callLater(40, _releaseKeys)
+				except Exception as e:
+					_releaseKeys()
+					log.debug(f"keybd_event paste step failed: {e}")
+
 			ctypes.windll.user32.keybd_event(VK_CONTROL, 0, 0, 0)
-			time.sleep(0.02)
-			ctypes.windll.user32.keybd_event(VK_V, 0, 0, 0)
-			time.sleep(0.02)
-			ctypes.windll.user32.keybd_event(VK_V, 0, KEYEVENTF_KEYUP, 0)
-			time.sleep(0.02)
-			ctypes.windll.user32.keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, 0)
+			core.callLater(20, _pressV)
 
 			if backup is not None:
 				core.callLater(300, lambda: api.copyToClip(backup))
+			_markAutoPasted()
 			log.debug("Auto-paste via keybd_event succeeded")
 			return
 
@@ -586,6 +660,7 @@ def type_clipboard_into_rename_if_suitable():
 
 			for i, ch in enumerate(cleaned_text):
 				core.callLater(50 + i * 20, send_unicode_char, ch)
+			_markAutoPasted()
 			log.debug("Auto-paste via SendInput Unicode succeeded")
 		except Exception as e:
 			log.debug(f"All auto-paste methods failed: {e}")
