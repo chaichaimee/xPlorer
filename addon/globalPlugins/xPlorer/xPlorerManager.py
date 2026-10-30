@@ -129,6 +129,19 @@ class SingleItemArrowOverlay(NVDAObject):
 			manager.scheduleSoleItemAnnounce(self)
 
 
+class PropertiesHookOverlay(NVDAObject):
+	__gestures = {
+		"kb:alt+enter": "openXPlorerProperties",
+	}
+
+	def script_openXPlorerProperties(self, gesture):
+		plugin = _global_plugin_instance
+		if getattr(plugin, "propertiesMenuManager", None) is None:
+			gesture.send()
+			return
+		plugin._showPropertiesMenu()
+
+
 class FolderEntryOverlay(NVDAObject):
 	__gestures = {
 		"kb:enter": "enterFolderArmSelect",
@@ -191,6 +204,10 @@ class xPlorerSettingsPanel(SettingsPanel):
 		self.sayFileExplorer.SetValue(conf["sayFileExplorer"])
 		self.suppressTaskSwitchingAnnounce = sHelper.addItem(wx.CheckBox(self, label="Suppress announcement of 'Task Switching'"))
 		self.suppressTaskSwitchingAnnounce.SetValue(conf.get("suppressTaskSwitchingAnnounce", True))
+		self.hookAltEnterProperties = sHelper.addItem(wx.CheckBox(self, label="Open the xPlorer Properties window with Alt+Enter instead of the Windows one"))
+		self.hookAltEnterProperties.SetValue(conf.get("hookAltEnterProperties", True))
+		self.openExplorerMaximized = sHelper.addItem(wx.CheckBox(self, label="Open Windows Explorer maximized"))
+		self.openExplorerMaximized.SetValue(conf.get("openExplorerMaximized", True))
 		self.autoPasteClipboardToRename = sHelper.addItem(wx.CheckBox(self, label="Automatically paste clipboard content into rename field"))
 		self.autoPasteClipboardToRename.SetValue(conf.get("autoPasteClipboardToRename", True))
 		self.autoPasteClipboardToRename.Bind(wx.EVT_CHECKBOX, self._onAutoPasteClipboardToRenameChanged)
@@ -272,6 +289,8 @@ class xPlorerSettingsPanel(SettingsPanel):
 			"itemSizeScope": self.itemSizeScopeChoices[self.itemSizeScope.GetSelection()][0],
 			"sayFileExplorer": self.sayFileExplorer.GetValue(),
 			"suppressTaskSwitchingAnnounce": self.suppressTaskSwitchingAnnounce.GetValue(),
+			"openExplorerMaximized": self.openExplorerMaximized.GetValue(),
+			"hookAltEnterProperties": self.hookAltEnterProperties.GetValue(),
 			"autoPasteClipboardToRename": self.autoPasteClipboardToRename.GetValue(),
 			"forbiddenCharReplacement": replacementKeys[self.forbiddenCharReplacement.GetSelection()],
 			"showUncompressDialog": self.showUncompressDialog.GetValue(),
@@ -320,6 +339,7 @@ class ExplorerManager:
 		self._focusSnapshotTask = None
 		self._lastItemFocusTime = 0.0
 		self._landingSelectUntil = 0.0
+		self._seenExplorerFrames = set()
 
 		self._config_cache = None
 		self._config_cache_time = 0.0
@@ -519,6 +539,8 @@ class ExplorerManager:
 				clsList.insert(0, SingleItemArrowOverlay)
 			if obj.role == Role.LISTITEM and isinstance(obj, UIA) and conf.get("autoSelectFirstItem", True):
 				clsList.insert(0, FolderEntryOverlay)
+			if obj.role == Role.LISTITEM and isinstance(obj, UIA) and conf.get("hookAltEnterProperties", True):
+				clsList.insert(0, PropertiesHookOverlay)
 
 	def _beginSizeContext(self, obj):
 		try:
@@ -645,6 +667,7 @@ class ExplorerManager:
 
 		try:
 			if self._foregroundTransition or self.contextMenuActive or self.suppressAllAnnouncements:
+				self._selectLandingItemDuringTransition(obj)
 				return callNextHandlerOnce()
 				
 			if obj is None:
@@ -755,6 +778,7 @@ class ExplorerManager:
 			if self._isForeignDialogOpen():
 				log.debug("Foreign dialog detected, ignoring Explorer foreground event")
 			else:
+				self._armLandingSelectForNewFrame(getattr(obj, "windowHandle", None))
 				if self._focusSnapshotTask:
 					self._focusSnapshotTask.Stop()
 				snapshotGeneration = self._foregroundGeneration
@@ -794,6 +818,33 @@ class ExplorerManager:
 		except Exception as e:
 			log.debug(f"Error in event_foreground: {e}")
 
+	def _selectLandingItemDuringTransition(self, obj):
+		# A window opened from outside Explorer lands on its first item
+		# inside the foreground-transition window; selecting it must not
+		# wait for the transition to clear or it never happens.
+		if obj is None or not self._foregroundTransition:
+			return
+		if self.contextMenuActive or self.suppressAllAnnouncements:
+			return
+		self._selectLandingItem(obj)
+
+	def _armLandingSelectForNewFrame(self, frameHwnd):
+		# An Explorer window opened by something other than Enter inside an
+		# existing window gets focus on its first item without selecting it,
+		# so Enter then does nothing. Only frames not seen before are armed,
+		# which leaves Alt+Tab back to a known window untouched.
+		if not frameHwnd or frameHwnd in self._seenExplorerFrames:
+			return
+		if len(self._seenExplorerFrames) >= 64:
+			user32 = ctypes.windll.user32
+			self._seenExplorerFrames = {h for h in self._seenExplorerFrames if user32.IsWindow(h)}
+			if len(self._seenExplorerFrames) >= 64:
+				self._seenExplorerFrames.clear()
+		self._seenExplorerFrames.add(frameHwnd)
+		self.armLandingSelect()
+		if self._landingSelectUntil:
+			log.debug(f"xPlorer: new explorer window hwnd={frameHwnd}, landing select armed")
+
 	def _checkFocusAfterForeground(self, generation):
 		self._focusSnapshotTask = None
 		if generation != self._foregroundGeneration:
@@ -810,6 +861,8 @@ class ExplorerManager:
 					f"focusRole={focusObj.role} focusClass={focusClass} "
 					f"windowResponsive={responsive} explorerFocused={self._explorer_focused}"
 				)
+			if self._landingSelectUntil and focusObj.role == Role.LISTITEM:
+				self._selectLandingItem(focusObj)
 			focusStuckOnFrame = bool(focusHwnd) and focusHwnd == foregroundHwnd and focusClass == "CabinetWClass"
 			if not (focusStuckOnFrame and responsive and self._explorer_focused):
 				return

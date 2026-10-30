@@ -4,11 +4,11 @@ import os
 import json
 import time
 import threading
-import subprocess
 import ui
 import addonHandler
 from logHandler import log
 from .folderTools import CONFIG_DIR
+from .explorerWindow import launchExplorer
 
 addonHandler.initTranslation()
 
@@ -222,7 +222,7 @@ class RecentLocationsManager:
 			ui.message(_("This folder no longer exists: {0}").format(path))
 			return
 		try:
-			subprocess.Popen(["explorer.exe", path])
+			launchExplorer([path])
 		except OSError as e:
 			log.error(f"Error opening recent location {path}: {e}")
 			ui.message(_("Error opening folder"))

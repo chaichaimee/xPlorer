@@ -3,7 +3,6 @@
 import wx
 import os
 import threading
-import subprocess
 import gui
 import gui.guiHelper
 import ui
@@ -11,6 +10,7 @@ import core
 import tones
 import addonHandler
 from logHandler import log
+from .explorerWindow import launchExplorer
 
 addonHandler.initTranslation()
 
@@ -193,7 +193,7 @@ class FlatViewDialog(wx.Dialog):
 			return
 		_name, _relFolder, _size, fullPath = self.filteredEntries[selectedIndex]
 		try:
-			subprocess.Popen(["explorer.exe", "/select,", fullPath])
+			launchExplorer(["/select,", fullPath])
 		except OSError as e:
 			log.debug(f"xPlorer: could not open containing folder: {e}")
 			ui.message(_("Could not open the containing folder"))

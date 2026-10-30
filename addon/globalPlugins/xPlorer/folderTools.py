@@ -43,6 +43,8 @@ CONFIG_FILE = os.path.join(CONFIG_DIR, "settings.json")
 
 DEFAULT_CONFIG = {
 	"autoSelectFirstItem": True,
+	"openExplorerMaximized": True,
+	"hookAltEnterProperties": True,
 	"announceEmptyFolder": True,
 	"suppressDirectUIAnnounce": True,
 	"sayFileExplorer": True,
@@ -1804,8 +1806,9 @@ class SearchSelectionDialog(wx.Dialog):
 		if not paths:
 			ui.message(_("No result selected"))
 			return
+		from .explorerWindow import launchExplorer
 		try:
-			subprocess.Popen(["explorer", "/select,", paths[0]])
+			launchExplorer(["/select,", paths[0]])
 		except OSError as e:
 			log.error(f"xPlorer: could not open containing folder for {paths[0]}: {e}")
 			ui.message(_("Could not open the folder"))

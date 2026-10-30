@@ -2,7 +2,6 @@
 
 import os
 import json
-import subprocess
 import threading
 import ctypes
 import comtypes.client
@@ -16,6 +15,7 @@ import core
 import addonHandler
 from logHandler import log
 from .folderTools import CONFIG_DIR
+from .explorerWindow import launchExplorer
 
 addonHandler.initTranslation()
 
@@ -591,7 +591,7 @@ class WorkspaceManager:
 						log.debug(f"xPlorer: could not foreground already-open workspace folder {path}: {e}")
 					continue
 				try:
-					subprocess.Popen(["explorer.exe", path])
+					launchExplorer([path])
 					openedCount += 1
 				except OSError as e:
 					log.error(f"Error opening workspace folder {path}: {e}")

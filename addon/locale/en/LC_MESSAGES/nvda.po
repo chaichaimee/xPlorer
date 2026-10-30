@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: xPlorer 2026.11.0\n"
+"Project-Id-Version: xPlorer 2026.12.0\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-10-26 14:41+0700\n"
+"POT-Creation-Date: 2026-10-30 09:19+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: English\n"
@@ -20,11 +20,11 @@ msgstr " (partial)"
 msgid " and {count} more"
 msgstr " and {count} more"
 
-#: folderTools.py:246
+#: folderTools.py:248
 msgid "&Apply"
 msgstr "&Apply"
 
-#: folderTools.py:247
+#: folderTools.py:249
 msgid "&Cancel"
 msgstr "&Cancel"
 
@@ -78,8 +78,8 @@ msgstr "A duplicate scan is already running"
 msgid "A file with this name already exists"
 msgstr "A file with this name already exists"
 
-#: folderTools.py:1109
-#: folderTools.py:1461
+#: folderTools.py:1111
+#: folderTools.py:1463
 msgid "A selection operation is already in progress"
 msgstr "A selection operation is already in progress"
 
@@ -199,7 +199,7 @@ msgstr "Cannot find unique name for: {name}"
 msgid "Cannot open settings dialog"
 msgstr "Cannot open settings dialog"
 
-#: folderTools.py:730
+#: folderTools.py:732
 msgid "Cannot process RTF file: striprtf module not available"
 msgstr "Cannot process RTF file: striprtf module not available"
 
@@ -345,11 +345,11 @@ msgstr "Contents: {0} files, {1} folders{2}"
 msgid "Context menu manager not available"
 msgstr "Context menu manager not available"
 
-#: folderTools.py:1964
+#: folderTools.py:1967
 msgid "Conversion already in progress"
 msgstr "Conversion already in progress"
 
-#: folderTools.py:1981
+#: folderTools.py:1984
 msgid "Converting"
 msgstr "Converting"
 
@@ -373,7 +373,7 @@ msgstr "Copied {0} items from the basket"
 msgid "Copied {count} item names to clipboard"
 msgstr "Copied {count} item names to clipboard"
 
-#: folderTools.py:1781
+#: folderTools.py:1783
 msgid "Copied {count} items"
 msgstr "Copied {count} items"
 
@@ -383,7 +383,7 @@ msgstr "Copied: {path}"
 
 #: fileBasketManager.py:49
 #: fileBasketManager.py:157
-#: folderTools.py:1760
+#: folderTools.py:1762
 msgid "Copy"
 msgstr "Copy"
 
@@ -407,7 +407,7 @@ msgstr "Copy selected file and folder names"
 msgid "Copy {lines} Lines from {files} files"
 msgstr "Copy {lines} Lines from {files} files"
 
-#: folderTools.py:1828
+#: folderTools.py:1831
 msgid "Could not delete one or more items"
 msgstr "Could not delete one or more items"
 
@@ -417,8 +417,8 @@ msgstr "Could not download the update. Opening the releases page."
 
 #: clipboardManager.py:53
 #: clipboardManager.py:153
-#: folderTools.py:1788
-#: folderTools.py:1798
+#: folderTools.py:1790
+#: folderTools.py:1800
 #: xPlorer_engine.py:868
 msgid "Could not open clipboard"
 msgstr "Could not open clipboard"
@@ -427,11 +427,11 @@ msgstr "Could not open clipboard"
 msgid "Could not open the containing folder"
 msgstr "Could not open the containing folder"
 
-#: folderTools.py:1732
+#: folderTools.py:1734
 msgid "Could not open the file"
 msgstr "Could not open the file"
 
-#: folderTools.py:1811
+#: folderTools.py:1814
 msgid "Could not open the folder"
 msgstr "Could not open the folder"
 
@@ -461,7 +461,7 @@ msgstr "Counter start value:"
 msgid "Create File"
 msgstr "Create File"
 
-#: folderTools.py:200
+#: folderTools.py:202
 msgid "Create Multiple Folders"
 msgstr "Create Multiple Folders"
 
@@ -469,7 +469,7 @@ msgstr "Create Multiple Folders"
 msgid "Create Multiple Folders..."
 msgstr "Create Multiple Folders..."
 
-#: folderTools.py:229
+#: folderTools.py:231
 msgid "Create main folder and then subfolders"
 msgstr "Create main folder and then subfolders"
 
@@ -485,7 +485,7 @@ msgstr "Created ISO {name}"
 msgid "Created {count} file(s) in {path}"
 msgstr "Created {count} file(s) in {path}"
 
-#: folderTools.py:396
+#: folderTools.py:398
 msgid "Created {count} of {total} folders..."
 msgstr "Created {count} of {total} folders..."
 
@@ -502,7 +502,7 @@ msgstr "Creating ISO"
 msgid "Creating ISO: {percent}%"
 msgstr "Creating ISO: {percent}%"
 
-#: folderTools.py:383
+#: folderTools.py:385
 msgid "Creating folders in background..."
 msgstr "Creating folders in background..."
 
@@ -518,16 +518,16 @@ msgstr "Current folder size list - {name}"
 msgid "Current folder size list settings"
 msgstr "Current folder size list settings"
 
-#: folderTools.py:1761
+#: folderTools.py:1763
 msgid "Cut"
 msgstr "Cut"
 
-#: folderTools.py:1795
+#: folderTools.py:1797
 msgid "Cut {count} items"
 msgstr "Cut {count} items"
 
-#: folderTools.py:1764
-#: folderTools.py:1819
+#: folderTools.py:1766
+#: folderTools.py:1822
 #: workspaceManager.py:260
 msgid "Delete"
 msgstr "Delete"
@@ -574,12 +574,12 @@ msgstr "Duplicate groups:"
 msgid "Edit Workspace"
 msgstr "Edit Workspace"
 
-#: folderTools.py:233
+#: folderTools.py:235
 msgid "Edit individual folder names"
 msgstr "Edit individual folder names"
 
-#: folderTools.py:1239
-#: folderTools.py:1833
+#: folderTools.py:1241
+#: folderTools.py:1836
 msgid "Enter a search term or pattern first"
 msgstr "Enter a search term or pattern first"
 
@@ -587,7 +587,7 @@ msgstr "Enter a search term or pattern first"
 msgid "Enter a workspace name"
 msgstr "Enter a workspace name"
 
-#: folderTools.py:192
+#: folderTools.py:194
 msgid "Error calculating folder info"
 msgstr "Error calculating folder info"
 
@@ -612,7 +612,7 @@ msgstr "Error copying names to clipboard"
 msgid "Error copying {0}"
 msgstr "Error copying {0}"
 
-#: folderTools.py:774
+#: folderTools.py:776
 msgid "Error creating base folder"
 msgstr "Error creating base folder"
 
@@ -624,7 +624,7 @@ msgstr "Error creating files"
 msgid "Error creating folders"
 msgstr "Error creating folders"
 
-#: folderTools.py:374
+#: folderTools.py:376
 msgid "Error creating main folder"
 msgstr "Error creating main folder"
 
@@ -640,8 +640,8 @@ msgstr "Error during conversion"
 msgid "Error in compression process: {error}"
 msgstr "Error in compression process: {error}"
 
-#: folderTools.py:1159
-#: folderTools.py:1162
+#: folderTools.py:1161
+#: folderTools.py:1164
 msgid "Error inverting selection"
 msgstr "Error inverting selection"
 
@@ -665,15 +665,15 @@ msgstr "Error opening rename dialog"
 msgid "Error opening settings"
 msgstr "Error opening settings"
 
-#: folderTools.py:864
+#: folderTools.py:866
 msgid "Error processing text file: {}"
 msgstr "Error processing text file: {}"
 
-#: folderTools.py:741
+#: folderTools.py:743
 msgid "Error reading RTF file"
 msgstr "Error reading RTF file"
 
-#: folderTools.py:868
+#: folderTools.py:870
 msgid "Error reading file encoding"
 msgstr "Error reading file encoding"
 
@@ -692,16 +692,16 @@ msgstr "Error renaming {0} to {1}: {2}"
 msgid "Error scanning for duplicates"
 msgstr "Error scanning for duplicates"
 
-#: folderTools.py:1193
+#: folderTools.py:1195
 msgid "Error selecting by extension"
 msgstr "Error selecting by extension"
 
-#: folderTools.py:1262
+#: folderTools.py:1264
 msgid "Error selecting by search"
 msgstr "Error selecting by search"
 
-#: folderTools.py:1505
-#: folderTools.py:1508
+#: folderTools.py:1507
+#: folderTools.py:1510
 msgid "Error selecting items"
 msgstr "Error selecting items"
 
@@ -713,7 +713,7 @@ msgstr "Error uncompressing file"
 msgid "Error undoing rename for {0}: {1}"
 msgstr "Error undoing rename for {0}: {1}"
 
-#: folderTools.py:873
+#: folderTools.py:875
 msgid "Error: {}"
 msgstr "Error: {}"
 
@@ -782,7 +782,7 @@ msgstr "Extraction is already running"
 msgid "Extraction timed out"
 msgstr "Extraction timed out"
 
-#: folderTools.py:1976
+#: folderTools.py:1979
 msgid "Failed to rename any folders"
 msgstr "Failed to rename any folders"
 
@@ -840,7 +840,7 @@ msgstr "File name {index}:"
 msgid "File name:"
 msgstr "File name:"
 
-#: folderTools.py:1726
+#: folderTools.py:1728
 msgid "File not found"
 msgstr "File not found"
 
@@ -894,18 +894,18 @@ msgstr "Flat View: {0}"
 msgid "Flat view tool not available"
 msgstr "Flat view tool not available"
 
-#: folderTools.py:1181
+#: folderTools.py:1183
 msgid "Focus a single file first to select others with the same extension"
 msgstr "Focus a single file first to select others with the same extension"
 
 #: flatViewManager.py:46
-#: folderTools.py:299
-#: folderTools.py:339
+#: folderTools.py:301
+#: folderTools.py:341
 msgid "Folder"
 msgstr "Folder"
 
-#: folderTools.py:765
-#: folderTools.py:835
+#: folderTools.py:767
+#: folderTools.py:837
 msgid "Folder '{}' already exists, creating '{}' instead"
 msgstr "Folder '{}' already exists, creating '{}' instead"
 
@@ -928,7 +928,7 @@ msgstr "Folder creator helper not available"
 msgid "Folder info"
 msgstr "Folder info"
 
-#: folderTools.py:214
+#: folderTools.py:216
 msgid "Folder title:"
 msgstr "Folder title:"
 
@@ -992,7 +992,7 @@ msgstr "Identical"
 msgid "Include subfolder contents in folder sizes"
 msgstr "Include subfolder contents in folder sizes"
 
-#: folderTools.py:1550
+#: folderTools.py:1552
 msgid "Include subfolders (search all levels, like Flat View)"
 msgstr "Include subfolders (search all levels, like Flat View)"
 
@@ -1004,12 +1004,12 @@ msgstr "Include the contents of subfolders in folder sizes (slower)"
 msgid "Including subfolders"
 msgstr "Including subfolders"
 
-#: folderTools.py:350
+#: folderTools.py:352
 msgid "Invalid number for folders"
 msgstr "Invalid number for folders"
 
-#: folderTools.py:1635
-#: folderTools.py:1840
+#: folderTools.py:1637
+#: folderTools.py:1843
 msgid "Invalid regular expression: {0}"
 msgstr "Invalid regular expression: {0}"
 
@@ -1093,11 +1093,11 @@ msgstr "Mark Left Folder (Sync Compare)"
 msgid "Marked as left folder: {0}. Navigate to the right folder and run compare again"
 msgstr "Marked as left folder: {0}. Navigate to the right folder and run compare again"
 
-#: folderTools.py:1570
+#: folderTools.py:1572
 msgid "Matching items (Enter opens, Ctrl+C/Ctrl+X copy/cut, Ctrl+Space toggles a pick, right-click or Menu key for more):"
 msgstr "Matching items (Enter opens, Ctrl+C/Ctrl+X copy/cut, Ctrl+Space toggles a pick, right-click or Menu key for more):"
 
-#: folderTools.py:347
+#: folderTools.py:349
 msgid "Maximum 100 folders allowed"
 msgstr "Maximum 100 folders allowed"
 
@@ -1131,7 +1131,7 @@ msgstr "Move Down"
 msgid "Move Up"
 msgstr "Move Up"
 
-#: folderTools.py:1818
+#: folderTools.py:1821
 msgid "Move {count} item(s) to the Recycle Bin?"
 msgstr "Move {count} item(s) to the Recycle Bin?"
 
@@ -1143,7 +1143,7 @@ msgstr "Moved"
 msgid "Moved {0} items from the basket"
 msgstr "Moved {0} items from the basket"
 
-#: folderTools.py:1825
+#: folderTools.py:1828
 msgid "Moved {count} item(s) to the Recycle Bin"
 msgstr "Moved {count} item(s) to the Recycle Bin"
 
@@ -1195,8 +1195,8 @@ msgstr "No Explorer folder detected"
 msgid "No access to size data"
 msgstr "No access to size data"
 
-#: folderTools.py:1120
-#: folderTools.py:1472
+#: folderTools.py:1122
+#: folderTools.py:1474
 msgid "No active File Explorer window found"
 msgstr "No active File Explorer window found"
 
@@ -1233,10 +1233,10 @@ msgstr "No files were created"
 msgid "No folder selected"
 msgstr "No folder selected"
 
-#: folderTools.py:1991
-#: folderTools.py:1997
-#: folderTools.py:2006
-#: folderTools.py:2012
+#: folderTools.py:1994
+#: folderTools.py:2000
+#: folderTools.py:2009
+#: folderTools.py:2015
 msgid "No folders found"
 msgstr "No folders found"
 
@@ -1248,16 +1248,16 @@ msgstr "No folders selected"
 msgid "No folders selected or current folder not available"
 msgstr "No folders selected or current folder not available"
 
-#: folderTools.py:413
-#: folderTools.py:809
-#: folderTools.py:859
+#: folderTools.py:415
+#: folderTools.py:811
+#: folderTools.py:861
 msgid "No folders were created"
 msgstr "No folders were created"
 
 #: fileBasketManager.py:105
 #: flatViewManager.py:176
 #: flatViewManager.py:190
-#: folderTools.py:143
+#: folderTools.py:145
 #: syncCompareManager.py:127
 msgid "No item selected"
 msgstr "No item selected"
@@ -1266,8 +1266,8 @@ msgstr "No item selected"
 msgid "No item to show properties for"
 msgstr "No item to show properties for"
 
-#: folderTools.py:1132
-#: folderTools.py:1484
+#: folderTools.py:1134
+#: folderTools.py:1486
 msgid "No items in folder"
 msgstr "No items in folder"
 
@@ -1286,7 +1286,7 @@ msgstr "No items selected"
 msgid "No items to show"
 msgstr "No items to show"
 
-#: folderTools.py:1267
+#: folderTools.py:1269
 msgid "No matches found for {term}"
 msgstr "No matches found for {term}"
 
@@ -1304,12 +1304,12 @@ msgstr "No recent locations yet"
 msgid "No rename operation to undo"
 msgstr "No rename operation to undo"
 
-#: folderTools.py:1721
-#: folderTools.py:1757
-#: folderTools.py:1778
-#: folderTools.py:1792
-#: folderTools.py:1805
-#: folderTools.py:1815
+#: folderTools.py:1723
+#: folderTools.py:1759
+#: folderTools.py:1780
+#: folderTools.py:1794
+#: folderTools.py:1807
+#: folderTools.py:1818
 msgid "No result selected"
 msgstr "No result selected"
 
@@ -1317,12 +1317,12 @@ msgstr "No result selected"
 msgid "No text files selected"
 msgstr "No text files selected"
 
-#: folderTools.py:751
-#: folderTools.py:821
+#: folderTools.py:753
+#: folderTools.py:823
 msgid "No valid folder names found in the file"
 msgstr "No valid folder names found in the file"
 
-#: folderTools.py:368
+#: folderTools.py:370
 msgid "No valid folder names provided"
 msgstr "No valid folder names provided"
 
@@ -1352,7 +1352,7 @@ msgstr "None of the folders in workspace {0} could be found"
 msgid "Normal display"
 msgstr "Normal display"
 
-#: folderTools.py:1558
+#: folderTools.py:1560
 msgid "Normal search"
 msgstr "Normal search"
 
@@ -1367,11 +1367,11 @@ msgstr "Not focused on File Explorer"
 #: createFile.py:198
 #: fileOperations.py:1186
 #: fileOperations.py:1365
-#: folderTools.py:697
-#: folderTools.py:1095
-#: folderTools.py:1174
-#: folderTools.py:1207
-#: folderTools.py:1444
+#: folderTools.py:699
+#: folderTools.py:1097
+#: folderTools.py:1176
+#: folderTools.py:1209
+#: folderTools.py:1446
 #: xPlorer_engine.py:1179
 msgid "Not in File Explorer"
 msgstr "Not in File Explorer"
@@ -1384,11 +1384,11 @@ msgstr "Nothing to remove in this group"
 msgid "Number of files to create:"
 msgstr "Number of files to create:"
 
-#: folderTools.py:344
+#: folderTools.py:346
 msgid "Number of folders must be at least 1"
 msgstr "Number of folders must be at least 1"
 
-#: folderTools.py:222
+#: folderTools.py:224
 msgid "Number of folders:"
 msgstr "Number of folders:"
 
@@ -1408,7 +1408,7 @@ msgstr "Only in right"
 msgid "Open Containing Folder"
 msgstr "Open Containing Folder"
 
-#: folderTools.py:1762
+#: folderTools.py:1764
 msgid "Open to path"
 msgstr "Open to path"
 
@@ -1437,7 +1437,7 @@ msgstr "Original name is taken, cannot undo: {0}"
 msgid "Path not found: {0}"
 msgstr "Path not found: {0}"
 
-#: folderTools.py:1565
+#: folderTools.py:1567
 msgid "Pattern / search text (meaning depends on the mode above):"
 msgstr "Pattern / search text (meaning depends on the mode above):"
 
@@ -1461,7 +1461,7 @@ msgstr "Pinned to top: {0}"
 msgid "Please choose a valid destination folder"
 msgstr "Please choose a valid destination folder"
 
-#: folderTools.py:710
+#: folderTools.py:712
 msgid "Please select a .txt or .rtf file"
 msgstr "Please select a .txt or .rtf file"
 
@@ -1489,7 +1489,7 @@ msgstr "Please select only one folder"
 msgid "Please select only one item"
 msgstr "Please select only one item"
 
-#: folderTools.py:703
+#: folderTools.py:705
 msgid "Please select only one text file"
 msgstr "Please select only one text file"
 
@@ -1497,8 +1497,8 @@ msgstr "Please select only one text file"
 msgid "Preview of new file names:"
 msgstr "Preview of new file names:"
 
-#: folderTools.py:1141
-#: folderTools.py:1488
+#: folderTools.py:1143
+#: folderTools.py:1490
 msgid "Processing {count} items in background..."
 msgstr "Processing {count} items in background..."
 
@@ -1519,7 +1519,7 @@ msgstr "Recent Locations"
 msgid "Recent operations (most recent first):"
 msgstr "Recent operations (most recent first):"
 
-#: folderTools.py:1558
+#: folderTools.py:1560
 msgid "Regex"
 msgstr "Regex"
 
@@ -1657,7 +1657,7 @@ msgstr "Scanning, please wait"
 msgid "Scanning..."
 msgstr "Scanning..."
 
-#: folderTools.py:1556
+#: folderTools.py:1558
 msgid "Search mode:"
 msgstr "Search mode:"
 
@@ -1678,7 +1678,7 @@ msgid "Select by Extension"
 msgstr "Select by Extension"
 
 #: contextMenu.py:466
-#: folderTools.py:1534
+#: folderTools.py:1536
 msgid "Select by Search"
 msgstr "Select by Search"
 
@@ -1686,11 +1686,11 @@ msgstr "Select by Search"
 msgid "Select by Search: Opens Select by Search (single tap), Flat View (double tap), or Batch Rename Tool (triple tap)"
 msgstr "Select by Search: Opens Select by Search (single tap), Flat View (double tap), or Batch Rename Tool (triple tap)"
 
-#: folderTools.py:715
+#: folderTools.py:717
 msgid "Selected file does not exist"
 msgstr "Selected file does not exist"
 
-#: folderTools.py:149
+#: folderTools.py:151
 msgid "Selected item is not a folder"
 msgstr "Selected item is not a folder"
 
@@ -1702,19 +1702,19 @@ msgstr "Selected item no longer exists"
 msgid "Selected items are already in the basket"
 msgstr "Selected items are already in the basket"
 
-#: folderTools.py:1153
+#: folderTools.py:1155
 msgid "Selected {count} items"
 msgstr "Selected {count} items"
 
-#: folderTools.py:1256
+#: folderTools.py:1258
 msgid "Selected {count} items matching {term}"
 msgstr "Selected {count} items matching {term}"
 
-#: folderTools.py:1190
+#: folderTools.py:1192
 msgid "Selected {count} items {ext}"
 msgstr "Selected {count} items {ext}"
 
-#: folderTools.py:1270
+#: folderTools.py:1272
 msgid "Selected {count} top-level items containing matches for {term}"
 msgstr "Selected {count} top-level items containing matches for {term}"
 
@@ -1722,7 +1722,7 @@ msgstr "Selected {count} top-level items containing matches for {term}"
 msgid "Selection"
 msgstr "Selection"
 
-#: folderTools.py:1156
+#: folderTools.py:1158
 msgid "Selection inverted"
 msgstr "Selection inverted"
 
@@ -1796,36 +1796,36 @@ msgstr "Starting..."
 msgid "Status"
 msgstr "Status"
 
-#: folderTools.py:2014
+#: folderTools.py:2017
 msgid "Successfully converted {count} folders to headline case"
 msgstr "Successfully converted {count} folders to headline case"
 
-#: folderTools.py:1999
+#: folderTools.py:2002
 msgid "Successfully converted {count} folders to lowercase"
 msgstr "Successfully converted {count} folders to lowercase"
 
-#: folderTools.py:2008
+#: folderTools.py:2011
 msgid "Successfully converted {count} folders to title case"
 msgstr "Successfully converted {count} folders to title case"
 
-#: folderTools.py:1993
+#: folderTools.py:1996
 msgid "Successfully converted {count} folders to uppercase"
 msgstr "Successfully converted {count} folders to uppercase"
 
-#: folderTools.py:409
+#: folderTools.py:411
 msgid "Successfully created 1 folder"
 msgstr "Successfully created 1 folder"
 
-#: folderTools.py:407
+#: folderTools.py:409
 msgid "Successfully created main folder only"
 msgstr "Successfully created main folder only"
 
-#: folderTools.py:411
+#: folderTools.py:413
 msgid "Successfully created {count} of {total} folders"
 msgstr "Successfully created {count} of {total} folders"
 
-#: folderTools.py:805
-#: folderTools.py:855
+#: folderTools.py:807
+#: folderTools.py:857
 msgid "Successfully created {} folders in '{}'"
 msgstr "Successfully created {} folders in '{}'"
 
@@ -1857,7 +1857,7 @@ msgstr "Tag pattern (e.g. [N]_[C].[E]):"
 msgid "Text to find:"
 msgstr "Text to find:"
 
-#: folderTools.py:1186
+#: folderTools.py:1188
 msgid "The focused item has no file extension"
 msgstr "The focused item has no file extension"
 
@@ -1912,8 +1912,8 @@ msgstr "Unable to get current directory after multiple attempts"
 msgid "Unable to get current path"
 msgstr "Unable to get current path"
 
-#: folderTools.py:1125
-#: folderTools.py:1477
+#: folderTools.py:1127
+#: folderTools.py:1479
 msgid "Unable to get folder view"
 msgstr "Unable to get folder view"
 
@@ -1958,7 +1958,7 @@ msgstr "Use regular expressions (regex)"
 msgid "Used space: {0}"
 msgstr "Used space: {0}"
 
-#: folderTools.py:1558
+#: folderTools.py:1560
 msgid "Wildcard"
 msgstr "Wildcard"
 
@@ -2033,6 +2033,10 @@ msgstr "estimating time remaining"
 msgid "less than a minute ago"
 msgstr "less than a minute ago"
 
+#: explorerWindow.py:54
+msgid "maximized"
+msgstr "maximized"
+
 #: fileBasketManager.py:388
 msgid "mirror copied"
 msgstr "mirror copied"
@@ -2057,7 +2061,7 @@ msgstr "new_file_{index}"
 msgid "no access"
 msgstr "no access"
 
-#: folderTools.py:1716
+#: folderTools.py:1718
 msgid "not select {name}"
 msgstr "not select {name}"
 
@@ -2065,7 +2069,7 @@ msgstr "not select {name}"
 msgid "paste"
 msgstr "paste"
 
-#: folderTools.py:1716
+#: folderTools.py:1718
 msgid "select {name}"
 msgstr "select {name}"
 
@@ -2176,7 +2180,7 @@ msgstr "{count} files created"
 msgid "{count} items {size}"
 msgstr "{count} items {size}"
 
-#: folderTools.py:1654
+#: folderTools.py:1656
 msgid "{count} matches"
 msgstr "{count} matches"
 
@@ -2212,7 +2216,7 @@ msgstr "{name}, folder"
 msgid "{pct}% - item {idx}/{total}: {name}"
 msgstr "{pct}% - item {idx}/{total}: {name}"
 
-#: folderTools.py:182
+#: folderTools.py:184
 msgid "{subfolders} subfolders and {files} files"
 msgstr "{subfolders} subfolders and {files} files"
 
