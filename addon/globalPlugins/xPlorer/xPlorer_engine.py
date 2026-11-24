@@ -15,6 +15,8 @@ import gui.guiHelper
 from keyboardHandler import KeyboardInputGesture
 import core
 import tones
+import inputCore
+import queueHandler
 import threading
 from threading import Timer, Thread
 import winUser
@@ -85,6 +87,7 @@ RecentLocationsManager = _safe_import_module('recentLocationsManager', 'RecentLo
 WorkspaceManager = _safe_import_module('workspaceManager', 'WorkspaceManager')
 DuplicateFinderManager = _safe_import_module('duplicateFinderManager', 'DuplicateFinderManager')
 FileBasketManager = _safe_import_module('fileBasketManager', 'FileBasketManager')
+FreezeManager = _safe_import_module('freezeManager', 'FreezeManager')
 
 log.debug("xPlorer: All modules processed")
 
@@ -340,6 +343,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self.workspaceManager = WorkspaceManager(self) if WorkspaceManager else None
 			self.duplicateFinder = DuplicateFinderManager(self) if DuplicateFinderManager else None
 			self.fileBasket = FileBasketManager(self) if FileBasketManager else None
+			self.freezeManager = FreezeManager(self) if FreezeManager else None
 
 			self._last_window = None
 			self._last_window_hwnd = None
@@ -363,6 +367,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self._fileBasketTapState = GestureDoubleTapHandler(_double_tap_threshold)
 			self._workspaceTapState = GestureDoubleTapHandler(_double_tap_threshold)
 			self._searchTapState = GestureDoubleTapHandler(_double_tap_threshold)
+			self._freezeTapState = GestureDoubleTapHandler(_double_tap_threshold)
+			self._releasingGesture = None
+			inputCore.decide_executeGesture.register(self._decideFreezeGesture)
 
 			# Multi-select: while active, Ctrl is genuinely held down at the
 			# OS level so the user's own unmodified arrow/space/enter/
@@ -391,6 +398,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def terminate(self):
 		update.stop()
 		log.debug("xPlorer GlobalPlugin.terminate starting")
+		inputCore.decide_executeGesture.unregister(self._decideFreezeGesture)
 		try:
 			super().terminate()
 			gui.settingsDialogs.NVDASettingsDialog.categoryClasses.remove(xPlorerSettingsPanel)
@@ -399,7 +407,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 						self.robocopy, self.createFileManager, self.folderInfo,
 						self.batchRename, self.flatView, self.syncCompare,
 						self.operationHistory, self.recentLocations, self.workspaceManager,
-						self.duplicateFinder, self.fileBasket):
+						self.duplicateFinder, self.fileBasket, self.freezeManager):
 				if mgr and hasattr(mgr, 'cleanup'):
 					mgr.cleanup()
 
@@ -422,7 +430,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def _cancelAllTimers(self):
 		for tapState in (self._copyTapState, self._invertTapState, self._compressTapState,
 						self._robocopyTapState, self._contextMenuTapState, self._workspaceTapState,
-						self._searchTapState):
+						self._searchTapState, self._freezeTapState):
 			tapState.cleanup()
 
 	def _invalidatePathCache(self):
@@ -1110,6 +1118,30 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		elif tapCount >= 3:
 			self.fileBasket.clearBasketWithAnnouncement()
 
+	def script_freezeMultitap(self, gesture):
+		if not self.freezeManager:
+			ui.message(_("Freeze manager not available"))
+			return
+		self._freezeTapState.registerTap(self._processFreezeTap, triggerAtCount=3)
+
+	script_freezeMultitap.__doc__ = _("Freeze: freeze selected items (single tap), unfreeze selected items (double tap), or open the Freezer list (triple tap)")
+	script_freezeMultitap.category = _("xPlorer")
+	script_freezeMultitap.gestures = ["kb(desktop):NVDA+shift+k"]
+
+	def _processFreezeTap(self):
+		tapCount = self._freezeTapState.consumeTapCount()
+		if tapCount >= 3:
+			self.freezeManager.showDialog()
+			return
+		focus = api.getFocusObject()
+		if not focus or not focus.appModule or focus.appModule.appName != "explorer":
+			ui.message(_("Not in File Explorer"))
+			return
+		if tapCount == 1:
+			self._executeWithSilence(self.freezeManager.freezeSelected)
+		elif tapCount == 2:
+			self._executeWithSilence(self.freezeManager.unfreezeSelected)
+
 	def script_openWorkspaceMenu(self, gesture):
 		if not self.contextMenuManager or not self.workspaceManager:
 			ui.message(_("Workspace manager not available"))
@@ -1215,13 +1247,125 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		"kb:home", "kb:end",
 	})
 
+	def _sendDeleteKeyGuarded(self, keyName):
+		sendKey = lambda: KeyboardInputGesture.fromName(keyName).send()
+		if not self.freezeManager:
+			sendKey()
+			return
+		self.freezeManager.guardSelection("delete", sendKey)
+
 	def script_multiSelectExitDelete(self, gesture):
 		self._exitMultiSelectLayer()
-		KeyboardInputGesture.fromName("delete").send()
+		self._sendDeleteKeyGuarded("delete")
 
 	def script_multiSelectExitShiftDelete(self, gesture):
 		self._exitMultiSelectLayer()
-		KeyboardInputGesture.fromName("shift+delete").send()
+		self._sendDeleteKeyGuarded("shift+delete")
+
+	_FREEZE_NAVIGATION_IDENTIFIERS = frozenset({
+		"kb:enter", "kb:numpadenter", "kb:backspace", "kb:alt+leftarrow", "kb:alt+rightarrow",
+		"kb:alt+uparrow", "kb:control+tab", "kb:control+shift+tab", "kb:control+t", "kb:control+w",
+	})
+	_VK_SHIFT = 0x10
+	_VK_CONTROL = 0x11
+	_VK_INSERT = 0x2D
+	_VK_DELETE = 0x2E
+	_VK_F2 = 0x71
+	_VK_X = 0x58
+	_VK_V = 0x56
+
+	def _freezeActionForGesture(self, gesture):
+		if getattr(gesture, "isNVDAModifierKey", False):
+			return None
+		vkCode = getattr(gesture, "vkCode", None)
+		if vkCode is None:
+			return None
+		modifierVks = {modVk for modVk, _modExt in gesture.generalizedModifiers}
+		if vkCode == self._VK_DELETE and modifierVks <= {self._VK_SHIFT, self._VK_CONTROL}:
+			return "delete"
+		if vkCode == self._VK_F2 and not modifierVks:
+			return "rename"
+		if modifierVks == {self._VK_CONTROL}:
+			if vkCode == self._VK_X:
+				return "cut"
+			if vkCode == self._VK_V:
+				return "paste"
+		if vkCode == self._VK_INSERT and modifierVks == {self._VK_SHIFT}:
+			return "paste"
+		return None
+
+	def _isFreezeGuardContext(self):
+		focus = api.getFocusObject()
+		if not focus or not focus.appModule:
+			return False
+		return focus.appModule.appName == "explorer" and focus.role == Role.LISTITEM
+
+	def _decideFreezeGesture(self, gesture, **kwargs):
+		# Runs on the input thread before any script lookup. It only holds a key
+		# back when the current folder holds frozen items, so keys in every other
+		# folder reach other add-ons untouched. A held key is handed back to NVDA's
+		# normal dispatch once the check passes.
+		if gesture is self._releasingGesture or self._multiSelectActive:
+			return True
+		freezeManager = self.freezeManager
+		if not freezeManager or not freezeManager.hasFrozenItems():
+			return True
+		try:
+			if self._FREEZE_NAVIGATION_IDENTIFIERS.intersection(gesture.normalizedIdentifiers):
+				freezeManager.invalidate()
+			action = self._freezeActionForGesture(gesture)
+			if action is None:
+				return True
+			if not self._isFreezeGuardContext():
+				return True
+			if action == "paste":
+				freezeManager.watchPaste(time.time())
+			if not freezeManager.needsCheck(action):
+				log.debug(f"xPlorer: freeze guard passing {action}, current folder has no frozen items")
+				return True
+		except (AttributeError, RuntimeError, TypeError, ValueError, COMError) as e:
+			log.debug(f"xPlorer: freeze gesture check skipped: {e}")
+			return True
+		log.debug(f"xPlorer: freeze guard holding {gesture.normalizedIdentifiers[-1]} (action={action})")
+		queueHandler.queueFunction(
+			queueHandler.eventQueue, self._runFreezeGuard, action, lambda: self._releaseHeldGesture(gesture)
+		)
+		return False
+
+	def _releaseHeldGesture(self, gesture):
+		self._releasingGesture = gesture
+		try:
+			inputCore.manager.executeGesture(gesture)
+		except inputCore.NoInputGestureAction:
+			gesture.send()
+		except Exception as e:
+			log.error(f"xPlorer: could not hand a held key back to NVDA, sending it directly: {e}")
+			gesture.send()
+		finally:
+			self._releasingGesture = None
+
+	def _runFreezeGuard(self, action, onAllowed):
+		if not self.freezeManager:
+			onAllowed()
+			return
+		if action == "paste":
+			self.freezeManager.guardPaste(onAllowed)
+			return
+		self.freezeManager.guardSelection(action, onAllowed)
+
+	def _getFreezeGuardScript(self, gesture):
+		if not self.freezeManager or not self.freezeManager.hasFrozenItems():
+			return None
+		if self._freezeActionForGesture(gesture) is None or not self._isFreezeGuardContext():
+			return None
+		return self.script_freezeGuardKey
+
+	def script_freezeGuardKey(self, gesture):
+		action = self._freezeActionForGesture(gesture)
+		if action is None:
+			gesture.send()
+			return
+		self._runFreezeGuard(action, gesture.send)
 
 	def getScript(self, gesture):
 		# This only ever WATCHES gestures while Multi-select is active - it
@@ -1233,6 +1377,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		# _multiSelectActive bookkeeping: any key other than space, enter,
 		# or the arrows cancels the layer, since the user is clearly done
 		# with non-contiguous selection at that point.
+		multiSelectWasActive = self._multiSelectActive
 		if self._multiSelectActive:
 			try:
 				identifiers = set(gesture.normalizedIdentifiers)
@@ -1252,6 +1397,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			if not identifiers & self._MULTISELECT_ALLOWED_IDENTIFIERS:
 				log.debug(f"xPlorer: multi-select watcher saw disallowed identifiers {identifiers!r}")
 				self._exitMultiSelectLayer(reason=f"other_key:{sorted(identifiers)}")
+		if multiSelectWasActive:
+			freezeGuardScript = self._getFreezeGuardScript(gesture)
+			if freezeGuardScript:
+				return freezeGuardScript
 		return super().getScript(gesture)
 
 	def script_createFolderWithAutoPaste(self, gesture):

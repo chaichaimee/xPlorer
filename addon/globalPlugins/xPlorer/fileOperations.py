@@ -12,6 +12,7 @@ import time
 import threading
 import ctypes
 from logHandler import log
+from . import freezeManager
 import addonHandler
 import tones
 import core
@@ -1420,6 +1421,10 @@ class FileOperations:
 					ui.message(_("Please select only one file"))
 					return
 				file_path = selectedItems[0][1]
+				blockedPaths = freezeManager.filterBlocked([file_path])
+				if blockedPaths:
+					freezeManager.announceBlocked("rename", blockedPaths)
+					return
 				if not os.path.isfile(file_path):
 					ui.message(_("Please select a file, not a folder"))
 					return
@@ -1446,6 +1451,10 @@ class FileOperations:
 					ui.message(_("Please select only one item"))
 					return
 				file_path = selectedItems[0][1]
+				blockedPaths = freezeManager.filterBlocked([file_path])
+				if blockedPaths:
+					freezeManager.announceBlocked("rename", blockedPaths)
+					return
 				is_folder = os.path.isdir(file_path)
 				if not is_folder and not os.path.isfile(file_path):
 					ui.message(_("Selected item no longer exists"))

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: xPlorer 2026.8.5\n"
+"Project-Id-Version: xPlorer 2026.12.0\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-08-03 06:13+0700\n"
+"POT-Creation-Date: 2026-11-24 08:54+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Arabic\n"
@@ -10,292 +10,853 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: DevOn Addon\n"
+"X-Generator: ChaiBot Addon\n"
 
-#: robocopyManager.py:464
-msgid " and {n} more"
-msgstr " و {n} أخرى"
+#: contextMenu.py:1063
+msgid " (partial)"
+msgstr "(جزئي)"
 
-#: folderTools.py:174
+#: compressionManager.py:511
+msgid " and {count} more"
+msgstr "والمزيد ({count})"
+
+#: folderTools.py:249
 msgid "&Apply"
-msgstr "&تطبيق"
+msgstr "ت&طبيق"
 
-#: folderTools.py:175
+#: folderTools.py:250
 msgid "&Cancel"
 msgstr "&إلغاء"
 
-#: createFile.py:286
+#: freezeManager.py:648
+msgid "&Close"
+msgstr "&إغلاق"
+
+#: freezeManager.py:640
+msgid "&Frozen items:"
+msgstr "العناصر الم&جمدة:"
+
+#: update.py:173
+msgid "&Later"
+msgstr "في وقت لاحق"
+
+#: freezeManager.py:646
+msgid "&Unfreeze selected"
+msgstr "إل&غاء تجميد المحدد"
+
+#: update.py:171
+msgid "&Update now"
+msgstr "&تحديث الآن"
+
+#: flatViewManager.py:134
+#: flatViewManager.py:143
+msgid "(list capped at {0} - refine your folder selection)"
+msgstr "(تم تقييد القائمة عند {0} - يرجى تضييق نطاق تحديد المجلد)"
+
+#: flatViewManager.py:118
+msgid "(root)"
+msgstr "(المجلد الرئيسي)"
+
+#: fileOperations.py:1355
+msgid ", UDF format"
+msgstr "، بتنسيق UDF"
+
+#: fileOperations.py:1357
+msgid ", {count} items skipped"
+msgstr "، تم تخطي {count} عناصر"
+
+#: batchRenameManager.py:257
+#: batchRenameManager.py:425
+msgid "...and {0} more errors"
+msgstr "...والمزيد من الأخطاء ({0})"
+
+#: robocopyManager.py:541
+msgid "...and {n} more"
+msgstr "...والمزيد ({n})"
+
+#: createFile.py:290
 msgid "1 file created"
 msgstr "تم إنشاء ملف واحد"
 
-#: fileOperations.py:340
+#: compressionManager.py:449
+msgid "7-Zip is required to extract this file type"
+msgstr "برنامج 7-Zip مطلوب لفك ضغط هذا النوع من الملفات"
+
+#: duplicateFinderManager.py:268
+msgid "A duplicate scan is already running"
+msgstr "عملية فحص مكررة قيد التشغيل بالفعل"
+
+#: fileOperations.py:1544
 msgid "A file with this name already exists"
 msgstr "يوجد ملف بهذا الاسم بالفعل"
 
-#: compressionManager.py:288
+#: folderTools.py:1116
+#: folderTools.py:1468
+msgid "A selection operation is already in progress"
+msgstr "عملية تحديد قيد التنفيذ بالفعل"
+
+#: contextMenu.py:1018
+msgid "Accessed: {0}"
+msgstr "تم الوصول إليه: {0}"
+
+#: freezeManager.py:623
+msgid "Action canceled"
+msgstr "تم إلغاء الإجراء"
+
+#: fileBasketManager.py:48
+msgid "Action:"
+msgstr "الإجراء:"
+
+#: workspaceManager.py:101
+#: workspaceManager.py:202
+msgid "Add Folder..."
+msgstr "إضافة مجلد..."
+
+#: workspaceManager.py:202
+msgid "Add Path"
+msgstr "إضافة مسار"
+
+#: workspaceManager.py:233
+msgid "Add at least one folder to this workspace"
+msgstr "أضف مجلداً واحداً على الأقل إلى مساحة العمل هذه"
+
+#: workspaceManager.py:73
+msgid "Add to workspace:"
+msgstr "إضافة إلى مساحة العمل:"
+
+#: fileBasketManager.py:283
+msgid "Added to basket. Total items: {0}"
+msgstr "تمت الإضافة إلى السلة. إجمالي العناصر: {0}"
+
+#: workspaceManager.py:240
+msgid "Added to existing workspace {name}"
+msgstr "تمت الإضافة إلى مساحة العمل الحالية {name}"
+
+#: fileBasketManager.py:265
+msgid "Added {0}"
+msgstr "تمت إضافة {0}"
+
+#: workspaceManager.py:188
+msgid "Added {count} folders"
+msgstr "تمت إضافة {count} من المجلدات"
+
+#: workspaceManager.py:764
+#: workspaceManager.py:771
+msgid "Added {name}"
+msgstr "تمت إضافة {name}"
+
+#: workspaceManager.py:358
+msgid "All workspaces cleared"
+msgstr "تم مسح جميع مساحات العمل"
+
+#: workspaceManager.py:766
+msgid "Already added: {name}"
+msgstr "مضاف مسبقاً: {name}"
+
+#: freezeManager.py:1055
+msgid "Already frozen"
+msgstr "مجمد مسبقاً"
+
+#: fileBasketManager.py:277
+msgid "Already in basket"
+msgstr "موجود في السلة مسبقاً"
+
+#: fileOperations.py:1508
+msgid "An item named {name} already exists"
+msgstr "يوجد عنصر بهذا الاسم {name} مسبقاً"
+
+#: fileOperations.py:330
+msgid "Applied"
+msgstr "مُطبَّق"
+
+#: batchRenameManager.py:96
+#: fileOperations.py:295
+msgid "Apply"
+msgstr "تطبيق"
+
+#: fileBasketManager.py:296
+msgid "Basket cleared"
+msgstr "تم مسح السلة"
+
+#: fileBasketManager.py:311
+msgid "Basket is already empty"
+msgstr "السلة فارغة بالفعل"
+
+#: fileBasketManager.py:43
+#: fileBasketManager.py:98
+#: fileBasketManager.py:132
+msgid "Basket is empty"
+msgstr "السلة فارغة"
+
+#: contextMenu.py:391
+msgid "Batch Rename Tool"
+msgstr "أداة إعادة التسمية الدفعية"
+
+#: xPlorer_engine.py:959
+#: xPlorer_engine.py:1094
+msgid "Batch rename manager not available"
+msgstr "مدير إعادة التسمية الدفعية غير متوفر"
+
+#: fileBasketManager.py:62
+msgid "Browse"
+msgstr "استعراض"
+
+#: compressionManager.py:302
 msgid "Built-in compression failed: {error}"
 msgstr "فشل الضغط المدمج: {error}"
 
-#: robocopyManager.py:323
+#: robocopyManager.py:364
 msgid "Calculating total size..."
 msgstr "جاري حساب الحجم الإجمالي..."
 
-#: clipboardManager.py:66
+#: batchRenameManager.py:98
+#: fileOperations.py:294
+#: workspaceManager.py:110
+msgid "Cancel"
+msgstr "إلغاء"
+
+#: clipboardManager.py:72
 msgid "Cannot copy content of folders, please select files only"
-msgstr "لا يمكن نسخ محتوى المجلدات، يرجى تحديد ملفات فقط"
+msgstr "لا يمكننسخ محتوى المجلدات، يرجى تحديد الملفات فقط"
 
-#: createFile.py:271
+#: createFile.py:275
 msgid "Cannot find unique name for: {name}"
-msgstr "لا يمكن العثور على اسم فريد لـ: {name}"
+msgstr "تعذر العثور على اسم فريد لـ: {name}"
 
-#: __init__.py:888
+#: xPlorer_engine.py:1431
 msgid "Cannot open settings dialog"
-msgstr "لا يمكن فتح مربع حوار الإعدادات"
+msgstr "تعذر فتح مربع حوار الإعدادات"
 
-#: folderTools.py:570
+#: folderTools.py:733
 msgid "Cannot process RTF file: striprtf module not available"
-msgstr "لا يمكن معالجة ملف RTF: وحدة striprtf غير متوفرة"
+msgstr "تعذر معالجة ملف RTF: وحدة striprtf غير متوفرة"
 
-#: contextMenu.py:43
+#: contextMenu.py:442
 msgid "Case Converter for Folders"
 msgstr "محول حالة الأحرف للمجلدات"
 
-#: __init__.py:927
+#: xPlorer_engine.py:1484
 msgid "Case converter not available"
 msgstr "محول حالة الأحرف غير متوفر"
 
-#: __init__.py:648
+#: compressionManager.py:364
+msgid "Choose extraction method:"
+msgstr "اختر طريقة الاستخراج:"
+
+#: workspaceManager.py:329
+#: workspaceManager.py:350
+msgid "Clear All Workspaces"
+msgstr "مسح كل مساحات العمل"
+
+#: fileBasketManager.py:74
+msgid "Clear Basket"
+msgstr "مسح السلة"
+
+#: operationHistoryManager.py:44
+msgid "Clear History"
+msgstr "مسح السجل"
+
+#: contextMenu.py:231
+msgid "Clear all (except pinned)"
+msgstr "مسح الكل (باستثناء المثبتة)"
+
+#: contextMenu.py:264
+msgid "Cleared recent locations"
+msgstr "تم مسح المواقع الأخيرة"
+
+#: fileBasketManager.py:309
+msgid "Cleared {0} from basket"
+msgstr "تمت إزالة {0} من السلة"
+
+#: contextMenu.py:498
+msgid "Clipboard Operations"
+msgstr "عمليات الحافظة"
+
+#: xPlorer_engine.py:900
+msgid "Clipboard Operations: Copy selected names (single tap), copy content (double tap), or copy address bar (triple tap)"
+msgstr "عمليات الحافظة: نسخ الأسماء المحددة (نقرة واحدة)، نسخ المحتوى (نقرتان)، أو نسخ شريط العنوان (ثلاث نقرات)"
+
+#: fileOperations.py:1476
+msgid "Clipboard is empty"
+msgstr "الحافظة فارغة"
+
+#: xPlorer_engine.py:892
 msgid "Clipboard manager not available"
 msgstr "مدير الحافظة غير متوفر"
 
-#: compressionManager.py:284
-msgid "Completed"
+#: fileOperations.py:1481
+msgid "Clipboard text is not a valid name"
+msgstr "نص الحافظة ليس اسماً صالحاً"
+
+#: contextMenu.py:737
+#: duplicateFinderManager.py:115
+#: fileBasketManager.py:76
+#: fileOperations.py:352
+#: flatViewManager.py:53
+#: operationHistoryManager.py:46
+#: syncCompareManager.py:59
+#: workspaceManager.py:277
+msgid "Close"
+msgstr "إغلاق"
+
+#: workspaceManager.py:637
+msgid "Closed {count} folders from workspace {name}"
+msgstr "تم إغلاق {count} من المجلدات من مساحة العمل {name}"
+
+#: syncCompareManager.py:32
+msgid "Compare Folders"
+msgstr "مقارنة المجلدات"
+
+#: syncCompareManager.py:48
+msgid "Comparing..."
+msgstr "جاري المقارنة..."
+
+#: robocopyManager.py:525
+msgid "Complete"
 msgstr "اكتمل"
 
-#: contextMenu.py:26
-msgid "Compress zip"
-msgstr "ضغط zip"
+#: compressionManager.py:298
+msgid "Completed"
+msgstr "مكتمل"
 
-#: compressionManager.py:160
-#: compressionManager.py:168
+#: contextMenu.py:472
+msgid "Compress"
+msgstr "ضغط"
+
+#: contextMenu.py:467
+msgid "Compress zip"
+msgstr "ضغط كملف مضغوط"
+
+#: compressionManager.py:173
+#: compressionManager.py:181
 msgid "Compressing files"
 msgstr "جاري ضغط الملفات"
 
-#: compressionManager.py:75
+#: compressionManager.py:85
 msgid "Compressing..."
 msgstr "جاري الضغط..."
 
-#: compressionManager.py:263
 #: compressionManager.py:277
+#: compressionManager.py:291
 msgid "Compressing: {percent}%"
-msgstr "الضغط: {percent}%"
+msgstr "جاري الضغط: {percent}%"
 
-#: compressionManager.py:110
-#: compressionManager.py:282
+#: compressionManager.py:120
+#: compressionManager.py:296
 msgid "Compression cancelled"
 msgstr "تم إلغاء الضغط"
 
-#: compressionManager.py:112
-#: compressionManager.py:285
+#: compressionManager.py:122
+#: compressionManager.py:299
 msgid "Compression completed {name}"
-msgstr "اكتمل الضغط {name}"
+msgstr "اكتمل ضغط {name}"
 
-#: __init__.py:728
+#: xPlorer_engine.py:963
 msgid "Compression manager not available"
-msgstr "مدير الضغط غير متوفر"
+msgstr "مدير الضغط غير متاح"
 
-#: compressionManager.py:86
+#: compressionManager.py:96
 msgid "Compression timed out"
 msgstr "انتهت مهلة الضغط"
 
-#: clipboardManager.py:133
-msgid "Content from 1 file copied to clipboard"
-msgstr "تم نسخ محتوى ملف واحد إلى الحافظة"
+#: contextMenu.py:1022
+msgid "Contents: calculating..."
+msgstr "المحتويات: جاري الحساب..."
 
-#: clipboardManager.py:135
-msgid "Content from {count} files copied to clipboard"
-msgstr "تم نسخ محتوى {count} ملفات إلى الحافظة"
+#: contextMenu.py:1065
+msgid "Contents: {0} files, {1} folders{2}"
+msgstr "المحتويات: {0} ملفات، {1} مجلدات{2}"
 
-#: __init__.py:835
-#: __init__.py:901
+#: xPlorer_engine.py:1027
+#: xPlorer_engine.py:1443
+#: xPlorer_engine.py:1455
 msgid "Context menu manager not available"
-msgstr "مدير القائمة السياقية غير متوفر"
+msgstr "مدير قائمة السياق غير متاح"
 
-#: folderTools.py:937
+#: folderTools.py:1976
 msgid "Conversion already in progress"
-msgstr "التحويل قيد التنفيذ بالفعل"
+msgstr "التحويل جاري بالفعل"
 
-#: folderTools.py:954
+#: folderTools.py:1993
 msgid "Converting"
 msgstr "جاري التحويل"
 
-#: clipboardManager.py:44
+#: robocopyManager.py:503
+msgid "Copied"
+msgstr "تم النسخ"
+
+#: clipboardManager.py:47
 msgid "Copied 1 item name to clipboard"
 msgstr "تم نسخ اسم عنصر واحد إلى الحافظة"
 
-#: clipboardManager.py:46
+#: syncCompareManager.py:142
+msgid "Copied {0}"
+msgstr "تم نسخ {0}"
+
+#: fileBasketManager.py:352
+msgid "Copied {0} items from the basket"
+msgstr "تم نسخ {0} عناصر من السلة"
+
+#: clipboardManager.py:49
 msgid "Copied {count} item names to clipboard"
 msgstr "تم نسخ أسماء {count} عناصر إلى الحافظة"
 
-#: __init__.py:624
+#: folderTools.py:1788
+msgid "Copied {count} items"
+msgstr "تم نسخ {count} عناصر"
+
+#: xPlorer_engine.py:872
 msgid "Copied: {path}"
 msgstr "تم النسخ: {path}"
 
-#: contextMenu.py:28
+#: fileBasketManager.py:51
+#: fileBasketManager.py:159
+#: folderTools.py:1767
+msgid "Copy"
+msgstr "نسخ"
+
+#: syncCompareManager.py:57
+msgid "Copy Selected to Right"
+msgstr "نسخ المحدد إلى اليمين"
+
+#: contextMenu.py:491
 msgid "Copy address bar"
 msgstr "نسخ شريط العنوان"
 
-#: contextMenu.py:29
+#: contextMenu.py:493
 msgid "Copy content"
 msgstr "نسخ المحتوى"
 
-#: __init__.py:711
-msgid "Copy content (single tap) or invert selection (double tap)"
-msgstr "نسخ المحتوى (ضغطة واحدة) أو عكس التحديد (ضغطة مزدوجة)"
-
-#: contextMenu.py:30
+#: contextMenu.py:495
 msgid "Copy selected file and folder names"
 msgstr "نسخ أسماء الملفات والمجلدات المحددة"
 
-#: __init__.py:671
-msgid "Copy selected names (single tap) or copy address bar (double tap)"
-msgstr "نسخ الأسماء المحددة (ضغطة واحدة) أو نسخ شريط العنوان (ضغطة مزدوجة)"
+#: clipboardManager.py:149
+msgid "Copy {lines} Lines from {files} files"
+msgstr "نسخ {lines} سطراً من {files} ملفات"
 
-#: __init__.py:628
-#: clipboardManager.py:50
-#: clipboardManager.py:139
+#: folderTools.py:1836
+msgid "Could not delete one or more items"
+msgstr "تعذر حذف عنصر واحد أو أكثر"
+
+#: update.py:255
+msgid "Could not download the update. Opening the releases page."
+msgstr "تعذر تنزيل التحديث. جاري فتح صفحة الإصدارات."
+
+#: clipboardManager.py:53
+#: clipboardManager.py:153
+#: folderTools.py:1795
+#: folderTools.py:1805
+#: xPlorer_engine.py:876
 msgid "Could not open clipboard"
 msgstr "تعذر فتح الحافظة"
 
-#: contextMenu.py:23
+#: flatViewManager.py:199
+msgid "Could not open the containing folder"
+msgstr "تعذر فتح المجلد الاحتوائي"
+
+#: folderTools.py:1739
+msgid "Could not open the file"
+msgstr "تعذر فتح الملف"
+
+#: folderTools.py:1819
+msgid "Could not open the folder"
+msgstr "تعذر فتح المجلد"
+
+#: flatViewManager.py:185
+msgid "Could not open {0}"
+msgstr "تعذر فتح {0}"
+
+#: fileOperations.py:433
+#: fileOperations.py:435
+msgid "Could not read this folder"
+msgstr "تعذر قراءة هذا المجلد"
+
+#: fileOperations.py:493
+msgid "Could not save settings"
+msgstr "تعذر حفظ الإعدادات"
+
+#: freezeManager.py:699
+#: freezeManager.py:721
+#: freezeManager.py:1052
+#: freezeManager.py:1076
+msgid "Could not save the freezer list"
+msgstr "تعذر حفظ قائمة التجميد"
+
+#: xPlorer_engine.py:1219
+msgid "Could not start multi-select"
+msgstr "تعذر بدء التحديد المتعدد"
+
+#: batchRenameManager.py:85
+msgid "Counter start value:"
+msgstr "قيمة بدء العداد:"
+
+#: contextMenu.py:375
 #: createFile.py:17
 msgid "Create File"
 msgstr "إنشاء ملف"
 
-#: folderTools.py:128
+#: folderTools.py:203
 msgid "Create Multiple Folders"
 msgstr "إنشاء مجلدات متعددة"
 
-#: contextMenu.py:40
+#: contextMenu.py:461
 msgid "Create Multiple Folders..."
 msgstr "إنشاء مجلدات متعددة..."
 
-#: folderTools.py:157
+#: folderTools.py:232
 msgid "Create main folder and then subfolders"
-msgstr "إنشاء مجلد رئيسي ثم مجلدات فرعية"
+msgstr "إنشاء المجلد الرئيسي ثم المجلدات الفرعية"
 
-#: __init__.py:879
+#: xPlorer_engine.py:1423
 msgid "Create new folder and paste clipboard content into rename field"
 msgstr "إنشاء مجلد جديد ولصق محتوى الحافظة في حقل إعادة التسمية"
 
-#: folderTools.py:324
-msgid "Created {count} of {total} folders..."
-msgstr "تم إنشاء {count} من {total} مجلدًا..."
+#: fileOperations.py:1361
+msgid "Created ISO {name}"
+msgstr "تم إنشاء ملف ISO المرئي {name}"
 
-#: folderTools.py:311
+#: createFile.py:296
+msgid "Created {count} file(s) in {path}"
+msgstr "تم إنشاء {count} ملف (ملفات) في {path}"
+
+#: folderTools.py:399
+msgid "Created {count} of {total} folders..."
+msgstr "تم إنشاء {count} من {total} مجلدات..."
+
+#: contextMenu.py:1012
+msgid "Created: {0}"
+msgstr "تم الإنشاء: {0}"
+
+#: fileOperations.py:1293
+#: fileOperations.py:1297
+msgid "Creating ISO"
+msgstr "جاري إنشاء ملف ISO"
+
+#: fileOperations.py:1307
+msgid "Creating ISO: {percent}%"
+msgstr "جاري إنشاء ملف ISO: {percent}%"
+
+#: folderTools.py:386
 msgid "Creating folders in background..."
 msgstr "جاري إنشاء المجلدات في الخلفية..."
 
-#: folderTools.py:161
-msgid "Edit individual folder names"
-msgstr "تحرير أسماء المجلدات الفردية"
+#: contextMenu.py:524
+msgid "Current folder size list"
+msgstr "قائمة أحجام المجلد الحالي"
 
-#: folderTools.py:120
+#: fileOperations.py:338
+msgid "Current folder size list - {name}"
+msgstr "قائمة أحجام المجلد الحالي - {name}"
+
+#: fileOperations.py:246
+msgid "Current folder size list settings"
+msgstr "إعدادات قائمة أحجام المجلد الحالي"
+
+#: folderTools.py:1768
+msgid "Cut"
+msgstr "قص"
+
+#: freezeManager.py:30
+msgid "Cut canceled"
+msgstr "تم إلغاء القص"
+
+#: folderTools.py:1802
+msgid "Cut {count} items"
+msgstr "تم قص {count} عناصر"
+
+#: folderTools.py:1771
+#: folderTools.py:1827
+#: workspaceManager.py:328
+msgid "Delete"
+msgstr "حذف"
+
+#: workspaceManager.py:275
+msgid "Delete Workspace"
+msgstr "حذف مساحة العمل"
+
+#: workspaceManager.py:349
+msgid "Delete all saved workspaces? This cannot be undone."
+msgstr "هل تريد حذف جميع مساحات العمل المحفوظة؟ لا يمكن التراجع عن هذا الإجراء."
+
+#: freezeManager.py:27
+msgid "Delete canceled"
+msgstr "تم إلغاء الحذف"
+
+#: fileBasketManager.py:58
+msgid "Destination:"
+msgstr "الوجهة:"
+
+#: syncCompareManager.py:19
+msgid "Different (size/date)"
+msgstr "مختلف (الحجم/التاريخ)"
+
+#: fileOperations.py:266
+msgid "Display format"
+msgstr "تنسيق العرض"
+
+#: update.py:244
+msgid "Downloading {name} {version}"
+msgstr "جاري تنزيل {name} {version}"
+
+#: contextMenu.py:964
+msgid "Drive: {0}"
+msgstr "محرك الأقراص: {0}"
+
+#: contextMenu.py:411
+#: duplicateFinderManager.py:79
+msgid "Duplicate Finder"
+msgstr "أداة بحث عن الملفات المكررة"
+
+#: duplicateFinderManager.py:95
+msgid "Duplicate groups:"
+msgstr "مجموعات الملفات المكررة:"
+
+#: workspaceManager.py:115
+#: workspaceManager.py:273
+msgid "Edit Workspace"
+msgstr "تحرير مساحة العمل"
+
+#: folderTools.py:236
+msgid "Edit individual folder names"
+msgstr "تعديل أسماء المجلدات الفردية"
+
+#: folderTools.py:1246
+#: folderTools.py:1841
+msgid "Enter a search term or pattern first"
+msgstr "أدخل مصطلح بحث أو نمطاً أولاً"
+
+#: workspaceManager.py:229
+msgid "Enter a workspace name"
+msgstr "أدخل اسم مساحة العمل"
+
+#: folderTools.py:195
 msgid "Error calculating folder info"
 msgstr "خطأ في حساب معلومات المجلد"
 
-#: fileOperations.py:294
+#: fileOperations.py:1177
 msgid "Error calculating size"
 msgstr "خطأ في حساب الحجم"
 
-#: compressionManager.py:196
+#: compressionManager.py:209
 msgid "Error compressing files"
 msgstr "خطأ في ضغط الملفات"
 
-#: clipboardManager.py:142
+#: clipboardManager.py:100
+#: clipboardManager.py:158
 msgid "Error copying file content"
 msgstr "خطأ في نسخ محتوى الملف"
 
-#: clipboardManager.py:53
+#: clipboardManager.py:56
 msgid "Error copying names to clipboard"
 msgstr "خطأ في نسخ الأسماء إلى الحافظة"
 
-#: folderTools.py:614
+#: syncCompareManager.py:147
+msgid "Error copying {0}"
+msgstr "خطأ في نسخ {0}"
+
+#: folderTools.py:777
 msgid "Error creating base folder"
 msgstr "خطأ في إنشاء المجلد الأساسي"
 
-#: createFile.py:291
+#: createFile.py:300
 msgid "Error creating files"
 msgstr "خطأ في إنشاء الملفات"
 
-#: __init__.py:921
+#: xPlorer_engine.py:1478
 msgid "Error creating folders"
 msgstr "خطأ في إنشاء المجلدات"
 
-#: folderTools.py:302
+#: folderTools.py:377
 msgid "Error creating main folder"
 msgstr "خطأ في إنشاء المجلد الرئيسي"
 
-#: __init__.py:965
+#: fileBasketManager.py:439
+msgid "Error creating zip file"
+msgstr "خطأ في إنشاء ملف مضغوط"
+
+#: xPlorer_engine.py:1528
 msgid "Error during conversion"
 msgstr "خطأ أثناء التحويل"
 
-#: compressionManager.py:117
+#: compressionManager.py:127
 msgid "Error in compression process: {error}"
 msgstr "خطأ في عملية الضغط: {error}"
 
-#: folderTools.py:804
+#: folderTools.py:1166
+#: folderTools.py:1169
 msgid "Error inverting selection"
 msgstr "خطأ في عكس التحديد"
 
-#: createFile.py:245
+#: createFile.py:249
 msgid "Error opening create file dialog"
-msgstr "خطأ في فتح مربع حوار إنشاء الملف"
+msgstr "خطأ في فتح مربع حوار إنشاء ملف"
 
-#: fileOperations.py:350
+#: fileOperations.py:1398
+msgid "Error opening current folder size list"
+msgstr "خطأ في فتح قائمة أحجام المجلدات الحالية"
+
+#: recentLocationsManager.py:229
+msgid "Error opening folder"
+msgstr "خطأ في فتح المجلد"
+
+#: fileOperations.py:1558
 msgid "Error opening rename dialog"
 msgstr "خطأ في فتح مربع حوار إعادة التسمية"
 
-#: __init__.py:895
+#: xPlorer_engine.py:1437
 msgid "Error opening settings"
 msgstr "خطأ في فتح الإعدادات"
 
-#: folderTools.py:704
+#: folderTools.py:867
 msgid "Error processing text file: {}"
-msgstr "خطأ في معالجة الملف النصي: {}"
+msgstr "خطأ في معالجة ملف النص: {}"
 
-#: folderTools.py:581
+#: folderTools.py:744
 msgid "Error reading RTF file"
 msgstr "خطأ في قراءة ملف RTF"
 
-#: folderTools.py:708
+#: folderTools.py:871
 msgid "Error reading file encoding"
 msgstr "خطأ في قراءة ترميز الملف"
 
-#: fileOperations.py:320
-#: fileOperations.py:347
+#: fileOperations.py:1436
+#: fileOperations.py:1519
+#: fileOperations.py:1522
+#: fileOperations.py:1555
 msgid "Error renaming file"
 msgstr "خطأ في إعادة تسمية الملف"
 
-#: folderTools.py:713
+#: batchRenameManager.py:244
+msgid "Error renaming {0} to {1}: {2}"
+msgstr "خطأ في إعادة تسمية {0} إلى {1}: {2}"
+
+#: duplicateFinderManager.py:308
+msgid "Error scanning for duplicates"
+msgstr "خطأ في البحث عن العناصر المكررة"
+
+#: folderTools.py:1200
+msgid "Error selecting by extension"
+msgstr "خطأ في التحديد حسب الامتداد"
+
+#: folderTools.py:1269
+msgid "Error selecting by search"
+msgstr "خطأ في التحديد حسب البحث"
+
+#: folderTools.py:1512
+#: folderTools.py:1515
+msgid "Error selecting items"
+msgstr "خطأ في تحديد العناصر"
+
+#: compressionManager.py:324
+msgid "Error uncompressing file"
+msgstr "خطأ في فك ضغط الملف"
+
+#: batchRenameManager.py:414
+msgid "Error undoing rename for {0}: {1}"
+msgstr "خطأ في التراجع عن إعادة التسمية لـ {0}: {1}"
+
+#: folderTools.py:876
 msgid "Error: {}"
 msgstr "خطأ: {}"
 
-#: __init__.py:1002
+#: fileBasketManager.py:67
+msgid "Execute"
+msgstr "تنفيذ"
+
+#: xPlorer_engine.py:1559
 msgid "Explorer tree dumped to NVDA log"
-msgstr "تم تفريغ شجرة المستكشف في سجل NVDA"
+msgstr "تم تصدير شجرة مستكشف الملفات إلى سجل NVDA"
 
 #: createFile.py:72
 msgid "Extension:"
 msgstr "الامتداد:"
 
-#: folderTools.py:949
-msgid "Failed to rename any folders"
-msgstr "فشل إعادة تسمية أي مجلد"
+#: compressionManager.py:360
+msgid "Extract Here"
+msgstr "استخراج هنا"
 
-#: compressionManager.py:188
+#: compressionManager.py:359
+msgid "Extract to \"{folder}\\\""
+msgstr "استخراج إلى \"{folder}\\\""
+
+#: compressionManager.py:365
+msgid "Extract {name}"
+msgstr "استخراج {name}"
+
+#: compressionManager.py:512
+msgid "Extracted {done} of {total}. Failed: {names}"
+msgstr "تم استخراج {done} من {total}. الفاشلة: {names}"
+
+#: compressionManager.py:456
+msgid "Extracted {name} to {path}"
+msgstr "تم استخراج {name} إلى {path}"
+
+#: compressionManager.py:519
+msgid "Extracting {count} files..."
+msgstr "جاري استخراج {count} من الملفات..."
+
+#: compressionManager.py:469
+msgid "Extracting..."
+msgstr "جاري الاستخراج..."
+
+#: compressionManager.py:452
+msgid "Extraction completed to {path}"
+msgstr "اكتمل الاستخراج إلى {path}"
+
+#: compressionManager.py:507
+msgid "Extraction completed: {count} files, each in its own folder"
+msgstr "اكتمل الاستخراج: {count} ملفات، كل ملف في مجلد خاص به"
+
+#: compressionManager.py:440
+msgid "Extraction failed"
+msgstr "فشل الاستخراج"
+
+#: compressionManager.py:404
+#: compressionManager.py:461
+msgid "Extraction failed: {error}"
+msgstr "فشل الاستخراج: {error}"
+
+#: compressionManager.py:482
+msgid "Extraction is already running"
+msgstr "الاستخراج قيد التشغيل بالفعل"
+
+#: compressionManager.py:435
+msgid "Extraction timed out"
+msgstr "انتهت مهلة الاستخراج"
+
+#: folderTools.py:1988
+msgid "Failed to rename any folders"
+msgstr "فشل إعادة تسمية أي مجلدات"
+
+#: compressionManager.py:201
 msgid "Failed to start compression"
 msgstr "فشل بدء الضغط"
+
+#: freezeManager.py:667
+msgid "File"
+msgstr "ملف"
+
+#: contextMenu.py:383
+#: contextMenu.py:386
+msgid "File Basket"
+msgstr "سلة الملفات"
+
+#: fileBasketManager.py:31
+msgid "File Basket Collection"
+msgstr "مجموعة سلة الملفات"
+
+#: xPlorer_engine.py:1105
+msgid "File Basket: Add selected item(s) to the file basket (single tap), open the file basket (double tap), or clear the file basket (triple tap)"
+msgstr "سلة الملفات: إضافة العناصر المحددة إلى سلة الملفات (نقرة واحدة)، فتح سلة الملفات (نقرتان)، أو تفريغ سلة الملفات (ثلاث نقرات)"
+
+#: batchRenameManager.py:238
+msgid "File already exists: {0}"
+msgstr "الملف موجود بالفعل: {0}"
+
+#: xPlorer_engine.py:1112
+msgid "File basket manager not available"
+msgstr "مدير سلة الملفات غير متوفر"
 
 #: createFile.py:138
 msgid "File count cannot exceed 10"
@@ -309,13 +870,13 @@ msgstr "يجب أن يكون عدد الملفات 1 على الأقل"
 msgid "File name"
 msgstr "اسم الملف"
 
-#: fileOperations.py:59
+#: fileOperations.py:68
 msgid "File name cannot be empty"
-msgstr "لا يمكن أن يكون اسم الملف فارغًا"
+msgstr "لا يمكن أن يكون اسم الملف فارغاً"
 
-#: fileOperations.py:337
+#: fileOperations.py:1541
 msgid "File name not changed"
-msgstr "لم يتغير اسم الملف"
+msgstr "لم يتم تغيير اسم الملف"
 
 #: createFile.py:66
 #: createFile.py:113
@@ -326,336 +887,1348 @@ msgstr "اسم الملف {index}:"
 msgid "File name:"
 msgstr "اسم الملف:"
 
-#: __init__.py:850
+#: folderTools.py:1733
+msgid "File not found"
+msgstr "الملف غير موجود"
+
+#: xPlorer_engine.py:1062
+#: xPlorer_engine.py:1068
+#: xPlorer_engine.py:1089
 msgid "File operations manager not available"
 msgstr "مدير عمليات الملفات غير متوفر"
 
-#: fileOperations.py:344
+#: fileOperations.py:1548
 msgid "File renamed to {name}"
 msgstr "تمت إعادة تسمية الملف إلى {name}"
 
-#: robocopyManager.py:448
+#: contextMenu.py:970
+msgid "File system: {0}"
+msgstr "نظام الملفات: {0}"
+
+#: flatViewManager.py:151
+msgid "Files found: {names}"
+msgstr "الملفات التي تم العثور عليها: {names}"
+
+#: duplicateFinderManager.py:101
+msgid "Files in this group:"
+msgstr "الملفات في هذه المجموعة:"
+
+#: fileOperations.py:261
+msgid "Files only"
+msgstr "الملفات فقط"
+
+#: flatViewManager.py:37
+msgid "Filter (type to narrow the list):"
+msgstr "عامل تصفية (اكتب لتضييق نطاق القائمة):"
+
+#: batchRenameManager.py:59
+msgid "Find and replace"
+msgstr "بحث واستبدال"
+
+#: robocopyManager.py:490
 msgid "Finished {n} of {total}: {name}"
 msgstr "اكتمل {n} من {total}: {name}"
 
-#: folderTools.py:227
-#: folderTools.py:267
+#: contextMenu.py:451
+msgid "Flat View"
+msgstr "عرض مسطح"
+
+#: flatViewManager.py:21
+msgid "Flat View: {0}"
+msgstr "العرض المسطح: {0}"
+
+#: xPlorer_engine.py:954
+msgid "Flat view tool not available"
+msgstr "أداة العرض المسطح غير متوفرة"
+
+#: folderTools.py:1188
+msgid "Focus a single file first to select others with the same extension"
+msgstr "ركز على ملف واحد أولاً لتحديد ملفات أخرى لها نفس الامتداد"
+
+#: flatViewManager.py:46
+#: folderTools.py:302
+#: folderTools.py:342
+#: freezeManager.py:667
 msgid "Folder"
 msgstr "مجلد"
 
-#: folderTools.py:605
-#: folderTools.py:675
+#: folderTools.py:768
+#: folderTools.py:838
 msgid "Folder '{}' already exists, creating '{}' instead"
 msgstr "المجلد '{}' موجود بالفعل، سيتم إنشاء '{}' بدلاً منه"
 
-#: __init__.py:905
+#: contextMenu.py:407
+msgid "Folder Sync & Compare"
+msgstr "مزامنة ومقارنة المجلدات"
+
+#: xPlorer_engine.py:1459
 msgid "Folder creation dialog not available"
 msgstr "مربع حوار إنشاء المجلد غير متوفر"
 
-#: __init__.py:867
+#: xPlorer_engine.py:1408
 msgid "Folder creator helper not available"
-msgstr "مساعد إنشاء المجلدات غير متوفر"
+msgstr "مساعد منشئ المجلدات غير متوفر"
 
-#: contextMenu.py:131
-#: contextMenu.py:134
-#: contextMenu.py:155
+#: contextMenu.py:564
+#: contextMenu.py:634
+#: contextMenu.py:637
+#: contextMenu.py:640
 msgid "Folder info"
 msgstr "معلومات المجلد"
 
-#: folderTools.py:142
+#: folderTools.py:217
 msgid "Folder title:"
 msgstr "عنوان المجلد:"
 
-#: contextMenu.py:47
+#: contextMenu.py:456
+msgid "Folder to ISO"
+msgstr "المجلد إلى ISO"
+
+#: fileOperations.py:259
+msgid "Folders and files"
+msgstr "المجلدات والملفات"
+
+#: workspaceManager.py:86
+msgid "Folders in this workspace:"
+msgstr "المجلدات في مساحة العمل هذه:"
+
+#: fileOperations.py:260
+msgid "Folders only"
+msgstr "المجلدات فقط"
+
+#: fileOperations.py:239
+msgid "Folders: {folders}, files: {files}, total size: {size}"
+msgstr "المجلدات: {folders}، الملفات: {files}، الحجم الإجمالي: {size}"
+
+#: duplicateFinderManager.py:90
+msgid "Found {0} duplicate groups"
+msgstr "تم العثور على {0} من مجموعات الملفات المكررة"
+
+#: duplicateFinderManager.py:329
+msgid "Found {0} duplicate groups, {1} redundant files"
+msgstr "تم العثور على {0} من مجموعات الملفات المكررة، و{1} من الملفات الزائدة"
+
+#: contextMenu.py:984
+msgid "Free space: {0}"
+msgstr "المساحة الفارغة: {0}"
+
+#: freezeManager.py:1059
+msgid "Freeze"
+msgstr "تجميد"
+
+#: contextMenu.py:423
+msgid "Freeze Selected"
+msgstr "تجميد المحدد"
+
+#: xPlorer_engine.py:1123
+msgid "Freeze manager not available"
+msgstr "مدير التجميد غير متوفر"
+
+#: freezeManager.py:1061
+msgid "Freeze, {count} items"
+msgstr "تجميد، {count} من العناصر"
+
+#: xPlorer_engine.py:1127
+msgid "Freeze: freeze selected items (single tap), unfreeze selected items (double tap), or open the Freezer list (triple tap)"
+msgstr "تجميد: تجميد العناصر المحددة (نقرة واحدة)، إلغاء تجميد العناصر المحددة (نقرة مزدوجة)، أو فتح قائمة المجمد (ثلاث نقرات)"
+
+#: contextMenu.py:428
+#: freezeManager.py:635
+msgid "Freezer"
+msgstr "المجمد"
+
+#: freezeManager.py:680
+msgid "Freezer - {count} frozen items"
+msgstr "المجمد - {count} من العناصر المجمدة"
+
+#: freezeManager.py:832
+#: freezeManager.py:893
+msgid "Freezing"
+msgstr "جاري التجميد"
+
+#: freezeManager.py:1086
+msgid "Frozen by a parent folder. Unfreeze the parent folder instead"
+msgstr "مجمد بواسطة مجلد رئيسي. قم بإلغاء تجميد المجلد الرئيسي بدلاً من ذلك"
+
+#: batchRenameManager.py:232
+#: batchRenameManager.py:402
+msgid "Frozen item skipped: {0}"
+msgstr "تم تخطي العنصر المجمد: {0}"
+
+#: freezeManager.py:642
+msgid "Frozen items"
+msgstr "العناصر المجمدة"
+
+#: contextMenu.py:827
+msgid "GB"
+msgstr "جيجابايت"
+
+#: contextMenu.py:439
 msgid "Headline Case"
 msgstr "حالة العناوين"
 
-#: folderTools.py:278
+#: fileOperations.py:1353
+msgid "ISO created: {name}, {size}"
+msgstr "تم إنشاء ملف ISO: {name}, {size}"
+
+#: fileOperations.py:1345
+msgid "ISO creation failed: {error}"
+msgstr "فشل إنشاء ملف ISO: {error}"
+
+#: fileOperations.py:1190
+msgid "ISO creation is already running"
+msgstr "عملية إنشاء ملف ISO قيد التشغيل بالفعل"
+
+#: syncCompareManager.py:20
+msgid "Identical"
+msgstr "متطابق"
+
+#: fileOperations.py:457
+msgid "Include subfolder contents in folder sizes"
+msgstr "تضمين محتويات المجلدات الفرعية في أحجام المجلدات"
+
+#: folderTools.py:1557
+msgid "Include subfolders (search all levels, like Flat View)"
+msgstr "تضمين المجلدات الفرعية (البحث في جميع المستويات، مثل العرض المسطح)"
+
+#: fileOperations.py:282
+msgid "Include the contents of subfolders in folder sizes (slower)"
+msgstr "تضمين محتويات المجلدات الفرعية في أحجام المجلدات (أبطأ)"
+
+#: fileOperations.py:473
+msgid "Including subfolders"
+msgstr "جاري تضمين المجلدات الفرعية"
+
+#: folderTools.py:353
 msgid "Invalid number for folders"
 msgstr "رقم غير صالح للمجلدات"
 
-#: contextMenu.py:27
+#: folderTools.py:1642
+#: folderTools.py:1848
+msgid "Invalid regular expression: {0}"
+msgstr "تعبير نمطي غير صالح: {0}"
+
+#: contextMenu.py:479
 msgid "Invert selection"
 msgstr "عكس التحديد"
 
-#: contextMenu.py:45
+#: fileBasketManager.py:113
+msgid "Item removed"
+msgstr "تمت إزالة العنصر"
+
+#: fileOperations.py:350
+msgid "Items"
+msgstr "العناصر"
+
+#: fileBasketManager.py:39
+msgid "Items in the basket:"
+msgstr "العناصر الموجودة في السلة:"
+
+#: contextMenu.py:827
+msgid "KB"
+msgstr "كيلوبايت"
+
+#: duplicateFinderManager.py:111
+msgid "Keep File in This Folder"
+msgstr "الاحتفاظ بالملف في هذا المجلد"
+
+#: duplicateFinderManager.py:107
+msgid "Keep Newest"
+msgstr "الاحتفاظ بالأحدث"
+
+#: duplicateFinderManager.py:109
+msgid "Keep Oldest"
+msgstr "الاحتفاظ بالأقدم"
+
+#: duplicateFinderManager.py:189
+msgid "Kept {0}, moved {1} duplicates to the Recycle Bin"
+msgstr "تم الاحتفاظ بـ {0}، ونقل {1} من العناصر المكررة إلى سلة المحذوفات"
+
+#: syncCompareManager.py:196
+msgid "Left and right folders are the same"
+msgstr "المجلد الأيمن والأيسر متطابقان"
+
+#: syncCompareManager.py:45
+msgid "Left: {0}   Right: {1}"
+msgstr "الأيسر: {0}   الأيمن: {1}"
+
+#: fileOperations.py:280
+msgid "List folders before files"
+msgstr "إدراج المجلدات قبل الملفات"
+
+#: workspaceManager.py:271
+msgid "Load Workspace"
+msgstr "تحميل مساحة العمل"
+
+#: workspaceManager.py:670
+msgid "Loaded workspace {name}: opened {opened}, already open {reused}"
+msgstr "تم تحميل مساحة العمل {name}: تم فتح {opened}، ومفتوحة مسبقاً {reused}"
+
+#: contextMenu.py:968
+msgid "Local"
+msgstr "محلي"
+
+#: contextMenu.py:992
+msgid "Location: {0}"
+msgstr "الموقع: {0}"
+
+#: contextMenu.py:435
 msgid "Lowercase"
 msgstr "أحرف صغيرة"
 
-#: folderTools.py:275
+#: contextMenu.py:827
+msgid "MB"
+msgstr "ميجابايت"
+
+#: contextMenu.py:402
+msgid "Mark Left Folder (Sync Compare)"
+msgstr "تعيين المجلد الأيسر (مقارنة المزامنة)"
+
+#: syncCompareManager.py:178
+msgid "Marked as left folder: {0}. Navigate to the right folder and run compare again"
+msgstr "تم التعيين كمجلد أيسر: {0}. انتقل إلى المجلد الأيمن وأعد تشغيل المقارنة"
+
+#: folderTools.py:1577
+msgid "Matching items (Enter opens, Ctrl+C/Ctrl+X copy/cut, Ctrl+Space toggles a pick, right-click or Menu key for more):"
+msgstr "العناصر المتطابقة (مفتاح Enter للفتح، Ctrl+C/Ctrl+X للنسخ/القص، Ctrl+Space للتبديل، زر الفأرة الأيمن أو مفتاح القائمة للمزيد):"
+
+#: folderTools.py:350
 msgid "Maximum 100 folders allowed"
 msgstr "الحد الأقصى المسموح به هو 100 مجلد"
 
-#: __init__.py:909
-msgid "No Explorer folder detected"
-msgstr "لم يتم اكتشاف مجلد مستكشف"
+#: fileBasketManager.py:51
+#: fileBasketManager.py:163
+msgid "Mirror Copy"
+msgstr "نسخ متطابق"
 
-#: fileOperations.py:219
-#: fileOperations.py:276
+#: fileBasketManager.py:414
+msgid "Mirror copied {0} items from the basket"
+msgstr "تم نسخ {0} عناصر (نسخ متطابق) من السلة"
+
+#: batchRenameManager.py:406
+msgid "Missing file, cannot undo: {0}"
+msgstr "ملف مفقود، لا يمكن التراجع: {0}"
+
+#: contextMenu.py:1015
+msgid "Modified: {0}"
+msgstr "تاريخ التعديل: {0}"
+
+#: fileBasketManager.py:51
+#: fileBasketManager.py:161
+msgid "Move"
+msgstr "نقل"
+
+#: workspaceManager.py:326
+msgid "Move Down"
+msgstr "تحريك لأسفل"
+
+#: workspaceManager.py:325
+msgid "Move Up"
+msgstr "تحريك لأعلى"
+
+#: freezeManager.py:29
+msgid "Move canceled"
+msgstr "تم إلغاء النقل"
+
+#: folderTools.py:1826
+msgid "Move {count} item(s) to the Recycle Bin?"
+msgstr "هل تريد نقل {count} عنصر (عناصر) إلى سلة المحذوفات؟"
+
+#: robocopyManager.py:503
+msgid "Moved"
+msgstr "تم النقل"
+
+#: fileBasketManager.py:377
+msgid "Moved {0} items from the basket"
+msgstr "تم نقل {0} عناصر من سلة المهملات"
+
+#: folderTools.py:1833
+msgid "Moved {count} item(s) to the Recycle Bin"
+msgstr "تم نقل {count} عنصر إلى سلة المحذوفات"
+
+#: batchRenameManager.py:43
+msgid "Multi-Rename Tool"
+msgstr "أداة إعادة التسمية المتعددة"
+
+#: contextMenu.py:481
+msgid "Multi-select"
+msgstr "تحديد متعدد"
+
+#: flatViewManager.py:45
+msgid "Name"
+msgstr "الاسم"
+
+#: fileOperations.py:249
+msgid "Name followed by size"
+msgstr "الاسم متبوعاً بالحجم"
+
+#: fileOperations.py:253
+msgid "Name, A to Z"
+msgstr "الاسم من الألف إلى الياء"
+
+#: fileOperations.py:254
+msgid "Name, Z to A"
+msgstr "الاسم من الياء إلى الألف"
+
+#: contextMenu.py:991
+msgid "Name: {0}"
+msgstr "الاسم: {0}"
+
+#: contextMenu.py:968
+msgid "Network name: {0}"
+msgstr "اسم الشبكة: {0}"
+
+#: fileOperations.py:1504
+msgid "New name is the same as the current name"
+msgstr "الاسم الجديد مطابق للاسم الحالي"
+
+#: workspaceManager.py:75
+msgid "New workspace"
+msgstr "مساحة عمل جديدة"
+
+#: flatViewManager.py:225
+#: syncCompareManager.py:175
+#: syncCompareManager.py:189
+#: xPlorer_engine.py:1463
+msgid "No Explorer folder detected"
+msgstr "لم يتم اكتشاف مجلد لـ مستكشف الملفات"
+
+#: fileOperations.py:1085
+#: fileOperations.py:1158
 msgid "No access to size data"
 msgstr "لا يمكن الوصول إلى بيانات الحجم"
 
-#: folderTools.py:769
+#: folderTools.py:1127
+#: folderTools.py:1479
 msgid "No active File Explorer window found"
 msgstr "لم يتم العثور على نافذة مستكشف ملفات نشطة"
 
-#: clipboardManager.py:127
-msgid "No content could be read from selected files"
-msgstr "لا يمكن قراءة أي محتوى من الملفات المحددة"
+#: batchRenameManager.py:220
+msgid "No changes to apply"
+msgstr "لا توجد تغييرات للتطبيق"
 
-#: createFile.py:284
+#: clipboardManager.py:143
+msgid "No content could be read from selected files"
+msgstr "تعذر قراءة أي محتوى من الملفات المحددة"
+
+#: duplicateFinderManager.py:91
+#: duplicateFinderManager.py:325
+msgid "No duplicate files found"
+msgstr "لم يتم العثور على ملفات مكررة"
+
+#: duplicateFinderManager.py:159
+msgid "No duplicate group selected"
+msgstr "لم يتم تحديد أي مجموعة مكررة"
+
+#: flatViewManager.py:148
+msgid "No files found"
+msgstr "لم يتم العثور على ملفات"
+
+#: batchRenameManager.py:335
+msgid "No files selected or found in the current folder"
+msgstr "لم يتم تحديد أو العثور على ملفات في المجلد الحالي"
+
+#: createFile.py:288
 msgid "No files were created"
 msgstr "لم يتم إنشاء أي ملفات"
 
-#: folderTools.py:964
-#: folderTools.py:970
-#: folderTools.py:979
-#: folderTools.py:985
+#: workspaceManager.py:221
+msgid "No folder selected"
+msgstr "لم يتم تحديد مجلد"
+
+#: folderTools.py:2003
+#: folderTools.py:2009
+#: folderTools.py:2018
+#: folderTools.py:2024
 msgid "No folders found"
 msgstr "لم يتم العثور على مجلدات"
 
-#: __init__.py:931
+#: xPlorer_engine.py:1488
 msgid "No folders selected"
 msgstr "لم يتم تحديد مجلدات"
 
-#: __init__.py:946
+#: xPlorer_engine.py:1502
 msgid "No folders selected or current folder not available"
 msgstr "لم يتم تحديد مجلدات أو المجلد الحالي غير متوفر"
 
-#: folderTools.py:341
-#: folderTools.py:649
-#: folderTools.py:699
+#: folderTools.py:416
+#: folderTools.py:812
+#: folderTools.py:862
 msgid "No folders were created"
 msgstr "لم يتم إنشاء أي مجلدات"
 
-#: folderTools.py:81
+#: fileBasketManager.py:107
+#: flatViewManager.py:176
+#: flatViewManager.py:190
+#: folderTools.py:146
+#: freezeManager.py:691
+#: syncCompareManager.py:127
 msgid "No item selected"
 msgstr "لم يتم تحديد عنصر"
 
-#: folderTools.py:782
+#: contextMenu.py:899
+msgid "No item to show properties for"
+msgstr "لا يوجد عنصر لعرض خصائصه"
+
+#: folderTools.py:1139
+#: folderTools.py:1491
 msgid "No items in folder"
 msgstr "لا توجد عناصر في المجلد"
 
-#: clipboardManager.py:27
-#: clipboardManager.py:62
-#: compressionManager.py:148
-#: fileOperations.py:210
-#: fileOperations.py:306
+#: clipboardManager.py:30
+#: clipboardManager.py:68
+#: compressionManager.py:161
+#: compressionManager.py:330
+#: fileBasketManager.py:225
+#: fileOperations.py:1076
+#: fileOperations.py:1418
+#: fileOperations.py:1448
+#: freezeManager.py:1037
+#: freezeManager.py:1068
 msgid "No items selected"
-msgstr "لم يتم تحديد عناصر"
+msgstr "لم يتم تحديد أي عناصر"
 
-#: clipboardManager.py:79
+#: fileOperations.py:448
+msgid "No items to show"
+msgstr "لا توجد عناصر للعرض"
+
+#: folderTools.py:1274
+msgid "No matches found for {term}"
+msgstr "لم يتم العثور على مطابقات لـ {term}"
+
+#: operationHistoryManager.py:39
+#: operationHistoryManager.py:70
+msgid "No operations recorded yet"
+msgstr "لم يتم تسجيل أي عمليات حتى الآن"
+
+#: contextMenu.py:279
+msgid "No recent locations yet"
+msgstr "لا توجد مواقع حديثة حتى الآن"
+
+#: batchRenameManager.py:378
+#: batchRenameManager.py:391
+msgid "No rename operation to undo"
+msgstr "لا توجد عملية إعادة تسمية للتراجع عنها"
+
+#: folderTools.py:1728
+#: folderTools.py:1764
+#: folderTools.py:1785
+#: folderTools.py:1799
+#: folderTools.py:1812
+#: folderTools.py:1823
+msgid "No result selected"
+msgstr "لم يتم تحديد نتيجة"
+
+#: clipboardManager.py:86
 msgid "No text files selected"
 msgstr "لم يتم تحديد ملفات نصية"
 
-#: folderTools.py:591
-#: folderTools.py:661
+#: folderTools.py:754
+#: folderTools.py:824
 msgid "No valid folder names found in the file"
 msgstr "لم يتم العثور على أسماء مجلدات صالحة في الملف"
 
-#: folderTools.py:296
+#: folderTools.py:371
 msgid "No valid folder names provided"
-msgstr "لم يتم تقديم أسماء مجلدات صالحة"
+msgstr "لم يتم توفير أسماء مجلدات صالحة"
 
-#: __init__.py:976
+#: workspaceManager.py:190
+msgid "No valid folder paths found"
+msgstr "لم يتم العثور على مسارات مجلدات صالحة"
+
+#: workspaceManager.py:314
+msgid "No workspace selected"
+msgstr "لم يتم تحديد مساحة عمل"
+
+#: workspaceManager.py:301
+#: workspaceManager.py:310
+msgid "No workspaces saved yet"
+msgstr "لم يتم حفظ أي مساحات عمل حتى الآن"
+
+#: duplicateFinderManager.py:181
+msgid "None of the copies are directly in the scanned folder"
+msgstr "ليس هناك أي من النسخ موجود مباشرة في المجلد الممسوح ضوئياً"
+
+#: workspaceManager.py:675
+msgid "None of the folders in workspace {0} could be found"
+msgstr "تعذر العثور على أي من المجلدات الموجودة في مساحة العمل {0}"
+
+#: contextMenu.py:233
+#: contextMenu.py:269
+msgid "Normal display"
+msgstr "عرض عادي"
+
+#: folderTools.py:1565
+msgid "Normal search"
+msgstr "بحث عادي"
+
+#: fileOperations.py:1242
+msgid "Not enough free disk space"
+msgstr "مساحة القرص الخالية غير كافية"
+
+#: xPlorer_engine.py:1533
 msgid "Not focused on File Explorer"
-msgstr "ليس التركيز على مستكشف الملفات"
+msgstr "التركيز ليس على مستكشف الملفات"
+
+#: freezeManager.py:1088
+msgid "Not frozen"
+msgstr "غير مجمد"
 
 #: createFile.py:198
-#: folderTools.py:541
-#: folderTools.py:763
+#: fileOperations.py:1187
+#: fileOperations.py:1366
+#: folderTools.py:700
+#: folderTools.py:1102
+#: folderTools.py:1181
+#: folderTools.py:1214
+#: folderTools.py:1451
+#: xPlorer_engine.py:1138
+#: xPlorer_engine.py:1211
 msgid "Not in File Explorer"
 msgstr "ليس في مستكشف الملفات"
+
+#: duplicateFinderManager.py:170
+msgid "Nothing to remove in this group"
+msgstr "لا يوجد شيء لإزالته في هذه المجموعة"
 
 #: createFile.py:28
 msgid "Number of files to create:"
 msgstr "عدد الملفات المراد إنشاؤها:"
 
-#: folderTools.py:272
+#: folderTools.py:347
 msgid "Number of folders must be at least 1"
 msgstr "يجب أن يكون عدد المجلدات 1 على الأقل"
 
-#: folderTools.py:150
+#: folderTools.py:225
 msgid "Number of folders:"
 msgstr "عدد المجلدات:"
 
-#: __init__.py:844
-msgid "Open xPlorer context menu"
-msgstr "فتح القائمة السياقية لـ xPlorer"
+#: fileOperations.py:292
+msgid "OK"
+msgstr "موافق"
 
-#: folderTools.py:554
+#: syncCompareManager.py:17
+msgid "Only in left"
+msgstr "في الأيسر فقط"
+
+#: syncCompareManager.py:18
+msgid "Only in right"
+msgstr "في الأيمن فقط"
+
+#: flatViewManager.py:51
+msgid "Open Containing Folder"
+msgstr "فتح المجلد الحاوي"
+
+#: contextMenu.py:418
+msgid "Open Freezer"
+msgstr "فتح المجمد"
+
+#: folderTools.py:1769
+msgid "Open to path"
+msgstr "فتح على المسار"
+
+#: xPlorer_engine.py:1037
+msgid "Open xPlorer context menu (single tap), Recent Locations (double tap), or Current folder size list (triple tap)"
+msgstr "فتح سياق xPlorer (نقرة واحدة)، المواقع الأخيرة (نقرتان)، أو قائمة حجم المجلد الحالي (ثلاث نقرات)"
+
+#: contextMenu.py:533
+#: operationHistoryManager.py:26
+msgid "Operation History"
+msgstr "سجل العمليات"
+
+#: operationHistoryManager.py:72
+msgid "Operation history cleared"
+msgstr "تم مسح سجل العمليات"
+
+#: workspaceManager.py:95
+msgid "Or paste/type folder paths here, one per line:"
+msgstr "أو الصق/اكتب مسارات المجلدات هنا، مسار واحد في كل سطر:"
+
+#: batchRenameManager.py:409
+msgid "Original name is taken, cannot undo: {0}"
+msgstr "الاسم الأصلي محجوز، لا يمكن التراجع: {0}"
+
+#: freezeManager.py:32
+msgid "Overwrite canceled"
+msgstr "تم إلغاء الاستبدال"
+
+#: freezeManager.py:31
+msgid "Paste canceled"
+msgstr "تم إلغاء اللصق"
+
+#: fileBasketManager.py:272
+msgid "Path not found: {0}"
+msgstr "المسار غير موجود: {0}"
+
+#: folderTools.py:1572
+msgid "Pattern / search text (meaning depends on the mode above):"
+msgstr "النمط / نص البحث (يعتمد المعنى على الوضع أعلاه):"
+
+#: contextMenu.py:230
+msgid "Pin"
+msgstr "تثبيت"
+
+#: workspaceManager.py:323
+msgid "Pin to Top"
+msgstr "تثبيت في الأعلى"
+
+#: contextMenu.py:259
+msgid "Pinned"
+msgstr "تم التثبيت"
+
+#: workspaceManager.py:341
+msgid "Pinned to top: {0}"
+msgstr "مثبت في الأعلى: {0}"
+
+#: fileBasketManager.py:156
+msgid "Please choose a valid destination folder"
+msgstr "الرجاء اختيار مجلد وجهة صالح"
+
+#: folderTools.py:713
 msgid "Please select a .txt or .rtf file"
-msgstr "يرجى تحديد ملف .txt أو .rtf"
+msgstr "الرجاء تحديد ملف .txt أو .rtf"
 
-#: fileOperations.py:313
+#: compressionManager.py:335
+msgid "Please select a compressed file"
+msgstr "الرجاء تحديد ملف مضغوط"
+
+#: fileOperations.py:1429
 msgid "Please select a file, not a folder"
-msgstr "يرجى تحديد ملف، وليس مجلد"
+msgstr "الرجاء تحديد ملف وليس مجلداً"
 
-#: fileOperations.py:309
+#: fileOperations.py:1196
+msgid "Please select a folder"
+msgstr "الرجاء تحديد مجلد"
+
+#: fileOperations.py:1421
 msgid "Please select only one file"
-msgstr "يرجى تحديد ملف واحد فقط"
+msgstr "الرجاء تحديد ملف واحد فقط"
 
-#: folderTools.py:547
+#: fileOperations.py:1199
+msgid "Please select only one folder"
+msgstr "الرجاء تحديد مجلد واحد فقط"
+
+#: fileOperations.py:1451
+msgid "Please select only one item"
+msgstr "الرجاء تحديد عنصر واحد فقط"
+
+#: folderTools.py:706
 msgid "Please select only one text file"
-msgstr "يرجى تحديد ملف نصي واحد فقط"
+msgstr "الرجاء تحديد ملف نصي واحد فقط"
 
-#: folderTools.py:791
+#: batchRenameManager.py:90
+msgid "Preview of new file names:"
+msgstr "معاينة أسماء الملفات الجديدة:"
+
+#: folderTools.py:1148
+#: folderTools.py:1495
 msgid "Processing {count} items in background..."
-msgstr "جاري معالجة {count} عنصر في الخلفية..."
+msgstr "جاري معالجة {count} من العناصر في الخلفية..."
 
-#: __init__.py:861
-#: contextMenu.py:31
+#: contextMenu.py:555
+#: contextMenu.py:929
+msgid "Properties"
+msgstr "الخصائص"
+
+#: xPlorer_engine.py:1449
+msgid "Properties menu not available"
+msgstr "قائمة الخصائص غير متوفرة"
+
+#: contextMenu.py:750
+msgid "Read-only"
+msgstr "للقراءة فقط"
+
+#: contextMenu.py:750
+msgid "Read-only (frozen, managed by the Freezer)"
+msgstr "للقراءة فقط (مجمد، تتم إدارته بواسطة المجمد)"
+
+#: contextMenu.py:790
+msgid "Read-only turned off"
+msgstr "تم إيقاف وضع القراءة فقط"
+
+#: contextMenu.py:790
+msgid "Read-only turned on"
+msgstr "تم تشغيل وضع القراءة فقط"
+
+#: contextMenu.py:530
+msgid "Recent Locations"
+msgstr "المواقع الحديثة"
+
+#: operationHistoryManager.py:34
+msgid "Recent operations (most recent first):"
+msgstr "العمليات الأخيرة (الأحدث أولاً):"
+
+#: folderTools.py:1565
+msgid "Regex"
+msgstr "تعبير نمطي"
+
+#: syncCompareManager.py:52
+msgid "Relative Path"
+msgstr "مسار نسبي"
+
+#: fileBasketManager.py:72
+#: workspaceManager.py:103
+msgid "Remove Selected"
+msgstr "إزالة المحدد"
+
+#: duplicateFinderManager.py:190
+msgid "Removed {0} duplicate copies of {1}"
+msgstr "تمت إزالة {0} نسخة مكررة من {1}"
+
+#: freezeManager.py:28
+msgid "Rename canceled"
+msgstr "تم إلغاء إعادة التسمية"
+
+#: batchRenameManager.py:54
+msgid "Rename mode:"
+msgstr "وضع إعادة التسمية:"
+
+#: contextMenu.py:502
 msgid "Rename selected file"
 msgstr "إعادة تسمية الملف المحدد"
 
-#: __init__.py:688
-msgid "Required manager not available"
-msgstr "المدير المطلوب غير متوفر"
+#: xPlorer_engine.py:1079
+msgid "Rename selected file (single tap), rename using clipboard text (double tap), or undo the last batch rename operation (triple tap)"
+msgstr "إعادة تسمية الملف المحدد (نقرة واحدة)، إعادة التسمية باستخدام نص الحافظة (نقرتان)، أو التراجع عن آخر عملية إعادة تسمية مجمعة (ثلاث نقرات)"
 
-#: contextMenu.py:34
+#: fileOperations.py:1552
+msgid "Renamed 1 file"
+msgstr "تم إعادة تسمية ملف واحد"
+
+#: fileOperations.py:1513
+msgid "Renamed to {name}"
+msgstr "تمت إعادة التسمية إلى {name}"
+
+#: batchRenameManager.py:251
+msgid "Renamed {0} files"
+msgstr "تم إعادة تسمية {0} من الملفات"
+
+#: fileOperations.py:1516
+msgid "Renamed {old} to {new}"
+msgstr "تم إعادة تسمية {old} إلى {new}"
+
+#: batchRenameManager.py:72
+msgid "Replace with:"
+msgstr "استبدال بـ:"
+
+#: fileOperations.py:460
+msgid "Rescan"
+msgstr "إعادة الفحص"
+
+#: contextMenu.py:234
+#: contextMenu.py:269
+msgid "Reversed display"
+msgstr "عرض معكوس"
+
+#: batchRenameManager.py:418
+msgid "Reverted {0} file names"
+msgstr "تم التراجع عن أسماء {0} من الملفات"
+
+#: contextMenu.py:515
 msgid "Robocopy"
-msgstr "Robocopy"
+msgstr "روبوكوبي"
 
-#: robocopyManager.py:457
+#: robocopyManager.py:499
 msgid "Robocopy cancelled"
-msgstr "تم إلغاء Robocopy"
+msgstr "تم إلغاء روبوكوبي"
 
-#: robocopyManager.py:469
-msgid "Robocopy finished successfully. {n} item(s) copied"
-msgstr "اكتمل Robocopy بنجاح. تم نسخ {n} عنصر"
+#: robocopyManager.py:528
+msgid "Robocopy complete. {n} item(s) copied"
+msgstr "اكتمل روبوكوبي. تم نسخ {n} عنصر (عناصر)"
 
-#: robocopyManager.py:465
-msgid "Robocopy finished. {ok} succeeded, {failed} failed: {items}"
-msgstr "اكتمل Robocopy. نجح {ok}، فشل {failed}: {items}"
+#: robocopyManager.py:514
+msgid "Robocopy finished. {ok} succeeded, {failed} failed"
+msgstr "انتهى Robocopy. نجح {ok}، و{failed} فشل"
 
-#: __init__.py:768
+#: xPlorer_engine.py:988
 msgid "Robocopy manager not available"
-msgstr "مدير Robocopy غير متوفر"
+msgstr "مدير روبوكوبي غير متوفر"
 
-#: __init__.py:791
+#: robocopyManager.py:546
+msgid "Robocopy: Items That Could Not Be Copied"
+msgstr "روبوكوبي: العناصر التي تعذر نسخها"
+
+#: xPlorer_engine.py:996
 msgid "Robocopy: single tap copy, double tap paste, triple tap move"
-msgstr "Robocopy: ضغطة واحدة للنسخ، ضغطة مزدوجة للصق، ضغطة ثلاثية للنقل"
+msgstr "روبوكوبي: نقرة واحدة للنسخ، نقرة مزدوجة للالصق، ثلاث نقرات للنقل"
 
-#: contextMenu.py:89
-#: contextMenu.py:100
-#: contextMenu.py:106
-#: contextMenu.py:111
-#: contextMenu.py:117
+#: contextMenu.py:404
+msgid "Run Compare (Sync Compare)"
+msgstr "تشغيل المقارنة (مقارنة المزامنة)"
+
+#: workspaceManager.py:108
+msgid "Save"
+msgstr "حفظ"
+
+#: contextMenu.py:336
+msgid "Save Current as Workspace..."
+msgstr "حفظ الحالي كـ مساحة عمل..."
+
+#: workspaceManager.py:51
+msgid "Save Workspace"
+msgstr "حفظ مساحة العمل"
+
+#: fileBasketManager.py:140
+msgid "Save Zip File As"
+msgstr "حفظ ملف المضغوط باسم"
+
+#: workspaceManager.py:263
+msgid "Saved workspaces (right-click or press the Menu key for pin/reorder/clear options):"
+msgstr "مساحات العمل المحفوظة (انقر بزر المOUSE الأيمن أو اضغط على مفتاح القائمة لخيارات التثبيت/إعادة الترتيب/المسح):"
+
+#: contextMenu.py:558
+#: contextMenu.py:608
+#: contextMenu.py:616
+#: contextMenu.py:622
+#: contextMenu.py:627
 msgid "Say size"
-msgstr "قراءة الحجم"
+msgstr "نطق الحجم"
 
-#: __init__.py:751
-msgid "Say size (single tap) or compress zip (double tap)"
-msgstr "قراءة الحجم (ضغطة واحدة) أو ضغط zip (ضغطة مزدوجة)"
+#: xPlorer_engine.py:971
+msgid "Say size (single tap), compress zip (double tap), unzip (triple tap), or folder to ISO (quadruple tap)"
+msgstr "نطق الحجم (نقرة واحدة)، ضغط ملف مضغوط (نقرة مزدوجة)، فك الضغط (ثلاث نقرات)، أو المجلد إلى ISO (أربع نقرات)"
 
-#: folderTools.py:559
+#: duplicateFinderManager.py:272
+msgid "Scanning {0} for duplicates..."
+msgstr "جاري فحص {0} بحثاً عن الملفات المكررة..."
+
+#: fileOperations.py:401
+msgid "Scanning, please wait"
+msgstr "جاري الفحص، يرجى الانتظار"
+
+#: flatViewManager.py:41
+msgid "Scanning..."
+msgstr "جاري الفحص..."
+
+#: folderTools.py:1563
+msgid "Search mode:"
+msgstr "وضع البحث:"
+
+#: fileBasketManager.py:121
+msgid "Select Destination Directory"
+msgstr "حدد مجلد الوجهة"
+
+#: workspaceManager.py:192
+msgid "Select Folder to Add"
+msgstr "حدد مجلد للإضافة"
+
+#: duplicateFinderManager.py:264
+msgid "Select a folder, or open one in Explorer, to scan for duplicates"
+msgstr "حدد مجلدًا، أو افتح واحدًا في مستكشف الملفات، لفحص الملفات المكررة"
+
+#: contextMenu.py:477
+msgid "Select by Extension"
+msgstr "التحديد حسب الامتداد"
+
+#: contextMenu.py:483
+#: folderTools.py:1541
+msgid "Select by Search"
+msgstr "التحديد حسب البحث"
+
+#: xPlorer_engine.py:939
+msgid "Select by Search: Opens Select by Search (single tap), Flat View (double tap), or Batch Rename Tool (triple tap)"
+msgstr "التحديد حسب البحث: يفتح التحديد حسب البحث (نقرة واحدة)، العرض المسطح (نقرة مزدوجة)، أو أداة إعادة التسمية الدفعية (ثلاث نقرات)"
+
+#: folderTools.py:718
 msgid "Selected file does not exist"
 msgstr "الملف المحدد غير موجود"
 
-#: folderTools.py:87
+#: folderTools.py:152
 msgid "Selected item is not a folder"
-msgstr "العنصر المحدد ليس مجلدًا"
+msgstr "العنصر المحدد ليس مجلداً"
 
-#: folderTools.py:826
+#: fileOperations.py:1460
+msgid "Selected item no longer exists"
+msgstr "العنصر المحدد لم يعد موجوداً"
+
+#: fileBasketManager.py:267
+msgid "Selected items are already in the basket"
+msgstr "العناصر المحددة موجودة بالفعل في السلة"
+
+#: folderTools.py:1160
 msgid "Selected {count} items"
-msgstr "تم تحديد {count} عناصر"
+msgstr "تم تحديد {count} من العناصر"
 
-#: folderTools.py:829
+#: folderTools.py:1263
+msgid "Selected {count} items matching {term}"
+msgstr "تم تحديد {count} من العناصر المطابقة لـ {term}"
+
+#: folderTools.py:1197
+msgid "Selected {count} items {ext}"
+msgstr "تم تحديد {count} من العناصر {ext}"
+
+#: folderTools.py:1277
+msgid "Selected {count} top-level items containing matches for {term}"
+msgstr "تم تحديد {count} من عناصر المستوى الأعلى التي تحتوي على مطابقات لـ {term}"
+
+#: contextMenu.py:486
+msgid "Selection"
+msgstr "التحديد"
+
+#: folderTools.py:1163
 msgid "Selection inverted"
 msgstr "تم عكس التحديد"
+
+#: xPlorer_engine.py:915
+#: xPlorer_engine.py:947
+msgid "Selection manager not available"
+msgstr "مدير التحديد غير متوفر"
+
+#: xPlorer_engine.py:923
+msgid "Selection: Select by extension (single tap), invert selection (double tap), or multi-select (triple tap)"
+msgstr "التحديد: حدد حسب الامتداد (نقرة واحدة)، عكس التحديد (نقرة مزدوجة)، أو تحديد متعدد (ثلاث نقرات)"
+
+#: fileOperations.py:455
+msgid "Settings..."
+msgstr "الإعدادات..."
+
+#: fileOperations.py:276
+msgid "Show"
+msgstr "إظهار"
+
+#: workspaceManager.py:91
+msgid "Show paths"
+msgstr "إظهار المسارات"
+
+#: flatViewManager.py:47
+msgid "Size"
+msgstr "الحجم"
+
+#: fileOperations.py:250
+msgid "Size followed by name"
+msgstr "الحجم متبوعاً بالاسم"
+
+#: fileOperations.py:255
+msgid "Size, largest to smallest"
+msgstr "الحجم، من الأكبر إلى الأصغر"
+
+#: fileOperations.py:256
+msgid "Size, smallest to largest"
+msgstr "الحجم، من الأصغر إلى الأكبر"
+
+#: contextMenu.py:1006
+msgid "Size: calculating..."
+msgstr "الحجم: جاري الحساب..."
+
+#: contextMenu.py:1008
+msgid "Size: {0}"
+msgstr "الحجم: {0}"
+
+#: contextMenu.py:1064
+msgid "Size: {0}{1}"
+msgstr "الحجم: {0}{1}"
+
+#: duplicateFinderManager.py:198
+msgid "Some duplicates could not be removed"
+msgstr "تعذر إزالة بعض العناصر المكررة"
 
 #: createFile.py:170
 msgid "Some files will use default names"
 msgstr "ستستخدم بعض الملفات الأسماء الافتراضية"
 
-#: compressionManager.py:161
+#: fileOperations.py:271
+msgid "Sort order"
+msgstr "ترتيب الفرز"
+
+#: compressionManager.py:174
+#: fileOperations.py:1293
 msgid "Starting..."
 msgstr "جاري البدء..."
 
-#: folderTools.py:987
+#: syncCompareManager.py:53
+msgid "Status"
+msgstr "الحالة"
+
+#: folderTools.py:2026
 msgid "Successfully converted {count} folders to headline case"
-msgstr "تم تحويل {count} مجلدًا بنجاح إلى حالة العناوين"
+msgstr "تم تحويل {count} مجلداً إلى حالة العناوين بنجاح"
 
-#: folderTools.py:972
+#: folderTools.py:2011
 msgid "Successfully converted {count} folders to lowercase"
-msgstr "تم تحويل {count} مجلدًا بنجاح إلى أحرف صغيرة"
+msgstr "تم تحويل {count} مجلداً إلى أحرف صغيرة بنجاح"
 
-#: folderTools.py:981
+#: folderTools.py:2020
 msgid "Successfully converted {count} folders to title case"
-msgstr "تم تحويل {count} مجلدًا بنجاح إلى حالة العنوان"
+msgstr "تم تحويل {count} مجلداً إلى حالة العنوان بنجاح"
 
-#: folderTools.py:966
+#: folderTools.py:2005
 msgid "Successfully converted {count} folders to uppercase"
-msgstr "تم تحويل {count} مجلدًا بنجاح إلى أحرف كبيرة"
+msgstr "تم تحويل {count} مجلداً إلى أحرف كبيرة بنجاح"
 
-#: folderTools.py:337
+#: folderTools.py:412
 msgid "Successfully created 1 folder"
 msgstr "تم إنشاء مجلد واحد بنجاح"
 
-#: folderTools.py:335
+#: folderTools.py:410
 msgid "Successfully created main folder only"
 msgstr "تم إنشاء المجلد الرئيسي فقط بنجاح"
 
-#: folderTools.py:339
+#: folderTools.py:414
 msgid "Successfully created {count} of {total} folders"
-msgstr "تم إنشاء {count} من {total} مجلدًا بنجاح"
+msgstr "تم إنشاء {count} من {total} مجلدات بنجاح"
 
-#: folderTools.py:645
-#: folderTools.py:695
+#: folderTools.py:808
+#: folderTools.py:858
 msgid "Successfully created {} folders in '{}'"
-msgstr "تم إنشاء {} مجلدات بنجاح في '{}'"
+msgstr "تم إنشاء {} مجلدات في '{}' بنجاح"
 
-#: contextMenu.py:39
+#: batchRenameManager.py:248
+msgid "Successfully renamed {0} files"
+msgstr "تم إعادة تسمية {0} ملفات بنجاح"
+
+#: fileBasketManager.py:451
+msgid "Successfully {0} {1} items."
+msgstr "تم {0} {1} عناصر بنجاح."
+
+#: contextMenu.py:827
+msgid "TB"
+msgstr "تيرابايت"
+
+#: contextMenu.py:446
 msgid "TXT to Folder"
-msgstr "TXT إلى مجلد"
+msgstr "نص إلى مجلد"
 
-#: contextMenu.py:46
+#: batchRenameManager.py:60
+msgid "Tag pattern ([C] counter, [D] date, [N] name, [E] extension)"
+msgstr "نمط العلامة ([C] العداد، [D] التاريخ، [N] الاسم، [E] الامتداد)"
+
+#: batchRenameManager.py:80
+msgid "Tag pattern (e.g. [N]_[C].[E]):"
+msgstr "نمط العلامة (مثل [N]_[C].[E]):"
+
+#: batchRenameManager.py:67
+msgid "Text to find:"
+msgstr "النص المراد البحث عنه:"
+
+#: folderTools.py:1193
+msgid "The focused item has no file extension"
+msgstr "العنصر المركز عليه ليس له امتداد ملف"
+
+#: robocopyManager.py:542
+msgid ""
+"The following {n} item(s) could not be copied:\n"
+"\n"
+"{items}"
+msgstr ""
+"تعذر نسخ العناصر الـ {n} التالية:\n"
+"\n"
+"{items}"
+
+#: freezeManager.py:1119
+msgid "The freezer is empty"
+msgstr "الفريزر فارغ"
+
+#: syncCompareManager.py:133
+msgid "This file only exists on the right side"
+msgstr "هذا الملف موجود فقط في الجانب الأيمن"
+
+#: fileOperations.py:1224
+msgid "This folder cannot be converted to ISO"
+msgstr "لا يمكن تحويل هذا المجلد إلى ISO"
+
+#: recentLocationsManager.py:223
+msgid "This folder no longer exists: {0}"
+msgstr "هذا المجلد لم يعد موجوداً: {0}"
+
+#: contextMenu.py:437
 msgid "Title Case"
 msgstr "حالة العنوان"
 
-#: clipboardManager.py:88
+#: contextMenu.py:846
+msgid "Today"
+msgstr "اليوم"
+
+#: fileOperations.py:475
+msgid "Top level only"
+msgstr "المستوى الأعلى فقط"
+
+#: contextMenu.py:986
+msgid "Total capacity: {0}"
+msgstr "السعة الإجمالية: {0}"
+
+#: clipboardManager.py:95
 msgid "Total file size is too large to copy content"
-msgstr "حجم الملف الإجمالي كبير جدًا لنسخ المحتوى"
+msgstr "حجم الملف الإجمالي كبير جداً لنسخ المحتوى"
 
-#: createFile.py:213
+#: createFile.py:215
 msgid "Unable to get current directory after multiple attempts"
-msgstr "تعذر الحصول على الدليل الحالي بعد عدة محاولات"
+msgstr "تعذر الحصول على المجلد الحالي بعد عدة محاولات"
 
-#: __init__.py:630
+#: fileOperations.py:1373
+#: xPlorer_engine.py:878
 msgid "Unable to get current path"
 msgstr "تعذر الحصول على المسار الحالي"
 
-#: folderTools.py:774
+#: folderTools.py:1132
+#: folderTools.py:1484
 msgid "Unable to get folder view"
 msgstr "تعذر الحصول على عرض المجلد"
 
-#: contextMenu.py:44
+#: batchRenameManager.py:386
+msgid "Unable to read the last rename operation"
+msgstr "تعذر قراءة عملية إعادة التسمية الأخيرة"
+
+#: batchRenameManager.py:419
+msgid "Undid rename of {0} files"
+msgstr "تم التراجع عن إعادة تسمية {0} من الملفات"
+
+#: batchRenameManager.py:103
+#: contextMenu.py:396
+msgid "Undo Last Rename"
+msgstr "التراجع عن إعادة التسمية الأخيرة"
+
+#: freezeManager.py:729
+#: freezeManager.py:1081
+msgid "Unfreeze"
+msgstr "إلغاء التجميد"
+
+#: freezeManager.py:647
+msgid "Unfreeze &all"
+msgstr "إلغاء تجميد ال&كل"
+
+#: contextMenu.py:425
+msgid "Unfreeze Selected"
+msgstr "إلغاء تجميد العناصر المحددة"
+
+#: freezeManager.py:711
+msgid "Unfreeze all"
+msgstr "إلغاء تجميد الكل"
+
+#: freezeManager.py:730
+msgid "Unfreeze all files and folders"
+msgstr "إلغاء تجميد كافة الملفات والمجلدات"
+
+#: freezeManager.py:710
+msgid "Unfreeze all {count} items?"
+msgstr "هل تريد إلغاء تجميد جميع عناصر {count}؟"
+
+#: freezeManager.py:723
+msgid "Unfreeze all, {count} items"
+msgstr "إلغاء تجميد الكل، {count} من العناصر"
+
+#: freezeManager.py:701
+#: freezeManager.py:1083
+msgid "Unfreeze, {count} items"
+msgstr "إلغاء التجميد، {count} عناصر"
+
+#: contextMenu.py:230
+msgid "Unpin"
+msgstr "إلغاء التثبيت"
+
+#: workspaceManager.py:323
+msgid "Unpin from Top"
+msgstr "إزالة التثبيت من الأعلى"
+
+#: contextMenu.py:259
+msgid "Unpinned"
+msgstr "تم إلغاء التثبيت"
+
+#: workspaceManager.py:341
+msgid "Unpinned: {0}"
+msgstr "تم إلغاء التثبيت: {0}"
+
+#: contextMenu.py:433
 msgid "Uppercase"
 msgstr "أحرف كبيرة"
 
-#: clipboardManager.py:104
-msgid "[Error processing RTF file]"
-msgstr "[خطأ في معالجة ملف RTF]"
+#: batchRenameManager.py:77
+msgid "Use regular expressions (regex)"
+msgstr "استخدام تعبيرات نمطية (regex)"
 
-#: clipboardManager.py:106
-msgid "[RTF content - striprtf module not available]"
-msgstr "[محتوى RTF - وحدة striprtf غير متوفرة]"
+#: contextMenu.py:985
+msgid "Used space: {0}"
+msgstr "المساحة المستخدمة: {0}"
 
-#: compressionManager.py:114
+#: folderTools.py:1565
+msgid "Wildcard"
+msgstr "رمز بدل"
+
+#: contextMenu.py:520
+#: workspaceManager.py:255
+msgid "Workspace Manager"
+msgstr "مدير مساحات العمل"
+
+#: workspaceManager.py:395
+msgid "Workspace deleted: {0}"
+msgstr "تم حذف مساحة العمل: {0}"
+
+#: workspaceManager.py:210
+#: xPlorer_engine.py:1147
+msgid "Workspace manager not available"
+msgstr "مدير مساحات العمل غير متوفر"
+
+#: workspaceManager.py:81
+msgid "Workspace name:"
+msgstr "اسم مساحة العمل:"
+
+#: workspaceManager.py:545
+msgid "Workspace not found: {0}"
+msgstr "لم يتم العثور على مساحة العمل: {0}"
+
+#: workspaceManager.py:736
+msgid "Workspace saved: {0}"
+msgstr "تم حفظ مساحة العمل: {0}"
+
+#: workspaceManager.py:384
+msgid "Workspace updated: {0}"
+msgstr "تم تحديث مساحة العمل: {0}"
+
+#: xPlorer_engine.py:1155
+msgid "Workspace: Open menu (single tap), add selected folder or save current as workspace (double tap), or edit saved workspaces (triple tap)"
+msgstr "مساحة العمل: افتح القائمة (نقرة واحدة)، أضف المجلد المحدد أو احفظ الحالي كمساحة عمل (نقرتان)، أو حرر مساحات العمل المحفوظة (ثلاث نقرات)"
+
+#: contextMenu.py:848
+msgid "Yesterday"
+msgstr "أمس"
+
+#: fileBasketManager.py:51
+#: fileBasketManager.py:138
+msgid "Zip"
+msgstr "ضغط"
+
+#: fileBasketManager.py:444
+msgid "Zipped {0} items from the basket"
+msgstr "تم ضغط {0} عناصر من السلة"
+
+#: contextMenu.py:827
+msgid "bytes"
+msgstr "بايت"
+
+#: compressionManager.py:124
 msgid "compression failed"
 msgstr "فشل الضغط"
 
-#: contextMenu.py:35
+#: fileBasketManager.py:350
+msgid "copied"
+msgstr "تم النسخ"
+
+#: contextMenu.py:508
 msgid "copy"
 msgstr "نسخ"
 
-#: robocopyManager.py:235
+#: robocopyManager.py:276
 msgid "estimating time remaining"
-msgstr "تقدير الوقت المتبقي"
+msgstr "جاري تقدير الوقت المتبقي"
 
-#: contextMenu.py:36
+#: contextMenu.py:855
+msgid "less than a minute ago"
+msgstr "منذ أقل من دقيقة"
+
+#: explorerWindow.py:54
+msgid "maximized"
+msgstr "مكبرة"
+
+#: fileBasketManager.py:412
+msgid "mirror copied"
+msgstr "تم نسخ المرآة"
+
+#: contextMenu.py:510
 msgid "move"
 msgstr "نقل"
+
+#: fileBasketManager.py:375
+msgid "moved"
+msgstr "منقول"
 
 #: createFile.py:156
 msgid "new_file"
@@ -665,53 +2238,218 @@ msgstr "ملف_جديد"
 msgid "new_file_{index}"
 msgstr "ملف_جديد_{index}"
 
-#: contextMenu.py:37
+#: fileOperations.py:224
+msgid "no access"
+msgstr "لا يوجد وصول"
+
+#: folderTools.py:1723
+msgid "not select {name}"
+msgstr "لم يتم تحديد {name}"
+
+#: contextMenu.py:512
 msgid "paste"
 msgstr "لصق"
 
-#: __init__.py:268
-#: __init__.py:672
-#: __init__.py:712
-#: __init__.py:752
-#: __init__.py:792
-#: __init__.py:845
-#: __init__.py:862
-#: __init__.py:880
+#: folderTools.py:1723
+msgid "select {name}"
+msgstr "تحديد {name}"
+
+#: contextMenu.py:469
+msgid "unCompress zip"
+msgstr "فك ضغط ملف zip"
+
+#: contextMenu.py:91
+#: contextMenu.py:105
+msgid "unavailable"
+msgstr "غير متاح"
+
+#: duplicateFinderManager.py:142
+msgid "unknown date"
+msgstr "تاريخ غير معروف"
+
+#: xPlorer_engine.py:313
+#: xPlorer_engine.py:901
+#: xPlorer_engine.py:924
+#: xPlorer_engine.py:940
+#: xPlorer_engine.py:972
+#: xPlorer_engine.py:997
+#: xPlorer_engine.py:1038
+#: xPlorer_engine.py:1080
+#: xPlorer_engine.py:1106
+#: xPlorer_engine.py:1128
+#: xPlorer_engine.py:1156
+#: xPlorer_engine.py:1424
 msgid "xPlorer"
 msgstr "xPlorer"
 
-#: contextMenu.py:49
+#: contextMenu.py:537
 msgid "xPlorer Settings"
 msgstr "إعدادات xPlorer"
 
-#: createFile.py:288
+#: fileBasketManager.py:442
+msgid "zipped"
+msgstr "مضغوط"
+
+#: contextMenu.py:285
+msgid "{0} (pinned)"
+msgstr "{0} (مثبت)"
+
+#: fileBasketManager.py:449
+msgid "{0} complete. {1} successful, {2} failed. Check NVDA log."
+msgstr "اكتمل {0}. {1} ناجح، {2} فاشل. تحقق من سجل NVDA."
+
+#: duplicateFinderManager.py:135
+msgid "{0} copies, {1} each"
+msgstr "{0} نسق، كل نسق بـ {1}"
+
+#: syncCompareManager.py:118
+msgid "{0} differences found"
+msgstr "تم العثور على {0} فروق"
+
+#: fileBasketManager.py:264
+#: fileBasketManager.py:308
+msgid "{0} files"
+msgstr "{0} من الملفات"
+
+#: flatViewManager.py:132
+#: flatViewManager.py:141
+msgid "{0} files found"
+msgstr "تم العثور على {0} ملفات"
+
+#: fileBasketManager.py:262
+#: fileBasketManager.py:306
+msgid "{0} folders"
+msgstr "{0} مجلدات"
+
+#: contextMenu.py:865
+msgid "{0} hour ago"
+msgstr "منذ {0} ساعة"
+
+#: contextMenu.py:866
+msgid "{0} hours ago"
+msgstr "منذ {0} ساعة"
+
+#: flatViewManager.py:130
+#: flatViewManager.py:140
+msgid "{0} matches found"
+msgstr "تم العثور على {0} مطابقات"
+
+#: contextMenu.py:859
+msgid "{0} minute ago"
+msgstr "منذ {0} دقيقة"
+
+#: contextMenu.py:860
+msgid "{0} minutes ago"
+msgstr "منذ {0} دقيقة"
+
+#: robocopyManager.py:530
+msgid "{action} {n} item(s) to {dest}"
+msgstr "{action} {n} عنصر (عناصر) إلى {dest}"
+
+#: robocopyManager.py:518
+msgid "{action} {n} item(s) to {dest} ({failed} failed)"
+msgstr "{action} {n} عنصر (عناصر) إلى {dest} (فشل {failed})"
+
+#: contextMenu.py:788
+msgid "{count} files could not be changed"
+msgstr "تعذر تغيير {count} ملفات"
+
+#: freezeManager.py:460
+msgid "{count} files could not be made read-only"
+msgstr "تعذر جعل {count} من الملفات للقراءة فقط"
+
+#: freezeManager.py:472
+msgid "{count} files could not be made writable again"
+msgstr "تعذر إعادة ضبط إذن الكتابة لـ {count} من الملفات"
+
+#: clipboardManager.py:141
+msgid "{count} files could not be read"
+msgstr "تعذر قراءة {count} ملفات"
+
+#: createFile.py:292
 msgid "{count} files created"
 msgstr "تم إنشاء {count} ملفات"
 
-#: fileOperations.py:283
+#: workspaceManager.py:167
+msgid "{count} folders in the list"
+msgstr "{count} مجلدات في القائمة"
+
+#: freezeManager.py:628
+msgid "{count} frozen items. {result}"
+msgstr "{count} عناصر مجمدة. {result}"
+
+#: fileOperations.py:1165
 msgid "{count} items {size}"
-msgstr "{count} عناصر {size}"
+msgstr "{count} عنصر، {size}"
 
-#: robocopyManager.py:240
+#: folderTools.py:1661
+msgid "{count} matches"
+msgstr "{count} تطابق"
+
+#: freezeManager.py:1050
+msgid "{count} system locations skipped"
+msgstr "تم تخطي {count} من مواقع النظام"
+
+#: robocopyManager.py:281
 msgid "{h}h {m}m remaining"
-msgstr " متبقي {h}س {m}د"
+msgstr "متبقي {h} ساعة و {m} دقيقة"
 
-#: robocopyManager.py:242
+#: freezeManager.py:673
+msgid "{label}, not found"
+msgstr "{label}، غير موجود"
+
+#: freezeManager.py:675
+msgid "{label}, replaced by another item"
+msgstr "{label}، تم استبداله بعنصر آخر"
+
+#: robocopyManager.py:283
 msgid "{m}m {s}s remaining"
-msgstr " متبقي {m}د {s}ث"
+msgstr "متبقي {m} دقيقة و {s} ثانية"
 
-#: robocopyManager.py:304
+#: workspaceManager.py:297
+msgid "{name} (pinned)"
+msgstr "{name} (مثبت)"
+
+#: freezeManager.py:1043
+msgid "{name} is a system location and cannot be frozen"
+msgstr "{name} هو موقع نظام ولا يمكن تجميده"
+
+#: freezeManager.py:626
+msgid "{name} is frozen. {result}"
+msgstr "{name} مجمد. {result}"
+
+#: update.py:159
+msgid "{name} update"
+msgstr "تحديث {name}"
+
+#: update.py:164
+msgid ""
+"{name} {new} is available (installed: {old}).\n"
+"Update now?"
+msgstr ""
+"{name} {new} متاح (المثبت: {old}).\n"
+"التحديث الآن؟"
+
+#: fileOperations.py:229
+msgid "{name}, folder"
+msgstr "{name}، مجلد"
+
+#: freezeManager.py:669
+msgid "{name}, {kind}, in {location}"
+msgstr "{name}، {kind}، في {location}"
+
+#: robocopyManager.py:345
 msgid "{pct}% - item {idx}/{total}: {name}"
-msgstr "{pct}% - عنصر {idx}/{total}: {name}"
+msgstr "{pct}% - العنصر {idx} من {total}: {name}"
 
-#: folderTools.py:111
+#: folderTools.py:185
 msgid "{subfolders} subfolders and {files} files"
 msgstr "{subfolders} مجلدات فرعية و {files} ملفات"
 
-#: contextMenu.py:150
+#: contextMenu.py:642
 msgid "{subfolders} subfolders, {files} files"
 msgstr "{subfolders} مجلدات فرعية، {files} ملفات"
 
-#: robocopyManager.py:243
+#: robocopyManager.py:284
 msgid "{s}s remaining"
-msgstr " متبقي {s}ث"
+msgstr "متبقي {s} ثانية"

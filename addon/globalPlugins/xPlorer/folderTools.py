@@ -4,6 +4,7 @@ import os
 import json
 import fnmatch
 from logHandler import log
+from . import freezeManager
 import threading
 import wx
 import ui
@@ -934,6 +935,10 @@ def _sendToRecycleBin(paths):
 	a normal Delete key press."""
 	if not paths:
 		return True
+	blockedPaths = freezeManager.filterBlocked(paths)
+	if blockedPaths:
+		freezeManager.announceBlocked("delete", blockedPaths)
+		return False
 	# pFrom must be a double-null-terminated string of null-separated paths.
 	joinedPaths = "\0".join(paths) + "\0\0"
 	operation = _SHFILEOPSTRUCTW()
@@ -1902,6 +1907,10 @@ class CaseConverter:
 		return ' '.join(result_words)
 
 	def _rename_folder_with_retry(self, old_path, new_path, max_retries=3, delay=0.2):
+		blockedPaths = freezeManager.filterBlocked([old_path])
+		if blockedPaths:
+			freezeManager.announceBlocked("rename", blockedPaths)
+			return False
 		for attempt in range(max_retries):
 			try:
 				if ctypes.windll.kernel32.MoveFileW(old_path, new_path):

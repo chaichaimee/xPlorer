@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: xPlorer 2026.8.5\n"
+"Project-Id-Version: xPlorer 2026.12.0\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-08-03 06:13+0700\n"
+"POT-Creation-Date: 2026-11-24 08:54+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Ukrainian\n"
@@ -10,292 +10,853 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: DevOn Addon\n"
+"X-Generator: ChaiBot Addon\n"
 
-#: robocopyManager.py:464
-msgid " and {n} more"
-msgstr " і ще {n}"
+#: contextMenu.py:1063
+msgid " (partial)"
+msgstr "(частково)"
 
-#: folderTools.py:174
+#: compressionManager.py:511
+msgid " and {count} more"
+msgstr "та ще {count}"
+
+#: folderTools.py:249
 msgid "&Apply"
-msgstr "&Застосувати"
+msgstr "За&стосувати"
 
-#: folderTools.py:175
+#: folderTools.py:250
 msgid "&Cancel"
 msgstr "&Скасувати"
 
-#: createFile.py:286
+#: freezeManager.py:648
+msgid "&Close"
+msgstr "&Закрити"
+
+#: freezeManager.py:640
+msgid "&Frozen items:"
+msgstr "За&морожені елементи:"
+
+#: update.py:173
+msgid "&Later"
+msgstr "&Пізніше"
+
+#: freezeManager.py:646
+msgid "&Unfreeze selected"
+msgstr "Розморозити вибране"
+
+#: update.py:171
+msgid "&Update now"
+msgstr "&Оновити зараз"
+
+#: flatViewManager.py:134
+#: flatViewManager.py:143
+msgid "(list capped at {0} - refine your folder selection)"
+msgstr "(список обмежено до {0} — уточніть вибір папки)"
+
+#: flatViewManager.py:118
+msgid "(root)"
+msgstr "(корінь)"
+
+#: fileOperations.py:1355
+msgid ", UDF format"
+msgstr ", формат UDF"
+
+#: fileOperations.py:1357
+msgid ", {count} items skipped"
+msgstr ", пропущено елементів: {count}"
+
+#: batchRenameManager.py:257
+#: batchRenameManager.py:425
+msgid "...and {0} more errors"
+msgstr "...та ще помилок: {0}"
+
+#: robocopyManager.py:541
+msgid "...and {n} more"
+msgstr "...та ще {n}"
+
+#: createFile.py:290
 msgid "1 file created"
-msgstr "1 файл створено"
+msgstr "створено 1 файл"
 
-#: fileOperations.py:340
+#: compressionManager.py:449
+msgid "7-Zip is required to extract this file type"
+msgstr "Для розпакування цього типу файлів потрібен 7-Zip"
+
+#: duplicateFinderManager.py:268
+msgid "A duplicate scan is already running"
+msgstr "Сканування на дублікати вже виконується"
+
+#: fileOperations.py:1544
 msgid "A file with this name already exists"
-msgstr "Файл з таким іменем вже існує"
+msgstr "Файл із такою назвою вже існує"
 
-#: compressionManager.py:288
+#: folderTools.py:1116
+#: folderTools.py:1468
+msgid "A selection operation is already in progress"
+msgstr "Операція виділення вже виконується"
+
+#: contextMenu.py:1018
+msgid "Accessed: {0}"
+msgstr "Час доступу: {0}"
+
+#: freezeManager.py:623
+msgid "Action canceled"
+msgstr "Дію скасовано"
+
+#: fileBasketManager.py:48
+msgid "Action:"
+msgstr "Дія:"
+
+#: workspaceManager.py:101
+#: workspaceManager.py:202
+msgid "Add Folder..."
+msgstr "Додати папку..."
+
+#: workspaceManager.py:202
+msgid "Add Path"
+msgstr "Додати шлях"
+
+#: workspaceManager.py:233
+msgid "Add at least one folder to this workspace"
+msgstr "Додайте принаймні одну папку до цього робочого простору"
+
+#: workspaceManager.py:73
+msgid "Add to workspace:"
+msgstr "Додати до робочого простору:"
+
+#: fileBasketManager.py:283
+msgid "Added to basket. Total items: {0}"
+msgstr "Додано до кошика. Всього елементів: {0}"
+
+#: workspaceManager.py:240
+msgid "Added to existing workspace {name}"
+msgstr "Додано до наявного робочого простору {name}"
+
+#: fileBasketManager.py:265
+msgid "Added {0}"
+msgstr "Додано {0}"
+
+#: workspaceManager.py:188
+msgid "Added {count} folders"
+msgstr "Додано папок: {count}"
+
+#: workspaceManager.py:764
+#: workspaceManager.py:771
+msgid "Added {name}"
+msgstr "Додано {name}"
+
+#: workspaceManager.py:358
+msgid "All workspaces cleared"
+msgstr "Усі робочі простори очищено"
+
+#: workspaceManager.py:766
+msgid "Already added: {name}"
+msgstr "Вже додано: {name}"
+
+#: freezeManager.py:1055
+msgid "Already frozen"
+msgstr "Вже заморожено"
+
+#: fileBasketManager.py:277
+msgid "Already in basket"
+msgstr "Вже в кошику"
+
+#: fileOperations.py:1508
+msgid "An item named {name} already exists"
+msgstr "Елемент із назвою {name} вже існує"
+
+#: fileOperations.py:330
+msgid "Applied"
+msgstr "Застосовано"
+
+#: batchRenameManager.py:96
+#: fileOperations.py:295
+msgid "Apply"
+msgstr "Застосувати"
+
+#: fileBasketManager.py:296
+msgid "Basket cleared"
+msgstr "Кошик очищено"
+
+#: fileBasketManager.py:311
+msgid "Basket is already empty"
+msgstr "Кошик уже порожній"
+
+#: fileBasketManager.py:43
+#: fileBasketManager.py:98
+#: fileBasketManager.py:132
+msgid "Basket is empty"
+msgstr "Кошик порожній"
+
+#: contextMenu.py:391
+msgid "Batch Rename Tool"
+msgstr "Засіб пакетного перейменування"
+
+#: xPlorer_engine.py:959
+#: xPlorer_engine.py:1094
+msgid "Batch rename manager not available"
+msgstr "Менеджер пакетного перейменування недоступний"
+
+#: fileBasketManager.py:62
+msgid "Browse"
+msgstr "Оглянути"
+
+#: compressionManager.py:302
 msgid "Built-in compression failed: {error}"
-msgstr "Вбудоване стиснення не вдалося: {error}"
+msgstr "Помилка вбудованого стиснення: {error}"
 
-#: robocopyManager.py:323
+#: robocopyManager.py:364
 msgid "Calculating total size..."
 msgstr "Обчислення загального розміру..."
 
-#: clipboardManager.py:66
+#: batchRenameManager.py:98
+#: fileOperations.py:294
+#: workspaceManager.py:110
+msgid "Cancel"
+msgstr "Скасувати"
+
+#: clipboardManager.py:72
 msgid "Cannot copy content of folders, please select files only"
-msgstr "Неможливо скопіювати вміст тек, виберіть лише файли"
+msgstr "Неможливо скопіювати вміст папок, виберіть лише файли"
 
-#: createFile.py:271
+#: createFile.py:275
 msgid "Cannot find unique name for: {name}"
-msgstr "Не вдається знайти унікальне ім'я для: {name}"
+msgstr "Не вдалося знайти унікальну назву для: {name}"
 
-#: __init__.py:888
+#: xPlorer_engine.py:1431
 msgid "Cannot open settings dialog"
-msgstr "Не вдається відкрити діалог налаштувань"
+msgstr "Не вдалося відкрити діалог налаштувань"
 
-#: folderTools.py:570
+#: folderTools.py:733
 msgid "Cannot process RTF file: striprtf module not available"
-msgstr "Неможливо обробити RTF-файл: модуль striprtf недоступний"
+msgstr "Неможливо обробити файл RTF: модуль striprtf недоступний"
 
-#: contextMenu.py:43
+#: contextMenu.py:442
 msgid "Case Converter for Folders"
-msgstr "Конвертер регістру для тек"
+msgstr "Конвертер регістру для папок"
 
-#: __init__.py:927
+#: xPlorer_engine.py:1484
 msgid "Case converter not available"
 msgstr "Конвертер регістру недоступний"
 
-#: __init__.py:648
+#: compressionManager.py:364
+msgid "Choose extraction method:"
+msgstr "Виберіть метод вилучення:"
+
+#: workspaceManager.py:329
+#: workspaceManager.py:350
+msgid "Clear All Workspaces"
+msgstr "Очистити всі робочі області"
+
+#: fileBasketManager.py:74
+msgid "Clear Basket"
+msgstr "Очистити кошик"
+
+#: operationHistoryManager.py:44
+msgid "Clear History"
+msgstr "Очистити історію"
+
+#: contextMenu.py:231
+msgid "Clear all (except pinned)"
+msgstr "Очистити все (окрім закріплених)"
+
+#: contextMenu.py:264
+msgid "Cleared recent locations"
+msgstr "Недавні розташування очищено"
+
+#: fileBasketManager.py:309
+msgid "Cleared {0} from basket"
+msgstr "Очищено {0} з кошика"
+
+#: contextMenu.py:498
+msgid "Clipboard Operations"
+msgstr "Операції з буфером обміну"
+
+#: xPlorer_engine.py:900
+msgid "Clipboard Operations: Copy selected names (single tap), copy content (double tap), or copy address bar (triple tap)"
+msgstr "Операції з буфером обміну: скопіювати вибрані назви (одинарний дотик), скопіювати вміст (подвійний дотик) або скопіювати рядок адреси (потрійний дотик)"
+
+#: fileOperations.py:1476
+msgid "Clipboard is empty"
+msgstr "Буфер обміну порожній"
+
+#: xPlorer_engine.py:892
 msgid "Clipboard manager not available"
 msgstr "Менеджер буфера обміну недоступний"
 
-#: compressionManager.py:284
+#: fileOperations.py:1481
+msgid "Clipboard text is not a valid name"
+msgstr "Текст у буфері обміну не є дійсною назвою"
+
+#: contextMenu.py:737
+#: duplicateFinderManager.py:115
+#: fileBasketManager.py:76
+#: fileOperations.py:352
+#: flatViewManager.py:53
+#: operationHistoryManager.py:46
+#: syncCompareManager.py:59
+#: workspaceManager.py:277
+msgid "Close"
+msgstr "Закрити"
+
+#: workspaceManager.py:637
+msgid "Closed {count} folders from workspace {name}"
+msgstr "Закрито папок: {count} з робочої області {name}"
+
+#: syncCompareManager.py:32
+msgid "Compare Folders"
+msgstr "Порівняти папки"
+
+#: syncCompareManager.py:48
+msgid "Comparing..."
+msgstr "Порівняння..."
+
+#: robocopyManager.py:525
+msgid "Complete"
+msgstr "Завершено"
+
+#: compressionManager.py:298
 msgid "Completed"
 msgstr "Завершено"
 
-#: contextMenu.py:26
-msgid "Compress zip"
-msgstr "Стиснути zip"
+#: contextMenu.py:472
+msgid "Compress"
+msgstr "Стиснути"
 
-#: compressionManager.py:160
-#: compressionManager.py:168
+#: contextMenu.py:467
+msgid "Compress zip"
+msgstr "Стиснути у zip"
+
+#: compressionManager.py:173
+#: compressionManager.py:181
 msgid "Compressing files"
 msgstr "Стиснення файлів"
 
-#: compressionManager.py:75
+#: compressionManager.py:85
 msgid "Compressing..."
 msgstr "Стиснення..."
 
-#: compressionManager.py:263
 #: compressionManager.py:277
+#: compressionManager.py:291
 msgid "Compressing: {percent}%"
 msgstr "Стиснення: {percent}%"
 
-#: compressionManager.py:110
-#: compressionManager.py:282
+#: compressionManager.py:120
+#: compressionManager.py:296
 msgid "Compression cancelled"
 msgstr "Стиснення скасовано"
 
-#: compressionManager.py:112
-#: compressionManager.py:285
+#: compressionManager.py:122
+#: compressionManager.py:299
 msgid "Compression completed {name}"
 msgstr "Стиснення завершено {name}"
 
-#: __init__.py:728
+#: xPlorer_engine.py:963
 msgid "Compression manager not available"
 msgstr "Менеджер стиснення недоступний"
 
-#: compressionManager.py:86
+#: compressionManager.py:96
 msgid "Compression timed out"
-msgstr "Час стиснення вичерпано"
+msgstr "Час очікування стиснення минув"
 
-#: clipboardManager.py:133
-msgid "Content from 1 file copied to clipboard"
-msgstr "Вміст з 1 файлу скопійовано до буфера обміну"
+#: contextMenu.py:1022
+msgid "Contents: calculating..."
+msgstr "Вміст: обчислення..."
 
-#: clipboardManager.py:135
-msgid "Content from {count} files copied to clipboard"
-msgstr "Вміст з {count} файлів скопійовано до буфера обміну"
+#: contextMenu.py:1065
+msgid "Contents: {0} files, {1} folders{2}"
+msgstr "Вміст: файлів: {0}, папок: {1}{2}"
 
-#: __init__.py:835
-#: __init__.py:901
+#: xPlorer_engine.py:1027
+#: xPlorer_engine.py:1443
+#: xPlorer_engine.py:1455
 msgid "Context menu manager not available"
 msgstr "Менеджер контекстного меню недоступний"
 
-#: folderTools.py:937
+#: folderTools.py:1976
 msgid "Conversion already in progress"
 msgstr "Перетворення вже виконується"
 
-#: folderTools.py:954
+#: folderTools.py:1993
 msgid "Converting"
-msgstr "Перетворення"
+msgstr "Конвертування"
 
-#: clipboardManager.py:44
+#: robocopyManager.py:503
+msgid "Copied"
+msgstr "Скопійовано"
+
+#: clipboardManager.py:47
 msgid "Copied 1 item name to clipboard"
-msgstr "Назву 1 елемента скопійовано до буфера обміну"
+msgstr "Скопійовано назву 1 елемента до буфера обміну"
 
-#: clipboardManager.py:46
+#: syncCompareManager.py:142
+msgid "Copied {0}"
+msgstr "Скопійовано {0}"
+
+#: fileBasketManager.py:352
+msgid "Copied {0} items from the basket"
+msgstr "Скопійовано {0} елементів з кошика"
+
+#: clipboardManager.py:49
 msgid "Copied {count} item names to clipboard"
-msgstr "Назви {count} елементів скопійовано до буфера обміну"
+msgstr "Скопійовано назв елементів: {count} до буфера обміну"
 
-#: __init__.py:624
+#: folderTools.py:1788
+msgid "Copied {count} items"
+msgstr "Скопійовано елементів: {count}"
+
+#: xPlorer_engine.py:872
 msgid "Copied: {path}"
 msgstr "Скопійовано: {path}"
 
-#: contextMenu.py:28
+#: fileBasketManager.py:51
+#: fileBasketManager.py:159
+#: folderTools.py:1767
+msgid "Copy"
+msgstr "Копіювати"
+
+#: syncCompareManager.py:57
+msgid "Copy Selected to Right"
+msgstr "Скопіювати вибране праворуч"
+
+#: contextMenu.py:491
 msgid "Copy address bar"
-msgstr "Копіювати адресний рядок"
+msgstr "Скопіювати рядок адреси"
 
-#: contextMenu.py:29
+#: contextMenu.py:493
 msgid "Copy content"
-msgstr "Копіювати вміст"
+msgstr "Скопіювати вміст"
 
-#: __init__.py:711
-msgid "Copy content (single tap) or invert selection (double tap)"
-msgstr "Копіювати вміст (одне натискання) або інвертувати вибір (подвійне натискання)"
-
-#: contextMenu.py:30
+#: contextMenu.py:495
 msgid "Copy selected file and folder names"
-msgstr "Копіювати назви вибраних файлів і тек"
+msgstr "Скопіювати назви вибраних файлів і папок"
 
-#: __init__.py:671
-msgid "Copy selected names (single tap) or copy address bar (double tap)"
-msgstr "Копіювати вибрані назви (одне натискання) або копіювати адресний рядок (подвійне натискання)"
+#: clipboardManager.py:149
+msgid "Copy {lines} Lines from {files} files"
+msgstr "Скопійовано рядків: {lines} із файлів: {files}"
 
-#: __init__.py:628
-#: clipboardManager.py:50
-#: clipboardManager.py:139
+#: folderTools.py:1836
+msgid "Could not delete one or more items"
+msgstr "Не вдалося видалити один або кілька елементів"
+
+#: update.py:255
+msgid "Could not download the update. Opening the releases page."
+msgstr "Не вдалося завантажити оновлення. Відкриття сторінки випусків."
+
+#: clipboardManager.py:53
+#: clipboardManager.py:153
+#: folderTools.py:1795
+#: folderTools.py:1805
+#: xPlorer_engine.py:876
 msgid "Could not open clipboard"
 msgstr "Не вдалося відкрити буфер обміну"
 
-#: contextMenu.py:23
+#: flatViewManager.py:199
+msgid "Could not open the containing folder"
+msgstr "Не вдалося відкрити вміщуючу папку"
+
+#: folderTools.py:1739
+msgid "Could not open the file"
+msgstr "Не вдалося відкрити файл"
+
+#: folderTools.py:1819
+msgid "Could not open the folder"
+msgstr "Не вдалося відкрити папку"
+
+#: flatViewManager.py:185
+msgid "Could not open {0}"
+msgstr "Не вдалося відкрити {0}"
+
+#: fileOperations.py:433
+#: fileOperations.py:435
+msgid "Could not read this folder"
+msgstr "Не вдалося прочитати цю папку"
+
+#: fileOperations.py:493
+msgid "Could not save settings"
+msgstr "Не вдалося зберегти налаштування"
+
+#: freezeManager.py:699
+#: freezeManager.py:721
+#: freezeManager.py:1052
+#: freezeManager.py:1076
+msgid "Could not save the freezer list"
+msgstr "Не вдалося зберегти список заморожування"
+
+#: xPlorer_engine.py:1219
+msgid "Could not start multi-select"
+msgstr "Не вдалося запустити множинний вибір"
+
+#: batchRenameManager.py:85
+msgid "Counter start value:"
+msgstr "Початкове значення лічильника:"
+
+#: contextMenu.py:375
 #: createFile.py:17
 msgid "Create File"
 msgstr "Створити файл"
 
-#: folderTools.py:128
+#: folderTools.py:203
 msgid "Create Multiple Folders"
-msgstr "Створити кілька тек"
+msgstr "Створити кілька папок"
 
-#: contextMenu.py:40
+#: contextMenu.py:461
 msgid "Create Multiple Folders..."
-msgstr "Створити кілька тек..."
+msgstr "Створити кілька папок..."
 
-#: folderTools.py:157
+#: folderTools.py:232
 msgid "Create main folder and then subfolders"
-msgstr "Створити головну теку, а потім підтеки"
+msgstr "Створити головну папку, а потім підпапки"
 
-#: __init__.py:879
+#: xPlorer_engine.py:1423
 msgid "Create new folder and paste clipboard content into rename field"
-msgstr "Створити нову теку та вставити вміст буфера обміну в поле перейменування"
+msgstr "Створити нову папку та вставити вміст буфера обміну в поле перейменування"
 
-#: folderTools.py:324
+#: fileOperations.py:1361
+msgid "Created ISO {name}"
+msgstr "Створено ISO {name}"
+
+#: createFile.py:296
+msgid "Created {count} file(s) in {path}"
+msgstr "Створено файлів: {count} у {path}"
+
+#: folderTools.py:399
 msgid "Created {count} of {total} folders..."
-msgstr "Створено {count} з {total} тек..."
+msgstr "Створюється папок: {count} з {total}..."
 
-#: folderTools.py:311
+#: contextMenu.py:1012
+msgid "Created: {0}"
+msgstr "Створено: {0}"
+
+#: fileOperations.py:1293
+#: fileOperations.py:1297
+msgid "Creating ISO"
+msgstr "Створення ISO"
+
+#: fileOperations.py:1307
+msgid "Creating ISO: {percent}%"
+msgstr "Створення ISO: {percent}%"
+
+#: folderTools.py:386
 msgid "Creating folders in background..."
-msgstr "Створення тек у фоновому режимі..."
+msgstr "Створення папок у фоновому режимі..."
 
-#: folderTools.py:161
+#: contextMenu.py:524
+msgid "Current folder size list"
+msgstr "Список розмірів поточної папки"
+
+#: fileOperations.py:338
+msgid "Current folder size list - {name}"
+msgstr "Список розмірів поточної папки – {name}"
+
+#: fileOperations.py:246
+msgid "Current folder size list settings"
+msgstr "Налаштування списку розмірів поточної папки"
+
+#: folderTools.py:1768
+msgid "Cut"
+msgstr "Вирізати"
+
+#: freezeManager.py:30
+msgid "Cut canceled"
+msgstr "Вирізання скасовано"
+
+#: folderTools.py:1802
+msgid "Cut {count} items"
+msgstr "Вирізано елементів: {count}"
+
+#: folderTools.py:1771
+#: folderTools.py:1827
+#: workspaceManager.py:328
+msgid "Delete"
+msgstr "Видалити"
+
+#: workspaceManager.py:275
+msgid "Delete Workspace"
+msgstr "Видалити робочу область"
+
+#: workspaceManager.py:349
+msgid "Delete all saved workspaces? This cannot be undone."
+msgstr "Видалити всі збережені робочі області? Цю дію неможливо скасувати."
+
+#: freezeManager.py:27
+msgid "Delete canceled"
+msgstr "Видалення скасовано"
+
+#: fileBasketManager.py:58
+msgid "Destination:"
+msgstr "Призначення:"
+
+#: syncCompareManager.py:19
+msgid "Different (size/date)"
+msgstr "Відрізняються (розмір/дата)"
+
+#: fileOperations.py:266
+msgid "Display format"
+msgstr "Формат відображення"
+
+#: update.py:244
+msgid "Downloading {name} {version}"
+msgstr "Завантаження {name} {version}"
+
+#: contextMenu.py:964
+msgid "Drive: {0}"
+msgstr "Диск: {0}"
+
+#: contextMenu.py:411
+#: duplicateFinderManager.py:79
+msgid "Duplicate Finder"
+msgstr "Пошук дублікатів"
+
+#: duplicateFinderManager.py:95
+msgid "Duplicate groups:"
+msgstr "Групи дублікатів:"
+
+#: workspaceManager.py:115
+#: workspaceManager.py:273
+msgid "Edit Workspace"
+msgstr "Редагувати робочий простір"
+
+#: folderTools.py:236
 msgid "Edit individual folder names"
-msgstr "Редагувати окремі назви тек"
+msgstr "Редагувати назви окремих папок"
 
-#: folderTools.py:120
+#: folderTools.py:1246
+#: folderTools.py:1841
+msgid "Enter a search term or pattern first"
+msgstr "Спочатку введіть пошуковий термін або шаблон"
+
+#: workspaceManager.py:229
+msgid "Enter a workspace name"
+msgstr "Введіть назву робочого простору"
+
+#: folderTools.py:195
 msgid "Error calculating folder info"
-msgstr "Помилка обчислення інформації про теку"
+msgstr "Помилка обчислення інформації про папку"
 
-#: fileOperations.py:294
+#: fileOperations.py:1177
 msgid "Error calculating size"
 msgstr "Помилка обчислення розміру"
 
-#: compressionManager.py:196
+#: compressionManager.py:209
 msgid "Error compressing files"
 msgstr "Помилка стиснення файлів"
 
-#: clipboardManager.py:142
+#: clipboardManager.py:100
+#: clipboardManager.py:158
 msgid "Error copying file content"
 msgstr "Помилка копіювання вмісту файлу"
 
-#: clipboardManager.py:53
+#: clipboardManager.py:56
 msgid "Error copying names to clipboard"
-msgstr "Помилка копіювання назв до буфера обміну"
+msgstr "Помилка копіювання назв у буфер обміну"
 
-#: folderTools.py:614
+#: syncCompareManager.py:147
+msgid "Error copying {0}"
+msgstr "Помилка копіювання {0}"
+
+#: folderTools.py:777
 msgid "Error creating base folder"
-msgstr "Помилка створення базової теки"
+msgstr "Помилка створення базової папки"
 
-#: createFile.py:291
+#: createFile.py:300
 msgid "Error creating files"
 msgstr "Помилка створення файлів"
 
-#: __init__.py:921
+#: xPlorer_engine.py:1478
 msgid "Error creating folders"
-msgstr "Помилка створення тек"
+msgstr "Помилка створення папок"
 
-#: folderTools.py:302
+#: folderTools.py:377
 msgid "Error creating main folder"
-msgstr "Помилка створення головної теки"
+msgstr "Помилка створення головної папки"
 
-#: __init__.py:965
+#: fileBasketManager.py:439
+msgid "Error creating zip file"
+msgstr "Помилка створення zip-файлу"
+
+#: xPlorer_engine.py:1528
 msgid "Error during conversion"
-msgstr "Помилка під час перетворення"
+msgstr "Помилка під час конвертації"
 
-#: compressionManager.py:117
+#: compressionManager.py:127
 msgid "Error in compression process: {error}"
 msgstr "Помилка в процесі стиснення: {error}"
 
-#: folderTools.py:804
+#: folderTools.py:1166
+#: folderTools.py:1169
 msgid "Error inverting selection"
-msgstr "Помилка інвертування вибору"
+msgstr "Помилка інвертування виділення"
 
-#: createFile.py:245
+#: createFile.py:249
 msgid "Error opening create file dialog"
 msgstr "Помилка відкриття діалогу створення файлу"
 
-#: fileOperations.py:350
+#: fileOperations.py:1398
+msgid "Error opening current folder size list"
+msgstr "Помилка відкриття списку розмірів поточної папки"
+
+#: recentLocationsManager.py:229
+msgid "Error opening folder"
+msgstr "Помилка відкриття теки"
+
+#: fileOperations.py:1558
 msgid "Error opening rename dialog"
 msgstr "Помилка відкриття діалогу перейменування"
 
-#: __init__.py:895
+#: xPlorer_engine.py:1437
 msgid "Error opening settings"
 msgstr "Помилка відкриття налаштувань"
 
-#: folderTools.py:704
+#: folderTools.py:867
 msgid "Error processing text file: {}"
 msgstr "Помилка обробки текстового файлу: {}"
 
-#: folderTools.py:581
+#: folderTools.py:744
 msgid "Error reading RTF file"
-msgstr "Помилка читання RTF-файлу"
+msgstr "Помилка читання файлу RTF"
 
-#: folderTools.py:708
+#: folderTools.py:871
 msgid "Error reading file encoding"
 msgstr "Помилка читання кодування файлу"
 
-#: fileOperations.py:320
-#: fileOperations.py:347
+#: fileOperations.py:1436
+#: fileOperations.py:1519
+#: fileOperations.py:1522
+#: fileOperations.py:1555
 msgid "Error renaming file"
 msgstr "Помилка перейменування файлу"
 
-#: folderTools.py:713
+#: batchRenameManager.py:244
+msgid "Error renaming {0} to {1}: {2}"
+msgstr "Помилка перейменування {0} на {1}: {2}"
+
+#: duplicateFinderManager.py:308
+msgid "Error scanning for duplicates"
+msgstr "Помилка сканування на дублікати"
+
+#: folderTools.py:1200
+msgid "Error selecting by extension"
+msgstr "Помилка вибору за розширенням"
+
+#: folderTools.py:1269
+msgid "Error selecting by search"
+msgstr "Помилка вибору за пошуком"
+
+#: folderTools.py:1512
+#: folderTools.py:1515
+msgid "Error selecting items"
+msgstr "Помилка вибору елементів"
+
+#: compressionManager.py:324
+msgid "Error uncompressing file"
+msgstr "Помилка розпакування файлу"
+
+#: batchRenameManager.py:414
+msgid "Error undoing rename for {0}: {1}"
+msgstr "Помилка скасування перейменування для {0}: {1}"
+
+#: folderTools.py:876
 msgid "Error: {}"
 msgstr "Помилка: {}"
 
-#: __init__.py:1002
+#: fileBasketManager.py:67
+msgid "Execute"
+msgstr "Виконати"
+
+#: xPlorer_engine.py:1559
 msgid "Explorer tree dumped to NVDA log"
-msgstr "Дерево Провідника вивантажено до журналу NVDA"
+msgstr "Дерево Провідника виведено до журналу NVDA"
 
 #: createFile.py:72
 msgid "Extension:"
 msgstr "Розширення:"
 
-#: folderTools.py:949
-msgid "Failed to rename any folders"
-msgstr "Не вдалося перейменувати жодної теки"
+#: compressionManager.py:360
+msgid "Extract Here"
+msgstr "Витягти сюди"
 
-#: compressionManager.py:188
+#: compressionManager.py:359
+msgid "Extract to \"{folder}\\\""
+msgstr "Витягти в \"{folder}\\\""
+
+#: compressionManager.py:365
+msgid "Extract {name}"
+msgstr "Витягти {name}"
+
+#: compressionManager.py:512
+msgid "Extracted {done} of {total}. Failed: {names}"
+msgstr "Витягнуто {done} з {total}. Помилок: {names}"
+
+#: compressionManager.py:456
+msgid "Extracted {name} to {path}"
+msgstr "Вилучено {name} у {path}"
+
+#: compressionManager.py:519
+msgid "Extracting {count} files..."
+msgstr "Вилучення {count} файлів..."
+
+#: compressionManager.py:469
+msgid "Extracting..."
+msgstr "Вилучення..."
+
+#: compressionManager.py:452
+msgid "Extraction completed to {path}"
+msgstr "Вилучення завершено у {path}"
+
+#: compressionManager.py:507
+msgid "Extraction completed: {count} files, each in its own folder"
+msgstr "Вилучення завершено: {count} файлів, кожен у власній папці"
+
+#: compressionManager.py:440
+msgid "Extraction failed"
+msgstr "Помилка вилучення"
+
+#: compressionManager.py:404
+#: compressionManager.py:461
+msgid "Extraction failed: {error}"
+msgstr "Помилка вилучення: {error}"
+
+#: compressionManager.py:482
+msgid "Extraction is already running"
+msgstr "Вилучення вже виконується"
+
+#: compressionManager.py:435
+msgid "Extraction timed out"
+msgstr "Час очікування вилучення вийшов"
+
+#: folderTools.py:1988
+msgid "Failed to rename any folders"
+msgstr "Не вдалося перейменувати жодну папку"
+
+#: compressionManager.py:201
 msgid "Failed to start compression"
-msgstr "Не вдалося запустити стиснення"
+msgstr "Не вдалося розпочати стиснення"
+
+#: freezeManager.py:667
+msgid "File"
+msgstr "Файл"
+
+#: contextMenu.py:383
+#: contextMenu.py:386
+msgid "File Basket"
+msgstr "Кошик файлів"
+
+#: fileBasketManager.py:31
+msgid "File Basket Collection"
+msgstr "Колекція кошика файлів"
+
+#: xPlorer_engine.py:1105
+msgid "File Basket: Add selected item(s) to the file basket (single tap), open the file basket (double tap), or clear the file basket (triple tap)"
+msgstr "Кошик файлів: додайте вибрані елементи до кошика файлів (одинарний дотик), відкрийте кошик файлів (подвійний дотик) або очистьте кошик файлів (потрійний дотик)"
+
+#: batchRenameManager.py:238
+msgid "File already exists: {0}"
+msgstr "Файл уже існує: {0}"
+
+#: xPlorer_engine.py:1112
+msgid "File basket manager not available"
+msgstr "Менеджер кошика файлів недоступний"
 
 #: createFile.py:138
 msgid "File count cannot exceed 10"
@@ -303,359 +864,1373 @@ msgstr "Кількість файлів не може перевищувати 1
 
 #: createFile.py:135
 msgid "File count must be at least 1"
-msgstr "Кількість файлів має бути не менше 1"
+msgstr "Кількість файлів має бути щонайменше 1"
 
 #: createFile.py:112
 msgid "File name"
 msgstr "Назва файлу"
 
-#: fileOperations.py:59
+#: fileOperations.py:68
 msgid "File name cannot be empty"
-msgstr "Назва файлу не може бути порожньою"
+msgstr "Ім'я файлу не може бути порожнім"
 
-#: fileOperations.py:337
+#: fileOperations.py:1541
 msgid "File name not changed"
-msgstr "Назву файлу не змінено"
+msgstr "Ім'я файлу не змінено"
 
 #: createFile.py:66
 #: createFile.py:113
 msgid "File name {index}:"
-msgstr "Назва файлу {index}:"
+msgstr "Ім'я файлу {index}:"
 
 #: createFile.py:64
 msgid "File name:"
-msgstr "Назва файлу:"
+msgstr "Ім'я файлу:"
 
-#: __init__.py:850
+#: folderTools.py:1733
+msgid "File not found"
+msgstr "Файл не знайдено"
+
+#: xPlorer_engine.py:1062
+#: xPlorer_engine.py:1068
+#: xPlorer_engine.py:1089
 msgid "File operations manager not available"
-msgstr "Менеджер операцій з файлами недоступний"
+msgstr "Менеджер файлових операцій недоступний"
 
-#: fileOperations.py:344
+#: fileOperations.py:1548
 msgid "File renamed to {name}"
 msgstr "Файл перейменовано на {name}"
 
-#: robocopyManager.py:448
+#: contextMenu.py:970
+msgid "File system: {0}"
+msgstr "Файлова система: {0}"
+
+#: flatViewManager.py:151
+msgid "Files found: {names}"
+msgstr "Знайдено файлів: {names}"
+
+#: duplicateFinderManager.py:101
+msgid "Files in this group:"
+msgstr "Файли в цій групі:"
+
+#: fileOperations.py:261
+msgid "Files only"
+msgstr "Лише файли"
+
+#: flatViewManager.py:37
+msgid "Filter (type to narrow the list):"
+msgstr "Фільтр (ведіть для звуження списку):"
+
+#: batchRenameManager.py:59
+msgid "Find and replace"
+msgstr "Знайти та замінити"
+
+#: robocopyManager.py:490
 msgid "Finished {n} of {total}: {name}"
 msgstr "Завершено {n} з {total}: {name}"
 
-#: folderTools.py:227
-#: folderTools.py:267
+#: contextMenu.py:451
+msgid "Flat View"
+msgstr "Плоский вигляд"
+
+#: flatViewManager.py:21
+msgid "Flat View: {0}"
+msgstr "Плоский вигляд: {0}"
+
+#: xPlorer_engine.py:954
+msgid "Flat view tool not available"
+msgstr "Інструмент плоского вигляду недоступний"
+
+#: folderTools.py:1188
+msgid "Focus a single file first to select others with the same extension"
+msgstr "Спочатку сфокусуйтеся на одному файлі, щоб вибрати інші з таким самим розширенням"
+
+#: flatViewManager.py:46
+#: folderTools.py:302
+#: folderTools.py:342
+#: freezeManager.py:667
 msgid "Folder"
-msgstr "Тека"
+msgstr "Папка"
 
-#: folderTools.py:605
-#: folderTools.py:675
+#: folderTools.py:768
+#: folderTools.py:838
 msgid "Folder '{}' already exists, creating '{}' instead"
-msgstr "Тека '{}' вже існує, замість неї створюється '{}'"
+msgstr "Папка '{}' вже існує, натомість створюється '{}'"
 
-#: __init__.py:905
+#: contextMenu.py:407
+msgid "Folder Sync & Compare"
+msgstr "Синхронізація та порівняння папок"
+
+#: xPlorer_engine.py:1459
 msgid "Folder creation dialog not available"
-msgstr "Діалог створення теки недоступний"
+msgstr "Діалог створення папки недоступний"
 
-#: __init__.py:867
+#: xPlorer_engine.py:1408
 msgid "Folder creator helper not available"
-msgstr "Помічник створення тек недоступний"
+msgstr "Помічник створення папок недоступний"
 
-#: contextMenu.py:131
-#: contextMenu.py:134
-#: contextMenu.py:155
+#: contextMenu.py:564
+#: contextMenu.py:634
+#: contextMenu.py:637
+#: contextMenu.py:640
 msgid "Folder info"
-msgstr "Інформація про теку"
+msgstr "Інформація про папку"
 
-#: folderTools.py:142
+#: folderTools.py:217
 msgid "Folder title:"
-msgstr "Назва теки:"
+msgstr "Назва папки:"
 
-#: contextMenu.py:47
+#: contextMenu.py:456
+msgid "Folder to ISO"
+msgstr "Папка в ISO"
+
+#: fileOperations.py:259
+msgid "Folders and files"
+msgstr "Папки та файли"
+
+#: workspaceManager.py:86
+msgid "Folders in this workspace:"
+msgstr "Папки в цьому робочому просторі:"
+
+#: fileOperations.py:260
+msgid "Folders only"
+msgstr "Лише папки"
+
+#: fileOperations.py:239
+msgid "Folders: {folders}, files: {files}, total size: {size}"
+msgstr "Папок: {folders}, файлів: {files}, загальний розмір: {size}"
+
+#: duplicateFinderManager.py:90
+msgid "Found {0} duplicate groups"
+msgstr "Знайдено груп дублікатів: {0}"
+
+#: duplicateFinderManager.py:329
+msgid "Found {0} duplicate groups, {1} redundant files"
+msgstr "Знайдено груп дублікатів: {0}, зайвих файлів: {1}"
+
+#: contextMenu.py:984
+msgid "Free space: {0}"
+msgstr "Вільно місця: {0}"
+
+#: freezeManager.py:1059
+msgid "Freeze"
+msgstr "Заморозити"
+
+#: contextMenu.py:423
+msgid "Freeze Selected"
+msgstr "Заморозити вибране"
+
+#: xPlorer_engine.py:1123
+msgid "Freeze manager not available"
+msgstr "Менеджер заморожування недоступний"
+
+#: freezeManager.py:1061
+msgid "Freeze, {count} items"
+msgstr "Заморожено, елементів: {count}"
+
+#: xPlorer_engine.py:1127
+msgid "Freeze: freeze selected items (single tap), unfreeze selected items (double tap), or open the Freezer list (triple tap)"
+msgstr "Заморозити: заморозити вибрані елементи (одинарний тап), розморозити вибрані елементи (подвійний тап) або відкрити список заморожених (потрійний тап)"
+
+#: contextMenu.py:428
+#: freezeManager.py:635
+msgid "Freezer"
+msgstr "Заморожені елементи"
+
+#: freezeManager.py:680
+msgid "Freezer - {count} frozen items"
+msgstr "Заморожені елементи – {count}"
+
+#: freezeManager.py:832
+#: freezeManager.py:893
+msgid "Freezing"
+msgstr "Замороження"
+
+#: freezeManager.py:1086
+msgid "Frozen by a parent folder. Unfreeze the parent folder instead"
+msgstr "Заморожено батьківською папкою. Натомість розморозьте батьківську папку"
+
+#: batchRenameManager.py:232
+#: batchRenameManager.py:402
+msgid "Frozen item skipped: {0}"
+msgstr "Заморожений елемент пропущено: {0}"
+
+#: freezeManager.py:642
+msgid "Frozen items"
+msgstr "Заморожені елементи"
+
+#: contextMenu.py:827
+msgid "GB"
+msgstr "ГБ"
+
+#: contextMenu.py:439
 msgid "Headline Case"
-msgstr "Заголовний регістр"
+msgstr "Регістр заголовків"
 
-#: folderTools.py:278
+#: fileOperations.py:1353
+msgid "ISO created: {name}, {size}"
+msgstr "Створено ISO: {name}, {size}"
+
+#: fileOperations.py:1345
+msgid "ISO creation failed: {error}"
+msgstr "Не вдалося створити ISO: {error}"
+
+#: fileOperations.py:1190
+msgid "ISO creation is already running"
+msgstr "Створення ISO вже виконується"
+
+#: syncCompareManager.py:20
+msgid "Identical"
+msgstr "Ідентичні"
+
+#: fileOperations.py:457
+msgid "Include subfolder contents in folder sizes"
+msgstr "Враховувати вміст підпапок у розмірах папок"
+
+#: folderTools.py:1557
+msgid "Include subfolders (search all levels, like Flat View)"
+msgstr "Враховувати підпалки (шукати на всіх рівнях, як у плоскому вигляді)"
+
+#: fileOperations.py:282
+msgid "Include the contents of subfolders in folder sizes (slower)"
+msgstr "Враховувати вміст підпапок у розмірах папок (повільніше)"
+
+#: fileOperations.py:473
+msgid "Including subfolders"
+msgstr "З урахуванням підпапок"
+
+#: folderTools.py:353
 msgid "Invalid number for folders"
-msgstr "Неправильна кількість для тек"
+msgstr "Недійсна кількість папок"
 
-#: contextMenu.py:27
+#: folderTools.py:1642
+#: folderTools.py:1848
+msgid "Invalid regular expression: {0}"
+msgstr "Недійсний регулярний вираз: {0}"
+
+#: contextMenu.py:479
 msgid "Invert selection"
-msgstr "Інвертувати вибір"
+msgstr "Інвертувати виділення"
 
-#: contextMenu.py:45
+#: fileBasketManager.py:113
+msgid "Item removed"
+msgstr "Елемент видалено"
+
+#: fileOperations.py:350
+msgid "Items"
+msgstr "Елементи"
+
+#: fileBasketManager.py:39
+msgid "Items in the basket:"
+msgstr "Елементи в кошику:"
+
+#: contextMenu.py:827
+msgid "KB"
+msgstr "КБ"
+
+#: duplicateFinderManager.py:111
+msgid "Keep File in This Folder"
+msgstr "Залишити файл у цій папці"
+
+#: duplicateFinderManager.py:107
+msgid "Keep Newest"
+msgstr "Залишити найновіші"
+
+#: duplicateFinderManager.py:109
+msgid "Keep Oldest"
+msgstr "Залишити найстаріші"
+
+#: duplicateFinderManager.py:189
+msgid "Kept {0}, moved {1} duplicates to the Recycle Bin"
+msgstr "Залишено {0}, переміщено дублікатів до кошика: {1}"
+
+#: syncCompareManager.py:196
+msgid "Left and right folders are the same"
+msgstr "Ліва та права папки однакові"
+
+#: syncCompareManager.py:45
+msgid "Left: {0}   Right: {1}"
+msgstr "Ліва: {0}   Права: {1}"
+
+#: fileOperations.py:280
+msgid "List folders before files"
+msgstr "Спочатку папки, потім файли"
+
+#: workspaceManager.py:271
+msgid "Load Workspace"
+msgstr "Завантажити робочий простір"
+
+#: workspaceManager.py:670
+msgid "Loaded workspace {name}: opened {opened}, already open {reused}"
+msgstr "Завантажено робочий простір {name}: відкрито {opened}, вже відкрито {reused}"
+
+#: contextMenu.py:968
+msgid "Local"
+msgstr "Локально"
+
+#: contextMenu.py:992
+msgid "Location: {0}"
+msgstr "Розташування: {0}"
+
+#: contextMenu.py:435
 msgid "Lowercase"
 msgstr "Малі літери"
 
-#: folderTools.py:275
+#: contextMenu.py:827
+msgid "MB"
+msgstr "МБ"
+
+#: contextMenu.py:402
+msgid "Mark Left Folder (Sync Compare)"
+msgstr "Позначити ліву папку (синхронізація та порівняння)"
+
+#: syncCompareManager.py:178
+msgid "Marked as left folder: {0}. Navigate to the right folder and run compare again"
+msgstr "Позначено як ліву папку: {0}. Перейдіть до правої папки та запустіть порівняння знову"
+
+#: folderTools.py:1577
+msgid "Matching items (Enter opens, Ctrl+C/Ctrl+X copy/cut, Ctrl+Space toggles a pick, right-click or Menu key for more):"
+msgstr "Елементи, що збігаються (Enter відкриває, Ctrl+C/Ctrl+X копіює/вирізає, Ctrl+Space вибирає, контекстне меню або клавіша Menu для додаткових дій):"
+
+#: folderTools.py:350
 msgid "Maximum 100 folders allowed"
-msgstr "Дозволено максимум 100 тек"
+msgstr "Дозволено максимум 100 папок"
 
-#: __init__.py:909
+#: fileBasketManager.py:51
+#: fileBasketManager.py:163
+msgid "Mirror Copy"
+msgstr "Дзеркальне копіювання"
+
+#: fileBasketManager.py:414
+msgid "Mirror copied {0} items from the basket"
+msgstr "Дзеркально скопійовано елементів із кошика: {0}"
+
+#: batchRenameManager.py:406
+msgid "Missing file, cannot undo: {0}"
+msgstr "Відсутній файл, неможливо скасувати: {0}"
+
+#: contextMenu.py:1015
+msgid "Modified: {0}"
+msgstr "Змінено: {0}"
+
+#: fileBasketManager.py:51
+#: fileBasketManager.py:161
+msgid "Move"
+msgstr "Перемістити"
+
+#: workspaceManager.py:326
+msgid "Move Down"
+msgstr "Перемістити вниз"
+
+#: workspaceManager.py:325
+msgid "Move Up"
+msgstr "Перемістити вгору"
+
+#: freezeManager.py:29
+msgid "Move canceled"
+msgstr "Переміщення скасовано"
+
+#: folderTools.py:1826
+msgid "Move {count} item(s) to the Recycle Bin?"
+msgstr "Перенести елементів ({count}) до Кошика?"
+
+#: robocopyManager.py:503
+msgid "Moved"
+msgstr "Переміщено"
+
+#: fileBasketManager.py:377
+msgid "Moved {0} items from the basket"
+msgstr "Переміщено елементів: {0} з кошика"
+
+#: folderTools.py:1833
+msgid "Moved {count} item(s) to the Recycle Bin"
+msgstr "Переміщено елементів ({count}) до Кошика"
+
+#: batchRenameManager.py:43
+msgid "Multi-Rename Tool"
+msgstr "Засіб пакетного перейменування"
+
+#: contextMenu.py:481
+msgid "Multi-select"
+msgstr "Множинний вибір"
+
+#: flatViewManager.py:45
+msgid "Name"
+msgstr "Назва"
+
+#: fileOperations.py:249
+msgid "Name followed by size"
+msgstr "Назва, потім розмір"
+
+#: fileOperations.py:253
+msgid "Name, A to Z"
+msgstr "Назва, від А до Я"
+
+#: fileOperations.py:254
+msgid "Name, Z to A"
+msgstr "Назва, від Я до А"
+
+#: contextMenu.py:991
+msgid "Name: {0}"
+msgstr "Назва: {0}"
+
+#: contextMenu.py:968
+msgid "Network name: {0}"
+msgstr "Назва мережі: {0}"
+
+#: fileOperations.py:1504
+msgid "New name is the same as the current name"
+msgstr "Нова назва збігається з поточною"
+
+#: workspaceManager.py:75
+msgid "New workspace"
+msgstr "Новий робочий простір"
+
+#: flatViewManager.py:225
+#: syncCompareManager.py:175
+#: syncCompareManager.py:189
+#: xPlorer_engine.py:1463
 msgid "No Explorer folder detected"
-msgstr "Не виявлено жодної теки Провідника"
+msgstr "Папку Провідника не виявлено"
 
-#: fileOperations.py:219
-#: fileOperations.py:276
+#: fileOperations.py:1085
+#: fileOperations.py:1158
 msgid "No access to size data"
 msgstr "Немає доступу до даних про розмір"
 
-#: folderTools.py:769
+#: folderTools.py:1127
+#: folderTools.py:1479
 msgid "No active File Explorer window found"
-msgstr "Не знайдено активного вікна Файлового провідника"
+msgstr "Не знайдено активного вікна Провідника"
 
-#: clipboardManager.py:127
+#: batchRenameManager.py:220
+msgid "No changes to apply"
+msgstr "Немає змін для застосування"
+
+#: clipboardManager.py:143
 msgid "No content could be read from selected files"
 msgstr "Не вдалося прочитати вміст із вибраних файлів"
 
-#: createFile.py:284
+#: duplicateFinderManager.py:91
+#: duplicateFinderManager.py:325
+msgid "No duplicate files found"
+msgstr "Дублікатів файлів не знайдено"
+
+#: duplicateFinderManager.py:159
+msgid "No duplicate group selected"
+msgstr "Не вибрано жодної групи дублікатів"
+
+#: flatViewManager.py:148
+msgid "No files found"
+msgstr "Файлів не знайдено"
+
+#: batchRenameManager.py:335
+msgid "No files selected or found in the current folder"
+msgstr "У поточній папці немає вибраних або знайдених файлів"
+
+#: createFile.py:288
 msgid "No files were created"
-msgstr "Не створено жодного файлу"
+msgstr "Жодного файлу не створено"
 
-#: folderTools.py:964
-#: folderTools.py:970
-#: folderTools.py:979
-#: folderTools.py:985
+#: workspaceManager.py:221
+msgid "No folder selected"
+msgstr "Папку не вибрано"
+
+#: folderTools.py:2003
+#: folderTools.py:2009
+#: folderTools.py:2018
+#: folderTools.py:2024
 msgid "No folders found"
-msgstr "Не знайдено жодної теки"
+msgstr "Папок не знайдено"
 
-#: __init__.py:931
+#: xPlorer_engine.py:1488
 msgid "No folders selected"
-msgstr "Не вибрано жодної теки"
+msgstr "Папки не вибрано"
 
-#: __init__.py:946
+#: xPlorer_engine.py:1502
 msgid "No folders selected or current folder not available"
-msgstr "Не вибрано жодної теки або поточна тека недоступна"
+msgstr "Папки не вибрано або поточна папка недоступна"
 
-#: folderTools.py:341
-#: folderTools.py:649
-#: folderTools.py:699
+#: folderTools.py:416
+#: folderTools.py:812
+#: folderTools.py:862
 msgid "No folders were created"
-msgstr "Не створено жодної теки"
+msgstr "Жодної папки не створено"
 
-#: folderTools.py:81
+#: fileBasketManager.py:107
+#: flatViewManager.py:176
+#: flatViewManager.py:190
+#: folderTools.py:146
+#: freezeManager.py:691
+#: syncCompareManager.py:127
 msgid "No item selected"
-msgstr "Не вибрано жодного елемента"
+msgstr "Елемент не вибрано"
 
-#: folderTools.py:782
+#: contextMenu.py:899
+msgid "No item to show properties for"
+msgstr "Немає елемента для відображення властивостей"
+
+#: folderTools.py:1139
+#: folderTools.py:1491
 msgid "No items in folder"
-msgstr "У теці немає елементів"
+msgstr "У папці немає елементів"
 
-#: clipboardManager.py:27
-#: clipboardManager.py:62
-#: compressionManager.py:148
-#: fileOperations.py:210
-#: fileOperations.py:306
+#: clipboardManager.py:30
+#: clipboardManager.py:68
+#: compressionManager.py:161
+#: compressionManager.py:330
+#: fileBasketManager.py:225
+#: fileOperations.py:1076
+#: fileOperations.py:1418
+#: fileOperations.py:1448
+#: freezeManager.py:1037
+#: freezeManager.py:1068
 msgid "No items selected"
-msgstr "Не вибрано жодного елемента"
+msgstr "Елементи не вибрано"
 
-#: clipboardManager.py:79
+#: fileOperations.py:448
+msgid "No items to show"
+msgstr "Немає елементів для відображення"
+
+#: folderTools.py:1274
+msgid "No matches found for {term}"
+msgstr "Не знайдено результатів за запитом {term}"
+
+#: operationHistoryManager.py:39
+#: operationHistoryManager.py:70
+msgid "No operations recorded yet"
+msgstr "Операції ще не записано"
+
+#: contextMenu.py:279
+msgid "No recent locations yet"
+msgstr "Нещодавніх розташувань ще немає"
+
+#: batchRenameManager.py:378
+#: batchRenameManager.py:391
+msgid "No rename operation to undo"
+msgstr "Немає операції перейменування для скасування"
+
+#: folderTools.py:1728
+#: folderTools.py:1764
+#: folderTools.py:1785
+#: folderTools.py:1799
+#: folderTools.py:1812
+#: folderTools.py:1823
+msgid "No result selected"
+msgstr "Результат не вибрано"
+
+#: clipboardManager.py:86
 msgid "No text files selected"
 msgstr "Не вибрано жодного текстового файлу"
 
-#: folderTools.py:591
-#: folderTools.py:661
+#: folderTools.py:754
+#: folderTools.py:824
 msgid "No valid folder names found in the file"
-msgstr "У файлі не знайдено дійсних назв тек"
+msgstr "У файлі не знайдено дійсних назв папок"
 
-#: folderTools.py:296
+#: folderTools.py:371
 msgid "No valid folder names provided"
-msgstr "Не надано дійсних назв тек"
+msgstr "Не надано дійсних назв папок"
 
-#: __init__.py:976
+#: workspaceManager.py:190
+msgid "No valid folder paths found"
+msgstr "Не знайдено дійсних шляхів до папок"
+
+#: workspaceManager.py:314
+msgid "No workspace selected"
+msgstr "Робочий простір не вибрано"
+
+#: workspaceManager.py:301
+#: workspaceManager.py:310
+msgid "No workspaces saved yet"
+msgstr "Робочі простори ще не збережено"
+
+#: duplicateFinderManager.py:181
+msgid "None of the copies are directly in the scanned folder"
+msgstr "Жодна з копій немає безпосередньо у сканованій папці"
+
+#: workspaceManager.py:675
+msgid "None of the folders in workspace {0} could be found"
+msgstr "Не вдалося знайти жодну з папок у робочій області {0}"
+
+#: contextMenu.py:233
+#: contextMenu.py:269
+msgid "Normal display"
+msgstr "Звичайний режим відображення"
+
+#: folderTools.py:1565
+msgid "Normal search"
+msgstr "Звичайний пошук"
+
+#: fileOperations.py:1242
+msgid "Not enough free disk space"
+msgstr "Недостатньо вільного місця на диску"
+
+#: xPlorer_engine.py:1533
 msgid "Not focused on File Explorer"
-msgstr "Не сфокусовано на Файловому провіднику"
+msgstr "Фокус не на Провіднику"
+
+#: freezeManager.py:1088
+msgid "Not frozen"
+msgstr "Не заморожено"
 
 #: createFile.py:198
-#: folderTools.py:541
-#: folderTools.py:763
+#: fileOperations.py:1187
+#: fileOperations.py:1366
+#: folderTools.py:700
+#: folderTools.py:1102
+#: folderTools.py:1181
+#: folderTools.py:1214
+#: folderTools.py:1451
+#: xPlorer_engine.py:1138
+#: xPlorer_engine.py:1211
 msgid "Not in File Explorer"
-msgstr "Не у Файловому провіднику"
+msgstr "Не у Провіднику"
+
+#: duplicateFinderManager.py:170
+msgid "Nothing to remove in this group"
+msgstr "У цій групі немає чого видаляти"
 
 #: createFile.py:28
 msgid "Number of files to create:"
 msgstr "Кількість файлів для створення:"
 
-#: folderTools.py:272
+#: folderTools.py:347
 msgid "Number of folders must be at least 1"
-msgstr "Кількість тек має бути не менше 1"
+msgstr "Кількість папок має бути щонайменше 1"
 
-#: folderTools.py:150
+#: folderTools.py:225
 msgid "Number of folders:"
-msgstr "Кількість тек:"
+msgstr "Кількість папок:"
 
-#: __init__.py:844
-msgid "Open xPlorer context menu"
-msgstr "Відкрити контекстне меню xPlorer"
+#: fileOperations.py:292
+msgid "OK"
+msgstr "OK"
 
-#: folderTools.py:554
+#: syncCompareManager.py:17
+msgid "Only in left"
+msgstr "Лише зліва"
+
+#: syncCompareManager.py:18
+msgid "Only in right"
+msgstr "Лише справа"
+
+#: flatViewManager.py:51
+msgid "Open Containing Folder"
+msgstr "Відкрити вміщуючу папку"
+
+#: contextMenu.py:418
+msgid "Open Freezer"
+msgstr "Відкрити морозилку"
+
+#: folderTools.py:1769
+msgid "Open to path"
+msgstr "Відкрити за шляхом"
+
+#: xPlorer_engine.py:1037
+msgid "Open xPlorer context menu (single tap), Recent Locations (double tap), or Current folder size list (triple tap)"
+msgstr "Відкрити контекстне меню xPlorer (одне торкання), останні розташування (подвійне торкання) або список розміру поточної папки (потрійне торкання)"
+
+#: contextMenu.py:533
+#: operationHistoryManager.py:26
+msgid "Operation History"
+msgstr "Журнал операцій"
+
+#: operationHistoryManager.py:72
+msgid "Operation history cleared"
+msgstr "Журнал операцій очищено"
+
+#: workspaceManager.py:95
+msgid "Or paste/type folder paths here, one per line:"
+msgstr "Або вставте/введіть шляхи до папок тут, по одному в рядку:"
+
+#: batchRenameManager.py:409
+msgid "Original name is taken, cannot undo: {0}"
+msgstr "Початкова назва вже зайнята, скасувати неможливо: {0}"
+
+#: freezeManager.py:32
+msgid "Overwrite canceled"
+msgstr "Перезапис скасовано"
+
+#: freezeManager.py:31
+msgid "Paste canceled"
+msgstr "Вставлення скасовано"
+
+#: fileBasketManager.py:272
+msgid "Path not found: {0}"
+msgstr "Шлях не знайдено: {0}"
+
+#: folderTools.py:1572
+msgid "Pattern / search text (meaning depends on the mode above):"
+msgstr "Шаблон / текст для пошуку (значення залежить від режиму вище):"
+
+#: contextMenu.py:230
+msgid "Pin"
+msgstr "Закріпити"
+
+#: workspaceManager.py:323
+msgid "Pin to Top"
+msgstr "Закріпити зверху"
+
+#: contextMenu.py:259
+msgid "Pinned"
+msgstr "Закріплено"
+
+#: workspaceManager.py:341
+msgid "Pinned to top: {0}"
+msgstr "Закріплено зверху: {0}"
+
+#: fileBasketManager.py:156
+msgid "Please choose a valid destination folder"
+msgstr "Будь ласка, виберіть дійсну папку призначення"
+
+#: folderTools.py:713
 msgid "Please select a .txt or .rtf file"
-msgstr "Виберіть файл .txt або .rtf"
+msgstr "Будь ласка, виберіть файл .txt або .rtf"
 
-#: fileOperations.py:313
+#: compressionManager.py:335
+msgid "Please select a compressed file"
+msgstr "Будь ласка, виберіть стиснений файл"
+
+#: fileOperations.py:1429
 msgid "Please select a file, not a folder"
-msgstr "Виберіть файл, а не теку"
+msgstr "Будь ласка, виберіть файл, а не папку"
 
-#: fileOperations.py:309
+#: fileOperations.py:1196
+msgid "Please select a folder"
+msgstr "Будь ласка, виберіть папку"
+
+#: fileOperations.py:1421
 msgid "Please select only one file"
-msgstr "Виберіть лише один файл"
+msgstr "Будь ласка, виберіть лише один файл"
 
-#: folderTools.py:547
+#: fileOperations.py:1199
+msgid "Please select only one folder"
+msgstr "Будь ласка, виберіть лише одну папку"
+
+#: fileOperations.py:1451
+msgid "Please select only one item"
+msgstr "Будь ласка, виберіть лише один елемент"
+
+#: folderTools.py:706
 msgid "Please select only one text file"
-msgstr "Виберіть лише один текстовий файл"
+msgstr "Будь ласка, виберіть лише один текстовий файл"
 
-#: folderTools.py:791
+#: batchRenameManager.py:90
+msgid "Preview of new file names:"
+msgstr "Попередній перегляд нових імен файлів:"
+
+#: folderTools.py:1148
+#: folderTools.py:1495
 msgid "Processing {count} items in background..."
-msgstr "Обробка {count} елементів у фоновому режимі..."
+msgstr "Обробка елементів ({count}) у фоновому режимі..."
 
-#: __init__.py:861
-#: contextMenu.py:31
+#: contextMenu.py:555
+#: contextMenu.py:929
+msgid "Properties"
+msgstr "Властивості"
+
+#: xPlorer_engine.py:1449
+msgid "Properties menu not available"
+msgstr "Меню властивостей недоступне"
+
+#: contextMenu.py:750
+msgid "Read-only"
+msgstr "Лише для читання"
+
+#: contextMenu.py:750
+msgid "Read-only (frozen, managed by the Freezer)"
+msgstr "Лише для читання (заморожено, керується Заморозкою)"
+
+#: contextMenu.py:790
+msgid "Read-only turned off"
+msgstr "Режим лише для читання вимкнено"
+
+#: contextMenu.py:790
+msgid "Read-only turned on"
+msgstr "Режим лише для читання увімкнено"
+
+#: contextMenu.py:530
+msgid "Recent Locations"
+msgstr "Недавні розташування"
+
+#: operationHistoryManager.py:34
+msgid "Recent operations (most recent first):"
+msgstr "Недавні операції (найновіші спочатку):"
+
+#: folderTools.py:1565
+msgid "Regex"
+msgstr "Регулярний вираз"
+
+#: syncCompareManager.py:52
+msgid "Relative Path"
+msgstr "Відносинний шлях"
+
+#: fileBasketManager.py:72
+#: workspaceManager.py:103
+msgid "Remove Selected"
+msgstr "Видалити вибране"
+
+#: duplicateFinderManager.py:190
+msgid "Removed {0} duplicate copies of {1}"
+msgstr "Видалено {0} дублікатів {1}"
+
+#: freezeManager.py:28
+msgid "Rename canceled"
+msgstr "Перейменування скасовано"
+
+#: batchRenameManager.py:54
+msgid "Rename mode:"
+msgstr "Режим перейменування:"
+
+#: contextMenu.py:502
 msgid "Rename selected file"
 msgstr "Перейменувати вибраний файл"
 
-#: __init__.py:688
-msgid "Required manager not available"
-msgstr "Необхідний менеджер недоступний"
+#: xPlorer_engine.py:1079
+msgid "Rename selected file (single tap), rename using clipboard text (double tap), or undo the last batch rename operation (triple tap)"
+msgstr "Перейменувати вибраний файл (одне торкання), перейменувати за допомогою тексту з буфера обміну (два торкання) або скасувати останню операцію масового перейменування (три торкання)"
 
-#: contextMenu.py:34
+#: fileOperations.py:1552
+msgid "Renamed 1 file"
+msgstr "Перейменовано 1 файл"
+
+#: fileOperations.py:1513
+msgid "Renamed to {name}"
+msgstr "Перейменовано на {name}"
+
+#: batchRenameManager.py:251
+msgid "Renamed {0} files"
+msgstr "Перейменовано файлів: {0}"
+
+#: fileOperations.py:1516
+msgid "Renamed {old} to {new}"
+msgstr "Перейменовано {old} на {new}"
+
+#: batchRenameManager.py:72
+msgid "Replace with:"
+msgstr "Замінити на:"
+
+#: fileOperations.py:460
+msgid "Rescan"
+msgstr "Пересканувати"
+
+#: contextMenu.py:234
+#: contextMenu.py:269
+msgid "Reversed display"
+msgstr "Зворотне відображення"
+
+#: batchRenameManager.py:418
+msgid "Reverted {0} file names"
+msgstr "Повернуто назад назви файлів: {0}"
+
+#: contextMenu.py:515
+# keep-identical
 msgid "Robocopy"
 msgstr "Robocopy"
 
-#: robocopyManager.py:457
+#: robocopyManager.py:499
 msgid "Robocopy cancelled"
 msgstr "Robocopy скасовано"
 
-#: robocopyManager.py:469
-msgid "Robocopy finished successfully. {n} item(s) copied"
-msgstr "Robocopy успішно завершено. Скопійовано {n} елемент(ів)"
+#: robocopyManager.py:528
+msgid "Robocopy complete. {n} item(s) copied"
+msgstr "Robocopy завершено. Скопійовано елементів: {n}"
 
-#: robocopyManager.py:465
-msgid "Robocopy finished. {ok} succeeded, {failed} failed: {items}"
-msgstr "Robocopy завершено. Успішно: {ok}, невдало: {failed}: {items}"
+#: robocopyManager.py:514
+msgid "Robocopy finished. {ok} succeeded, {failed} failed"
+msgstr "Robocopy завершено. Успішно: {ok}, не вдалося: {failed}"
 
-#: __init__.py:768
+#: xPlorer_engine.py:988
 msgid "Robocopy manager not available"
 msgstr "Менеджер Robocopy недоступний"
 
-#: __init__.py:791
+#: robocopyManager.py:546
+msgid "Robocopy: Items That Could Not Be Copied"
+msgstr "Robocopy: елементи, які не вдалося скопіювати"
+
+#: xPlorer_engine.py:996
 msgid "Robocopy: single tap copy, double tap paste, triple tap move"
-msgstr "Robocopy: одне натискання – копіювати, подвійне – вставити, потрійне – перемістити"
+msgstr "Robocopy: один дотик — копіювати, подвійний — вставити, потрійний — перемістити"
 
-#: contextMenu.py:89
-#: contextMenu.py:100
-#: contextMenu.py:106
-#: contextMenu.py:111
-#: contextMenu.py:117
+#: contextMenu.py:404
+msgid "Run Compare (Sync Compare)"
+msgstr "Запустити порівняння (синхронізація)"
+
+#: workspaceManager.py:108
+msgid "Save"
+msgstr "Зберегти"
+
+#: contextMenu.py:336
+msgid "Save Current as Workspace..."
+msgstr "Зберегти поточне як робочий простір..."
+
+#: workspaceManager.py:51
+msgid "Save Workspace"
+msgstr "Зберегти робочий простір"
+
+#: fileBasketManager.py:140
+msgid "Save Zip File As"
+msgstr "Зберегти ZIP-файл як"
+
+#: workspaceManager.py:263
+msgid "Saved workspaces (right-click or press the Menu key for pin/reorder/clear options):"
+msgstr "Збережені робочі простори (натисніть правою кнопкою миші або клавішу контекстного меню для закріплення, зміни порядку чи очищення):"
+
+#: contextMenu.py:558
+#: contextMenu.py:608
+#: contextMenu.py:616
+#: contextMenu.py:622
+#: contextMenu.py:627
 msgid "Say size"
-msgstr "Оголосити розмір"
+msgstr "Озвучити розмір"
 
-#: __init__.py:751
-msgid "Say size (single tap) or compress zip (double tap)"
-msgstr "Оголосити розмір (одне натискання) або стиснути zip (подвійне натискання)"
+#: xPlorer_engine.py:971
+msgid "Say size (single tap), compress zip (double tap), unzip (triple tap), or folder to ISO (quadruple tap)"
+msgstr "Озвучити розмір (один дотик), стиснути у zip (подвійний), розпакувати (потрійний) або створити ISO з папки (чотири дотики)"
 
-#: folderTools.py:559
+#: duplicateFinderManager.py:272
+msgid "Scanning {0} for duplicates..."
+msgstr "Сканування {0} на наявність дублікатів..."
+
+#: fileOperations.py:401
+msgid "Scanning, please wait"
+msgstr "Сканування, зачекайте"
+
+#: flatViewManager.py:41
+msgid "Scanning..."
+msgstr "Сканування..."
+
+#: folderTools.py:1563
+msgid "Search mode:"
+msgstr "Режим пошуку:"
+
+#: fileBasketManager.py:121
+msgid "Select Destination Directory"
+msgstr "Виберіть каталог призначення"
+
+#: workspaceManager.py:192
+msgid "Select Folder to Add"
+msgstr "Виберіть папку для додавання"
+
+#: duplicateFinderManager.py:264
+msgid "Select a folder, or open one in Explorer, to scan for duplicates"
+msgstr "Виберіть папку або відкрийте її в Провіднику для сканування на дублікати"
+
+#: contextMenu.py:477
+msgid "Select by Extension"
+msgstr "Вибрати за розширенням"
+
+#: contextMenu.py:483
+#: folderTools.py:1541
+msgid "Select by Search"
+msgstr "Вибрати за пошуком"
+
+#: xPlorer_engine.py:939
+msgid "Select by Search: Opens Select by Search (single tap), Flat View (double tap), or Batch Rename Tool (triple tap)"
+msgstr "Вибрати за пошуком: відкриває вибір за пошуком (один дотик), плоский вигляд (подвійний) або інструмент пакетного перейменування (потрійний)"
+
+#: folderTools.py:718
 msgid "Selected file does not exist"
 msgstr "Вибраний файл не існує"
 
-#: folderTools.py:87
+#: folderTools.py:152
 msgid "Selected item is not a folder"
-msgstr "Вибраний елемент не є текою"
+msgstr "Вибраний елемент не є пачкою"
 
-#: folderTools.py:826
+#: fileOperations.py:1460
+msgid "Selected item no longer exists"
+msgstr "Вибраний елемент більше не існує"
+
+#: fileBasketManager.py:267
+msgid "Selected items are already in the basket"
+msgstr "Вибрані елементи вже в кошику"
+
+#: folderTools.py:1160
 msgid "Selected {count} items"
-msgstr "Вибрано {count} елементів"
+msgstr "Вибрано елементів: {count}"
 
-#: folderTools.py:829
+#: folderTools.py:1263
+msgid "Selected {count} items matching {term}"
+msgstr "Вибрано елементів: {count}, за запитом {term}"
+
+#: folderTools.py:1197
+msgid "Selected {count} items {ext}"
+msgstr "Вибрано елементів: {count} ({ext})"
+
+#: folderTools.py:1277
+msgid "Selected {count} top-level items containing matches for {term}"
+msgstr "Вибрано елементів верхнього рівня: {count}, які містять збіги за запитом {term}"
+
+#: contextMenu.py:486
+msgid "Selection"
+msgstr "Виділення"
+
+#: folderTools.py:1163
 msgid "Selection inverted"
-msgstr "Вибір інвертовано"
+msgstr "Виділення інвертовано"
+
+#: xPlorer_engine.py:915
+#: xPlorer_engine.py:947
+msgid "Selection manager not available"
+msgstr "Менеджер виділення недоступний"
+
+#: xPlorer_engine.py:923
+msgid "Selection: Select by extension (single tap), invert selection (double tap), or multi-select (triple tap)"
+msgstr "Виділення: виберіть за розширенням (одне торкання), інвертуйте виділення (подвійне торкання) або виберіть кілька (потрійне торкання)"
+
+#: fileOperations.py:455
+msgid "Settings..."
+msgstr "Параметри..."
+
+#: fileOperations.py:276
+msgid "Show"
+msgstr "Показати"
+
+#: workspaceManager.py:91
+msgid "Show paths"
+msgstr "Показувати шляхи"
+
+#: flatViewManager.py:47
+msgid "Size"
+msgstr "Розмір"
+
+#: fileOperations.py:250
+msgid "Size followed by name"
+msgstr "Розмір, потім назва"
+
+#: fileOperations.py:255
+msgid "Size, largest to smallest"
+msgstr "Розмір (від найбільшого до найменшого)"
+
+#: fileOperations.py:256
+msgid "Size, smallest to largest"
+msgstr "Розмір (від найменшого до найбільшого)"
+
+#: contextMenu.py:1006
+msgid "Size: calculating..."
+msgstr "Розмір: обчислення..."
+
+#: contextMenu.py:1008
+msgid "Size: {0}"
+msgstr "Розмір: {0}"
+
+#: contextMenu.py:1064
+msgid "Size: {0}{1}"
+msgstr "Розмір: {0}{1}"
+
+#: duplicateFinderManager.py:198
+msgid "Some duplicates could not be removed"
+msgstr "Деякі дублікати не вдалося видалити"
 
 #: createFile.py:170
 msgid "Some files will use default names"
-msgstr "Деякі файли використовуватимуть типові назви"
+msgstr "Деякі файли використовуватимуть назви за замовчуванням"
 
-#: compressionManager.py:161
+#: fileOperations.py:271
+msgid "Sort order"
+msgstr "Порядок сортування"
+
+#: compressionManager.py:174
+#: fileOperations.py:1293
 msgid "Starting..."
 msgstr "Запуск..."
 
-#: folderTools.py:987
+#: syncCompareManager.py:53
+msgid "Status"
+msgstr "Стан"
+
+#: folderTools.py:2026
 msgid "Successfully converted {count} folders to headline case"
-msgstr "{count} тек успішно перетворено на заголовний регістр"
+msgstr "Успішно конвертовано папок у формат заголовка: {count}"
 
-#: folderTools.py:972
+#: folderTools.py:2011
 msgid "Successfully converted {count} folders to lowercase"
-msgstr "{count} тек успішно перетворено на малі літери"
+msgstr "Успішно конвертовано папок у нижній регістр: {count}"
 
-#: folderTools.py:981
+#: folderTools.py:2020
 msgid "Successfully converted {count} folders to title case"
-msgstr "{count} тек успішно перетворено на регістр назв"
+msgstr "Успішно конвертовано папок у титульний регістр: {count}"
 
-#: folderTools.py:966
+#: folderTools.py:2005
 msgid "Successfully converted {count} folders to uppercase"
-msgstr "{count} тек успішно перетворено на ВЕЛИКІ ЛІТЕРИ"
+msgstr "Успішно конвертовано папок у верхній регістр: {count}"
 
-#: folderTools.py:337
+#: folderTools.py:412
 msgid "Successfully created 1 folder"
-msgstr "Успішно створено 1 теку"
+msgstr "Успішно створено 1 папку"
 
-#: folderTools.py:335
+#: folderTools.py:410
 msgid "Successfully created main folder only"
-msgstr "Успішно створено лише головну теку"
+msgstr "Успішно створено лише головну папку"
 
-#: folderTools.py:339
+#: folderTools.py:414
 msgid "Successfully created {count} of {total} folders"
-msgstr "Успішно створено {count} з {total} тек"
+msgstr "Успішно створено папок: {count} із {total}"
 
-#: folderTools.py:645
-#: folderTools.py:695
+#: folderTools.py:808
+#: folderTools.py:858
 msgid "Successfully created {} folders in '{}'"
-msgstr "Успішно створено {} тек у '{}'"
+msgstr "Успішно створено папок: {} в '{}'"
 
-#: contextMenu.py:39
+#: batchRenameManager.py:248
+msgid "Successfully renamed {0} files"
+msgstr "Успішно перейменовано файлів: {0}"
+
+#: fileBasketManager.py:451
+msgid "Successfully {0} {1} items."
+msgstr "Успішно {0} елементів: {1}."
+
+#: contextMenu.py:827
+msgid "TB"
+msgstr "ТБ"
+
+#: contextMenu.py:446
 msgid "TXT to Folder"
-msgstr "TXT у теку"
+msgstr "TXT у папку"
 
-#: contextMenu.py:46
+#: batchRenameManager.py:60
+msgid "Tag pattern ([C] counter, [D] date, [N] name, [E] extension)"
+msgstr "Шаблон тегів ([C] лічильник, [D] дата, [N] назва, [E] розширення)"
+
+#: batchRenameManager.py:80
+msgid "Tag pattern (e.g. [N]_[C].[E]):"
+msgstr "Шаблон тегів (напр. [N]_[C].[E]):"
+
+#: batchRenameManager.py:67
+msgid "Text to find:"
+msgstr "Знайти текст:"
+
+#: folderTools.py:1193
+msgid "The focused item has no file extension"
+msgstr "Зосереджений елемент не має розширення файлу"
+
+#: robocopyManager.py:542
+msgid ""
+"The following {n} item(s) could not be copied:\n"
+"\n"
+"{items}"
+msgstr ""
+"Не вдалося скопіювати такі елементи ({n}):\n"
+"\n"
+"{items}"
+
+#: freezeManager.py:1119
+msgid "The freezer is empty"
+msgstr "Заморожувач порожній"
+
+#: syncCompareManager.py:133
+msgid "This file only exists on the right side"
+msgstr "Цей файл існує лише праворуч"
+
+#: fileOperations.py:1224
+msgid "This folder cannot be converted to ISO"
+msgstr "Цю папку неможливо конвертувати в ISO"
+
+#: recentLocationsManager.py:223
+msgid "This folder no longer exists: {0}"
+msgstr "Ця папка більше не існує: {0}"
+
+#: contextMenu.py:437
 msgid "Title Case"
-msgstr "Регістр назв"
+msgstr "Як у заголовках"
 
-#: clipboardManager.py:88
+#: contextMenu.py:846
+msgid "Today"
+msgstr "Сьогодні"
+
+#: fileOperations.py:475
+msgid "Top level only"
+msgstr "Лише верхній рівень"
+
+#: contextMenu.py:986
+msgid "Total capacity: {0}"
+msgstr "Загальна місткість: {0}"
+
+#: clipboardManager.py:95
 msgid "Total file size is too large to copy content"
-msgstr "Загальний розмір файлів занадто великий для копіювання вмісту"
+msgstr "Загальний розмір файлів завеликий для копіювання вмісту"
 
-#: createFile.py:213
+#: createFile.py:215
 msgid "Unable to get current directory after multiple attempts"
 msgstr "Не вдалося отримати поточний каталог після кількох спроб"
 
-#: __init__.py:630
+#: fileOperations.py:1373
+#: xPlorer_engine.py:878
 msgid "Unable to get current path"
-msgstr "Не вдається отримати поточний шлях"
+msgstr "Не вдалося отримати поточний шлях"
 
-#: folderTools.py:774
+#: folderTools.py:1132
+#: folderTools.py:1484
 msgid "Unable to get folder view"
-msgstr "Не вдається отримати перегляд теки"
+msgstr "Не вдалося отримати перегляд папки"
 
-#: contextMenu.py:44
+#: batchRenameManager.py:386
+msgid "Unable to read the last rename operation"
+msgstr "Не вдалося прочитати останню операцію перейменування"
+
+#: batchRenameManager.py:419
+msgid "Undid rename of {0} files"
+msgstr "Скасовано перейменування файлів: {0}"
+
+#: batchRenameManager.py:103
+#: contextMenu.py:396
+msgid "Undo Last Rename"
+msgstr "Скасувати останнє перейменування"
+
+#: freezeManager.py:729
+#: freezeManager.py:1081
+msgid "Unfreeze"
+msgstr "Розморозити"
+
+#: freezeManager.py:647
+msgid "Unfreeze &all"
+msgstr "Розморозити &всі"
+
+#: contextMenu.py:425
+msgid "Unfreeze Selected"
+msgstr "Розморозити вибране"
+
+#: freezeManager.py:711
+msgid "Unfreeze all"
+msgstr "Розморозити всі"
+
+#: freezeManager.py:730
+msgid "Unfreeze all files and folders"
+msgstr "Розморозити всі файли та папки"
+
+#: freezeManager.py:710
+msgid "Unfreeze all {count} items?"
+msgstr "Розморозити всі елементи: {count}?"
+
+#: freezeManager.py:723
+msgid "Unfreeze all, {count} items"
+msgstr "Розморозити всі, елементів: {count}"
+
+#: freezeManager.py:701
+#: freezeManager.py:1083
+msgid "Unfreeze, {count} items"
+msgstr "Розморозити, елементів: {count}"
+
+#: contextMenu.py:230
+msgid "Unpin"
+msgstr "Відкріпити"
+
+#: workspaceManager.py:323
+msgid "Unpin from Top"
+msgstr "Відкріпити зверху"
+
+#: contextMenu.py:259
+msgid "Unpinned"
+msgstr "Відкріплено"
+
+#: workspaceManager.py:341
+msgid "Unpinned: {0}"
+msgstr "Відкріплено: {0}"
+
+#: contextMenu.py:433
 msgid "Uppercase"
-msgstr "ВЕЛИКІ ЛІТЕРИ"
+msgstr "Верхній регістр"
 
-#: clipboardManager.py:104
-msgid "[Error processing RTF file]"
-msgstr "[Помилка обробки RTF-файлу]"
+#: batchRenameManager.py:77
+msgid "Use regular expressions (regex)"
+msgstr "Використовувати регулярні вирази (regex)"
 
-#: clipboardManager.py:106
-msgid "[RTF content - striprtf module not available]"
-msgstr "[Вміст RTF – модуль striprtf недоступний]"
+#: contextMenu.py:985
+msgid "Used space: {0}"
+msgstr "Використано простору: {0}"
 
-#: compressionManager.py:114
+#: folderTools.py:1565
+msgid "Wildcard"
+msgstr "Шаблон"
+
+#: contextMenu.py:520
+#: workspaceManager.py:255
+msgid "Workspace Manager"
+msgstr "Менеджер робочих областей"
+
+#: workspaceManager.py:395
+msgid "Workspace deleted: {0}"
+msgstr "Робочу область видалено: {0}"
+
+#: workspaceManager.py:210
+#: xPlorer_engine.py:1147
+msgid "Workspace manager not available"
+msgstr "Менеджер робочих областей недоступний"
+
+#: workspaceManager.py:81
+msgid "Workspace name:"
+msgstr "Назва робочої області:"
+
+#: workspaceManager.py:545
+msgid "Workspace not found: {0}"
+msgstr "Робочу область не знайдено: {0}"
+
+#: workspaceManager.py:736
+msgid "Workspace saved: {0}"
+msgstr "Робочу область збережено: {0}"
+
+#: workspaceManager.py:384
+msgid "Workspace updated: {0}"
+msgstr "Робочу область оновлено: {0}"
+
+#: xPlorer_engine.py:1155
+msgid "Workspace: Open menu (single tap), add selected folder or save current as workspace (double tap), or edit saved workspaces (triple tap)"
+msgstr "Робоча область: відкрити меню (одне торкання), додати вибрану папку або зберегти поточну як робочу область (подвійне торкання), або редагувати збережені робочі області (потрійне торкання)"
+
+#: contextMenu.py:848
+msgid "Yesterday"
+msgstr "Учора"
+
+#: fileBasketManager.py:51
+#: fileBasketManager.py:138
+# keep-identical
+msgid "Zip"
+msgstr "Zip"
+
+#: fileBasketManager.py:444
+msgid "Zipped {0} items from the basket"
+msgstr "Архівовано {0} елементів із кошика"
+
+#: contextMenu.py:827
+msgid "bytes"
+msgstr "байтів"
+
+#: compressionManager.py:124
 msgid "compression failed"
-msgstr "стиснення не вдалося"
+msgstr "помилка стиснення"
 
-#: contextMenu.py:35
+#: fileBasketManager.py:350
+msgid "copied"
+msgstr "скопійовано"
+
+#: contextMenu.py:508
 msgid "copy"
 msgstr "копіювати"
 
-#: robocopyManager.py:235
+#: robocopyManager.py:276
 msgid "estimating time remaining"
-msgstr "оцінка часу, що залишився"
+msgstr "обчислення часу, що залишився"
 
-#: contextMenu.py:36
+#: contextMenu.py:855
+msgid "less than a minute ago"
+msgstr "менше хвилини тому"
+
+#: explorerWindow.py:54
+msgid "maximized"
+msgstr "розгорнуто"
+
+#: fileBasketManager.py:412
+msgid "mirror copied"
+msgstr "дзеркально скопійовано"
+
+#: contextMenu.py:510
 msgid "move"
 msgstr "перемістити"
+
+#: fileBasketManager.py:375
+msgid "moved"
+msgstr "переміщено"
 
 #: createFile.py:156
 msgid "new_file"
@@ -665,53 +2240,218 @@ msgstr "новий_файл"
 msgid "new_file_{index}"
 msgstr "новий_файл_{index}"
 
-#: contextMenu.py:37
+#: fileOperations.py:224
+msgid "no access"
+msgstr "немає доступу"
+
+#: folderTools.py:1723
+msgid "not select {name}"
+msgstr "не вибрано {name}"
+
+#: contextMenu.py:512
 msgid "paste"
 msgstr "вставити"
 
-#: __init__.py:268
-#: __init__.py:672
-#: __init__.py:712
-#: __init__.py:752
-#: __init__.py:792
-#: __init__.py:845
-#: __init__.py:862
-#: __init__.py:880
+#: folderTools.py:1723
+msgid "select {name}"
+msgstr "вибрати {name}"
+
+#: contextMenu.py:469
+msgid "unCompress zip"
+msgstr "розпакувати zip"
+
+#: contextMenu.py:91
+#: contextMenu.py:105
+msgid "unavailable"
+msgstr "недоступно"
+
+#: duplicateFinderManager.py:142
+msgid "unknown date"
+msgstr "невідома дата"
+
+#: xPlorer_engine.py:313
+#: xPlorer_engine.py:901
+#: xPlorer_engine.py:924
+#: xPlorer_engine.py:940
+#: xPlorer_engine.py:972
+#: xPlorer_engine.py:997
+#: xPlorer_engine.py:1038
+#: xPlorer_engine.py:1080
+#: xPlorer_engine.py:1106
+#: xPlorer_engine.py:1128
+#: xPlorer_engine.py:1156
+#: xPlorer_engine.py:1424
 msgid "xPlorer"
 msgstr "xPlorer"
 
-#: contextMenu.py:49
+#: contextMenu.py:537
 msgid "xPlorer Settings"
 msgstr "Налаштування xPlorer"
 
-#: createFile.py:288
+#: fileBasketManager.py:442
+msgid "zipped"
+msgstr "архівований"
+
+#: contextMenu.py:285
+msgid "{0} (pinned)"
+msgstr "{0} (закріплено)"
+
+#: fileBasketManager.py:449
+msgid "{0} complete. {1} successful, {2} failed. Check NVDA log."
+msgstr "{0} завершено. Успішно: {1}, не вдалося: {2}. Перевірте журнал NVDA."
+
+#: duplicateFinderManager.py:135
+msgid "{0} copies, {1} each"
+msgstr "{0} копій, кожна по {1}"
+
+#: syncCompareManager.py:118
+msgid "{0} differences found"
+msgstr "Знайдено відмінностей: {0}"
+
+#: fileBasketManager.py:264
+#: fileBasketManager.py:308
+msgid "{0} files"
+msgstr "{0} файлів"
+
+#: flatViewManager.py:132
+#: flatViewManager.py:141
+msgid "{0} files found"
+msgstr "Знайдено файлів: {0}"
+
+#: fileBasketManager.py:262
+#: fileBasketManager.py:306
+msgid "{0} folders"
+msgstr "{0} папок"
+
+#: contextMenu.py:865
+msgid "{0} hour ago"
+msgstr "{0} годину тому"
+
+#: contextMenu.py:866
+msgid "{0} hours ago"
+msgstr "{0} годин тому"
+
+#: flatViewManager.py:130
+#: flatViewManager.py:140
+msgid "{0} matches found"
+msgstr "Знайдено збігів: {0}"
+
+#: contextMenu.py:859
+msgid "{0} minute ago"
+msgstr "{0} хвилину тому"
+
+#: contextMenu.py:860
+msgid "{0} minutes ago"
+msgstr "{0} хвилин тому"
+
+#: robocopyManager.py:530
+msgid "{action} {n} item(s) to {dest}"
+msgstr "{action} {n} об'єкт(-ів) до {dest}"
+
+#: robocopyManager.py:518
+msgid "{action} {n} item(s) to {dest} ({failed} failed)"
+msgstr "{action} {n} об'єкт(-ів) до {dest} (не вдалося: {failed})"
+
+#: contextMenu.py:788
+msgid "{count} files could not be changed"
+msgstr "Не вдалося змінити файлів: {count}"
+
+#: freezeManager.py:460
+msgid "{count} files could not be made read-only"
+msgstr "Не вдалося зробити файлів доступними лише для читання: {count}"
+
+#: freezeManager.py:472
+msgid "{count} files could not be made writable again"
+msgstr "Не вдалося знову зробити файлів доступними для запису: {count}"
+
+#: clipboardManager.py:141
+msgid "{count} files could not be read"
+msgstr "Не вдалося прочитати файлів: {count}"
+
+#: createFile.py:292
 msgid "{count} files created"
-msgstr "Створено {count} файлів"
+msgstr "Створено файлів: {count}"
 
-#: fileOperations.py:283
+#: workspaceManager.py:167
+msgid "{count} folders in the list"
+msgstr "Папок у списку: {count}"
+
+#: freezeManager.py:628
+msgid "{count} frozen items. {result}"
+msgstr "Заморожених об'єктів: {count}. {result}"
+
+#: fileOperations.py:1165
 msgid "{count} items {size}"
-msgstr "{count} елементів {size}"
+msgstr "Об'єктів: {count}, розмір: {size}"
 
-#: robocopyManager.py:240
+#: folderTools.py:1661
+msgid "{count} matches"
+msgstr "Збігів: {count}"
+
+#: freezeManager.py:1050
+msgid "{count} system locations skipped"
+msgstr "Системних розташувань пропущено: {count}"
+
+#: robocopyManager.py:281
 msgid "{h}h {m}m remaining"
-msgstr "залишилося {h}год {m}хв"
+msgstr "Залишилося {h} год {m} хв"
 
-#: robocopyManager.py:242
+#: freezeManager.py:673
+msgid "{label}, not found"
+msgstr "{label}: не знайдено"
+
+#: freezeManager.py:675
+msgid "{label}, replaced by another item"
+msgstr "{label} замінено іншим елементом"
+
+#: robocopyManager.py:283
 msgid "{m}m {s}s remaining"
-msgstr "залишилося {m}хв {s}с"
+msgstr "Залишилося {m} хв {s} с"
 
-#: robocopyManager.py:304
+#: workspaceManager.py:297
+msgid "{name} (pinned)"
+msgstr "{name} (закріплено)"
+
+#: freezeManager.py:1043
+msgid "{name} is a system location and cannot be frozen"
+msgstr "{name} є системним розташуванням і не може бути замороженим"
+
+#: freezeManager.py:626
+msgid "{name} is frozen. {result}"
+msgstr "{name} заморожено. {result}"
+
+#: update.py:159
+msgid "{name} update"
+msgstr "оновлення {name}"
+
+#: update.py:164
+msgid ""
+"{name} {new} is available (installed: {old}).\n"
+"Update now?"
+msgstr ""
+"Доступно {name} {new} (встановлено: {old}).\n"
+"Оновити зараз?"
+
+#: fileOperations.py:229
+msgid "{name}, folder"
+msgstr "{name}, папка"
+
+#: freezeManager.py:669
+msgid "{name}, {kind}, in {location}"
+msgstr "{name}, {kind}, у {location}"
+
+#: robocopyManager.py:345
 msgid "{pct}% - item {idx}/{total}: {name}"
 msgstr "{pct}% - елемент {idx}/{total}: {name}"
 
-#: folderTools.py:111
+#: folderTools.py:185
 msgid "{subfolders} subfolders and {files} files"
-msgstr "{subfolders} підтек і {files} файлів"
+msgstr "Підпапок: {subfolders}, файлів: {files}"
 
-#: contextMenu.py:150
+#: contextMenu.py:642
 msgid "{subfolders} subfolders, {files} files"
-msgstr "{subfolders} підтек, {files} файлів"
+msgstr "{subfolders} підпапок, {files} файлів"
 
-#: robocopyManager.py:243
+#: robocopyManager.py:284
 msgid "{s}s remaining"
-msgstr "залишилося {s}с"
+msgstr "Залишилося {s} с"

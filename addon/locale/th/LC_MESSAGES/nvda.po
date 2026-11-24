@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: xPlorer 2026.8.5\n"
+"Project-Id-Version: xPlorer 2026.12.0\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-08-03 06:13+0700\n"
+"POT-Creation-Date: 2026-11-24 08:54+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Thai\n"
@@ -10,292 +10,853 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: DevOn Addon\n"
+"X-Generator: ChaiBot Addon\n"
 
-#: robocopyManager.py:464
-msgid " and {n} more"
-msgstr " และอีก {n}"
+#: contextMenu.py:1063
+msgid " (partial)"
+msgstr "(บางส่วน)"
 
-#: folderTools.py:174
+#: compressionManager.py:511
+msgid " and {count} more"
+msgstr "และอีก {count} รายการ"
+
+#: folderTools.py:249
 msgid "&Apply"
 msgstr "&นำไปใช้"
 
-#: folderTools.py:175
+#: folderTools.py:250
 msgid "&Cancel"
 msgstr "&ยกเลิก"
 
-#: createFile.py:286
+#: freezeManager.py:648
+msgid "&Close"
+msgstr "&ปิด"
+
+#: freezeManager.py:640
+msgid "&Frozen items:"
+msgstr "รายการที่แ&ช่แข็ง:"
+
+#: update.py:173
+msgid "&Later"
+msgstr "ภายหลัง(&L)"
+
+#: freezeManager.py:646
+msgid "&Unfreeze selected"
+msgstr "&เลิกแช่แข็งรายการที่เลือก"
+
+#: update.py:171
+msgid "&Update now"
+msgstr "อัปเดตทันที(&U)"
+
+#: flatViewManager.py:134
+#: flatViewManager.py:143
+msgid "(list capped at {0} - refine your folder selection)"
+msgstr "(รายการจำกัดสูงสุด {0} รายการ - โปรดปรับแต่งการเลือกโฟลเดอร์ของคุณ)"
+
+#: flatViewManager.py:118
+msgid "(root)"
+msgstr "(รูท)"
+
+#: fileOperations.py:1355
+msgid ", UDF format"
+msgstr ", รูปแบบ UDF"
+
+#: fileOperations.py:1357
+msgid ", {count} items skipped"
+msgstr ", ข้ามไป {count} รายการ"
+
+#: batchRenameManager.py:257
+#: batchRenameManager.py:425
+msgid "...and {0} more errors"
+msgstr "...และข้อผิดพลาดอื่นๆ อีก {0} รายการ"
+
+#: robocopyManager.py:541
+msgid "...and {n} more"
+msgstr "...และอีก {n} รายการ"
+
+#: createFile.py:290
 msgid "1 file created"
-msgstr "สร้างไฟล์แล้ว 1 ไฟล์"
+msgstr "สร้าง 1 ไฟล์แล้ว"
 
-#: fileOperations.py:340
+#: compressionManager.py:449
+msgid "7-Zip is required to extract this file type"
+msgstr "จำเป็นต้องใช้ 7-Zip เพื่อแยกไฟล์ประเภทนี้"
+
+#: duplicateFinderManager.py:268
+msgid "A duplicate scan is already running"
+msgstr "การสแกนหาไฟล์ซ้ำกำลังทำงานอยู่แล้ว"
+
+#: fileOperations.py:1544
 msgid "A file with this name already exists"
-msgstr "มีไฟล์ชื่อนี้อยู่แล้ว"
+msgstr "มีไฟล์ที่มีชื่อนี้อยู่แล้ว"
 
-#: compressionManager.py:288
+#: folderTools.py:1116
+#: folderTools.py:1468
+msgid "A selection operation is already in progress"
+msgstr "การดำเนินการเลือกกำลังดำเนินอยู่แล้ว"
+
+#: contextMenu.py:1018
+msgid "Accessed: {0}"
+msgstr "เข้าถึงเมื่อ: {0}"
+
+#: freezeManager.py:623
+msgid "Action canceled"
+msgstr "ยกเลิกการทำงานแล้ว"
+
+#: fileBasketManager.py:48
+msgid "Action:"
+msgstr "การกระทำ:"
+
+#: workspaceManager.py:101
+#: workspaceManager.py:202
+msgid "Add Folder..."
+msgstr "เพิ่มโฟลเดอร์..."
+
+#: workspaceManager.py:202
+msgid "Add Path"
+msgstr "เพิ่มพาธ"
+
+#: workspaceManager.py:233
+msgid "Add at least one folder to this workspace"
+msgstr "เพิ่มอย่างน้อยหนึ่งโฟลเดอร์ในพื้นที่ทำงานนี้"
+
+#: workspaceManager.py:73
+msgid "Add to workspace:"
+msgstr "เพิ่มไปยังพื้นที่ทำงาน:"
+
+#: fileBasketManager.py:283
+msgid "Added to basket. Total items: {0}"
+msgstr "เพิ่มลงในตะกร้าแล้ว จำนวนรายการทั้งหมด: {0}"
+
+#: workspaceManager.py:240
+msgid "Added to existing workspace {name}"
+msgstr "เพิ่มไปยังพื้นที่ทำงานที่มีอยู่ {name}"
+
+#: fileBasketManager.py:265
+msgid "Added {0}"
+msgstr "เพิ่ม {0} แล้ว"
+
+#: workspaceManager.py:188
+msgid "Added {count} folders"
+msgstr "เพิ่ม {count} โฟลเดอร์แล้ว"
+
+#: workspaceManager.py:764
+#: workspaceManager.py:771
+msgid "Added {name}"
+msgstr "เพิ่ม {name} แล้ว"
+
+#: workspaceManager.py:358
+msgid "All workspaces cleared"
+msgstr "ล้างพื้นที่ทำงานทั้งหมดแล้ว"
+
+#: workspaceManager.py:766
+msgid "Already added: {name}"
+msgstr "เพิ่มแล้ว: {name}"
+
+#: freezeManager.py:1055
+msgid "Already frozen"
+msgstr "ถูกตรึงไว้แล้ว"
+
+#: fileBasketManager.py:277
+msgid "Already in basket"
+msgstr "อยู่ในตะกร้าแล้ว"
+
+#: fileOperations.py:1508
+msgid "An item named {name} already exists"
+msgstr "มีรายการชื่อ {name} อยู่แล้ว"
+
+#: fileOperations.py:330
+msgid "Applied"
+msgstr "ใช้การตั้งค่าแล้ว"
+
+#: batchRenameManager.py:96
+#: fileOperations.py:295
+msgid "Apply"
+msgstr "ใช้งาน"
+
+#: fileBasketManager.py:296
+msgid "Basket cleared"
+msgstr "ล้างตะกร้าแล้ว"
+
+#: fileBasketManager.py:311
+msgid "Basket is already empty"
+msgstr "ตะกร้าว่างเปล่าอยู่แล้ว"
+
+#: fileBasketManager.py:43
+#: fileBasketManager.py:98
+#: fileBasketManager.py:132
+msgid "Basket is empty"
+msgstr "ตะกร้าว่างเปล่า"
+
+#: contextMenu.py:391
+msgid "Batch Rename Tool"
+msgstr "เครื่องมือเปลี่ยนชื่อชุด"
+
+#: xPlorer_engine.py:959
+#: xPlorer_engine.py:1094
+msgid "Batch rename manager not available"
+msgstr "ตัวจัดการการเปลี่ยนชื่อชุดไม่พร้อมใช้งาน"
+
+#: fileBasketManager.py:62
+msgid "Browse"
+msgstr "เรียกดู"
+
+#: compressionManager.py:302
 msgid "Built-in compression failed: {error}"
 msgstr "การบีบอัดในตัวล้มเหลว: {error}"
 
-#: robocopyManager.py:323
+#: robocopyManager.py:364
 msgid "Calculating total size..."
 msgstr "กำลังคำนวณขนาดรวม..."
 
-#: clipboardManager.py:66
+#: batchRenameManager.py:98
+#: fileOperations.py:294
+#: workspaceManager.py:110
+msgid "Cancel"
+msgstr "ยกเลิก"
+
+#: clipboardManager.py:72
 msgid "Cannot copy content of folders, please select files only"
-msgstr "ไม่สามารถคัดลอกเนื้อหาของโฟลเดอร์ กรุณาเลือกเฉพาะไฟล์"
+msgstr "ไม่สามารถคัดลอกเนื้อหาของโฟลเดอร์ได้ โปรดเลือกเฉพาะไฟล์เท่านั้น"
 
-#: createFile.py:271
+#: createFile.py:275
 msgid "Cannot find unique name for: {name}"
-msgstr "ไม่พบชื่อที่ไม่ซ้ำสำหรับ: {name}"
+msgstr "หาชื่อที่ไม่ซ้ำกันไม่ได้สำหรับ: {name}"
 
-#: __init__.py:888
+#: xPlorer_engine.py:1431
 msgid "Cannot open settings dialog"
-msgstr "ไม่สามารถเปิดกล่องโต้ตอบการตั้งค่า"
+msgstr "ไม่สามารถเปิดหน้าต่างตั้งค่าได้"
 
-#: folderTools.py:570
+#: folderTools.py:733
 msgid "Cannot process RTF file: striprtf module not available"
-msgstr "ไม่สามารถประมวลผลไฟล์ RTF: โมดูล striprtf ไม่พร้อมใช้งาน"
+msgstr "ไม่สามารถประมวลผลไฟล์ RTF ได้: ไม่มีโมดูล striprtf"
 
-#: contextMenu.py:43
+#: contextMenu.py:442
 msgid "Case Converter for Folders"
-msgstr "ตัวแปลงตัวพิมพ์ใหญ่-เล็กสำหรับโฟลเดอร์"
+msgstr "เครื่องมือแปลงตัวพิมพ์สำหรับโฟลเดอร์"
 
-#: __init__.py:927
+#: xPlorer_engine.py:1484
 msgid "Case converter not available"
-msgstr "ตัวแปลงตัวพิมพ์ใหญ่-เล็กไม่พร้อมใช้งาน"
+msgstr "ไม่มีเครื่องมือแปลงตัวพิมพ์"
 
-#: __init__.py:648
+#: compressionManager.py:364
+msgid "Choose extraction method:"
+msgstr "เลือกวิธีการแตกไฟล์:"
+
+#: workspaceManager.py:329
+#: workspaceManager.py:350
+msgid "Clear All Workspaces"
+msgstr "ล้างพื้นที่ทำงานทั้งหมด"
+
+#: fileBasketManager.py:74
+msgid "Clear Basket"
+msgstr "ล้างตะกร้า"
+
+#: operationHistoryManager.py:44
+msgid "Clear History"
+msgstr "ล้างประวัติ"
+
+#: contextMenu.py:231
+msgid "Clear all (except pinned)"
+msgstr "ล้างทั้งหมด (ยกเว้นที่ปักหมุดไว้)"
+
+#: contextMenu.py:264
+msgid "Cleared recent locations"
+msgstr "ล้างตำแหน่งล่าสุดแล้ว"
+
+#: fileBasketManager.py:309
+msgid "Cleared {0} from basket"
+msgstr "ล้าง {0} ออกจากตะกร้าแล้ว"
+
+#: contextMenu.py:498
+msgid "Clipboard Operations"
+msgstr "การดำเนินการคลิปบอร์ด"
+
+#: xPlorer_engine.py:900
+msgid "Clipboard Operations: Copy selected names (single tap), copy content (double tap), or copy address bar (triple tap)"
+msgstr "การดำเนินการคลิปบอร์ด: คัดลอกชื่อที่เลือก (แตะครั้งเดียว), คัดลอกเนื้อหา (แตะสองครั้ง) หรือคัดลอกแถบที่อยู่ (แตะสามครั้ง)"
+
+#: fileOperations.py:1476
+msgid "Clipboard is empty"
+msgstr "คลิปบอร์ดว่างเปล่า"
+
+#: xPlorer_engine.py:892
 msgid "Clipboard manager not available"
-msgstr "ตัวจัดการคลิปบอร์ดไม่พร้อมใช้งาน"
+msgstr "ไม่มีตัวจัดการคลิปบอร์ด"
 
-#: compressionManager.py:284
-msgid "Completed"
+#: fileOperations.py:1481
+msgid "Clipboard text is not a valid name"
+msgstr "ข้อความในคลิปบอร์ดไม่ใช่ชื่อที่ถูกต้อง"
+
+#: contextMenu.py:737
+#: duplicateFinderManager.py:115
+#: fileBasketManager.py:76
+#: fileOperations.py:352
+#: flatViewManager.py:53
+#: operationHistoryManager.py:46
+#: syncCompareManager.py:59
+#: workspaceManager.py:277
+msgid "Close"
+msgstr "ปิด"
+
+#: workspaceManager.py:637
+msgid "Closed {count} folders from workspace {name}"
+msgstr "ปิด {count} โฟลเดอร์จากพื้นที่ทำงาน {name} แล้ว"
+
+#: syncCompareManager.py:32
+msgid "Compare Folders"
+msgstr "เปรียบเทียบโฟลเดอร์"
+
+#: syncCompareManager.py:48
+msgid "Comparing..."
+msgstr "กำลังเปรียบเทียบ..."
+
+#: robocopyManager.py:525
+msgid "Complete"
 msgstr "เสร็จสมบูรณ์"
 
-#: contextMenu.py:26
+#: compressionManager.py:298
+msgid "Completed"
+msgstr "เสร็จสิ้น"
+
+#: contextMenu.py:472
+msgid "Compress"
+msgstr "บีบอัด"
+
+#: contextMenu.py:467
 msgid "Compress zip"
 msgstr "บีบอัด zip"
 
-#: compressionManager.py:160
-#: compressionManager.py:168
+#: compressionManager.py:173
+#: compressionManager.py:181
 msgid "Compressing files"
 msgstr "กำลังบีบอัดไฟล์"
 
-#: compressionManager.py:75
+#: compressionManager.py:85
 msgid "Compressing..."
 msgstr "กำลังบีบอัด..."
 
-#: compressionManager.py:263
 #: compressionManager.py:277
+#: compressionManager.py:291
 msgid "Compressing: {percent}%"
 msgstr "กำลังบีบอัด: {percent}%"
 
-#: compressionManager.py:110
-#: compressionManager.py:282
+#: compressionManager.py:120
+#: compressionManager.py:296
 msgid "Compression cancelled"
 msgstr "ยกเลิกการบีบอัดแล้ว"
 
-#: compressionManager.py:112
-#: compressionManager.py:285
+#: compressionManager.py:122
+#: compressionManager.py:299
 msgid "Compression completed {name}"
-msgstr "บีบอัดเสร็จสมบูรณ์ {name}"
+msgstr "บีบอัด {name} เสร็จสิ้น"
 
-#: __init__.py:728
+#: xPlorer_engine.py:963
 msgid "Compression manager not available"
-msgstr "ตัวจัดการการบีบอัดไม่พร้อมใช้งาน"
+msgstr "ไม่พบตัวจัดการการบีบอัด"
 
-#: compressionManager.py:86
+#: compressionManager.py:96
 msgid "Compression timed out"
-msgstr "หมดเวลาการบีบอัด"
+msgstr "การบีบอัดหมดเวลา"
 
-#: clipboardManager.py:133
-msgid "Content from 1 file copied to clipboard"
-msgstr "คัดลอกเนื้อหาจาก 1 ไฟล์ไปยังคลิปบอร์ด"
+#: contextMenu.py:1022
+msgid "Contents: calculating..."
+msgstr "เนื้อหา: กำลังคำนวณ..."
 
-#: clipboardManager.py:135
-msgid "Content from {count} files copied to clipboard"
-msgstr "คัดลอกเนื้อหาจาก {count} ไฟล์ไปยังคลิปบอร์ด"
+#: contextMenu.py:1065
+msgid "Contents: {0} files, {1} folders{2}"
+msgstr "เนื้อหา: {0} ไฟล์, {1} โฟลเดอร์{2}"
 
-#: __init__.py:835
-#: __init__.py:901
+#: xPlorer_engine.py:1027
+#: xPlorer_engine.py:1443
+#: xPlorer_engine.py:1455
 msgid "Context menu manager not available"
-msgstr "ตัวจัดการเมนูบริบทไม่พร้อมใช้งาน"
+msgstr "ไม่พบตัวจัดการเมนูบริบท"
 
-#: folderTools.py:937
+#: folderTools.py:1976
 msgid "Conversion already in progress"
-msgstr "กำลังแปลงอยู่แล้ว"
+msgstr "กำลังดำเนินการแปลงอยู่แล้ว"
 
-#: folderTools.py:954
+#: folderTools.py:1993
 msgid "Converting"
 msgstr "กำลังแปลง"
 
-#: clipboardManager.py:44
+#: robocopyManager.py:503
+msgid "Copied"
+msgstr "คัดลอกแล้ว"
+
+#: clipboardManager.py:47
 msgid "Copied 1 item name to clipboard"
-msgstr "คัดลอกชื่อ 1 รายการไปยังคลิปบอร์ด"
+msgstr "คัดลอกชื่อ 1 รายการไปยังคลิปบอร์ดแล้ว"
 
-#: clipboardManager.py:46
+#: syncCompareManager.py:142
+msgid "Copied {0}"
+msgstr "คัดลอก {0} แล้ว"
+
+#: fileBasketManager.py:352
+msgid "Copied {0} items from the basket"
+msgstr "คัดลอก {0} รายการจากตะกร้าแล้ว"
+
+#: clipboardManager.py:49
 msgid "Copied {count} item names to clipboard"
-msgstr "คัดลอกชื่อ {count} รายการไปยังคลิปบอร์ด"
+msgstr "คัดลอกชื่อ {count} รายการไปยังคลิปบอร์ดแล้ว"
 
-#: __init__.py:624
+#: folderTools.py:1788
+msgid "Copied {count} items"
+msgstr "คัดลอก {count} รายการแล้ว"
+
+#: xPlorer_engine.py:872
 msgid "Copied: {path}"
-msgstr "คัดลอกแล้ว: {path}"
+msgstr "คัดลอก: {path}"
 
-#: contextMenu.py:28
+#: fileBasketManager.py:51
+#: fileBasketManager.py:159
+#: folderTools.py:1767
+msgid "Copy"
+msgstr "คัดลอก"
+
+#: syncCompareManager.py:57
+msgid "Copy Selected to Right"
+msgstr "คัดลอกสิ่งที่เลือกไปยังด้านขวา"
+
+#: contextMenu.py:491
 msgid "Copy address bar"
 msgstr "คัดลอกแถบที่อยู่"
 
-#: contextMenu.py:29
+#: contextMenu.py:493
 msgid "Copy content"
 msgstr "คัดลอกเนื้อหา"
 
-#: __init__.py:711
-msgid "Copy content (single tap) or invert selection (double tap)"
-msgstr "คัดลอกเนื้อหา (แตะครั้งเดียว) หรือกลับการเลือก (แตะสองครั้ง)"
-
-#: contextMenu.py:30
+#: contextMenu.py:495
 msgid "Copy selected file and folder names"
 msgstr "คัดลอกชื่อไฟล์และโฟลเดอร์ที่เลือก"
 
-#: __init__.py:671
-msgid "Copy selected names (single tap) or copy address bar (double tap)"
-msgstr "คัดลอกชื่อที่เลือก (แตะครั้งเดียว) หรือคัดลอกแถบที่อยู่ (แตะสองครั้ง)"
+#: clipboardManager.py:149
+msgid "Copy {lines} Lines from {files} files"
+msgstr "คัดลอก {lines} บรรทัดจาก {files} ไฟล์"
 
-#: __init__.py:628
-#: clipboardManager.py:50
-#: clipboardManager.py:139
+#: folderTools.py:1836
+msgid "Could not delete one or more items"
+msgstr "ไม่สามารถลบรายการอย่างน้อยหนึ่งรายการได้"
+
+#: update.py:255
+msgid "Could not download the update. Opening the releases page."
+msgstr "ไม่สามารถดาวน์โหลดการอัปเดตได้ กำลังเปิดหน้าเผยแพร่"
+
+#: clipboardManager.py:53
+#: clipboardManager.py:153
+#: folderTools.py:1795
+#: folderTools.py:1805
+#: xPlorer_engine.py:876
 msgid "Could not open clipboard"
 msgstr "ไม่สามารถเปิดคลิปบอร์ดได้"
 
-#: contextMenu.py:23
+#: flatViewManager.py:199
+msgid "Could not open the containing folder"
+msgstr "ไม่สามารถเปิดโฟลเดอร์ที่บรรจุอยู่ได้"
+
+#: folderTools.py:1739
+msgid "Could not open the file"
+msgstr "ไม่สามารถเปิดไฟล์ได้"
+
+#: folderTools.py:1819
+msgid "Could not open the folder"
+msgstr "ไม่สามารถเปิดโฟลเดอร์ได้"
+
+#: flatViewManager.py:185
+msgid "Could not open {0}"
+msgstr "ไม่สามารถเปิด {0} ได้"
+
+#: fileOperations.py:433
+#: fileOperations.py:435
+msgid "Could not read this folder"
+msgstr "ไม่สามารถอ่านโฟลเดอร์นี้ได้"
+
+#: fileOperations.py:493
+msgid "Could not save settings"
+msgstr "ไม่สามารถบันทึกการตั้งค่าได้"
+
+#: freezeManager.py:699
+#: freezeManager.py:721
+#: freezeManager.py:1052
+#: freezeManager.py:1076
+msgid "Could not save the freezer list"
+msgstr "ไม่สามารถบันทึกรายการที่แช่แข็งไว้ได้"
+
+#: xPlorer_engine.py:1219
+msgid "Could not start multi-select"
+msgstr "ไม่สามารถเริ่มการเลือกหลายรายการได้"
+
+#: batchRenameManager.py:85
+msgid "Counter start value:"
+msgstr "ค่าเริ่มต้นตัวนับ:"
+
+#: contextMenu.py:375
 #: createFile.py:17
 msgid "Create File"
 msgstr "สร้างไฟล์"
 
-#: folderTools.py:128
+#: folderTools.py:203
 msgid "Create Multiple Folders"
 msgstr "สร้างหลายโฟลเดอร์"
 
-#: contextMenu.py:40
+#: contextMenu.py:461
 msgid "Create Multiple Folders..."
 msgstr "สร้างหลายโฟลเดอร์..."
 
-#: folderTools.py:157
+#: folderTools.py:232
 msgid "Create main folder and then subfolders"
-msgstr "สร้างโฟลเดอร์หลักแล้วจึงสร้างโฟลเดอร์ย่อย"
+msgstr "สร้างโฟลเดอร์หลักแล้วค่อยสร้างโฟลเดอร์ย่อย"
 
-#: __init__.py:879
+#: xPlorer_engine.py:1423
 msgid "Create new folder and paste clipboard content into rename field"
 msgstr "สร้างโฟลเดอร์ใหม่และวางเนื้อหาคลิปบอร์ดลงในช่องเปลี่ยนชื่อ"
 
-#: folderTools.py:324
-msgid "Created {count} of {total} folders..."
-msgstr "สร้าง {count} จาก {total} โฟลเดอร์..."
+#: fileOperations.py:1361
+msgid "Created ISO {name}"
+msgstr "สร้าง ISO {name} แล้ว"
 
-#: folderTools.py:311
+#: createFile.py:296
+msgid "Created {count} file(s) in {path}"
+msgstr "สร้างไฟล์ {count} ไฟล์ใน {path} แล้ว"
+
+#: folderTools.py:399
+msgid "Created {count} of {total} folders..."
+msgstr "กำลังสร้าง {count} จาก {total} โฟลเดอร์..."
+
+#: contextMenu.py:1012
+msgid "Created: {0}"
+msgstr "สร้างแล้ว: {0}"
+
+#: fileOperations.py:1293
+#: fileOperations.py:1297
+msgid "Creating ISO"
+msgstr "กำลังสร้าง ISO"
+
+#: fileOperations.py:1307
+msgid "Creating ISO: {percent}%"
+msgstr "กำลังสร้าง ISO: {percent}%"
+
+#: folderTools.py:386
 msgid "Creating folders in background..."
 msgstr "กำลังสร้างโฟลเดอร์ในเบื้องหลัง..."
 
-#: folderTools.py:161
-msgid "Edit individual folder names"
-msgstr "แก้ไขชื่อโฟลเดอร์แต่ละรายการ"
+#: contextMenu.py:524
+msgid "Current folder size list"
+msgstr "รายการขนาดโฟลเดอร์ปัจจุบัน"
 
-#: folderTools.py:120
+#: fileOperations.py:338
+msgid "Current folder size list - {name}"
+msgstr "รายการขนาดโฟลเดอร์ปัจจุบัน - {name}"
+
+#: fileOperations.py:246
+msgid "Current folder size list settings"
+msgstr "การตั้งค่ารายการขนาดโฟลเดอร์ปัจจุบัน"
+
+#: folderTools.py:1768
+msgid "Cut"
+msgstr "ตัด"
+
+#: freezeManager.py:30
+msgid "Cut canceled"
+msgstr "ยกเลิกการตัดแล้ว"
+
+#: folderTools.py:1802
+msgid "Cut {count} items"
+msgstr "ตัด {count} รายการแล้ว"
+
+#: folderTools.py:1771
+#: folderTools.py:1827
+#: workspaceManager.py:328
+msgid "Delete"
+msgstr "ลบ"
+
+#: workspaceManager.py:275
+msgid "Delete Workspace"
+msgstr "ลบพื้นที่ทำงาน"
+
+#: workspaceManager.py:349
+msgid "Delete all saved workspaces? This cannot be undone."
+msgstr "ต้องการลบพื้นที่ทำงานที่บันทึกไว้ทั้งหมดใช่หรือไม่ การดำเนินการนี้ไม่สามารถย้อนกลับได้"
+
+#: freezeManager.py:27
+msgid "Delete canceled"
+msgstr "ยกเลิกการลบแล้ว"
+
+#: fileBasketManager.py:58
+msgid "Destination:"
+msgstr "ปลายทาง:"
+
+#: syncCompareManager.py:19
+msgid "Different (size/date)"
+msgstr "แตกต่างกัน (ขนาด/วันที่)"
+
+#: fileOperations.py:266
+msgid "Display format"
+msgstr "รูปแบบการแสดงผล"
+
+#: update.py:244
+msgid "Downloading {name} {version}"
+msgstr "กำลังดาวน์โหลด {name} {version}"
+
+#: contextMenu.py:964
+msgid "Drive: {0}"
+msgstr "ไดรฟ์: {0}"
+
+#: contextMenu.py:411
+#: duplicateFinderManager.py:79
+msgid "Duplicate Finder"
+msgstr "เครื่องมือค้นหาไฟล์ซ้ำ"
+
+#: duplicateFinderManager.py:95
+msgid "Duplicate groups:"
+msgstr "กลุ่มไฟล์ซ้ำ:"
+
+#: workspaceManager.py:115
+#: workspaceManager.py:273
+msgid "Edit Workspace"
+msgstr "แก้ไขพื้นที่ทำงาน"
+
+#: folderTools.py:236
+msgid "Edit individual folder names"
+msgstr "แก้ไขชื่อโฟลเดอร์ทีละรายการ"
+
+#: folderTools.py:1246
+#: folderTools.py:1841
+msgid "Enter a search term or pattern first"
+msgstr "ป้อนคำค้นหาหรือรูปแบบก่อน"
+
+#: workspaceManager.py:229
+msgid "Enter a workspace name"
+msgstr "ป้อนชื่อพื้นที่ทำงาน"
+
+#: folderTools.py:195
 msgid "Error calculating folder info"
 msgstr "ข้อผิดพลาดในการคำนวณข้อมูลโฟลเดอร์"
 
-#: fileOperations.py:294
+#: fileOperations.py:1177
 msgid "Error calculating size"
 msgstr "ข้อผิดพลาดในการคำนวณขนาด"
 
-#: compressionManager.py:196
+#: compressionManager.py:209
 msgid "Error compressing files"
 msgstr "ข้อผิดพลาดในการบีบอัดไฟล์"
 
-#: clipboardManager.py:142
+#: clipboardManager.py:100
+#: clipboardManager.py:158
 msgid "Error copying file content"
 msgstr "ข้อผิดพลาดในการคัดลอกเนื้อหาไฟล์"
 
-#: clipboardManager.py:53
+#: clipboardManager.py:56
 msgid "Error copying names to clipboard"
 msgstr "ข้อผิดพลาดในการคัดลอกชื่อไปยังคลิปบอร์ด"
 
-#: folderTools.py:614
-msgid "Error creating base folder"
-msgstr "ข้อผิดพลาดในการสร้างโฟลเดอร์ฐาน"
+#: syncCompareManager.py:147
+msgid "Error copying {0}"
+msgstr "ข้อผิดพลาดในการคัดลอก {0}"
 
-#: createFile.py:291
+#: folderTools.py:777
+msgid "Error creating base folder"
+msgstr "ข้อผิดพลาดในการสร้างโฟลเดอร์หลัก"
+
+#: createFile.py:300
 msgid "Error creating files"
 msgstr "ข้อผิดพลาดในการสร้างไฟล์"
 
-#: __init__.py:921
+#: xPlorer_engine.py:1478
 msgid "Error creating folders"
 msgstr "ข้อผิดพลาดในการสร้างโฟลเดอร์"
 
-#: folderTools.py:302
+#: folderTools.py:377
 msgid "Error creating main folder"
 msgstr "ข้อผิดพลาดในการสร้างโฟลเดอร์หลัก"
 
-#: __init__.py:965
+#: fileBasketManager.py:439
+msgid "Error creating zip file"
+msgstr "ข้อผิดพลาดในการสร้างไฟล์ซิป"
+
+#: xPlorer_engine.py:1528
 msgid "Error during conversion"
 msgstr "ข้อผิดพลาดระหว่างการแปลง"
 
-#: compressionManager.py:117
+#: compressionManager.py:127
 msgid "Error in compression process: {error}"
 msgstr "ข้อผิดพลาดในกระบวนการบีบอัด: {error}"
 
-#: folderTools.py:804
+#: folderTools.py:1166
+#: folderTools.py:1169
 msgid "Error inverting selection"
-msgstr "ข้อผิดพลาดในการกลับการเลือก"
+msgstr "ข้อผิดพลาดในการสลับการเลือก"
 
-#: createFile.py:245
+#: createFile.py:249
 msgid "Error opening create file dialog"
 msgstr "ข้อผิดพลาดในการเปิดกล่องโต้ตอบสร้างไฟล์"
 
-#: fileOperations.py:350
+#: fileOperations.py:1398
+msgid "Error opening current folder size list"
+msgstr "ข้อผิดพลาดในการเปิดรายการขนาดโฟลเดอร์ปัจจุบัน"
+
+#: recentLocationsManager.py:229
+msgid "Error opening folder"
+msgstr "เกิดข้อผิดพลาดในการเปิดโฟลเดอร์"
+
+#: fileOperations.py:1558
 msgid "Error opening rename dialog"
-msgstr "ข้อผิดพลาดในการเปิดกล่องโต้ตอบเปลี่ยนชื่อ"
+msgstr "เกิดข้อผิดพลาดในการเปิดกล่องโต้ตอบเปลี่ยนชื่อ"
 
-#: __init__.py:895
+#: xPlorer_engine.py:1437
 msgid "Error opening settings"
-msgstr "ข้อผิดพลาดในการเปิดการตั้งค่า"
+msgstr "เกิดข้อผิดพลาดในการเปิดการตั้งค่า"
 
-#: folderTools.py:704
+#: folderTools.py:867
 msgid "Error processing text file: {}"
-msgstr "ข้อผิดพลาดในการประมวลผลไฟล์ข้อความ: {}"
+msgstr "เกิดข้อผิดพลาดในการประมวลผลไฟล์ข้อความ: {}"
 
-#: folderTools.py:581
+#: folderTools.py:744
 msgid "Error reading RTF file"
-msgstr "ข้อผิดพลาดในการอ่านไฟล์ RTF"
+msgstr "เกิดข้อผิดพลาดในการอ่านไฟล์ RTF"
 
-#: folderTools.py:708
+#: folderTools.py:871
 msgid "Error reading file encoding"
-msgstr "ข้อผิดพลาดในการอ่านการเข้ารหัสไฟล์"
+msgstr "เกิดข้อผิดพลาดในการอ่านการเข้ารหัสไฟล์"
 
-#: fileOperations.py:320
-#: fileOperations.py:347
+#: fileOperations.py:1436
+#: fileOperations.py:1519
+#: fileOperations.py:1522
+#: fileOperations.py:1555
 msgid "Error renaming file"
-msgstr "ข้อผิดพลาดในการเปลี่ยนชื่อไฟล์"
+msgstr "เกิดข้อผิดพลาดในการเปลี่ยนชื่อไฟล์"
 
-#: folderTools.py:713
+#: batchRenameManager.py:244
+msgid "Error renaming {0} to {1}: {2}"
+msgstr "เกิดข้อผิดพลาดในการเปลี่ยนชื่อ {0} เป็น {1}: {2}"
+
+#: duplicateFinderManager.py:308
+msgid "Error scanning for duplicates"
+msgstr "เกิดข้อผิดพลาดในการสแกนหาไฟล์ซ้ำ"
+
+#: folderTools.py:1200
+msgid "Error selecting by extension"
+msgstr "เกิดข้อผิดพลาดในการเลือกตามนามสกุล"
+
+#: folderTools.py:1269
+msgid "Error selecting by search"
+msgstr "เกิดข้อผิดพลาดในการเลือกด้วยการค้นหา"
+
+#: folderTools.py:1512
+#: folderTools.py:1515
+msgid "Error selecting items"
+msgstr "เกิดข้อผิดพลาดในการเลือกรายการ"
+
+#: compressionManager.py:324
+msgid "Error uncompressing file"
+msgstr "เกิดข้อผิดพลาดในการคลายบีบอัดไฟล์"
+
+#: batchRenameManager.py:414
+msgid "Error undoing rename for {0}: {1}"
+msgstr "เกิดข้อผิดพลาดในการเลิกทำ 3 การเปลี่ยนชื่อสำหรับ {0}: {1}"
+
+#: folderTools.py:876
 msgid "Error: {}"
 msgstr "ข้อผิดพลาด: {}"
 
-#: __init__.py:1002
+#: fileBasketManager.py:67
+msgid "Execute"
+msgstr "ดำเนินการ"
+
+#: xPlorer_engine.py:1559
 msgid "Explorer tree dumped to NVDA log"
-msgstr "ส่งออกแผนผัง Explorer ไปยังบันทึก NVDA"
+msgstr "ส่งออกโครงสร้าง Explorer ไปยังบันทึกของ NVDA แล้ว"
 
 #: createFile.py:72
 msgid "Extension:"
 msgstr "นามสกุล:"
 
-#: folderTools.py:949
-msgid "Failed to rename any folders"
-msgstr "ไม่สามารถเปลี่ยนชื่อโฟลเดอร์ใด ๆ"
+#: compressionManager.py:360
+msgid "Extract Here"
+msgstr "แตกไฟล์ที่นี่"
 
-#: compressionManager.py:188
+#: compressionManager.py:359
+msgid "Extract to \"{folder}\\\""
+msgstr "แตกไฟล์ไปยัง \"{folder}\\\""
+
+#: compressionManager.py:365
+msgid "Extract {name}"
+msgstr "แตกไฟล์ {name}"
+
+#: compressionManager.py:512
+msgid "Extracted {done} of {total}. Failed: {names}"
+msgstr "แตกไฟล์แล้ว {done} จาก {total} ล้มเหลว: {names}"
+
+#: compressionManager.py:456
+msgid "Extracted {name} to {path}"
+msgstr "แยก {name} ไปยัง {path} แล้ว"
+
+#: compressionManager.py:519
+msgid "Extracting {count} files..."
+msgstr "กำลังแยก {count} ไฟล์..."
+
+#: compressionManager.py:469
+msgid "Extracting..."
+msgstr "กำลังแยก..."
+
+#: compressionManager.py:452
+msgid "Extraction completed to {path}"
+msgstr "การแยกไปยัง {path} เสร็จสมบูรณ์"
+
+#: compressionManager.py:507
+msgid "Extraction completed: {count} files, each in its own folder"
+msgstr "การแยกเสร็จสมบูรณ์: {count} ไฟล์ แต่ละไฟล์อยู่ในโฟลเดอร์ของตัวเอง"
+
+#: compressionManager.py:440
+msgid "Extraction failed"
+msgstr "การแยก ล้มเหลว"
+
+#: compressionManager.py:404
+#: compressionManager.py:461
+msgid "Extraction failed: {error}"
+msgstr "การแยก ล้มเหลว: {error}"
+
+#: compressionManager.py:482
+msgid "Extraction is already running"
+msgstr "การแยกกำลังทำงานอยู่แล้ว"
+
+#: compressionManager.py:435
+msgid "Extraction timed out"
+msgstr "การแยกหมดเวลา"
+
+#: folderTools.py:1988
+msgid "Failed to rename any folders"
+msgstr "ไม่สามารถเปลี่ยนชื่อโฟลเดอร์ใดๆ ได้"
+
+#: compressionManager.py:201
 msgid "Failed to start compression"
-msgstr "ไม่สามารถเริ่มการบีบอัด"
+msgstr "ไม่สามารถเริ่มการบีบอัดได้"
+
+#: freezeManager.py:667
+msgid "File"
+msgstr "ไฟล์"
+
+#: contextMenu.py:383
+#: contextMenu.py:386
+msgid "File Basket"
+msgstr "ตะกร้าไฟล์"
+
+#: fileBasketManager.py:31
+msgid "File Basket Collection"
+msgstr "การรวบรวมตะกร้าไฟล์"
+
+#: xPlorer_engine.py:1105
+msgid "File Basket: Add selected item(s) to the file basket (single tap), open the file basket (double tap), or clear the file basket (triple tap)"
+msgstr "ตะกร้าไฟล์: เพิ่มรายการที่เลือกไปยังตะกร้าไฟล์ (แตะครั้งเดียว), เปิดตะกร้าไฟล์ (แตะสองครั้ง), หรือล้างตะกร้าไฟล์ (แตะสามครั้ง)"
+
+#: batchRenameManager.py:238
+msgid "File already exists: {0}"
+msgstr "มีไฟล์นี้อยู่แล้ว: {0}"
+
+#: xPlorer_engine.py:1112
+msgid "File basket manager not available"
+msgstr "ตัวจัดการตะกร้าไฟล์ไม่พร้อมใช้งาน"
 
 #: createFile.py:138
 msgid "File count cannot exceed 10"
@@ -309,13 +870,13 @@ msgstr "จำนวนไฟล์ต้องมีอย่างน้อย
 msgid "File name"
 msgstr "ชื่อไฟล์"
 
-#: fileOperations.py:59
+#: fileOperations.py:68
 msgid "File name cannot be empty"
 msgstr "ชื่อไฟล์ต้องไม่ว่างเปล่า"
 
-#: fileOperations.py:337
+#: fileOperations.py:1541
 msgid "File name not changed"
-msgstr "ชื่อไฟล์ไม่เปลี่ยนแปลง"
+msgstr "ไม่ได้เปลี่ยนชื่อไฟล์"
 
 #: createFile.py:66
 #: createFile.py:113
@@ -326,336 +887,1348 @@ msgstr "ชื่อไฟล์ {index}:"
 msgid "File name:"
 msgstr "ชื่อไฟล์:"
 
-#: __init__.py:850
+#: folderTools.py:1733
+msgid "File not found"
+msgstr "ไม่พบไฟล์"
+
+#: xPlorer_engine.py:1062
+#: xPlorer_engine.py:1068
+#: xPlorer_engine.py:1089
 msgid "File operations manager not available"
-msgstr "ตัวจัดการการดำเนินการไฟล์ไม่พร้อมใช้งาน"
+msgstr "ตัวจัดการการทำงานของไฟล์ไม่พร้อมใช้งาน"
 
-#: fileOperations.py:344
+#: fileOperations.py:1548
 msgid "File renamed to {name}"
-msgstr "เปลี่ยนชื่อไฟล์เป็น {name}"
+msgstr "เปลี่ยนชื่อไฟล์เป็น {name} แล้ว"
 
-#: robocopyManager.py:448
+#: contextMenu.py:970
+msgid "File system: {0}"
+msgstr "ระบบไฟล์: {0}"
+
+#: flatViewManager.py:151
+msgid "Files found: {names}"
+msgstr "ไฟล์ที่พบ: {names}"
+
+#: duplicateFinderManager.py:101
+msgid "Files in this group:"
+msgstr "ไฟล์ในกลุ่มนี้:"
+
+#: fileOperations.py:261
+msgid "Files only"
+msgstr "ไฟล์เท่านั้น"
+
+#: flatViewManager.py:37
+msgid "Filter (type to narrow the list):"
+msgstr "ตัวกรอง (พิมพ์เพื่อจำกัดรายการให้แคบลง):"
+
+#: batchRenameManager.py:59
+msgid "Find and replace"
+msgstr "ค้นหาและแทนที่"
+
+#: robocopyManager.py:490
 msgid "Finished {n} of {total}: {name}"
-msgstr "เสร็จ {n} จาก {total}: {name}"
+msgstr "เสร็จสิ้น {n} จาก {total}: {name}"
 
-#: folderTools.py:227
-#: folderTools.py:267
+#: contextMenu.py:451
+msgid "Flat View"
+msgstr "มุมมองแบบแบน"
+
+#: flatViewManager.py:21
+msgid "Flat View: {0}"
+msgstr "มุมมองแบบแบน: {0}"
+
+#: xPlorer_engine.py:954
+msgid "Flat view tool not available"
+msgstr "เครื่องมือมุมมองแบบแบนไม่พร้อมใช้งาน"
+
+#: folderTools.py:1188
+msgid "Focus a single file first to select others with the same extension"
+msgstr "โฟกัสไฟล์เดียว1ไฟล์ก่อน เพื่อเลือกไฟล์อื่นที่มีนามสกุลเดียวกัน"
+
+#: flatViewManager.py:46
+#: folderTools.py:302
+#: folderTools.py:342
+#: freezeManager.py:667
 msgid "Folder"
-msgstr "โฟลเดอร์"
+msgstr "โฟล์เดอร์"
 
-#: folderTools.py:605
-#: folderTools.py:675
+#: folderTools.py:768
+#: folderTools.py:838
 msgid "Folder '{}' already exists, creating '{}' instead"
-msgstr "โฟลเดอร์ '{}' มีอยู่แล้ว กำลังสร้าง '{}' แทน"
+msgstr "มีโฟล์เดอร์ '{}' อยู่แล้ว กำลังสร้าง '{}' แทน"
 
-#: __init__.py:905
+#: contextMenu.py:407
+msgid "Folder Sync & Compare"
+msgstr "ซิงค์และเปรียบเทียบโฟลเดอร์"
+
+#: xPlorer_engine.py:1459
 msgid "Folder creation dialog not available"
-msgstr "กล่องโต้ตอบสร้างโฟลเดอร์ไม่พร้อมใช้งาน"
+msgstr "ไม่มีหน้าต่างสร้างโฟลเดอร์"
 
-#: __init__.py:867
+#: xPlorer_engine.py:1408
 msgid "Folder creator helper not available"
-msgstr "ตัวช่วยสร้างโฟลเดอร์ไม่พร้อมใช้งาน"
+msgstr "ไม่มีตัวช่วยสร้างโฟลเดอร์"
 
-#: contextMenu.py:131
-#: contextMenu.py:134
-#: contextMenu.py:155
+#: contextMenu.py:564
+#: contextMenu.py:634
+#: contextMenu.py:637
+#: contextMenu.py:640
 msgid "Folder info"
 msgstr "ข้อมูลโฟลเดอร์"
 
-#: folderTools.py:142
+#: folderTools.py:217
 msgid "Folder title:"
-msgstr "ชื่อเรื่องโฟลเดอร์:"
+msgstr "ชื่อโฟลเดอร์:"
 
-#: contextMenu.py:47
+#: contextMenu.py:456
+msgid "Folder to ISO"
+msgstr "โฟลเดอร์เป็น ISO"
+
+#: fileOperations.py:259
+msgid "Folders and files"
+msgstr "โฟลเดอร์และไฟล์"
+
+#: workspaceManager.py:86
+msgid "Folders in this workspace:"
+msgstr "โฟลเดอร์ในพื้นที่ทำงานนี้:"
+
+#: fileOperations.py:260
+msgid "Folders only"
+msgstr "เฉพาะโฟลเดอร์เท่านั้น"
+
+#: fileOperations.py:239
+msgid "Folders: {folders}, files: {files}, total size: {size}"
+msgstr "โฟลเดอร์: {folders}, ไฟล์: {files}, ขนาดรวม: {size}"
+
+#: duplicateFinderManager.py:90
+msgid "Found {0} duplicate groups"
+msgstr "พบกลุ่มที่ซ้ำกัน {0} กลุ่ม"
+
+#: duplicateFinderManager.py:329
+msgid "Found {0} duplicate groups, {1} redundant files"
+msgstr "พบกลุ่มที่ซ้ำกัน {0} กลุ่ม, ไฟล์ส่วนเกิน {1} ไฟล์"
+
+#: contextMenu.py:984
+msgid "Free space: {0}"
+msgstr "พื้นที่ว่าง: {0}"
+
+#: freezeManager.py:1059
+msgid "Freeze"
+msgstr "แช่แข็ง"
+
+#: contextMenu.py:423
+msgid "Freeze Selected"
+msgstr "แช่แข็งรายการที่เลือก"
+
+#: xPlorer_engine.py:1123
+msgid "Freeze manager not available"
+msgstr "ไม่มีตัวจัดการการแช่แข็ง"
+
+#: freezeManager.py:1061
+msgid "Freeze, {count} items"
+msgstr "แช่แข็งแล้ว, {count} รายการ"
+
+#: xPlorer_engine.py:1127
+msgid "Freeze: freeze selected items (single tap), unfreeze selected items (double tap), or open the Freezer list (triple tap)"
+msgstr "แช่แข็ง: แช่แข็งรายการที่เลือก (แตะครั้งเดียว), ยกเลิกการแช่แข็งรายการที่เลือก (แตะสองครั้ง), หรือเปิดรายการที่แช่แข็ง (แตะสามครั้ง)"
+
+#: contextMenu.py:428
+#: freezeManager.py:635
+msgid "Freezer"
+msgstr "รายการที่แช่แข็ง"
+
+#: freezeManager.py:680
+msgid "Freezer - {count} frozen items"
+msgstr "รายการที่แช่แข็ง - {count} รายการที่แช่แข็ง"
+
+#: freezeManager.py:832
+#: freezeManager.py:893
+msgid "Freezing"
+msgstr "กำลังตรึง"
+
+#: freezeManager.py:1086
+msgid "Frozen by a parent folder. Unfreeze the parent folder instead"
+msgstr "ถูกตรึงโดยโฟลเดอร์หลัก โปรดเลิกตรึงโฟลเดอร์หลักแทน"
+
+#: batchRenameManager.py:232
+#: batchRenameManager.py:402
+msgid "Frozen item skipped: {0}"
+msgstr "ข้ามรายการที่ถูกตรึง: {0}"
+
+#: freezeManager.py:642
+msgid "Frozen items"
+msgstr "รายการที่ถูกตรึง"
+
+#: contextMenu.py:827
+msgid "GB"
+msgstr "GB"
+
+#: contextMenu.py:439
 msgid "Headline Case"
-msgstr "ตัวพิมพ์หัวข้อข่าว"
+msgstr "ตัวพิมพ์หัวข้อ"
 
-#: folderTools.py:278
+#: fileOperations.py:1353
+msgid "ISO created: {name}, {size}"
+msgstr "สร้าง ISO แล้ว: {name}, {size}"
+
+#: fileOperations.py:1345
+msgid "ISO creation failed: {error}"
+msgstr "การสร้าง ISO ล้มเหลว: {error}"
+
+#: fileOperations.py:1190
+msgid "ISO creation is already running"
+msgstr "การสร้าง ISO กำลังทำงานอยู่แล้ว"
+
+#: syncCompareManager.py:20
+msgid "Identical"
+msgstr "เหมือนกัน"
+
+#: fileOperations.py:457
+msgid "Include subfolder contents in folder sizes"
+msgstr "รวมเนื้อหาของโฟลเดอร์ย่อยในขนาดโฟลเดอร์"
+
+#: folderTools.py:1557
+msgid "Include subfolders (search all levels, like Flat View)"
+msgstr "รวมโฟลเดอร์ย่อย (ค้นหาทุกระดับ เช่น มุมมองแบบแบน)"
+
+#: fileOperations.py:282
+msgid "Include the contents of subfolders in folder sizes (slower)"
+msgstr "รวมเนื้อหาของโฟลเดอร์ย่อยในขนาดโฟลเดอร์ (ช้ากว่า)"
+
+#: fileOperations.py:473
+msgid "Including subfolders"
+msgstr "กำลังรวมโฟลเดอร์ย่อย"
+
+#: folderTools.py:353
 msgid "Invalid number for folders"
-msgstr "หมายเลขไม่ถูกต้องสำหรับโฟลเดอร์"
+msgstr "จำนวนโฟลเดอร์ไม่ถูกต้อง"
 
-#: contextMenu.py:27
+#: folderTools.py:1642
+#: folderTools.py:1848
+msgid "Invalid regular expression: {0}"
+msgstr "นิพจน์เรกูลาเอ็กสเพรสชันไม่ถูกต้อง: {0}"
+
+#: contextMenu.py:479
 msgid "Invert selection"
-msgstr "กลับการเลือก"
+msgstr "สลับการเลือก"
 
-#: contextMenu.py:45
+#: fileBasketManager.py:113
+msgid "Item removed"
+msgstr "ลบรายการแล้ว"
+
+#: fileOperations.py:350
+msgid "Items"
+msgstr "รายการ"
+
+#: fileBasketManager.py:39
+msgid "Items in the basket:"
+msgstr "รายการในตะกร้า:"
+
+#: contextMenu.py:827
+msgid "KB"
+msgstr "KB"
+
+#: duplicateFinderManager.py:111
+msgid "Keep File in This Folder"
+msgstr "เก็บไฟล์ไว้ในโฟลเดอร์นี้"
+
+#: duplicateFinderManager.py:107
+msgid "Keep Newest"
+msgstr "เก็บรายการใหม่ที่สุด"
+
+#: duplicateFinderManager.py:109
+msgid "Keep Oldest"
+msgstr "เก็บรายการเก่าที่สุด"
+
+#: duplicateFinderManager.py:189
+msgid "Kept {0}, moved {1} duplicates to the Recycle Bin"
+msgstr "เก็บ {0} ย้าย {1} รายการซ้ำไปที่ถังขยะ"
+
+#: syncCompareManager.py:196
+msgid "Left and right folders are the same"
+msgstr "โฟลเดอร์ซ้ายและขวาเหมือนกัน"
+
+#: syncCompareManager.py:45
+msgid "Left: {0}   Right: {1}"
+msgstr "ซ้าย: {0}   ขวา: {1}"
+
+#: fileOperations.py:280
+msgid "List folders before files"
+msgstr "แสดงโฟลเดอร์ก่อนไฟล์"
+
+#: workspaceManager.py:271
+msgid "Load Workspace"
+msgstr "โหลดพื้นที่ทำงาน"
+
+#: workspaceManager.py:670
+msgid "Loaded workspace {name}: opened {opened}, already open {reused}"
+msgstr "โหลดพื้นที่ทำงาน {name} แล้ว: เปิด {opened}, เปิดอยู่แล้ว {reused}"
+
+#: contextMenu.py:968
+msgid "Local"
+msgstr "ในเครื่อง"
+
+#: contextMenu.py:992
+msgid "Location: {0}"
+msgstr "ตำแหน่ง: {0}"
+
+#: contextMenu.py:435
 msgid "Lowercase"
 msgstr "ตัวพิมพ์เล็ก"
 
-#: folderTools.py:275
+#: contextMenu.py:827
+msgid "MB"
+msgstr "เมกะไบต์"
+
+#: contextMenu.py:402
+msgid "Mark Left Folder (Sync Compare)"
+msgstr "กำหนดโฟลเดอร์ซ้าย (เปรียบเทียบซิงค์)"
+
+#: syncCompareManager.py:178
+msgid "Marked as left folder: {0}. Navigate to the right folder and run compare again"
+msgstr "กำหนดเป็นโฟลเดอร์ซ้ายแล้ว: {0} ไปที่โฟลเดอร์ขวาแล้วเรียกใช้การเปรียบเทียบอีกครั้ง"
+
+#: folderTools.py:1577
+msgid "Matching items (Enter opens, Ctrl+C/Ctrl+X copy/cut, Ctrl+Space toggles a pick, right-click or Menu key for more):"
+msgstr "รายการที่ตรงกัน (กด Enter เพื่อเปิด, Ctrl+C/Ctrl+X เพื่อคัดลอก/ตัด, Ctrl+Space เพื่อเลือก/ยกเลิกการเลือก, คลิกขวาหรือกดปุ่มเมนูสำหรับตัวเลือกเพิ่มเติม):"
+
+#: folderTools.py:350
 msgid "Maximum 100 folders allowed"
 msgstr "อนุญาตสูงสุด 100 โฟลเดอร์"
 
-#: __init__.py:909
+#: fileBasketManager.py:51
+#: fileBasketManager.py:163
+msgid "Mirror Copy"
+msgstr "คัดลอกแบบมิรเรอร์"
+
+#: fileBasketManager.py:414
+msgid "Mirror copied {0} items from the basket"
+msgstr "คัดลอกแบบมิเรอร์ {0} รายการจากตะกร้า"
+
+#: batchRenameManager.py:406
+msgid "Missing file, cannot undo: {0}"
+msgstr "ไม่พบไฟล์ ไม่สามารถเลิกทำได้: {0}"
+
+#: contextMenu.py:1015
+msgid "Modified: {0}"
+msgstr "แก้ไขเมื่อ: {0}"
+
+#: fileBasketManager.py:51
+#: fileBasketManager.py:161
+msgid "Move"
+msgstr "ย้าย"
+
+#: workspaceManager.py:326
+msgid "Move Down"
+msgstr "ย้ายลง"
+
+#: workspaceManager.py:325
+msgid "Move Up"
+msgstr "ย้ายขึ้น"
+
+#: freezeManager.py:29
+msgid "Move canceled"
+msgstr "ยกเลิกการย้าย"
+
+#: folderTools.py:1826
+msgid "Move {count} item(s) to the Recycle Bin?"
+msgstr "ย้าย {count} รายการ ไปยังถังรีไซเคิลหรือไม่"
+
+#: robocopyManager.py:503
+msgid "Moved"
+msgstr "ย้ายแล้ว"
+
+#: fileBasketManager.py:377
+msgid "Moved {0} items from the basket"
+msgstr "ย้าย {0} รายการออกจากตะกร้า"
+
+#: folderTools.py:1833
+msgid "Moved {count} item(s) to the Recycle Bin"
+msgstr "ย้าย {count} รายการไปยังถังรีไซเคิล"
+
+#: batchRenameManager.py:43
+msgid "Multi-Rename Tool"
+msgstr "เครื่องมือเปลี่ยนชื่อหลายรายการ"
+
+#: contextMenu.py:481
+msgid "Multi-select"
+msgstr "เลือกหลายรายการ"
+
+#: flatViewManager.py:45
+msgid "Name"
+msgstr "ชื่อ"
+
+#: fileOperations.py:249
+msgid "Name followed by size"
+msgstr "ชื่อตามด้วยขนาด"
+
+#: fileOperations.py:253
+msgid "Name, A to Z"
+msgstr "ชื่อจาก A ถึง Z"
+
+#: fileOperations.py:254
+msgid "Name, Z to A"
+msgstr "ชื่อจาก Z ถึง A"
+
+#: contextMenu.py:991
+msgid "Name: {0}"
+msgstr "ชื่อ: {0}"
+
+#: contextMenu.py:968
+msgid "Network name: {0}"
+msgstr "ชื่อเครือข่าย: {0}"
+
+#: fileOperations.py:1504
+msgid "New name is the same as the current name"
+msgstr "ชื่อใหม่เหมือนกับชื่อปัจจุบัน"
+
+#: workspaceManager.py:75
+msgid "New workspace"
+msgstr "พื้นที่ทำงานใหม่"
+
+#: flatViewManager.py:225
+#: syncCompareManager.py:175
+#: syncCompareManager.py:189
+#: xPlorer_engine.py:1463
 msgid "No Explorer folder detected"
 msgstr "ไม่พบโฟลเดอร์ Explorer"
 
-#: fileOperations.py:219
-#: fileOperations.py:276
+#: fileOperations.py:1085
+#: fileOperations.py:1158
 msgid "No access to size data"
-msgstr "ไม่สามารถเข้าถึงข้อมูลขนาด"
+msgstr "ไม่สามารถเข้าถึงข้อมูลขนาดได้"
 
-#: folderTools.py:769
+#: folderTools.py:1127
+#: folderTools.py:1479
 msgid "No active File Explorer window found"
-msgstr "ไม่พบหน้าต่าง File Explorer ที่ทำงานอยู่"
+msgstr "ไม่พบหน้าต่าง File Explorer ที่ใช้งานอยู่"
 
-#: clipboardManager.py:127
+#: batchRenameManager.py:220
+msgid "No changes to apply"
+msgstr "ไม่มีเปลี่ยนแปลงที่ต้องใช้"
+
+#: clipboardManager.py:143
 msgid "No content could be read from selected files"
-msgstr "ไม่สามารถอ่านเนื้อหาจากไฟล์ที่เลือก"
+msgstr "ไม่สามารถอ่านเนื้อหาจากไฟล์ที่เลือกได้"
 
-#: createFile.py:284
+#: duplicateFinderManager.py:91
+#: duplicateFinderManager.py:325
+msgid "No duplicate files found"
+msgstr "ไม่พบไฟล์ที่ซ้ำกัน"
+
+#: duplicateFinderManager.py:159
+msgid "No duplicate group selected"
+msgstr "ไม่ได้เลือกกลุ่มไฟล์ที่ซ้ำกัน"
+
+#: flatViewManager.py:148
+msgid "No files found"
+msgstr "ไม่พบไฟล์"
+
+#: batchRenameManager.py:335
+msgid "No files selected or found in the current folder"
+msgstr "ไม่ได้เลือกหรือพบไฟล์ในโฟลเดอร์ปัจจุบัน"
+
+#: createFile.py:288
 msgid "No files were created"
-msgstr "ไม่ได้สร้างไฟล์ใด ๆ"
+msgstr "ไม่มีการสร้างไฟล์"
 
-#: folderTools.py:964
-#: folderTools.py:970
-#: folderTools.py:979
-#: folderTools.py:985
+#: workspaceManager.py:221
+msgid "No folder selected"
+msgstr "ไม่ได้เลือกโฟลเดอร์"
+
+#: folderTools.py:2003
+#: folderTools.py:2009
+#: folderTools.py:2018
+#: folderTools.py:2024
 msgid "No folders found"
 msgstr "ไม่พบโฟลเดอร์"
 
-#: __init__.py:931
+#: xPlorer_engine.py:1488
 msgid "No folders selected"
 msgstr "ไม่ได้เลือกโฟลเดอร์"
 
-#: __init__.py:946
+#: xPlorer_engine.py:1502
 msgid "No folders selected or current folder not available"
-msgstr "ไม่ได้เลือกโฟลเดอร์หรือโฟลเดอร์ปัจจุบันไม่พร้อมใช้งาน"
+msgstr "ไม่ได้เลือกโฟลเดอร์ หรือโฟลเดอร์ปัจจุบันไม่พร้อมใช้งาน"
 
-#: folderTools.py:341
-#: folderTools.py:649
-#: folderTools.py:699
+#: folderTools.py:416
+#: folderTools.py:812
+#: folderTools.py:862
 msgid "No folders were created"
-msgstr "ไม่ได้สร้างโฟลเดอร์ใด ๆ"
+msgstr "ไม่มีการสร้างโฟลเดอร์"
 
-#: folderTools.py:81
+#: fileBasketManager.py:107
+#: flatViewManager.py:176
+#: flatViewManager.py:190
+#: folderTools.py:146
+#: freezeManager.py:691
+#: syncCompareManager.py:127
 msgid "No item selected"
 msgstr "ไม่ได้เลือกรายการ"
 
-#: folderTools.py:782
+#: contextMenu.py:899
+msgid "No item to show properties for"
+msgstr "ไม่มีรายการให้แสดงคุณสมบัติ"
+
+#: folderTools.py:1139
+#: folderTools.py:1491
 msgid "No items in folder"
 msgstr "ไม่มีรายการในโฟลเดอร์"
 
-#: clipboardManager.py:27
-#: clipboardManager.py:62
-#: compressionManager.py:148
-#: fileOperations.py:210
-#: fileOperations.py:306
+#: clipboardManager.py:30
+#: clipboardManager.py:68
+#: compressionManager.py:161
+#: compressionManager.py:330
+#: fileBasketManager.py:225
+#: fileOperations.py:1076
+#: fileOperations.py:1418
+#: fileOperations.py:1448
+#: freezeManager.py:1037
+#: freezeManager.py:1068
 msgid "No items selected"
 msgstr "ไม่ได้เลือกรายการ"
 
-#: clipboardManager.py:79
+#: fileOperations.py:448
+msgid "No items to show"
+msgstr "ไม่มีรายการให้แสดง"
+
+#: folderTools.py:1274
+msgid "No matches found for {term}"
+msgstr "ไม่พบผลลัพธ์ที่ตรงกับ {term}"
+
+#: operationHistoryManager.py:39
+#: operationHistoryManager.py:70
+msgid "No operations recorded yet"
+msgstr "ยังไม่มีการบันทึกการทำงาน"
+
+#: contextMenu.py:279
+msgid "No recent locations yet"
+msgstr "ยังไม่มีตำแหน่งล่าสุด"
+
+#: batchRenameManager.py:378
+#: batchRenameManager.py:391
+msgid "No rename operation to undo"
+msgstr "ไม่มีการดำเนินการเปลี่ยนชื่อให้เลิกทำ"
+
+#: folderTools.py:1728
+#: folderTools.py:1764
+#: folderTools.py:1785
+#: folderTools.py:1799
+#: folderTools.py:1812
+#: folderTools.py:1823
+msgid "No result selected"
+msgstr "ไม่ได้เลือกผลลัพธ์"
+
+#: clipboardManager.py:86
 msgid "No text files selected"
 msgstr "ไม่ได้เลือกไฟล์ข้อความ"
 
-#: folderTools.py:591
-#: folderTools.py:661
+#: folderTools.py:754
+#: folderTools.py:824
 msgid "No valid folder names found in the file"
 msgstr "ไม่พบชื่อโฟลเดอร์ที่ถูกต้องในไฟล์"
 
-#: folderTools.py:296
+#: folderTools.py:371
 msgid "No valid folder names provided"
 msgstr "ไม่ได้ระบุชื่อโฟลเดอร์ที่ถูกต้อง"
 
-#: __init__.py:976
+#: workspaceManager.py:190
+msgid "No valid folder paths found"
+msgstr "ไม่พบเส้นทางโฟลเดอร์ที่ถูกต้อง"
+
+#: workspaceManager.py:314
+msgid "No workspace selected"
+msgstr "ไม่ได้เลือกพื้นที่ทำงาน"
+
+#: workspaceManager.py:301
+#: workspaceManager.py:310
+msgid "No workspaces saved yet"
+msgstr "ยังไม่มีการบันทึกพื้นที่ทำงาน"
+
+#: duplicateFinderManager.py:181
+msgid "None of the copies are directly in the scanned folder"
+msgstr "ไม่สำเนาใดอยู่"
+
+#: workspaceManager.py:675
+msgid "None of the folders in workspace {0} could be found"
+msgstr "ไม่พบโฟลเดอร์ใดในพื้นที่ทำงาน {0}"
+
+#: contextMenu.py:233
+#: contextMenu.py:269
+msgid "Normal display"
+msgstr "การแสดงผลปกติ"
+
+#: folderTools.py:1565
+msgid "Normal search"
+msgstr "การค้นหาปกติ"
+
+#: fileOperations.py:1242
+msgid "Not enough free disk space"
+msgstr "พื้นที่ว่างในดิสก์ไม่เพียงพอ"
+
+#: xPlorer_engine.py:1533
 msgid "Not focused on File Explorer"
-msgstr "ไม่ได้โฟกัสที่ File Explorer"
+msgstr "ไม่ได้โฟกัสอยู่ที่ File Explorer"
+
+#: freezeManager.py:1088
+msgid "Not frozen"
+msgstr "ไม่ได้แช่แข็ง"
 
 #: createFile.py:198
-#: folderTools.py:541
-#: folderTools.py:763
+#: fileOperations.py:1187
+#: fileOperations.py:1366
+#: folderTools.py:700
+#: folderTools.py:1102
+#: folderTools.py:1181
+#: folderTools.py:1214
+#: folderTools.py:1451
+#: xPlorer_engine.py:1138
+#: xPlorer_engine.py:1211
 msgid "Not in File Explorer"
 msgstr "ไม่อยู่ใน File Explorer"
 
+#: duplicateFinderManager.py:170
+msgid "Nothing to remove in this group"
+msgstr "ไม่มีสิ่งใดให้ลบในกลุ่มนี้"
+
 #: createFile.py:28
 msgid "Number of files to create:"
-msgstr "จำนวนไฟล์ที่จะสร้าง:"
+msgstr "จำนวนไฟล์ที่ต้องสร้าง:"
 
-#: folderTools.py:272
+#: folderTools.py:347
 msgid "Number of folders must be at least 1"
 msgstr "จำนวนโฟลเดอร์ต้องมีอย่างน้อย 1"
 
-#: folderTools.py:150
+#: folderTools.py:225
 msgid "Number of folders:"
 msgstr "จำนวนโฟลเดอร์:"
 
-#: __init__.py:844
-msgid "Open xPlorer context menu"
-msgstr "เปิดเมนูบริบท xPlorer"
+#: fileOperations.py:292
+msgid "OK"
+msgstr "ตกลง"
 
-#: folderTools.py:554
+#: syncCompareManager.py:17
+msgid "Only in left"
+msgstr "เฉพาะในซ้าย"
+
+#: syncCompareManager.py:18
+msgid "Only in right"
+msgstr "เฉพาะในขวา"
+
+#: flatViewManager.py:51
+msgid "Open Containing Folder"
+msgstr "เปิดโฟลเดอร์ที่บรรจุอยู่"
+
+#: contextMenu.py:418
+msgid "Open Freezer"
+msgstr "เปิด Freezer"
+
+#: folderTools.py:1769
+msgid "Open to path"
+msgstr "เปิดไปยังพาธ"
+
+#: xPlorer_engine.py:1037
+msgid "Open xPlorer context menu (single tap), Recent Locations (double tap), or Current folder size list (triple tap)"
+msgstr "เปิดเมนูบริบท xPlorer (แตะครั้งเดียว), ตำแหน่งล่าสุด (แตะสองครั้ง), หรือรายการขนาดโฟลเดอร์ปัจจุบัน (แตะสามครั้ง)"
+
+#: contextMenu.py:533
+#: operationHistoryManager.py:26
+msgid "Operation History"
+msgstr "ประวัติการทำงาน"
+
+#: operationHistoryManager.py:72
+msgid "Operation history cleared"
+msgstr "ล้างประวัติการทำงานแล้ว"
+
+#: workspaceManager.py:95
+msgid "Or paste/type folder paths here, one per line:"
+msgstr "หรือวาง/พิมพ์พาธโฟลเดอร์ที่นี่ บรรทัดละหนึ่งพาธ:"
+
+#: batchRenameManager.py:409
+msgid "Original name is taken, cannot undo: {0}"
+msgstr "ชื่อเดิมถูกใช้ไปแล้ว ไม่สามารถเลิกทำได้: {0}"
+
+#: freezeManager.py:32
+msgid "Overwrite canceled"
+msgstr "ยกเลิกการเขียนทับแล้ว"
+
+#: freezeManager.py:31
+msgid "Paste canceled"
+msgstr "ยกเลิกการวางแล้ว"
+
+#: fileBasketManager.py:272
+msgid "Path not found: {0}"
+msgstr "ไม่พบเส้นทาง: {0}"
+
+#: folderTools.py:1572
+msgid "Pattern / search text (meaning depends on the mode above):"
+msgstr "รูปแบบ / ข้อความค้นหา (ความหมายขึ้นอยู่กับโหมดด้านบน):"
+
+#: contextMenu.py:230
+msgid "Pin"
+msgstr "ปักหมุด"
+
+#: workspaceManager.py:323
+msgid "Pin to Top"
+msgstr "ปักหมุดไว้ด้านบน"
+
+#: contextMenu.py:259
+msgid "Pinned"
+msgstr "ปักหมุดแล้ว"
+
+#: workspaceManager.py:341
+msgid "Pinned to top: {0}"
+msgstr "ปักหมุดไว้ด้านบนแล้ว: {0}"
+
+#: fileBasketManager.py:156
+msgid "Please choose a valid destination folder"
+msgstr "กรุณาเลือกโฟลเดอร์ปลายทางที่ถูกต้อง"
+
+#: folderTools.py:713
 msgid "Please select a .txt or .rtf file"
 msgstr "กรุณาเลือกไฟล์ .txt หรือ .rtf"
 
-#: fileOperations.py:313
+#: compressionManager.py:335
+msgid "Please select a compressed file"
+msgstr "กรุณาเลือกไฟล์บีบอัด"
+
+#: fileOperations.py:1429
 msgid "Please select a file, not a folder"
 msgstr "กรุณาเลือกไฟล์ ไม่ใช่โฟลเดอร์"
 
-#: fileOperations.py:309
+#: fileOperations.py:1196
+msgid "Please select a folder"
+msgstr "กรุณาเลือกโฟลเดอร์"
+
+#: fileOperations.py:1421
 msgid "Please select only one file"
 msgstr "กรุณาเลือกเพียงไฟล์เดียว"
 
-#: folderTools.py:547
-msgid "Please select only one text file"
-msgstr "กรุณาเลือกไฟล์ข้อความเพียงไฟล์เดียว"
+#: fileOperations.py:1199
+msgid "Please select only one folder"
+msgstr "กรุณาเลือกเพียงโฟลเดอร์เดียว"
 
-#: folderTools.py:791
+#: fileOperations.py:1451
+msgid "Please select only one item"
+msgstr "กรุณาเลือกเพียงรายการเดียว"
+
+#: folderTools.py:706
+msgid "Please select only one text file"
+msgstr "กรุณาเลือกเพียงไฟล์ข้อความเดียว"
+
+#: batchRenameManager.py:90
+msgid "Preview of new file names:"
+msgstr "ตัวอย่างชื่อไฟล์ใหม่:"
+
+#: folderTools.py:1148
+#: folderTools.py:1495
 msgid "Processing {count} items in background..."
 msgstr "กำลังประมวลผล {count} รายการในเบื้องหลัง..."
 
-#: __init__.py:861
-#: contextMenu.py:31
+#: contextMenu.py:555
+#: contextMenu.py:929
+msgid "Properties"
+msgstr "คุณสมบัติ"
+
+#: xPlorer_engine.py:1449
+msgid "Properties menu not available"
+msgstr "เมนูคุณสมบัติไม่สามารถใช้งานได้"
+
+#: contextMenu.py:750
+msgid "Read-only"
+msgstr "read-only"
+
+#: contextMenu.py:750
+msgid "Read-only (frozen, managed by the Freezer)"
+msgstr "อ่านอย่างเดียว (ถูกแช่แข็ง จัดการโดย Freezer)"
+
+#: contextMenu.py:790
+msgid "Read-only turned off"
+msgstr "ปิดโหมดอ่านอย่างเดียว"
+
+#: contextMenu.py:790
+msgid "Read-only turned on"
+msgstr "เปิด"
+
+#: contextMenu.py:530
+msgid "Recent Locations"
+msgstr "ตำแหน่งที่ใช้ล่าสุด"
+
+#: operationHistoryManager.py:34
+msgid "Recent operations (most recent first):"
+msgstr "การดำเนินการล่าสุด (ล่าสุดก่อน):"
+
+#: folderTools.py:1565
+msgid "Regex"
+msgstr "นิพจน์เรกูลาร์"
+
+#: syncCompareManager.py:52
+msgid "Relative Path"
+msgstr "พาธสัมพัทธ์"
+
+#: fileBasketManager.py:72
+#: workspaceManager.py:103
+msgid "Remove Selected"
+msgstr "ลบที่เลือก"
+
+#: duplicateFinderManager.py:190
+msgid "Removed {0} duplicate copies of {1}"
+msgstr "ลบสำเนาที่ซ้ำกัน {0} สำเนาของ {1} แล้ว"
+
+#: freezeManager.py:28
+msgid "Rename canceled"
+msgstr "ยกเลิกการเปลี่ยนชื่อ"
+
+#: batchRenameManager.py:54
+msgid "Rename mode:"
+msgstr "โหมดการเปลี่ยนชื่อ:"
+
+#: contextMenu.py:502
 msgid "Rename selected file"
 msgstr "เปลี่ยนชื่อไฟล์ที่เลือก"
 
-#: __init__.py:688
-msgid "Required manager not available"
-msgstr "ตัวจัดการที่ต้องการไม่พร้อมใช้งาน"
+#: xPlorer_engine.py:1079
+msgid "Rename selected file (single tap), rename using clipboard text (double tap), or undo the last batch rename operation (triple tap)"
+msgstr "เปลี่ยนชื่อไฟล์ที่เลือก (แตะครั้งเดียว), เปลี่ยนชื่อโดยใช้ข้อความในคลิปบอร์ด (แตะสองครั้ง), หรือเลิกทำ"
 
-#: contextMenu.py:34
+#: fileOperations.py:1552
+msgid "Renamed 1 file"
+msgstr "เปลี่ยนชื่อ 1 ไฟล์แล้ว"
+
+#: fileOperations.py:1513
+msgid "Renamed to {name}"
+msgstr "เปลี่ยนชื่อเป็น {name} แล้ว"
+
+#: batchRenameManager.py:251
+msgid "Renamed {0} files"
+msgstr "เปลี่ยนชื่อ {0} ไฟล์แล้ว"
+
+#: fileOperations.py:1516
+msgid "Renamed {old} to {new}"
+msgstr "เปลี่ยนชื่อ {old} เป็น {new} แล้ว"
+
+#: batchRenameManager.py:72
+msgid "Replace with:"
+msgstr "แทนที่ด้วย:"
+
+#: fileOperations.py:460
+msgid "Rescan"
+msgstr "สแกนใหม่"
+
+#: contextMenu.py:234
+#: contextMenu.py:269
+msgid "Reversed display"
+msgstr "กลับลำดับการแสดงผล"
+
+#: batchRenameManager.py:418
+msgid "Reverted {0} file names"
+msgstr "ย้อนกลับชื่อไฟล์ {0} ไฟล์แล้ว"
+
+#: contextMenu.py:515
 msgid "Robocopy"
-msgstr "Robocopy"
+msgstr "โรโบก็อปปี้"
 
-#: robocopyManager.py:457
+#: robocopyManager.py:499
 msgid "Robocopy cancelled"
-msgstr "ยกเลิก Robocopy"
+msgstr "ยกเลิก Robocopy แล้ว"
 
-#: robocopyManager.py:469
-msgid "Robocopy finished successfully. {n} item(s) copied"
-msgstr "Robocopy เสร็จสมบูรณ์ คัดลอก {n} รายการ"
+#: robocopyManager.py:528
+msgid "Robocopy complete. {n} item(s) copied"
+msgstr "Robocopy เสร็จสมบูรณ์ คัดลอกแล้ว {n} รายการ"
 
-#: robocopyManager.py:465
-msgid "Robocopy finished. {ok} succeeded, {failed} failed: {items}"
-msgstr "Robocopy เสร็จสิ้น สำเร็จ {ok} ล้มเหลว {failed}: {items}"
+#: robocopyManager.py:514
+msgid "Robocopy finished. {ok} succeeded, {failed} failed"
+msgstr "Robocopy เสร็จสิ้น สำเร็จ {ok} รายการ, ล้มเหลว {failed} รายการ"
 
-#: __init__.py:768
+#: xPlorer_engine.py:988
 msgid "Robocopy manager not available"
-msgstr "ตัวจัดการ Robocopy ไม่พร้อมใช้งาน"
+msgstr "ไม่พบตัวจัดการ Robocopy"
 
-#: __init__.py:791
+#: robocopyManager.py:546
+msgid "Robocopy: Items That Could Not Be Copied"
+msgstr "Robocopy: รายการที่ไม่สามารถคัดลอกได้"
+
+#: xPlorer_engine.py:996
 msgid "Robocopy: single tap copy, double tap paste, triple tap move"
 msgstr "Robocopy: แตะครั้งเดียวคัดลอก แตะสองครั้งวาง แตะสามครั้งย้าย"
 
-#: contextMenu.py:89
-#: contextMenu.py:100
-#: contextMenu.py:106
-#: contextMenu.py:111
-#: contextMenu.py:117
+#: contextMenu.py:404
+msgid "Run Compare (Sync Compare)"
+msgstr "เรียกใช้การเปรียบเทียบ (เปรียบเทียบเพื่อซิงค์)"
+
+#: workspaceManager.py:108
+msgid "Save"
+msgstr "บันทึก"
+
+#: contextMenu.py:336
+msgid "Save Current as Workspace..."
+msgstr "บันทึกปัจจุบันเป็นพื้นที่ทำงาน..."
+
+#: workspaceManager.py:51
+msgid "Save Workspace"
+msgstr "บันทึกพื้นที่ทำงาน"
+
+#: fileBasketManager.py:140
+msgid "Save Zip File As"
+msgstr "บันทึกไฟล์ซิปเป็น"
+
+#: workspaceManager.py:263
+msgid "Saved workspaces (right-click or press the Menu key for pin/reorder/clear options):"
+msgstr "พื้นที่ทำงานที่บันทึกไว้ (คลิกขวาหรือกดปุ่มเมนูสำหรับตัวเลือกปักหมุด/จัดเรียงใหม่/ล้าง):"
+
+#: contextMenu.py:558
+#: contextMenu.py:608
+#: contextMenu.py:616
+#: contextMenu.py:622
+#: contextMenu.py:627
 msgid "Say size"
-msgstr "อ่านขนาด"
+msgstr "แจ้งขนาด"
 
-#: __init__.py:751
-msgid "Say size (single tap) or compress zip (double tap)"
-msgstr "อ่านขนาด (แตะครั้งเดียว) หรือบีบอัด zip (แตะสองครั้ง)"
+#: xPlorer_engine.py:971
+msgid "Say size (single tap), compress zip (double tap), unzip (triple tap), or folder to ISO (quadruple tap)"
+msgstr "แจ้งขนาด (แตะครั้งเดียว), บีบอัดซิป (แตะสองครั้ง), แตกไฟล์ซิป (แตะสามครั้ง), หรือแปลงโฟลเดอร์เป็น ISO (แตะสี่ครั้ง)"
 
-#: folderTools.py:559
+#: duplicateFinderManager.py:272
+msgid "Scanning {0} for duplicates..."
+msgstr "กำลังสแกน {0} เพื่อหาไฟล์ที่ซ้ำกัน..."
+
+#: fileOperations.py:401
+msgid "Scanning, please wait"
+msgstr "กำลังสแกน กรุณารอสักครู่"
+
+#: flatViewManager.py:41
+msgid "Scanning..."
+msgstr "กำลังสแกน..."
+
+#: folderTools.py:1563
+msgid "Search mode:"
+msgstr "โหมดค้นหา:"
+
+#: fileBasketManager.py:121
+msgid "Select Destination Directory"
+msgstr "เลือกไดเรกทอรีปลายทาง"
+
+#: workspaceManager.py:192
+msgid "Select Folder to Add"
+msgstr "เลือกโฟลเดอร์ที่จะเพิ่ม"
+
+#: duplicateFinderManager.py:264
+msgid "Select a folder, or open one in Explorer, to scan for duplicates"
+msgstr "เลือกโฟลเดอร์ หรือเปิดโฟลเดอร์ใน Explorer เพื่อสแกนหาไฟล์ที่ซ้ำกัน"
+
+#: contextMenu.py:477
+msgid "Select by Extension"
+msgstr "เลือกตามนามสกุล"
+
+#: contextMenu.py:483
+#: folderTools.py:1541
+msgid "Select by Search"
+msgstr "เลือกโดยการค้นหา"
+
+#: xPlorer_engine.py:939
+msgid "Select by Search: Opens Select by Search (single tap), Flat View (double tap), or Batch Rename Tool (triple tap)"
+msgstr "เลือกโดยการค้นหา: เปิดเลือกโดยการค้นหา (แตะครั้งเดียว), มุมมองแบบแบน (แตะสองครั้ง), หรือเครื่องมือเปลี่ยนชื่อชุด (แตะสามครั้ง)"
+
+#: folderTools.py:718
 msgid "Selected file does not exist"
 msgstr "ไฟล์ที่เลือกไม่มีอยู่"
 
-#: folderTools.py:87
+#: folderTools.py:152
 msgid "Selected item is not a folder"
 msgstr "รายการที่เลือกไม่ใช่โฟลเดอร์"
 
-#: folderTools.py:826
-msgid "Selected {count} items"
-msgstr "เลือก {count} รายการ"
+#: fileOperations.py:1460
+msgid "Selected item no longer exists"
+msgstr "รายการที่เลือกไม่มีอยู่อีกต่อไป"
 
-#: folderTools.py:829
+#: fileBasketManager.py:267
+msgid "Selected items are already in the basket"
+msgstr "รายการที่เลือกอยู่ในตะกร้าแล้ว"
+
+#: folderTools.py:1160
+msgid "Selected {count} items"
+msgstr "เลือกแล้ว {count} รายการ"
+
+#: folderTools.py:1263
+msgid "Selected {count} items matching {term}"
+msgstr "เลือกแล้ว {count} รายการที่ตรงกับ {term}"
+
+#: folderTools.py:1197
+msgid "Selected {count} items {ext}"
+msgstr "เลือกแล้ว {count} รายการ {ext}"
+
+#: folderTools.py:1277
+msgid "Selected {count} top-level items containing matches for {term}"
+msgstr "เลือกแล้ว {count} รายการระดับบนสุดที่มีรายการที่ตรงกับ {term}"
+
+#: contextMenu.py:486
+msgid "Selection"
+msgstr "การเลือก"
+
+#: folderTools.py:1163
 msgid "Selection inverted"
-msgstr "กลับการเลือกแล้ว"
+msgstr "สลับการเลือกแล้ว"
+
+#: xPlorer_engine.py:915
+#: xPlorer_engine.py:947
+msgid "Selection manager not available"
+msgstr "ตัวจัดการการเลือกไม่สามารถใช้งานได้"
+
+#: xPlorer_engine.py:923
+msgid "Selection: Select by extension (single tap), invert selection (double tap), or multi-select (triple tap)"
+msgstr "การเลือก: เลือกตามนามสกุล (แตะครั้งเดียว), สลับการเลือก (แตะสองครั้ง), หรือเลือกหลายรายการ (แตะสามครั้ง)"
+
+#: fileOperations.py:455
+msgid "Settings..."
+msgstr "การตั้งค่า..."
+
+#: fileOperations.py:276
+msgid "Show"
+msgstr "แสดง"
+
+#: workspaceManager.py:91
+msgid "Show paths"
+msgstr "แสดงเส้นทาง"
+
+#: flatViewManager.py:47
+msgid "Size"
+msgstr "ขนาด"
+
+#: fileOperations.py:250
+msgid "Size followed by name"
+msgstr "ขนาดตามด้วยชื่อ"
+
+#: fileOperations.py:255
+msgid "Size, largest to smallest"
+msgstr "ขนาด จากใหญ่ไปเล็ก"
+
+#: fileOperations.py:256
+msgid "Size, smallest to largest"
+msgstr "ขนาด จากเล็กไปใหญ่"
+
+#: contextMenu.py:1006
+msgid "Size: calculating..."
+msgstr "ขนาด: กำลังคำนวณ..."
+
+#: contextMenu.py:1008
+msgid "Size: {0}"
+msgstr "ขนาด: {0}"
+
+#: contextMenu.py:1064
+msgid "Size: {0}{1}"
+msgstr "ขนาด: {0}{1}"
+
+#: duplicateFinderManager.py:198
+msgid "Some duplicates could not be removed"
+msgstr "ไม่สามารถลบรายการซ้ำบางรายการได้"
 
 #: createFile.py:170
 msgid "Some files will use default names"
-msgstr "บางไฟล์จะใช้ชื่อเริ่มต้น"
+msgstr "ไฟล์บางไฟล์จะใช้ชื่อเริ่มต้น"
 
-#: compressionManager.py:161
+#: fileOperations.py:271
+msgid "Sort order"
+msgstr "ลำดับการเรียง"
+
+#: compressionManager.py:174
+#: fileOperations.py:1293
 msgid "Starting..."
-msgstr "กำลังเริ่ม..."
+msgstr "กำลังเริ่มต้น..."
 
-#: folderTools.py:987
+#: syncCompareManager.py:53
+msgid "Status"
+msgstr "สถานะ"
+
+#: folderTools.py:2026
 msgid "Successfully converted {count} folders to headline case"
-msgstr "แปลง {count} โฟลเดอร์เป็นตัวพิมพ์หัวข้อข่าวสำเร็จ"
+msgstr "แปลงโฟลเดอร์ {count} โฟลเดอร์เป็นตัวพิมพ์หัวเรื่องเรียบร้อยแล้ว"
 
-#: folderTools.py:972
+#: folderTools.py:2011
 msgid "Successfully converted {count} folders to lowercase"
-msgstr "แปลง {count} โฟลเดอร์เป็นตัวพิมพ์เล็กสำเร็จ"
+msgstr "แปลงโฟลเดอร์ {count} โฟลเดอร์เป็นตัวพิมพ์เล็กเรียบร้อยแล้ว"
 
-#: folderTools.py:981
+#: folderTools.py:2020
 msgid "Successfully converted {count} folders to title case"
-msgstr "แปลง {count} โฟลเดอร์เป็นตัวพิมพ์หัวข้อสำเร็จ"
+msgstr "แปลงโฟลเดอร์ {count} โฟลเดอร์เป็นตัวพิมพ์หัวเรื่องเรียบร้อยแล้ว"
 
-#: folderTools.py:966
+#: folderTools.py:2005
 msgid "Successfully converted {count} folders to uppercase"
-msgstr "แปลง {count} โฟลเดอร์เป็นตัวพิมพ์ใหญ่สำเร็จ"
+msgstr "แปลงโฟลเดอร์ {count} โฟลเดอร์เป็นตัวพิมพ์ใหญ่เรียบร้อยแล้ว"
 
-#: folderTools.py:337
+#: folderTools.py:412
 msgid "Successfully created 1 folder"
-msgstr "สร้าง 1 โฟลเดอร์สำเร็จ"
+msgstr "สร้าง 1 โฟลเดอร์เรียบร้อยแล้ว"
 
-#: folderTools.py:335
+#: folderTools.py:410
 msgid "Successfully created main folder only"
-msgstr "สร้างเฉพาะโฟลเดอร์หลักสำเร็จ"
+msgstr "สร้างเฉพาะโฟลเดอร์หลักเรียบร้อยแล้ว"
 
-#: folderTools.py:339
+#: folderTools.py:414
 msgid "Successfully created {count} of {total} folders"
-msgstr "สร้าง {count} จาก {total} โฟลเดอร์สำเร็จ"
+msgstr "สร้างโฟลเดอร์ {count} จากทั้งหมด {total} โฟลเดอร์เรียบร้อยแล้ว"
 
-#: folderTools.py:645
-#: folderTools.py:695
+#: folderTools.py:808
+#: folderTools.py:858
 msgid "Successfully created {} folders in '{}'"
-msgstr "สร้าง {} โฟลเดอร์ใน '{}' สำเร็จ"
+msgstr "สร้าง {} โฟลเดอร์ใน '{}'เรียบร้อยแล้ว"
 
-#: contextMenu.py:39
+#: batchRenameManager.py:248
+msgid "Successfully renamed {0} files"
+msgstr "เปลี่ยนชื่อ {0} ไฟล์เรียบร้อยแล้ว"
+
+#: fileBasketManager.py:451
+msgid "Successfully {0} {1} items."
+msgstr "{0} {1} รายการเรียบร้อยแล้ว"
+
+#: contextMenu.py:827
+msgid "TB"
+msgstr "เทราไบต์"
+
+#: contextMenu.py:446
 msgid "TXT to Folder"
 msgstr "TXT เป็นโฟลเดอร์"
 
-#: contextMenu.py:46
+#: batchRenameManager.py:60
+msgid "Tag pattern ([C] counter, [D] date, [N] name, [E] extension)"
+msgstr "รูปแบบแท็ก ([C] ตัวนับ, [D] วันที่, [N] ชื่อ, [E] นามสกุล)"
+
+#: batchRenameManager.py:80
+msgid "Tag pattern (e.g. [N]_[C].[E]):"
+msgstr "รูปแบบแท็ก (เช่น [N]_[C].[E]):"
+
+#: batchRenameManager.py:67
+msgid "Text to find:"
+msgstr "ข้อความที่ต้องการค้นหา:"
+
+#: folderTools.py:1193
+msgid "The focused item has no file extension"
+msgstr "รายการที่โฟกัสไม่มีนามสกุลไฟล์"
+
+#: robocopyManager.py:542
+msgid ""
+"The following {n} item(s) could not be copied:\n"
+"\n"
+"{items}"
+msgstr ""
+"ไม่สามารถคัดลอกรายการ {n} รายการต่อไปนี้ได้:\n"
+"\n"
+"{items}"
+
+#: freezeManager.py:1119
+msgid "The freezer is empty"
+msgstr "ช่องแช่แข็งว่างเปล่า"
+
+#: syncCompareManager.py:133
+msgid "This file only exists on the right side"
+msgstr "ไฟล์นี้มีอยู่เฉพาะที่ด้านขวาเท่านั้น"
+
+#: fileOperations.py:1224
+msgid "This folder cannot be converted to ISO"
+msgstr "ไม่สามารถแปลงโฟลเดอร์นี้เป็น ISO ได้"
+
+#: recentLocationsManager.py:223
+msgid "This folder no longer exists: {0}"
+msgstr "โฟลเดอร์นี้ไม่มีอยู่อีกต่อไป: {0}"
+
+#: contextMenu.py:437
 msgid "Title Case"
-msgstr "ตัวพิมพ์หัวข้อ"
+msgstr "ตัวพิมพ์ใหญ่ขึ้นต้นแต่ละคำ"
 
-#: clipboardManager.py:88
+#: contextMenu.py:846
+msgid "Today"
+msgstr "วันนี้"
+
+#: fileOperations.py:475
+msgid "Top level only"
+msgstr "เฉพาะระดับบนสุดเท่านั้น"
+
+#: contextMenu.py:986
+msgid "Total capacity: {0}"
+msgstr "ความจุรวม: {0}"
+
+#: clipboardManager.py:95
 msgid "Total file size is too large to copy content"
-msgstr "ขนาดไฟล์รวมใหญ่เกินไปที่จะคัดลอกเนื้อหา"
+msgstr "ขนาดไฟล์รวมใหญ่เกินกว่าจะคัดลอกเนื้อหาได้"
 
-#: createFile.py:213
+#: createFile.py:215
 msgid "Unable to get current directory after multiple attempts"
-msgstr "ไม่สามารถรับไดเรกทอรีปัจจุบันหลังจากพยายามหลายครั้ง"
+msgstr "ไม่สามารถรับไดเรกทอรีปัจจุบันได้หลังจากพยายามหลายครั้ง"
 
-#: __init__.py:630
+#: fileOperations.py:1373
+#: xPlorer_engine.py:878
 msgid "Unable to get current path"
-msgstr "ไม่สามารถรับพาธปัจจุบัน"
+msgstr "ไม่สามารถรับเส้นทางปัจจุบันได้"
 
-#: folderTools.py:774
+#: folderTools.py:1132
+#: folderTools.py:1484
 msgid "Unable to get folder view"
-msgstr "ไม่สามารถรับมุมมองโฟลเดอร์"
+msgstr "ไม่สามารถรับมุมมองโฟลเดอร์ได้"
 
-#: contextMenu.py:44
+#: batchRenameManager.py:386
+msgid "Unable to read the last rename operation"
+msgstr "ไม่สามารถอ่านการดำเนินการเปลี่ยนชื่อล่าสุดได้"
+
+#: batchRenameManager.py:419
+msgid "Undid rename of {0} files"
+msgstr "ยกเลิกการเปลี่ยนชื่อไฟล์ {0} ไฟล์แล้ว"
+
+#: batchRenameManager.py:103
+#: contextMenu.py:396
+msgid "Undo Last Rename"
+msgstr "เลิกทำ"
+
+#: freezeManager.py:729
+#: freezeManager.py:1081
+msgid "Unfreeze"
+msgstr "ยกเลิกการแช่แข็ง"
+
+#: freezeManager.py:647
+msgid "Unfreeze &all"
+msgstr "ยกเลิกการแช่แข็งทั้งหมด"
+
+#: contextMenu.py:425
+msgid "Unfreeze Selected"
+msgstr "ยกเลิกการแช่แข็งรายการที่เลือก"
+
+#: freezeManager.py:711
+msgid "Unfreeze all"
+msgstr "ยกเลิกการแช่แข็งทั้งหมด"
+
+#: freezeManager.py:730
+msgid "Unfreeze all files and folders"
+msgstr "ยกเลิกการแช่แข็งไฟล์และโฟลเดอร์ทั้งหมด"
+
+#: freezeManager.py:710
+msgid "Unfreeze all {count} items?"
+msgstr "ยกเลิกการตรึงรายการทั้งหมด {count} รายการหรือไม่"
+
+#: freezeManager.py:723
+msgid "Unfreeze all, {count} items"
+msgstr "ยกเลิกการตรึงทั้งหมด, {count} รายการ"
+
+#: freezeManager.py:701
+#: freezeManager.py:1083
+msgid "Unfreeze, {count} items"
+msgstr "ยกเลิกการตรึง, {count} รายการ"
+
+#: contextMenu.py:230
+msgid "Unpin"
+msgstr "เลิกปักหมุด"
+
+#: workspaceManager.py:323
+msgid "Unpin from Top"
+msgstr "เลิกตรึงจากด้านบน"
+
+#: contextMenu.py:259
+msgid "Unpinned"
+msgstr "เลิกปักหมุดแล้ว"
+
+#: workspaceManager.py:341
+msgid "Unpinned: {0}"
+msgstr "เลิกตรึงแล้ว: {0}"
+
+#: contextMenu.py:433
 msgid "Uppercase"
 msgstr "ตัวพิมพ์ใหญ่"
 
-#: clipboardManager.py:104
-msgid "[Error processing RTF file]"
-msgstr "[ข้อผิดพลาดในการประมวลผลไฟล์ RTF]"
+#: batchRenameManager.py:77
+msgid "Use regular expressions (regex)"
+msgstr "ใช้ นิพจน์ทั่วไป (regex)"
 
-#: clipboardManager.py:106
-msgid "[RTF content - striprtf module not available]"
-msgstr "[เนื้อหา RTF - โมดูล striprtf ไม่พร้อมใช้งาน]"
+#: contextMenu.py:985
+msgid "Used space: {0}"
+msgstr "พื้นที่ที่ใช้: {0}"
 
-#: compressionManager.py:114
+#: folderTools.py:1565
+msgid "Wildcard"
+msgstr "อักขระตัวแทน"
+
+#: contextMenu.py:520
+#: workspaceManager.py:255
+msgid "Workspace Manager"
+msgstr "ตัวจัดการพื้นที่ทำงาน"
+
+#: workspaceManager.py:395
+msgid "Workspace deleted: {0}"
+msgstr "ลบพื้นที่ทำงานแล้ว: {0}"
+
+#: workspaceManager.py:210
+#: xPlorer_engine.py:1147
+msgid "Workspace manager not available"
+msgstr "ตัวจัดการพื้นที่ทำงานไม่พร้อมใช้งาน"
+
+#: workspaceManager.py:81
+msgid "Workspace name:"
+msgstr "ชื่อพื้นที่ทำงาน:"
+
+#: workspaceManager.py:545
+msgid "Workspace not found: {0}"
+msgstr "ไม่พบพื้นที่ทำงาน: {0}"
+
+#: workspaceManager.py:736
+msgid "Workspace saved: {0}"
+msgstr "บันทึกพื้นที่ทำงานแล้ว: {0}"
+
+#: workspaceManager.py:384
+msgid "Workspace updated: {0}"
+msgstr "อัปเดตพื้นที่ทำงานแล้ว: {0}"
+
+#: xPlorer_engine.py:1155
+msgid "Workspace: Open menu (single tap), add selected folder or save current as workspace (double tap), or edit saved workspaces (triple tap)"
+msgstr "พื้นที่ทำงาน: เปิดเมนู (แตะครั้งเดียว), เพิ่มโฟลเดอร์ที่เลือกหรือบันทึกปัจจุบันเป็นพื้นที่ทำงาน (แตะสองครั้ง), หรือแก้ไขพื้นที่ทำงานที่บันทึกไว้ (แตะสามครั้ง)"
+
+#: contextMenu.py:848
+msgid "Yesterday"
+msgstr "เมื่อวานนี้"
+
+#: fileBasketManager.py:51
+#: fileBasketManager.py:138
+msgid "Zip"
+msgstr "ซิป"
+
+#: fileBasketManager.py:444
+msgid "Zipped {0} items from the basket"
+msgstr "บีบอัด {0} รายการจากตะกร้าแล้ว"
+
+#: contextMenu.py:827
+msgid "bytes"
+msgstr "ไบต์"
+
+#: compressionManager.py:124
 msgid "compression failed"
 msgstr "การบีบอัดล้มเหลว"
 
-#: contextMenu.py:35
+#: fileBasketManager.py:350
+msgid "copied"
+msgstr "คัดลอกแล้ว"
+
+#: contextMenu.py:508
 msgid "copy"
 msgstr "คัดลอก"
 
-#: robocopyManager.py:235
+#: robocopyManager.py:276
 msgid "estimating time remaining"
-msgstr "กำลังประมาณเวลาที่เหลือ"
+msgstr "กำลังประเมินเวลาที่เหลือ"
 
-#: contextMenu.py:36
+#: contextMenu.py:855
+msgid "less than a minute ago"
+msgstr "น้อยกว่าหนึ่งนาทีที่แล้ว"
+
+#: explorerWindow.py:54
+msgid "maximized"
+msgstr "ขยายใหญ่สุด"
+
+#: fileBasketManager.py:412
+msgid "mirror copied"
+msgstr "คัดลอกแบบมิรเรอร์"
+
+#: contextMenu.py:510
 msgid "move"
 msgstr "ย้าย"
+
+#: fileBasketManager.py:375
+msgid "moved"
+msgstr "ย้ายแล้ว"
 
 #: createFile.py:156
 msgid "new_file"
@@ -665,53 +2238,218 @@ msgstr "ไฟล์ใหม่"
 msgid "new_file_{index}"
 msgstr "ไฟล์ใหม่_{index}"
 
-#: contextMenu.py:37
+#: fileOperations.py:224
+msgid "no access"
+msgstr "ไม่มีสิทธิ์เข้าถึง"
+
+#: folderTools.py:1723
+msgid "not select {name}"
+msgstr "ไม่เลือก {name}"
+
+#: contextMenu.py:512
 msgid "paste"
 msgstr "วาง"
 
-#: __init__.py:268
-#: __init__.py:672
-#: __init__.py:712
-#: __init__.py:752
-#: __init__.py:792
-#: __init__.py:845
-#: __init__.py:862
-#: __init__.py:880
+#: folderTools.py:1723
+msgid "select {name}"
+msgstr "เลือก {name}"
+
+#: contextMenu.py:469
+msgid "unCompress zip"
+msgstr "แตกไฟล์ซิป"
+
+#: contextMenu.py:91
+#: contextMenu.py:105
+msgid "unavailable"
+msgstr "ไม่พร้อมใช้งาน"
+
+#: duplicateFinderManager.py:142
+msgid "unknown date"
+msgstr "ไม่ทราบวันที่"
+
+#: xPlorer_engine.py:313
+#: xPlorer_engine.py:901
+#: xPlorer_engine.py:924
+#: xPlorer_engine.py:940
+#: xPlorer_engine.py:972
+#: xPlorer_engine.py:997
+#: xPlorer_engine.py:1038
+#: xPlorer_engine.py:1080
+#: xPlorer_engine.py:1106
+#: xPlorer_engine.py:1128
+#: xPlorer_engine.py:1156
+#: xPlorer_engine.py:1424
 msgid "xPlorer"
 msgstr "xPlorer"
 
-#: contextMenu.py:49
+#: contextMenu.py:537
 msgid "xPlorer Settings"
 msgstr "การตั้งค่า xPlorer"
 
-#: createFile.py:288
-msgid "{count} files created"
-msgstr "สร้าง {count} ไฟล์"
+#: fileBasketManager.py:442
+msgid "zipped"
+msgstr "บีบอัดเป็นซิปแล้ว"
 
-#: fileOperations.py:283
+#: contextMenu.py:285
+msgid "{0} (pinned)"
+msgstr "{0} (ปักหมุดแล้ว)"
+
+#: fileBasketManager.py:449
+msgid "{0} complete. {1} successful, {2} failed. Check NVDA log."
+msgstr "{0} เสร็จสิ้น สำเร็จ {1} รายการ ล้มเหลว {2} รายการ ตรวจสอบบันทึกของ NVDA"
+
+#: duplicateFinderManager.py:135
+msgid "{0} copies, {1} each"
+msgstr "{0} สำเนา, สำเนาละ {1}"
+
+#: syncCompareManager.py:118
+msgid "{0} differences found"
+msgstr "พบความแตกต่าง {0} รายการ"
+
+#: fileBasketManager.py:264
+#: fileBasketManager.py:308
+msgid "{0} files"
+msgstr "{0} ไฟล์"
+
+#: flatViewManager.py:132
+#: flatViewManager.py:141
+msgid "{0} files found"
+msgstr "พบ {0} ไฟล์"
+
+#: fileBasketManager.py:262
+#: fileBasketManager.py:306
+msgid "{0} folders"
+msgstr "{0} โฟลเดอร์"
+
+#: contextMenu.py:865
+msgid "{0} hour ago"
+msgstr "{0} ชั่วโมงที่แล้ว"
+
+#: contextMenu.py:866
+msgid "{0} hours ago"
+msgstr "{0} ชั่วโมงที่แล้ว"
+
+#: flatViewManager.py:130
+#: flatViewManager.py:140
+msgid "{0} matches found"
+msgstr "พบ {0} รายการที่ตรงกัน"
+
+#: contextMenu.py:859
+msgid "{0} minute ago"
+msgstr "{0} นาทีที่แล้ว"
+
+#: contextMenu.py:860
+msgid "{0} minutes ago"
+msgstr "{0} นาทีที่แล้ว"
+
+#: robocopyManager.py:530
+msgid "{action} {n} item(s) to {dest}"
+msgstr "{action} {n} รายการ ไปยัง {dest}"
+
+#: robocopyManager.py:518
+msgid "{action} {n} item(s) to {dest} ({failed} failed)"
+msgstr "{action} {n} รายการ ไปยัง {dest} (ล้มเหลว {failed})"
+
+#: contextMenu.py:788
+msgid "{count} files could not be changed"
+msgstr "ไม่สามารถเปลี่ยนไฟล์ได้ {count} ไฟล์"
+
+#: freezeManager.py:460
+msgid "{count} files could not be made read-only"
+msgstr "ไม่สามารถเปลี่ยนไฟล์ {count} ไฟล์ให้เป็นแบบอ่านอย่างเดียวได้"
+
+#: freezeManager.py:472
+msgid "{count} files could not be made writable again"
+msgstr "ไม่สามารถทำให้ไฟล์ {count} ไฟล์กลับมาเขียนทับได้อีกครั้ง"
+
+#: clipboardManager.py:141
+msgid "{count} files could not be read"
+msgstr "ไม่สามารถอ่านไฟล์ {count} ไฟล์ได้"
+
+#: createFile.py:292
+msgid "{count} files created"
+msgstr "สร้าง {count} ไฟล์แล้ว"
+
+#: workspaceManager.py:167
+msgid "{count} folders in the list"
+msgstr "มี {count} โฟลเดอร์ในรายการ"
+
+#: freezeManager.py:628
+msgid "{count} frozen items. {result}"
+msgstr "รายการที่ถูกตรึง {count} รายการ {result}"
+
+#: fileOperations.py:1165
 msgid "{count} items {size}"
 msgstr "{count} รายการ {size}"
 
-#: robocopyManager.py:240
+#: folderTools.py:1661
+msgid "{count} matches"
+msgstr "พบ {count} รายการที่ตรงกัน"
+
+#: freezeManager.py:1050
+msgid "{count} system locations skipped"
+msgstr "ข้ามตำแหน่งระบบ {count} รายการ"
+
+#: robocopyManager.py:281
 msgid "{h}h {m}m remaining"
-msgstr "เหลือ {h}ชม. {m}นาที"
+msgstr "เหลือเวลาอีก {h} ชั่วโมง {m} นาที"
 
-#: robocopyManager.py:242
+#: freezeManager.py:673
+msgid "{label}, not found"
+msgstr "ไม่พบ {label}"
+
+#: freezeManager.py:675
+msgid "{label}, replaced by another item"
+msgstr "{label} ถูกแทนที่ด้วยรายการอื่น"
+
+#: robocopyManager.py:283
 msgid "{m}m {s}s remaining"
-msgstr "เหลือ {m}นาที {s}วินาที"
+msgstr "เหลือเวลาอีก {m} นาที {s} วินาที"
 
-#: robocopyManager.py:304
+#: workspaceManager.py:297
+msgid "{name} (pinned)"
+msgstr "{name} (ปักหมุดแล้ว)"
+
+#: freezeManager.py:1043
+msgid "{name} is a system location and cannot be frozen"
+msgstr "{name} เป็นตำแหน่งระบบและไม่สามารถตรึงไว้ได้"
+
+#: freezeManager.py:626
+msgid "{name} is frozen. {result}"
+msgstr "ตรึง {name} แล้ว {result}"
+
+#: update.py:159
+msgid "{name} update"
+msgstr "อัปเดต {name}"
+
+#: update.py:164
+msgid ""
+"{name} {new} is available (installed: {old}).\n"
+"Update now?"
+msgstr ""
+"มี {name} {new} ให้ใช้งาน (ที่ติดตั้งไว้: {old})\n"
+"ต้องการอัปเดตตอนนี้เลยหรือไม่"
+
+#: fileOperations.py:229
+msgid "{name}, folder"
+msgstr "โฟลเดอร์ {name}"
+
+#: freezeManager.py:669
+msgid "{name}, {kind}, in {location}"
+msgstr "{name}, {kind}, ใน {location}"
+
+#: robocopyManager.py:345
 msgid "{pct}% - item {idx}/{total}: {name}"
-msgstr "{pct}% - รายการ {idx}/{total}: {name}"
+msgstr "{pct}% - รายการที่ {idx}/{total}: {name}"
 
-#: folderTools.py:111
+#: folderTools.py:185
 msgid "{subfolders} subfolders and {files} files"
-msgstr "โฟลเดอร์ย่อย {subfolders} และไฟล์ {files}"
+msgstr "{subfolders} โฟลเดอร์ย่อยและ {files} ไฟล์"
 
-#: contextMenu.py:150
+#: contextMenu.py:642
 msgid "{subfolders} subfolders, {files} files"
-msgstr "โฟลเดอร์ย่อย {subfolders}, ไฟล์ {files}"
+msgstr "{subfolders} โฟลเดอร์ย่อย, {files} ไฟล์"
 
-#: robocopyManager.py:243
+#: robocopyManager.py:284
 msgid "{s}s remaining"
-msgstr "เหลือ {s}วินาที"
+msgstr "เหลือเวลาอีก {s} วินาที"

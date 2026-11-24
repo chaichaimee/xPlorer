@@ -339,6 +339,8 @@ class ExplorerManager:
 		self._focusSnapshotTask = None
 		self._lastItemFocusTime = 0.0
 		self._landingSelectUntil = 0.0
+		self._landingPollTask = None
+		self._landingBaselineKey = None
 		self._seenExplorerFrames = set()
 
 		self._config_cache = None
@@ -519,6 +521,7 @@ class ExplorerManager:
 		if self._focusSnapshotTask:
 			self._focusSnapshotTask.Stop()
 			self._focusSnapshotTask = None
+		self._cancelLandingPoll()
 
 		self._syncTempSpeechDictEntry("_temp_entry", False, "- File Explorer", "")
 		self._syncTempSpeechDictEntry("_taskSwitchingTempEntry", False, "Task Switching", "")
@@ -558,6 +561,19 @@ class ExplorerManager:
 			log.debug(f"xPlorer: item size context skipped: {e}")
 			return None
 
+	def _beginFreezeContext(self, obj):
+		try:
+			if obj is None or obj.role != Role.LISTITEM or not isinstance(obj, UIA):
+				return None
+			freezeManager = getattr(self.plugin, "freezeManager", None)
+			if freezeManager is None or not freezeManager.hasFrozenItems() or not self._isFileItem(obj):
+				return None
+			freezeManager.beginFocus(obj.name)
+			return freezeManager
+		except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError) as e:
+			log.debug(f"xPlorer: freeze context skipped: {e}")
+			return None
+
 	def scheduleSoleItemAnnounce(self, item):
 		if self.suppressAllAnnouncements or self._foregroundTransition or self.contextMenuActive:
 			return
@@ -581,44 +597,114 @@ class ExplorerManager:
 					selectionPattern.Select()
 				speech.cancelSpeech()
 				sizeAnnouncer = self._beginSizeContext(item)
+				freezeAnnouncer = self._beginFreezeContext(item)
 				try:
 					speech.speakObject(item, reason=OutputReason.FOCUS)
 				finally:
 					if sizeAnnouncer:
 						sizeAnnouncer.endFocus()
+					if freezeAnnouncer:
+						freezeAnnouncer.endFocus()
 			except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError) as e:
 				log.debug(f"xPlorer: sole item announce skipped: {e}")
 
 		core.callLater(120, announceIfSole)
 
-	def armLandingSelect(self):
+	def armLandingSelect(self, useBaseline=True):
 		# Enter on an item opens a folder inside the same list control, so
 		# Explorer raises no focusEntered for it and only moves focus onto
 		# the landing item without selecting it. The next list item that
-		# receives focus within this window is the landing item.
+		# receives focus within this window is the landing item. Some deeper
+		# folders raise no usable focus event at all, so a short poll of the
+		# focused item backs the event path up.
 		if not self.getConfig().get("autoSelectFirstItem", True):
 			return
 		self._landingSelectUntil = time.time() + 4.0
+		self._landingBaselineKey = None
+		if useBaseline:
+			try:
+				self._landingBaselineKey = self._landingFocusKey(api.getFocusObject())
+			except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError) as e:
+				log.debug(f"xPlorer: landing baseline unavailable: {e}")
+		self._cancelLandingPoll()
+		self._landingPollTask = core.callLater(400, self._pollLandingSelect, self._foregroundGeneration)
 
-	def _selectLandingItem(self, obj):
+	def _cancelLandingPoll(self):
+		if self._landingPollTask:
+			self._landingPollTask.Stop()
+			self._landingPollTask = None
+
+	def _landingFocusKey(self, obj):
+		if obj is None:
+			return None
+		try:
+			return (obj.name, tuple(obj.UIAElement.GetRuntimeId()))
+		except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError, TypeError):
+			return None
+
+	def _pollLandingSelect(self, generation):
+		self._landingPollTask = None
+		if generation != self._foregroundGeneration or not self._landingSelectUntil:
+			return
+		if time.time() > self._landingSelectUntil:
+			self._landingSelectUntil = 0.0
+			log.debug("xPlorer: landing select window expired, no new focused item was selected")
+			return
+		try:
+			focusObj = api.getFocusObject()
+			focusKey = self._landingFocusKey(focusObj)
+			if focusKey is not None and focusKey != self._landingBaselineKey:
+				self._attemptLandingSelect(focusObj, "poll")
+		except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError) as e:
+			log.debug(f"xPlorer: landing poll skipped: {e}")
+		if self._landingSelectUntil:
+			self._landingPollTask = core.callLater(400, self._pollLandingSelect, generation)
+
+	def _attemptLandingSelect(self, obj, source):
+		if not self._landingSelectUntil or obj is None:
+			return
+		if self.contextMenuActive or self.suppressAllAnnouncements:
+			return
+		try:
+			if obj.role != Role.LISTITEM or not isinstance(obj, UIA):
+				return
+			itemHwnd = getattr(obj, "windowHandle", None)
+			if itemHwnd and not _isExplorerWindowResponsive(itemHwnd):
+				log.debug(f"xPlorer TRACE: landing select deferred, Explorer window busy, source={source}")
+				return
+			if not self._isFileItem(obj):
+				log.debug(f"xPlorer TRACE: landing select skipped, item is outside an Explorer list, source={source}")
+				return
+		except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError) as e:
+			log.debug(f"xPlorer TRACE: landing select check failed, source={source}: {e}")
+			return
+		self._selectLandingItem(obj, source)
+
+	def _selectLandingItem(self, obj, source):
 		if not self._landingSelectUntil:
 			return
 		if time.time() > self._landingSelectUntil:
 			self._landingSelectUntil = 0.0
+			log.debug(f"xPlorer: landing select window expired before selection, source={source}")
 			return
-		if obj.role != Role.LISTITEM or not isinstance(obj, UIA):
-			return
-		self._landingSelectUntil = 0.0
 		if not self.getConfig().get("autoSelectFirstItem", True):
+			self._landingSelectUntil = 0.0
 			return
 		try:
 			selectionPattern = getattr(obj, "UIASelectionItemPattern", None)
-			if selectionPattern is None or selectionPattern.CurrentIsSelected:
+			if selectionPattern is None:
+				log.debug(f"xPlorer: landing item has no selection pattern, will retry, source={source}")
+				return
+			if selectionPattern.CurrentIsSelected:
+				self._landingSelectUntil = 0.0
+				log.debug(f"xPlorer: landing item already selected, name={obj.name!r}, source={source}")
 				return
 			selectionPattern.Select()
-			log.debug(f"xPlorer: selected landing item after folder entry, name={obj.name!r}")
+			self._landingSelectUntil = 0.0
+			obj.invalidateCache()
+			log.debug(f"xPlorer: selected landing item after folder entry, name={obj.name!r}, source={source}")
 		except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError) as e:
-			log.debug(f"xPlorer: landing item select skipped: {e}")
+			log.debug(f"xPlorer: landing item select failed, will retry, source={source}: {e}")
 
 	def _perform_auto_select(self, obj):
 		conf = self.getConfig()
@@ -644,17 +730,22 @@ class ExplorerManager:
 		try:
 			if obj is not None and obj.role == Role.LISTITEM:
 				self._lastItemFocusTime = time.time()
+				self._attemptLandingSelect(obj, "focus")
 		except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError):
 			pass
 
 		sizeAnnouncer = None
+		freezeAnnouncer = None
 		if not (self._foregroundTransition or self.contextMenuActive or self.suppressAllAnnouncements):
 			sizeAnnouncer = self._beginSizeContext(obj)
+			freezeAnnouncer = self._beginFreezeContext(obj)
 		try:
 			self._dispatchGainFocus(obj, nextHandler)
 		finally:
 			if sizeAnnouncer:
 				sizeAnnouncer.endFocus()
+			if freezeAnnouncer:
+				freezeAnnouncer.endFocus()
 
 	def _dispatchGainFocus(self, obj, nextHandler):
 		nextHandlerFired = False
@@ -667,7 +758,6 @@ class ExplorerManager:
 
 		try:
 			if self._foregroundTransition or self.contextMenuActive or self.suppressAllAnnouncements:
-				self._selectLandingItemDuringTransition(obj)
 				return callNextHandlerOnce()
 				
 			if obj is None:
@@ -701,7 +791,6 @@ class ExplorerManager:
 			if not self._isValidExplorerContext(obj):
 				return callNextHandlerOnce()
 
-			self._selectLandingItem(obj)
 			callNextHandlerOnce()
 			
 		except (ComTypesCOMError, CtypesCOMError) as e:
@@ -748,6 +837,10 @@ class ExplorerManager:
 		# a brand-new window inside the delay window of a pending callback.
 		self._foregroundGeneration += 1
 		self._landingSelectUntil = 0.0
+		self._cancelLandingPoll()
+		freezeManager = getattr(self.plugin, "freezeManager", None)
+		if freezeManager:
+			freezeManager.invalidate()
 
 		self._explorer_focused = False
 		try:
@@ -818,16 +911,6 @@ class ExplorerManager:
 		except Exception as e:
 			log.debug(f"Error in event_foreground: {e}")
 
-	def _selectLandingItemDuringTransition(self, obj):
-		# A window opened from outside Explorer lands on its first item
-		# inside the foreground-transition window; selecting it must not
-		# wait for the transition to clear or it never happens.
-		if obj is None or not self._foregroundTransition:
-			return
-		if self.contextMenuActive or self.suppressAllAnnouncements:
-			return
-		self._selectLandingItem(obj)
-
 	def _armLandingSelectForNewFrame(self, frameHwnd):
 		# An Explorer window opened by something other than Enter inside an
 		# existing window gets focus on its first item without selecting it,
@@ -841,7 +924,7 @@ class ExplorerManager:
 			if len(self._seenExplorerFrames) >= 64:
 				self._seenExplorerFrames.clear()
 		self._seenExplorerFrames.add(frameHwnd)
-		self.armLandingSelect()
+		self.armLandingSelect(useBaseline=False)
 		if self._landingSelectUntil:
 			log.debug(f"xPlorer: new explorer window hwnd={frameHwnd}, landing select armed")
 
@@ -862,7 +945,7 @@ class ExplorerManager:
 					f"windowResponsive={responsive} explorerFocused={self._explorer_focused}"
 				)
 			if self._landingSelectUntil and focusObj.role == Role.LISTITEM:
-				self._selectLandingItem(focusObj)
+				self._attemptLandingSelect(focusObj, "snapshot")
 			focusStuckOnFrame = bool(focusHwnd) and focusHwnd == foregroundHwnd and focusClass == "CabinetWClass"
 			if not (focusStuckOnFrame and responsive and self._explorer_focused):
 				return

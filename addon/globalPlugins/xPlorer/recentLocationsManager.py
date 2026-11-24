@@ -17,8 +17,9 @@ RECENT_LOCATIONS_FILE = os.path.join(XPLORER_CONFIG_DIR, "recent_locations.json"
 # CONFIG_DIR itself used to resolve to a shared, incorrectly-rooted
 # ChaiChaimee folder (see folderTools.py) with no per-addon separation at
 # all - migrate forward from that real old location if anything is there.
-_OLD_CONFIG_DIR = os.path.join(os.path.expanduser("~"), "AppData", "Roaming", "nvda", "ChaiChaimee")
-_OLD_RECENT_LOCATIONS_FILE = os.path.join(_OLD_CONFIG_DIR, "xPlorer", "recent_locations.json")
+_LEGACY_ROAMING_DIR = os.environ.get("APPDATA", "")
+_OLD_CONFIG_DIR = os.path.join(_LEGACY_ROAMING_DIR, "nvda", "ChaiChaimee") if _LEGACY_ROAMING_DIR else ""
+_OLD_RECENT_LOCATIONS_FILE = os.path.join(_OLD_CONFIG_DIR, "xPlorer", "recent_locations.json") if _OLD_CONFIG_DIR else ""
 MAX_RECENT_LOCATIONS = 100
 _RECORD_MIN_INTERVAL_SECONDS = 1.5
 
@@ -58,7 +59,7 @@ class RecentLocationsManager:
 		try:
 			if os.path.exists(RECENT_LOCATIONS_FILE):
 				return
-			if not os.path.exists(_OLD_RECENT_LOCATIONS_FILE):
+			if not _OLD_RECENT_LOCATIONS_FILE or not os.path.exists(_OLD_RECENT_LOCATIONS_FILE):
 				return
 			if not os.path.exists(XPLORER_CONFIG_DIR):
 				os.makedirs(XPLORER_CONFIG_DIR)

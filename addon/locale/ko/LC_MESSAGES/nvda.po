@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: xPlorer 2026.8.5\n"
+"Project-Id-Version: xPlorer 2026.12.0\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-08-03 06:13+0700\n"
+"POT-Creation-Date: 2026-11-24 08:54+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Korean\n"
@@ -10,310 +10,871 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: DevOn Addon\n"
+"X-Generator: ChaiBot Addon\n"
 
-#: robocopyManager.py:464
-msgid " and {n} more"
-msgstr " 외 {n}개"
+#: contextMenu.py:1063
+msgid " (partial)"
+msgstr "(일부)"
 
-#: folderTools.py:174
+#: compressionManager.py:511
+msgid " and {count} more"
+msgstr "그리고 {count}개 더"
+
+#: folderTools.py:249
 msgid "&Apply"
 msgstr "적용(&A)"
 
-#: folderTools.py:175
+#: folderTools.py:250
 msgid "&Cancel"
 msgstr "취소(&C)"
 
-#: createFile.py:286
+#: freezeManager.py:648
+msgid "&Close"
+msgstr "닫기(&C)"
+
+#: freezeManager.py:640
+msgid "&Frozen items:"
+msgstr "고정된 항목(&F):"
+
+#: update.py:173
+msgid "&Later"
+msgstr "나중에(&L)"
+
+#: freezeManager.py:646
+msgid "&Unfreeze selected"
+msgstr "선택한 항목 고정 해제(&U)"
+
+#: update.py:171
+msgid "&Update now"
+msgstr "지금 업데이트(&U)"
+
+#: flatViewManager.py:134
+#: flatViewManager.py:143
+msgid "(list capped at {0} - refine your folder selection)"
+msgstr "(목록이 {0}개로 제한됨 - 폴더 선택을 좁히십시오)"
+
+#: flatViewManager.py:118
+msgid "(root)"
+msgstr "(루트)"
+
+#: fileOperations.py:1355
+msgid ", UDF format"
+msgstr ", UDF 형식"
+
+#: fileOperations.py:1357
+msgid ", {count} items skipped"
+msgstr ", {count}개 항목 건너뜀"
+
+#: batchRenameManager.py:257
+#: batchRenameManager.py:425
+msgid "...and {0} more errors"
+msgstr "...및 {0}개의 오류 더"
+
+#: robocopyManager.py:541
+msgid "...and {n} more"
+msgstr "...및 {n}개 더"
+
+#: createFile.py:290
 msgid "1 file created"
-msgstr "파일 1개 생성됨"
+msgstr "1개의 파일 생성됨"
 
-#: fileOperations.py:340
+#: compressionManager.py:449
+msgid "7-Zip is required to extract this file type"
+msgstr "이 파일 형식을 추출하려면 7-Zip이 필요합니다"
+
+#: duplicateFinderManager.py:268
+msgid "A duplicate scan is already running"
+msgstr "중복 스캔이 이미 실행 중입니다"
+
+#: fileOperations.py:1544
 msgid "A file with this name already exists"
-msgstr "이 이름의 파일이 이미 존재합니다"
+msgstr "이 이름을 가진 파일이 이미 존재합니다"
 
-#: compressionManager.py:288
+#: folderTools.py:1116
+#: folderTools.py:1468
+msgid "A selection operation is already in progress"
+msgstr "선택 작업이 이미 진행 중입니다"
+
+#: contextMenu.py:1018
+msgid "Accessed: {0}"
+msgstr "액세스함: {0}"
+
+#: freezeManager.py:623
+msgid "Action canceled"
+msgstr "작업이 취소되었습니다"
+
+#: fileBasketManager.py:48
+msgid "Action:"
+msgstr "작업:"
+
+#: workspaceManager.py:101
+#: workspaceManager.py:202
+msgid "Add Folder..."
+msgstr "폴더 추가..."
+
+#: workspaceManager.py:202
+msgid "Add Path"
+msgstr "경로 추가"
+
+#: workspaceManager.py:233
+msgid "Add at least one folder to this workspace"
+msgstr "이 작업 공간에 폴더를 하나 이상 추가하세요."
+
+#: workspaceManager.py:73
+msgid "Add to workspace:"
+msgstr "작업 공간에 추가:"
+
+#: fileBasketManager.py:283
+msgid "Added to basket. Total items: {0}"
+msgstr "바구니에 추가되었습니다. 전체 항목: {0}"
+
+#: workspaceManager.py:240
+msgid "Added to existing workspace {name}"
+msgstr "기존 작업 공간 {name}에 추가됨"
+
+#: fileBasketManager.py:265
+msgid "Added {0}"
+msgstr "{0} 추가됨"
+
+#: workspaceManager.py:188
+msgid "Added {count} folders"
+msgstr "{count}개의 폴더가 추가되었습니다"
+
+#: workspaceManager.py:764
+#: workspaceManager.py:771
+msgid "Added {name}"
+msgstr "{name} 추가됨"
+
+#: workspaceManager.py:358
+msgid "All workspaces cleared"
+msgstr "모든 작업 공간이 지워졌습니다"
+
+#: workspaceManager.py:766
+msgid "Already added: {name}"
+msgstr "이미 추가됨: {name}"
+
+#: freezeManager.py:1055
+msgid "Already frozen"
+msgstr "이미 고정되어 있습니다"
+
+#: fileBasketManager.py:277
+msgid "Already in basket"
+msgstr "이미 바구니에 있습니다"
+
+#: fileOperations.py:1508
+msgid "An item named {name} already exists"
+msgstr "{name} 항목이 이미 존재합니다"
+
+#: fileOperations.py:330
+msgid "Applied"
+msgstr "적용됨"
+
+#: batchRenameManager.py:96
+#: fileOperations.py:295
+msgid "Apply"
+msgstr "적용"
+
+#: fileBasketManager.py:296
+msgid "Basket cleared"
+msgstr "바구니가 비워졌습니다"
+
+#: fileBasketManager.py:311
+msgid "Basket is already empty"
+msgstr "바구니가 이미 비어 있습니다"
+
+#: fileBasketManager.py:43
+#: fileBasketManager.py:98
+#: fileBasketManager.py:132
+msgid "Basket is empty"
+msgstr "바구니가 비어 있습니다"
+
+#: contextMenu.py:391
+msgid "Batch Rename Tool"
+msgstr "일괄 이름 바꾸기 도구"
+
+#: xPlorer_engine.py:959
+#: xPlorer_engine.py:1094
+msgid "Batch rename manager not available"
+msgstr "일괄 이름 바꾸기 관리자를 사용할 수 없습니다"
+
+#: fileBasketManager.py:62
+msgid "Browse"
+msgstr "찾아보기"
+
+#: compressionManager.py:302
 msgid "Built-in compression failed: {error}"
 msgstr "내장 압축 실패: {error}"
 
-#: robocopyManager.py:323
+#: robocopyManager.py:364
 msgid "Calculating total size..."
 msgstr "전체 크기 계산 중..."
 
-#: clipboardManager.py:66
+#: batchRenameManager.py:98
+#: fileOperations.py:294
+#: workspaceManager.py:110
+msgid "Cancel"
+msgstr "취소"
+
+#: clipboardManager.py:72
 msgid "Cannot copy content of folders, please select files only"
-msgstr "폴더의 콘텐츠는 복사할 수 없습니다. 파일만 선택하세요"
+msgstr "폴더의 내용은 복사할 수 없습니다. 파일만 선택해 주세요."
 
-#: createFile.py:271
+#: createFile.py:275
 msgid "Cannot find unique name for: {name}"
-msgstr "고유 이름을 찾을 수 없음: {name}"
+msgstr "고유한 이름을 찾을 수 없습니다: {name}"
 
-#: __init__.py:888
+#: xPlorer_engine.py:1431
 msgid "Cannot open settings dialog"
 msgstr "설정 대화 상자를 열 수 없습니다"
 
-#: folderTools.py:570
+#: folderTools.py:733
 msgid "Cannot process RTF file: striprtf module not available"
-msgstr "RTF 파일을 처리할 수 없습니다: striprtf 모듈을 사용할 수 없습니다"
+msgstr "RTF 파일을 처리할 수 없습니다: striprtf 모듈을 사용할 수 없습니다."
 
-#: contextMenu.py:43
+#: contextMenu.py:442
 msgid "Case Converter for Folders"
-msgstr "폴더 대소문자 변환기"
+msgstr "폴더 이름 대소문자 변환기"
 
-#: __init__.py:927
+#: xPlorer_engine.py:1484
 msgid "Case converter not available"
-msgstr "대소문자 변환기를 사용할 수 없습니다"
+msgstr "대소문자 변환기를 사용할 수 없습니다."
 
-#: __init__.py:648
+#: compressionManager.py:364
+msgid "Choose extraction method:"
+msgstr "추출 방법을 선택하세요:"
+
+#: workspaceManager.py:329
+#: workspaceManager.py:350
+msgid "Clear All Workspaces"
+msgstr "모든 작업 공간 지우기"
+
+#: fileBasketManager.py:74
+msgid "Clear Basket"
+msgstr "바구니 비우기"
+
+#: operationHistoryManager.py:44
+msgid "Clear History"
+msgstr "기록 지우기"
+
+#: contextMenu.py:231
+msgid "Clear all (except pinned)"
+msgstr "고정된 항목을 제외하고 모두 지우기"
+
+#: contextMenu.py:264
+msgid "Cleared recent locations"
+msgstr "최근 위치를 지웠습니다."
+
+#: fileBasketManager.py:309
+msgid "Cleared {0} from basket"
+msgstr "바구니에서 {0}을(를) 지웠습니다."
+
+#: contextMenu.py:498
+msgid "Clipboard Operations"
+msgstr "클립보드 작업"
+
+#: xPlorer_engine.py:900
+msgid "Clipboard Operations: Copy selected names (single tap), copy content (double tap), or copy address bar (triple tap)"
+msgstr "클립보드 작업: 선택한 이름 복사(한 번 탭), 내용 복사(두 번 탭), 또는 주소 표시줄 복사(세 번 탭)"
+
+#: fileOperations.py:1476
+msgid "Clipboard is empty"
+msgstr "클립보드가 비어 있습니다."
+
+#: xPlorer_engine.py:892
 msgid "Clipboard manager not available"
-msgstr "클립보드 관리자를 사용할 수 없습니다"
+msgstr "클립보드 관리자를 사용할 수 없습니다."
 
-#: compressionManager.py:284
+#: fileOperations.py:1481
+msgid "Clipboard text is not a valid name"
+msgstr "클립보드 텍스트가 올바른 이름이 아닙니다."
+
+#: contextMenu.py:737
+#: duplicateFinderManager.py:115
+#: fileBasketManager.py:76
+#: fileOperations.py:352
+#: flatViewManager.py:53
+#: operationHistoryManager.py:46
+#: syncCompareManager.py:59
+#: workspaceManager.py:277
+msgid "Close"
+msgstr "닫기"
+
+#: workspaceManager.py:637
+msgid "Closed {count} folders from workspace {name}"
+msgstr "작업 공간 {name}에서 {count}개의 폴더를 닫았습니다."
+
+#: syncCompareManager.py:32
+msgid "Compare Folders"
+msgstr "폴더 비교"
+
+#: syncCompareManager.py:48
+msgid "Comparing..."
+msgstr "비교 중..."
+
+#: robocopyManager.py:525
+msgid "Complete"
+msgstr "완료"
+
+#: compressionManager.py:298
 msgid "Completed"
 msgstr "완료됨"
 
-#: contextMenu.py:26
-msgid "Compress zip"
-msgstr "zip 압축"
+#: contextMenu.py:472
+msgid "Compress"
+msgstr "압축"
 
-#: compressionManager.py:160
-#: compressionManager.py:168
+#: contextMenu.py:467
+msgid "Compress zip"
+msgstr "ZIP 압축"
+
+#: compressionManager.py:173
+#: compressionManager.py:181
 msgid "Compressing files"
 msgstr "파일 압축 중"
 
-#: compressionManager.py:75
+#: compressionManager.py:85
 msgid "Compressing..."
 msgstr "압축 중..."
 
-#: compressionManager.py:263
 #: compressionManager.py:277
+#: compressionManager.py:291
 msgid "Compressing: {percent}%"
 msgstr "압축 중: {percent}%"
 
-#: compressionManager.py:110
-#: compressionManager.py:282
+#: compressionManager.py:120
+#: compressionManager.py:296
 msgid "Compression cancelled"
-msgstr "압축 취소됨"
+msgstr "압축이 취소되었습니다"
 
-#: compressionManager.py:112
-#: compressionManager.py:285
+#: compressionManager.py:122
+#: compressionManager.py:299
 msgid "Compression completed {name}"
-msgstr "압축 완료 {name}"
+msgstr "압축 완료: {name}"
 
-#: __init__.py:728
+#: xPlorer_engine.py:963
 msgid "Compression manager not available"
 msgstr "압축 관리자를 사용할 수 없습니다"
 
-#: compressionManager.py:86
+#: compressionManager.py:96
 msgid "Compression timed out"
 msgstr "압축 시간이 초과되었습니다"
 
-#: clipboardManager.py:133
-msgid "Content from 1 file copied to clipboard"
-msgstr "파일 1개의 콘텐츠가 클립보드에 복사됨"
+#: contextMenu.py:1022
+msgid "Contents: calculating..."
+msgstr "내용: 계산 중..."
 
-#: clipboardManager.py:135
-msgid "Content from {count} files copied to clipboard"
-msgstr "{count}개 파일의 콘텐츠가 클립보드에 복사됨"
+#: contextMenu.py:1065
+msgid "Contents: {0} files, {1} folders{2}"
+msgstr "내용: 파일 {0}개, 폴더 {1}개{2}"
 
-#: __init__.py:835
-#: __init__.py:901
+#: xPlorer_engine.py:1027
+#: xPlorer_engine.py:1443
+#: xPlorer_engine.py:1455
 msgid "Context menu manager not available"
 msgstr "컨텍스트 메뉴 관리자를 사용할 수 없습니다"
 
-#: folderTools.py:937
+#: folderTools.py:1976
 msgid "Conversion already in progress"
-msgstr "변환이 이미 진행 중입니다"
+msgstr "이미 변환이 진행 중입니다"
 
-#: folderTools.py:954
+#: folderTools.py:1993
 msgid "Converting"
 msgstr "변환 중"
 
-#: clipboardManager.py:44
+#: robocopyManager.py:503
+msgid "Copied"
+msgstr "복사됨"
+
+#: clipboardManager.py:47
 msgid "Copied 1 item name to clipboard"
-msgstr "항목 1개의 이름이 클립보드에 복사됨"
+msgstr "항목 이름 1개를 클립보드에 복사했습니다"
 
-#: clipboardManager.py:46
+#: syncCompareManager.py:142
+msgid "Copied {0}"
+msgstr "{0} 복사됨"
+
+#: fileBasketManager.py:352
+msgid "Copied {0} items from the basket"
+msgstr "바구니에서 {0}개 항목을 복사했습니다"
+
+#: clipboardManager.py:49
 msgid "Copied {count} item names to clipboard"
-msgstr "{count}개 항목의 이름이 클립보드에 복사됨"
+msgstr "항목 이름 {count}개를 클립보드에 복사했습니다"
 
-#: __init__.py:624
+#: folderTools.py:1788
+msgid "Copied {count} items"
+msgstr "{count}개 항목을 복사했습니다"
+
+#: xPlorer_engine.py:872
 msgid "Copied: {path}"
 msgstr "복사됨: {path}"
 
-#: contextMenu.py:28
+#: fileBasketManager.py:51
+#: fileBasketManager.py:159
+#: folderTools.py:1767
+msgid "Copy"
+msgstr "복사"
+
+#: syncCompareManager.py:57
+msgid "Copy Selected to Right"
+msgstr "선택한 항목을 오른쪽에 복사"
+
+#: contextMenu.py:491
 msgid "Copy address bar"
 msgstr "주소 표시줄 복사"
 
-#: contextMenu.py:29
+#: contextMenu.py:493
 msgid "Copy content"
-msgstr "콘텐츠 복사"
+msgstr "내용 복사"
 
-#: __init__.py:711
-msgid "Copy content (single tap) or invert selection (double tap)"
-msgstr "콘텐츠 복사(한 번 탭) 또는 선택 반전(두 번 탭)"
-
-#: contextMenu.py:30
+#: contextMenu.py:495
 msgid "Copy selected file and folder names"
 msgstr "선택한 파일 및 폴더 이름 복사"
 
-#: __init__.py:671
-msgid "Copy selected names (single tap) or copy address bar (double tap)"
-msgstr "선택한 이름 복사(한 번 탭) 또는 주소 표시줄 복사(두 번 탭)"
+#: clipboardManager.py:149
+msgid "Copy {lines} Lines from {files} files"
+msgstr "{files}개 파일에서 {lines}줄 복사"
 
-#: __init__.py:628
-#: clipboardManager.py:50
-#: clipboardManager.py:139
+#: folderTools.py:1836
+msgid "Could not delete one or more items"
+msgstr "하나 이상의 항목을 삭제할 수 없습니다."
+
+#: update.py:255
+msgid "Could not download the update. Opening the releases page."
+msgstr "업데이트를 다운로드할 수 없습니다. 릴리스 페이지를 엽니다."
+
+#: clipboardManager.py:53
+#: clipboardManager.py:153
+#: folderTools.py:1795
+#: folderTools.py:1805
+#: xPlorer_engine.py:876
 msgid "Could not open clipboard"
-msgstr "클립보드를 열 수 없습니다"
+msgstr "클립보드를 열 수 없습니다."
 
-#: contextMenu.py:23
+#: flatViewManager.py:199
+msgid "Could not open the containing folder"
+msgstr "포함하는 폴더를 열 수 없습니다."
+
+#: folderTools.py:1739
+msgid "Could not open the file"
+msgstr "파일을 열 수 없습니다."
+
+#: folderTools.py:1819
+msgid "Could not open the folder"
+msgstr "폴더를 열 수 없습니다."
+
+#: flatViewManager.py:185
+msgid "Could not open {0}"
+msgstr "{0}을(를) 열 수 없습니다."
+
+#: fileOperations.py:433
+#: fileOperations.py:435
+msgid "Could not read this folder"
+msgstr "이 폴더를 읽을 수 없습니다."
+
+#: fileOperations.py:493
+msgid "Could not save settings"
+msgstr "설정을 저장할 수 없습니다."
+
+#: freezeManager.py:699
+#: freezeManager.py:721
+#: freezeManager.py:1052
+#: freezeManager.py:1076
+msgid "Could not save the freezer list"
+msgstr "프리저 목록을 저장할 수 없습니다."
+
+#: xPlorer_engine.py:1219
+msgid "Could not start multi-select"
+msgstr "다중 선택을 시작할 수 없습니다."
+
+#: batchRenameManager.py:85
+msgid "Counter start value:"
+msgstr "카운터 시작 값:"
+
+#: contextMenu.py:375
 #: createFile.py:17
 msgid "Create File"
 msgstr "파일 만들기"
 
-#: folderTools.py:128
+#: folderTools.py:203
 msgid "Create Multiple Folders"
 msgstr "여러 폴더 만들기"
 
-#: contextMenu.py:40
+#: contextMenu.py:461
 msgid "Create Multiple Folders..."
 msgstr "여러 폴더 만들기..."
 
-#: folderTools.py:157
+#: folderTools.py:232
 msgid "Create main folder and then subfolders"
-msgstr "기본 폴더를 만든 다음 하위 폴더 만들기"
+msgstr "메인 폴더를 만든 후 하위 폴더 만들기"
 
-#: __init__.py:879
+#: xPlorer_engine.py:1423
 msgid "Create new folder and paste clipboard content into rename field"
 msgstr "새 폴더를 만들고 클립보드 내용을 이름 바꾸기 필드에 붙여넣기"
 
-#: folderTools.py:324
-msgid "Created {count} of {total} folders..."
-msgstr "{total}개 중 {count}개 폴더 생성됨..."
+#: fileOperations.py:1361
+msgid "Created ISO {name}"
+msgstr "ISO {name} 생성됨"
 
-#: folderTools.py:311
+#: createFile.py:296
+msgid "Created {count} file(s) in {path}"
+msgstr "{path}에 {count}개의 파일이 생성되었습니다."
+
+#: folderTools.py:399
+msgid "Created {count} of {total} folders..."
+msgstr "{count}/{total} 폴더 생성 중..."
+
+#: contextMenu.py:1012
+msgid "Created: {0}"
+msgstr "생성됨: {0}"
+
+#: fileOperations.py:1293
+#: fileOperations.py:1297
+msgid "Creating ISO"
+msgstr "ISO 생성"
+
+#: fileOperations.py:1307
+msgid "Creating ISO: {percent}%"
+msgstr "ISO 생성 중: {percent}%"
+
+#: folderTools.py:386
 msgid "Creating folders in background..."
 msgstr "백그라운드에서 폴더 생성 중..."
 
-#: folderTools.py:161
+#: contextMenu.py:524
+msgid "Current folder size list"
+msgstr "현재 폴더 크기 목록"
+
+#: fileOperations.py:338
+msgid "Current folder size list - {name}"
+msgstr "현재 폴더 크기 목록 - {name}"
+
+#: fileOperations.py:246
+msgid "Current folder size list settings"
+msgstr "현재 폴더 크기 목록 설정"
+
+#: folderTools.py:1768
+msgid "Cut"
+msgstr "잘라내기"
+
+#: freezeManager.py:30
+msgid "Cut canceled"
+msgstr "잘라내기 취소됨"
+
+#: folderTools.py:1802
+msgid "Cut {count} items"
+msgstr "항목 {count}개 잘라내기"
+
+#: folderTools.py:1771
+#: folderTools.py:1827
+#: workspaceManager.py:328
+msgid "Delete"
+msgstr "삭제"
+
+#: workspaceManager.py:275
+msgid "Delete Workspace"
+msgstr "작업 공간 삭제"
+
+#: workspaceManager.py:349
+msgid "Delete all saved workspaces? This cannot be undone."
+msgstr "저장된 모든 작업 공간을 삭제하시겠습니까? 이 작업은 취소할 수 없습니다."
+
+#: freezeManager.py:27
+msgid "Delete canceled"
+msgstr "삭제 취소됨"
+
+#: fileBasketManager.py:58
+msgid "Destination:"
+msgstr "대상:"
+
+#: syncCompareManager.py:19
+msgid "Different (size/date)"
+msgstr "다름 (크기/날짜)"
+
+#: fileOperations.py:266
+msgid "Display format"
+msgstr "표시 형식"
+
+#: update.py:244
+msgid "Downloading {name} {version}"
+msgstr "{name} {version} 다운로드 중"
+
+#: contextMenu.py:964
+msgid "Drive: {0}"
+msgstr "드라이브: {0}"
+
+#: contextMenu.py:411
+#: duplicateFinderManager.py:79
+msgid "Duplicate Finder"
+msgstr "중복 파일 찾기"
+
+#: duplicateFinderManager.py:95
+msgid "Duplicate groups:"
+msgstr "중복 그룹:"
+
+#: workspaceManager.py:115
+#: workspaceManager.py:273
+msgid "Edit Workspace"
+msgstr "작업 공간 편집"
+
+#: folderTools.py:236
 msgid "Edit individual folder names"
-msgstr "개별 폴더 이름 편집"
+msgstr "개별 폴더 이름 수정"
 
-#: folderTools.py:120
+#: folderTools.py:1246
+#: folderTools.py:1841
+msgid "Enter a search term or pattern first"
+msgstr "검색어 또는 패턴을 먼저 입력하세요"
+
+#: workspaceManager.py:229
+msgid "Enter a workspace name"
+msgstr "작업 공간 이름을 입력하세요"
+
+#: folderTools.py:195
 msgid "Error calculating folder info"
-msgstr "폴더 정보 계산 중 오류"
+msgstr "폴더 정보를 계산하는 중 오류가 발생했습니다"
 
-#: fileOperations.py:294
+#: fileOperations.py:1177
 msgid "Error calculating size"
-msgstr "크기 계산 중 오류"
+msgstr "크기를 계산하는 중 오류가 발생했습니다"
 
-#: compressionManager.py:196
+#: compressionManager.py:209
 msgid "Error compressing files"
-msgstr "파일 압축 중 오류"
+msgstr "파일을 압축하는 중 오류가 발생했습니다"
 
-#: clipboardManager.py:142
+#: clipboardManager.py:100
+#: clipboardManager.py:158
 msgid "Error copying file content"
-msgstr "파일 콘텐츠 복사 중 오류"
+msgstr "파일 내용을 복사하는 중 오류가 발생했습니다"
 
-#: clipboardManager.py:53
+#: clipboardManager.py:56
 msgid "Error copying names to clipboard"
-msgstr "클립보드에 이름 복사 중 오류"
+msgstr "이름을 클립보드에 복사하는 중 오류가 발생했습니다"
 
-#: folderTools.py:614
+#: syncCompareManager.py:147
+msgid "Error copying {0}"
+msgstr "{0}을(를) 복사하는 중 오류가 발생했습니다"
+
+#: folderTools.py:777
 msgid "Error creating base folder"
-msgstr "기본 폴더 생성 중 오류"
+msgstr "기본 폴더를 만드는 중 오류가 발생했습니다"
 
-#: createFile.py:291
+#: createFile.py:300
 msgid "Error creating files"
-msgstr "파일 생성 중 오류"
+msgstr "파일을 만드는 중 오류가 발생했습니다"
 
-#: __init__.py:921
+#: xPlorer_engine.py:1478
 msgid "Error creating folders"
-msgstr "폴더 생성 중 오류"
+msgstr "폴더를 만드는 중 오류가 발생했습니다"
 
-#: folderTools.py:302
+#: folderTools.py:377
 msgid "Error creating main folder"
-msgstr "기본 폴더 생성 중 오류"
+msgstr "메인 폴더를 만드는 중 오류가 발생했습니다"
 
-#: __init__.py:965
+#: fileBasketManager.py:439
+msgid "Error creating zip file"
+msgstr "zip 파일을 만드는 중 오류가 발생했습니다"
+
+#: xPlorer_engine.py:1528
 msgid "Error during conversion"
-msgstr "변환 중 오류"
+msgstr "변환 중 오류가 발생했습니다"
 
-#: compressionManager.py:117
+#: compressionManager.py:127
 msgid "Error in compression process: {error}"
-msgstr "압축 프로세스 중 오류: {error}"
+msgstr "압축 프로세스 오류: {error}"
 
-#: folderTools.py:804
+#: folderTools.py:1166
+#: folderTools.py:1169
 msgid "Error inverting selection"
-msgstr "선택 반전 중 오류"
+msgstr "선택 반전 중 오류가 발생했습니다"
 
-#: createFile.py:245
+#: createFile.py:249
 msgid "Error opening create file dialog"
-msgstr "파일 만들기 대화 상자 열기 중 오류"
+msgstr "파일 생성 대화상자를 여는 중 오류가 발생했습니다"
 
-#: fileOperations.py:350
+#: fileOperations.py:1398
+msgid "Error opening current folder size list"
+msgstr "현재 폴더 크기 목록을 여는 중 오류가 발생했습니다"
+
+#: recentLocationsManager.py:229
+msgid "Error opening folder"
+msgstr "폴더를 여는 중 오류가 발생했습니다."
+
+#: fileOperations.py:1558
 msgid "Error opening rename dialog"
-msgstr "이름 바꾸기 대화 상자 열기 중 오류"
+msgstr "이름 바꾸기 대화상자를 여는 중 오류가 발생했습니다"
 
-#: __init__.py:895
+#: xPlorer_engine.py:1437
 msgid "Error opening settings"
-msgstr "설정 열기 중 오류"
+msgstr "설정 열기 오류"
 
-#: folderTools.py:704
+#: folderTools.py:867
 msgid "Error processing text file: {}"
-msgstr "텍스트 파일 처리 중 오류: {}"
+msgstr "텍스트 파일 처리 오류: {}"
 
-#: folderTools.py:581
+#: folderTools.py:744
 msgid "Error reading RTF file"
-msgstr "RTF 파일 읽기 중 오류"
+msgstr "RTF 파일 읽기 오류"
 
-#: folderTools.py:708
+#: folderTools.py:871
 msgid "Error reading file encoding"
-msgstr "파일 인코딩 읽기 중 오류"
+msgstr "파일 인코딩 읽기 오류"
 
-#: fileOperations.py:320
-#: fileOperations.py:347
+#: fileOperations.py:1436
+#: fileOperations.py:1519
+#: fileOperations.py:1522
+#: fileOperations.py:1555
 msgid "Error renaming file"
-msgstr "파일 이름 바꾸기 중 오류"
+msgstr "파일 이름 변경 오류"
 
-#: folderTools.py:713
+#: batchRenameManager.py:244
+msgid "Error renaming {0} to {1}: {2}"
+msgstr "{0}의 이름을 {1}(으)로 변경하는 중 오류 발생: {2}"
+
+#: duplicateFinderManager.py:308
+msgid "Error scanning for duplicates"
+msgstr "중복 항목 검사 오류"
+
+#: folderTools.py:1200
+msgid "Error selecting by extension"
+msgstr "확장자별 선택 오류"
+
+#: folderTools.py:1269
+msgid "Error selecting by search"
+msgstr "검색으로 선택 오류"
+
+#: folderTools.py:1512
+#: folderTools.py:1515
+msgid "Error selecting items"
+msgstr "항목 선택 오류"
+
+#: compressionManager.py:324
+msgid "Error uncompressing file"
+msgstr "파일 압축 해제 오류"
+
+#: batchRenameManager.py:414
+msgid "Error undoing rename for {0}: {1}"
+msgstr "{0}의 이름 변경 취소 오류: {1}"
+
+#: folderTools.py:876
 msgid "Error: {}"
 msgstr "오류: {}"
 
-#: __init__.py:1002
+#: fileBasketManager.py:67
+msgid "Execute"
+msgstr "실행"
+
+#: xPlorer_engine.py:1559
 msgid "Explorer tree dumped to NVDA log"
-msgstr "탐색기 트리가 NVDA 로그에 덤프됨"
+msgstr "탐색기 트리가 NVDA 로그에 덤프되었습니다."
 
 #: createFile.py:72
 msgid "Extension:"
 msgstr "확장자:"
 
-#: folderTools.py:949
-msgid "Failed to rename any folders"
-msgstr "폴더 이름 바꾸기 실패"
+#: compressionManager.py:360
+msgid "Extract Here"
+msgstr "여기에 압축 해제"
 
-#: compressionManager.py:188
+#: compressionManager.py:359
+msgid "Extract to \"{folder}\\\""
+msgstr "\"{folder}\\\"에 압축 해제"
+
+#: compressionManager.py:365
+msgid "Extract {name}"
+msgstr "{name} 압축 해제"
+
+#: compressionManager.py:512
+msgid "Extracted {done} of {total}. Failed: {names}"
+msgstr "총 {total}개 중 {done}개 압축 해제됨. 실패: {names}"
+
+#: compressionManager.py:456
+msgid "Extracted {name} to {path}"
+msgstr "{name}을(를) {path}(으)로 압축 해제함"
+
+#: compressionManager.py:519
+msgid "Extracting {count} files..."
+msgstr "{count}개의 파일 추출 중..."
+
+#: compressionManager.py:469
+msgid "Extracting..."
+msgstr "추출 중..."
+
+#: compressionManager.py:452
+msgid "Extraction completed to {path}"
+msgstr "{path}(으)로 추출 완료"
+
+#: compressionManager.py:507
+msgid "Extraction completed: {count} files, each in its own folder"
+msgstr "추출 완료: {count}개의 파일, 각각의 폴더에 저장됨"
+
+#: compressionManager.py:440
+msgid "Extraction failed"
+msgstr "추출 실패"
+
+#: compressionManager.py:404
+#: compressionManager.py:461
+msgid "Extraction failed: {error}"
+msgstr "추출 실패: {error}"
+
+#: compressionManager.py:482
+msgid "Extraction is already running"
+msgstr "추출이 이미 실행 중입니다"
+
+#: compressionManager.py:435
+msgid "Extraction timed out"
+msgstr "추출 시간 초과"
+
+#: folderTools.py:1988
+msgid "Failed to rename any folders"
+msgstr "폴더 이름을 변경하지 못했습니다"
+
+#: compressionManager.py:201
 msgid "Failed to start compression"
-msgstr "압축 시작 실패"
+msgstr "압축을 시작하지 못했습니다"
+
+#: freezeManager.py:667
+msgid "File"
+msgstr "파일"
+
+#: contextMenu.py:383
+#: contextMenu.py:386
+msgid "File Basket"
+msgstr "파일 바구니"
+
+#: fileBasketManager.py:31
+msgid "File Basket Collection"
+msgstr "파일 바구니 모음"
+
+#: xPlorer_engine.py:1105
+msgid "File Basket: Add selected item(s) to the file basket (single tap), open the file basket (double tap), or clear the file basket (triple tap)"
+msgstr "파일 바구니: 선택한 항목을 파일 바구니에 추가(한 번 탭), 파일 바구니 열기(두 번 탭), 또는 파일 바구니 비우기(세 번 탭)"
+
+#: batchRenameManager.py:238
+msgid "File already exists: {0}"
+msgstr "파일이 이미 존재합니다: {0}"
+
+#: xPlorer_engine.py:1112
+msgid "File basket manager not available"
+msgstr "파일 바구니 관리자를 사용할 수 없습니다"
 
 #: createFile.py:138
 msgid "File count cannot exceed 10"
-msgstr "파일 수는 10개를 초과할 수 없습니다"
+msgstr "파일 개수는 10개를 초과할 수 없습니다"
 
 #: createFile.py:135
 msgid "File count must be at least 1"
-msgstr "파일 수는 최소 1개여야 합니다"
+msgstr "파일 개수는 최소 1개 이상이어야 합니다"
 
 #: createFile.py:112
 msgid "File name"
 msgstr "파일 이름"
 
-#: fileOperations.py:59
+#: fileOperations.py:68
 msgid "File name cannot be empty"
 msgstr "파일 이름은 비워둘 수 없습니다"
 
-#: fileOperations.py:337
+#: fileOperations.py:1541
 msgid "File name not changed"
 msgstr "파일 이름이 변경되지 않았습니다"
 
@@ -326,392 +887,1569 @@ msgstr "파일 이름 {index}:"
 msgid "File name:"
 msgstr "파일 이름:"
 
-#: __init__.py:850
+#: folderTools.py:1733
+msgid "File not found"
+msgstr "파일을 찾을 수 없습니다"
+
+#: xPlorer_engine.py:1062
+#: xPlorer_engine.py:1068
+#: xPlorer_engine.py:1089
 msgid "File operations manager not available"
 msgstr "파일 작업 관리자를 사용할 수 없습니다"
 
-#: fileOperations.py:344
+#: fileOperations.py:1548
 msgid "File renamed to {name}"
-msgstr "파일 이름이 {name} (으)로 변경됨"
+msgstr "파일이 {name}(으)로 이름이 변경되었습니다"
 
-#: robocopyManager.py:448
+#: contextMenu.py:970
+msgid "File system: {0}"
+msgstr "파일 시스템: {0}"
+
+#: flatViewManager.py:151
+msgid "Files found: {names}"
+msgstr "찾은 파일: {names}"
+
+#: duplicateFinderManager.py:101
+msgid "Files in this group:"
+msgstr "이 그룹의 파일:"
+
+#: fileOperations.py:261
+msgid "Files only"
+msgstr "파일만"
+
+#: flatViewManager.py:37
+msgid "Filter (type to narrow the list):"
+msgstr "필터(입력하여 목록 축소):"
+
+#: batchRenameManager.py:59
+msgid "Find and replace"
+msgstr "찾기 및 바꾸기"
+
+#: robocopyManager.py:490
 msgid "Finished {n} of {total}: {name}"
 msgstr "{total}개 중 {n}개 완료: {name}"
 
-#: folderTools.py:227
-#: folderTools.py:267
+#: contextMenu.py:451
+msgid "Flat View"
+msgstr "평면 보기"
+
+#: flatViewManager.py:21
+msgid "Flat View: {0}"
+msgstr "평면 보기: {0}"
+
+#: xPlorer_engine.py:954
+msgid "Flat view tool not available"
+msgstr "평면 보기 도구를 사용할 수 없습니다"
+
+#: folderTools.py:1188
+msgid "Focus a single file first to select others with the same extension"
+msgstr "같은 확장자를 가진 다른 파일을 선택하려면 먼저 단일 파일에 포커스를 맞추세요"
+
+#: flatViewManager.py:46
+#: folderTools.py:302
+#: folderTools.py:342
+#: freezeManager.py:667
 msgid "Folder"
 msgstr "폴더"
 
-#: folderTools.py:605
-#: folderTools.py:675
+#: folderTools.py:768
+#: folderTools.py:838
 msgid "Folder '{}' already exists, creating '{}' instead"
-msgstr "폴더 '{}'이(가) 이미 존재합니다. 대신 '{}'을(를) 생성합니다"
+msgstr "폴더 '{}'이(가) 이미 존재하므로 대신 '{}'을(를) 생성합니다"
 
-#: __init__.py:905
+#: contextMenu.py:407
+msgid "Folder Sync & Compare"
+msgstr "폴더 동기화 및 비교"
+
+#: xPlorer_engine.py:1459
 msgid "Folder creation dialog not available"
-msgstr "폴더 만들기 대화 상자를 사용할 수 없습니다"
+msgstr "폴더 생성 대화상자를 사용할 수 없습니다"
 
-#: __init__.py:867
+#: xPlorer_engine.py:1408
 msgid "Folder creator helper not available"
-msgstr "폴더 만들기 도우미를 사용할 수 없습니다"
+msgstr "폴더 생성 도우미를 사용할 수 없습니다"
 
-#: contextMenu.py:131
-#: contextMenu.py:134
-#: contextMenu.py:155
+#: contextMenu.py:564
+#: contextMenu.py:634
+#: contextMenu.py:637
+#: contextMenu.py:640
 msgid "Folder info"
 msgstr "폴더 정보"
 
-#: folderTools.py:142
+#: folderTools.py:217
 msgid "Folder title:"
 msgstr "폴더 제목:"
 
-#: contextMenu.py:47
+#: contextMenu.py:456
+msgid "Folder to ISO"
+msgstr "폴더를 ISO로"
+
+#: fileOperations.py:259
+msgid "Folders and files"
+msgstr "폴더 및 파일"
+
+#: workspaceManager.py:86
+msgid "Folders in this workspace:"
+msgstr "이 작업 공간의 폴더:"
+
+#: fileOperations.py:260
+msgid "Folders only"
+msgstr "폴더만"
+
+#: fileOperations.py:239
+msgid "Folders: {folders}, files: {files}, total size: {size}"
+msgstr "폴더: {folders}, 파일: {files}, 총 크기: {size}"
+
+#: duplicateFinderManager.py:90
+msgid "Found {0} duplicate groups"
+msgstr "중복 그룹 {0}개를 찾았습니다"
+
+#: duplicateFinderManager.py:329
+msgid "Found {0} duplicate groups, {1} redundant files"
+msgstr "중복 그룹 {0}개, 중복 파일 {1}개를 찾았습니다"
+
+#: contextMenu.py:984
+msgid "Free space: {0}"
+msgstr "여유 공간: {0}"
+
+#: freezeManager.py:1059
+msgid "Freeze"
+msgstr "고정"
+
+#: contextMenu.py:423
+msgid "Freeze Selected"
+msgstr "선택한 항목 고정"
+
+#: xPlorer_engine.py:1123
+msgid "Freeze manager not available"
+msgstr "고정 관리자를 사용할 수 없습니다"
+
+#: freezeManager.py:1061
+msgid "Freeze, {count} items"
+msgstr "고정됨, 항목 {count}개"
+
+#: xPlorer_engine.py:1127
+msgid "Freeze: freeze selected items (single tap), unfreeze selected items (double tap), or open the Freezer list (triple tap)"
+msgstr "고정: 선택한 항목 고정(한 번 탭), 선택한 항목 고정 해제(두 번 탭), 또는 고정소 목록 열기(세 번 탭)"
+
+#: contextMenu.py:428
+#: freezeManager.py:635
+msgid "Freezer"
+msgstr "고정소"
+
+#: freezeManager.py:680
+msgid "Freezer - {count} frozen items"
+msgstr "고정소 - 고정된 항목 {count}개"
+
+#: freezeManager.py:832
+#: freezeManager.py:893
+msgid "Freezing"
+msgstr "고정 중"
+
+#: freezeManager.py:1086
+msgid "Frozen by a parent folder. Unfreeze the parent folder instead"
+msgstr "상위 폴더에 의해 고정되어 있습니다. 대신 상위 폴더의 고정을 해제하세요"
+
+#: batchRenameManager.py:232
+#: batchRenameManager.py:402
+msgid "Frozen item skipped: {0}"
+msgstr "고정된 항목 건너뜀: {0}"
+
+#: freezeManager.py:642
+msgid "Frozen items"
+msgstr "고정된 항목"
+
+#: contextMenu.py:827
+msgid "GB"
+msgstr "GB"
+
+#: contextMenu.py:439
 msgid "Headline Case"
-msgstr "헤드라인 대문자"
+msgstr "첫 문자 대문자"
 
-#: folderTools.py:278
+#: fileOperations.py:1353
+msgid "ISO created: {name}, {size}"
+msgstr "ISO 생성됨: {name}, {size}"
+
+#: fileOperations.py:1345
+msgid "ISO creation failed: {error}"
+msgstr "ISO 생성 실패: {error}"
+
+#: fileOperations.py:1190
+msgid "ISO creation is already running"
+msgstr "ISO가 이미 생성 중입니다"
+
+#: syncCompareManager.py:20
+msgid "Identical"
+msgstr "동일함"
+
+#: fileOperations.py:457
+msgid "Include subfolder contents in folder sizes"
+msgstr "폴더 크기에 하위 폴더 내용 포함"
+
+#: folderTools.py:1557
+msgid "Include subfolders (search all levels, like Flat View)"
+msgstr "하위 폴더 포함 (평면 보기처럼 모든 단계 검색)"
+
+#: fileOperations.py:282
+msgid "Include the contents of subfolders in folder sizes (slower)"
+msgstr "폴더 크기에 하위 폴더 내용 포함 (느림)"
+
+#: fileOperations.py:473
+msgid "Including subfolders"
+msgstr "하위 폴더 포함 중"
+
+#: folderTools.py:353
 msgid "Invalid number for folders"
-msgstr "폴더에 잘못된 숫자입니다"
+msgstr "잘못된 폴더 번호입니다"
 
-#: contextMenu.py:27
+#: folderTools.py:1642
+#: folderTools.py:1848
+msgid "Invalid regular expression: {0}"
+msgstr "잘못된 정규 표현식: {0}"
+
+#: contextMenu.py:479
 msgid "Invert selection"
 msgstr "선택 반전"
 
-#: contextMenu.py:45
+#: fileBasketManager.py:113
+msgid "Item removed"
+msgstr "항목이 제거되었습니다"
+
+#: fileOperations.py:350
+msgid "Items"
+msgstr "항목"
+
+#: fileBasketManager.py:39
+msgid "Items in the basket:"
+msgstr "바구니에 담긴 항목:"
+
+#: contextMenu.py:827
+msgid "KB"
+msgstr "KB"
+
+#: duplicateFinderManager.py:111
+msgid "Keep File in This Folder"
+msgstr "이 폴더에 파일 유지"
+
+#: duplicateFinderManager.py:107
+msgid "Keep Newest"
+msgstr "최신 항목 유지"
+
+#: duplicateFinderManager.py:109
+msgid "Keep Oldest"
+msgstr "오래된 항목 유지"
+
+#: duplicateFinderManager.py:189
+msgid "Kept {0}, moved {1} duplicates to the Recycle Bin"
+msgstr "{0} 개는 유지하고, 중복된 {1} 개를 휴지통으로 이동했습니다."
+
+#: syncCompareManager.py:196
+msgid "Left and right folders are the same"
+msgstr "왼쪽과 오른쪽 폴더가 동일합니다."
+
+#: syncCompareManager.py:45
+msgid "Left: {0}   Right: {1}"
+msgstr "왼쪽: {0}   오른쪽: {1}"
+
+#: fileOperations.py:280
+msgid "List folders before files"
+msgstr "폴더를 파일보다 먼저 표시"
+
+#: workspaceManager.py:271
+msgid "Load Workspace"
+msgstr "작업 공간 불러오기"
+
+#: workspaceManager.py:670
+msgid "Loaded workspace {name}: opened {opened}, already open {reused}"
+msgstr "작업 공간 {name}을(를) 불러왔습니다: {opened}개 열림, 이미 열려 있음 {reused}개"
+
+#: contextMenu.py:968
+msgid "Local"
+msgstr "로컬"
+
+#: contextMenu.py:992
+msgid "Location: {0}"
+msgstr "위치: {0}"
+
+#: contextMenu.py:435
 msgid "Lowercase"
 msgstr "소문자"
 
-#: folderTools.py:275
+#: contextMenu.py:827
+msgid "MB"
+msgstr "MB"
+
+#: contextMenu.py:402
+msgid "Mark Left Folder (Sync Compare)"
+msgstr "왼쪽 폴더로 지정 (동기화 비교)"
+
+#: syncCompareManager.py:178
+msgid "Marked as left folder: {0}. Navigate to the right folder and run compare again"
+msgstr "왼쪽 폴더로 지정되었습니다: {0}. 오른쪽 폴더로 이동하여 비교를 다시 실행하세요."
+
+#: folderTools.py:1577
+msgid "Matching items (Enter opens, Ctrl+C/Ctrl+X copy/cut, Ctrl+Space toggles a pick, right-click or Menu key for more):"
+msgstr "일치하는 항목 (Enter: 열기, Ctrl+C/Ctrl+X: 복사/잘라내기, Ctrl+Space: 선택 토글, 마우스 우클릭 또는 메뉴 키: 추가 옵션):"
+
+#: folderTools.py:350
 msgid "Maximum 100 folders allowed"
-msgstr "최대 100개 폴더까지 허용됩니다"
+msgstr "최대 100개의 폴더만 허용됩니다."
 
-#: __init__.py:909
+#: fileBasketManager.py:51
+#: fileBasketManager.py:163
+msgid "Mirror Copy"
+msgstr "미러 복사"
+
+#: fileBasketManager.py:414
+msgid "Mirror copied {0} items from the basket"
+msgstr "바구니에서 {0}개의 항목을 미러 복사했습니다."
+
+#: batchRenameManager.py:406
+msgid "Missing file, cannot undo: {0}"
+msgstr "파일이 없어 실행 취소할 수 없습니다: {0}"
+
+#: contextMenu.py:1015
+msgid "Modified: {0}"
+msgstr "수정일: {0}"
+
+#: fileBasketManager.py:51
+#: fileBasketManager.py:161
+msgid "Move"
+msgstr "이동"
+
+#: workspaceManager.py:326
+msgid "Move Down"
+msgstr "아래로 이동"
+
+#: workspaceManager.py:325
+msgid "Move Up"
+msgstr "위로 이동"
+
+#: freezeManager.py:29
+msgid "Move canceled"
+msgstr "이동이 취소되었습니다."
+
+#: folderTools.py:1826
+msgid "Move {count} item(s) to the Recycle Bin?"
+msgstr "{count}개의 항목을 휴지통으로 이동하시겠습니까?"
+
+#: robocopyManager.py:503
+msgid "Moved"
+msgstr "이동됨"
+
+#: fileBasketManager.py:377
+msgid "Moved {0} items from the basket"
+msgstr "장바구니에서 {0}개 항목을 이동했습니다."
+
+#: folderTools.py:1833
+msgid "Moved {count} item(s) to the Recycle Bin"
+msgstr "{count}개 항목을 휴지통으로 이동했습니다."
+
+#: batchRenameManager.py:43
+msgid "Multi-Rename Tool"
+msgstr "일괄 이름 바꾸기 도구"
+
+#: contextMenu.py:481
+msgid "Multi-select"
+msgstr "다중 선택"
+
+#: flatViewManager.py:45
+msgid "Name"
+msgstr "이름"
+
+#: fileOperations.py:249
+msgid "Name followed by size"
+msgstr "이름 및 크기 순"
+
+#: fileOperations.py:253
+msgid "Name, A to Z"
+msgstr "이름 오름차순"
+
+#: fileOperations.py:254
+msgid "Name, Z to A"
+msgstr "이름 내림차순"
+
+#: contextMenu.py:991
+msgid "Name: {0}"
+msgstr "이름: {0}"
+
+#: contextMenu.py:968
+msgid "Network name: {0}"
+msgstr "네트워크 이름: {0}"
+
+#: fileOperations.py:1504
+msgid "New name is the same as the current name"
+msgstr "새 이름이 현재 이름과 같습니다."
+
+#: workspaceManager.py:75
+msgid "New workspace"
+msgstr "새 작업 공간"
+
+#: flatViewManager.py:225
+#: syncCompareManager.py:175
+#: syncCompareManager.py:189
+#: xPlorer_engine.py:1463
 msgid "No Explorer folder detected"
-msgstr "탐색기 폴더가 감지되지 않았습니다"
+msgstr "탐색기 폴더가 감지되지 않았습니다."
 
-#: fileOperations.py:219
-#: fileOperations.py:276
+#: fileOperations.py:1085
+#: fileOperations.py:1158
 msgid "No access to size data"
-msgstr "크기 데이터에 액세스할 수 없습니다"
+msgstr "크기 데이터에 접근할 수 없습니다."
 
-#: folderTools.py:769
+#: folderTools.py:1127
+#: folderTools.py:1479
 msgid "No active File Explorer window found"
-msgstr "활성 파일 탐색기 창을 찾을 수 없습니다"
+msgstr "활성화된 파일 탐색기 창을 찾을 수 없습니다."
 
-#: clipboardManager.py:127
+#: batchRenameManager.py:220
+msgid "No changes to apply"
+msgstr "적용할 변경 사항 없음"
+
+#: clipboardManager.py:143
 msgid "No content could be read from selected files"
-msgstr "선택한 파일에서 콘텐츠를 읽을 수 없습니다"
+msgstr "선택한 파일에서 읽을 수 있는 콘텐츠가 없습니다."
 
-#: createFile.py:284
+#: duplicateFinderManager.py:91
+#: duplicateFinderManager.py:325
+msgid "No duplicate files found"
+msgstr "중복된 파일을 찾지 못했습니다."
+
+#: duplicateFinderManager.py:159
+msgid "No duplicate group selected"
+msgstr "선택된 중복 그룹이 없습니다."
+
+#: flatViewManager.py:148
+msgid "No files found"
+msgstr "파일을 찾을 수 없습니다."
+
+#: batchRenameManager.py:335
+msgid "No files selected or found in the current folder"
+msgstr "현재 폴더에 선택되었거나 발견된 파일이 없습니다."
+
+#: createFile.py:288
 msgid "No files were created"
-msgstr "생성된 파일이 없습니다"
+msgstr "생성된 파일이 없습니다."
 
-#: folderTools.py:964
-#: folderTools.py:970
-#: folderTools.py:979
-#: folderTools.py:985
+#: workspaceManager.py:221
+msgid "No folder selected"
+msgstr "선택된 폴더가 없습니다."
+
+#: folderTools.py:2003
+#: folderTools.py:2009
+#: folderTools.py:2018
+#: folderTools.py:2024
 msgid "No folders found"
 msgstr "폴더를 찾을 수 없습니다"
 
-#: __init__.py:931
+#: xPlorer_engine.py:1488
 msgid "No folders selected"
-msgstr "선택한 폴더가 없습니다"
+msgstr "선택된 폴더가 없습니다"
 
-#: __init__.py:946
+#: xPlorer_engine.py:1502
 msgid "No folders selected or current folder not available"
-msgstr "선택한 폴더가 없거나 현재 폴더를 사용할 수 없습니다"
+msgstr "선택된 폴더가 없거나 현재 폴더를 사용할 수 없습니다"
 
-#: folderTools.py:341
-#: folderTools.py:649
-#: folderTools.py:699
+#: folderTools.py:416
+#: folderTools.py:812
+#: folderTools.py:862
 msgid "No folders were created"
 msgstr "생성된 폴더가 없습니다"
 
-#: folderTools.py:81
+#: fileBasketManager.py:107
+#: flatViewManager.py:176
+#: flatViewManager.py:190
+#: folderTools.py:146
+#: freezeManager.py:691
+#: syncCompareManager.py:127
 msgid "No item selected"
-msgstr "선택한 항목이 없습니다"
+msgstr "선택된 항목이 없습니다"
 
-#: folderTools.py:782
+#: contextMenu.py:899
+msgid "No item to show properties for"
+msgstr "속성을 표시할 항목이 없습니다"
+
+#: folderTools.py:1139
+#: folderTools.py:1491
 msgid "No items in folder"
 msgstr "폴더에 항목이 없습니다"
 
-#: clipboardManager.py:27
-#: clipboardManager.py:62
-#: compressionManager.py:148
-#: fileOperations.py:210
-#: fileOperations.py:306
+#: clipboardManager.py:30
+#: clipboardManager.py:68
+#: compressionManager.py:161
+#: compressionManager.py:330
+#: fileBasketManager.py:225
+#: fileOperations.py:1076
+#: fileOperations.py:1418
+#: fileOperations.py:1448
+#: freezeManager.py:1037
+#: freezeManager.py:1068
 msgid "No items selected"
-msgstr "선택한 항목이 없습니다"
+msgstr "선택된 항목 없음"
 
-#: clipboardManager.py:79
+#: fileOperations.py:448
+msgid "No items to show"
+msgstr "표시할 항목이 없습니다"
+
+#: folderTools.py:1274
+msgid "No matches found for {term}"
+msgstr "{term}에 대한 검색 결과가 없습니다"
+
+#: operationHistoryManager.py:39
+#: operationHistoryManager.py:70
+msgid "No operations recorded yet"
+msgstr "기록된 작업이 없습니다"
+
+#: contextMenu.py:279
+msgid "No recent locations yet"
+msgstr "최근 위치가 없습니다"
+
+#: batchRenameManager.py:378
+#: batchRenameManager.py:391
+msgid "No rename operation to undo"
+msgstr "취소할 이름 바꾸기 작업이 없습니다"
+
+#: folderTools.py:1728
+#: folderTools.py:1764
+#: folderTools.py:1785
+#: folderTools.py:1799
+#: folderTools.py:1812
+#: folderTools.py:1823
+msgid "No result selected"
+msgstr "선택된 결과가 없습니다"
+
+#: clipboardManager.py:86
 msgid "No text files selected"
-msgstr "선택한 텍스트 파일이 없습니다"
+msgstr "선택된 텍스트 파일이 없습니다."
 
-#: folderTools.py:591
-#: folderTools.py:661
+#: folderTools.py:754
+#: folderTools.py:824
 msgid "No valid folder names found in the file"
 msgstr "파일에서 유효한 폴더 이름을 찾을 수 없습니다"
 
-#: folderTools.py:296
+#: folderTools.py:371
 msgid "No valid folder names provided"
 msgstr "유효한 폴더 이름이 제공되지 않았습니다"
 
-#: __init__.py:976
+#: workspaceManager.py:190
+msgid "No valid folder paths found"
+msgstr "유효한 폴더 경로를 찾을 수 없습니다"
+
+#: workspaceManager.py:314
+msgid "No workspace selected"
+msgstr "선택된 작업 공간이 없습니다"
+
+#: workspaceManager.py:301
+#: workspaceManager.py:310
+msgid "No workspaces saved yet"
+msgstr "저장된 작업 공간이 없습니다"
+
+#: duplicateFinderManager.py:181
+msgid "None of the copies are directly in the scanned folder"
+msgstr "복사본 중 스캔한 폴더에 직접 있는 것이 없습니다"
+
+#: workspaceManager.py:675
+msgid "None of the folders in workspace {0} could be found"
+msgstr "작업 공간 {0}의 폴더를 찾을 수 없습니다"
+
+#: contextMenu.py:233
+#: contextMenu.py:269
+msgid "Normal display"
+msgstr "일반 표시"
+
+#: folderTools.py:1565
+msgid "Normal search"
+msgstr "일반 검색"
+
+#: fileOperations.py:1242
+msgid "Not enough free disk space"
+msgstr "디스크 여유 공간이 부족합니다."
+
+#: xPlorer_engine.py:1533
 msgid "Not focused on File Explorer"
-msgstr "파일 탐색기에 포커스가 없습니다"
+msgstr "파일 탐색기에 포커스가 없습니다."
+
+#: freezeManager.py:1088
+msgid "Not frozen"
+msgstr "멈춤 상태 아님"
 
 #: createFile.py:198
-#: folderTools.py:541
-#: folderTools.py:763
+#: fileOperations.py:1187
+#: fileOperations.py:1366
+#: folderTools.py:700
+#: folderTools.py:1102
+#: folderTools.py:1181
+#: folderTools.py:1214
+#: folderTools.py:1451
+#: xPlorer_engine.py:1138
+#: xPlorer_engine.py:1211
 msgid "Not in File Explorer"
-msgstr "파일 탐색기에 없습니다"
+msgstr "파일 탐색기가 아님"
+
+#: duplicateFinderManager.py:170
+msgid "Nothing to remove in this group"
+msgstr "이 그룹에서 제거할 항목이 없습니다."
 
 #: createFile.py:28
 msgid "Number of files to create:"
-msgstr "만들 파일 수:"
+msgstr "생성할 파일 수:"
 
-#: folderTools.py:272
+#: folderTools.py:347
 msgid "Number of folders must be at least 1"
-msgstr "폴더 수는 최소 1개여야 합니다"
+msgstr "폴더 수는 1개 이상이어야 합니다."
 
-#: folderTools.py:150
+#: folderTools.py:225
 msgid "Number of folders:"
 msgstr "폴더 수:"
 
-#: __init__.py:844
-msgid "Open xPlorer context menu"
-msgstr "xPlorer 컨텍스트 메뉴 열기"
+#: fileOperations.py:292
+msgid "OK"
+msgstr "확인"
 
-#: folderTools.py:554
+#: syncCompareManager.py:17
+msgid "Only in left"
+msgstr "왼쪽에만 있음"
+
+#: syncCompareManager.py:18
+msgid "Only in right"
+msgstr "오른쪽에만 있음"
+
+#: flatViewManager.py:51
+msgid "Open Containing Folder"
+msgstr "포함된 폴더 열기"
+
+#: contextMenu.py:418
+msgid "Open Freezer"
+msgstr "프리저 열기"
+
+#: folderTools.py:1769
+msgid "Open to path"
+msgstr "경로로 열기"
+
+#: xPlorer_engine.py:1037
+msgid "Open xPlorer context menu (single tap), Recent Locations (double tap), or Current folder size list (triple tap)"
+msgstr "xPlorer 컨텍스트 메뉴(한 번 탭), 최근 위치(두 번 탭) 또는 현재 폴더 크기 목록(세 번 탭)"
+
+#: contextMenu.py:533
+#: operationHistoryManager.py:26
+msgid "Operation History"
+msgstr "작업 기록"
+
+#: operationHistoryManager.py:72
+msgid "Operation history cleared"
+msgstr "작업 기록이 지워졌습니다."
+
+#: workspaceManager.py:95
+msgid "Or paste/type folder paths here, one per line:"
+msgstr "또는 여기에 폴더 경로를 한 줄에 하나씩 붙여넣거나 입력하세요:"
+
+#: batchRenameManager.py:409
+msgid "Original name is taken, cannot undo: {0}"
+msgstr "원래 이름을 사용할 수 없어 실행을 취소할 수 없습니다: {0}"
+
+#: freezeManager.py:32
+msgid "Overwrite canceled"
+msgstr "덮어쓰기가 취소되었습니다."
+
+#: freezeManager.py:31
+msgid "Paste canceled"
+msgstr "붙여넣기가 취소되었습니다."
+
+#: fileBasketManager.py:272
+msgid "Path not found: {0}"
+msgstr "경로를 찾을 수 없습니다: {0}"
+
+#: folderTools.py:1572
+msgid "Pattern / search text (meaning depends on the mode above):"
+msgstr "패턴 / 검색 텍스트 (의미는 위 모드에 따라 다름):"
+
+#: contextMenu.py:230
+msgid "Pin"
+msgstr "고정"
+
+#: workspaceManager.py:323
+msgid "Pin to Top"
+msgstr "맨 위에 고정"
+
+#: contextMenu.py:259
+msgid "Pinned"
+msgstr "고정됨"
+
+#: workspaceManager.py:341
+msgid "Pinned to top: {0}"
+msgstr "맨 위에 고정됨: {0}"
+
+#: fileBasketManager.py:156
+msgid "Please choose a valid destination folder"
+msgstr "올바른 대상 폴더를 선택하십시오."
+
+#: folderTools.py:713
 msgid "Please select a .txt or .rtf file"
-msgstr ".txt 또는 .rtf 파일을 선택하세요"
+msgstr ".txt 또는 .rtf 파일을 선택하십시오."
 
-#: fileOperations.py:313
+#: compressionManager.py:335
+msgid "Please select a compressed file"
+msgstr "압축 파일을 선택하십시오."
+
+#: fileOperations.py:1429
 msgid "Please select a file, not a folder"
-msgstr "폴더가 아닌 파일을 선택하세요"
+msgstr "폴더가 아닌 파일을 선택하십시오."
 
-#: fileOperations.py:309
+#: fileOperations.py:1196
+msgid "Please select a folder"
+msgstr "폴더를 선택하십시오."
+
+#: fileOperations.py:1421
 msgid "Please select only one file"
-msgstr "파일 하나만 선택하세요"
+msgstr "파일 하나만 선택하십시오."
 
-#: folderTools.py:547
+#: fileOperations.py:1199
+msgid "Please select only one folder"
+msgstr "폴더 하나만 선택하십시오."
+
+#: fileOperations.py:1451
+msgid "Please select only one item"
+msgstr "항목 하나만 선택하십시오."
+
+#: folderTools.py:706
 msgid "Please select only one text file"
-msgstr "텍스트 파일 하나만 선택하세요"
+msgstr "텍스트 파일 하나만 선택하십시오."
 
-#: folderTools.py:791
+#: batchRenameManager.py:90
+msgid "Preview of new file names:"
+msgstr "새 파일 이름 미리보기:"
+
+#: folderTools.py:1148
+#: folderTools.py:1495
 msgid "Processing {count} items in background..."
 msgstr "백그라운드에서 {count}개 항목 처리 중..."
 
-#: __init__.py:861
-#: contextMenu.py:31
+#: contextMenu.py:555
+#: contextMenu.py:929
+msgid "Properties"
+msgstr "속성"
+
+#: xPlorer_engine.py:1449
+msgid "Properties menu not available"
+msgstr "속성 메뉴를 사용할 수 없습니다."
+
+#: contextMenu.py:750
+msgid "Read-only"
+msgstr "읽기 전용"
+
+#: contextMenu.py:750
+msgid "Read-only (frozen, managed by the Freezer)"
+msgstr "읽기 전용(고정됨, Freezer에 의해 관리됨)"
+
+#: contextMenu.py:790
+msgid "Read-only turned off"
+msgstr "읽기 전용 꺼짐"
+
+#: contextMenu.py:790
+msgid "Read-only turned on"
+msgstr "읽기 전용 켜짐"
+
+#: contextMenu.py:530
+msgid "Recent Locations"
+msgstr "최근 위치"
+
+#: operationHistoryManager.py:34
+msgid "Recent operations (most recent first):"
+msgstr "최근 작업 (최신순):"
+
+#: folderTools.py:1565
+msgid "Regex"
+msgstr "정규 표현식"
+
+#: syncCompareManager.py:52
+msgid "Relative Path"
+msgstr "상대 경로"
+
+#: fileBasketManager.py:72
+#: workspaceManager.py:103
+msgid "Remove Selected"
+msgstr "선택된 항목 제거"
+
+#: duplicateFinderManager.py:190
+msgid "Removed {0} duplicate copies of {1}"
+msgstr "{1}의 중복 항목 {0}개 제거됨"
+
+#: freezeManager.py:28
+msgid "Rename canceled"
+msgstr "이름 바꾸기가 취소되었습니다."
+
+#: batchRenameManager.py:54
+msgid "Rename mode:"
+msgstr "이름 바꾸기 모드:"
+
+#: contextMenu.py:502
 msgid "Rename selected file"
 msgstr "선택한 파일 이름 바꾸기"
 
-#: __init__.py:688
-msgid "Required manager not available"
-msgstr "필요한 관리자를 사용할 수 없습니다"
+#: xPlorer_engine.py:1079
+msgid "Rename selected file (single tap), rename using clipboard text (double tap), or undo the last batch rename operation (triple tap)"
+msgstr "선택한 파일 이름 바꾸기(한 번 탭), 클립보드 텍스트로 이름 바꾸기(두 번 탭), 또는 마지막 일괄 이름 바꾸기 작업 실행 취소(세 번 탭)"
 
-#: contextMenu.py:34
+#: fileOperations.py:1552
+msgid "Renamed 1 file"
+msgstr "파일 1개의 이름이 바뀌었습니다."
+
+#: fileOperations.py:1513
+msgid "Renamed to {name}"
+msgstr "{name}(으)로 이름이 바뀌었습니다."
+
+#: batchRenameManager.py:251
+msgid "Renamed {0} files"
+msgstr "파일 {0}개의 이름이 바뀌었습니다."
+
+#: fileOperations.py:1516
+msgid "Renamed {old} to {new}"
+msgstr "{old}에서 {new}(으)로 이름이 바뀌었습니다."
+
+#: batchRenameManager.py:72
+msgid "Replace with:"
+msgstr "바꿀 내용:"
+
+#: fileOperations.py:460
+msgid "Rescan"
+msgstr "다시 검색"
+
+#: contextMenu.py:234
+#: contextMenu.py:269
+msgid "Reversed display"
+msgstr "역순 표시"
+
+#: batchRenameManager.py:418
+msgid "Reverted {0} file names"
+msgstr "파일 {0}개의 이름이 원래대로 되돌려졌습니다."
+
+#: contextMenu.py:515
 msgid "Robocopy"
-msgstr "Robocopy"
+msgstr "로보카피"
 
-#: robocopyManager.py:457
+#: robocopyManager.py:499
 msgid "Robocopy cancelled"
-msgstr "Robocopy 취소됨"
+msgstr "로보카피가 취소되었습니다."
 
-#: robocopyManager.py:469
-msgid "Robocopy finished successfully. {n} item(s) copied"
-msgstr "Robocopy가 성공적으로 완료되었습니다. {n}개 항목 복사됨"
+#: robocopyManager.py:528
+msgid "Robocopy complete. {n} item(s) copied"
+msgstr "로보카피 완료. {n}개 항목 복사됨"
 
-#: robocopyManager.py:465
-msgid "Robocopy finished. {ok} succeeded, {failed} failed: {items}"
-msgstr "Robocopy 완료. {ok}개 성공, {failed}개 실패: {items}"
+#: robocopyManager.py:514
+msgid "Robocopy finished. {ok} succeeded, {failed} failed"
+msgstr "로보카피 완료. 성공 {ok}개, 실패 {failed}개"
 
-#: __init__.py:768
+#: xPlorer_engine.py:988
 msgid "Robocopy manager not available"
-msgstr "Robocopy 관리자를 사용할 수 없습니다"
+msgstr "로보카피 관리자를 사용할 수 없습니다."
 
-#: __init__.py:791
+#: robocopyManager.py:546
+msgid "Robocopy: Items That Could Not Be Copied"
+msgstr "로보카피: 복사할 수 없는 항목"
+
+#: xPlorer_engine.py:996
 msgid "Robocopy: single tap copy, double tap paste, triple tap move"
-msgstr "Robocopy: 한 번 탭 복사, 두 번 탭 붙여넣기, 세 번 탭 이동"
+msgstr "로보카피: 한 번 탭하여 복사, 두 번 탭하여 붙여넣기, 세 번 탭하여 이동"
 
-#: contextMenu.py:89
-#: contextMenu.py:100
-#: contextMenu.py:106
-#: contextMenu.py:111
-#: contextMenu.py:117
+#: contextMenu.py:404
+msgid "Run Compare (Sync Compare)"
+msgstr "비교 실행(동기화 비교)"
+
+#: workspaceManager.py:108
+msgid "Save"
+msgstr "저장"
+
+#: contextMenu.py:336
+msgid "Save Current as Workspace..."
+msgstr "현재 상태를 작업 공간으로 저장..."
+
+#: workspaceManager.py:51
+msgid "Save Workspace"
+msgstr "작업 공간 저장"
+
+#: fileBasketManager.py:140
+msgid "Save Zip File As"
+msgstr "다른 이름으로 압축 파일 저장"
+
+#: workspaceManager.py:263
+msgid "Saved workspaces (right-click or press the Menu key for pin/reorder/clear options):"
+msgstr "저장된 작업 공간(고정, 순서 변경, 지우기 옵션을 보려면 마우스 우클릭 또는 메뉴 키를 누르세요):"
+
+#: contextMenu.py:558
+#: contextMenu.py:608
+#: contextMenu.py:616
+#: contextMenu.py:622
+#: contextMenu.py:627
 msgid "Say size"
 msgstr "크기 읽기"
 
-#: __init__.py:751
-msgid "Say size (single tap) or compress zip (double tap)"
-msgstr "크기 읽기(한 번 탭) 또는 zip 압축(두 번 탭)"
+#: xPlorer_engine.py:971
+msgid "Say size (single tap), compress zip (double tap), unzip (triple tap), or folder to ISO (quadruple tap)"
+msgstr "크기 읽기(한 번 탭), 압축(두 번 탭), 압축 해제(세 번 탭), 또는 폴더를 ISO로 변환(네 번 탭)"
 
-#: folderTools.py:559
+#: duplicateFinderManager.py:272
+msgid "Scanning {0} for duplicates..."
+msgstr "{0}에서 중복 항목을 검색하는 중..."
+
+#: fileOperations.py:401
+msgid "Scanning, please wait"
+msgstr "검색 중, 잠시만 기다려주세요"
+
+#: flatViewManager.py:41
+msgid "Scanning..."
+msgstr "검색 중..."
+
+#: folderTools.py:1563
+msgid "Search mode:"
+msgstr "검색 모드:"
+
+#: fileBasketManager.py:121
+msgid "Select Destination Directory"
+msgstr "대상 디렉토리 선택"
+
+#: workspaceManager.py:192
+msgid "Select Folder to Add"
+msgstr "추가할 폴더 선택"
+
+#: duplicateFinderManager.py:264
+msgid "Select a folder, or open one in Explorer, to scan for duplicates"
+msgstr "중복 항목을 검색할 폴더를 선택하거나 탐색기에서 여세요"
+
+#: contextMenu.py:477
+msgid "Select by Extension"
+msgstr "확장자별 선택"
+
+#: contextMenu.py:483
+#: folderTools.py:1541
+msgid "Select by Search"
+msgstr "검색별 선택"
+
+#: xPlorer_engine.py:939
+msgid "Select by Search: Opens Select by Search (single tap), Flat View (double tap), or Batch Rename Tool (triple tap)"
+msgstr "검색별 선택: 검색별 선택 열기(한 번 탭), 평면 보기(두 번 탭), 또는 일괄 이름 바꾸기 도구(세 번 탭)"
+
+#: folderTools.py:718
 msgid "Selected file does not exist"
 msgstr "선택한 파일이 존재하지 않습니다"
 
-#: folderTools.py:87
+#: folderTools.py:152
 msgid "Selected item is not a folder"
 msgstr "선택한 항목이 폴더가 아닙니다"
 
-#: folderTools.py:826
+#: fileOperations.py:1460
+msgid "Selected item no longer exists"
+msgstr "선택한 항목이 더 이상 존재하지 않습니다"
+
+#: fileBasketManager.py:267
+msgid "Selected items are already in the basket"
+msgstr "선택한 항목이 이미 바구니에 있습니다"
+
+#: folderTools.py:1160
 msgid "Selected {count} items"
 msgstr "{count}개 항목 선택됨"
 
-#: folderTools.py:829
+#: folderTools.py:1263
+msgid "Selected {count} items matching {term}"
+msgstr "{term}(으)로 검색된 {count}개 항목 선택됨"
+
+#: folderTools.py:1197
+msgid "Selected {count} items {ext}"
+msgstr "{ext} 형식의 {count}개 항목 선택됨"
+
+#: folderTools.py:1277
+msgid "Selected {count} top-level items containing matches for {term}"
+msgstr "{term}에 대한 일치 항목이 포함된 최상위 항목 {count}개 선택됨"
+
+#: contextMenu.py:486
+msgid "Selection"
+msgstr "선택 영역"
+
+#: folderTools.py:1163
 msgid "Selection inverted"
-msgstr "선택이 반전되었습니다"
+msgstr "선택 반전됨"
+
+#: xPlorer_engine.py:915
+#: xPlorer_engine.py:947
+msgid "Selection manager not available"
+msgstr "선택 관리자를 사용할 수 없습니다"
+
+#: xPlorer_engine.py:923
+msgid "Selection: Select by extension (single tap), invert selection (double tap), or multi-select (triple tap)"
+msgstr "선택: 확장자로 선택(한 번 탭), 선택 반전(두 번 탭), 또는 다중 선택(세 번 탭)"
+
+#: fileOperations.py:455
+msgid "Settings..."
+msgstr "설정..."
+
+#: fileOperations.py:276
+msgid "Show"
+msgstr "표시"
+
+#: workspaceManager.py:91
+msgid "Show paths"
+msgstr "경로 표시"
+
+#: flatViewManager.py:47
+msgid "Size"
+msgstr "크기"
+
+#: fileOperations.py:250
+msgid "Size followed by name"
+msgstr "크기순(이름 뒤따름)"
+
+#: fileOperations.py:255
+msgid "Size, largest to smallest"
+msgstr "크기, 큰 순서"
+
+#: fileOperations.py:256
+msgid "Size, smallest to largest"
+msgstr "크기, 작은 순서"
+
+#: contextMenu.py:1006
+msgid "Size: calculating..."
+msgstr "크기 계산 중..."
+
+#: contextMenu.py:1008
+msgid "Size: {0}"
+msgstr "크기: {0}"
+
+#: contextMenu.py:1064
+msgid "Size: {0}{1}"
+msgstr "크기: {0}{1}"
+
+#: duplicateFinderManager.py:198
+msgid "Some duplicates could not be removed"
+msgstr "일부 중복 항목을 제거할 수 없습니다"
 
 #: createFile.py:170
 msgid "Some files will use default names"
 msgstr "일부 파일은 기본 이름을 사용합니다"
 
-#: compressionManager.py:161
+#: fileOperations.py:271
+msgid "Sort order"
+msgstr "정렬 순서"
+
+#: compressionManager.py:174
+#: fileOperations.py:1293
 msgid "Starting..."
 msgstr "시작 중..."
 
-#: folderTools.py:987
+#: syncCompareManager.py:53
+msgid "Status"
+msgstr "상태"
+
+#: folderTools.py:2026
 msgid "Successfully converted {count} folders to headline case"
-msgstr "{count}개 폴더를 헤드라인 대문자로 변환했습니다"
+msgstr "폴더 {count}개를 표제어 형식으로 성공적으로 변환했습니다"
 
-#: folderTools.py:972
+#: folderTools.py:2011
 msgid "Successfully converted {count} folders to lowercase"
-msgstr "{count}개 폴더를 소문자로 변환했습니다"
+msgstr "폴더 {count}개를 소문자로 성공적으로 변환했습니다"
 
-#: folderTools.py:981
+#: folderTools.py:2020
 msgid "Successfully converted {count} folders to title case"
-msgstr "{count}개 폴더를 제목 대문자로 변환했습니다"
+msgstr "폴더 {count}개를 단어 첫 글자 대문자로 성공적으로 변환했습니다"
 
-#: folderTools.py:966
+#: folderTools.py:2005
 msgid "Successfully converted {count} folders to uppercase"
-msgstr "{count}개 폴더를 대문자로 변환했습니다"
+msgstr "폴더 {count}개를 대문자로 성공적으로 변환했습니다"
 
-#: folderTools.py:337
+#: folderTools.py:412
 msgid "Successfully created 1 folder"
-msgstr "폴더 1개를 성공적으로 생성했습니다"
+msgstr "폴더 1개를 성공적으로 만들었습니다"
 
-#: folderTools.py:335
+#: folderTools.py:410
 msgid "Successfully created main folder only"
-msgstr "기본 폴더만 성공적으로 생성했습니다"
+msgstr "메인 폴더만 성공적으로 만들었습니다"
 
-#: folderTools.py:339
+#: folderTools.py:414
 msgid "Successfully created {count} of {total} folders"
-msgstr "{total}개 중 {count}개 폴더를 성공적으로 생성했습니다"
+msgstr "총 {total}개 중 폴더 {count}개를 성공적으로 만들었습니다"
 
-#: folderTools.py:645
-#: folderTools.py:695
+#: folderTools.py:808
+#: folderTools.py:858
 msgid "Successfully created {} folders in '{}'"
-msgstr "'{}'에 {}개 폴더를 성공적으로 생성했습니다"
+msgstr "'{}'에 {}개의 폴더를 성공적으로 만들었습니다"
 
-#: contextMenu.py:39
+#: batchRenameManager.py:248
+msgid "Successfully renamed {0} files"
+msgstr "파일 {0}개의 이름을 성공적으로 바꿨습니다"
+
+#: fileBasketManager.py:451
+msgid "Successfully {0} {1} items."
+msgstr "항목 {1}개 {0}을(를) 성공적으로 완료했습니다."
+
+#: contextMenu.py:827
+msgid "TB"
+msgstr "TB"
+
+#: contextMenu.py:446
 msgid "TXT to Folder"
-msgstr "TXT를 폴더로"
+msgstr "텍스트를 폴더로 변환"
 
-#: contextMenu.py:46
+#: batchRenameManager.py:60
+msgid "Tag pattern ([C] counter, [D] date, [N] name, [E] extension)"
+msgstr "태그 패턴 ([C] 카운터, [D] 날짜, [N] 이름, [E] 확장자)"
+
+#: batchRenameManager.py:80
+msgid "Tag pattern (e.g. [N]_[C].[E]):"
+msgstr "태그 패턴 (예: [N]_[C].[E]):"
+
+#: batchRenameManager.py:67
+msgid "Text to find:"
+msgstr "찾을 텍스트:"
+
+#: folderTools.py:1193
+msgid "The focused item has no file extension"
+msgstr "포커스된 항목에 파일 확장자가 없습니다"
+
+#: robocopyManager.py:542
+msgid ""
+"The following {n} item(s) could not be copied:\n"
+"\n"
+"{items}"
+msgstr ""
+"다음 {n}개의 항목을 복사하지 못했습니다:\n"
+"\n"
+"{items}"
+
+#: freezeManager.py:1119
+msgid "The freezer is empty"
+msgstr "냉동실이 비어 있습니다"
+
+#: syncCompareManager.py:133
+msgid "This file only exists on the right side"
+msgstr "이 파일은 오른쪽 측면에만 존재합니다"
+
+#: fileOperations.py:1224
+msgid "This folder cannot be converted to ISO"
+msgstr "이 폴더는 ISO로 변환할 수 없습니다"
+
+#: recentLocationsManager.py:223
+msgid "This folder no longer exists: {0}"
+msgstr "이 폴더가 더 이상 존재하지 않습니다: {0}"
+
+#: contextMenu.py:437
 msgid "Title Case"
-msgstr "제목 대문자"
+msgstr "첫글자 대문자"
 
-#: clipboardManager.py:88
+#: contextMenu.py:846
+msgid "Today"
+msgstr "오늘"
+
+#: fileOperations.py:475
+msgid "Top level only"
+msgstr "최상위 수준만"
+
+#: contextMenu.py:986
+msgid "Total capacity: {0}"
+msgstr "총 용량: {0}"
+
+#: clipboardManager.py:95
 msgid "Total file size is too large to copy content"
-msgstr "전체 파일 크기가 너무 커서 콘텐츠를 복사할 수 없습니다"
+msgstr "전체 파일 크기가 너무 커서 내용을 복사할 수 없습니다."
 
-#: createFile.py:213
+#: createFile.py:215
 msgid "Unable to get current directory after multiple attempts"
-msgstr "여러 번 시도했지만 현재 디렉터리를 가져올 수 없습니다"
+msgstr "여러 번 시도한 후에도 현재 디렉터리를 가져올 수 없습니다"
 
-#: __init__.py:630
+#: fileOperations.py:1373
+#: xPlorer_engine.py:878
 msgid "Unable to get current path"
 msgstr "현재 경로를 가져올 수 없습니다"
 
-#: folderTools.py:774
+#: folderTools.py:1132
+#: folderTools.py:1484
 msgid "Unable to get folder view"
 msgstr "폴더 보기를 가져올 수 없습니다"
 
-#: contextMenu.py:44
+#: batchRenameManager.py:386
+msgid "Unable to read the last rename operation"
+msgstr "마지막 이름 바꾸기 작업을 읽을 수 없습니다"
+
+#: batchRenameManager.py:419
+msgid "Undid rename of {0} files"
+msgstr "{0}개의 파일 이름 바꾸기를 취소했습니다"
+
+#: batchRenameManager.py:103
+#: contextMenu.py:396
+msgid "Undo Last Rename"
+msgstr "마지막 이름 바꾸기 취소"
+
+#: freezeManager.py:729
+#: freezeManager.py:1081
+msgid "Unfreeze"
+msgstr "고정 해제"
+
+#: freezeManager.py:647
+msgid "Unfreeze &all"
+msgstr "모두 고정 해제(&A)"
+
+#: contextMenu.py:425
+msgid "Unfreeze Selected"
+msgstr "선택한 항목 고정 해제"
+
+#: freezeManager.py:711
+msgid "Unfreeze all"
+msgstr "모두 고정 해제"
+
+#: freezeManager.py:730
+msgid "Unfreeze all files and folders"
+msgstr "모든 파일 및 폴더 고정 해제"
+
+#: freezeManager.py:710
+msgid "Unfreeze all {count} items?"
+msgstr "{count}개의 모든 항목을 고정 해제하시겠습니까?"
+
+#: freezeManager.py:723
+msgid "Unfreeze all, {count} items"
+msgstr "모두 고정 해제, {count}개 항목"
+
+#: freezeManager.py:701
+#: freezeManager.py:1083
+msgid "Unfreeze, {count} items"
+msgstr "고정 해제, {count}개 항목"
+
+#: contextMenu.py:230
+msgid "Unpin"
+msgstr "고정 해제"
+
+#: workspaceManager.py:323
+msgid "Unpin from Top"
+msgstr "맨 위에서 고정 해제"
+
+#: contextMenu.py:259
+msgid "Unpinned"
+msgstr "고정 해제됨"
+
+#: workspaceManager.py:341
+msgid "Unpinned: {0}"
+msgstr "고정 해제됨: {0}"
+
+#: contextMenu.py:433
 msgid "Uppercase"
 msgstr "대문자"
 
-#: clipboardManager.py:104
-msgid "[Error processing RTF file]"
-msgstr "[RTF 파일 처리 중 오류]"
+#: batchRenameManager.py:77
+msgid "Use regular expressions (regex)"
+msgstr "정규 표현식(regex) 사용"
 
-#: clipboardManager.py:106
-msgid "[RTF content - striprtf module not available]"
-msgstr "[RTF 콘텐츠 - striprtf 모듈을 사용할 수 없음]"
+#: contextMenu.py:985
+msgid "Used space: {0}"
+msgstr "사용된 공간: {0}"
 
-#: compressionManager.py:114
+#: folderTools.py:1565
+msgid "Wildcard"
+msgstr "와일드카드"
+
+#: contextMenu.py:520
+#: workspaceManager.py:255
+msgid "Workspace Manager"
+msgstr "작업 공간 관리자"
+
+#: workspaceManager.py:395
+msgid "Workspace deleted: {0}"
+msgstr "작업 공간이 삭제되었습니다: {0}"
+
+#: workspaceManager.py:210
+#: xPlorer_engine.py:1147
+msgid "Workspace manager not available"
+msgstr "작업 공간 관리자를 사용할 수 없습니다"
+
+#: workspaceManager.py:81
+msgid "Workspace name:"
+msgstr "작업 공간 이름:"
+
+#: workspaceManager.py:545
+msgid "Workspace not found: {0}"
+msgstr "작업 공간을 찾을 수 없습니다: {0}"
+
+#: workspaceManager.py:736
+msgid "Workspace saved: {0}"
+msgstr "작업 공간이 저장되었습니다: {0}"
+
+#: workspaceManager.py:384
+msgid "Workspace updated: {0}"
+msgstr "작업 공간이 업데이트되었습니다: {0}"
+
+#: xPlorer_engine.py:1155
+msgid "Workspace: Open menu (single tap), add selected folder or save current as workspace (double tap), or edit saved workspaces (triple tap)"
+msgstr "작업 공간: 메뉴 열기(한 번 탭), 선택한 폴더 추가 또는 현재 항목을 작업 공간으로 저장(두 번 탭), 또는 저장된 작업 공간 편집(세 번 탭)"
+
+#: contextMenu.py:848
+msgid "Yesterday"
+msgstr "어제"
+
+#: fileBasketManager.py:51
+#: fileBasketManager.py:138
+msgid "Zip"
+msgstr "압축"
+
+#: fileBasketManager.py:444
+msgid "Zipped {0} items from the basket"
+msgstr "바구니에서 {0}개 항목을 압축했습니다"
+
+#: contextMenu.py:827
+msgid "bytes"
+msgstr "바이트"
+
+#: compressionManager.py:124
 msgid "compression failed"
 msgstr "압축 실패"
 
-#: contextMenu.py:35
+#: fileBasketManager.py:350
+msgid "copied"
+msgstr "복사됨"
+
+#: contextMenu.py:508
 msgid "copy"
 msgstr "복사"
 
-#: robocopyManager.py:235
+#: robocopyManager.py:276
 msgid "estimating time remaining"
-msgstr "남은 시간 추정 중"
+msgstr "남은 시간 계산 중"
 
-#: contextMenu.py:36
+#: contextMenu.py:855
+msgid "less than a minute ago"
+msgstr "1분 미만 전"
+
+#: explorerWindow.py:54
+msgid "maximized"
+msgstr "최대화됨"
+
+#: fileBasketManager.py:412
+msgid "mirror copied"
+msgstr "미러 복사됨"
+
+#: contextMenu.py:510
 msgid "move"
 msgstr "이동"
 
+#: fileBasketManager.py:375
+msgid "moved"
+msgstr "이동됨"
+
 #: createFile.py:156
 msgid "new_file"
-msgstr "새_파일"
+msgstr "새 파일"
 
 #: createFile.py:158
 msgid "new_file_{index}"
-msgstr "새_파일_{index}"
+msgstr "새 파일_{index}"
 
-#: contextMenu.py:37
+#: fileOperations.py:224
+msgid "no access"
+msgstr "액세스 권한 없음"
+
+#: folderTools.py:1723
+msgid "not select {name}"
+msgstr "{name} 선택 해제됨"
+
+#: contextMenu.py:512
 msgid "paste"
 msgstr "붙여넣기"
 
-#: __init__.py:268
-#: __init__.py:672
-#: __init__.py:712
-#: __init__.py:752
-#: __init__.py:792
-#: __init__.py:845
-#: __init__.py:862
-#: __init__.py:880
+#: folderTools.py:1723
+msgid "select {name}"
+msgstr "{name} 선택됨"
+
+#: contextMenu.py:469
+msgid "unCompress zip"
+msgstr "집 압축 해제"
+
+#: contextMenu.py:91
+#: contextMenu.py:105
+msgid "unavailable"
+msgstr "사용할 수 없음"
+
+#: duplicateFinderManager.py:142
+msgid "unknown date"
+msgstr "알 수 없는 날짜"
+
+#: xPlorer_engine.py:313
+#: xPlorer_engine.py:901
+#: xPlorer_engine.py:924
+#: xPlorer_engine.py:940
+#: xPlorer_engine.py:972
+#: xPlorer_engine.py:997
+#: xPlorer_engine.py:1038
+#: xPlorer_engine.py:1080
+#: xPlorer_engine.py:1106
+#: xPlorer_engine.py:1128
+#: xPlorer_engine.py:1156
+#: xPlorer_engine.py:1424
 msgid "xPlorer"
-msgstr "xPlorer"
+msgstr "엑스플로러"
 
-#: contextMenu.py:49
+#: contextMenu.py:537
 msgid "xPlorer Settings"
-msgstr "xPlorer 설정"
+msgstr "엑스플로러 설정"
 
-#: createFile.py:288
+#: fileBasketManager.py:442
+msgid "zipped"
+msgstr "압축됨"
+
+#: contextMenu.py:285
+msgid "{0} (pinned)"
+msgstr "{0} (고정됨)"
+
+#: fileBasketManager.py:449
+msgid "{0} complete. {1} successful, {2} failed. Check NVDA log."
+msgstr "{0} 완료. {1}개 성공, {2}개 실패. NVDA 로그를 확인하세요."
+
+#: duplicateFinderManager.py:135
+msgid "{0} copies, {1} each"
+msgstr "{0}개 복사, 각 {1}"
+
+#: syncCompareManager.py:118
+msgid "{0} differences found"
+msgstr "{0}개의 차이점 발견됨"
+
+#: fileBasketManager.py:264
+#: fileBasketManager.py:308
+msgid "{0} files"
+msgstr "파일 {0}개"
+
+#: flatViewManager.py:132
+#: flatViewManager.py:141
+msgid "{0} files found"
+msgstr "{0}개의 파일을 찾았습니다"
+
+#: fileBasketManager.py:262
+#: fileBasketManager.py:306
+msgid "{0} folders"
+msgstr "폴더 {0}개"
+
+#: contextMenu.py:865
+msgid "{0} hour ago"
+msgstr "{0}시간 전"
+
+#: contextMenu.py:866
+msgid "{0} hours ago"
+msgstr "{0}시간 전"
+
+#: flatViewManager.py:130
+#: flatViewManager.py:140
+msgid "{0} matches found"
+msgstr "{0}개의 일치 항목을 찾았습니다"
+
+#: contextMenu.py:859
+msgid "{0} minute ago"
+msgstr "{0}분 전"
+
+#: contextMenu.py:860
+msgid "{0} minutes ago"
+msgstr "{0}분 전"
+
+#: robocopyManager.py:530
+msgid "{action} {n} item(s) to {dest}"
+msgstr "{n}개의 항목을 {dest}(으)로 {action}"
+
+#: robocopyManager.py:518
+msgid "{action} {n} item(s) to {dest} ({failed} failed)"
+msgstr "{n}개의 항목을 {dest}(으)로 {action} (실패: {failed}개)"
+
+#: contextMenu.py:788
+msgid "{count} files could not be changed"
+msgstr "{count}개의 파일을 변경할 수 없습니다"
+
+#: freezeManager.py:460
+msgid "{count} files could not be made read-only"
+msgstr "{count}개의 파일을 읽기 전용으로 전환할 수 없습니다"
+
+#: freezeManager.py:472
+msgid "{count} files could not be made writable again"
+msgstr "{count}개의 파일을 다시 쓰기 가능 상태로 전환할 수 없습니다"
+
+#: clipboardManager.py:141
+msgid "{count} files could not be read"
+msgstr "{count}개의 파일을 읽을 수 없습니다"
+
+#: createFile.py:292
 msgid "{count} files created"
-msgstr "{count}개 파일 생성됨"
+msgstr "파일 {count}개 생성됨"
 
-#: fileOperations.py:283
+#: workspaceManager.py:167
+msgid "{count} folders in the list"
+msgstr "목록의 폴더 {count}개"
+
+#: freezeManager.py:628
+msgid "{count} frozen items. {result}"
+msgstr "동결된 항목 {count}개. {result}"
+
+#: fileOperations.py:1165
 msgid "{count} items {size}"
-msgstr "{count}개 항목 {size}"
+msgstr "{count}개 항목, 크기: {size}"
 
-#: robocopyManager.py:240
+#: folderTools.py:1661
+msgid "{count} matches"
+msgstr "일치하는 항목 {count}개"
+
+#: freezeManager.py:1050
+msgid "{count} system locations skipped"
+msgstr "시스템 위치 {count}개 건너뜀"
+
+#: robocopyManager.py:281
 msgid "{h}h {m}m remaining"
 msgstr "{h}시간 {m}분 남음"
 
-#: robocopyManager.py:242
+#: freezeManager.py:673
+msgid "{label}, not found"
+msgstr "{label}, 찾을 수 없음"
+
+#: freezeManager.py:675
+msgid "{label}, replaced by another item"
+msgstr "{label}, 다른 항목으로 대체됨"
+
+#: robocopyManager.py:283
 msgid "{m}m {s}s remaining"
 msgstr "{m}분 {s}초 남음"
 
-#: robocopyManager.py:304
+#: workspaceManager.py:297
+msgid "{name} (pinned)"
+msgstr "{name} (고정됨)"
+
+#: freezeManager.py:1043
+msgid "{name} is a system location and cannot be frozen"
+msgstr "{name}은(는) 시스템 위치이므로 고정할 수 없습니다"
+
+#: freezeManager.py:626
+msgid "{name} is frozen. {result}"
+msgstr "{name}이(가) 고정되었습니다. {result}"
+
+#: update.py:159
+msgid "{name} update"
+msgstr "{name} 업데이트"
+
+#: update.py:164
+msgid ""
+"{name} {new} is available (installed: {old}).\n"
+"Update now?"
+msgstr ""
+"{name} {new} 버전을 사용할 수 있습니다 (설치됨: {old}).\n"
+"지금 업데이트하시겠습니까?"
+
+#: fileOperations.py:229
+msgid "{name}, folder"
+msgstr "{name}, 폴더"
+
+#: freezeManager.py:669
+msgid "{name}, {kind}, in {location}"
+msgstr "{name}, {kind}, {location} 위치"
+
+#: robocopyManager.py:345
 msgid "{pct}% - item {idx}/{total}: {name}"
 msgstr "{pct}% - 항목 {idx}/{total}: {name}"
 
-#: folderTools.py:111
+#: folderTools.py:185
 msgid "{subfolders} subfolders and {files} files"
-msgstr "{subfolders}개 하위 폴더 및 {files}개 파일"
+msgstr "하위 폴더 {subfolders}개 및 파일 {files}개"
 
-#: contextMenu.py:150
+#: contextMenu.py:642
 msgid "{subfolders} subfolders, {files} files"
-msgstr "{subfolders}개 하위 폴더, {files}개 파일"
+msgstr "하위 폴더 {subfolders}개, 파일 {files}개"
 
-#: robocopyManager.py:243
+#: robocopyManager.py:284
 msgid "{s}s remaining"
 msgstr "{s}초 남음"

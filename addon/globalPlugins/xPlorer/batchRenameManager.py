@@ -13,6 +13,7 @@ import tones
 import addonHandler
 import core
 from logHandler import log
+from . import freezeManager
 from .folderTools import CONFIG_DIR
 
 addonHandler.initTranslation()
@@ -227,6 +228,9 @@ class BatchRenameDialog(wx.Dialog):
 			oldName = os.path.basename(filePath)
 			if oldName == newName:
 				continue
+			if freezeManager.isOperationBlocked(filePath):
+				errorMessages.append(_("Frozen item skipped: {0}").format(oldName))
+				continue
 			dirPath = os.path.dirname(filePath)
 			newPath = os.path.join(dirPath, newName)
 			try:
@@ -393,6 +397,9 @@ class BatchRenameManager:
 			originalPath = entry.get("original")
 			renamedPath = entry.get("renamed")
 			if not originalPath or not renamedPath:
+				continue
+			if freezeManager.isOperationBlocked(renamedPath):
+				errorMessages.append(_("Frozen item skipped: {0}").format(os.path.basename(renamedPath)))
 				continue
 			try:
 				if not os.path.exists(renamedPath):

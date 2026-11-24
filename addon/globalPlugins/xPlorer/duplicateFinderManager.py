@@ -14,6 +14,7 @@ import tones
 import addonHandler
 import core
 from logHandler import log
+from . import freezeManager
 
 addonHandler.initTranslation()
 
@@ -49,6 +50,10 @@ def _sendToRecycleBin(paths):
 	a normal Delete key press."""
 	if not paths:
 		return True
+	blockedPaths = freezeManager.filterBlocked(paths)
+	if blockedPaths:
+		freezeManager.announceBlocked("delete", blockedPaths)
+		return False
 	# pFrom must be a double-null-terminated string of null-separated paths.
 	joinedPaths = "\0".join(paths) + "\0\0"
 	operation = _SHFILEOPSTRUCTW()

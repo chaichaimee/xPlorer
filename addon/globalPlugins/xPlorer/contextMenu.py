@@ -17,6 +17,7 @@ import speech
 from logHandler import log
 import addonHandler
 from comtypes import COMError
+from . import freezeManager
 
 addonHandler.initTranslation()
 
@@ -410,6 +411,22 @@ class ContextMenuManager:
 			menu_data.append({'label': _("Duplicate Finder"), 'enabled': True,
 				'action': lambda: core.callLater(0, self.plugin._executeWithSilence, self.plugin.duplicateFinder.scanForDuplicates)})
 
+		# Freezer
+		freezeManager = getattr(self.plugin, "freezeManager", None)
+		if freezeManager:
+			freezer_submenu = [
+				{'label': _("Open Freezer"), 'enabled': True,
+					'action': lambda: core.callLater(0, freezeManager.showDialog)},
+			]
+			if inExplorer:
+				freezer_submenu[:0] = [
+					{'label': _("Freeze Selected"), 'enabled': True,
+						'action': lambda: core.callLater(0, self.plugin._executeWithSilence, freezeManager.freezeSelected)},
+					{'label': _("Unfreeze Selected"), 'enabled': True,
+						'action': lambda: core.callLater(0, self.plugin._executeWithSilence, freezeManager.unfreezeSelected)},
+				]
+			menu_data.append({'label': _("Freezer"), 'enabled': True, 'submenu': freezer_submenu})
+
 		# Case Converter for Folders
 		if inExplorer:
 			case_submenu = [
@@ -693,12 +710,14 @@ class PropertiesDialog(wx.Dialog):
 	text control lets NVDA read every property with normal review commands,
 	instead of treating each property as a selectable menu action."""
 
-	def __init__(self, parent, title, lines):
+	def __init__(self, parent, title, lines, path=None):
 		super().__init__(
 			parent, title=title,
 			style=wx.DEFAULT_DIALOG_STYLE | wx.RESIZE_BORDER | wx.STAY_ON_TOP | wx.FRAME_FLOAT_ON_PARENT
 		)
 		self.lines = list(lines)
+		self._path = path
+		self._readOnlyBox = None
 		self._init_ui()
 
 	def _init_ui(self):
@@ -711,6 +730,9 @@ class PropertiesDialog(wx.Dialog):
 		)
 		s_helper.addItem(self.text_ctrl, flag=wx.EXPAND, proportion=1)
 
+		if self._path:
+			self._initReadOnlyBox(s_helper)
+
 		btn_sizer = wx.StdDialogButtonSizer()
 		close_btn = wx.Button(self, wx.ID_CANCEL, label=_("Close"))
 		btn_sizer.AddButton(close_btn)
@@ -722,6 +744,50 @@ class PropertiesDialog(wx.Dialog):
 		self.CentreOnScreen()
 		self.Raise()
 		self.text_ctrl.SetFocus()
+
+	def _initReadOnlyBox(self, sizerHelper):
+		isFrozen = freezeManager.isFrozen(self._path)
+		label = _("Read-only (frozen, managed by the Freezer)") if isFrozen else _("Read-only")
+		self._readOnlyBox = wx.CheckBox(self, label=label, style=wx.CHK_3STATE)
+		self._readOnlyBox.Enable(False)
+		sizerHelper.addItem(self._readOnlyBox)
+		self._readOnlyBox.Bind(wx.EVT_CHECKBOX, self._onReadOnlyToggled)
+		threading.Thread(target=self._loadReadOnlyState, args=(isFrozen,), daemon=True).start()
+
+	def _loadReadOnlyState(self, isFrozen):
+		state = freezeManager.readOnlyState(self._path)
+		wx.CallAfter(self._showReadOnlyState, state, not isFrozen)
+
+	def _showReadOnlyState(self, state, canEdit):
+		box = self._readOnlyBox
+		if not box:
+			return
+		try:
+			if state is None:
+				box.Set3StateValue(wx.CHK_UNDETERMINED)
+			else:
+				box.Set3StateValue(wx.CHK_CHECKED if state else wx.CHK_UNCHECKED)
+			box.Enable(canEdit)
+		except RuntimeError:
+			pass
+
+	def _onReadOnlyToggled(self, event):
+		box = self._readOnlyBox
+		enabled = box.Get3StateValue() == wx.CHK_CHECKED
+		box.Enable(False)
+		threading.Thread(target=self._applyReadOnly, args=(enabled,), daemon=True).start()
+
+	def _applyReadOnly(self, enabled):
+		changed, failed = freezeManager.setReadOnlyState(self._path, enabled)
+		state = freezeManager.readOnlyState(self._path) if failed else enabled
+		wx.CallAfter(self._finishReadOnlyChange, enabled, failed, state)
+
+	def _finishReadOnlyChange(self, enabled, failed, state):
+		self._showReadOnlyState(state, True)
+		if failed:
+			ui.message(_("{count} files could not be changed").format(count=failed))
+			return
+		ui.message(_("Read-only turned on") if enabled else _("Read-only turned off"))
 
 	def update_line(self, index, text):
 		try:
@@ -852,13 +918,15 @@ class PropertiesMenuManager:
 
 			menu_data, size_index, count_index = self._create_properties_data(name, path)
 			lines = [item['label'] for item in menu_data]
+			driveRoot = os.path.splitdrive(path)[0] + "\\"
+			isDriveRoot = os.path.normcase(path.rstrip("\\") + "\\") == os.path.normcase(driveRoot)
 			dialogRef = {'dialog': None}
 
 			if size_index != -1 and count_index != -1:
 				self._scheduleFolderStats(path, size_index, count_index, dialogRef)
 
 			try:
-				dlg = PropertiesDialog(gui.mainFrame, _("Properties"), lines)
+				dlg = PropertiesDialog(gui.mainFrame, _("Properties"), lines, None if isDriveRoot else path)
 				dialogRef['dialog'] = dlg
 				dlg.ShowModal()
 			except Exception as e:

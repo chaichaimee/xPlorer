@@ -15,6 +15,7 @@ import addonHandler
 import core
 import tones
 from logHandler import log
+from . import freezeManager
 
 addonHandler.initTranslation()
 
@@ -133,6 +134,10 @@ class RobocopyManager:
 				tones.beep(200, 150)
 				ui.message("No items selected")
 				return
+			blockedSources = freezeManager.filterBlocked(paths)
+			if blockedSources:
+				freezeManager.announceBlocked("move", blockedSources)
+				return
 			self.source_items = paths
 			self.operation_type = "move"
 			tones.beep(440, 150)
@@ -157,11 +162,23 @@ class RobocopyManager:
 		self._get_explorer_data_via_com_async(False, handle)
 
 	def _finishPaste(self, dest_path):
+		if dest_path and freezeManager.isFrozen(dest_path):
+			freezeManager.announceBlocked("paste", [dest_path])
+			self.source_items = []
+			return
+		if self.operation_type == "move":
+			blockedSources = freezeManager.filterBlocked(self.source_items)
+			if blockedSources:
+				freezeManager.announceBlocked("move", blockedSources)
+				self.source_items = []
+				return
 		if not dest_path or not os.path.exists(dest_path):
 			tones.beep(200, 150)
 			ui.message("Destination not found")
 			return
 		tones.beep(880, 200)
+		if self.operation_type != "move":
+			freezeManager.unlockCopiesAsync(list(self.source_items), dest_path, time.time(), exactNames=True)
 		thread = threading.Thread(
 			target=self._run_transfer,
 			args=(list(self.source_items), dest_path, self.operation_type == "move")

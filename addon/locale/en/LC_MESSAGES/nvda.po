@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xPlorer 2026.12.0\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-10-30 09:19+0700\n"
+"POT-Creation-Date: 2026-11-24 08:54+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: English\n"
@@ -12,25 +12,37 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: ChaiBot Addon\n"
 
-#: contextMenu.py:995
+#: contextMenu.py:1063
 msgid " (partial)"
 msgstr " (partial)"
 
-#: compressionManager.py:508
+#: compressionManager.py:511
 msgid " and {count} more"
 msgstr " and {count} more"
 
-#: folderTools.py:248
+#: folderTools.py:249
 msgid "&Apply"
 msgstr "&Apply"
 
-#: folderTools.py:249
+#: folderTools.py:250
 msgid "&Cancel"
 msgstr "&Cancel"
+
+#: freezeManager.py:648
+msgid "&Close"
+msgstr "&Close"
+
+#: freezeManager.py:640
+msgid "&Frozen items:"
+msgstr "&Frozen items:"
 
 #: update.py:173
 msgid "&Later"
 msgstr "&Later"
+
+#: freezeManager.py:646
+msgid "&Unfreeze selected"
+msgstr "&Unfreeze selected"
 
 #: update.py:171
 msgid "&Update now"
@@ -45,20 +57,20 @@ msgstr "(list capped at {0} - refine your folder selection)"
 msgid "(root)"
 msgstr "(root)"
 
-#: fileOperations.py:1354
+#: fileOperations.py:1355
 msgid ", UDF format"
 msgstr ", UDF format"
 
-#: fileOperations.py:1356
+#: fileOperations.py:1357
 msgid ", {count} items skipped"
 msgstr ", {count} items skipped"
 
-#: batchRenameManager.py:253
-#: batchRenameManager.py:418
+#: batchRenameManager.py:257
+#: batchRenameManager.py:425
 msgid "...and {0} more errors"
 msgstr "...and {0} more errors"
 
-#: robocopyManager.py:524
+#: robocopyManager.py:541
 msgid "...and {n} more"
 msgstr "...and {n} more"
 
@@ -66,110 +78,126 @@ msgstr "...and {n} more"
 msgid "1 file created"
 msgstr "1 file created"
 
-#: compressionManager.py:446
+#: compressionManager.py:449
 msgid "7-Zip is required to extract this file type"
 msgstr "7-Zip is required to extract this file type"
 
-#: duplicateFinderManager.py:263
+#: duplicateFinderManager.py:268
 msgid "A duplicate scan is already running"
 msgstr "A duplicate scan is already running"
 
-#: fileOperations.py:1535
+#: fileOperations.py:1544
 msgid "A file with this name already exists"
 msgstr "A file with this name already exists"
 
-#: folderTools.py:1111
-#: folderTools.py:1463
+#: folderTools.py:1116
+#: folderTools.py:1468
 msgid "A selection operation is already in progress"
 msgstr "A selection operation is already in progress"
 
-#: contextMenu.py:950
+#: contextMenu.py:1018
 msgid "Accessed: {0}"
 msgstr "Accessed: {0}"
 
-#: fileBasketManager.py:46
+#: freezeManager.py:623
+msgid "Action canceled"
+msgstr "Action canceled"
+
+#: fileBasketManager.py:48
 msgid "Action:"
 msgstr "Action:"
 
-#: workspaceManager.py:64
-#: workspaceManager.py:140
+#: workspaceManager.py:101
+#: workspaceManager.py:202
 msgid "Add Folder..."
 msgstr "Add Folder..."
 
-#: workspaceManager.py:140
+#: workspaceManager.py:202
 msgid "Add Path"
 msgstr "Add Path"
 
-#: workspaceManager.py:171
+#: workspaceManager.py:233
 msgid "Add at least one folder to this workspace"
 msgstr "Add at least one folder to this workspace"
 
-#: fileBasketManager.py:281
+#: workspaceManager.py:73
+msgid "Add to workspace:"
+msgstr "Add to workspace:"
+
+#: fileBasketManager.py:283
 msgid "Added to basket. Total items: {0}"
 msgstr "Added to basket. Total items: {0}"
 
-#: fileBasketManager.py:263
+#: workspaceManager.py:240
+msgid "Added to existing workspace {name}"
+msgstr "Added to existing workspace {name}"
+
+#: fileBasketManager.py:265
 msgid "Added {0}"
 msgstr "Added {0}"
 
-#: workspaceManager.py:126
+#: workspaceManager.py:188
 msgid "Added {count} folders"
 msgstr "Added {count} folders"
 
-#: workspaceManager.py:696
-#: workspaceManager.py:703
+#: workspaceManager.py:764
+#: workspaceManager.py:771
 msgid "Added {name}"
 msgstr "Added {name}"
 
-#: workspaceManager.py:290
+#: workspaceManager.py:358
 msgid "All workspaces cleared"
 msgstr "All workspaces cleared"
 
-#: workspaceManager.py:698
+#: workspaceManager.py:766
 msgid "Already added: {name}"
 msgstr "Already added: {name}"
 
-#: fileBasketManager.py:275
+#: freezeManager.py:1055
+msgid "Already frozen"
+msgstr "Already frozen"
+
+#: fileBasketManager.py:277
 msgid "Already in basket"
 msgstr "Already in basket"
 
-#: fileOperations.py:1499
+#: fileOperations.py:1508
 msgid "An item named {name} already exists"
 msgstr "An item named {name} already exists"
 
-#: fileOperations.py:329
+#: fileOperations.py:330
 msgid "Applied"
 msgstr "Applied"
 
-#: batchRenameManager.py:95
-#: fileOperations.py:294
+#: batchRenameManager.py:96
+#: fileOperations.py:295
 msgid "Apply"
 msgstr "Apply"
 
-#: fileBasketManager.py:294
+#: fileBasketManager.py:296
 msgid "Basket cleared"
 msgstr "Basket cleared"
 
-#: fileBasketManager.py:309
+#: fileBasketManager.py:311
 msgid "Basket is already empty"
 msgstr "Basket is already empty"
 
-#: fileBasketManager.py:41
-#: fileBasketManager.py:96
-#: fileBasketManager.py:130
+#: fileBasketManager.py:43
+#: fileBasketManager.py:98
+#: fileBasketManager.py:132
 msgid "Basket is empty"
 msgstr "Basket is empty"
 
-#: contextMenu.py:390
+#: contextMenu.py:391
 msgid "Batch Rename Tool"
 msgstr "Batch Rename Tool"
 
-#: xPlorer_engine.py:951
-#: xPlorer_engine.py:1086
+#: xPlorer_engine.py:959
+#: xPlorer_engine.py:1094
 msgid "Batch rename manager not available"
 msgstr "Batch rename manager not available"
 
-#: fileBasketManager.py:60
+#: fileBasketManager.py:62
 msgid "Browse"
 msgstr "Browse"
 
@@ -177,13 +205,13 @@ msgstr "Browse"
 msgid "Built-in compression failed: {error}"
 msgstr "Built-in compression failed: {error}"
 
-#: robocopyManager.py:347
+#: robocopyManager.py:364
 msgid "Calculating total size..."
 msgstr "Calculating total size..."
 
-#: batchRenameManager.py:97
-#: fileOperations.py:293
-#: workspaceManager.py:73
+#: batchRenameManager.py:98
+#: fileOperations.py:294
+#: workspaceManager.py:110
 msgid "Cancel"
 msgstr "Cancel"
 
@@ -195,19 +223,19 @@ msgstr "Cannot copy content of folders, please select files only"
 msgid "Cannot find unique name for: {name}"
 msgstr "Cannot find unique name for: {name}"
 
-#: xPlorer_engine.py:1282
+#: xPlorer_engine.py:1431
 msgid "Cannot open settings dialog"
 msgstr "Cannot open settings dialog"
 
-#: folderTools.py:732
+#: folderTools.py:733
 msgid "Cannot process RTF file: striprtf module not available"
 msgstr "Cannot process RTF file: striprtf module not available"
 
-#: contextMenu.py:425
+#: contextMenu.py:442
 msgid "Case Converter for Folders"
 msgstr "Case Converter for Folders"
 
-#: xPlorer_engine.py:1335
+#: xPlorer_engine.py:1484
 msgid "Case converter not available"
 msgstr "Case converter not available"
 
@@ -215,12 +243,12 @@ msgstr "Case converter not available"
 msgid "Choose extraction method:"
 msgstr "Choose extraction method:"
 
-#: workspaceManager.py:261
-#: workspaceManager.py:282
+#: workspaceManager.py:329
+#: workspaceManager.py:350
 msgid "Clear All Workspaces"
 msgstr "Clear All Workspaces"
 
-#: fileBasketManager.py:72
+#: fileBasketManager.py:74
 msgid "Clear Basket"
 msgstr "Clear Basket"
 
@@ -228,50 +256,50 @@ msgstr "Clear Basket"
 msgid "Clear History"
 msgstr "Clear History"
 
-#: contextMenu.py:230
+#: contextMenu.py:231
 msgid "Clear all (except pinned)"
 msgstr "Clear all (except pinned)"
 
-#: contextMenu.py:263
+#: contextMenu.py:264
 msgid "Cleared recent locations"
 msgstr "Cleared recent locations"
 
-#: fileBasketManager.py:307
+#: fileBasketManager.py:309
 msgid "Cleared {0} from basket"
 msgstr "Cleared {0} from basket"
 
-#: contextMenu.py:481
+#: contextMenu.py:498
 msgid "Clipboard Operations"
 msgstr "Clipboard Operations"
 
-#: xPlorer_engine.py:892
+#: xPlorer_engine.py:900
 msgid "Clipboard Operations: Copy selected names (single tap), copy content (double tap), or copy address bar (triple tap)"
 msgstr "Clipboard Operations: Copy selected names (single tap), copy content (double tap), or copy address bar (triple tap)"
 
-#: fileOperations.py:1467
+#: fileOperations.py:1476
 msgid "Clipboard is empty"
 msgstr "Clipboard is empty"
 
-#: xPlorer_engine.py:884
+#: xPlorer_engine.py:892
 msgid "Clipboard manager not available"
 msgstr "Clipboard manager not available"
 
-#: fileOperations.py:1472
+#: fileOperations.py:1481
 msgid "Clipboard text is not a valid name"
 msgstr "Clipboard text is not a valid name"
 
-#: contextMenu.py:715
-#: duplicateFinderManager.py:110
-#: fileBasketManager.py:74
-#: fileOperations.py:351
+#: contextMenu.py:737
+#: duplicateFinderManager.py:115
+#: fileBasketManager.py:76
+#: fileOperations.py:352
 #: flatViewManager.py:53
 #: operationHistoryManager.py:46
 #: syncCompareManager.py:59
-#: workspaceManager.py:209
+#: workspaceManager.py:277
 msgid "Close"
 msgstr "Close"
 
-#: workspaceManager.py:569
+#: workspaceManager.py:637
 msgid "Closed {count} folders from workspace {name}"
 msgstr "Closed {count} folders from workspace {name}"
 
@@ -283,7 +311,7 @@ msgstr "Compare Folders"
 msgid "Comparing..."
 msgstr "Comparing..."
 
-#: robocopyManager.py:508
+#: robocopyManager.py:525
 msgid "Complete"
 msgstr "Complete"
 
@@ -291,11 +319,11 @@ msgstr "Complete"
 msgid "Completed"
 msgstr "Completed"
 
-#: contextMenu.py:455
+#: contextMenu.py:472
 msgid "Compress"
 msgstr "Compress"
 
-#: contextMenu.py:450
+#: contextMenu.py:467
 msgid "Compress zip"
 msgstr "Compress zip"
 
@@ -323,7 +351,7 @@ msgstr "Compression cancelled"
 msgid "Compression completed {name}"
 msgstr "Compression completed {name}"
 
-#: xPlorer_engine.py:955
+#: xPlorer_engine.py:963
 msgid "Compression manager not available"
 msgstr "Compression manager not available"
 
@@ -331,29 +359,29 @@ msgstr "Compression manager not available"
 msgid "Compression timed out"
 msgstr "Compression timed out"
 
-#: contextMenu.py:954
+#: contextMenu.py:1022
 msgid "Contents: calculating..."
 msgstr "Contents: calculating..."
 
-#: contextMenu.py:997
+#: contextMenu.py:1065
 msgid "Contents: {0} files, {1} folders{2}"
 msgstr "Contents: {0} files, {1} folders{2}"
 
-#: xPlorer_engine.py:1019
-#: xPlorer_engine.py:1294
-#: xPlorer_engine.py:1306
+#: xPlorer_engine.py:1027
+#: xPlorer_engine.py:1443
+#: xPlorer_engine.py:1455
 msgid "Context menu manager not available"
 msgstr "Context menu manager not available"
 
-#: folderTools.py:1967
+#: folderTools.py:1976
 msgid "Conversion already in progress"
 msgstr "Conversion already in progress"
 
-#: folderTools.py:1984
+#: folderTools.py:1993
 msgid "Converting"
 msgstr "Converting"
 
-#: robocopyManager.py:486
+#: robocopyManager.py:503
 msgid "Copied"
 msgstr "Copied"
 
@@ -365,7 +393,7 @@ msgstr "Copied 1 item name to clipboard"
 msgid "Copied {0}"
 msgstr "Copied {0}"
 
-#: fileBasketManager.py:346
+#: fileBasketManager.py:352
 msgid "Copied {0} items from the basket"
 msgstr "Copied {0} items from the basket"
 
@@ -373,17 +401,17 @@ msgstr "Copied {0} items from the basket"
 msgid "Copied {count} item names to clipboard"
 msgstr "Copied {count} item names to clipboard"
 
-#: folderTools.py:1783
+#: folderTools.py:1788
 msgid "Copied {count} items"
 msgstr "Copied {count} items"
 
-#: xPlorer_engine.py:864
+#: xPlorer_engine.py:872
 msgid "Copied: {path}"
 msgstr "Copied: {path}"
 
-#: fileBasketManager.py:49
-#: fileBasketManager.py:157
-#: folderTools.py:1762
+#: fileBasketManager.py:51
+#: fileBasketManager.py:159
+#: folderTools.py:1767
 msgid "Copy"
 msgstr "Copy"
 
@@ -391,15 +419,15 @@ msgstr "Copy"
 msgid "Copy Selected to Right"
 msgstr "Copy Selected to Right"
 
-#: contextMenu.py:474
+#: contextMenu.py:491
 msgid "Copy address bar"
 msgstr "Copy address bar"
 
-#: contextMenu.py:476
+#: contextMenu.py:493
 msgid "Copy content"
 msgstr "Copy content"
 
-#: contextMenu.py:478
+#: contextMenu.py:495
 msgid "Copy selected file and folder names"
 msgstr "Copy selected file and folder names"
 
@@ -407,7 +435,7 @@ msgstr "Copy selected file and folder names"
 msgid "Copy {lines} Lines from {files} files"
 msgstr "Copy {lines} Lines from {files} files"
 
-#: folderTools.py:1831
+#: folderTools.py:1836
 msgid "Could not delete one or more items"
 msgstr "Could not delete one or more items"
 
@@ -417,9 +445,9 @@ msgstr "Could not download the update. Opening the releases page."
 
 #: clipboardManager.py:53
 #: clipboardManager.py:153
-#: folderTools.py:1790
-#: folderTools.py:1800
-#: xPlorer_engine.py:868
+#: folderTools.py:1795
+#: folderTools.py:1805
+#: xPlorer_engine.py:876
 msgid "Could not open clipboard"
 msgstr "Could not open clipboard"
 
@@ -427,11 +455,11 @@ msgstr "Could not open clipboard"
 msgid "Could not open the containing folder"
 msgstr "Could not open the containing folder"
 
-#: folderTools.py:1734
+#: folderTools.py:1739
 msgid "Could not open the file"
 msgstr "Could not open the file"
 
-#: folderTools.py:1814
+#: folderTools.py:1819
 msgid "Could not open the folder"
 msgstr "Could not open the folder"
 
@@ -439,45 +467,52 @@ msgstr "Could not open the folder"
 msgid "Could not open {0}"
 msgstr "Could not open {0}"
 
-#: fileOperations.py:432
-#: fileOperations.py:434
+#: fileOperations.py:433
+#: fileOperations.py:435
 msgid "Could not read this folder"
 msgstr "Could not read this folder"
 
-#: fileOperations.py:492
+#: fileOperations.py:493
 msgid "Could not save settings"
 msgstr "Could not save settings"
 
-#: xPlorer_engine.py:1187
+#: freezeManager.py:699
+#: freezeManager.py:721
+#: freezeManager.py:1052
+#: freezeManager.py:1076
+msgid "Could not save the freezer list"
+msgstr "Could not save the freezer list"
+
+#: xPlorer_engine.py:1219
 msgid "Could not start multi-select"
 msgstr "Could not start multi-select"
 
-#: batchRenameManager.py:84
+#: batchRenameManager.py:85
 msgid "Counter start value:"
 msgstr "Counter start value:"
 
-#: contextMenu.py:374
+#: contextMenu.py:375
 #: createFile.py:17
 msgid "Create File"
 msgstr "Create File"
 
-#: folderTools.py:202
+#: folderTools.py:203
 msgid "Create Multiple Folders"
 msgstr "Create Multiple Folders"
 
-#: contextMenu.py:444
+#: contextMenu.py:461
 msgid "Create Multiple Folders..."
 msgstr "Create Multiple Folders..."
 
-#: folderTools.py:231
+#: folderTools.py:232
 msgid "Create main folder and then subfolders"
 msgstr "Create main folder and then subfolders"
 
-#: xPlorer_engine.py:1274
+#: xPlorer_engine.py:1423
 msgid "Create new folder and paste clipboard content into rename field"
 msgstr "Create new folder and paste clipboard content into rename field"
 
-#: fileOperations.py:1360
+#: fileOperations.py:1361
 msgid "Created ISO {name}"
 msgstr "Created ISO {name}"
 
@@ -485,62 +520,70 @@ msgstr "Created ISO {name}"
 msgid "Created {count} file(s) in {path}"
 msgstr "Created {count} file(s) in {path}"
 
-#: folderTools.py:398
+#: folderTools.py:399
 msgid "Created {count} of {total} folders..."
 msgstr "Created {count} of {total} folders..."
 
-#: contextMenu.py:944
+#: contextMenu.py:1012
 msgid "Created: {0}"
 msgstr "Created: {0}"
 
-#: fileOperations.py:1292
-#: fileOperations.py:1296
+#: fileOperations.py:1293
+#: fileOperations.py:1297
 msgid "Creating ISO"
 msgstr "Creating ISO"
 
-#: fileOperations.py:1306
+#: fileOperations.py:1307
 msgid "Creating ISO: {percent}%"
 msgstr "Creating ISO: {percent}%"
 
-#: folderTools.py:385
+#: folderTools.py:386
 msgid "Creating folders in background..."
 msgstr "Creating folders in background..."
 
-#: contextMenu.py:507
+#: contextMenu.py:524
 msgid "Current folder size list"
 msgstr "Current folder size list"
 
-#: fileOperations.py:337
+#: fileOperations.py:338
 msgid "Current folder size list - {name}"
 msgstr "Current folder size list - {name}"
 
-#: fileOperations.py:245
+#: fileOperations.py:246
 msgid "Current folder size list settings"
 msgstr "Current folder size list settings"
 
-#: folderTools.py:1763
+#: folderTools.py:1768
 msgid "Cut"
 msgstr "Cut"
 
-#: folderTools.py:1797
+#: freezeManager.py:30
+msgid "Cut canceled"
+msgstr "Cut canceled"
+
+#: folderTools.py:1802
 msgid "Cut {count} items"
 msgstr "Cut {count} items"
 
-#: folderTools.py:1766
-#: folderTools.py:1822
-#: workspaceManager.py:260
+#: folderTools.py:1771
+#: folderTools.py:1827
+#: workspaceManager.py:328
 msgid "Delete"
 msgstr "Delete"
 
-#: workspaceManager.py:207
+#: workspaceManager.py:275
 msgid "Delete Workspace"
 msgstr "Delete Workspace"
 
-#: workspaceManager.py:281
+#: workspaceManager.py:349
 msgid "Delete all saved workspaces? This cannot be undone."
 msgstr "Delete all saved workspaces? This cannot be undone."
 
-#: fileBasketManager.py:56
+#: freezeManager.py:27
+msgid "Delete canceled"
+msgstr "Delete canceled"
+
+#: fileBasketManager.py:58
 msgid "Destination:"
 msgstr "Destination:"
 
@@ -548,7 +591,7 @@ msgstr "Destination:"
 msgid "Different (size/date)"
 msgstr "Different (size/date)"
 
-#: fileOperations.py:265
+#: fileOperations.py:266
 msgid "Display format"
 msgstr "Display format"
 
@@ -556,42 +599,42 @@ msgstr "Display format"
 msgid "Downloading {name} {version}"
 msgstr "Downloading {name} {version}"
 
-#: contextMenu.py:896
+#: contextMenu.py:964
 msgid "Drive: {0}"
 msgstr "Drive: {0}"
 
-#: contextMenu.py:410
-#: duplicateFinderManager.py:74
+#: contextMenu.py:411
+#: duplicateFinderManager.py:79
 msgid "Duplicate Finder"
 msgstr "Duplicate Finder"
 
-#: duplicateFinderManager.py:90
+#: duplicateFinderManager.py:95
 msgid "Duplicate groups:"
 msgstr "Duplicate groups:"
 
-#: workspaceManager.py:78
-#: workspaceManager.py:205
+#: workspaceManager.py:115
+#: workspaceManager.py:273
 msgid "Edit Workspace"
 msgstr "Edit Workspace"
 
-#: folderTools.py:235
+#: folderTools.py:236
 msgid "Edit individual folder names"
 msgstr "Edit individual folder names"
 
-#: folderTools.py:1241
-#: folderTools.py:1836
+#: folderTools.py:1246
+#: folderTools.py:1841
 msgid "Enter a search term or pattern first"
 msgstr "Enter a search term or pattern first"
 
-#: workspaceManager.py:167
+#: workspaceManager.py:229
 msgid "Enter a workspace name"
 msgstr "Enter a workspace name"
 
-#: folderTools.py:194
+#: folderTools.py:195
 msgid "Error calculating folder info"
 msgstr "Error calculating folder info"
 
-#: fileOperations.py:1176
+#: fileOperations.py:1177
 msgid "Error calculating size"
 msgstr "Error calculating size"
 
@@ -612,7 +655,7 @@ msgstr "Error copying names to clipboard"
 msgid "Error copying {0}"
 msgstr "Error copying {0}"
 
-#: folderTools.py:776
+#: folderTools.py:777
 msgid "Error creating base folder"
 msgstr "Error creating base folder"
 
@@ -620,19 +663,19 @@ msgstr "Error creating base folder"
 msgid "Error creating files"
 msgstr "Error creating files"
 
-#: xPlorer_engine.py:1329
+#: xPlorer_engine.py:1478
 msgid "Error creating folders"
 msgstr "Error creating folders"
 
-#: folderTools.py:376
+#: folderTools.py:377
 msgid "Error creating main folder"
 msgstr "Error creating main folder"
 
-#: fileBasketManager.py:415
+#: fileBasketManager.py:439
 msgid "Error creating zip file"
 msgstr "Error creating zip file"
 
-#: xPlorer_engine.py:1379
+#: xPlorer_engine.py:1528
 msgid "Error during conversion"
 msgstr "Error during conversion"
 
@@ -640,8 +683,8 @@ msgstr "Error during conversion"
 msgid "Error in compression process: {error}"
 msgstr "Error in compression process: {error}"
 
-#: folderTools.py:1161
-#: folderTools.py:1164
+#: folderTools.py:1166
+#: folderTools.py:1169
 msgid "Error inverting selection"
 msgstr "Error inverting selection"
 
@@ -649,59 +692,59 @@ msgstr "Error inverting selection"
 msgid "Error opening create file dialog"
 msgstr "Error opening create file dialog"
 
-#: fileOperations.py:1397
+#: fileOperations.py:1398
 msgid "Error opening current folder size list"
 msgstr "Error opening current folder size list"
 
-#: recentLocationsManager.py:228
+#: recentLocationsManager.py:229
 msgid "Error opening folder"
 msgstr "Error opening folder"
 
-#: fileOperations.py:1549
+#: fileOperations.py:1558
 msgid "Error opening rename dialog"
 msgstr "Error opening rename dialog"
 
-#: xPlorer_engine.py:1288
+#: xPlorer_engine.py:1437
 msgid "Error opening settings"
 msgstr "Error opening settings"
 
-#: folderTools.py:866
+#: folderTools.py:867
 msgid "Error processing text file: {}"
 msgstr "Error processing text file: {}"
 
-#: folderTools.py:743
+#: folderTools.py:744
 msgid "Error reading RTF file"
 msgstr "Error reading RTF file"
 
-#: folderTools.py:870
+#: folderTools.py:871
 msgid "Error reading file encoding"
 msgstr "Error reading file encoding"
 
-#: fileOperations.py:1431
-#: fileOperations.py:1510
-#: fileOperations.py:1513
-#: fileOperations.py:1546
+#: fileOperations.py:1436
+#: fileOperations.py:1519
+#: fileOperations.py:1522
+#: fileOperations.py:1555
 msgid "Error renaming file"
 msgstr "Error renaming file"
 
-#: batchRenameManager.py:240
+#: batchRenameManager.py:244
 msgid "Error renaming {0} to {1}: {2}"
 msgstr "Error renaming {0} to {1}: {2}"
 
-#: duplicateFinderManager.py:303
+#: duplicateFinderManager.py:308
 msgid "Error scanning for duplicates"
 msgstr "Error scanning for duplicates"
 
-#: folderTools.py:1195
+#: folderTools.py:1200
 msgid "Error selecting by extension"
 msgstr "Error selecting by extension"
 
-#: folderTools.py:1264
+#: folderTools.py:1269
 msgid "Error selecting by search"
 msgstr "Error selecting by search"
 
-#: folderTools.py:1507
-#: folderTools.py:1510
+#: folderTools.py:1512
+#: folderTools.py:1515
 msgid "Error selecting items"
 msgstr "Error selecting items"
 
@@ -709,19 +752,19 @@ msgstr "Error selecting items"
 msgid "Error uncompressing file"
 msgstr "Error uncompressing file"
 
-#: batchRenameManager.py:407
+#: batchRenameManager.py:414
 msgid "Error undoing rename for {0}: {1}"
 msgstr "Error undoing rename for {0}: {1}"
 
-#: folderTools.py:875
+#: folderTools.py:876
 msgid "Error: {}"
 msgstr "Error: {}"
 
-#: fileBasketManager.py:65
+#: fileBasketManager.py:67
 msgid "Execute"
 msgstr "Execute"
 
-#: xPlorer_engine.py:1410
+#: xPlorer_engine.py:1559
 msgid "Explorer tree dumped to NVDA log"
 msgstr "Explorer tree dumped to NVDA log"
 
@@ -741,48 +784,48 @@ msgstr "Extract to \"{folder}\\\""
 msgid "Extract {name}"
 msgstr "Extract {name}"
 
-#: compressionManager.py:509
+#: compressionManager.py:512
 msgid "Extracted {done} of {total}. Failed: {names}"
 msgstr "Extracted {done} of {total}. Failed: {names}"
 
-#: compressionManager.py:453
+#: compressionManager.py:456
 msgid "Extracted {name} to {path}"
 msgstr "Extracted {name} to {path}"
 
-#: compressionManager.py:516
+#: compressionManager.py:519
 msgid "Extracting {count} files..."
 msgstr "Extracting {count} files..."
 
-#: compressionManager.py:466
+#: compressionManager.py:469
 msgid "Extracting..."
 msgstr "Extracting..."
 
-#: compressionManager.py:449
+#: compressionManager.py:452
 msgid "Extraction completed to {path}"
 msgstr "Extraction completed to {path}"
 
-#: compressionManager.py:504
+#: compressionManager.py:507
 msgid "Extraction completed: {count} files, each in its own folder"
 msgstr "Extraction completed: {count} files, each in its own folder"
 
-#: compressionManager.py:437
+#: compressionManager.py:440
 msgid "Extraction failed"
 msgstr "Extraction failed"
 
-#: compressionManager.py:401
-#: compressionManager.py:458
+#: compressionManager.py:404
+#: compressionManager.py:461
 msgid "Extraction failed: {error}"
 msgstr "Extraction failed: {error}"
 
-#: compressionManager.py:479
+#: compressionManager.py:482
 msgid "Extraction is already running"
 msgstr "Extraction is already running"
 
-#: compressionManager.py:432
+#: compressionManager.py:435
 msgid "Extraction timed out"
 msgstr "Extraction timed out"
 
-#: folderTools.py:1979
+#: folderTools.py:1988
 msgid "Failed to rename any folders"
 msgstr "Failed to rename any folders"
 
@@ -790,24 +833,28 @@ msgstr "Failed to rename any folders"
 msgid "Failed to start compression"
 msgstr "Failed to start compression"
 
-#: contextMenu.py:382
-#: contextMenu.py:385
+#: freezeManager.py:667
+msgid "File"
+msgstr "File"
+
+#: contextMenu.py:383
+#: contextMenu.py:386
 msgid "File Basket"
 msgstr "File Basket"
 
-#: fileBasketManager.py:29
+#: fileBasketManager.py:31
 msgid "File Basket Collection"
 msgstr "File Basket Collection"
 
-#: xPlorer_engine.py:1097
+#: xPlorer_engine.py:1105
 msgid "File Basket: Add selected item(s) to the file basket (single tap), open the file basket (double tap), or clear the file basket (triple tap)"
 msgstr "File Basket: Add selected item(s) to the file basket (single tap), open the file basket (double tap), or clear the file basket (triple tap)"
 
-#: batchRenameManager.py:234
+#: batchRenameManager.py:238
 msgid "File already exists: {0}"
 msgstr "File already exists: {0}"
 
-#: xPlorer_engine.py:1104
+#: xPlorer_engine.py:1112
 msgid "File basket manager not available"
 msgstr "File basket manager not available"
 
@@ -823,11 +870,11 @@ msgstr "File count must be at least 1"
 msgid "File name"
 msgstr "File name"
 
-#: fileOperations.py:67
+#: fileOperations.py:68
 msgid "File name cannot be empty"
 msgstr "File name cannot be empty"
 
-#: fileOperations.py:1532
+#: fileOperations.py:1541
 msgid "File name not changed"
 msgstr "File name not changed"
 
@@ -840,21 +887,21 @@ msgstr "File name {index}:"
 msgid "File name:"
 msgstr "File name:"
 
-#: folderTools.py:1728
+#: folderTools.py:1733
 msgid "File not found"
 msgstr "File not found"
 
-#: xPlorer_engine.py:1054
-#: xPlorer_engine.py:1060
-#: xPlorer_engine.py:1081
+#: xPlorer_engine.py:1062
+#: xPlorer_engine.py:1068
+#: xPlorer_engine.py:1089
 msgid "File operations manager not available"
 msgstr "File operations manager not available"
 
-#: fileOperations.py:1539
+#: fileOperations.py:1548
 msgid "File renamed to {name}"
 msgstr "File renamed to {name}"
 
-#: contextMenu.py:902
+#: contextMenu.py:970
 msgid "File system: {0}"
 msgstr "File system: {0}"
 
@@ -862,11 +909,11 @@ msgstr "File system: {0}"
 msgid "Files found: {names}"
 msgstr "Files found: {names}"
 
-#: duplicateFinderManager.py:96
+#: duplicateFinderManager.py:101
 msgid "Files in this group:"
 msgstr "Files in this group:"
 
-#: fileOperations.py:260
+#: fileOperations.py:261
 msgid "Files only"
 msgstr "Files only"
 
@@ -874,15 +921,15 @@ msgstr "Files only"
 msgid "Filter (type to narrow the list):"
 msgstr "Filter (type to narrow the list):"
 
-#: batchRenameManager.py:58
+#: batchRenameManager.py:59
 msgid "Find and replace"
 msgstr "Find and replace"
 
-#: robocopyManager.py:473
+#: robocopyManager.py:490
 msgid "Finished {n} of {total}: {name}"
 msgstr "Finished {n} of {total}: {name}"
 
-#: contextMenu.py:434
+#: contextMenu.py:451
 msgid "Flat View"
 msgstr "Flat View"
 
@@ -890,97 +937,145 @@ msgstr "Flat View"
 msgid "Flat View: {0}"
 msgstr "Flat View: {0}"
 
-#: xPlorer_engine.py:946
+#: xPlorer_engine.py:954
 msgid "Flat view tool not available"
 msgstr "Flat view tool not available"
 
-#: folderTools.py:1183
+#: folderTools.py:1188
 msgid "Focus a single file first to select others with the same extension"
 msgstr "Focus a single file first to select others with the same extension"
 
 #: flatViewManager.py:46
-#: folderTools.py:301
-#: folderTools.py:341
+#: folderTools.py:302
+#: folderTools.py:342
+#: freezeManager.py:667
 msgid "Folder"
 msgstr "Folder"
 
-#: folderTools.py:767
-#: folderTools.py:837
+#: folderTools.py:768
+#: folderTools.py:838
 msgid "Folder '{}' already exists, creating '{}' instead"
 msgstr "Folder '{}' already exists, creating '{}' instead"
 
-#: contextMenu.py:406
+#: contextMenu.py:407
 msgid "Folder Sync & Compare"
 msgstr "Folder Sync & Compare"
 
-#: xPlorer_engine.py:1310
+#: xPlorer_engine.py:1459
 msgid "Folder creation dialog not available"
 msgstr "Folder creation dialog not available"
 
-#: xPlorer_engine.py:1259
+#: xPlorer_engine.py:1408
 msgid "Folder creator helper not available"
 msgstr "Folder creator helper not available"
 
-#: contextMenu.py:547
-#: contextMenu.py:617
-#: contextMenu.py:620
-#: contextMenu.py:623
+#: contextMenu.py:564
+#: contextMenu.py:634
+#: contextMenu.py:637
+#: contextMenu.py:640
 msgid "Folder info"
 msgstr "Folder info"
 
-#: folderTools.py:216
+#: folderTools.py:217
 msgid "Folder title:"
 msgstr "Folder title:"
 
-#: contextMenu.py:439
+#: contextMenu.py:456
 msgid "Folder to ISO"
 msgstr "Folder to ISO"
 
-#: fileOperations.py:258
+#: fileOperations.py:259
 msgid "Folders and files"
 msgstr "Folders and files"
 
-#: workspaceManager.py:49
+#: workspaceManager.py:86
 msgid "Folders in this workspace:"
 msgstr "Folders in this workspace:"
 
-#: fileOperations.py:259
+#: fileOperations.py:260
 msgid "Folders only"
 msgstr "Folders only"
 
-#: fileOperations.py:238
+#: fileOperations.py:239
 msgid "Folders: {folders}, files: {files}, total size: {size}"
 msgstr "Folders: {folders}, files: {files}, total size: {size}"
 
-#: duplicateFinderManager.py:85
+#: duplicateFinderManager.py:90
 msgid "Found {0} duplicate groups"
 msgstr "Found {0} duplicate groups"
 
-#: duplicateFinderManager.py:324
+#: duplicateFinderManager.py:329
 msgid "Found {0} duplicate groups, {1} redundant files"
 msgstr "Found {0} duplicate groups, {1} redundant files"
 
-#: contextMenu.py:916
+#: contextMenu.py:984
 msgid "Free space: {0}"
 msgstr "Free space: {0}"
 
-#: contextMenu.py:761
+#: freezeManager.py:1059
+msgid "Freeze"
+msgstr "Freeze"
+
+#: contextMenu.py:423
+msgid "Freeze Selected"
+msgstr "Freeze Selected"
+
+#: xPlorer_engine.py:1123
+msgid "Freeze manager not available"
+msgstr "Freeze manager not available"
+
+#: freezeManager.py:1061
+msgid "Freeze, {count} items"
+msgstr "Freeze, {count} items"
+
+#: xPlorer_engine.py:1127
+msgid "Freeze: freeze selected items (single tap), unfreeze selected items (double tap), or open the Freezer list (triple tap)"
+msgstr "Freeze: freeze selected items (single tap), unfreeze selected items (double tap), or open the Freezer list (triple tap)"
+
+#: contextMenu.py:428
+#: freezeManager.py:635
+msgid "Freezer"
+msgstr "Freezer"
+
+#: freezeManager.py:680
+msgid "Freezer - {count} frozen items"
+msgstr "Freezer - {count} frozen items"
+
+#: freezeManager.py:832
+#: freezeManager.py:893
+msgid "Freezing"
+msgstr "Freezing"
+
+#: freezeManager.py:1086
+msgid "Frozen by a parent folder. Unfreeze the parent folder instead"
+msgstr "Frozen by a parent folder. Unfreeze the parent folder instead"
+
+#: batchRenameManager.py:232
+#: batchRenameManager.py:402
+msgid "Frozen item skipped: {0}"
+msgstr "Frozen item skipped: {0}"
+
+#: freezeManager.py:642
+msgid "Frozen items"
+msgstr "Frozen items"
+
+#: contextMenu.py:827
 msgid "GB"
 msgstr "GB"
 
-#: contextMenu.py:422
+#: contextMenu.py:439
 msgid "Headline Case"
 msgstr "Headline Case"
 
-#: fileOperations.py:1352
+#: fileOperations.py:1353
 msgid "ISO created: {name}, {size}"
 msgstr "ISO created: {name}, {size}"
 
-#: fileOperations.py:1344
+#: fileOperations.py:1345
 msgid "ISO creation failed: {error}"
 msgstr "ISO creation failed: {error}"
 
-#: fileOperations.py:1189
+#: fileOperations.py:1190
 msgid "ISO creation is already running"
 msgstr "ISO creation is already running"
 
@@ -988,64 +1083,64 @@ msgstr "ISO creation is already running"
 msgid "Identical"
 msgstr "Identical"
 
-#: fileOperations.py:456
+#: fileOperations.py:457
 msgid "Include subfolder contents in folder sizes"
 msgstr "Include subfolder contents in folder sizes"
 
-#: folderTools.py:1552
+#: folderTools.py:1557
 msgid "Include subfolders (search all levels, like Flat View)"
 msgstr "Include subfolders (search all levels, like Flat View)"
 
-#: fileOperations.py:281
+#: fileOperations.py:282
 msgid "Include the contents of subfolders in folder sizes (slower)"
 msgstr "Include the contents of subfolders in folder sizes (slower)"
 
-#: fileOperations.py:472
+#: fileOperations.py:473
 msgid "Including subfolders"
 msgstr "Including subfolders"
 
-#: folderTools.py:352
+#: folderTools.py:353
 msgid "Invalid number for folders"
 msgstr "Invalid number for folders"
 
-#: folderTools.py:1637
-#: folderTools.py:1843
+#: folderTools.py:1642
+#: folderTools.py:1848
 msgid "Invalid regular expression: {0}"
 msgstr "Invalid regular expression: {0}"
 
-#: contextMenu.py:462
+#: contextMenu.py:479
 msgid "Invert selection"
 msgstr "Invert selection"
 
-#: fileBasketManager.py:111
+#: fileBasketManager.py:113
 msgid "Item removed"
 msgstr "Item removed"
 
-#: fileOperations.py:349
+#: fileOperations.py:350
 msgid "Items"
 msgstr "Items"
 
-#: fileBasketManager.py:37
+#: fileBasketManager.py:39
 msgid "Items in the basket:"
 msgstr "Items in the basket:"
 
-#: contextMenu.py:761
+#: contextMenu.py:827
 msgid "KB"
 msgstr "KB"
 
-#: duplicateFinderManager.py:106
+#: duplicateFinderManager.py:111
 msgid "Keep File in This Folder"
 msgstr "Keep File in This Folder"
 
-#: duplicateFinderManager.py:102
+#: duplicateFinderManager.py:107
 msgid "Keep Newest"
 msgstr "Keep Newest"
 
-#: duplicateFinderManager.py:104
+#: duplicateFinderManager.py:109
 msgid "Keep Oldest"
 msgstr "Keep Oldest"
 
-#: duplicateFinderManager.py:184
+#: duplicateFinderManager.py:189
 msgid "Kept {0}, moved {1} duplicates to the Recycle Bin"
 msgstr "Kept {0}, moved {1} duplicates to the Recycle Bin"
 
@@ -1057,35 +1152,35 @@ msgstr "Left and right folders are the same"
 msgid "Left: {0}   Right: {1}"
 msgstr "Left: {0}   Right: {1}"
 
-#: fileOperations.py:279
+#: fileOperations.py:280
 msgid "List folders before files"
 msgstr "List folders before files"
 
-#: workspaceManager.py:203
+#: workspaceManager.py:271
 msgid "Load Workspace"
 msgstr "Load Workspace"
 
-#: workspaceManager.py:602
+#: workspaceManager.py:670
 msgid "Loaded workspace {name}: opened {opened}, already open {reused}"
 msgstr "Loaded workspace {name}: opened {opened}, already open {reused}"
 
-#: contextMenu.py:900
+#: contextMenu.py:968
 msgid "Local"
 msgstr "Local"
 
-#: contextMenu.py:924
+#: contextMenu.py:992
 msgid "Location: {0}"
 msgstr "Location: {0}"
 
-#: contextMenu.py:418
+#: contextMenu.py:435
 msgid "Lowercase"
 msgstr "Lowercase"
 
-#: contextMenu.py:761
+#: contextMenu.py:827
 msgid "MB"
 msgstr "MB"
 
-#: contextMenu.py:401
+#: contextMenu.py:402
 msgid "Mark Left Folder (Sync Compare)"
 msgstr "Mark Left Folder (Sync Compare)"
 
@@ -1093,65 +1188,69 @@ msgstr "Mark Left Folder (Sync Compare)"
 msgid "Marked as left folder: {0}. Navigate to the right folder and run compare again"
 msgstr "Marked as left folder: {0}. Navigate to the right folder and run compare again"
 
-#: folderTools.py:1572
+#: folderTools.py:1577
 msgid "Matching items (Enter opens, Ctrl+C/Ctrl+X copy/cut, Ctrl+Space toggles a pick, right-click or Menu key for more):"
 msgstr "Matching items (Enter opens, Ctrl+C/Ctrl+X copy/cut, Ctrl+Space toggles a pick, right-click or Menu key for more):"
 
-#: folderTools.py:349
+#: folderTools.py:350
 msgid "Maximum 100 folders allowed"
 msgstr "Maximum 100 folders allowed"
 
-#: fileBasketManager.py:49
-#: fileBasketManager.py:161
+#: fileBasketManager.py:51
+#: fileBasketManager.py:163
 msgid "Mirror Copy"
 msgstr "Mirror Copy"
 
-#: fileBasketManager.py:390
+#: fileBasketManager.py:414
 msgid "Mirror copied {0} items from the basket"
 msgstr "Mirror copied {0} items from the basket"
 
-#: batchRenameManager.py:399
+#: batchRenameManager.py:406
 msgid "Missing file, cannot undo: {0}"
 msgstr "Missing file, cannot undo: {0}"
 
-#: contextMenu.py:947
+#: contextMenu.py:1015
 msgid "Modified: {0}"
 msgstr "Modified: {0}"
 
-#: fileBasketManager.py:49
-#: fileBasketManager.py:159
+#: fileBasketManager.py:51
+#: fileBasketManager.py:161
 msgid "Move"
 msgstr "Move"
 
-#: workspaceManager.py:258
+#: workspaceManager.py:326
 msgid "Move Down"
 msgstr "Move Down"
 
-#: workspaceManager.py:257
+#: workspaceManager.py:325
 msgid "Move Up"
 msgstr "Move Up"
 
-#: folderTools.py:1821
+#: freezeManager.py:29
+msgid "Move canceled"
+msgstr "Move canceled"
+
+#: folderTools.py:1826
 msgid "Move {count} item(s) to the Recycle Bin?"
 msgstr "Move {count} item(s) to the Recycle Bin?"
 
-#: robocopyManager.py:486
+#: robocopyManager.py:503
 msgid "Moved"
 msgstr "Moved"
 
-#: fileBasketManager.py:364
+#: fileBasketManager.py:377
 msgid "Moved {0} items from the basket"
 msgstr "Moved {0} items from the basket"
 
-#: folderTools.py:1828
+#: folderTools.py:1833
 msgid "Moved {count} item(s) to the Recycle Bin"
 msgstr "Moved {count} item(s) to the Recycle Bin"
 
-#: batchRenameManager.py:42
+#: batchRenameManager.py:43
 msgid "Multi-Rename Tool"
 msgstr "Multi-Rename Tool"
 
-#: contextMenu.py:464
+#: contextMenu.py:481
 msgid "Multi-select"
 msgstr "Multi-select"
 
@@ -1159,48 +1258,52 @@ msgstr "Multi-select"
 msgid "Name"
 msgstr "Name"
 
-#: fileOperations.py:248
+#: fileOperations.py:249
 msgid "Name followed by size"
 msgstr "Name followed by size"
 
-#: fileOperations.py:252
+#: fileOperations.py:253
 msgid "Name, A to Z"
 msgstr "Name, A to Z"
 
-#: fileOperations.py:253
+#: fileOperations.py:254
 msgid "Name, Z to A"
 msgstr "Name, Z to A"
 
-#: contextMenu.py:923
+#: contextMenu.py:991
 msgid "Name: {0}"
 msgstr "Name: {0}"
 
-#: contextMenu.py:900
+#: contextMenu.py:968
 msgid "Network name: {0}"
 msgstr "Network name: {0}"
 
-#: fileOperations.py:1495
+#: fileOperations.py:1504
 msgid "New name is the same as the current name"
 msgstr "New name is the same as the current name"
+
+#: workspaceManager.py:75
+msgid "New workspace"
+msgstr "New workspace"
 
 #: flatViewManager.py:225
 #: syncCompareManager.py:175
 #: syncCompareManager.py:189
-#: xPlorer_engine.py:1314
+#: xPlorer_engine.py:1463
 msgid "No Explorer folder detected"
 msgstr "No Explorer folder detected"
 
-#: fileOperations.py:1084
-#: fileOperations.py:1157
+#: fileOperations.py:1085
+#: fileOperations.py:1158
 msgid "No access to size data"
 msgstr "No access to size data"
 
-#: folderTools.py:1122
-#: folderTools.py:1474
+#: folderTools.py:1127
+#: folderTools.py:1479
 msgid "No active File Explorer window found"
 msgstr "No active File Explorer window found"
 
-#: batchRenameManager.py:219
+#: batchRenameManager.py:220
 msgid "No changes to apply"
 msgstr "No changes to apply"
 
@@ -1208,12 +1311,12 @@ msgstr "No changes to apply"
 msgid "No content could be read from selected files"
 msgstr "No content could be read from selected files"
 
-#: duplicateFinderManager.py:86
-#: duplicateFinderManager.py:320
+#: duplicateFinderManager.py:91
+#: duplicateFinderManager.py:325
 msgid "No duplicate files found"
 msgstr "No duplicate files found"
 
-#: duplicateFinderManager.py:154
+#: duplicateFinderManager.py:159
 msgid "No duplicate group selected"
 msgstr "No duplicate group selected"
 
@@ -1221,7 +1324,7 @@ msgstr "No duplicate group selected"
 msgid "No files found"
 msgstr "No files found"
 
-#: batchRenameManager.py:331
+#: batchRenameManager.py:335
 msgid "No files selected or found in the current folder"
 msgstr "No files selected or found in the current folder"
 
@@ -1229,45 +1332,46 @@ msgstr "No files selected or found in the current folder"
 msgid "No files were created"
 msgstr "No files were created"
 
-#: workspaceManager.py:159
+#: workspaceManager.py:221
 msgid "No folder selected"
 msgstr "No folder selected"
 
-#: folderTools.py:1994
-#: folderTools.py:2000
+#: folderTools.py:2003
 #: folderTools.py:2009
-#: folderTools.py:2015
+#: folderTools.py:2018
+#: folderTools.py:2024
 msgid "No folders found"
 msgstr "No folders found"
 
-#: xPlorer_engine.py:1339
+#: xPlorer_engine.py:1488
 msgid "No folders selected"
 msgstr "No folders selected"
 
-#: xPlorer_engine.py:1353
+#: xPlorer_engine.py:1502
 msgid "No folders selected or current folder not available"
 msgstr "No folders selected or current folder not available"
 
-#: folderTools.py:415
-#: folderTools.py:811
-#: folderTools.py:861
+#: folderTools.py:416
+#: folderTools.py:812
+#: folderTools.py:862
 msgid "No folders were created"
 msgstr "No folders were created"
 
-#: fileBasketManager.py:105
+#: fileBasketManager.py:107
 #: flatViewManager.py:176
 #: flatViewManager.py:190
-#: folderTools.py:145
+#: folderTools.py:146
+#: freezeManager.py:691
 #: syncCompareManager.py:127
 msgid "No item selected"
 msgstr "No item selected"
 
-#: contextMenu.py:833
+#: contextMenu.py:899
 msgid "No item to show properties for"
 msgstr "No item to show properties for"
 
-#: folderTools.py:1134
-#: folderTools.py:1486
+#: folderTools.py:1139
+#: folderTools.py:1491
 msgid "No items in folder"
 msgstr "No items in folder"
 
@@ -1275,18 +1379,20 @@ msgstr "No items in folder"
 #: clipboardManager.py:68
 #: compressionManager.py:161
 #: compressionManager.py:330
-#: fileBasketManager.py:223
-#: fileOperations.py:1075
-#: fileOperations.py:1417
-#: fileOperations.py:1443
+#: fileBasketManager.py:225
+#: fileOperations.py:1076
+#: fileOperations.py:1418
+#: fileOperations.py:1448
+#: freezeManager.py:1037
+#: freezeManager.py:1068
 msgid "No items selected"
 msgstr "No items selected"
 
-#: fileOperations.py:447
+#: fileOperations.py:448
 msgid "No items to show"
 msgstr "No items to show"
 
-#: folderTools.py:1269
+#: folderTools.py:1274
 msgid "No matches found for {term}"
 msgstr "No matches found for {term}"
 
@@ -1295,21 +1401,21 @@ msgstr "No matches found for {term}"
 msgid "No operations recorded yet"
 msgstr "No operations recorded yet"
 
-#: contextMenu.py:278
+#: contextMenu.py:279
 msgid "No recent locations yet"
 msgstr "No recent locations yet"
 
-#: batchRenameManager.py:374
-#: batchRenameManager.py:387
+#: batchRenameManager.py:378
+#: batchRenameManager.py:391
 msgid "No rename operation to undo"
 msgstr "No rename operation to undo"
 
-#: folderTools.py:1723
-#: folderTools.py:1759
-#: folderTools.py:1780
-#: folderTools.py:1794
-#: folderTools.py:1807
-#: folderTools.py:1818
+#: folderTools.py:1728
+#: folderTools.py:1764
+#: folderTools.py:1785
+#: folderTools.py:1799
+#: folderTools.py:1812
+#: folderTools.py:1823
 msgid "No result selected"
 msgstr "No result selected"
 
@@ -1317,66 +1423,71 @@ msgstr "No result selected"
 msgid "No text files selected"
 msgstr "No text files selected"
 
-#: folderTools.py:753
-#: folderTools.py:823
+#: folderTools.py:754
+#: folderTools.py:824
 msgid "No valid folder names found in the file"
 msgstr "No valid folder names found in the file"
 
-#: folderTools.py:370
+#: folderTools.py:371
 msgid "No valid folder names provided"
 msgstr "No valid folder names provided"
 
-#: workspaceManager.py:128
+#: workspaceManager.py:190
 msgid "No valid folder paths found"
 msgstr "No valid folder paths found"
 
-#: workspaceManager.py:246
+#: workspaceManager.py:314
 msgid "No workspace selected"
 msgstr "No workspace selected"
 
-#: workspaceManager.py:233
-#: workspaceManager.py:242
+#: workspaceManager.py:301
+#: workspaceManager.py:310
 msgid "No workspaces saved yet"
 msgstr "No workspaces saved yet"
 
-#: duplicateFinderManager.py:176
+#: duplicateFinderManager.py:181
 msgid "None of the copies are directly in the scanned folder"
 msgstr "None of the copies are directly in the scanned folder"
 
-#: workspaceManager.py:607
+#: workspaceManager.py:675
 msgid "None of the folders in workspace {0} could be found"
 msgstr "None of the folders in workspace {0} could be found"
 
-#: contextMenu.py:232
-#: contextMenu.py:268
+#: contextMenu.py:233
+#: contextMenu.py:269
 msgid "Normal display"
 msgstr "Normal display"
 
-#: folderTools.py:1560
+#: folderTools.py:1565
 msgid "Normal search"
 msgstr "Normal search"
 
-#: fileOperations.py:1241
+#: fileOperations.py:1242
 msgid "Not enough free disk space"
 msgstr "Not enough free disk space"
 
-#: xPlorer_engine.py:1384
+#: xPlorer_engine.py:1533
 msgid "Not focused on File Explorer"
 msgstr "Not focused on File Explorer"
 
+#: freezeManager.py:1088
+msgid "Not frozen"
+msgstr "Not frozen"
+
 #: createFile.py:198
-#: fileOperations.py:1186
-#: fileOperations.py:1365
-#: folderTools.py:699
-#: folderTools.py:1097
-#: folderTools.py:1176
-#: folderTools.py:1209
-#: folderTools.py:1446
-#: xPlorer_engine.py:1179
+#: fileOperations.py:1187
+#: fileOperations.py:1366
+#: folderTools.py:700
+#: folderTools.py:1102
+#: folderTools.py:1181
+#: folderTools.py:1214
+#: folderTools.py:1451
+#: xPlorer_engine.py:1138
+#: xPlorer_engine.py:1211
 msgid "Not in File Explorer"
 msgstr "Not in File Explorer"
 
-#: duplicateFinderManager.py:165
+#: duplicateFinderManager.py:170
 msgid "Nothing to remove in this group"
 msgstr "Nothing to remove in this group"
 
@@ -1384,15 +1495,15 @@ msgstr "Nothing to remove in this group"
 msgid "Number of files to create:"
 msgstr "Number of files to create:"
 
-#: folderTools.py:346
+#: folderTools.py:347
 msgid "Number of folders must be at least 1"
 msgstr "Number of folders must be at least 1"
 
-#: folderTools.py:224
+#: folderTools.py:225
 msgid "Number of folders:"
 msgstr "Number of folders:"
 
-#: fileOperations.py:291
+#: fileOperations.py:292
 msgid "OK"
 msgstr "OK"
 
@@ -1408,15 +1519,19 @@ msgstr "Only in right"
 msgid "Open Containing Folder"
 msgstr "Open Containing Folder"
 
-#: folderTools.py:1764
+#: contextMenu.py:418
+msgid "Open Freezer"
+msgstr "Open Freezer"
+
+#: folderTools.py:1769
 msgid "Open to path"
 msgstr "Open to path"
 
-#: xPlorer_engine.py:1029
+#: xPlorer_engine.py:1037
 msgid "Open xPlorer context menu (single tap), Recent Locations (double tap), or Current folder size list (triple tap)"
 msgstr "Open xPlorer context menu (single tap), Recent Locations (double tap), or Current folder size list (triple tap)"
 
-#: contextMenu.py:516
+#: contextMenu.py:533
 #: operationHistoryManager.py:26
 msgid "Operation History"
 msgstr "Operation History"
@@ -1425,43 +1540,51 @@ msgstr "Operation History"
 msgid "Operation history cleared"
 msgstr "Operation history cleared"
 
-#: workspaceManager.py:58
+#: workspaceManager.py:95
 msgid "Or paste/type folder paths here, one per line:"
 msgstr "Or paste/type folder paths here, one per line:"
 
-#: batchRenameManager.py:402
+#: batchRenameManager.py:409
 msgid "Original name is taken, cannot undo: {0}"
 msgstr "Original name is taken, cannot undo: {0}"
 
-#: fileBasketManager.py:270
+#: freezeManager.py:32
+msgid "Overwrite canceled"
+msgstr "Overwrite canceled"
+
+#: freezeManager.py:31
+msgid "Paste canceled"
+msgstr "Paste canceled"
+
+#: fileBasketManager.py:272
 msgid "Path not found: {0}"
 msgstr "Path not found: {0}"
 
-#: folderTools.py:1567
+#: folderTools.py:1572
 msgid "Pattern / search text (meaning depends on the mode above):"
 msgstr "Pattern / search text (meaning depends on the mode above):"
 
-#: contextMenu.py:229
+#: contextMenu.py:230
 msgid "Pin"
 msgstr "Pin"
 
-#: workspaceManager.py:255
+#: workspaceManager.py:323
 msgid "Pin to Top"
 msgstr "Pin to Top"
 
-#: contextMenu.py:258
+#: contextMenu.py:259
 msgid "Pinned"
 msgstr "Pinned"
 
-#: workspaceManager.py:273
+#: workspaceManager.py:341
 msgid "Pinned to top: {0}"
 msgstr "Pinned to top: {0}"
 
-#: fileBasketManager.py:154
+#: fileBasketManager.py:156
 msgid "Please choose a valid destination folder"
 msgstr "Please choose a valid destination folder"
 
-#: folderTools.py:712
+#: folderTools.py:713
 msgid "Please select a .txt or .rtf file"
 msgstr "Please select a .txt or .rtf file"
 
@@ -1469,49 +1592,65 @@ msgstr "Please select a .txt or .rtf file"
 msgid "Please select a compressed file"
 msgstr "Please select a compressed file"
 
-#: fileOperations.py:1424
+#: fileOperations.py:1429
 msgid "Please select a file, not a folder"
 msgstr "Please select a file, not a folder"
 
-#: fileOperations.py:1195
+#: fileOperations.py:1196
 msgid "Please select a folder"
 msgstr "Please select a folder"
 
-#: fileOperations.py:1420
+#: fileOperations.py:1421
 msgid "Please select only one file"
 msgstr "Please select only one file"
 
-#: fileOperations.py:1198
+#: fileOperations.py:1199
 msgid "Please select only one folder"
 msgstr "Please select only one folder"
 
-#: fileOperations.py:1446
+#: fileOperations.py:1451
 msgid "Please select only one item"
 msgstr "Please select only one item"
 
-#: folderTools.py:705
+#: folderTools.py:706
 msgid "Please select only one text file"
 msgstr "Please select only one text file"
 
-#: batchRenameManager.py:89
+#: batchRenameManager.py:90
 msgid "Preview of new file names:"
 msgstr "Preview of new file names:"
 
-#: folderTools.py:1143
-#: folderTools.py:1490
+#: folderTools.py:1148
+#: folderTools.py:1495
 msgid "Processing {count} items in background..."
 msgstr "Processing {count} items in background..."
 
-#: contextMenu.py:538
-#: contextMenu.py:861
+#: contextMenu.py:555
+#: contextMenu.py:929
 msgid "Properties"
 msgstr "Properties"
 
-#: xPlorer_engine.py:1300
+#: xPlorer_engine.py:1449
 msgid "Properties menu not available"
 msgstr "Properties menu not available"
 
-#: contextMenu.py:513
+#: contextMenu.py:750
+msgid "Read-only"
+msgstr "Read-only"
+
+#: contextMenu.py:750
+msgid "Read-only (frozen, managed by the Freezer)"
+msgstr "Read-only (frozen, managed by the Freezer)"
+
+#: contextMenu.py:790
+msgid "Read-only turned off"
+msgstr "Read-only turned off"
+
+#: contextMenu.py:790
+msgid "Read-only turned on"
+msgstr "Read-only turned on"
+
+#: contextMenu.py:530
 msgid "Recent Locations"
 msgstr "Recent Locations"
 
@@ -1519,7 +1658,7 @@ msgstr "Recent Locations"
 msgid "Recent operations (most recent first):"
 msgstr "Recent operations (most recent first):"
 
-#: folderTools.py:1560
+#: folderTools.py:1565
 msgid "Regex"
 msgstr "Regex"
 
@@ -1527,129 +1666,133 @@ msgstr "Regex"
 msgid "Relative Path"
 msgstr "Relative Path"
 
-#: fileBasketManager.py:70
-#: workspaceManager.py:66
+#: fileBasketManager.py:72
+#: workspaceManager.py:103
 msgid "Remove Selected"
 msgstr "Remove Selected"
 
-#: duplicateFinderManager.py:185
+#: duplicateFinderManager.py:190
 msgid "Removed {0} duplicate copies of {1}"
 msgstr "Removed {0} duplicate copies of {1}"
 
-#: batchRenameManager.py:53
+#: freezeManager.py:28
+msgid "Rename canceled"
+msgstr "Rename canceled"
+
+#: batchRenameManager.py:54
 msgid "Rename mode:"
 msgstr "Rename mode:"
 
-#: contextMenu.py:485
+#: contextMenu.py:502
 msgid "Rename selected file"
 msgstr "Rename selected file"
 
-#: xPlorer_engine.py:1071
+#: xPlorer_engine.py:1079
 msgid "Rename selected file (single tap), rename using clipboard text (double tap), or undo the last batch rename operation (triple tap)"
 msgstr "Rename selected file (single tap), rename using clipboard text (double tap), or undo the last batch rename operation (triple tap)"
 
-#: fileOperations.py:1543
+#: fileOperations.py:1552
 msgid "Renamed 1 file"
 msgstr "Renamed 1 file"
 
-#: fileOperations.py:1504
+#: fileOperations.py:1513
 msgid "Renamed to {name}"
 msgstr "Renamed to {name}"
 
-#: batchRenameManager.py:247
+#: batchRenameManager.py:251
 msgid "Renamed {0} files"
 msgstr "Renamed {0} files"
 
-#: fileOperations.py:1507
+#: fileOperations.py:1516
 msgid "Renamed {old} to {new}"
 msgstr "Renamed {old} to {new}"
 
-#: batchRenameManager.py:71
+#: batchRenameManager.py:72
 msgid "Replace with:"
 msgstr "Replace with:"
 
-#: fileOperations.py:459
+#: fileOperations.py:460
 msgid "Rescan"
 msgstr "Rescan"
 
-#: contextMenu.py:233
-#: contextMenu.py:268
+#: contextMenu.py:234
+#: contextMenu.py:269
 msgid "Reversed display"
 msgstr "Reversed display"
 
-#: batchRenameManager.py:411
+#: batchRenameManager.py:418
 msgid "Reverted {0} file names"
 msgstr "Reverted {0} file names"
 
-#: contextMenu.py:498
+#: contextMenu.py:515
 msgid "Robocopy"
 msgstr "Robocopy"
 
-#: robocopyManager.py:482
+#: robocopyManager.py:499
 msgid "Robocopy cancelled"
 msgstr "Robocopy cancelled"
 
-#: robocopyManager.py:511
+#: robocopyManager.py:528
 msgid "Robocopy complete. {n} item(s) copied"
 msgstr "Robocopy complete. {n} item(s) copied"
 
-#: robocopyManager.py:497
+#: robocopyManager.py:514
 msgid "Robocopy finished. {ok} succeeded, {failed} failed"
 msgstr "Robocopy finished. {ok} succeeded, {failed} failed"
 
-#: xPlorer_engine.py:980
+#: xPlorer_engine.py:988
 msgid "Robocopy manager not available"
 msgstr "Robocopy manager not available"
 
-#: robocopyManager.py:529
+#: robocopyManager.py:546
 msgid "Robocopy: Items That Could Not Be Copied"
 msgstr "Robocopy: Items That Could Not Be Copied"
 
-#: xPlorer_engine.py:988
+#: xPlorer_engine.py:996
 msgid "Robocopy: single tap copy, double tap paste, triple tap move"
 msgstr "Robocopy: single tap copy, double tap paste, triple tap move"
 
-#: contextMenu.py:403
+#: contextMenu.py:404
 msgid "Run Compare (Sync Compare)"
 msgstr "Run Compare (Sync Compare)"
 
-#: workspaceManager.py:71
+#: workspaceManager.py:108
 msgid "Save"
 msgstr "Save"
 
-#: contextMenu.py:335
+#: contextMenu.py:336
 msgid "Save Current as Workspace..."
 msgstr "Save Current as Workspace..."
 
-#: workspaceManager.py:31
+#: workspaceManager.py:51
 msgid "Save Workspace"
 msgstr "Save Workspace"
 
-#: fileBasketManager.py:138
+#: fileBasketManager.py:140
 msgid "Save Zip File As"
 msgstr "Save Zip File As"
 
-#: workspaceManager.py:195
+#: workspaceManager.py:263
 msgid "Saved workspaces (right-click or press the Menu key for pin/reorder/clear options):"
 msgstr "Saved workspaces (right-click or press the Menu key for pin/reorder/clear options):"
 
-#: contextMenu.py:541
-#: contextMenu.py:591
-#: contextMenu.py:599
-#: contextMenu.py:605
-#: contextMenu.py:610
+#: contextMenu.py:558
+#: contextMenu.py:608
+#: contextMenu.py:616
+#: contextMenu.py:622
+#: contextMenu.py:627
 msgid "Say size"
 msgstr "Say size"
 
-#: xPlorer_engine.py:963
+#: xPlorer_engine.py:971
 msgid "Say size (single tap), compress zip (double tap), unzip (triple tap), or folder to ISO (quadruple tap)"
 msgstr "Say size (single tap), compress zip (double tap), unzip (triple tap), or folder to ISO (quadruple tap)"
 
-#: duplicateFinderManager.py:267
+#: duplicateFinderManager.py:272
 msgid "Scanning {0} for duplicates..."
 msgstr "Scanning {0} for duplicates..."
 
-#: fileOperations.py:400
+#: fileOperations.py:401
 msgid "Scanning, please wait"
 msgstr "Scanning, please wait"
 
@@ -1657,93 +1800,93 @@ msgstr "Scanning, please wait"
 msgid "Scanning..."
 msgstr "Scanning..."
 
-#: folderTools.py:1558
+#: folderTools.py:1563
 msgid "Search mode:"
 msgstr "Search mode:"
 
-#: fileBasketManager.py:119
+#: fileBasketManager.py:121
 msgid "Select Destination Directory"
 msgstr "Select Destination Directory"
 
-#: workspaceManager.py:130
+#: workspaceManager.py:192
 msgid "Select Folder to Add"
 msgstr "Select Folder to Add"
 
-#: duplicateFinderManager.py:259
+#: duplicateFinderManager.py:264
 msgid "Select a folder, or open one in Explorer, to scan for duplicates"
 msgstr "Select a folder, or open one in Explorer, to scan for duplicates"
 
-#: contextMenu.py:460
+#: contextMenu.py:477
 msgid "Select by Extension"
 msgstr "Select by Extension"
 
-#: contextMenu.py:466
-#: folderTools.py:1536
+#: contextMenu.py:483
+#: folderTools.py:1541
 msgid "Select by Search"
 msgstr "Select by Search"
 
-#: xPlorer_engine.py:931
+#: xPlorer_engine.py:939
 msgid "Select by Search: Opens Select by Search (single tap), Flat View (double tap), or Batch Rename Tool (triple tap)"
 msgstr "Select by Search: Opens Select by Search (single tap), Flat View (double tap), or Batch Rename Tool (triple tap)"
 
-#: folderTools.py:717
+#: folderTools.py:718
 msgid "Selected file does not exist"
 msgstr "Selected file does not exist"
 
-#: folderTools.py:151
+#: folderTools.py:152
 msgid "Selected item is not a folder"
 msgstr "Selected item is not a folder"
 
-#: fileOperations.py:1451
+#: fileOperations.py:1460
 msgid "Selected item no longer exists"
 msgstr "Selected item no longer exists"
 
-#: fileBasketManager.py:265
+#: fileBasketManager.py:267
 msgid "Selected items are already in the basket"
 msgstr "Selected items are already in the basket"
 
-#: folderTools.py:1155
+#: folderTools.py:1160
 msgid "Selected {count} items"
 msgstr "Selected {count} items"
 
-#: folderTools.py:1258
+#: folderTools.py:1263
 msgid "Selected {count} items matching {term}"
 msgstr "Selected {count} items matching {term}"
 
-#: folderTools.py:1192
+#: folderTools.py:1197
 msgid "Selected {count} items {ext}"
 msgstr "Selected {count} items {ext}"
 
-#: folderTools.py:1272
+#: folderTools.py:1277
 msgid "Selected {count} top-level items containing matches for {term}"
 msgstr "Selected {count} top-level items containing matches for {term}"
 
-#: contextMenu.py:469
+#: contextMenu.py:486
 msgid "Selection"
 msgstr "Selection"
 
-#: folderTools.py:1158
+#: folderTools.py:1163
 msgid "Selection inverted"
 msgstr "Selection inverted"
 
-#: xPlorer_engine.py:907
-#: xPlorer_engine.py:939
+#: xPlorer_engine.py:915
+#: xPlorer_engine.py:947
 msgid "Selection manager not available"
 msgstr "Selection manager not available"
 
-#: xPlorer_engine.py:915
+#: xPlorer_engine.py:923
 msgid "Selection: Select by extension (single tap), invert selection (double tap), or multi-select (triple tap)"
 msgstr "Selection: Select by extension (single tap), invert selection (double tap), or multi-select (triple tap)"
 
-#: fileOperations.py:454
+#: fileOperations.py:455
 msgid "Settings..."
 msgstr "Settings..."
 
-#: fileOperations.py:275
+#: fileOperations.py:276
 msgid "Show"
 msgstr "Show"
 
-#: workspaceManager.py:54
+#: workspaceManager.py:91
 msgid "Show paths"
 msgstr "Show paths"
 
@@ -1751,31 +1894,31 @@ msgstr "Show paths"
 msgid "Size"
 msgstr "Size"
 
-#: fileOperations.py:249
+#: fileOperations.py:250
 msgid "Size followed by name"
 msgstr "Size followed by name"
 
-#: fileOperations.py:254
+#: fileOperations.py:255
 msgid "Size, largest to smallest"
 msgstr "Size, largest to smallest"
 
-#: fileOperations.py:255
+#: fileOperations.py:256
 msgid "Size, smallest to largest"
 msgstr "Size, smallest to largest"
 
-#: contextMenu.py:938
+#: contextMenu.py:1006
 msgid "Size: calculating..."
 msgstr "Size: calculating..."
 
-#: contextMenu.py:940
+#: contextMenu.py:1008
 msgid "Size: {0}"
 msgstr "Size: {0}"
 
-#: contextMenu.py:996
+#: contextMenu.py:1064
 msgid "Size: {0}{1}"
 msgstr "Size: {0}{1}"
 
-#: duplicateFinderManager.py:193
+#: duplicateFinderManager.py:198
 msgid "Some duplicates could not be removed"
 msgstr "Some duplicates could not be removed"
 
@@ -1783,12 +1926,12 @@ msgstr "Some duplicates could not be removed"
 msgid "Some files will use default names"
 msgstr "Some files will use default names"
 
-#: fileOperations.py:270
+#: fileOperations.py:271
 msgid "Sort order"
 msgstr "Sort order"
 
 #: compressionManager.py:174
-#: fileOperations.py:1292
+#: fileOperations.py:1293
 msgid "Starting..."
 msgstr "Starting..."
 
@@ -1796,72 +1939,72 @@ msgstr "Starting..."
 msgid "Status"
 msgstr "Status"
 
-#: folderTools.py:2017
+#: folderTools.py:2026
 msgid "Successfully converted {count} folders to headline case"
 msgstr "Successfully converted {count} folders to headline case"
 
-#: folderTools.py:2002
+#: folderTools.py:2011
 msgid "Successfully converted {count} folders to lowercase"
 msgstr "Successfully converted {count} folders to lowercase"
 
-#: folderTools.py:2011
+#: folderTools.py:2020
 msgid "Successfully converted {count} folders to title case"
 msgstr "Successfully converted {count} folders to title case"
 
-#: folderTools.py:1996
+#: folderTools.py:2005
 msgid "Successfully converted {count} folders to uppercase"
 msgstr "Successfully converted {count} folders to uppercase"
 
-#: folderTools.py:411
+#: folderTools.py:412
 msgid "Successfully created 1 folder"
 msgstr "Successfully created 1 folder"
 
-#: folderTools.py:409
+#: folderTools.py:410
 msgid "Successfully created main folder only"
 msgstr "Successfully created main folder only"
 
-#: folderTools.py:413
+#: folderTools.py:414
 msgid "Successfully created {count} of {total} folders"
 msgstr "Successfully created {count} of {total} folders"
 
-#: folderTools.py:807
-#: folderTools.py:857
+#: folderTools.py:808
+#: folderTools.py:858
 msgid "Successfully created {} folders in '{}'"
 msgstr "Successfully created {} folders in '{}'"
 
-#: batchRenameManager.py:244
+#: batchRenameManager.py:248
 msgid "Successfully renamed {0} files"
 msgstr "Successfully renamed {0} files"
 
-#: fileBasketManager.py:427
+#: fileBasketManager.py:451
 msgid "Successfully {0} {1} items."
 msgstr "Successfully {0} {1} items."
 
-#: contextMenu.py:761
+#: contextMenu.py:827
 msgid "TB"
 msgstr "TB"
 
-#: contextMenu.py:429
+#: contextMenu.py:446
 msgid "TXT to Folder"
 msgstr "TXT to Folder"
 
-#: batchRenameManager.py:59
+#: batchRenameManager.py:60
 msgid "Tag pattern ([C] counter, [D] date, [N] name, [E] extension)"
 msgstr "Tag pattern ([C] counter, [D] date, [N] name, [E] extension)"
 
-#: batchRenameManager.py:79
+#: batchRenameManager.py:80
 msgid "Tag pattern (e.g. [N]_[C].[E]):"
 msgstr "Tag pattern (e.g. [N]_[C].[E]):"
 
-#: batchRenameManager.py:66
+#: batchRenameManager.py:67
 msgid "Text to find:"
 msgstr "Text to find:"
 
-#: folderTools.py:1188
+#: folderTools.py:1193
 msgid "The focused item has no file extension"
 msgstr "The focused item has no file extension"
 
-#: robocopyManager.py:525
+#: robocopyManager.py:542
 msgid ""
 "The following {n} item(s) could not be copied:\n"
 "\n"
@@ -1871,31 +2014,35 @@ msgstr ""
 "\n"
 "{items}"
 
+#: freezeManager.py:1119
+msgid "The freezer is empty"
+msgstr "The freezer is empty"
+
 #: syncCompareManager.py:133
 msgid "This file only exists on the right side"
 msgstr "This file only exists on the right side"
 
-#: fileOperations.py:1223
+#: fileOperations.py:1224
 msgid "This folder cannot be converted to ISO"
 msgstr "This folder cannot be converted to ISO"
 
-#: recentLocationsManager.py:222
+#: recentLocationsManager.py:223
 msgid "This folder no longer exists: {0}"
 msgstr "This folder no longer exists: {0}"
 
-#: contextMenu.py:420
+#: contextMenu.py:437
 msgid "Title Case"
 msgstr "Title Case"
 
-#: contextMenu.py:780
+#: contextMenu.py:846
 msgid "Today"
 msgstr "Today"
 
-#: fileOperations.py:474
+#: fileOperations.py:475
 msgid "Top level only"
 msgstr "Top level only"
 
-#: contextMenu.py:918
+#: contextMenu.py:986
 msgid "Total capacity: {0}"
 msgstr "Total capacity: {0}"
 
@@ -1907,109 +2054,143 @@ msgstr "Total file size is too large to copy content"
 msgid "Unable to get current directory after multiple attempts"
 msgstr "Unable to get current directory after multiple attempts"
 
-#: fileOperations.py:1372
-#: xPlorer_engine.py:870
+#: fileOperations.py:1373
+#: xPlorer_engine.py:878
 msgid "Unable to get current path"
 msgstr "Unable to get current path"
 
-#: folderTools.py:1127
-#: folderTools.py:1479
+#: folderTools.py:1132
+#: folderTools.py:1484
 msgid "Unable to get folder view"
 msgstr "Unable to get folder view"
 
-#: batchRenameManager.py:382
+#: batchRenameManager.py:386
 msgid "Unable to read the last rename operation"
 msgstr "Unable to read the last rename operation"
 
-#: batchRenameManager.py:412
+#: batchRenameManager.py:419
 msgid "Undid rename of {0} files"
 msgstr "Undid rename of {0} files"
 
-#: batchRenameManager.py:102
-#: contextMenu.py:395
+#: batchRenameManager.py:103
+#: contextMenu.py:396
 msgid "Undo Last Rename"
 msgstr "Undo Last Rename"
 
-#: contextMenu.py:229
+#: freezeManager.py:729
+#: freezeManager.py:1081
+msgid "Unfreeze"
+msgstr "Unfreeze"
+
+#: freezeManager.py:647
+msgid "Unfreeze &all"
+msgstr "Unfreeze &all"
+
+#: contextMenu.py:425
+msgid "Unfreeze Selected"
+msgstr "Unfreeze Selected"
+
+#: freezeManager.py:711
+msgid "Unfreeze all"
+msgstr "Unfreeze all"
+
+#: freezeManager.py:730
+msgid "Unfreeze all files and folders"
+msgstr "Unfreeze all files and folders"
+
+#: freezeManager.py:710
+msgid "Unfreeze all {count} items?"
+msgstr "Unfreeze all {count} items?"
+
+#: freezeManager.py:723
+msgid "Unfreeze all, {count} items"
+msgstr "Unfreeze all, {count} items"
+
+#: freezeManager.py:701
+#: freezeManager.py:1083
+msgid "Unfreeze, {count} items"
+msgstr "Unfreeze, {count} items"
+
+#: contextMenu.py:230
 msgid "Unpin"
 msgstr "Unpin"
 
-#: workspaceManager.py:255
+#: workspaceManager.py:323
 msgid "Unpin from Top"
 msgstr "Unpin from Top"
 
-#: contextMenu.py:258
+#: contextMenu.py:259
 msgid "Unpinned"
 msgstr "Unpinned"
 
-#: workspaceManager.py:273
+#: workspaceManager.py:341
 msgid "Unpinned: {0}"
 msgstr "Unpinned: {0}"
 
-#: contextMenu.py:416
+#: contextMenu.py:433
 msgid "Uppercase"
 msgstr "Uppercase"
 
-#: batchRenameManager.py:76
+#: batchRenameManager.py:77
 msgid "Use regular expressions (regex)"
 msgstr "Use regular expressions (regex)"
 
-#: contextMenu.py:917
+#: contextMenu.py:985
 msgid "Used space: {0}"
 msgstr "Used space: {0}"
 
-#: folderTools.py:1560
+#: folderTools.py:1565
 msgid "Wildcard"
 msgstr "Wildcard"
 
-#: contextMenu.py:503
-#: workspaceManager.py:187
+#: contextMenu.py:520
+#: workspaceManager.py:255
 msgid "Workspace Manager"
 msgstr "Workspace Manager"
 
-#: workspaceManager.py:327
+#: workspaceManager.py:395
 msgid "Workspace deleted: {0}"
 msgstr "Workspace deleted: {0}"
 
-#: workspaceManager.py:148
-#: xPlorer_engine.py:1115
+#: workspaceManager.py:210
+#: xPlorer_engine.py:1147
 msgid "Workspace manager not available"
 msgstr "Workspace manager not available"
 
-#: workspaceManager.py:44
+#: workspaceManager.py:81
 msgid "Workspace name:"
 msgstr "Workspace name:"
 
-#: workspaceManager.py:477
+#: workspaceManager.py:545
 msgid "Workspace not found: {0}"
 msgstr "Workspace not found: {0}"
 
-#: workspaceManager.py:668
+#: workspaceManager.py:736
 msgid "Workspace saved: {0}"
 msgstr "Workspace saved: {0}"
 
-#: workspaceManager.py:316
+#: workspaceManager.py:384
 msgid "Workspace updated: {0}"
 msgstr "Workspace updated: {0}"
 
-#: xPlorer_engine.py:1123
+#: xPlorer_engine.py:1155
 msgid "Workspace: Open menu (single tap), add selected folder or save current as workspace (double tap), or edit saved workspaces (triple tap)"
 msgstr "Workspace: Open menu (single tap), add selected folder or save current as workspace (double tap), or edit saved workspaces (triple tap)"
 
-#: contextMenu.py:782
+#: contextMenu.py:848
 msgid "Yesterday"
 msgstr "Yesterday"
 
-#: fileBasketManager.py:49
-#: fileBasketManager.py:136
+#: fileBasketManager.py:51
+#: fileBasketManager.py:138
 msgid "Zip"
 msgstr "Zip"
 
-#: fileBasketManager.py:420
+#: fileBasketManager.py:444
 msgid "Zipped {0} items from the basket"
 msgstr "Zipped {0} items from the basket"
 
-#: contextMenu.py:761
+#: contextMenu.py:827
 msgid "bytes"
 msgstr "bytes"
 
@@ -2017,19 +2198,19 @@ msgstr "bytes"
 msgid "compression failed"
 msgstr "compression failed"
 
-#: fileBasketManager.py:344
+#: fileBasketManager.py:350
 msgid "copied"
 msgstr "copied"
 
-#: contextMenu.py:491
+#: contextMenu.py:508
 msgid "copy"
 msgstr "copy"
 
-#: robocopyManager.py:259
+#: robocopyManager.py:276
 msgid "estimating time remaining"
 msgstr "estimating time remaining"
 
-#: contextMenu.py:789
+#: contextMenu.py:855
 msgid "less than a minute ago"
 msgstr "less than a minute ago"
 
@@ -2037,15 +2218,15 @@ msgstr "less than a minute ago"
 msgid "maximized"
 msgstr "maximized"
 
-#: fileBasketManager.py:388
+#: fileBasketManager.py:412
 msgid "mirror copied"
 msgstr "mirror copied"
 
-#: contextMenu.py:493
+#: contextMenu.py:510
 msgid "move"
 msgstr "move"
 
-#: fileBasketManager.py:362
+#: fileBasketManager.py:375
 msgid "moved"
 msgstr "moved"
 
@@ -2057,66 +2238,67 @@ msgstr "new_file"
 msgid "new_file_{index}"
 msgstr "new_file_{index}"
 
-#: fileOperations.py:223
+#: fileOperations.py:224
 msgid "no access"
 msgstr "no access"
 
-#: folderTools.py:1718
+#: folderTools.py:1723
 msgid "not select {name}"
 msgstr "not select {name}"
 
-#: contextMenu.py:495
+#: contextMenu.py:512
 msgid "paste"
 msgstr "paste"
 
-#: folderTools.py:1718
+#: folderTools.py:1723
 msgid "select {name}"
 msgstr "select {name}"
 
-#: contextMenu.py:452
+#: contextMenu.py:469
 msgid "unCompress zip"
 msgstr "unCompress zip"
 
-#: contextMenu.py:90
-#: contextMenu.py:104
+#: contextMenu.py:91
+#: contextMenu.py:105
 msgid "unavailable"
 msgstr "unavailable"
 
-#: duplicateFinderManager.py:137
+#: duplicateFinderManager.py:142
 msgid "unknown date"
 msgstr "unknown date"
 
-#: xPlorer_engine.py:310
-#: xPlorer_engine.py:893
-#: xPlorer_engine.py:916
-#: xPlorer_engine.py:932
-#: xPlorer_engine.py:964
-#: xPlorer_engine.py:989
-#: xPlorer_engine.py:1030
-#: xPlorer_engine.py:1072
-#: xPlorer_engine.py:1098
-#: xPlorer_engine.py:1124
-#: xPlorer_engine.py:1275
+#: xPlorer_engine.py:313
+#: xPlorer_engine.py:901
+#: xPlorer_engine.py:924
+#: xPlorer_engine.py:940
+#: xPlorer_engine.py:972
+#: xPlorer_engine.py:997
+#: xPlorer_engine.py:1038
+#: xPlorer_engine.py:1080
+#: xPlorer_engine.py:1106
+#: xPlorer_engine.py:1128
+#: xPlorer_engine.py:1156
+#: xPlorer_engine.py:1424
 msgid "xPlorer"
 msgstr "xPlorer"
 
-#: contextMenu.py:520
+#: contextMenu.py:537
 msgid "xPlorer Settings"
 msgstr "xPlorer Settings"
 
-#: fileBasketManager.py:418
+#: fileBasketManager.py:442
 msgid "zipped"
 msgstr "zipped"
 
-#: contextMenu.py:284
+#: contextMenu.py:285
 msgid "{0} (pinned)"
 msgstr "{0} (pinned)"
 
-#: fileBasketManager.py:425
+#: fileBasketManager.py:449
 msgid "{0} complete. {1} successful, {2} failed. Check NVDA log."
 msgstr "{0} complete. {1} successful, {2} failed. Check NVDA log."
 
-#: duplicateFinderManager.py:130
+#: duplicateFinderManager.py:135
 msgid "{0} copies, {1} each"
 msgstr "{0} copies, {1} each"
 
@@ -2124,8 +2306,8 @@ msgstr "{0} copies, {1} each"
 msgid "{0} differences found"
 msgstr "{0} differences found"
 
-#: fileBasketManager.py:262
-#: fileBasketManager.py:306
+#: fileBasketManager.py:264
+#: fileBasketManager.py:308
 msgid "{0} files"
 msgstr "{0} files"
 
@@ -2134,16 +2316,16 @@ msgstr "{0} files"
 msgid "{0} files found"
 msgstr "{0} files found"
 
-#: fileBasketManager.py:260
-#: fileBasketManager.py:304
+#: fileBasketManager.py:262
+#: fileBasketManager.py:306
 msgid "{0} folders"
 msgstr "{0} folders"
 
-#: contextMenu.py:799
+#: contextMenu.py:865
 msgid "{0} hour ago"
 msgstr "{0} hour ago"
 
-#: contextMenu.py:800
+#: contextMenu.py:866
 msgid "{0} hours ago"
 msgstr "{0} hours ago"
 
@@ -2152,21 +2334,33 @@ msgstr "{0} hours ago"
 msgid "{0} matches found"
 msgstr "{0} matches found"
 
-#: contextMenu.py:793
+#: contextMenu.py:859
 msgid "{0} minute ago"
 msgstr "{0} minute ago"
 
-#: contextMenu.py:794
+#: contextMenu.py:860
 msgid "{0} minutes ago"
 msgstr "{0} minutes ago"
 
-#: robocopyManager.py:513
+#: robocopyManager.py:530
 msgid "{action} {n} item(s) to {dest}"
 msgstr "{action} {n} item(s) to {dest}"
 
-#: robocopyManager.py:501
+#: robocopyManager.py:518
 msgid "{action} {n} item(s) to {dest} ({failed} failed)"
 msgstr "{action} {n} item(s) to {dest} ({failed} failed)"
+
+#: contextMenu.py:788
+msgid "{count} files could not be changed"
+msgstr "{count} files could not be changed"
+
+#: freezeManager.py:460
+msgid "{count} files could not be made read-only"
+msgstr "{count} files could not be made read-only"
+
+#: freezeManager.py:472
+msgid "{count} files could not be made writable again"
+msgstr "{count} files could not be made writable again"
 
 #: clipboardManager.py:141
 msgid "{count} files could not be read"
@@ -2176,25 +2370,53 @@ msgstr "{count} files could not be read"
 msgid "{count} files created"
 msgstr "{count} files created"
 
-#: fileOperations.py:1164
+#: workspaceManager.py:167
+msgid "{count} folders in the list"
+msgstr "{count} folders in the list"
+
+#: freezeManager.py:628
+msgid "{count} frozen items. {result}"
+msgstr "{count} frozen items. {result}"
+
+#: fileOperations.py:1165
 msgid "{count} items {size}"
 msgstr "{count} items {size}"
 
-#: folderTools.py:1656
+#: folderTools.py:1661
 msgid "{count} matches"
 msgstr "{count} matches"
 
-#: robocopyManager.py:264
+#: freezeManager.py:1050
+msgid "{count} system locations skipped"
+msgstr "{count} system locations skipped"
+
+#: robocopyManager.py:281
 msgid "{h}h {m}m remaining"
 msgstr "{h}h {m}m remaining"
 
-#: robocopyManager.py:266
+#: freezeManager.py:673
+msgid "{label}, not found"
+msgstr "{label}, not found"
+
+#: freezeManager.py:675
+msgid "{label}, replaced by another item"
+msgstr "{label}, replaced by another item"
+
+#: robocopyManager.py:283
 msgid "{m}m {s}s remaining"
 msgstr "{m}m {s}s remaining"
 
-#: workspaceManager.py:229
+#: workspaceManager.py:297
 msgid "{name} (pinned)"
 msgstr "{name} (pinned)"
+
+#: freezeManager.py:1043
+msgid "{name} is a system location and cannot be frozen"
+msgstr "{name} is a system location and cannot be frozen"
+
+#: freezeManager.py:626
+msgid "{name} is frozen. {result}"
+msgstr "{name} is frozen. {result}"
 
 #: update.py:159
 msgid "{name} update"
@@ -2208,22 +2430,26 @@ msgstr ""
 "{name} {new} is available (installed: {old}).\n"
 "Update now?"
 
-#: fileOperations.py:228
+#: fileOperations.py:229
 msgid "{name}, folder"
 msgstr "{name}, folder"
 
-#: robocopyManager.py:328
+#: freezeManager.py:669
+msgid "{name}, {kind}, in {location}"
+msgstr "{name}, {kind}, in {location}"
+
+#: robocopyManager.py:345
 msgid "{pct}% - item {idx}/{total}: {name}"
 msgstr "{pct}% - item {idx}/{total}: {name}"
 
-#: folderTools.py:184
+#: folderTools.py:185
 msgid "{subfolders} subfolders and {files} files"
 msgstr "{subfolders} subfolders and {files} files"
 
-#: contextMenu.py:625
+#: contextMenu.py:642
 msgid "{subfolders} subfolders, {files} files"
 msgstr "{subfolders} subfolders, {files} files"
 
-#: robocopyManager.py:267
+#: robocopyManager.py:284
 msgid "{s}s remaining"
 msgstr "{s}s remaining"

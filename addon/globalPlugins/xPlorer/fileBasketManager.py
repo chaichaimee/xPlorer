@@ -5,6 +5,7 @@ import json
 import shutil
 import zipfile
 import threading
+import time
 import wx
 import gui
 import gui.guiHelper
@@ -13,6 +14,7 @@ import tones
 import core
 import addonHandler
 from logHandler import log
+from . import freezeManager
 from .folderTools import CONFIG_DIR
 
 addonHandler.initTranslation()
@@ -325,8 +327,12 @@ class FileBasketManager:
 		wx.CallAfter(do_show)
 
 	def executeBulkCopy(self, sourcePaths, targetDirectory):
+		if freezeManager.isFrozen(targetDirectory):
+			freezeManager.announceBlocked("paste", [targetDirectory])
+			return
 		successCount = 0
 		errorCount = 0
+		freezeManager.unlockCopiesAsync(list(sourcePaths), targetDirectory, time.time(), exactNames=True)
 
 		for sourcePath in sourcePaths:
 			try:
@@ -346,10 +352,17 @@ class FileBasketManager:
 			self.logOperation(_("Copied {0} items from the basket").format(successCount))
 
 	def executeBulkMove(self, sourcePaths, targetDirectory):
+		if freezeManager.isFrozen(targetDirectory):
+			freezeManager.announceBlocked("paste", [targetDirectory])
+			return
 		successCount = 0
 		errorCount = 0
 
 		for sourcePath in sourcePaths:
+			if freezeManager.isOperationBlocked(sourcePath):
+				freezeManager.announceBlocked("move", [sourcePath])
+				errorCount += 1
+				continue
 			try:
 				shutil.move(sourcePath, targetDirectory)
 				self.collectedPaths.discard(sourcePath)
@@ -364,6 +377,9 @@ class FileBasketManager:
 			self.logOperation(_("Moved {0} items from the basket").format(successCount))
 
 	def executeBulkMirrorCopy(self, sourcePaths, targetDirectory):
+		if freezeManager.isFrozen(targetDirectory):
+			freezeManager.announceBlocked("overwrite", [targetDirectory])
+			return
 		successCount = 0
 		errorCount = 0
 
@@ -371,12 +387,20 @@ class FileBasketManager:
 			try:
 				if os.path.isfile(sourcePath):
 					destinationPath = os.path.join(targetDirectory, os.path.basename(sourcePath))
+					if freezeManager.isOperationBlocked(destinationPath):
+						freezeManager.announceBlocked("overwrite", [destinationPath])
+						errorCount += 1
+						continue
 					if os.path.exists(destinationPath):
 						os.remove(destinationPath)
 					shutil.copy2(sourcePath, destinationPath)
 				elif os.path.isdir(sourcePath):
 					folderName = os.path.basename(sourcePath.rstrip(os.sep))
 					destinationPath = os.path.join(targetDirectory, folderName)
+					if freezeManager.isOperationBlocked(destinationPath):
+						freezeManager.announceBlocked("overwrite", [destinationPath])
+						errorCount += 1
+						continue
 					if os.path.exists(destinationPath):
 						shutil.rmtree(destinationPath)
 					shutil.copytree(sourcePath, destinationPath)

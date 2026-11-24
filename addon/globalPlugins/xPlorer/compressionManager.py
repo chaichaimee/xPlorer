@@ -366,11 +366,14 @@ class CompressionManager:
 				choices
 			)
 			dialog.SetSelection(0)
-			if dialog.ShowModal() != wx.ID_OK:
+			gui.mainFrame.prePopup()
+			try:
+				if dialog.ShowModal() != wx.ID_OK:
+					return
+				choice = dialog.GetSelection()
+			finally:
+				gui.mainFrame.postPopup()
 				dialog.Destroy()
-				return
-			choice = dialog.GetSelection()
-			dialog.Destroy()
 
 			target_dir = extract_to_folder if choice == 0 else parent_dir
 			self._extractArchiveInBackground(archive_path, target_dir)

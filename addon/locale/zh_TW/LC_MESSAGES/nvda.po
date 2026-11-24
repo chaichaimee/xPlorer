@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: xPlorer 2026.8.5\n"
+"Project-Id-Version: xPlorer 2026.12.0\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-08-03 06:13+0700\n"
+"POT-Creation-Date: 2026-11-24 08:54+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Chinese (Traditional)\n"
@@ -10,310 +10,871 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: DevOn Addon\n"
+"X-Generator: ChaiBot Addon\n"
 
-#: robocopyManager.py:464
-msgid " and {n} more"
-msgstr " 及另外 {n} 個"
+#: contextMenu.py:1063
+msgid " (partial)"
+msgstr "(部分)"
 
-#: folderTools.py:174
+#: compressionManager.py:511
+msgid " and {count} more"
+msgstr "以及其他 {count} 個"
+
+#: folderTools.py:249
 msgid "&Apply"
 msgstr "套用(&A)"
 
-#: folderTools.py:175
+#: folderTools.py:250
 msgid "&Cancel"
 msgstr "取消(&C)"
 
-#: createFile.py:286
+#: freezeManager.py:648
+msgid "&Close"
+msgstr "關閉(&C)"
+
+#: freezeManager.py:640
+msgid "&Frozen items:"
+msgstr "已凍結項目(&F)："
+
+#: update.py:173
+msgid "&Later"
+msgstr "稍後(&L)"
+
+#: freezeManager.py:646
+msgid "&Unfreeze selected"
+msgstr "取消凍結所選項目(&U)"
+
+#: update.py:171
+msgid "&Update now"
+msgstr "立即更新(&U)"
+
+#: flatViewManager.py:134
+#: flatViewManager.py:143
+msgid "(list capped at {0} - refine your folder selection)"
+msgstr "(列表上限為 {0} 個 - 請縮小您的資料夾選取範圍)"
+
+#: flatViewManager.py:118
+msgid "(root)"
+msgstr "(根目錄)"
+
+#: fileOperations.py:1355
+msgid ", UDF format"
+msgstr "，UDF 格式"
+
+#: fileOperations.py:1357
+msgid ", {count} items skipped"
+msgstr "，已略過 {count} 個項目"
+
+#: batchRenameManager.py:257
+#: batchRenameManager.py:425
+msgid "...and {0} more errors"
+msgstr "...以及其他 {0} 個錯誤"
+
+#: robocopyManager.py:541
+msgid "...and {n} more"
+msgstr "...以及其他 {n} 個"
+
+#: createFile.py:290
 msgid "1 file created"
 msgstr "已建立 1 個檔案"
 
-#: fileOperations.py:340
-msgid "A file with this name already exists"
-msgstr "已有同名的檔案"
+#: compressionManager.py:449
+msgid "7-Zip is required to extract this file type"
+msgstr "解壓縮此檔案類型需要 7-Zip"
 
-#: compressionManager.py:288
+#: duplicateFinderManager.py:268
+msgid "A duplicate scan is already running"
+msgstr "重複掃描已經在執行中"
+
+#: fileOperations.py:1544
+msgid "A file with this name already exists"
+msgstr "已存在相同名稱的檔案"
+
+#: folderTools.py:1116
+#: folderTools.py:1468
+msgid "A selection operation is already in progress"
+msgstr "選取作業已經在進行中"
+
+#: contextMenu.py:1018
+msgid "Accessed: {0}"
+msgstr "存取時間：{0}"
+
+#: freezeManager.py:623
+msgid "Action canceled"
+msgstr "動作已取消"
+
+#: fileBasketManager.py:48
+msgid "Action:"
+msgstr "動作："
+
+#: workspaceManager.py:101
+#: workspaceManager.py:202
+msgid "Add Folder..."
+msgstr "新增資料夾..."
+
+#: workspaceManager.py:202
+msgid "Add Path"
+msgstr "新增路徑"
+
+#: workspaceManager.py:233
+msgid "Add at least one folder to this workspace"
+msgstr "請在此工作區中新增至少一個資料夾"
+
+#: workspaceManager.py:73
+msgid "Add to workspace:"
+msgstr "新增至工作區："
+
+#: fileBasketManager.py:283
+msgid "Added to basket. Total items: {0}"
+msgstr "已新增至籃子。總項目數：{0}"
+
+#: workspaceManager.py:240
+msgid "Added to existing workspace {name}"
+msgstr "已新增至現有工作區 {name}"
+
+#: fileBasketManager.py:265
+msgid "Added {0}"
+msgstr "已新增 {0}"
+
+#: workspaceManager.py:188
+msgid "Added {count} folders"
+msgstr "已新增 {count} 個資料夾"
+
+#: workspaceManager.py:764
+#: workspaceManager.py:771
+msgid "Added {name}"
+msgstr "已新增 {name}"
+
+#: workspaceManager.py:358
+msgid "All workspaces cleared"
+msgstr "已清除所有工作區"
+
+#: workspaceManager.py:766
+msgid "Already added: {name}"
+msgstr "已新增：{name}"
+
+#: freezeManager.py:1055
+msgid "Already frozen"
+msgstr "已凍結"
+
+#: fileBasketManager.py:277
+msgid "Already in basket"
+msgstr "已經在籃子中"
+
+#: fileOperations.py:1508
+msgid "An item named {name} already exists"
+msgstr "名為 {name} 的項目已存在"
+
+#: fileOperations.py:330
+msgid "Applied"
+msgstr "已套用"
+
+#: batchRenameManager.py:96
+#: fileOperations.py:295
+msgid "Apply"
+msgstr "套用"
+
+#: fileBasketManager.py:296
+msgid "Basket cleared"
+msgstr "已清空籃子"
+
+#: fileBasketManager.py:311
+msgid "Basket is already empty"
+msgstr "籃子已經是空的"
+
+#: fileBasketManager.py:43
+#: fileBasketManager.py:98
+#: fileBasketManager.py:132
+msgid "Basket is empty"
+msgstr "籃子是空的"
+
+#: contextMenu.py:391
+msgid "Batch Rename Tool"
+msgstr "批次重新命名工具"
+
+#: xPlorer_engine.py:959
+#: xPlorer_engine.py:1094
+msgid "Batch rename manager not available"
+msgstr "批次重新命名管理員無法使用"
+
+#: fileBasketManager.py:62
+msgid "Browse"
+msgstr "瀏覽"
+
+#: compressionManager.py:302
 msgid "Built-in compression failed: {error}"
 msgstr "內建壓縮失敗：{error}"
 
-#: robocopyManager.py:323
+#: robocopyManager.py:364
 msgid "Calculating total size..."
 msgstr "正在計算總大小..."
 
-#: clipboardManager.py:66
+#: batchRenameManager.py:98
+#: fileOperations.py:294
+#: workspaceManager.py:110
+msgid "Cancel"
+msgstr "取消"
+
+#: clipboardManager.py:72
 msgid "Cannot copy content of folders, please select files only"
 msgstr "無法複製資料夾內容，請僅選取檔案"
 
-#: createFile.py:271
+#: createFile.py:275
 msgid "Cannot find unique name for: {name}"
-msgstr "找不到唯一名稱：{name}"
+msgstr "找不到以下項目的唯一名稱：{name}"
 
-#: __init__.py:888
+#: xPlorer_engine.py:1431
 msgid "Cannot open settings dialog"
 msgstr "無法開啟設定對話方塊"
 
-#: folderTools.py:570
+#: folderTools.py:733
 msgid "Cannot process RTF file: striprtf module not available"
 msgstr "無法處理 RTF 檔案：striprtf 模組無法使用"
 
-#: contextMenu.py:43
+#: contextMenu.py:442
 msgid "Case Converter for Folders"
-msgstr "資料夾大小寫轉換器"
+msgstr "資料夾大小寫轉換工具"
 
-#: __init__.py:927
+#: xPlorer_engine.py:1484
 msgid "Case converter not available"
-msgstr "大小寫轉換器無法使用"
+msgstr "大小寫轉換工具無法使用"
 
-#: __init__.py:648
+#: compressionManager.py:364
+msgid "Choose extraction method:"
+msgstr "選擇解壓縮方法："
+
+#: workspaceManager.py:329
+#: workspaceManager.py:350
+msgid "Clear All Workspaces"
+msgstr "清除所有工作區"
+
+#: fileBasketManager.py:74
+msgid "Clear Basket"
+msgstr "清空籃子"
+
+#: operationHistoryManager.py:44
+msgid "Clear History"
+msgstr "清除記錄"
+
+#: contextMenu.py:231
+msgid "Clear all (except pinned)"
+msgstr "清除全部（釘選項目除外）"
+
+#: contextMenu.py:264
+msgid "Cleared recent locations"
+msgstr "已清除最近的位置"
+
+#: fileBasketManager.py:309
+msgid "Cleared {0} from basket"
+msgstr "已從籃子中清除 {0}"
+
+#: contextMenu.py:498
+msgid "Clipboard Operations"
+msgstr "剪貼簿操作"
+
+#: xPlorer_engine.py:900
+msgid "Clipboard Operations: Copy selected names (single tap), copy content (double tap), or copy address bar (triple tap)"
+msgstr "剪貼簿操作：單擊複製所選名稱、雙擊複製內容，或三擊複製網址列"
+
+#: fileOperations.py:1476
+msgid "Clipboard is empty"
+msgstr "剪貼簿是空的"
+
+#: xPlorer_engine.py:892
 msgid "Clipboard manager not available"
 msgstr "剪貼簿管理員無法使用"
 
-#: compressionManager.py:284
+#: fileOperations.py:1481
+msgid "Clipboard text is not a valid name"
+msgstr "剪貼簿文字不是有效的名稱"
+
+#: contextMenu.py:737
+#: duplicateFinderManager.py:115
+#: fileBasketManager.py:76
+#: fileOperations.py:352
+#: flatViewManager.py:53
+#: operationHistoryManager.py:46
+#: syncCompareManager.py:59
+#: workspaceManager.py:277
+msgid "Close"
+msgstr "關閉"
+
+#: workspaceManager.py:637
+msgid "Closed {count} folders from workspace {name}"
+msgstr "已從工作區 {name} 關閉 {count} 個資料夾"
+
+#: syncCompareManager.py:32
+msgid "Compare Folders"
+msgstr "比較資料夾"
+
+#: syncCompareManager.py:48
+msgid "Comparing..."
+msgstr "正在比較..."
+
+#: robocopyManager.py:525
+msgid "Complete"
+msgstr "完成"
+
+#: compressionManager.py:298
 msgid "Completed"
 msgstr "已完成"
 
-#: contextMenu.py:26
+#: contextMenu.py:472
+msgid "Compress"
+msgstr "壓縮"
+
+#: contextMenu.py:467
 msgid "Compress zip"
 msgstr "壓縮為 zip"
 
-#: compressionManager.py:160
-#: compressionManager.py:168
+#: compressionManager.py:173
+#: compressionManager.py:181
 msgid "Compressing files"
 msgstr "正在壓縮檔案"
 
-#: compressionManager.py:75
+#: compressionManager.py:85
 msgid "Compressing..."
-msgstr "正在壓縮..."
+msgstr "壓縮中..."
 
-#: compressionManager.py:263
 #: compressionManager.py:277
+#: compressionManager.py:291
 msgid "Compressing: {percent}%"
-msgstr "正在壓縮：{percent}%"
+msgstr "壓縮中：{percent}%"
 
-#: compressionManager.py:110
-#: compressionManager.py:282
+#: compressionManager.py:120
+#: compressionManager.py:296
 msgid "Compression cancelled"
-msgstr "壓縮已取消"
+msgstr "已取消壓縮"
 
-#: compressionManager.py:112
-#: compressionManager.py:285
+#: compressionManager.py:122
+#: compressionManager.py:299
 msgid "Compression completed {name}"
-msgstr "壓縮已完成 {name}"
+msgstr "已完成壓縮 {name}"
 
-#: __init__.py:728
+#: xPlorer_engine.py:963
 msgid "Compression manager not available"
 msgstr "壓縮管理員無法使用"
 
-#: compressionManager.py:86
+#: compressionManager.py:96
 msgid "Compression timed out"
 msgstr "壓縮逾時"
 
-#: clipboardManager.py:133
-msgid "Content from 1 file copied to clipboard"
-msgstr "已複製 1 個檔案的內容到剪貼簿"
+#: contextMenu.py:1022
+msgid "Contents: calculating..."
+msgstr "內容：計算中..."
 
-#: clipboardManager.py:135
-msgid "Content from {count} files copied to clipboard"
-msgstr "已複製 {count} 個檔案的內容到剪貼簿"
+#: contextMenu.py:1065
+msgid "Contents: {0} files, {1} folders{2}"
+msgstr "內容：{0} 個檔案，{1} 個資料夾{2}"
 
-#: __init__.py:835
-#: __init__.py:901
+#: xPlorer_engine.py:1027
+#: xPlorer_engine.py:1443
+#: xPlorer_engine.py:1455
 msgid "Context menu manager not available"
-msgstr "操作功能表管理員無法使用"
+msgstr "快顯功能表管理員無法使用"
 
-#: folderTools.py:937
+#: folderTools.py:1976
 msgid "Conversion already in progress"
-msgstr "轉換已在進行中"
+msgstr "轉換已經在進行中"
 
-#: folderTools.py:954
+#: folderTools.py:1993
 msgid "Converting"
 msgstr "正在轉換"
 
-#: clipboardManager.py:44
+#: robocopyManager.py:503
+msgid "Copied"
+msgstr "已複製"
+
+#: clipboardManager.py:47
 msgid "Copied 1 item name to clipboard"
-msgstr "已複製 1 個項目的名稱到剪貼簿"
+msgstr "已複製 1 個項目名稱至剪貼簿"
 
-#: clipboardManager.py:46
+#: syncCompareManager.py:142
+msgid "Copied {0}"
+msgstr "已複製 {0}"
+
+#: fileBasketManager.py:352
+msgid "Copied {0} items from the basket"
+msgstr "已從暫存籃複製 {0} 個項目"
+
+#: clipboardManager.py:49
 msgid "Copied {count} item names to clipboard"
-msgstr "已複製 {count} 個項目的名稱到剪貼簿"
+msgstr "已複製 {count} 個項目名稱至剪貼簿"
 
-#: __init__.py:624
+#: folderTools.py:1788
+msgid "Copied {count} items"
+msgstr "已複製 {count} 個項目"
+
+#: xPlorer_engine.py:872
 msgid "Copied: {path}"
 msgstr "已複製：{path}"
 
-#: contextMenu.py:28
+#: fileBasketManager.py:51
+#: fileBasketManager.py:159
+#: folderTools.py:1767
+msgid "Copy"
+msgstr "複製"
+
+#: syncCompareManager.py:57
+msgid "Copy Selected to Right"
+msgstr "複製所選項目至右側"
+
+#: contextMenu.py:491
 msgid "Copy address bar"
 msgstr "複製網址列"
 
-#: contextMenu.py:29
+#: contextMenu.py:493
 msgid "Copy content"
 msgstr "複製內容"
 
-#: __init__.py:711
-msgid "Copy content (single tap) or invert selection (double tap)"
-msgstr "複製內容（單指點擊）或反向選取（雙指點擊）"
-
-#: contextMenu.py:30
+#: contextMenu.py:495
 msgid "Copy selected file and folder names"
-msgstr "複製選取的檔案和資料夾名稱"
+msgstr "複製所選的檔案與資料夾名稱"
 
-#: __init__.py:671
-msgid "Copy selected names (single tap) or copy address bar (double tap)"
-msgstr "複製選取的名稱（單指點擊）或複製網址列（雙指點擊）"
+#: clipboardManager.py:149
+msgid "Copy {lines} Lines from {files} files"
+msgstr "從 {files} 個檔案中複製 {lines} 行"
 
-#: __init__.py:628
-#: clipboardManager.py:50
-#: clipboardManager.py:139
+#: folderTools.py:1836
+msgid "Could not delete one or more items"
+msgstr "無法刪除一或多個項目"
+
+#: update.py:255
+msgid "Could not download the update. Opening the releases page."
+msgstr "無法下載更新。正在開啟版本頁面。"
+
+#: clipboardManager.py:53
+#: clipboardManager.py:153
+#: folderTools.py:1795
+#: folderTools.py:1805
+#: xPlorer_engine.py:876
 msgid "Could not open clipboard"
 msgstr "無法開啟剪貼簿"
 
-#: contextMenu.py:23
+#: flatViewManager.py:199
+msgid "Could not open the containing folder"
+msgstr "無法開啟包含此項目的資料夾"
+
+#: folderTools.py:1739
+msgid "Could not open the file"
+msgstr "無法開啟檔案"
+
+#: folderTools.py:1819
+msgid "Could not open the folder"
+msgstr "無法開啟資料夾"
+
+#: flatViewManager.py:185
+msgid "Could not open {0}"
+msgstr "無法開啟 {0}"
+
+#: fileOperations.py:433
+#: fileOperations.py:435
+msgid "Could not read this folder"
+msgstr "無法讀取此資料夾"
+
+#: fileOperations.py:493
+msgid "Could not save settings"
+msgstr "無法儲存設定"
+
+#: freezeManager.py:699
+#: freezeManager.py:721
+#: freezeManager.py:1052
+#: freezeManager.py:1076
+msgid "Could not save the freezer list"
+msgstr "無法儲存凍結清單"
+
+#: xPlorer_engine.py:1219
+msgid "Could not start multi-select"
+msgstr "無法啟動多重選取"
+
+#: batchRenameManager.py:85
+msgid "Counter start value:"
+msgstr "計數器起始值："
+
+#: contextMenu.py:375
 #: createFile.py:17
 msgid "Create File"
 msgstr "建立檔案"
 
-#: folderTools.py:128
+#: folderTools.py:203
 msgid "Create Multiple Folders"
 msgstr "建立多個資料夾"
 
-#: contextMenu.py:40
+#: contextMenu.py:461
 msgid "Create Multiple Folders..."
 msgstr "建立多個資料夾..."
 
-#: folderTools.py:157
+#: folderTools.py:232
 msgid "Create main folder and then subfolders"
-msgstr "先建立主資料夾，再建立子資料夾"
+msgstr "建立主資料夾再建立子資料夾"
 
-#: __init__.py:879
+#: xPlorer_engine.py:1423
 msgid "Create new folder and paste clipboard content into rename field"
-msgstr "建立新資料夾並將剪貼簿內容貼到重新命名欄位"
+msgstr "建立新資料夾並將剪貼簿內容貼至重新命名欄位"
 
-#: folderTools.py:324
+#: fileOperations.py:1361
+msgid "Created ISO {name}"
+msgstr "已建立 ISO {name}"
+
+#: createFile.py:296
+msgid "Created {count} file(s) in {path}"
+msgstr "已在 {path} 中建立 {count} 個檔案"
+
+#: folderTools.py:399
 msgid "Created {count} of {total} folders..."
-msgstr "已建立 {total} 個資料夾中的 {count} 個..."
+msgstr "正在建立 {count} / {total} 個資料夾..."
 
-#: folderTools.py:311
+#: contextMenu.py:1012
+msgid "Created: {0}"
+msgstr "已建立：{0}"
+
+#: fileOperations.py:1293
+#: fileOperations.py:1297
+msgid "Creating ISO"
+msgstr "正在建立 ISO"
+
+#: fileOperations.py:1307
+msgid "Creating ISO: {percent}%"
+msgstr "正在建立 ISO：{percent}%"
+
+#: folderTools.py:386
 msgid "Creating folders in background..."
 msgstr "正在背景建立資料夾..."
 
-#: folderTools.py:161
+#: contextMenu.py:524
+msgid "Current folder size list"
+msgstr "目前資料夾大小清單"
+
+#: fileOperations.py:338
+msgid "Current folder size list - {name}"
+msgstr "目前資料夾大小清單 - {name}"
+
+#: fileOperations.py:246
+msgid "Current folder size list settings"
+msgstr "目前資料夾大小清單設定"
+
+#: folderTools.py:1768
+msgid "Cut"
+msgstr "剪下"
+
+#: freezeManager.py:30
+msgid "Cut canceled"
+msgstr "已取消剪下"
+
+#: folderTools.py:1802
+msgid "Cut {count} items"
+msgstr "已剪下 {count} 個項目"
+
+#: folderTools.py:1771
+#: folderTools.py:1827
+#: workspaceManager.py:328
+msgid "Delete"
+msgstr "刪除"
+
+#: workspaceManager.py:275
+msgid "Delete Workspace"
+msgstr "刪除工作區"
+
+#: workspaceManager.py:349
+msgid "Delete all saved workspaces? This cannot be undone."
+msgstr "確定要刪除所有儲存的工作區嗎？此動作無法復原。"
+
+#: freezeManager.py:27
+msgid "Delete canceled"
+msgstr "已取消刪除"
+
+#: fileBasketManager.py:58
+msgid "Destination:"
+msgstr "目標位置："
+
+#: syncCompareManager.py:19
+msgid "Different (size/date)"
+msgstr "不相同 (大小/日期)"
+
+#: fileOperations.py:266
+msgid "Display format"
+msgstr "顯示格式"
+
+#: update.py:244
+msgid "Downloading {name} {version}"
+msgstr "正在下載 {name} {version}"
+
+#: contextMenu.py:964
+msgid "Drive: {0}"
+msgstr "磁碟機：{0}"
+
+#: contextMenu.py:411
+#: duplicateFinderManager.py:79
+msgid "Duplicate Finder"
+msgstr "重複檔案搜尋工具"
+
+#: duplicateFinderManager.py:95
+msgid "Duplicate groups:"
+msgstr "重複群組："
+
+#: workspaceManager.py:115
+#: workspaceManager.py:273
+msgid "Edit Workspace"
+msgstr "編輯工作區"
+
+#: folderTools.py:236
 msgid "Edit individual folder names"
 msgstr "編輯個別資料夾名稱"
 
-#: folderTools.py:120
+#: folderTools.py:1246
+#: folderTools.py:1841
+msgid "Enter a search term or pattern first"
+msgstr "請先輸入搜尋字詞或模式"
+
+#: workspaceManager.py:229
+msgid "Enter a workspace name"
+msgstr "輸入工作區名稱"
+
+#: folderTools.py:195
 msgid "Error calculating folder info"
 msgstr "計算資料夾資訊時發生錯誤"
 
-#: fileOperations.py:294
+#: fileOperations.py:1177
 msgid "Error calculating size"
 msgstr "計算大小時發生錯誤"
 
-#: compressionManager.py:196
+#: compressionManager.py:209
 msgid "Error compressing files"
 msgstr "壓縮檔案時發生錯誤"
 
-#: clipboardManager.py:142
+#: clipboardManager.py:100
+#: clipboardManager.py:158
 msgid "Error copying file content"
 msgstr "複製檔案內容時發生錯誤"
 
-#: clipboardManager.py:53
+#: clipboardManager.py:56
 msgid "Error copying names to clipboard"
-msgstr "複製名稱到剪貼簿時發生錯誤"
+msgstr "將名稱複製到剪貼簿時發生錯誤"
 
-#: folderTools.py:614
+#: syncCompareManager.py:147
+msgid "Error copying {0}"
+msgstr "複製 {0} 時發生錯誤"
+
+#: folderTools.py:777
 msgid "Error creating base folder"
 msgstr "建立基底資料夾時發生錯誤"
 
-#: createFile.py:291
+#: createFile.py:300
 msgid "Error creating files"
 msgstr "建立檔案時發生錯誤"
 
-#: __init__.py:921
+#: xPlorer_engine.py:1478
 msgid "Error creating folders"
 msgstr "建立資料夾時發生錯誤"
 
-#: folderTools.py:302
+#: folderTools.py:377
 msgid "Error creating main folder"
 msgstr "建立主資料夾時發生錯誤"
 
-#: __init__.py:965
+#: fileBasketManager.py:439
+msgid "Error creating zip file"
+msgstr "建立 zip 檔案時發生錯誤"
+
+#: xPlorer_engine.py:1528
 msgid "Error during conversion"
-msgstr "轉換過程中發生錯誤"
+msgstr "轉換期間發生錯誤"
 
-#: compressionManager.py:117
+#: compressionManager.py:127
 msgid "Error in compression process: {error}"
-msgstr "壓縮過程中發生錯誤：{error}"
+msgstr "壓縮程序發生錯誤：{error}"
 
-#: folderTools.py:804
+#: folderTools.py:1166
+#: folderTools.py:1169
 msgid "Error inverting selection"
 msgstr "反向選取時發生錯誤"
 
-#: createFile.py:245
+#: createFile.py:249
 msgid "Error opening create file dialog"
 msgstr "開啟建立檔案對話方塊時發生錯誤"
 
-#: fileOperations.py:350
+#: fileOperations.py:1398
+msgid "Error opening current folder size list"
+msgstr "開啟目前資料夾大小清單時發生錯誤"
+
+#: recentLocationsManager.py:229
+msgid "Error opening folder"
+msgstr "開啟資料夾時發生錯誤"
+
+#: fileOperations.py:1558
 msgid "Error opening rename dialog"
 msgstr "開啟重新命名對話方塊時發生錯誤"
 
-#: __init__.py:895
+#: xPlorer_engine.py:1437
 msgid "Error opening settings"
 msgstr "開啟設定時發生錯誤"
 
-#: folderTools.py:704
+#: folderTools.py:867
 msgid "Error processing text file: {}"
-msgstr "處理文字檔時發生錯誤：{}"
+msgstr "處理文字檔案時發生錯誤：{}"
 
-#: folderTools.py:581
+#: folderTools.py:744
 msgid "Error reading RTF file"
 msgstr "讀取 RTF 檔案時發生錯誤"
 
-#: folderTools.py:708
+#: folderTools.py:871
 msgid "Error reading file encoding"
 msgstr "讀取檔案編碼時發生錯誤"
 
-#: fileOperations.py:320
-#: fileOperations.py:347
+#: fileOperations.py:1436
+#: fileOperations.py:1519
+#: fileOperations.py:1522
+#: fileOperations.py:1555
 msgid "Error renaming file"
 msgstr "重新命名檔案時發生錯誤"
 
-#: folderTools.py:713
+#: batchRenameManager.py:244
+msgid "Error renaming {0} to {1}: {2}"
+msgstr "將 {0} 重新命名為 {1} 時發生錯誤：{2}"
+
+#: duplicateFinderManager.py:308
+msgid "Error scanning for duplicates"
+msgstr "掃描重複項目時發生錯誤"
+
+#: folderTools.py:1200
+msgid "Error selecting by extension"
+msgstr "依副檔名選取時發生錯誤"
+
+#: folderTools.py:1269
+msgid "Error selecting by search"
+msgstr "依搜尋選取時發生錯誤"
+
+#: folderTools.py:1512
+#: folderTools.py:1515
+msgid "Error selecting items"
+msgstr "選取項目時發生錯誤"
+
+#: compressionManager.py:324
+msgid "Error uncompressing file"
+msgstr "解壓縮檔案時發生錯誤"
+
+#: batchRenameManager.py:414
+msgid "Error undoing rename for {0}: {1}"
+msgstr "還原 {0} 的重新命名時發生錯誤：{1}"
+
+#: folderTools.py:876
 msgid "Error: {}"
 msgstr "錯誤：{}"
 
-#: __init__.py:1002
+#: fileBasketManager.py:67
+msgid "Execute"
+msgstr "執行"
+
+#: xPlorer_engine.py:1559
 msgid "Explorer tree dumped to NVDA log"
-msgstr "已將檔案總管樹狀結構傾印到 NVDA 記錄"
+msgstr "檔案總管樹狀結構已傾印至 NVDA 記錄檔"
 
 #: createFile.py:72
 msgid "Extension:"
 msgstr "副檔名："
 
-#: folderTools.py:949
+#: compressionManager.py:360
+msgid "Extract Here"
+msgstr "解壓縮至此處"
+
+#: compressionManager.py:359
+msgid "Extract to \"{folder}\\\""
+msgstr "解壓縮至 \"{folder}\\\""
+
+#: compressionManager.py:365
+msgid "Extract {name}"
+msgstr "解壓縮 {name}"
+
+#: compressionManager.py:512
+msgid "Extracted {done} of {total}. Failed: {names}"
+msgstr "已解壓縮 {done} / {total}。失敗：{names}"
+
+#: compressionManager.py:456
+msgid "Extracted {name} to {path}"
+msgstr "已將 {name} 解壓縮至 {path}"
+
+#: compressionManager.py:519
+msgid "Extracting {count} files..."
+msgstr "正在解壓縮 {count} 個檔案..."
+
+#: compressionManager.py:469
+msgid "Extracting..."
+msgstr "正在解壓縮..."
+
+#: compressionManager.py:452
+msgid "Extraction completed to {path}"
+msgstr "已解壓縮至 {path}"
+
+#: compressionManager.py:507
+msgid "Extraction completed: {count} files, each in its own folder"
+msgstr "解壓縮完成：{count} 個檔案，每個檔案各自存放在獨立的資料夾中"
+
+#: compressionManager.py:440
+msgid "Extraction failed"
+msgstr "解壓縮失敗"
+
+#: compressionManager.py:404
+#: compressionManager.py:461
+msgid "Extraction failed: {error}"
+msgstr "解壓縮失敗：{error}"
+
+#: compressionManager.py:482
+msgid "Extraction is already running"
+msgstr "解壓縮正在執行中"
+
+#: compressionManager.py:435
+msgid "Extraction timed out"
+msgstr "解壓縮逾時"
+
+#: folderTools.py:1988
 msgid "Failed to rename any folders"
 msgstr "無法重新命名任何資料夾"
 
-#: compressionManager.py:188
+#: compressionManager.py:201
 msgid "Failed to start compression"
-msgstr "無法啟動壓縮"
+msgstr "無法開始壓縮"
+
+#: freezeManager.py:667
+msgid "File"
+msgstr "檔案"
+
+#: contextMenu.py:383
+#: contextMenu.py:386
+msgid "File Basket"
+msgstr "檔案籃"
+
+#: fileBasketManager.py:31
+msgid "File Basket Collection"
+msgstr "檔案籃收集"
+
+#: xPlorer_engine.py:1105
+msgid "File Basket: Add selected item(s) to the file basket (single tap), open the file basket (double tap), or clear the file basket (triple tap)"
+msgstr "檔案籃：按一下將所選項目加入檔案籃，按兩下開啟檔案籃，或按三下清除檔案籃"
+
+#: batchRenameManager.py:238
+msgid "File already exists: {0}"
+msgstr "檔案已存在：{0}"
+
+#: xPlorer_engine.py:1112
+msgid "File basket manager not available"
+msgstr "檔案籃管理員無法使用"
 
 #: createFile.py:138
 msgid "File count cannot exceed 10"
-msgstr "檔案數不得超過 10"
+msgstr "檔案數量不得超過 10 個"
 
 #: createFile.py:135
 msgid "File count must be at least 1"
-msgstr "檔案數至少為 1"
+msgstr "檔案數量必須至少為 1 個"
 
 #: createFile.py:112
 msgid "File name"
 msgstr "檔案名稱"
 
-#: fileOperations.py:59
+#: fileOperations.py:68
 msgid "File name cannot be empty"
-msgstr "檔案名稱不能空白"
+msgstr "檔案名稱不得為空白"
 
-#: fileOperations.py:337
+#: fileOperations.py:1541
 msgid "File name not changed"
 msgstr "檔案名稱未變更"
 
@@ -326,392 +887,1570 @@ msgstr "檔案名稱 {index}："
 msgid "File name:"
 msgstr "檔案名稱："
 
-#: __init__.py:850
-msgid "File operations manager not available"
-msgstr "檔案作業管理員無法使用"
+#: folderTools.py:1733
+msgid "File not found"
+msgstr "找不到檔案"
 
-#: fileOperations.py:344
+#: xPlorer_engine.py:1062
+#: xPlorer_engine.py:1068
+#: xPlorer_engine.py:1089
+msgid "File operations manager not available"
+msgstr "檔案操作管理員無法使用"
+
+#: fileOperations.py:1548
 msgid "File renamed to {name}"
 msgstr "檔案已重新命名為 {name}"
 
-#: robocopyManager.py:448
-msgid "Finished {n} of {total}: {name}"
-msgstr "已完成 {total} 中的 {n} 個：{name}"
+#: contextMenu.py:970
+msgid "File system: {0}"
+msgstr "檔案系統：{0}"
 
-#: folderTools.py:227
-#: folderTools.py:267
+#: flatViewManager.py:151
+msgid "Files found: {names}"
+msgstr "找到的檔案：{names}"
+
+#: duplicateFinderManager.py:101
+msgid "Files in this group:"
+msgstr "此群組中的檔案："
+
+#: fileOperations.py:261
+msgid "Files only"
+msgstr "僅檔案"
+
+#: flatViewManager.py:37
+msgid "Filter (type to narrow the list):"
+msgstr "篩選 (輸入以縮小清單範圍)："
+
+#: batchRenameManager.py:59
+msgid "Find and replace"
+msgstr "尋找與取代"
+
+#: robocopyManager.py:490
+msgid "Finished {n} of {total}: {name}"
+msgstr "已完成 {n} / {total}：{name}"
+
+#: contextMenu.py:451
+msgid "Flat View"
+msgstr "平面檢視"
+
+#: flatViewManager.py:21
+msgid "Flat View: {0}"
+msgstr "平面檢視：{0}"
+
+#: xPlorer_engine.py:954
+msgid "Flat view tool not available"
+msgstr "平面檢視工具無法使用"
+
+#: folderTools.py:1188
+msgid "Focus a single file first to select others with the same extension"
+msgstr "請先將焦點放在單一檔案上，才能選取相同副檔名的其他檔案"
+
+#: flatViewManager.py:46
+#: folderTools.py:302
+#: folderTools.py:342
+#: freezeManager.py:667
 msgid "Folder"
 msgstr "資料夾"
 
-#: folderTools.py:605
-#: folderTools.py:675
+#: folderTools.py:768
+#: folderTools.py:838
 msgid "Folder '{}' already exists, creating '{}' instead"
-msgstr "資料夾「{}」已存在，改為建立「{}」"
+msgstr "資料夾 '{}' 已存在，改為建立 '{}'"
 
-#: __init__.py:905
+#: contextMenu.py:407
+msgid "Folder Sync & Compare"
+msgstr "資料夾同步與比較"
+
+#: xPlorer_engine.py:1459
 msgid "Folder creation dialog not available"
-msgstr "建立資料夾對話方塊無法使用"
+msgstr "資料夾建立對話框無法使用"
 
-#: __init__.py:867
+#: xPlorer_engine.py:1408
 msgid "Folder creator helper not available"
-msgstr "資料夾建立小幫手無法使用"
+msgstr "資料夾建立輔助程式無法使用"
 
-#: contextMenu.py:131
-#: contextMenu.py:134
-#: contextMenu.py:155
+#: contextMenu.py:564
+#: contextMenu.py:634
+#: contextMenu.py:637
+#: contextMenu.py:640
 msgid "Folder info"
 msgstr "資料夾資訊"
 
-#: folderTools.py:142
+#: folderTools.py:217
 msgid "Folder title:"
 msgstr "資料夾標題："
 
-#: contextMenu.py:47
+#: contextMenu.py:456
+msgid "Folder to ISO"
+msgstr "資料夾轉為 ISO"
+
+#: fileOperations.py:259
+msgid "Folders and files"
+msgstr "資料夾與檔案"
+
+#: workspaceManager.py:86
+msgid "Folders in this workspace:"
+msgstr "此工作區中的資料夾："
+
+#: fileOperations.py:260
+msgid "Folders only"
+msgstr "僅資料夾"
+
+#: fileOperations.py:239
+msgid "Folders: {folders}, files: {files}, total size: {size}"
+msgstr "資料夾：{folders}，檔案：{files}，總大小：{size}"
+
+#: duplicateFinderManager.py:90
+msgid "Found {0} duplicate groups"
+msgstr "找到 {0} 個重複群組"
+
+#: duplicateFinderManager.py:329
+msgid "Found {0} duplicate groups, {1} redundant files"
+msgstr "找到 {0} 個重複群組，{1} 個多餘檔案"
+
+#: contextMenu.py:984
+msgid "Free space: {0}"
+msgstr "可用空間：{0}"
+
+#: freezeManager.py:1059
+msgid "Freeze"
+msgstr "凍結"
+
+#: contextMenu.py:423
+msgid "Freeze Selected"
+msgstr "凍結選取項目"
+
+#: xPlorer_engine.py:1123
+msgid "Freeze manager not available"
+msgstr "凍結管理員無法使用"
+
+#: freezeManager.py:1061
+msgid "Freeze, {count} items"
+msgstr "凍結，{count} 個項目"
+
+#: xPlorer_engine.py:1127
+msgid "Freeze: freeze selected items (single tap), unfreeze selected items (double tap), or open the Freezer list (triple tap)"
+msgstr "凍結：單擊凍結選取項目，雙擊解除凍結選取項目，或三擊開啟凍結庫清單"
+
+#: contextMenu.py:428
+#: freezeManager.py:635
+msgid "Freezer"
+msgstr "凍結庫"
+
+#: freezeManager.py:680
+msgid "Freezer - {count} frozen items"
+msgstr "凍結庫 - {count} 個已凍結項目"
+
+#: freezeManager.py:832
+#: freezeManager.py:893
+msgid "Freezing"
+msgstr "凍結"
+
+#: freezeManager.py:1086
+msgid "Frozen by a parent folder. Unfreeze the parent folder instead"
+msgstr "已被父資料夾凍結。請改為解凍父資料夾"
+
+#: batchRenameManager.py:232
+#: batchRenameManager.py:402
+msgid "Frozen item skipped: {0}"
+msgstr "已略過凍結項目：{0}"
+
+#: freezeManager.py:642
+msgid "Frozen items"
+msgstr "已凍結項目"
+
+#: contextMenu.py:827
+msgid "GB"
+msgstr "GB"
+
+#: contextMenu.py:439
 msgid "Headline Case"
-msgstr "標題大寫"
+msgstr "標題大小寫"
 
-#: folderTools.py:278
+#: fileOperations.py:1353
+msgid "ISO created: {name}, {size}"
+msgstr "已建立 ISO：{name}，{size}"
+
+#: fileOperations.py:1345
+msgid "ISO creation failed: {error}"
+msgstr "建立 ISO 失敗：{error}"
+
+#: fileOperations.py:1190
+msgid "ISO creation is already running"
+msgstr "ISO 製作程序正在執行中"
+
+#: syncCompareManager.py:20
+msgid "Identical"
+msgstr "相同"
+
+#: fileOperations.py:457
+msgid "Include subfolder contents in folder sizes"
+msgstr "在資料夾大小中包含子資料夾內容"
+
+#: folderTools.py:1557
+msgid "Include subfolders (search all levels, like Flat View)"
+msgstr "包含子資料夾（搜尋所有層級，類似「平面檢視」）"
+
+#: fileOperations.py:282
+msgid "Include the contents of subfolders in folder sizes (slower)"
+msgstr "包含子資料庫內容於資料夾大小計算（速度較慢）"
+
+#: fileOperations.py:473
+msgid "Including subfolders"
+msgstr "包含子資料夾"
+
+#: folderTools.py:353
 msgid "Invalid number for folders"
-msgstr "資料夾數量無效"
+msgstr "資料夾的數字無效"
 
-#: contextMenu.py:27
+#: folderTools.py:1642
+#: folderTools.py:1848
+msgid "Invalid regular expression: {0}"
+msgstr "無效的常規表示式：{0}"
+
+#: contextMenu.py:479
 msgid "Invert selection"
 msgstr "反向選取"
 
-#: contextMenu.py:45
+#: fileBasketManager.py:113
+msgid "Item removed"
+msgstr "項目已移除"
+
+#: fileOperations.py:350
+msgid "Items"
+msgstr "項目"
+
+#: fileBasketManager.py:39
+msgid "Items in the basket:"
+msgstr "購物籃中的項目："
+
+#: contextMenu.py:827
+msgid "KB"
+msgstr "KB"
+
+#: duplicateFinderManager.py:111
+msgid "Keep File in This Folder"
+msgstr "將檔案保留在此資料夾"
+
+#: duplicateFinderManager.py:107
+msgid "Keep Newest"
+msgstr "保留最新"
+
+#: duplicateFinderManager.py:109
+msgid "Keep Oldest"
+msgstr "保留最舊"
+
+#: duplicateFinderManager.py:189
+msgid "Kept {0}, moved {1} duplicates to the Recycle Bin"
+msgstr "已保留 {0} 個，已將 {1} 個重複項目移至資源回收筒"
+
+#: syncCompareManager.py:196
+msgid "Left and right folders are the same"
+msgstr "左右資料夾相同"
+
+#: syncCompareManager.py:45
+msgid "Left: {0}   Right: {1}"
+msgstr "左側：{0}   右側：{1}"
+
+#: fileOperations.py:280
+msgid "List folders before files"
+msgstr "資料夾排在檔案前面"
+
+#: workspaceManager.py:271
+msgid "Load Workspace"
+msgstr "載入工作區"
+
+#: workspaceManager.py:670
+msgid "Loaded workspace {name}: opened {opened}, already open {reused}"
+msgstr "已載入工作區 {name}：已開啟 {opened} 個，已重複使用 {reused} 個"
+
+#: contextMenu.py:968
+msgid "Local"
+msgstr "本機"
+
+#: contextMenu.py:992
+msgid "Location: {0}"
+msgstr "位置：{0}"
+
+#: contextMenu.py:435
 msgid "Lowercase"
 msgstr "小寫"
 
-#: folderTools.py:275
+#: contextMenu.py:827
+msgid "MB"
+msgstr "MB"
+
+#: contextMenu.py:402
+msgid "Mark Left Folder (Sync Compare)"
+msgstr "標記左側資料夾 (同步比較)"
+
+#: syncCompareManager.py:178
+msgid "Marked as left folder: {0}. Navigate to the right folder and run compare again"
+msgstr "已標記為左側資料夾：{0}。請移至右側資料夾並再次執行比較"
+
+#: folderTools.py:1577
+msgid "Matching items (Enter opens, Ctrl+C/Ctrl+X copy/cut, Ctrl+Space toggles a pick, right-click or Menu key for more):"
+msgstr "符合的項目 (按 Enter 開啟，Ctrl+C/Ctrl+X 複製/剪下，Ctrl+Space 切換選取，按滑鼠右鍵或應用程式鍵以取得更多選項)："
+
+#: folderTools.py:350
 msgid "Maximum 100 folders allowed"
 msgstr "最多允許 100 個資料夾"
 
-#: __init__.py:909
+#: fileBasketManager.py:51
+#: fileBasketManager.py:163
+msgid "Mirror Copy"
+msgstr "鏡像複製"
+
+#: fileBasketManager.py:414
+msgid "Mirror copied {0} items from the basket"
+msgstr "已從暫存籃鏡像複製 {0} 個項目"
+
+#: batchRenameManager.py:406
+msgid "Missing file, cannot undo: {0}"
+msgstr "檔案遺失，無法復原：{0}"
+
+#: contextMenu.py:1015
+msgid "Modified: {0}"
+msgstr "修改時間：{0}"
+
+#: fileBasketManager.py:51
+#: fileBasketManager.py:161
+msgid "Move"
+msgstr "移動"
+
+#: workspaceManager.py:326
+msgid "Move Down"
+msgstr "下移"
+
+#: workspaceManager.py:325
+msgid "Move Up"
+msgstr "上移"
+
+#: freezeManager.py:29
+msgid "Move canceled"
+msgstr "已取消移動"
+
+#: folderTools.py:1826
+msgid "Move {count} item(s) to the Recycle Bin?"
+msgstr "要將 {count} 個項目移至資源回收筒嗎？"
+
+#: robocopyManager.py:503
+msgid "Moved"
+msgstr "已移動"
+
+#: fileBasketManager.py:377
+msgid "Moved {0} items from the basket"
+msgstr "已從籃子中移動 {0} 個項目"
+
+#: folderTools.py:1833
+msgid "Moved {count} item(s) to the Recycle Bin"
+msgstr "已將 {count} 個項目移至資源回收筒"
+
+#: batchRenameManager.py:43
+msgid "Multi-Rename Tool"
+msgstr "批次重新命名工具"
+
+#: contextMenu.py:481
+msgid "Multi-select"
+msgstr "多重選取"
+
+#: flatViewManager.py:45
+msgid "Name"
+msgstr "名稱"
+
+#: fileOperations.py:249
+msgid "Name followed by size"
+msgstr "依名稱及大小排序"
+
+#: fileOperations.py:253
+msgid "Name, A to Z"
+msgstr "名稱由 A 到 Z"
+
+#: fileOperations.py:254
+msgid "Name, Z to A"
+msgstr "名稱由 Z 到 A"
+
+#: contextMenu.py:991
+msgid "Name: {0}"
+msgstr "名稱：{0}"
+
+#: contextMenu.py:968
+msgid "Network name: {0}"
+msgstr "網路名稱：{0}"
+
+#: fileOperations.py:1504
+msgid "New name is the same as the current name"
+msgstr "新名稱與目前名稱相同"
+
+#: workspaceManager.py:75
+msgid "New workspace"
+msgstr "新工作區"
+
+#: flatViewManager.py:225
+#: syncCompareManager.py:175
+#: syncCompareManager.py:189
+#: xPlorer_engine.py:1463
 msgid "No Explorer folder detected"
 msgstr "未偵測到檔案總管資料夾"
 
-#: fileOperations.py:219
-#: fileOperations.py:276
+#: fileOperations.py:1085
+#: fileOperations.py:1158
 msgid "No access to size data"
 msgstr "無法存取大小資料"
 
-#: folderTools.py:769
+#: folderTools.py:1127
+#: folderTools.py:1479
 msgid "No active File Explorer window found"
-msgstr "找不到作用中的檔案總管視窗"
+msgstr "找不到使用中的檔案總管視窗"
 
-#: clipboardManager.py:127
+#: batchRenameManager.py:220
+msgid "No changes to apply"
+msgstr "沒有要套用的變更"
+
+#: clipboardManager.py:143
 msgid "No content could be read from selected files"
-msgstr "無法從選取的檔案讀取任何內容"
+msgstr "無法從所選檔案讀取任何內容"
 
-#: createFile.py:284
+#: duplicateFinderManager.py:91
+#: duplicateFinderManager.py:325
+msgid "No duplicate files found"
+msgstr "找不到重複檔案"
+
+#: duplicateFinderManager.py:159
+msgid "No duplicate group selected"
+msgstr "未選取重複群組"
+
+#: flatViewManager.py:148
+msgid "No files found"
+msgstr "找不到檔案"
+
+#: batchRenameManager.py:335
+msgid "No files selected or found in the current folder"
+msgstr "目前資料夾中未選取或找不到檔案"
+
+#: createFile.py:288
 msgid "No files were created"
 msgstr "未建立任何檔案"
 
-#: folderTools.py:964
-#: folderTools.py:970
-#: folderTools.py:979
-#: folderTools.py:985
+#: workspaceManager.py:221
+msgid "No folder selected"
+msgstr "未選取資料夾"
+
+#: folderTools.py:2003
+#: folderTools.py:2009
+#: folderTools.py:2018
+#: folderTools.py:2024
 msgid "No folders found"
 msgstr "找不到資料夾"
 
-#: __init__.py:931
+#: xPlorer_engine.py:1488
 msgid "No folders selected"
 msgstr "未選取資料夾"
 
-#: __init__.py:946
+#: xPlorer_engine.py:1502
 msgid "No folders selected or current folder not available"
 msgstr "未選取資料夾或目前資料夾無法使用"
 
-#: folderTools.py:341
-#: folderTools.py:649
-#: folderTools.py:699
+#: folderTools.py:416
+#: folderTools.py:812
+#: folderTools.py:862
 msgid "No folders were created"
 msgstr "未建立任何資料夾"
 
-#: folderTools.py:81
+#: fileBasketManager.py:107
+#: flatViewManager.py:176
+#: flatViewManager.py:190
+#: folderTools.py:146
+#: freezeManager.py:691
+#: syncCompareManager.py:127
 msgid "No item selected"
-msgstr "未選取項目"
+msgstr "未選取任何項目"
 
-#: folderTools.py:782
+#: contextMenu.py:899
+msgid "No item to show properties for"
+msgstr "沒有可顯示屬性的項目"
+
+#: folderTools.py:1139
+#: folderTools.py:1491
 msgid "No items in folder"
 msgstr "資料夾中沒有項目"
 
-#: clipboardManager.py:27
-#: clipboardManager.py:62
-#: compressionManager.py:148
-#: fileOperations.py:210
-#: fileOperations.py:306
+#: clipboardManager.py:30
+#: clipboardManager.py:68
+#: compressionManager.py:161
+#: compressionManager.py:330
+#: fileBasketManager.py:225
+#: fileOperations.py:1076
+#: fileOperations.py:1418
+#: fileOperations.py:1448
+#: freezeManager.py:1037
+#: freezeManager.py:1068
 msgid "No items selected"
 msgstr "未選取項目"
 
-#: clipboardManager.py:79
+#: fileOperations.py:448
+msgid "No items to show"
+msgstr "沒有可顯示的項目"
+
+#: folderTools.py:1274
+msgid "No matches found for {term}"
+msgstr "找不到與 {term} 相符的項目"
+
+#: operationHistoryManager.py:39
+#: operationHistoryManager.py:70
+msgid "No operations recorded yet"
+msgstr "尚未錄製任何操作"
+
+#: contextMenu.py:279
+msgid "No recent locations yet"
+msgstr "尚無最近的位置"
+
+#: batchRenameManager.py:378
+#: batchRenameManager.py:391
+msgid "No rename operation to undo"
+msgstr "沒有可復原的重新命名動作"
+
+#: folderTools.py:1728
+#: folderTools.py:1764
+#: folderTools.py:1785
+#: folderTools.py:1799
+#: folderTools.py:1812
+#: folderTools.py:1823
+msgid "No result selected"
+msgstr "未選取任何結果"
+
+#: clipboardManager.py:86
 msgid "No text files selected"
 msgstr "未選取文字檔"
 
-#: folderTools.py:591
-#: folderTools.py:661
+#: folderTools.py:754
+#: folderTools.py:824
 msgid "No valid folder names found in the file"
 msgstr "檔案中找不到有效的資料夾名稱"
 
-#: folderTools.py:296
+#: folderTools.py:371
 msgid "No valid folder names provided"
 msgstr "未提供有效的資料夾名稱"
 
-#: __init__.py:976
+#: workspaceManager.py:190
+msgid "No valid folder paths found"
+msgstr "找不到有效的資料夾路徑"
+
+#: workspaceManager.py:314
+msgid "No workspace selected"
+msgstr "未選取工作區"
+
+#: workspaceManager.py:301
+#: workspaceManager.py:310
+msgid "No workspaces saved yet"
+msgstr "尚未儲存任何工作區"
+
+#: duplicateFinderManager.py:181
+msgid "None of the copies are directly in the scanned folder"
+msgstr "沒有任何複本直接位於掃描資料夾中"
+
+#: workspaceManager.py:675
+msgid "None of the folders in workspace {0} could be found"
+msgstr "找不到工作區 {0} 中的任何資料夾"
+
+#: contextMenu.py:233
+#: contextMenu.py:269
+msgid "Normal display"
+msgstr "正常顯示"
+
+#: folderTools.py:1565
+msgid "Normal search"
+msgstr "一般搜尋"
+
+#: fileOperations.py:1242
+msgid "Not enough free disk space"
+msgstr "磁碟可用空間不足"
+
+#: xPlorer_engine.py:1533
 msgid "Not focused on File Explorer"
 msgstr "未聚焦於檔案總管"
 
+#: freezeManager.py:1088
+msgid "Not frozen"
+msgstr "未凍結"
+
 #: createFile.py:198
-#: folderTools.py:541
-#: folderTools.py:763
+#: fileOperations.py:1187
+#: fileOperations.py:1366
+#: folderTools.py:700
+#: folderTools.py:1102
+#: folderTools.py:1181
+#: folderTools.py:1214
+#: folderTools.py:1451
+#: xPlorer_engine.py:1138
+#: xPlorer_engine.py:1211
 msgid "Not in File Explorer"
 msgstr "不在檔案總管中"
 
+#: duplicateFinderManager.py:170
+msgid "Nothing to remove in this group"
+msgstr "此群組中沒有可移除的項目"
+
 #: createFile.py:28
 msgid "Number of files to create:"
-msgstr "要建立的檔案數："
+msgstr "要建立的檔案數量："
 
-#: folderTools.py:272
+#: folderTools.py:347
 msgid "Number of folders must be at least 1"
-msgstr "資料夾數量至少為 1"
+msgstr "資料夾數量必須至少為 1"
 
-#: folderTools.py:150
+#: folderTools.py:225
 msgid "Number of folders:"
 msgstr "資料夾數量："
 
-#: __init__.py:844
-msgid "Open xPlorer context menu"
-msgstr "開啟 xPlorer 操作功能表"
+#: fileOperations.py:292
+msgid "OK"
+msgstr "確定"
 
-#: folderTools.py:554
+#: syncCompareManager.py:17
+msgid "Only in left"
+msgstr "僅在左側"
+
+#: syncCompareManager.py:18
+msgid "Only in right"
+msgstr "僅在右側"
+
+#: flatViewManager.py:51
+msgid "Open Containing Folder"
+msgstr "開啟包含的資料夾"
+
+#: contextMenu.py:418
+msgid "Open Freezer"
+msgstr "開啟凍結器"
+
+#: folderTools.py:1769
+msgid "Open to path"
+msgstr "開啟至路徑"
+
+#: xPlorer_engine.py:1037
+msgid "Open xPlorer context menu (single tap), Recent Locations (double tap), or Current folder size list (triple tap)"
+msgstr "開啟 xPlorer 右鍵功能表（單擊）、最近位置（雙擊）或目前資料夾大小清單（三擊）"
+
+#: contextMenu.py:533
+#: operationHistoryManager.py:26
+msgid "Operation History"
+msgstr "操作歷史記錄"
+
+#: operationHistoryManager.py:72
+msgid "Operation history cleared"
+msgstr "操作歷史記錄已清除"
+
+#: workspaceManager.py:95
+msgid "Or paste/type folder paths here, one per line:"
+msgstr "或在此處貼上/輸入資料夾路徑，每行一個："
+
+#: batchRenameManager.py:409
+msgid "Original name is taken, cannot undo: {0}"
+msgstr "原名稱已被使用，無法復原：{0}"
+
+#: freezeManager.py:32
+msgid "Overwrite canceled"
+msgstr "已取消覆寫"
+
+#: freezeManager.py:31
+msgid "Paste canceled"
+msgstr "已取消貼上"
+
+#: fileBasketManager.py:272
+msgid "Path not found: {0}"
+msgstr "找不到路徑：{0}"
+
+#: folderTools.py:1572
+msgid "Pattern / search text (meaning depends on the mode above):"
+msgstr "樣式 / 搜尋文字（意義取決於上方的模式）："
+
+#: contextMenu.py:230
+msgid "Pin"
+msgstr "固定"
+
+#: workspaceManager.py:323
+msgid "Pin to Top"
+msgstr "釘選到最上方"
+
+#: contextMenu.py:259
+msgid "Pinned"
+msgstr "已固定"
+
+#: workspaceManager.py:341
+msgid "Pinned to top: {0}"
+msgstr "已釘選到最上方：{0}"
+
+#: fileBasketManager.py:156
+msgid "Please choose a valid destination folder"
+msgstr "請選擇有效的目的資料夾"
+
+#: folderTools.py:713
 msgid "Please select a .txt or .rtf file"
-msgstr "請選取 .txt 或 .rtf 檔案"
+msgstr "請選擇 .txt 或 .rtf 檔案"
 
-#: fileOperations.py:313
+#: compressionManager.py:335
+msgid "Please select a compressed file"
+msgstr "請選擇壓縮檔"
+
+#: fileOperations.py:1429
 msgid "Please select a file, not a folder"
-msgstr "請選取檔案，而不是資料夾"
+msgstr "請選擇檔案，而非資料夾"
 
-#: fileOperations.py:309
+#: fileOperations.py:1196
+msgid "Please select a folder"
+msgstr "請選擇資料夾"
+
+#: fileOperations.py:1421
 msgid "Please select only one file"
-msgstr "請僅選取一個檔案"
+msgstr "請僅選擇一個檔案"
 
-#: folderTools.py:547
+#: fileOperations.py:1199
+msgid "Please select only one folder"
+msgstr "請僅選擇一個資料夾"
+
+#: fileOperations.py:1451
+msgid "Please select only one item"
+msgstr "請僅選擇一個項目"
+
+#: folderTools.py:706
 msgid "Please select only one text file"
-msgstr "請僅選取一個文字檔"
+msgstr "請僅選擇一個文字檔"
 
-#: folderTools.py:791
+#: batchRenameManager.py:90
+msgid "Preview of new file names:"
+msgstr "新檔名預覽："
+
+#: folderTools.py:1148
+#: folderTools.py:1495
 msgid "Processing {count} items in background..."
 msgstr "正在背景處理 {count} 個項目..."
 
-#: __init__.py:861
-#: contextMenu.py:31
+#: contextMenu.py:555
+#: contextMenu.py:929
+msgid "Properties"
+msgstr "內容"
+
+#: xPlorer_engine.py:1449
+msgid "Properties menu not available"
+msgstr "內容功能表無法使用"
+
+#: contextMenu.py:750
+msgid "Read-only"
+msgstr "唯讀"
+
+#: contextMenu.py:750
+msgid "Read-only (frozen, managed by the Freezer)"
+msgstr "唯讀（已凍結，由凍結器管理）"
+
+#: contextMenu.py:790
+msgid "Read-only turned off"
+msgstr "已關閉唯讀"
+
+#: contextMenu.py:790
+msgid "Read-only turned on"
+msgstr "已開啟唯讀"
+
+#: contextMenu.py:530
+msgid "Recent Locations"
+msgstr "最近的位置"
+
+#: operationHistoryManager.py:34
+msgid "Recent operations (most recent first):"
+msgstr "最近的操作（最新的在前）："
+
+#: folderTools.py:1565
+msgid "Regex"
+msgstr "正則運算式"
+
+#: syncCompareManager.py:52
+msgid "Relative Path"
+msgstr "相對路徑"
+
+#: fileBasketManager.py:72
+#: workspaceManager.py:103
+msgid "Remove Selected"
+msgstr "移除所選"
+
+#: duplicateFinderManager.py:190
+msgid "Removed {0} duplicate copies of {1}"
+msgstr "已移除 {1} 的 {0} 個重複複本"
+
+#: freezeManager.py:28
+msgid "Rename canceled"
+msgstr "已取消重新命名"
+
+#: batchRenameManager.py:54
+msgid "Rename mode:"
+msgstr "重新命名模式："
+
+#: contextMenu.py:502
 msgid "Rename selected file"
 msgstr "重新命名選取的檔案"
 
-#: __init__.py:688
-msgid "Required manager not available"
-msgstr "必要的管理員無法使用"
+#: xPlorer_engine.py:1079
+msgid "Rename selected file (single tap), rename using clipboard text (double tap), or undo the last batch rename operation (triple tap)"
+msgstr "重新命名選取的檔案（單擊）、使用剪貼簿文字重新命名（雙擊），或復原上一個批次重新命名操作（三擊）"
 
-#: contextMenu.py:34
+#: fileOperations.py:1552
+msgid "Renamed 1 file"
+msgstr "已重新命名 1 個檔案"
+
+#: fileOperations.py:1513
+msgid "Renamed to {name}"
+msgstr "已重新命名為 {name}"
+
+#: batchRenameManager.py:251
+msgid "Renamed {0} files"
+msgstr "已重新命名 {0} 個檔案"
+
+#: fileOperations.py:1516
+msgid "Renamed {old} to {new}"
+msgstr "已將 {old} 重新命名為 {new}"
+
+#: batchRenameManager.py:72
+msgid "Replace with:"
+msgstr "取代為："
+
+#: fileOperations.py:460
+msgid "Rescan"
+msgstr "重新掃描"
+
+#: contextMenu.py:234
+#: contextMenu.py:269
+msgid "Reversed display"
+msgstr "反向顯示"
+
+#: batchRenameManager.py:418
+msgid "Reverted {0} file names"
+msgstr "已還原 {0} 個檔案名稱"
+
+#: contextMenu.py:515
+# keep-identical
 msgid "Robocopy"
 msgstr "Robocopy"
 
-#: robocopyManager.py:457
+#: robocopyManager.py:499
 msgid "Robocopy cancelled"
-msgstr "Robocopy 已取消"
+msgstr "已取消 Robocopy"
 
-#: robocopyManager.py:469
-msgid "Robocopy finished successfully. {n} item(s) copied"
-msgstr "Robocopy 已成功完成。已複製 {n} 個項目"
+#: robocopyManager.py:528
+msgid "Robocopy complete. {n} item(s) copied"
+msgstr "Robocopy 完成。已複製 {n} 個項目"
 
-#: robocopyManager.py:465
-msgid "Robocopy finished. {ok} succeeded, {failed} failed: {items}"
-msgstr "Robocopy 已完成。成功 {ok} 個，失敗 {failed} 個：{items}"
+#: robocopyManager.py:514
+msgid "Robocopy finished. {ok} succeeded, {failed} failed"
+msgstr "Robocopy 已完成。成功 {ok} 個，失敗 {failed} 個"
 
-#: __init__.py:768
+#: xPlorer_engine.py:988
 msgid "Robocopy manager not available"
 msgstr "Robocopy 管理員無法使用"
 
-#: __init__.py:791
+#: robocopyManager.py:546
+msgid "Robocopy: Items That Could Not Be Copied"
+msgstr "Robocopy：無法複製的項目"
+
+#: xPlorer_engine.py:996
 msgid "Robocopy: single tap copy, double tap paste, triple tap move"
-msgstr "Robocopy：單指點擊複製，雙指點擊貼上，三指點擊移動"
+msgstr "Robocopy：單擊複製，雙擊貼上，三擊移動"
 
-#: contextMenu.py:89
-#: contextMenu.py:100
-#: contextMenu.py:106
-#: contextMenu.py:111
-#: contextMenu.py:117
+#: contextMenu.py:404
+msgid "Run Compare (Sync Compare)"
+msgstr "執行比較 (同步比較)"
+
+#: workspaceManager.py:108
+msgid "Save"
+msgstr "儲存"
+
+#: contextMenu.py:336
+msgid "Save Current as Workspace..."
+msgstr "將目前狀態儲存為工作區..."
+
+#: workspaceManager.py:51
+msgid "Save Workspace"
+msgstr "儲存工作區"
+
+#: fileBasketManager.py:140
+msgid "Save Zip File As"
+msgstr "壓縮檔另存新檔"
+
+#: workspaceManager.py:263
+msgid "Saved workspaces (right-click or press the Menu key for pin/reorder/clear options):"
+msgstr "已儲存的工作區 (按滑鼠右鍵或按下「功能表」鍵以取得釘選/重新排序/清除選項)："
+
+#: contextMenu.py:558
+#: contextMenu.py:608
+#: contextMenu.py:616
+#: contextMenu.py:622
+#: contextMenu.py:627
 msgid "Say size"
-msgstr "朗讀大小"
+msgstr "唸出大小"
 
-#: __init__.py:751
-msgid "Say size (single tap) or compress zip (double tap)"
-msgstr "朗讀大小（單指點擊）或壓縮為 zip（雙指點擊）"
+#: xPlorer_engine.py:971
+msgid "Say size (single tap), compress zip (double tap), unzip (triple tap), or folder to ISO (quadruple tap)"
+msgstr "唸出大小 (單擊)、壓縮 ZIP (雙擊)、解壓縮 (三擊)，或將資料夾轉為 ISO (四擊)"
 
-#: folderTools.py:559
+#: duplicateFinderManager.py:272
+msgid "Scanning {0} for duplicates..."
+msgstr "正在掃描 {0} 以尋找重複項目..."
+
+#: fileOperations.py:401
+msgid "Scanning, please wait"
+msgstr "正在掃描，請稍候"
+
+#: flatViewManager.py:41
+msgid "Scanning..."
+msgstr "正在掃描..."
+
+#: folderTools.py:1563
+msgid "Search mode:"
+msgstr "搜尋模式："
+
+#: fileBasketManager.py:121
+msgid "Select Destination Directory"
+msgstr "選擇目的目錄"
+
+#: workspaceManager.py:192
+msgid "Select Folder to Add"
+msgstr "選擇要新增的資料夾"
+
+#: duplicateFinderManager.py:264
+msgid "Select a folder, or open one in Explorer, to scan for duplicates"
+msgstr "選擇一個資料夾，或在檔案總管中開啟一個資料夾以掃描重複項目"
+
+#: contextMenu.py:477
+msgid "Select by Extension"
+msgstr "依副檔名選擇"
+
+#: contextMenu.py:483
+#: folderTools.py:1541
+msgid "Select by Search"
+msgstr "依搜尋選擇"
+
+#: xPlorer_engine.py:939
+msgid "Select by Search: Opens Select by Search (single tap), Flat View (double tap), or Batch Rename Tool (triple tap)"
+msgstr "依搜尋選擇：開啟依搜尋選擇 (單擊)、平面檢視 (雙擊) 或批次重新命名工具 (三擊)"
+
+#: folderTools.py:718
 msgid "Selected file does not exist"
 msgstr "選取的檔案不存在"
 
-#: folderTools.py:87
+#: folderTools.py:152
 msgid "Selected item is not a folder"
 msgstr "選取的項目不是資料夾"
 
-#: folderTools.py:826
+#: fileOperations.py:1460
+msgid "Selected item no longer exists"
+msgstr "選取的項目已不存在"
+
+#: fileBasketManager.py:267
+msgid "Selected items are already in the basket"
+msgstr "選取的項目已在籃子中"
+
+#: folderTools.py:1160
 msgid "Selected {count} items"
 msgstr "已選取 {count} 個項目"
 
-#: folderTools.py:829
+#: folderTools.py:1263
+msgid "Selected {count} items matching {term}"
+msgstr "已選取 {count} 個符合 {term} 的項目"
+
+#: folderTools.py:1197
+msgid "Selected {count} items {ext}"
+msgstr "已選取 {count} 個 {ext} 項目"
+
+#: folderTools.py:1277
+msgid "Selected {count} top-level items containing matches for {term}"
+msgstr "已選取 {count} 個包含 {term} 符合項目的頂層項目"
+
+#: contextMenu.py:486
+msgid "Selection"
+msgstr "選取範圍"
+
+#: folderTools.py:1163
 msgid "Selection inverted"
 msgstr "已反向選取"
+
+#: xPlorer_engine.py:915
+#: xPlorer_engine.py:947
+msgid "Selection manager not available"
+msgstr "選取管理員無法使用"
+
+#: xPlorer_engine.py:923
+msgid "Selection: Select by extension (single tap), invert selection (double tap), or multi-select (triple tap)"
+msgstr "選取：單擊以依副檔名選取、雙擊以反向選取，或三擊以多重選取"
+
+#: fileOperations.py:455
+msgid "Settings..."
+msgstr "設定..."
+
+#: fileOperations.py:276
+msgid "Show"
+msgstr "顯示"
+
+#: workspaceManager.py:91
+msgid "Show paths"
+msgstr "顯示路徑"
+
+#: flatViewManager.py:47
+msgid "Size"
+msgstr "大小"
+
+#: fileOperations.py:250
+msgid "Size followed by name"
+msgstr "大小後接名稱"
+
+#: fileOperations.py:255
+msgid "Size, largest to smallest"
+msgstr "大小：由大到小"
+
+#: fileOperations.py:256
+msgid "Size, smallest to largest"
+msgstr "大小：由小到大"
+
+#: contextMenu.py:1006
+msgid "Size: calculating..."
+msgstr "大小：計算中..."
+
+#: contextMenu.py:1008
+msgid "Size: {0}"
+msgstr "大小：{0}"
+
+#: contextMenu.py:1064
+msgid "Size: {0}{1}"
+msgstr "大小：{0}{1}"
+
+#: duplicateFinderManager.py:198
+msgid "Some duplicates could not be removed"
+msgstr "無法移除部分重複項目"
 
 #: createFile.py:170
 msgid "Some files will use default names"
 msgstr "部分檔案將使用預設名稱"
 
-#: compressionManager.py:161
+#: fileOperations.py:271
+msgid "Sort order"
+msgstr "排序方式"
+
+#: compressionManager.py:174
+#: fileOperations.py:1293
 msgid "Starting..."
-msgstr "正在啟動..."
+msgstr "正在開始..."
 
-#: folderTools.py:987
+#: syncCompareManager.py:53
+msgid "Status"
+msgstr "狀態"
+
+#: folderTools.py:2026
 msgid "Successfully converted {count} folders to headline case"
-msgstr "已成功將 {count} 個資料夾轉換為標題大寫"
+msgstr "已成功將 {count} 個資料夾轉換為首字大寫"
 
-#: folderTools.py:972
+#: folderTools.py:2011
 msgid "Successfully converted {count} folders to lowercase"
 msgstr "已成功將 {count} 個資料夾轉換為小寫"
 
-#: folderTools.py:981
+#: folderTools.py:2020
 msgid "Successfully converted {count} folders to title case"
-msgstr "已成功將 {count} 個資料夾轉換為首字母大寫"
+msgstr "已成功將 {count} 個資料夾轉換為標題字首大寫"
 
-#: folderTools.py:966
+#: folderTools.py:2005
 msgid "Successfully converted {count} folders to uppercase"
 msgstr "已成功將 {count} 個資料夾轉換為大寫"
 
-#: folderTools.py:337
+#: folderTools.py:412
 msgid "Successfully created 1 folder"
 msgstr "已成功建立 1 個資料夾"
 
-#: folderTools.py:335
+#: folderTools.py:410
 msgid "Successfully created main folder only"
-msgstr "僅成功建立主資料夾"
+msgstr "已成功僅建立主資料夾"
 
-#: folderTools.py:339
+#: folderTools.py:414
 msgid "Successfully created {count} of {total} folders"
-msgstr "已成功建立 {total} 個資料夾中的 {count} 個"
+msgstr "已成功建立 {total} 個中的 {count} 個資料夾"
 
-#: folderTools.py:645
-#: folderTools.py:695
+#: folderTools.py:808
+#: folderTools.py:858
 msgid "Successfully created {} folders in '{}'"
-msgstr "已在「{}」中成功建立 {} 個資料夾"
+msgstr "已在 '{}' 中成功建立 {} 個資料夾"
 
-#: contextMenu.py:39
+#: batchRenameManager.py:248
+msgid "Successfully renamed {0} files"
+msgstr "已成功重新命名 {0} 個檔案"
+
+#: fileBasketManager.py:451
+msgid "Successfully {0} {1} items."
+msgstr "已成功 {0} {1} 個項目。"
+
+#: contextMenu.py:827
+msgid "TB"
+msgstr "TB"
+
+#: contextMenu.py:446
 msgid "TXT to Folder"
-msgstr "TXT 到資料夾"
+msgstr "文字轉資料夾"
 
-#: contextMenu.py:46
+#: batchRenameManager.py:60
+msgid "Tag pattern ([C] counter, [D] date, [N] name, [E] extension)"
+msgstr "標籤模式 ([C] 計數器, [D] 日期, [N] 名稱, [E] 副檔名)"
+
+#: batchRenameManager.py:80
+msgid "Tag pattern (e.g. [N]_[C].[E]):"
+msgstr "標籤模式 (例如 [N]_[C].[E])："
+
+#: batchRenameManager.py:67
+msgid "Text to find:"
+msgstr "尋找文字："
+
+#: folderTools.py:1193
+msgid "The focused item has no file extension"
+msgstr "取得焦點的項目沒有副檔名"
+
+#: robocopyManager.py:542
+msgid ""
+"The following {n} item(s) could not be copied:\n"
+"\n"
+"{items}"
+msgstr ""
+"無法複製以下 {n} 個項目：\n"
+"\n"
+"{items}"
+
+#: freezeManager.py:1119
+msgid "The freezer is empty"
+msgstr "凍結區是空的"
+
+#: syncCompareManager.py:133
+msgid "This file only exists on the right side"
+msgstr "此檔案僅存在於右側"
+
+#: fileOperations.py:1224
+msgid "This folder cannot be converted to ISO"
+msgstr "此資料夾無法轉換為 ISO"
+
+#: recentLocationsManager.py:223
+msgid "This folder no longer exists: {0}"
+msgstr "此資料夾已不存在：{0}"
+
+#: contextMenu.py:437
 msgid "Title Case"
 msgstr "首字母大寫"
 
-#: clipboardManager.py:88
+#: contextMenu.py:846
+msgid "Today"
+msgstr "今天"
+
+#: fileOperations.py:475
+msgid "Top level only"
+msgstr "僅限最上層"
+
+#: contextMenu.py:986
+msgid "Total capacity: {0}"
+msgstr "總容量：{0}"
+
+#: clipboardManager.py:95
 msgid "Total file size is too large to copy content"
 msgstr "檔案總大小過大，無法複製內容"
 
-#: createFile.py:213
+#: createFile.py:215
 msgid "Unable to get current directory after multiple attempts"
-msgstr "多次嘗試後仍無法取得目前目錄"
+msgstr "經過多次嘗試仍無法取得目前目錄"
 
-#: __init__.py:630
+#: fileOperations.py:1373
+#: xPlorer_engine.py:878
 msgid "Unable to get current path"
 msgstr "無法取得目前路徑"
 
-#: folderTools.py:774
+#: folderTools.py:1132
+#: folderTools.py:1484
 msgid "Unable to get folder view"
 msgstr "無法取得資料夾檢視"
 
-#: contextMenu.py:44
+#: batchRenameManager.py:386
+msgid "Unable to read the last rename operation"
+msgstr "無法讀取上次重新命名作業"
+
+#: batchRenameManager.py:419
+msgid "Undid rename of {0} files"
+msgstr "已復原 {0} 個檔案的重新命名"
+
+#: batchRenameManager.py:103
+#: contextMenu.py:396
+msgid "Undo Last Rename"
+msgstr "復原上一次重新命名"
+
+#: freezeManager.py:729
+#: freezeManager.py:1081
+msgid "Unfreeze"
+msgstr "解除凍結"
+
+#: freezeManager.py:647
+msgid "Unfreeze &all"
+msgstr "全部解除凍結(&A)"
+
+#: contextMenu.py:425
+msgid "Unfreeze Selected"
+msgstr "解除凍結所選項目"
+
+#: freezeManager.py:711
+msgid "Unfreeze all"
+msgstr "全部解除凍結"
+
+#: freezeManager.py:730
+msgid "Unfreeze all files and folders"
+msgstr "解除凍結所有檔案和資料夾"
+
+#: freezeManager.py:710
+msgid "Unfreeze all {count} items?"
+msgstr "解除凍結所有 {count} 個項目？"
+
+#: freezeManager.py:723
+msgid "Unfreeze all, {count} items"
+msgstr "解除凍結所有，{count} 個項目"
+
+#: freezeManager.py:701
+#: freezeManager.py:1083
+msgid "Unfreeze, {count} items"
+msgstr "解除凍結，{count} 個項目"
+
+#: contextMenu.py:230
+msgid "Unpin"
+msgstr "取消固定"
+
+#: workspaceManager.py:323
+msgid "Unpin from Top"
+msgstr "取消釘選至頂端"
+
+#: contextMenu.py:259
+msgid "Unpinned"
+msgstr "已取消固定"
+
+#: workspaceManager.py:341
+msgid "Unpinned: {0}"
+msgstr "已取消釘選：{0}"
+
+#: contextMenu.py:433
 msgid "Uppercase"
 msgstr "大寫"
 
-#: clipboardManager.py:104
-msgid "[Error processing RTF file]"
-msgstr "[處理 RTF 檔案時發生錯誤]"
+#: batchRenameManager.py:77
+msgid "Use regular expressions (regex)"
+msgstr "使用正規表示式 (regex)"
 
-#: clipboardManager.py:106
-msgid "[RTF content - striprtf module not available]"
-msgstr "[RTF 內容 - striprtf 模組無法使用]"
+#: contextMenu.py:985
+msgid "Used space: {0}"
+msgstr "已使用空間：{0}"
 
-#: compressionManager.py:114
+#: folderTools.py:1565
+msgid "Wildcard"
+msgstr "字元萬用字元"
+
+#: contextMenu.py:520
+#: workspaceManager.py:255
+msgid "Workspace Manager"
+msgstr "工作區管理員"
+
+#: workspaceManager.py:395
+msgid "Workspace deleted: {0}"
+msgstr "已刪除工作區：{0}"
+
+#: workspaceManager.py:210
+#: xPlorer_engine.py:1147
+msgid "Workspace manager not available"
+msgstr "工作區管理員無法使用"
+
+#: workspaceManager.py:81
+msgid "Workspace name:"
+msgstr "工作區名稱："
+
+#: workspaceManager.py:545
+msgid "Workspace not found: {0}"
+msgstr "找不到工作區：{0}"
+
+#: workspaceManager.py:736
+msgid "Workspace saved: {0}"
+msgstr "已儲存工作區：{0}"
+
+#: workspaceManager.py:384
+msgid "Workspace updated: {0}"
+msgstr "已更新工作區：{0}"
+
+#: xPlorer_engine.py:1155
+msgid "Workspace: Open menu (single tap), add selected folder or save current as workspace (double tap), or edit saved workspaces (triple tap)"
+msgstr "工作區：開啟功能表（單擊）、新增所選資料夾或將目前資料夾儲存為工作區（雙擊）、或編輯已儲存的工作區（三擊）"
+
+#: contextMenu.py:848
+msgid "Yesterday"
+msgstr "昨天"
+
+#: fileBasketManager.py:51
+#: fileBasketManager.py:138
+msgid "Zip"
+msgstr "壓縮"
+
+#: fileBasketManager.py:444
+msgid "Zipped {0} items from the basket"
+msgstr "已從暫存籃壓縮 {0} 個項目"
+
+#: contextMenu.py:827
+msgid "bytes"
+msgstr "位元組"
+
+#: compressionManager.py:124
 msgid "compression failed"
 msgstr "壓縮失敗"
 
-#: contextMenu.py:35
+#: fileBasketManager.py:350
+msgid "copied"
+msgstr "已複製"
+
+#: contextMenu.py:508
 msgid "copy"
 msgstr "複製"
 
-#: robocopyManager.py:235
+#: robocopyManager.py:276
 msgid "estimating time remaining"
-msgstr "正在估計剩餘時間"
+msgstr "正在估算剩餘時間"
 
-#: contextMenu.py:36
+#: contextMenu.py:855
+msgid "less than a minute ago"
+msgstr "一分鐘不到前"
+
+#: explorerWindow.py:54
+msgid "maximized"
+msgstr "已最大化"
+
+#: fileBasketManager.py:412
+msgid "mirror copied"
+msgstr "鏡像複製"
+
+#: contextMenu.py:510
 msgid "move"
 msgstr "移動"
 
+#: fileBasketManager.py:375
+msgid "moved"
+msgstr "已移動"
+
 #: createFile.py:156
 msgid "new_file"
-msgstr "新檔案"
+msgstr "new_file"
 
 #: createFile.py:158
 msgid "new_file_{index}"
-msgstr "新檔案_{index}"
+msgstr "new_file_{index}"
 
-#: contextMenu.py:37
+#: fileOperations.py:224
+msgid "no access"
+msgstr "無法存取"
+
+#: folderTools.py:1723
+msgid "not select {name}"
+msgstr "未選取 {name}"
+
+#: contextMenu.py:512
 msgid "paste"
 msgstr "貼上"
 
-#: __init__.py:268
-#: __init__.py:672
-#: __init__.py:712
-#: __init__.py:752
-#: __init__.py:792
-#: __init__.py:845
-#: __init__.py:862
-#: __init__.py:880
+#: folderTools.py:1723
+msgid "select {name}"
+msgstr "選取 {name}"
+
+#: contextMenu.py:469
+msgid "unCompress zip"
+msgstr "解壓縮 zip"
+
+#: contextMenu.py:91
+#: contextMenu.py:105
+msgid "unavailable"
+msgstr "不可用"
+
+#: duplicateFinderManager.py:142
+msgid "unknown date"
+msgstr "未知日期"
+
+#: xPlorer_engine.py:313
+#: xPlorer_engine.py:901
+#: xPlorer_engine.py:924
+#: xPlorer_engine.py:940
+#: xPlorer_engine.py:972
+#: xPlorer_engine.py:997
+#: xPlorer_engine.py:1038
+#: xPlorer_engine.py:1080
+#: xPlorer_engine.py:1106
+#: xPlorer_engine.py:1128
+#: xPlorer_engine.py:1156
+#: xPlorer_engine.py:1424
 msgid "xPlorer"
 msgstr "xPlorer"
 
-#: contextMenu.py:49
+#: contextMenu.py:537
 msgid "xPlorer Settings"
 msgstr "xPlorer 設定"
 
-#: createFile.py:288
+#: fileBasketManager.py:442
+msgid "zipped"
+msgstr "已壓縮"
+
+#: contextMenu.py:285
+msgid "{0} (pinned)"
+msgstr "{0} (已釘選)"
+
+#: fileBasketManager.py:449
+msgid "{0} complete. {1} successful, {2} failed. Check NVDA log."
+msgstr "{0} 完成。{1} 個成功，{2} 個失敗。請檢查 NVDA 記錄檔。"
+
+#: duplicateFinderManager.py:135
+msgid "{0} copies, {1} each"
+msgstr "{0} 份複本，每份 {1}"
+
+#: syncCompareManager.py:118
+msgid "{0} differences found"
+msgstr "找到 {0} 處差異"
+
+#: fileBasketManager.py:264
+#: fileBasketManager.py:308
+msgid "{0} files"
+msgstr "{0} 個檔案"
+
+#: flatViewManager.py:132
+#: flatViewManager.py:141
+msgid "{0} files found"
+msgstr "找到 {0} 個檔案"
+
+#: fileBasketManager.py:262
+#: fileBasketManager.py:306
+msgid "{0} folders"
+msgstr "{0} 個資料夾"
+
+#: contextMenu.py:865
+msgid "{0} hour ago"
+msgstr "{0} 小時前"
+
+#: contextMenu.py:866
+msgid "{0} hours ago"
+msgstr "{0} 小時前"
+
+#: flatViewManager.py:130
+#: flatViewManager.py:140
+msgid "{0} matches found"
+msgstr "找到 {0} 個符合項"
+
+#: contextMenu.py:859
+msgid "{0} minute ago"
+msgstr "{0} 分鐘前"
+
+#: contextMenu.py:860
+msgid "{0} minutes ago"
+msgstr "{0} 分鐘前"
+
+#: robocopyManager.py:530
+msgid "{action} {n} item(s) to {dest}"
+msgstr "正在將 {n} 個項目{action}至 {dest}"
+
+#: robocopyManager.py:518
+msgid "{action} {n} item(s) to {dest} ({failed} failed)"
+msgstr "正在將 {n} 個項目{action}至 {dest}（{failed} 個失敗）"
+
+#: contextMenu.py:788
+msgid "{count} files could not be changed"
+msgstr "有 {count} 個檔案無法變更"
+
+#: freezeManager.py:460
+msgid "{count} files could not be made read-only"
+msgstr "有 {count} 個檔案無法設為唯讀"
+
+#: freezeManager.py:472
+msgid "{count} files could not be made writable again"
+msgstr "有 {count} 個檔案無法解除唯讀"
+
+#: clipboardManager.py:141
+msgid "{count} files could not be read"
+msgstr "有 {count} 個檔案無法讀取"
+
+#: createFile.py:292
 msgid "{count} files created"
 msgstr "已建立 {count} 個檔案"
 
-#: fileOperations.py:283
+#: workspaceManager.py:167
+msgid "{count} folders in the list"
+msgstr "清單中有 {count} 個資料夾"
+
+#: freezeManager.py:628
+msgid "{count} frozen items. {result}"
+msgstr "{count} 個凍結的項目。{result}"
+
+#: fileOperations.py:1165
 msgid "{count} items {size}"
-msgstr "{count} 個項目 {size}"
+msgstr "{count} 個項目，大小為 {size}"
 
-#: robocopyManager.py:240
+#: folderTools.py:1661
+msgid "{count} matches"
+msgstr "{count} 個符合項目"
+
+#: freezeManager.py:1050
+msgid "{count} system locations skipped"
+msgstr "已略過 {count} 個系統位置"
+
+#: robocopyManager.py:281
 msgid "{h}h {m}m remaining"
-msgstr "剩餘 {h}小時 {m}分鐘"
+msgstr "剩餘 {h} 小時 {m} 分鐘"
 
-#: robocopyManager.py:242
+#: freezeManager.py:673
+msgid "{label}, not found"
+msgstr "找不到 {label}"
+
+#: freezeManager.py:675
+msgid "{label}, replaced by another item"
+msgstr "{label} 已被其他項目取代"
+
+#: robocopyManager.py:283
 msgid "{m}m {s}s remaining"
-msgstr "剩餘 {m}分鐘 {s}秒"
+msgstr "剩餘 {m} 分鐘 {s} 秒"
 
-#: robocopyManager.py:304
+#: workspaceManager.py:297
+msgid "{name} (pinned)"
+msgstr "{name} (已釘選)"
+
+#: freezeManager.py:1043
+msgid "{name} is a system location and cannot be frozen"
+msgstr "{name} 是系統位置，無法凍結"
+
+#: freezeManager.py:626
+msgid "{name} is frozen. {result}"
+msgstr "{name} 已凍結。{result}"
+
+#: update.py:159
+msgid "{name} update"
+msgstr "{name} 更新"
+
+#: update.py:164
+msgid ""
+"{name} {new} is available (installed: {old}).\n"
+"Update now?"
+msgstr ""
+"{name} {new} 可用 (已安裝: {old})。\n"
+"是否立即更新？"
+
+#: fileOperations.py:229
+msgid "{name}, folder"
+msgstr "{name}，資料夾"
+
+#: freezeManager.py:669
+msgid "{name}, {kind}, in {location}"
+msgstr "{name}，{kind}，位於 {location}"
+
+#: robocopyManager.py:345
 msgid "{pct}% - item {idx}/{total}: {name}"
 msgstr "{pct}% - 項目 {idx}/{total}：{name}"
 
-#: folderTools.py:111
+#: folderTools.py:185
 msgid "{subfolders} subfolders and {files} files"
 msgstr "{subfolders} 個子資料夾和 {files} 個檔案"
 
-#: contextMenu.py:150
+#: contextMenu.py:642
 msgid "{subfolders} subfolders, {files} files"
 msgstr "{subfolders} 個子資料夾，{files} 個檔案"
 
-#: robocopyManager.py:243
+#: robocopyManager.py:284
 msgid "{s}s remaining"
-msgstr "剩餘 {s}秒"
+msgstr "剩餘 {s} 秒"

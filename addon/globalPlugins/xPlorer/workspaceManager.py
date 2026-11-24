@@ -21,16 +21,42 @@ addonHandler.initTranslation()
 
 WORKSPACES_FILE = os.path.join(CONFIG_DIR, "workspaces.json")
 
+_DOUBLE_QUOTE_CHARS = "\"\u201c\u201d"
+_SINGLE_QUOTE_CHARS = "'\u2018\u2019"
+
+
+def _normalizePastedFolderPath(rawLine):
+	# "Copy as path" wraps the path in double quotes, which are never valid
+	# inside a Windows path. Single quotes can legitimately end a folder
+	# name, so they are only removed when they wrap the whole path.
+	text = rawLine.strip().strip(_DOUBLE_QUOTE_CHARS).strip()
+	if len(text) >= 2 and text[0] in _SINGLE_QUOTE_CHARS and text[-1] in _SINGLE_QUOTE_CHARS:
+		text = text[1:-1].strip()
+	if not text:
+		return ""
+	return os.path.normpath(text)
+
+
+def _containsPath(pathList, candidatePath):
+	candidateKey = os.path.normcase(os.path.normpath(candidatePath))
+	return any(os.path.normcase(os.path.normpath(existing)) == candidateKey for existing in pathList)
+
 
 class WorkspaceEditDialog(wx.Dialog):
 	"""Accessible dialog for naming a new workspace made up of the folder
 	paths currently gathered for it (e.g. the current Explorer folder plus
 	any the user adds by hand)."""
 
-	def __init__(self, parent, initialPaths, workspaceManager=None):
+	def __init__(self, parent, initialPaths, workspaceManager=None, allowExistingTarget=False):
 		super().__init__(parent, title=_("Save Workspace"), style=wx.DEFAULT_DIALOG_STYLE | wx.RESIZE_BORDER)
 		self.paths = list(initialPaths)
 		self.workspaceName = None
+		# When True, the dialog offers a combo box of saved workspaces so the
+		# gathered folders can be added to one of them instead of replacing it.
+		self.allowExistingTarget = allowExistingTarget
+		self._existingNames = []
+		self._targetName = None
+		self._mergedPaths = []
 		# Kept so the "Edit Workspace" button below can open the full
 		# workspace list (rename/pin/reorder/delete) without this dialog
 		# needing to know how that list is stored or persisted.
@@ -40,6 +66,17 @@ class WorkspaceEditDialog(wx.Dialog):
 
 	def _init_ui(self):
 		s_helper = gui.guiHelper.BoxSizerHelper(self, orientation=wx.VERTICAL)
+
+		if self.allowExistingTarget and self.workspaceManager:
+			self._existingNames = self.workspaceManager.getOrderedWorkspaceNames()
+		if self._existingNames:
+			s_helper.addItem(wx.StaticText(self, label=_("Add to workspace:")))
+			self.target_combo = wx.ComboBox(
+				self, choices=[_("New workspace")] + self._existingNames, style=wx.CB_READONLY
+			)
+			self.target_combo.SetSelection(0)
+			s_helper.addItem(self.target_combo, flag=wx.EXPAND)
+			self.target_combo.Bind(wx.EVT_COMBOBOX, self._on_target_changed)
 
 		self.name_label = wx.StaticText(self, label=_("Workspace name:"))
 		s_helper.addItem(self.name_label)
@@ -111,13 +148,38 @@ class WorkspaceEditDialog(wx.Dialog):
 		self.Layout()
 		self.Fit()
 
+	def _on_target_changed(self, event):
+		previousTarget = self._targetName
+		self._mergedPaths = [path for path in self._mergedPaths if _containsPath(self.paths, path)]
+		for mergedPath in self._mergedPaths:
+			self.paths = [path for path in self.paths if os.path.normcase(os.path.normpath(path)) != os.path.normcase(os.path.normpath(mergedPath))]
+		self._mergedPaths = []
+		self._targetName = None
+		if previousTarget and self.name_text.GetValue().strip() == previousTarget:
+			self.name_text.SetValue("")
+		selectionIndex = self.target_combo.GetSelection()
+		if selectionIndex > 0:
+			targetName = self._existingNames[selectionIndex - 1]
+			self._mergeExistingPaths(targetName)
+			self._targetName = targetName
+			self.name_text.SetValue(targetName)
+		self._refreshPathsList()
+		ui.message(_("{count} folders in the list").format(count=len(self.paths)))
+
+	def _mergeExistingPaths(self, workspaceName):
+		existingPaths = self.workspaceManager.getWorkspaces().get(workspaceName, [])
+		missingPaths = [path for path in existingPaths if not _containsPath(self.paths, path)]
+		self.paths = missingPaths + self.paths
+		self._mergedPaths = list(missingPaths)
+
 	def _on_add_folder_or_paths(self, event):
 		pastedText = self.paste_text.GetValue().strip()
 		if pastedText:
-			candidatePaths = [line.strip().strip('"') for line in pastedText.splitlines() if line.strip()]
+			candidatePaths = [_normalizePastedFolderPath(line) for line in pastedText.splitlines()]
+			candidatePaths = [path for path in candidatePaths if path]
 			addedCount = 0
 			for candidatePath in candidatePaths:
-				if os.path.isdir(candidatePath) and candidatePath not in self.paths:
+				if os.path.isdir(candidatePath) and not _containsPath(self.paths, candidatePath):
 					self.paths.append(candidatePath)
 					addedCount += 1
 			self.paste_text.SetValue("")
@@ -130,7 +192,7 @@ class WorkspaceEditDialog(wx.Dialog):
 		dirDialog = wx.DirDialog(self, _("Select Folder to Add"), style=wx.DD_DEFAULT_STYLE)
 		if dirDialog.ShowModal() == wx.ID_OK:
 			selectedPath = dirDialog.GetPath()
-			if selectedPath not in self.paths:
+			if not _containsPath(self.paths, selectedPath):
 				self.paths.append(selectedPath)
 				self._refreshPathsList()
 		dirDialog.Destroy()
@@ -170,6 +232,12 @@ class WorkspaceEditDialog(wx.Dialog):
 		if not self.paths:
 			ui.message(_("Add at least one folder to this workspace"))
 			return
+		if self.allowExistingTarget and name != self._targetName and self.workspaceManager:
+			# Typing the name of a saved workspace must extend it, not replace it.
+			if name in self.workspaceManager.getWorkspaces():
+				self._mergeExistingPaths(name)
+				self._targetName = name
+				ui.message(_("Added to existing workspace {name}").format(name=name))
 		self.workspaceName = name
 		self.EndModal(wx.ID_OK)
 
@@ -657,7 +725,7 @@ class WorkspaceManager:
 
 	def _runSaveEditDialog(self, initialPaths):
 		def do_show():
-			dialog = WorkspaceEditDialog(gui.mainFrame, initialPaths, workspaceManager=self)
+			dialog = WorkspaceEditDialog(gui.mainFrame, initialPaths, workspaceManager=self, allowExistingTarget=True)
 			self._activeSaveDialog = dialog
 			gui.mainFrame.prePopup()
 			try:
