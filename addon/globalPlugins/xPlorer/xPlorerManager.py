@@ -18,7 +18,11 @@ from gui.settingsDialogs import SettingsPanel
 from .folderTools import loadConfig, saveConfig
 import core
 import speechDictHandler
-from speechDictHandler import SpeechDictEntry
+try:
+	from speechDictHandler.types import DictionaryType, SpeechDictEntry
+except ImportError:
+	from speechDictHandler import SpeechDictEntry
+	DictionaryType = None
 import time
 import logging
 import eventHandler
@@ -28,6 +32,13 @@ from _ctypes import COMError as CtypesCOMError
 
 addonHandler.initTranslation()
 log.debug("xPlorerManager module loaded")
+
+
+def _getTempSpeechDict():
+	if DictionaryType is None:
+		return speechDictHandler.dictionaries["temp"]
+	from speechDictHandler.definitions import getDictionaryDefinition
+	return getDictionaryDefinition(DictionaryType.TEMP).dictionary
 
 _WM_NULL = 0x0000
 _SMTO_ABORTIFHUNG = 0x0002
@@ -373,6 +384,11 @@ class ExplorerManager:
 	def _syncTempSpeechDictEntry(self, attrName, shouldSuppress, pattern, comment):
 		currentEntry = getattr(self, attrName)
 		if shouldSuppress and currentEntry is None:
+			try:
+				tempSpeechDict = _getTempSpeechDict()
+			except (KeyError, AttributeError, ImportError) as dictError:
+				log.debug(f"xPlorer: temporary speech dictionary unavailable: {dictError}")
+				return
 			entry = SpeechDictEntry(
 				pattern=pattern,
 				replacement="",
@@ -380,12 +396,12 @@ class ExplorerManager:
 				type=0,
 				comment=comment
 			)
-			speechDictHandler.dictionaries["temp"].append(entry)
+			tempSpeechDict.append(entry)
 			setattr(self, attrName, entry)
 		elif not shouldSuppress and currentEntry is not None:
 			try:
-				speechDictHandler.dictionaries["temp"].remove(currentEntry)
-			except ValueError:
+				_getTempSpeechDict().remove(currentEntry)
+			except (ValueError, KeyError, AttributeError, ImportError):
 				pass
 			setattr(self, attrName, None)
 
