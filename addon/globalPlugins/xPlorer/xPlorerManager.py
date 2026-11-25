@@ -61,6 +61,13 @@ _user32Private.GetClassNameW.argtypes = [ctypes.wintypes.HWND, ctypes.wintypes.L
 _user32Private.IsWindowVisible.argtypes = [ctypes.wintypes.HWND]
 _enumChildProc = ctypes.WINFUNCTYPE(ctypes.c_int, ctypes.wintypes.HWND, ctypes.wintypes.LPARAM)
 _user32Private.EnumChildWindows.argtypes = [ctypes.wintypes.HWND, _enumChildProc, ctypes.wintypes.LPARAM]
+_user32Private.GetAncestor.argtypes = [ctypes.wintypes.HWND, ctypes.c_uint]
+_user32Private.GetAncestor.restype = ctypes.wintypes.HWND
+_user32Private.IsChild.argtypes = [ctypes.wintypes.HWND, ctypes.wintypes.HWND]
+_user32Private.IsWindowEnabled.argtypes = [ctypes.wintypes.HWND]
+
+_GA_ROOT = 2
+_COMMAND_BAR_FOCUS_ROLES = (Role.BUTTON, Role.SPLITBUTTON, Role.MENUBUTTON)
 
 
 def _findItemsViewHwnd(frameHwnd):
@@ -342,6 +349,9 @@ class ExplorerManager:
 		self._landingPollTask = None
 		self._landingBaselineKey = None
 		self._seenExplorerFrames = set()
+		self._lastExplorerFocusWasListItem = False
+		self._listHadFocusBeforeForeground = False
+		self._reportedTopLevelKeys = set()
 
 		self._config_cache = None
 		self._config_cache_time = 0.0
@@ -505,14 +515,43 @@ class ExplorerManager:
 			log.debug(f"xPlorer: Home view selection check failed: {e}")
 
 	def _isForeignDialogOpen(self):
+		# A top-level window only blocks Explorer handling when it is a live
+		# modal dialog or the active window. Merely being shown is not enough:
+		# a lingering shown frame made every Explorer foreground event look
+		# like it happened under a dialog, which switched off focus recovery
+		# for the rest of the session.
 		for win in wx.GetTopLevelWindows():
-			if win.IsShown() and isinstance(win, (wx.Dialog, wx.Frame)):
+			try:
 				if win is gui.mainFrame:
+					continue
+				if not isinstance(win, (wx.Dialog, wx.Frame)) or not win.IsShown():
 					continue
 				if win.GetTitle() == "xPlorer - Create Multiple Folders":
 					continue
+				isBlocking = win.IsActive()
+				if isinstance(win, wx.Dialog):
+					isBlocking = isBlocking or win.IsModal()
+			except RuntimeError:
+				continue
+			self._reportTopLevelWindow(win, "blocking" if isBlocking else "ignored")
+			if isBlocking:
 				return True
 		return False
+
+	def _reportTopLevelWindow(self, win, verdict):
+		try:
+			reportKey = (verdict, win.__class__.__name__, win.GetTitle(), win.GetHandle())
+		except RuntimeError:
+			return
+		if reportKey in self._reportedTopLevelKeys:
+			return
+		if len(self._reportedTopLevelKeys) >= 32:
+			self._reportedTopLevelKeys.clear()
+		self._reportedTopLevelKeys.add(reportKey)
+		log.debug(
+			f"xPlorer: shown top-level window treated as {verdict}: "
+			f"class={reportKey[1]} title={reportKey[2]!r} hwnd={reportKey[3]}"
+		)
 
 	def terminate(self):
 		self._speech_dict_task = None
@@ -728,9 +767,12 @@ class ExplorerManager:
 			return nextHandler()
 
 		try:
-			if obj is not None and obj.role == Role.LISTITEM:
-				self._lastItemFocusTime = time.time()
-				self._attemptLandingSelect(obj, "focus")
+			if obj is not None:
+				isListItem = obj.role == Role.LISTITEM
+				self._lastExplorerFocusWasListItem = isListItem
+				if isListItem:
+					self._lastItemFocusTime = time.time()
+					self._attemptLandingSelect(obj, "focus")
 		except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError):
 			pass
 
@@ -832,6 +874,7 @@ class ExplorerManager:
 	def event_foreground(self, obj, nextHandler):
 		current_time = time.time()
 		self._last_foreground_time = current_time
+		self._listHadFocusBeforeForeground = self._lastExplorerFocusWasListItem
 		# Any foreground switch invalidates deferred tasks scheduled for a
 		# previous window - guards against a recycled HWND being reused by
 		# a brand-new window inside the delay window of a pending callback.
@@ -942,20 +985,44 @@ class ExplorerManager:
 				log.debug(
 					f"xPlorer TRACE: focus snapshot foregroundHwnd={foregroundHwnd} focusHwnd={focusHwnd} "
 					f"focusRole={focusObj.role} focusClass={focusClass} "
-					f"windowResponsive={responsive} explorerFocused={self._explorer_focused}"
+					f"windowResponsive={responsive} explorerFocused={self._explorer_focused} "
+					f"listHadFocus={self._listHadFocusBeforeForeground}"
 				)
 			if self._landingSelectUntil and focusObj.role == Role.LISTITEM:
 				self._attemptLandingSelect(focusObj, "snapshot")
-			focusStuckOnFrame = bool(focusHwnd) and focusHwnd == foregroundHwnd and focusClass == "CabinetWClass"
-			if not (focusStuckOnFrame and responsive and self._explorer_focused):
+			if not (foregroundHwnd and responsive and self._explorer_focused):
+				return
+			if not self._isFocusLostFromItemsView(foregroundHwnd, focusObj, focusHwnd, focusClass):
 				return
 			if self.contextMenuActive or self.suppressAllAnnouncements or self._isForeignDialogOpen():
+				return
+			if not _user32Private.IsWindowEnabled(foregroundHwnd):
 				return
 			if not loadConfig().get("recoverExplorerFocus", True):
 				return
 			self._recoverExplorerFocus(foregroundHwnd)
 		except (ComTypesCOMError, CtypesCOMError, AttributeError, RuntimeError, OSError) as e:
 			log.debug(f"xPlorer TRACE: focus check failed: {e}")
+
+	def _isFocusLostFromItemsView(self, frameHwnd, focusObj, focusHwnd, focusClass):
+		if not focusHwnd:
+			return False
+		if focusHwnd == frameHwnd and focusClass == "CabinetWClass":
+			return True
+		# After the open folder is emptied and refilled, Explorer drops focus
+		# onto the first command bar button instead of the frame itself. Only
+		# treat that as lost focus when the file list held focus before this
+		# window was activated, so a deliberate stop on the command bar stays.
+		if not self._listHadFocusBeforeForeground:
+			return False
+		if focusObj.role not in _COMMAND_BAR_FOCUS_ROLES:
+			return False
+		if _user32Private.GetAncestor(focusHwnd, _GA_ROOT) != frameHwnd:
+			return False
+		itemsViewHwnd = _findItemsViewHwnd(frameHwnd)
+		if not itemsViewHwnd:
+			return False
+		return focusHwnd != itemsViewHwnd and not _user32Private.IsChild(itemsViewHwnd, focusHwnd)
 
 	def _recoverExplorerFocus(self, frameHwnd):
 		itemsViewHwnd = _findItemsViewHwnd(frameHwnd)
